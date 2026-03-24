@@ -1,6 +1,8 @@
 [
   {
     "slug": "2026-04-02-1",
+    "eventSlug": "2026-04-02-1",
+    "pageUrl": "events/2026-04-02-1.html",
     "title": "1",
     "date": "2026-04-02",
     "location": "iisc",
@@ -12,7 +14,27 @@
     ]
   },
   {
+    "slug": "2026-03-29-hi-hihihihihhi",
+    "eventSlug": "2026-03-29-hi-hihihihihhi",
+    "pageUrl": "events/2026-03-29-hi-hihihihihhi.html",
+    "title": "hi hihihihihhi",
+    "date": "2026-03-29",
+    "location": "hyd",
+    "images": [
+      {
+        "url": "content/events/2026-03-29-hi-hihihihihhi/gallery/image-01.jpg",
+        "description": "123445567890-9876544332456789098643567890"
+      },
+      {
+        "url": "content/events/2026-03-29-hi-hihihihihhi/gallery/image-02.jpg",
+        "description": "ttrewaesdfghuijszdghj"
+      }
+    ]
+  },
+  {
     "slug": "2026-03-25-letcy",
+    "eventSlug": "2026-03-25-letcy",
+    "pageUrl": "events/2026-03-25-letcy.html",
     "title": "letcy",
     "date": "2026-03-25",
     "location": "LH1",
@@ -29,6 +51,8 @@
   },
   {
     "slug": "2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef",
+    "eventSlug": "2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef",
+    "pageUrl": "events/2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef.html",
     "title": "eh fuewh ifwuhfeuwfhwefhgw yef",
     "date": "2026-03-22",
     "location": "iisc",
@@ -41,6 +65,8 @@
   },
   {
     "slug": "2026-03-22-fehf-ghw-effhuewhf",
+    "eventSlug": "2026-03-22-fehf-ghw-effhuewhf",
+    "pageUrl": "events/2026-03-22-fehf-ghw-effhuewhf.html",
     "title": "fehf ghw'effhuewhf'",
     "date": "2026-03-22",
     "location": "iisc",
@@ -77,6 +103,8 @@
   },
   {
     "slug": "2026-03-21-second-gallery",
+    "eventSlug": "2026-03-21-second-gallery",
+    "pageUrl": "events/2026-03-21-second-gallery.html",
     "title": "second gallery",
     "date": "2026-03-21",
     "location": "rayachoty",
