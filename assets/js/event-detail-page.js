@@ -14,7 +14,7 @@
   function resolveSitePath(path) {
     var raw = String(path || "").trim();
     if (!raw) return "";
-    if (/^(?:[a-z]+:)?\/\//i.test(raw) || raw.indexOf("data:") === 0) {
+    if (/^(?:[a-z]+:)?\/\//i.test(raw) || raw.indexOf("data:") === 0 || raw.indexOf("../") === 0 || raw.indexOf("./") === 0) {
       return raw;
     }
     return getSiteRoot() + raw.replace(/^\/+/, "");
@@ -100,7 +100,7 @@
       date: String(eventItem.date || ""),
       location: String(eventItem.location || ""),
       description: String((image && image.description) || ""),
-      url: resolveSitePath(String((image && image.url) || ""))
+      url: String((image && image.url) || "")
     };
   }
 
@@ -175,7 +175,7 @@
     document.getElementById("gallery-modal-date").textContent = formatDate(item.date);
     document.getElementById("gallery-modal-location").textContent = item.location;
     document.getElementById("gallery-modal-description").textContent = item.description;
-    dialog.style.setProperty("--gallery-modal-media-height", "auto");
+    dialog.style.setProperty("--gallery-modal-media-height", "90vh");
 
     modal.hidden = false;
     document.body.classList.add("modal-open");
