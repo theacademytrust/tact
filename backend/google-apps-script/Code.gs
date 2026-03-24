@@ -13,6 +13,7 @@
   Optional Script Properties:
   - GITHUB_BRANCH = main
   - GITHUB_EVENTS_ROOT = content/events
+  - GITHUB_EVENT_PAGES_ROOT = events
 */
 
 var DEFAULT_SETUP = {
@@ -20,6 +21,7 @@ var DEFAULT_SETUP = {
   GITHUB_REPO: "tact",
   GITHUB_BRANCH: "main",
   GITHUB_EVENTS_ROOT: "content/events",
+  GITHUB_EVENT_PAGES_ROOT: "events",
   GITHUB_GALLERY_DATA_PATH: "data/gallery.json",
   GITHUB_GALLERY_IMAGES_ROOT: "images/gallery",
   ADMIN_PIN: "1234"
@@ -156,6 +158,7 @@ function rebuildFeed(repo) {
     ";\n";
 
   putTextFile(repo, joinPath(repo.eventsRoot, "events-feed.js"), content, "Rebuild static event feed");
+  rebuildEventPages(repo, feed);
 }
 
 function listEventsFromGitHub(props) {
@@ -216,6 +219,7 @@ function collectFeedEntries(repo) {
       location: String(meta.location || ""),
       status: normalizeStatus(meta.status),
       folder: dirPath,
+      pageUrl: buildEventPagePath(repo, String(meta.slug || "")),
       poster: poster,
       teaser: String(meta.teaser || ""),
       homepageMatter: String(meta.homepageMatter || "")
@@ -233,6 +237,8 @@ function deleteEventFromGitHub(props, slugValue) {
   }
 
   deleteDirectoryRecursive(repo, joinPath(repo.eventsRoot, slug));
+  deleteFileIfExists(repo, buildEventPagePath(repo, slug), "Delete generated event page for " + slug);
+  removeGalleryEntryForEvent(repo, slug);
   rebuildFeed(repo);
 
   return {
@@ -267,6 +273,7 @@ function getRepoConfig(props) {
   var repo = String(props.getProperty("GITHUB_REPO") || "");
   var branch = String(props.getProperty("GITHUB_BRANCH") || "main");
   var eventsRoot = String(props.getProperty("GITHUB_EVENTS_ROOT") || "content/events");
+  var eventPagesRoot = String(props.getProperty("GITHUB_EVENT_PAGES_ROOT") || "events");
   var galleryDataPath = String(props.getProperty("GITHUB_GALLERY_DATA_PATH") || "data/gallery.json");
   var galleryImagesRoot = String(props.getProperty("GITHUB_GALLERY_IMAGES_ROOT") || "images/gallery");
 
@@ -280,6 +287,7 @@ function getRepoConfig(props) {
     repo: repo,
     branch: branch,
     eventsRoot: trimSlashes(eventsRoot),
+    eventPagesRoot: trimSlashes(eventPagesRoot),
     galleryDataPath: trimSlashes(galleryDataPath),
     galleryImagesRoot: trimSlashes(galleryImagesRoot)
   };
@@ -294,19 +302,34 @@ function saveGalleryToGitHub(props, galleryObj, imageList) {
   var repo = getRepoConfig(props);
   var gallery = galleryObj || {};
   var images = Array.isArray(imageList) ? imageList : [];
-  var title = String(gallery.title || "").trim();
-  var date = normalizeDate(gallery.date);
-  var location = String(gallery.location || "").trim();
-  var slug = sanitizeSlug(gallery.slug || buildSlug(date, title));
+  var eventSlug = sanitizeSlug(gallery.eventSlug || gallery.slug);
+  var eventMeta = getEventMeta(repo, eventSlug);
+  var galleryEntries = readGalleryEntries(repo);
+  var currentEntry = null;
 
-  if (!title || !date || !location) {
-    throw new Error("Missing required gallery fields.");
+  if (!eventSlug) {
+    throw new Error("Select an event first.");
+  }
+  if (!eventMeta) {
+    throw new Error("Selected event could not be found.");
   }
   if (!images.length) {
     throw new Error("At least one gallery image is required.");
   }
 
-  var normalizedImages = [];
+  for (var existingIndex = 0; existingIndex < galleryEntries.length; existingIndex++) {
+    var existingEntry = galleryEntries[existingIndex] || {};
+    if (String(existingEntry.eventSlug || existingEntry.slug || "") === eventSlug) {
+      currentEntry = existingEntry;
+      break;
+    }
+  }
+
+  var existingImages = currentEntry && Array.isArray(currentEntry.images) ? currentEntry.images.slice() : [];
+  var galleryDir = joinPath(joinPath(repo.eventsRoot, eventSlug), "gallery");
+  var nextIndex = existingImages.length;
+
+  var uploadedImages = [];
   for (var i = 0; i < images.length; i++) {
     var imageObj = images[i] || {};
     var description = String(imageObj.description || "").trim();
@@ -315,28 +338,27 @@ function saveGalleryToGitHub(props, galleryObj, imageList) {
     }
 
     var ext = inferPosterExtension(imageObj);
-    var imagePath = joinPath(repo.galleryImagesRoot, slug + "-" + padNumber(i + 1) + ext);
-    putBinaryFile(repo, imagePath, String(imageObj.data || ""), "Publish gallery image " + (i + 1) + " for " + slug);
-    normalizedImages.push({
+    var imagePath = joinPath(galleryDir, "image-" + padNumber(nextIndex + i + 1) + ext);
+    putBinaryFile(repo, imagePath, String(imageObj.data || ""), "Publish gallery image " + (nextIndex + i + 1) + " for " + eventSlug);
+    uploadedImages.push({
       url: imagePath,
       description: description
     });
   }
 
-  removeOldGalleryImages(repo, slug, normalizedImages);
-
-  var galleryEntries = readGalleryEntries(repo);
   var nextEntry = {
-    slug: slug,
-    title: title,
-    date: date,
-    location: location,
-    images: normalizedImages
+    slug: eventSlug,
+    eventSlug: eventSlug,
+    pageUrl: buildEventPagePath(repo, eventSlug),
+    title: String(eventMeta.title || ""),
+    date: normalizeDate(eventMeta.date),
+    location: String(eventMeta.location || ""),
+    images: existingImages.concat(uploadedImages)
   };
   var replaced = false;
 
   for (var j = 0; j < galleryEntries.length; j++) {
-    if (String(galleryEntries[j].slug || "") === slug) {
+    if (String(galleryEntries[j].eventSlug || galleryEntries[j].slug || "") === eventSlug) {
       galleryEntries[j] = nextEntry;
       replaced = true;
       break;
@@ -354,14 +376,16 @@ function saveGalleryToGitHub(props, galleryObj, imageList) {
     repo,
     repo.galleryDataPath,
     buildGalleryJson(galleryEntries),
-    (replaced ? "Update" : "Create") + " gallery entry for " + slug
+    (replaced ? "Update" : "Create") + " gallery entry for " + eventSlug
   );
+  rebuildFeed(repo);
 
   return {
     ok: true,
-    slug: slug,
+    slug: eventSlug,
     galleryPath: repo.galleryDataPath,
-    imageCount: normalizedImages.length
+    imageCount: uploadedImages.length,
+    totalImageCount: nextEntry.images.length
   };
 }
 
@@ -382,6 +406,8 @@ function readGalleryEntries(repo) {
     var date = normalizeDate(item.date);
     var location = String(item.location || "").trim();
     var slug = sanitizeSlug(item.slug || buildSlug(date, title));
+    var eventSlug = sanitizeSlug(item.eventSlug || slug);
+    var pageUrl = String(item.pageUrl || buildEventPagePath(repo, eventSlug)).trim();
     var images = Array.isArray(item.images) ? item.images : [];
     var normalizedImages = [];
 
@@ -400,6 +426,8 @@ function readGalleryEntries(repo) {
 
     list.push({
       slug: slug,
+      eventSlug: eventSlug || slug,
+      pageUrl: pageUrl,
       title: title,
       date: date,
       location: location,
@@ -418,33 +446,128 @@ function buildGalleryJson(entries) {
   return JSON.stringify(Array.isArray(entries) ? entries : [], null, 2) + "\n";
 }
 
-function removeOldGalleryImages(repo, slug, keepImages) {
-  var entries = [];
-  var keepMap = {};
+function buildEventPagePath(repo, slug) {
+  return joinPath(repo.eventPagesRoot, sanitizeSlug(slug) + ".html");
+}
 
-  for (var i = 0; i < keepImages.length; i++) {
-    keepMap[String(keepImages[i].url || "")] = true;
+function rebuildEventPages(repo, feed) {
+  var items = Array.isArray(feed) ? feed : [];
+  for (var i = 0; i < items.length; i++) {
+    var item = items[i] || {};
+    if (!item.slug) continue;
+    putTextFile(
+      repo,
+      buildEventPagePath(repo, item.slug),
+      buildEventDetailPageHtml(item),
+      "Rebuild event page for " + item.slug
+    );
+  }
+}
+
+function getEventMeta(repo, slug) {
+  var cleanSlug = sanitizeSlug(slug);
+  if (!cleanSlug) return null;
+  var path = joinPath(joinPath(repo.eventsRoot, cleanSlug), "event.json");
+  var meta = parseJsonFile(repo, path);
+  if (!meta) return null;
+  return {
+    slug: cleanSlug,
+    title: String(meta.title || "").trim(),
+    date: normalizeDate(meta.date),
+    time: String(meta.time || "").trim(),
+    location: String(meta.location || "").trim(),
+    teaser: String(meta.teaser || "").trim(),
+    homepageMatter: String(meta.homepageMatter || "").trim(),
+    status: normalizeStatus(meta.status)
+  };
+}
+
+function removeGalleryEntryForEvent(repo, slug) {
+  var cleanSlug = sanitizeSlug(slug);
+  if (!cleanSlug) return;
+
+  var list = readGalleryEntries(repo);
+  var next = [];
+  var changed = false;
+
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i] || {};
+    if (String(item.eventSlug || item.slug || "") === cleanSlug) {
+      changed = true;
+      continue;
+    }
+    next.push(item);
   }
 
-  try {
-    entries = listDirectory(repo, repo.galleryImagesRoot);
-  } catch (err) {
-    if (String(err && err.message || "").indexOf("404") >= 0) return;
-    throw err;
-  }
+  if (!changed) return;
 
-  for (var j = 0; j < entries.length; j++) {
-    var entry = entries[j];
-    if (!entry || entry.type !== "file") continue;
-    if (String(entry.name || "").indexOf(slug + "-") !== 0) continue;
-    if (keepMap[String(entry.path || "")]) continue;
+  putTextFile(
+    repo,
+    repo.galleryDataPath,
+    buildGalleryJson(next),
+    "Remove gallery entry for deleted event " + cleanSlug
+  );
+}
 
-    githubRequest(repo, "delete", "contents/" + encodePath(entry.path), {
-      message: "Remove replaced gallery image " + entry.name,
-      sha: String(entry.sha || ""),
-      branch: repo.branch
-    });
-  }
+function deleteFileIfExists(repo, path, message) {
+  var file = getFile(repo, path);
+  if (!file.exists || !file.sha) return;
+
+  githubRequest(repo, "delete", "contents/" + encodePath(path), {
+    message: String(message || "Delete " + path),
+    sha: String(file.sha || ""),
+    branch: repo.branch
+  });
+}
+
+function buildEventDetailPageHtml(item) {
+  var title = String(item && item.title || "Event");
+  var slug = sanitizeSlug(item && item.slug || "");
+  var description = String(item && (item.homepageMatter || item.teaser) || "").trim() || "Event details from The Academy Trust (tAcT).";
+  return (
+    "<!doctype html>\n" +
+    '<html lang="en">\n' +
+    "<head>\n" +
+    '  <meta charset="utf-8">\n' +
+    '  <meta name="viewport" content="width=1240">\n' +
+    "  <title>" + escapeHtmlHtml(title) + " - The Academy Trust (tAcT)</title>\n" +
+    '  <meta name="description" content="' + escapeHtmlAttribute(description) + '">\n' +
+    '  <link rel="stylesheet" href="../shared-ribbon.css">\n' +
+    '  <link rel="stylesheet" href="../assets/css/public-site.css">\n' +
+    '  <link rel="stylesheet" href="../assets/css/gallery.css">\n' +
+    '  <link rel="stylesheet" href="../assets/css/event-detail.css">\n' +
+    "</head>\n" +
+    '<body data-page="event-detail" data-site-root="../" data-event-slug="' + escapeHtmlAttribute(slug) + '">\n' +
+    '  <div class="wrap">\n' +
+    '    <div id="site-header-root"></div>\n' +
+    '    <main id="main">\n' +
+    '      <section class="surface"><p class="event-detail-empty">Loading event details…</p></section>\n' +
+    "    </main>\n" +
+    '    <div id="site-footer-root"></div>\n' +
+    "  </div>\n" +
+    '  <div id="gallery-modal" class="gallery-modal" hidden>\n' +
+    '    <div class="gallery-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title">\n' +
+    '      <button id="gallery-modal-close" class="gallery-modal-close" type="button" aria-label="Close gallery modal" data-modal-dismiss>&times;</button>\n' +
+    '      <div class="gallery-modal-media">\n' +
+    '        <img id="gallery-modal-image" src="" alt="">\n' +
+    "      </div>\n" +
+    '      <div class="gallery-modal-copy">\n' +
+    '        <h2 id="gallery-modal-title"></h2>\n' +
+    '        <div class="gallery-modal-meta">\n' +
+    '          <span id="gallery-modal-date"></span>\n' +
+    '          <span id="gallery-modal-location"></span>\n' +
+    "        </div>\n" +
+    '        <p id="gallery-modal-description"></p>\n' +
+    "      </div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    '  <script src="../assets/js/site-chrome.js"></script>\n' +
+    '  <script src="../content/events/events-feed.js"></script>\n' +
+    '  <script src="../assets/js/gallery-data.js"></script>\n' +
+    '  <script src="../assets/js/event-detail-page.js"></script>\n' +
+    "</body>\n" +
+    "</html>\n"
+  );
 }
 
 function padNumber(value) {
@@ -578,6 +701,19 @@ function buildEventJson(eventObj) {
 
 function jsonString(value) {
   return JSON.stringify(String(value || ""));
+}
+
+function escapeHtmlHtml(value) {
+  return String(value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function escapeHtmlAttribute(value) {
+  return escapeHtmlHtml(value)
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 function decodeBase64Content(value) {

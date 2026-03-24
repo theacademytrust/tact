@@ -5,7 +5,8 @@ Tact is a static site for The Academy Trust with a GitHub-backed admin workflow 
 ## What the site now includes
 
 - Event publishing through `admin.html`
-- Gallery publishing through `admin.html`
+- Event-linked gallery publishing through `admin.html`
+- Dedicated standalone event pages under `events/<slug>.html`
 - A standalone image gallery page at `gallery.html`
 - A calendar view for gallery content at `calendar.html`
 - Shared site navigation through `assets/js/site-chrome.js`
@@ -38,17 +39,18 @@ The existing event flow is still supported.
 
 The same admin page now includes a second mode: `Add Gallery`.
 
-- Common fields:
-  - Title
-  - Date
-  - Location
+- Event selection:
+  - Pick from previously created GitHub-backed events
+  - The selected event's existing gallery images are shown first
 - Dynamic gallery blocks:
   - Image upload
   - Description
   - Preview before upload
   - Remove button per block
+- `Add More Images` keeps appending the next sequential image block
 - At least one image is required
 - Every image requires a description
+- Gallery saves append new images to the selected event instead of creating a separate standalone gallery record
 - Raster images are automatically compressed in the browser before upload across event and gallery flows
 - Compression is multi-step and balanced:
   - resizes large images progressively
@@ -61,16 +63,19 @@ Gallery submissions use this structure:
 
 ```json
 {
+  "slug": "2026-04-05-event-title",
+  "eventSlug": "2026-04-05-event-title",
+  "pageUrl": "events/2026-04-05-event-title.html",
   "title": "Event Title",
   "date": "2026-04-05",
   "location": "Bangalore",
   "images": [
     {
-      "url": "images/gallery/example-01.jpg",
+      "url": "content/events/2026-04-05-event-title/gallery/image-01.jpg",
       "description": "desc1"
     },
     {
-      "url": "images/gallery/example-02.jpg",
+      "url": "content/events/2026-04-05-event-title/gallery/image-02.jpg",
       "description": "desc2"
     }
   ]
@@ -81,9 +86,29 @@ Published gallery data is stored in:
 
 - [data/gallery.json](/home/chi/Tact/data/gallery.json)
 
-Published gallery images are stored in:
+Published gallery images are stored inside each event folder:
 
-- `images/gallery/`
+- `content/events/<slug>/gallery/`
+
+## Event detail pages
+
+Each event now has a dedicated static HTML page.
+
+Supporting files:
+
+- [assets/css/event-detail.css](/home/tact/tact/assets/css/event-detail.css)
+- [assets/js/event-detail-page.js](/home/tact/tact/assets/js/event-detail-page.js)
+- [tools/generate-event-pages.mjs](/home/tact/tact/tools/generate-event-pages.mjs)
+- [events/](/home/tact/tact/events)
+
+Behavior:
+
+- Every event page uses the same ribbon header and footer as the rest of the site
+- The top section uses a two-column layout with an A4-style poster on the left and event metadata plus full description on the right
+- The poster opens in the same modal pattern used by `gallery.html`
+- A gallery grid below the top card shows all event-linked gallery images
+- Gallery cards reuse the same hover overlay and modal behavior as `gallery.html`
+- `events.html` past-event cards link directly to the corresponding `events/<slug>.html` page
 
 ## Gallery page
 
@@ -150,10 +175,12 @@ The backend now supports:
 
 For gallery publishing, the backend:
 
-- validates title, date, location, and images
-- uploads gallery image files into `images/gallery/`
+- validates the selected event and new images
+- uploads gallery image files into `content/events/<slug>/gallery/`
 - updates `data/gallery.json`
-- replaces older files for the same gallery slug when a gallery is re-saved
+- appends new images to the selected event's gallery entry
+- generates or refreshes `events/<slug>.html` whenever the event feed is rebuilt
+- removes the generated event page and gallery entry when an event is deleted
 
 ## Shared frontend wiring
 
@@ -164,6 +191,7 @@ Shared navigation and routing were updated so the new pages behave like the exis
 - [assets/js/site-chrome.js](/home/chi/Tact/assets/js/site-chrome.js)
   - Adds `Gallery` and `Calendar` links under `Events & Media`
   - Renders the shared ribbon header and shared footer
+  - Resolves shared navigation links correctly from both root pages and generated `events/<slug>.html` pages
   - Keeps dropdown behavior stable across routed page reinitialization without stacking duplicate document listeners
   - Is loaded with a versioned asset URL on public pages so shared header fixes are not blocked by stale browser cache
 - [assets/js/page-router.js](/home/chi/Tact/assets/js/page-router.js)
@@ -177,6 +205,12 @@ Shared navigation and routing were updated so the new pages behave like the exis
   - Uses network-first fetches for HTML, CSS, JS, JSON, the event feed, and `gallery.json`
   - Claims updated clients immediately so gallery/calendar modal fixes do not depend on a hard refresh
   - Leaves static media on normal cache-backed behavior
+
+## Events page integration
+
+- `Past Events` cards in [events.html](/home/tact/tact/events.html) are now clickable links
+- Each card opens the matching generated event page under `events/<slug>.html`
+- Event-detail pages load from the shared event feed plus `data/gallery.json`, so navigation stays aligned with published repo content
 
 ## Desktop-only presentation
 
@@ -209,6 +243,8 @@ Shared navigation and routing were updated so the new pages behave like the exis
 If gallery save fails with `Missing required event fields.`, the live Apps Script deployment is still using the old event-only code. Redeploy [backend/google-apps-script/Code.gs](/home/chi/Tact/backend/google-apps-script/Code.gs).
 
 If gallery save fails with a GitHub bandwidth / transfer quota error, the admin page now compresses large raster images before upload, but very large source files may still require smaller uploads.
+
+If new event pages or event-linked gallery behavior do not appear in production, redeploy the live Apps Script project from [backend/google-apps-script/Code.gs](/home/tact/tact/backend/google-apps-script/Code.gs) so the generated page and gallery logic matches this repo version.
 
 ## Maintenance
 

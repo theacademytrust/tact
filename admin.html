@@ -256,6 +256,45 @@
       padding: 16px;
       text-align: center;
     }
+    .gallery-event-summary {
+      margin-top: 8px;
+    }
+    .existing-gallery-wrap {
+      display: grid;
+      gap: 10px;
+    }
+    .existing-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+    .existing-gallery-item {
+      border: 1px solid rgba(10, 20, 10, 0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ffffff, var(--card-soft));
+    }
+    .existing-gallery-item img {
+      display: block;
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      background: #eef3ee;
+    }
+    .existing-gallery-copy {
+      padding: 10px;
+      display: grid;
+      gap: 4px;
+    }
+    .existing-gallery-copy strong {
+      color: #173125;
+      font-size: 13px;
+    }
+    .existing-gallery-copy p {
+      margin: 0;
+      font-size: 12px;
+      color: #5c6760;
+    }
     .manager-toggle-row {
       margin-bottom: 12px;
     }
@@ -421,29 +460,29 @@
       <section id="gallery-panel" class="hidden">
         <div class="panel-head">
           <h2>Add Gallery</h2>
-          <p>Create a dated gallery entry with one or more image and description pairs. It will save to <span class="mono">/data/gallery.json</span> and <span class="mono">/images/gallery/</span>.</p>
+          <p>Select an existing event, review its current gallery images, then append new images and descriptions to that event.</p>
         </div>
 
         <form id="gallery-form" class="grid">
           <div>
-            <label for="gallery-title">Title</label>
-            <input id="gallery-title" name="galleryTitle" required>
+            <label for="gallery-event-select">Choose Event</label>
+            <select id="gallery-event-select" name="galleryEvent" required>
+              <option value="">Select an existing event</option>
+            </select>
+            <p id="gallery-event-summary" class="mini gallery-event-summary">Choose an event to manage its gallery.</p>
           </div>
 
-          <div class="row-2">
-            <div>
-              <label for="gallery-date">Date</label>
-              <input id="gallery-date" name="galleryDate" type="date" required>
-            </div>
-            <div>
-              <label for="gallery-location">Location</label>
-              <input id="gallery-location" name="galleryLocation" required>
-            </div>
-          </div>
-
-          <div class="subcard">
+          <div id="existing-gallery-wrap" class="subcard existing-gallery-wrap hidden">
             <div class="gallery-block-head">
-              <strong>Gallery Images</strong>
+              <strong>Existing Gallery Images</strong>
+            </div>
+            <p class="mini">These images are already attached to the selected event.</p>
+            <div id="existing-gallery-list" class="existing-gallery-grid"></div>
+          </div>
+
+          <div id="gallery-upload-card" class="subcard hidden">
+            <div class="gallery-block-head">
+              <strong>Add New Images</strong>
             </div>
             <p class="mini">At least one image is required. Every image needs a description.</p>
             <div id="gallery-image-list" class="gallery-list"></div>
@@ -529,6 +568,11 @@
 
     const galleryForm = document.getElementById("gallery-form");
     const galleryStatus = document.getElementById("gallery-status");
+    const galleryEventSelect = document.getElementById("gallery-event-select");
+    const galleryEventSummary = document.getElementById("gallery-event-summary");
+    const existingGalleryWrap = document.getElementById("existing-gallery-wrap");
+    const existingGalleryList = document.getElementById("existing-gallery-list");
+    const galleryUploadCard = document.getElementById("gallery-upload-card");
     const galleryList = document.getElementById("gallery-image-list");
     const galleryBlockTemplate = document.getElementById("gallery-block-template");
     const addGalleryImageBtn = document.getElementById("add-gallery-image-btn");
@@ -537,13 +581,16 @@
 
     const STORAGE_KEYS = {
       event: "tact-admin-event-draft-v1",
-      gallery: "tact-admin-gallery-draft-v1"
+      gallery: "tact-admin-gallery-draft-v2"
     };
 
     let unlockedPin = "";
     let posterPayload = null;
     let pinConfigured = true;
     let adminMode = "event";
+    let eventCache = [];
+    let galleryEntriesCache = [];
+    let pendingGalleryDraftSelection = "";
 
     bootPinStatus();
     ensureGalleryBlocks();
@@ -604,6 +651,7 @@
         pinHint.classList.remove("hidden");
         pinCard.classList.add("hidden");
         formCard.classList.remove("hidden");
+        await refreshGalleryContext(false);
         switchAdminMode(adminMode);
       } catch (_err) {
         alert("Could not verify PIN. Please try again.");
@@ -693,6 +741,12 @@
       persistGalleryDraft();
     });
 
+    galleryEventSelect.addEventListener("change", function () {
+      hideStatus(galleryStatus);
+      updateGallerySelectionState();
+      persistGalleryDraft();
+    });
+
     clearGalleryBtn.addEventListener("click", function () {
       resetGalleryForm(true);
     });
@@ -757,6 +811,7 @@
         }
 
         resetEventForm(true);
+        await refreshGalleryContext(false);
         showStatus(statusBox, "Submitted successfully. Form cleared for a fresh entry.");
       } catch (err) {
         showStatus(statusBox, "Submit failed: " + (err && err.message ? err.message : "Unknown error"), true);
@@ -776,11 +831,9 @@
         return;
       }
 
-      const title = valueOf("gallery-title");
-      const date = valueOf("gallery-date");
-      const location = valueOf("gallery-location");
-      if (!title || !date || !location) {
-        alert("Fill title, date, and location.");
+      const selectedEvent = getSelectedGalleryEvent();
+      if (!selectedEvent) {
+        alert("Select an event first.");
         return;
       }
 
@@ -794,10 +847,7 @@
         action: "saveGallery",
         pin: unlockedPin,
         gallery: {
-          slug: slugify(date + "--" + title),
-          title: title,
-          date: date,
-          location: location
+          eventSlug: String(selectedEvent.slug || "")
         },
         images: images.items
       };
@@ -817,9 +867,9 @@
           throw new Error(body.error || "Gallery save failed");
         }
 
-        showStatus(galleryStatus, "Gallery saved successfully. The data file and image folder were updated.");
-        resetGalleryForm(true);
-        showStatus(galleryStatus, "Gallery saved successfully. Form cleared for a fresh entry.");
+        await refreshGalleryEntries();
+        resetGalleryForm(true, { preserveEventSelection: true });
+        showStatus(galleryStatus, "Gallery saved successfully. New images were appended to the selected event.");
       } catch (err) {
         const rawMessage = err && err.message ? err.message : "Unknown error";
         const hint = rawMessage === "Missing required event fields."
@@ -880,6 +930,11 @@
       galleryPanel.classList.toggle("hidden", !isGallery);
       showEventPanelBtn.dataset.active = String(!isGallery);
       showGalleryPanelBtn.dataset.active = String(isGallery);
+      if (isGallery) {
+        refreshGalleryContext(false).catch(function (err) {
+          showStatus(galleryStatus, "Could not refresh gallery context: " + (err && err.message ? err.message : "Unknown error"), true);
+        });
+      }
     }
 
     function ensureGalleryBlocks() {
@@ -1006,13 +1061,19 @@
       hideStatus(statusBox);
     }
 
-    function resetGalleryForm(clearDraft) {
+    function resetGalleryForm(clearDraft, options) {
+      const settings = options || {};
+      const selectedEventSlug = settings.preserveEventSelection ? String(galleryEventSelect.value || "") : "";
       galleryForm.reset();
       galleryList.innerHTML = "";
       ensureGalleryBlocks();
+      if (selectedEventSlug) {
+        galleryEventSelect.value = selectedEventSlug;
+      }
       if (clearDraft) {
         removeStoredDraft(STORAGE_KEYS.gallery);
       }
+      updateGallerySelectionState();
       hideStatus(galleryStatus);
     }
 
@@ -1040,11 +1101,7 @@
       });
 
       saveDraft(STORAGE_KEYS.gallery, {
-        values: {
-          title: valueOf("gallery-title"),
-          date: valueOf("gallery-date"),
-          location: valueOf("gallery-location")
-        },
+        eventSlug: String(galleryEventSelect.value || ""),
         blocks: blocks
       });
     }
@@ -1074,11 +1131,9 @@
 
     function restoreGalleryDraft() {
       const draft = readDraft(STORAGE_KEYS.gallery);
-      if (!draft || !draft.values) return;
+      if (!draft) return;
 
-      setValue("gallery-title", draft.values.title);
-      setValue("gallery-date", draft.values.date);
-      setValue("gallery-location", draft.values.location);
+      pendingGalleryDraftSelection = String(draft.eventSlug || "");
 
       galleryList.innerHTML = "";
       const blocks = Array.isArray(draft.blocks) && draft.blocks.length ? draft.blocks : [{ description: "", payload: null }];
@@ -1087,6 +1142,88 @@
       });
       renumberGalleryBlocks();
       placeAddGalleryButton();
+      updateGallerySelectionState();
+    }
+
+    function populateGalleryEventSelect() {
+      const preferredValue = String(galleryEventSelect.value || pendingGalleryDraftSelection || "");
+      galleryEventSelect.innerHTML = '<option value="">Select an existing event</option>';
+
+      eventCache.forEach(function (item) {
+        const option = document.createElement("option");
+        option.value = String(item.slug || "");
+        option.textContent = formatDisplayDate(item.date) + " | " + String(item.title || "Untitled event");
+        galleryEventSelect.appendChild(option);
+      });
+
+      if (preferredValue && eventCache.some(function (item) { return String(item.slug || "") === preferredValue; })) {
+        galleryEventSelect.value = preferredValue;
+      }
+      pendingGalleryDraftSelection = "";
+      updateGallerySelectionState();
+    }
+
+    function getSelectedGalleryEvent() {
+      const slug = String(galleryEventSelect.value || "");
+      return eventCache.find(function (item) {
+        return String(item.slug || "") === slug;
+      }) || null;
+    }
+
+    function getSelectedGalleryEntry() {
+      const selectedEvent = getSelectedGalleryEvent();
+      if (!selectedEvent) return null;
+
+      return galleryEntriesCache.find(function (item) {
+        return String(item.eventSlug || item.slug || "") === String(selectedEvent.slug || "");
+      }) || null;
+    }
+
+    function updateGallerySelectionState() {
+      const selectedEvent = getSelectedGalleryEvent();
+      galleryUploadCard.classList.toggle("hidden", !selectedEvent);
+      existingGalleryWrap.classList.toggle("hidden", !selectedEvent);
+
+      if (!selectedEvent) {
+        galleryEventSummary.textContent = "Choose an event to manage its gallery.";
+        existingGalleryList.innerHTML = '<p class="mini">No event selected yet.</p>';
+        return;
+      }
+
+      galleryEventSummary.textContent =
+        formatDisplayDate(selectedEvent.date) + " | " +
+        String(selectedEvent.time || "Time TBA") + " | " +
+        String(selectedEvent.location || "Location TBA");
+
+      renderExistingGalleryPreview(getSelectedGalleryEntry());
+    }
+
+    function renderExistingGalleryPreview(entry) {
+      existingGalleryList.innerHTML = "";
+
+      if (!entry || !Array.isArray(entry.images) || !entry.images.length) {
+        existingGalleryList.innerHTML = '<p class="mini">No gallery images added for this event yet.</p>';
+        return;
+      }
+
+      entry.images.forEach(function (image, index) {
+        const card = document.createElement("article");
+        card.className = "existing-gallery-item";
+
+        const img = document.createElement("img");
+        img.src = String(image.url || "");
+        img.alt = "Image " + String(index + 1);
+
+        const copy = document.createElement("div");
+        copy.className = "existing-gallery-copy";
+        copy.innerHTML =
+          "<strong>Image " + escapeHtml(String(index + 1)) + "</strong>" +
+          "<p>" + escapeHtml(String(image.description || "")) + "</p>";
+
+        card.appendChild(img);
+        card.appendChild(copy);
+        existingGalleryList.appendChild(card);
+      });
     }
 
     function setValue(id, value) {
@@ -1120,6 +1257,10 @@
     }
 
     function collectGalleryImages() {
+      if (!getSelectedGalleryEvent()) {
+        return { ok: false, error: "Select an event first." };
+      }
+
       const blocks = Array.from(galleryList.querySelectorAll(".gallery-block"));
       if (!blocks.length) {
         return { ok: false, error: "Add at least one image." };
@@ -1158,6 +1299,7 @@
       }
 
       if (!scope || scope === "gallery") {
+        galleryEventSelect.disabled = isSubmitting;
         addGalleryImageBtn.disabled = isSubmitting;
         clearGalleryBtn.disabled = isSubmitting;
         gallerySubmitBtn.disabled = isSubmitting;
@@ -1422,7 +1564,9 @@
           throw new Error(body && body.error ? body.error : "Could not load events.");
         }
 
-        renderEventList(Array.isArray(body.events) ? body.events : []);
+        eventCache = Array.isArray(body.events) ? body.events : [];
+        renderEventList(eventCache);
+        populateGalleryEventSelect();
         if (showRefreshMessage) {
           showManageStatus("Event list refreshed.", false);
         }
@@ -1432,6 +1576,23 @@
       } finally {
         refreshEventsBtn.disabled = false;
       }
+    }
+
+    async function refreshGalleryEntries() {
+      if (!unlockedPin || !hasConfiguredEndpoint()) return;
+
+      const body = await postAdminPayload({ action: "listGallery", pin: unlockedPin });
+      if (!body || body.ok === false) {
+        throw new Error(body && body.error ? body.error : "Could not load gallery entries.");
+      }
+
+      galleryEntriesCache = Array.isArray(body.galleries) ? body.galleries : [];
+      updateGallerySelectionState();
+    }
+
+    async function refreshGalleryContext(showRefreshMessage) {
+      await loadExistingEvents(showRefreshMessage);
+      await refreshGalleryEntries();
     }
 
     function renderEventList(events) {
@@ -1489,7 +1650,7 @@
       const slug = String((item && item.slug) || "");
       if (!slug) return;
 
-      if (!window.confirm('Delete "' + title + '"? This removes the full event folder from GitHub.')) {
+      if (!window.confirm('Delete "' + title + '"? This removes the event folder, generated event page, and event gallery from GitHub.')) {
         return;
       }
 
@@ -1503,7 +1664,7 @@
         }
 
         showManageStatus('Deleted "' + title + '". Refreshing list...', false);
-        await loadExistingEvents(false);
+        await refreshGalleryContext(false);
       } catch (err) {
         showManageStatus("Delete failed: " + (err && err.message ? err.message : "Unknown error"), true);
       } finally {

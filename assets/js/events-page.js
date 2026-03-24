@@ -208,9 +208,10 @@ function renderArchive(list) {
   }
 
   list.forEach(function (item) {
-    var article = document.createElement("article");
-    article.className = "archive-item";
-    article.innerHTML =
+    var link = document.createElement("a");
+    link.className = "archive-item";
+    link.href = String(item.pageUrl || ("events/" + item.slug + ".html"));
+    link.innerHTML =
       '<img src="' +
       escapeHtml(item.poster || item.image || "assets/images/tact-logo.jpg") +
       '" onerror="this.onerror=null;this.src=\'assets/images/tact-logo.jpg\';" alt="' +
@@ -231,7 +232,7 @@ function renderArchive(list) {
       escapeHtml(item.teaser || item.homepageMatter || "") +
       "</p>" +
       "</div>";
-    root.appendChild(article);
+    root.appendChild(link);
   });
 }
 

@@ -4,6 +4,16 @@
     openItem: null
   };
 
+  function getSiteRoot() {
+    var root = document.body && document.body.dataset ? document.body.dataset.siteRoot : "";
+    root = String(root || "").trim();
+    return root ? root.replace(/\/?$/, "/") : "";
+  }
+
+  function toSitePath(path) {
+    return getSiteRoot() + String(path || "").replace(/^\/+/, "");
+  }
+
   function syncHeaderOffset() {
     var root = document.getElementById("site-header-root");
     if (!root) return;
@@ -28,8 +38,8 @@
       '<header class="site-header">',
       '  <div class="site-header-inner">',
       '    <div class="site-header-left">',
-      '      <a href="index.html" class="brand-link">',
-      '        <img src="assets/images/tact-logo.jpg" alt="tAcT logo" class="site-logo" loading="lazy" decoding="async">',
+      '      <a href="' + toSitePath("index.html") + '" class="brand-link">',
+      '        <img src="' + toSitePath("assets/images/tact-logo.jpg") + '" alt="tAcT logo" class="site-logo" loading="lazy" decoding="async">',
       '        <div class="site-brand-text">',
       '          <span class="site-brand-title">The Academy Trust</span>',
       '          <span class="site-brand-subtitle">Science outreach</span>',
@@ -42,45 +52,45 @@
       '          <li class="nav-item nav-item--has-menu">',
       '            <button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">Outreach Programs</button>',
       '            <ul class="nav-menu" role="menu">',
-      '              <li><a href="vijnana-harate.html" role="menuitem">Vijnana Harate</a></li>',
-      '              <li><a href="vijnana-aranya.html" role="menuitem">Vijnana Aranya</a></li>',
-      '              <li><a href="vijnana-yuvati.html" role="menuitem">Vijnana Yuvati</a></li>',
-      '              <li><a href="vijnana-nataka.html" role="menuitem">Vijnana Nataka</a></li>',
-      '              <li><a href="ganitha-mela.html" role="menuitem">Ganitha Mela</a></li>',
+      '              <li><a href="' + toSitePath("vijnana-harate.html") + '" role="menuitem">Vijnana Harate</a></li>',
+      '              <li><a href="' + toSitePath("vijnana-aranya.html") + '" role="menuitem">Vijnana Aranya</a></li>',
+      '              <li><a href="' + toSitePath("vijnana-yuvati.html") + '" role="menuitem">Vijnana Yuvati</a></li>',
+      '              <li><a href="' + toSitePath("vijnana-nataka.html") + '" role="menuitem">Vijnana Nataka</a></li>',
+      '              <li><a href="' + toSitePath("ganitha-mela.html") + '" role="menuitem">Ganitha Mela</a></li>',
       "            </ul>",
       "          </li>",
       '          <li class="nav-item nav-item--has-menu">',
       '            <button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">Other Initiatives</button>',
       '            <ul class="nav-menu" role="menu">',
-      '              <li><a href="wait.html" role="menuitem">Industry Internship</a></li>',
-      '              <li><a href="wait.html" role="menuitem">Chair Professorship</a></li>',
+      '              <li><a href="' + toSitePath("wait.html") + '" role="menuitem">Industry Internship</a></li>',
+      '              <li><a href="' + toSitePath("wait.html") + '" role="menuitem">Chair Professorship</a></li>',
       "            </ul>",
       "          </li>",
       '          <li class="nav-item nav-item--has-menu">',
       '            <button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">Events & Media</button>',
       '            <ul class="nav-menu" role="menu">',
-      '              <li><a href="events.html#upcoming" role="menuitem">Upcoming Events</a></li>',
-      '              <li><a href="events.html#past" role="menuitem">Past Events</a></li>',
-      '              <li><a href="gallery.html" role="menuitem">Gallery</a></li>',
-      '              <li><a href="calendar.html" role="menuitem">Calendar</a></li>',
+      '              <li><a href="' + toSitePath("events.html#upcoming") + '" role="menuitem">Upcoming Events</a></li>',
+      '              <li><a href="' + toSitePath("events.html#past") + '" role="menuitem">Past Events</a></li>',
+      '              <li><a href="' + toSitePath("gallery.html") + '" role="menuitem">Gallery</a></li>',
+      '              <li><a href="' + toSitePath("calendar.html") + '" role="menuitem">Calendar</a></li>',
       "            </ul>",
       "          </li>",
       '          <li class="nav-item nav-item--has-menu">',
       '            <button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">Governance</button>',
       '            <ul class="nav-menu" role="menu">',
-      '              <li><a href="wait.html" role="menuitem">Founding Trustees</a></li>',
-      '              <li><a href="wait.html" role="menuitem">Current Trustees</a></li>',
-      '              <li><a href="wait.html" role="menuitem">Outreach Committee</a></li>',
-      '              <li><a href="wait.html" role="menuitem">Annual Reports</a></li>',
-      '              <li><a href="wait.html" role="menuitem">Statutory Documents</a></li>',
-      '              <li><a href="wait.html" role="menuitem">Office & Contact</a></li>',
+      '              <li><a href="' + toSitePath("wait.html") + '" role="menuitem">Founding Trustees</a></li>',
+      '              <li><a href="' + toSitePath("wait.html") + '" role="menuitem">Current Trustees</a></li>',
+      '              <li><a href="' + toSitePath("wait.html") + '" role="menuitem">Outreach Committee</a></li>',
+      '              <li><a href="' + toSitePath("wait.html") + '" role="menuitem">Annual Reports</a></li>',
+      '              <li><a href="' + toSitePath("wait.html") + '" role="menuitem">Statutory Documents</a></li>',
+      '              <li><a href="' + toSitePath("wait.html") + '" role="menuitem">Office & Contact</a></li>',
       "            </ul>",
       "          </li>",
       "        </ul>",
       "      </nav>",
       "    </div>",
       '    <div class="site-header-right">',
-      '      <a href="donate.html" class="nav-link nav-link--primary"><span>Donate</span></a>',
+      '      <a href="' + toSitePath("donate.html") + '" class="nav-link nav-link--primary"><span>Donate</span></a>',
       "    </div>",
       "  </div>",
       "</header>"

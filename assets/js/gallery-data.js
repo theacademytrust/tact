@@ -1,7 +1,17 @@
 (function () {
   var cache = null;
   var inFlight = null;
-  var DATA_URL = "data/gallery.json";
+  var DATA_URL = resolveSitePath("data/gallery.json");
+
+  function getSiteRoot() {
+    var root = document.body && document.body.dataset ? document.body.dataset.siteRoot : "";
+    root = String(root || "").trim();
+    return root ? root.replace(/\/?$/, "/") : "";
+  }
+
+  function resolveSitePath(path) {
+    return getSiteRoot() + String(path || "").replace(/^\/+/, "");
+  }
 
   function normalizeDate(value) {
     var raw = String(value || "").trim();
@@ -31,6 +41,8 @@
     var date = normalizeDate(row.date);
     var location = String(row.location || "").trim();
     var slug = String(row.slug || "").trim();
+    var eventSlug = String(row.eventSlug || row.event_slug || slug).trim();
+    var pageUrl = String(row.pageUrl || row.page_url || "").trim();
     var images = (Array.isArray(row.images) ? row.images : [])
       .map(normalizeImage)
       .filter(function (image) {
@@ -39,6 +51,8 @@
 
     return {
       slug: slug || [date, title].join("--").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""),
+      eventSlug: eventSlug || slug || [date, title].join("--").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""),
+      pageUrl: pageUrl,
       title: title,
       date: date,
       location: location,
