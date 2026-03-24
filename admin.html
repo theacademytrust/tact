@@ -218,11 +218,7 @@
     .date-input {
       font-variant-numeric: tabular-nums;
       letter-spacing: 0.02em;
-    }
-    .field-note {
-      margin-top: 6px;
-      font-size: 12px;
-      color: #6b7b72;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     }
     .time-range {
       display: grid;
@@ -493,8 +489,7 @@
           <div class="row-2">
             <div>
               <label for="date">Date</label>
-              <input id="date" name="date" class="date-input" inputmode="numeric" maxlength="10" placeholder="DD/MM/YYYY" autocomplete="off" required>
-              <p class="field-note">Enter as `DD/MM/YYYY`. Slashes are added automatically.</p>
+              <input id="date" name="date" class="date-input" inputmode="numeric" maxlength="10" autocomplete="off" required>
             </div>
             <div class="time-range">
               <div>
@@ -687,6 +682,8 @@
       event: "tact-admin-event-draft-v1",
       gallery: "tact-admin-gallery-draft-v2"
     };
+    const DATE_MASK_TEMPLATE = "__/__/____";
+    const DATE_DIGIT_POSITIONS = [0, 1, 3, 4, 6, 7, 8, 9];
 
     let unlockedPin = "";
     let posterPayload = null;
@@ -698,7 +695,9 @@
     let selectedManageSlug = "";
     let managePosterPayload = null;
     let managePosterRemoved = false;
+    let galleryEntriesLoaded = false;
     bootPinStatus();
+    resetCreateEventDateInput();
     ensureGalleryBlocks();
     restoreDrafts();
     bindDraftAutosave();
@@ -752,7 +751,7 @@
         pinHint.classList.remove("hidden");
         pinCard.classList.add("hidden");
         formCard.classList.remove("hidden");
-        await refreshGalleryEntries();
+        await loadExistingEvents(false);
         showAdminHome();
       } catch (_err) {
         alert("Could not verify PIN. Please try again.");
@@ -799,7 +798,7 @@
         pinHint.classList.remove("hidden");
         pinCard.classList.add("hidden");
         formCard.classList.remove("hidden");
-        await refreshGalleryEntries();
+        await loadExistingEvents(false);
         showAdminHome();
         pinModeNote.textContent = "PIN is set. To change it, enter current PIN and new PIN.";
         oldPinInput.value = "";
@@ -856,10 +855,11 @@
       closeManagedEventEditor();
     });
 
-    manageAddGalleryBtn.addEventListener("click", function () {
+    manageAddGalleryBtn.addEventListener("click", async function () {
       if (!selectedManageSlug) return;
       switchAdminMode("gallery");
       galleryEventSelect.value = selectedManageSlug;
+      await ensureGalleryEntriesLoaded();
       updateGallerySelectionState();
       galleryEventSelect.scrollIntoView({ block: "center", behavior: "smooth" });
     });
@@ -890,17 +890,54 @@
       persistEventDraft();
     });
 
-    eventDateInput.addEventListener("input", function () {
-      const digits = String(eventDateInput.value || "").replace(/\D+/g, "").slice(0, 8);
-      let nextValue = digits;
-      if (digits.length > 2) {
-        nextValue = digits.slice(0, 2) + "/" + digits.slice(2);
+    eventDateInput.addEventListener("focus", function () {
+      if (!eventDateInput.value) {
+        resetCreateEventDateInput();
       }
-      if (digits.length > 4) {
-        nextValue = digits.slice(0, 2) + "/" + digits.slice(2, 4) + "/" + digits.slice(4);
+      setDateInputCursor(getNextDateInputPosition(getDateInputDigits(eventDateInput.value).length));
+    });
+
+    eventDateInput.addEventListener("click", function () {
+      const cursor = Number(eventDateInput.selectionStart || 0);
+      if (cursor === 2 || cursor === 5) {
+        setDateInputCursor(cursor + 1);
       }
-      if (eventDateInput.value !== nextValue) {
-        eventDateInput.value = nextValue;
+    });
+
+    eventDateInput.addEventListener("keydown", function (event) {
+      const key = event.key;
+      if (key === "Tab") return;
+
+      if (key === "ArrowLeft" || key === "ArrowRight" || key === "Home" || key === "End") {
+        window.setTimeout(function () {
+          const cursor = Number(eventDateInput.selectionStart || 0);
+          if (cursor === 2 || cursor === 5) {
+            setDateInputCursor(key === "ArrowLeft" ? cursor - 1 : cursor + 1);
+          }
+        }, 0);
+        return;
+      }
+
+      if (/^\d$/.test(key)) {
+        event.preventDefault();
+        applyDateDigit(key);
+        return;
+      }
+
+      if (key === "Backspace") {
+        event.preventDefault();
+        removeDateDigit(true);
+        return;
+      }
+
+      if (key === "Delete") {
+        event.preventDefault();
+        removeDateDigit(false);
+        return;
+      }
+
+      if (key.length === 1) {
+        event.preventDefault();
       }
     });
 
@@ -913,8 +950,9 @@
       persistGalleryDraft();
     });
 
-    galleryEventSelect.addEventListener("change", function () {
+    galleryEventSelect.addEventListener("change", async function () {
       hideStatus(galleryStatus);
+      await ensureGalleryEntriesLoaded();
       updateGallerySelectionState();
       persistGalleryDraft();
     });
@@ -1065,6 +1103,98 @@
       return normalizeDateInput(eventDateInput.value);
     }
 
+    function getDateInputDigits(value) {
+      return String(value || "").replace(/\D+/g, "").slice(0, 8);
+    }
+
+    function buildMaskedDateValue(digits) {
+      const cleanDigits = getDateInputDigits(digits);
+      const chars = DATE_MASK_TEMPLATE.split("");
+      for (let index = 0; index < cleanDigits.length; index += 1) {
+        chars[DATE_DIGIT_POSITIONS[index]] = cleanDigits.charAt(index);
+      }
+      return chars.join("");
+    }
+
+    function getNextDateInputPosition(digitIndex) {
+      if (digitIndex >= DATE_DIGIT_POSITIONS.length) return DATE_MASK_TEMPLATE.length;
+      return DATE_DIGIT_POSITIONS[Math.max(0, digitIndex)];
+    }
+
+    function setDateInputCursor(position) {
+      const next = Math.max(0, Math.min(DATE_MASK_TEMPLATE.length, Number(position || 0)));
+      window.requestAnimationFrame(function () {
+        eventDateInput.setSelectionRange(next, next);
+      });
+    }
+
+    function resetCreateEventDateInput() {
+      eventDateInput.value = DATE_MASK_TEMPLATE;
+    }
+
+    function getDateDigitIndexFromCursor(cursorPosition, preferPrevious) {
+      const cursor = Math.max(0, Math.min(DATE_MASK_TEMPLATE.length, Number(cursorPosition || 0)));
+      if (preferPrevious) {
+        for (let index = DATE_DIGIT_POSITIONS.length - 1; index >= 0; index -= 1) {
+          if (DATE_DIGIT_POSITIONS[index] < cursor) return index;
+        }
+        return 0;
+      }
+
+      for (let index = 0; index < DATE_DIGIT_POSITIONS.length; index += 1) {
+        if (DATE_DIGIT_POSITIONS[index] >= cursor) return index;
+      }
+
+      return DATE_DIGIT_POSITIONS.length - 1;
+    }
+
+    function applyDateDigit(digit) {
+      const digits = getDateInputDigits(eventDateInput.value).split("");
+      const selectionStart = Number(eventDateInput.selectionStart || 0);
+      const selectionEnd = Number(eventDateInput.selectionEnd || 0);
+      let digitIndex = getDateDigitIndexFromCursor(selectionStart, false);
+
+      if (selectionStart !== selectionEnd) {
+        const startIndex = getDateDigitIndexFromCursor(selectionStart, false);
+        const endIndex = getDateDigitIndexFromCursor(Math.max(selectionEnd - 1, selectionStart), true);
+        digits.splice(startIndex, Math.max(0, endIndex - startIndex + 1));
+        digitIndex = startIndex;
+      }
+
+      if (digitIndex >= DATE_DIGIT_POSITIONS.length) {
+        digitIndex = DATE_DIGIT_POSITIONS.length - 1;
+      }
+
+      digits[digitIndex] = digit;
+      eventDateInput.value = buildMaskedDateValue(digits.join(""));
+      setDateInputCursor(getNextDateInputPosition(Math.min(digitIndex + 1, DATE_DIGIT_POSITIONS.length)));
+    }
+
+    function removeDateDigit(useBackspace) {
+      const digits = getDateInputDigits(eventDateInput.value).split("");
+      const selectionStart = Number(eventDateInput.selectionStart || 0);
+      const selectionEnd = Number(eventDateInput.selectionEnd || 0);
+
+      if (!digits.length) {
+        resetCreateEventDateInput();
+        setDateInputCursor(getNextDateInputPosition(0));
+        return;
+      }
+
+      let startIndex = getDateDigitIndexFromCursor(selectionStart, useBackspace);
+      let deleteCount = 1;
+
+      if (selectionStart !== selectionEnd) {
+        const endIndex = getDateDigitIndexFromCursor(Math.max(selectionEnd - 1, selectionStart), true);
+        startIndex = getDateDigitIndexFromCursor(selectionStart, false);
+        deleteCount = Math.max(1, endIndex - startIndex + 1);
+      }
+
+      digits.splice(startIndex, deleteCount);
+      eventDateInput.value = buildMaskedDateValue(digits.join(""));
+      setDateInputCursor(getNextDateInputPosition(Math.min(startIndex, digits.length)));
+    }
+
     function normalizeDateInput(value) {
       const raw = String(value || "").trim();
       if (!raw) return "";
@@ -1086,10 +1216,10 @@
     function setCreateEventDateInputs(value) {
       const normalized = normalizeDateInput(value);
       if (!normalized) {
-        eventDateInput.value = "";
+        resetCreateEventDateInput();
         return;
       }
-      eventDateInput.value = formatDateInputValue(normalized);
+      eventDateInput.value = buildMaskedDateValue(formatDateInputValue(normalized));
     }
 
     function formatDateInputValue(value) {
@@ -1153,8 +1283,11 @@
         loadExistingEvents(false);
       }
       if (isGallery) {
-        refreshGalleryContext(false).catch(function (err) {
-          showStatus(galleryStatus, "Could not refresh gallery context: " + (err && err.message ? err.message : "Unknown error"), true);
+        const ready = eventCache.length ? Promise.resolve() : loadExistingEvents(false);
+        ready.then(function () {
+          updateGallerySelectionState();
+        }).catch(function (err) {
+          showStatus(galleryStatus, "Could not load event list: " + (err && err.message ? err.message : "Unknown error"), true);
         });
       }
     }
@@ -1285,6 +1418,7 @@
 
     function resetEventForm(clearDraft) {
       adminForm.reset();
+      resetCreateEventDateInput();
       posterPayload = null;
       posterMeta.textContent = "";
       if (clearDraft) {
@@ -1827,7 +1961,13 @@
       }
 
       galleryEntriesCache = Array.isArray(body.galleries) ? body.galleries : [];
+      galleryEntriesLoaded = true;
       updateGallerySelectionState();
+    }
+
+    async function ensureGalleryEntriesLoaded() {
+      if (galleryEntriesLoaded) return;
+      await refreshGalleryEntries();
     }
 
     async function refreshGalleryContext(showRefreshMessage) {
