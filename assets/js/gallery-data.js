@@ -42,7 +42,10 @@
     var location = String(row.location || "").trim();
     var slug = String(row.slug || "").trim();
     var eventSlug = String(row.eventSlug || row.event_slug || slug).trim();
-    var pageUrl = String(row.pageUrl || row.page_url || resolveSitePath("events/" + ((date + "--" + title).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")) + ".html")).trim();
+    var parts = date.split("-");
+    var formattedDate = parts.length === 3 ? [parts[2], parts[1], parts[0]].join("-") : date;
+    var pageSlug = (formattedDate + "-" + title).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+    var pageUrl = resolveSitePath("events/" + pageSlug + ".html");
     var images = (Array.isArray(row.images) ? row.images : [])
       .map(normalizeImage)
       .filter(function (image) {

@@ -12,6 +12,12 @@ function sanitizeSlug(value) {
     .replace(/^-+|-+$/g, "");
 }
 
+function buildPageSlug(date, title, fallbackSlug) {
+  const parts = String(date || "").split("-");
+  const formattedDate = parts.length === 3 ? [parts[2], parts[1], parts[0]].join("-") : String(date || "");
+  return sanitizeSlug(`${formattedDate}-${title || ""}`) || sanitizeSlug(fallbackSlug);
+}
+
 function shellFor(slug) {
   return `<!doctype html>
 <html lang="en">
@@ -78,7 +84,7 @@ async function main() {
       const raw = await fs.readFile(eventJsonPath, "utf8");
       const parsed = JSON.parse(raw.replace(/^\uFEFF/, ""));
       const slug = String(parsed.slug || entry.name).trim();
-      const fileSlug = sanitizeSlug(`${parsed.date || ""}--${parsed.title || ""}`) || slug;
+      const fileSlug = buildPageSlug(parsed.date, parsed.title, slug);
       if (!slug || !fileSlug) continue;
       await fs.writeFile(path.join(pagesRoot, `${fileSlug}.html`), shellFor(slug), "utf8");
     } catch {

@@ -156,14 +156,21 @@ function cssEscape(value) {
   return String(value || "").replace(/["\\]/g, "\\$&");
 }
 
-function buildEventPageUrl(item) {
+function buildEventPageFileSlug(item) {
   var date = String(item && item.date || "").trim();
   var title = String(item && item.title || "").trim();
-  var fromMeta = String(date + "--" + title)
+  var parts = date.split("-");
+  var formattedDate = parts.length === 3 ? [parts[2], parts[1], parts[0]].join("-") : date;
+  var raw = String(formattedDate + "-" + title).trim();
+  var clean = raw
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
-  return String(item && item.pageUrl || ("events/" + (fromMeta || String(item && item.slug || "").trim()) + ".html"));
+  return clean || String(item && item.slug || "").trim();
+}
+
+function buildEventPageUrl(item) {
+  return "events/" + buildEventPageFileSlug(item) + ".html";
 }
 
 function sameEventList(left, right) {

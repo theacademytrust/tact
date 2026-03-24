@@ -577,7 +577,10 @@ function buildEventPagePath(repo, slug, date, title) {
 }
 
 function buildEventPageSlug(date, title, fallbackSlug) {
-  var fromMeta = sanitizeSlug(String(date || "") + "--" + String(title || ""));
+  var normalizedDate = normalizeDate(date);
+  var parts = String(normalizedDate || "").split("-");
+  var formattedDate = parts.length === 3 ? [parts[2], parts[1], parts[0]].join("-") : String(normalizedDate || "");
+  var fromMeta = sanitizeSlug(formattedDate + "-" + String(title || ""));
   if (fromMeta) return fromMeta;
   return sanitizeSlug(fallbackSlug);
 }

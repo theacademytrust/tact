@@ -59,7 +59,9 @@
   }
 
   function normalizeEvent(raw) {
-    var pageSlug = String((raw.date || "") + "--" + (raw.title || ""))
+    var parts = String(raw.date || "").split("-");
+    var formattedDate = parts.length === 3 ? [parts[2], parts[1], parts[0]].join("-") : String(raw.date || "");
+    var pageSlug = String(formattedDate + "-" + (raw.title || ""))
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-+|-+$/g, "");
@@ -73,7 +75,7 @@
       homepageMatter: String(raw.homepageMatter || ""),
       status: normalizeStatus(raw.status),
       poster: toPublicPosterUrl(raw.posterUrl || raw.poster || raw.image || ""),
-      pageUrl: String(raw.pageUrl || raw.page_url || ("events/" + (pageSlug || String(raw.slug || "")) + ".html"))
+      pageUrl: "events/" + (pageSlug || String(raw.slug || "")) + ".html"
     };
   }
 
