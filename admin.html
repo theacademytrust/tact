@@ -142,101 +142,6 @@
       font-size: 18px;
       margin-bottom: 6px;
     }
-    .admin-shell {
-      display: grid;
-      gap: 16px;
-    }
-    .admin-header {
-      display: grid;
-      gap: 6px;
-      padding-bottom: 2px;
-      border-bottom: 1px solid rgba(10, 20, 10, 0.08);
-    }
-    .admin-header h2 {
-      margin-bottom: 2px;
-    }
-    .admin-header p {
-      max-width: 640px;
-    }
-    .admin-actions {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .admin-action {
-      display: grid;
-      gap: 10px;
-      align-content: start;
-      text-align: left;
-      padding: 16px;
-      border-radius: 14px;
-      border: 1px solid rgba(10, 20, 10, 0.08);
-      background: linear-gradient(180deg, #ffffff, var(--card-soft));
-      box-shadow: 0 10px 26px rgba(10, 20, 10, 0.04);
-    }
-    .admin-action span {
-      display: block;
-    }
-    .admin-action strong {
-      font-size: 15px;
-      color: #173125;
-      letter-spacing: -0.01em;
-    }
-    .admin-action small {
-      display: block;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.5;
-      font-weight: 500;
-    }
-    .admin-action[data-active="true"] {
-      background: linear-gradient(180deg, #0a7a3a, #08632f);
-      color: #fff;
-      border-color: transparent;
-      box-shadow: 0 14px 28px rgba(10, 122, 58, 0.18);
-    }
-    .admin-action[data-active="true"] strong,
-    .admin-action[data-active="true"] small {
-      color: inherit;
-    }
-    .admin-home-panel {
-      display: grid;
-      gap: 12px;
-      padding: 18px;
-      border: 1px solid rgba(10, 20, 10, 0.08);
-      border-radius: 14px;
-      background: linear-gradient(180deg, #ffffff, var(--card-soft));
-    }
-    .admin-home-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .admin-home-note {
-      padding: 14px;
-      border-radius: 12px;
-      background: rgba(10, 122, 58, 0.06);
-      border: 1px solid rgba(10, 122, 58, 0.12);
-    }
-    .workspace-card {
-      display: grid;
-      gap: 14px;
-      padding: 18px;
-      border: 1px solid rgba(10, 20, 10, 0.08);
-      border-radius: 14px;
-      background: linear-gradient(180deg, #ffffff, #fbfcfb);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
-    }
-    .workspace-card.hidden {
-      display: none;
-    }
-    .workspace-panel {
-      display: grid;
-      gap: 12px;
-    }
-    .workspace-panel.hidden {
-      display: none;
-    }
     .manager-toolbar {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -421,7 +326,7 @@
       margin-bottom: 12px;
     }
     @media (max-width: 680px) {
-      .row-2, .btn-row, .date-box, .admin-actions, .admin-home-grid { grid-template-columns: 1fr; }
+      .row-2, .btn-row, .view-switch, .date-box { grid-template-columns: 1fr; }
       .manager-toolbar { grid-template-columns: 1fr; }
       .event-item {
         align-items: start;
@@ -490,58 +395,13 @@
     </section>
 
     <section id="form-card" class="card hidden">
-      <div class="admin-shell">
-        <section class="admin-header">
-          <p class="section-kicker">Publishing Console</p>
-          <h2>Events Administration</h2>
-          <p>Use a simple academic workflow: create an event, attach a gallery, or manage existing records without digging through overlapping panels.</p>
-        </section>
+      <div class="view-switch" style="margin-bottom:0;">
+        <button id="show-event-panel-btn" type="button" class="secondary" data-active="false">Add Event</button>
+        <button id="show-gallery-panel-btn" type="button" class="secondary" data-active="false">Add Gallery</button>
+        <button id="toggle-manage-btn" type="button" class="secondary" data-active="false">Manage Events & Gallery</button>
+      </div>
 
-        <section class="admin-actions">
-          <button id="show-event-panel-btn" type="button" class="admin-action secondary" data-active="false">
-            <span>
-              <strong>Add Event</strong>
-              <small>Create a new event with poster, schedule, venue, and description.</small>
-            </span>
-          </button>
-          <button id="show-gallery-panel-btn" type="button" class="admin-action secondary" data-active="false">
-            <span>
-              <strong>Add Gallery</strong>
-              <small>Attach new gallery images to an existing event in a single structured form.</small>
-            </span>
-          </button>
-          <button id="toggle-manage-btn" type="button" class="admin-action secondary" data-active="false">
-            <span>
-              <strong>Manage Events & Gallery</strong>
-              <small>Review existing events, update records, replace posters, and remove gallery images.</small>
-            </span>
-          </button>
-        </section>
-
-        <section id="admin-home-panel" class="admin-home-panel">
-          <div class="admin-home-note">
-            <p class="section-kicker">Recommended Flow</p>
-            <h2 class="subtle-title">Start with one task</h2>
-            <p>Choose a single action above. Each workflow opens in its own workspace so the page stays focused and predictable.</p>
-          </div>
-          <div class="admin-home-grid">
-            <div class="subcard" style="margin-top:0;">
-              <h2 class="subtle-title">New Event</h2>
-              <p>Create the event record first. This generates the page and prepares the event for later gallery updates.</p>
-            </div>
-            <div class="subcard" style="margin-top:0;">
-              <h2 class="subtle-title">Gallery Upload</h2>
-              <p>Select an existing event and append images with descriptions. Existing gallery content is shown only when relevant.</p>
-            </div>
-            <div class="subcard" style="margin-top:0;">
-              <h2 class="subtle-title">Manage Existing</h2>
-              <p>Open one event at a time to edit its details, poster, and attached gallery without clutter from other records.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="workspace-card" class="workspace-card hidden">
-      <section id="manage-card" class="workspace-panel hidden">
+      <section id="manage-card" class="subcard hidden">
         <div class="manager-toolbar">
           <div>
             <h2>Manage Events & Gallery</h2>
@@ -618,7 +478,7 @@
         </section>
       </section>
 
-      <section id="event-panel" class="workspace-panel hidden">
+      <section id="event-panel" class="hidden">
         <div class="panel-head">
           <h2>Add Event</h2>
           <p>Use this to publish event details and the poster image.</p>
@@ -685,7 +545,7 @@
         <div id="submit-status" class="status hidden"></div>
       </section>
 
-      <section id="gallery-panel" class="workspace-panel hidden">
+      <section id="gallery-panel" class="hidden">
         <div class="panel-head">
           <h2>Add Gallery</h2>
           <p>Select an existing event, review its current gallery images, then append new images and descriptions to that event.</p>
@@ -725,8 +585,6 @@
 
         <div id="gallery-status" class="status hidden"></div>
       </section>
-        </section>
-      </div>
     </section>
   </div>
 
@@ -780,8 +638,6 @@
 
     const showEventPanelBtn = document.getElementById("show-event-panel-btn");
     const showGalleryPanelBtn = document.getElementById("show-gallery-panel-btn");
-    const adminHomePanel = document.getElementById("admin-home-panel");
-    const workspaceCard = document.getElementById("workspace-card");
     const eventPanel = document.getElementById("event-panel");
     const galleryPanel = document.getElementById("gallery-panel");
 
@@ -1298,8 +1154,6 @@
       const isManage = adminMode === "manage";
       const isGallery = adminMode === "gallery";
       const isEvent = adminMode === "event";
-      adminHomePanel.classList.toggle("hidden", !!adminMode);
-      workspaceCard.classList.toggle("hidden", !adminMode);
       manageCard.classList.toggle("hidden", !isManage);
       eventPanel.classList.toggle("hidden", !isEvent);
       galleryPanel.classList.toggle("hidden", !isGallery);
@@ -1318,8 +1172,6 @@
 
     function showAdminHome() {
       adminMode = "";
-      adminHomePanel.classList.remove("hidden");
-      workspaceCard.classList.add("hidden");
       manageCard.classList.add("hidden");
       eventPanel.classList.add("hidden");
       galleryPanel.classList.add("hidden");
