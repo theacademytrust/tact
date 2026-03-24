@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1240">
+  <title>Calendar - The Academy Trust (tAcT)</title>
+  <meta name="description" content="Calendar view of The Academy Trust (tAcT) gallery activity.">
+  <link rel="stylesheet" href="shared-ribbon.css">
+  <link rel="stylesheet" href="assets/css/public-site.css?v=20260323c">
+  <link rel="stylesheet" href="assets/css/calendar.css?v=20260323c">
+</head>
+<body data-page="calendar">
+  <div class="wrap">
+    <div id="site-header-root"></div>
+
+    <main id="main">
+      <section class="calendar-shell" aria-labelledby="calendar-heading">
+        <div class="calendar-toolbar">
+          <div class="calendar-title">
+            <h1 id="calendar-heading">Gallery Calendar</h1>
+          </div>
+
+          <div class="calendar-nav" aria-label="Calendar month navigation">
+            <button id="calendar-prev-btn" type="button">Previous Month</button>
+            <div id="calendar-month-label" class="calendar-month-label" aria-live="polite"></div>
+            <button id="calendar-next-btn" type="button">Next Month</button>
+          </div>
+        </div>
+
+        <div class="calendar-weekdays" aria-hidden="true">
+          <span>Sun</span>
+          <span>Mon</span>
+          <span>Tue</span>
+          <span>Wed</span>
+          <span>Thu</span>
+          <span>Fri</span>
+          <span>Sat</span>
+        </div>
+
+        <div id="calendar-grid" class="calendar-grid" aria-label="Monthly calendar grid"></div>
+      </section>
+    </main>
+
+    <div id="site-footer-root"></div>
+  </div>
+
+  <div id="calendar-date-modal" class="calendar-modal" hidden>
+    <div class="calendar-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="calendar-date-modal-title">
+      <div class="calendar-modal-header">
+        <h2 id="calendar-date-modal-title"></h2>
+        <button class="calendar-modal-close" type="button" aria-label="Close date gallery" data-modal-dismiss>&times;</button>
+      </div>
+      <div id="calendar-date-grid" class="calendar-date-grid"></div>
+    </div>
+  </div>
+
+  <div id="calendar-detail-modal" class="calendar-modal" hidden>
+    <div class="calendar-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="calendar-detail-title">
+      <button class="calendar-modal-close calendar-detail-close" type="button" aria-label="Close image details" data-modal-dismiss>&times;</button>
+      <div class="calendar-detail-layout">
+        <div class="calendar-detail-media">
+          <img id="calendar-detail-image" src="" alt="">
+        </div>
+        <div class="calendar-detail-copy">
+          <h2 id="calendar-detail-title"></h2>
+          <div class="calendar-detail-meta">
+            <span id="calendar-detail-date"></span>
+            <span id="calendar-detail-location"></span>
+          </div>
+          <p id="calendar-detail-description"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/site-chrome.js?v=20260323e"></script>
+  <script src="assets/js/events-config.js?v=20260323c"></script>
+  <script src="assets/js/gallery-data.js?v=20260323c"></script>
+  <script src="assets/js/calendar-page.js?v=20260323c"></script>
+  <script src="assets/js/page-router.js?v=20260323d"></script>
+</body>
+</html>

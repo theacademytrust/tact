@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1240">
+  <title>Donate – The Academy Trust (tAcT)</title>
+  <meta name="description" content="Support The Academy Trust (tAcT) and help strengthen science outreach, fellowships, and education across India.">
+  <link rel="icon" href="assets/images/tact-favicon.png" type="image/png">
+  <link rel="stylesheet" href="shared-ribbon.css">
+  <link rel="stylesheet" href="assets/css/public-site.css">
+  <style>
+    :root {
+      --bg: #fdfdfc;
+      --card: #ffffff;
+      --green: #0a7a3a;
+      --muted: #4a5568;
+      --radius: 18px;
+      --gold: rgba(184, 134, 11, 0.95);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        linear-gradient(180deg, rgba(10, 40, 20, 0.02), rgba(255, 255, 255, 0.02)),
+        radial-gradient(800px 400px at 10% 10%, rgba(10, 122, 58, 0.03), transparent 10%),
+        var(--bg);
+      color: #0f1b1a;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .wrap {
+      max-width: var(--site-wrap-max);
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    main {
+      margin-top: 24px;
+      margin-bottom: 40px;
+    }
+
+    .donate-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    .donate-hero {
+      position: relative;
+      padding: 32px 28px 28px;
+      border-radius: 18px;
+      background: var(--card);
+      color: #0f1b1a;
+      overflow: hidden;
+      box-shadow: 0 18px 60px rgba(20, 30, 20, 0.04);
+      border: 2px solid rgba(9, 9, 9, 0.02);
+      border-top: 3px solid rgba(184, 134, 11, 0.2);
+    }
+
+    .donate-hero::before {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      background:
+        url("assets/images/tact-logo.jpg") center/340px 340px no-repeat;
+      opacity: 0.03;
+      pointer-events: none;
+      transform: rotate(-10deg) translateX(12%);
+      filter: blur(0.5px);
+    }
+
+    .donate-hero-kicker {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .donate-hero h1 {
+      margin: 0 0 12px;
+      font-size: 34px;
+      letter-spacing: -0.03em;
+      color: var(--green);
+    }
+
+    .donate-hero p {
+      margin: 4px 0 14px;
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 40rem;
+      color: var(--muted);
+    }
+
+    .donate-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .donate-badge {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(10, 122, 58, 0.14);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(10, 122, 58, 0.08);
+    }
+
+    .donate-hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, var(--green), #07602c);
+      color: #ffffff;
+      border-color: rgba(184, 134, 11, 0.2);
+      box-shadow: 0 4px 12px rgba(6, 80, 40, 0.15);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(6, 80, 40, 0.2);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(180deg, #ffffff, #f6f5f2);
+      color: var(--muted);
+      border-color: rgba(0, 0, 0, 0.06);
+      box-shadow: 0 2px 8px rgba(10, 20, 10, 0.06);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(10, 20, 10, 0.1);
+    }
+
+    .donate-sidecard {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 22px 22px 20px;
+      box-shadow: 0 18px 60px rgba(20, 30, 20, 0.04);
+      border: 2px solid rgba(9, 9, 9, 0.02);
+      border-top: 3px solid rgba(184, 134, 11, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .donate-sidecard::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(140% 220% at 0% 0%, rgba(10, 122, 58, 0.06), transparent 55%),
+        radial-gradient(140% 220% at 100% 0%, rgba(184, 134, 11, 0.06), transparent 55%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .donate-sidecard-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .donate-sidecard h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      letter-spacing: -0.03em;
+      color: var(--green);
+    }
+
+    .donate-sidecard p {
+      margin: 4px 0 10px;
+      font-size: 15px;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .donate-details {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(148, 163, 184, 0.45);
+      font-size: 13px;
+      color: #1f2937;
+    }
+
+    .donate-details dt {
+      font-weight: 600;
+      margin-top: 6px;
+      color: #111827;
+    }
+
+    .donate-details dd {
+      margin: 0 0 4px;
+      white-space: pre-line;
+    }
+
+    .donate-section {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .donate-block {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 22px 22px 20px;
+      box-shadow: 0 18px 60px rgba(20, 30, 20, 0.04);
+      border: 2px solid rgba(9, 9, 9, 0.02);
+      border-top: 3px solid rgba(184, 134, 11, 0.2);
+    }
+
+    .donate-block h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: -0.03em;
+      color: var(--green);
+    }
+
+    .donate-block p, .donate-block li {
+      font-size: 15px;
+      color: #374151;
+      line-height: 1.6;
+    }
+
+    .donate-block ul {
+      padding-left: 18px;
+      margin: 6px 0 0;
+    }
+
+    .donate-highlight {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .donate-note {
+      font-size: 12px;
+      color: #6b7280;
+      margin-top: 10px;
+    }
+
+    .donate-tax-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(22, 163, 74, 0.06);
+      color: #065f46;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid rgba(22, 163, 74, 0.28);
+      margin-top: 8px;
+    }
+
+    .donate-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .donate-pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 11px;
+      color: #4b5563;
+      background: rgba(248, 250, 252, 0.9);
+    }
+
+    .qr-placeholder {
+      margin-top: 14px;
+      padding: 14px 12px;
+      border-radius: 14px;
+      border: 1px dashed rgba(148, 163, 184, 0.9);
+      background: repeating-linear-gradient(135deg, #f9fafb 0, #f9fafb 6px, #f3f4f6 6px, #f3f4f6 12px);
+      font-size: 12px;
+      color: #4b5563;
+    }
+
+    footer {
+      padding: 22px 0 10px;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid rgba(184, 134, 11, 0.25);
+      margin-top: 32px;
+    }
+
+    footer a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Desktop-only layout lock */
+    html,
+    body {
+      min-width: 1240px;
+    }
+
+    body {
+      overflow-x: auto;
+    }
+
+    .wrap {
+      width: 1200px;
+      max-width: none;
+      min-width: 1200px;
+      padding: 20px;
+    }
+
+    main {
+      margin-top: 24px;
+      margin-bottom: 40px;
+    }
+
+    .donate-hero h1 {
+      font-size: 34px;
+    }
+
+    .donate-layout {
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    }
+
+    .donate-section {
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    }
+
+    .donate-sidecard {
+      order: initial;
+    }
+
+    .donate-hero {
+      padding: 32px 28px 28px;
+    }
+
+    .donate-sidecard,
+    .donate-block {
+      padding: 22px 22px 20px;
+      border-radius: 18px;
+    }
+
+    .donate-badges,
+    .donate-hero-ctas {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .btn {
+      width: auto;
+    }
+
+    footer {
+      padding: 22px 0 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div id="site-header-root"></div>
+
+    <main id="main">
+      <section class="donate-layout" aria-labelledby="donate-heading">
+        <div class="donate-hero">
+          <p class="donate-hero-kicker">Support science in classrooms, colleges, and communities</p>
+          <h1 id="donate-heading">Donate to The Academy Trust</h1>
+          <p>
+            Your contribution helps take scientists, experiments, and conversations about science to schools and communities across India.
+            It also supports fellowships and the Chair Professorship that keep this work grounded in good science.
+          </p>
+          <div class="donate-badges">
+            <span class="donate-badge">Registered public charitable trust</span>
+            <span class="donate-badge">80G &amp; 12A tax exemptions</span>
+          </div>
+          <div class="donate-hero-ctas">
+            <a href="#how-to-give" class="btn btn-primary">See how to donate</a>
+            <a href="#bank-details" class="btn btn-secondary">Bank &amp; UPI details</a>
+          </div>
+        </div>
+
+        <aside class="donate-sidecard" aria-label="Donation summary">
+          <div class="donate-sidecard-inner">
+            <h2>Your support does three things</h2>
+            <p><span class="donate-highlight">1.</span> Strengthens outreach visits to schools, colleges, and village centres.</p>
+            <p><span class="donate-highlight">2.</span> Sustains fellowships and the Chair Professorship under tAcT.</p>
+            <p><span class="donate-highlight">3.</span> Builds a stable corpus so that this work can continue over years.</p>
+
+            <div class="donate-details" id="bank-details">
+              <h2>Bank transfer details</h2>
+              <dl>
+                <dt>Account name</dt>
+                <dd>The Academy Trust</dd>
+                <dt>Bank &amp; branch</dt>
+                <dd>State Bank of India, Sadashivanagar Branch(01811), Bengaluru</dd>
+                <dt>Account number</dt>
+                <dd>34446403068</dd>
+                <dt>IFSC code</dt>
+                <dd>SBIN0001811</dd>
+                <dt>Type</dt>
+                <dd>Savings account</dd>
+              </dl>
+
+              <div class="donate-tax-tag">
+                <span>80G / 12A eligible</span>
+              </div>
+              <p class="donate-note">
+                All donations are eligible for tax exemption under Sections 80G and 12A of the Income Tax Act, subject to prevailing rules.
+                Please share your PAN and address when you make a transfer so that we can issue a receipt.
+              </p>
+
+              <div class="qr-placeholder">
+                UPI / QR code will be made available soon.
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="donate-section" id="how-to-give">
+        <div class="donate-block">
+          <h2>How to make a donation</h2>
+          <p>You can support The Academy Trust in whichever way is easiest for you:</p>
+          <ul>
+            <li><strong>Online bank transfer</strong> to the account listed above.</li>
+            <li><strong>Cheque or Demand Draft</strong> in favour of <span class="donate-highlight">"The Academy Trust"</span>, payable at Bengaluru.</li>
+            <li><strong>Institutional or CSR support</strong> for specific outreach programmes or fellowships.</li>
+          </ul>
+          <p class="donate-note">
+            Cheques / DDs may be mailed to the Executive Secretary, The Academy Trust, Indian Academy of Sciences, Bengaluru.
+            Please include your contact details to help us acknowledge the support.
+          </p>
+        </div>
+
+        <div class="donate-block">
+          <h2>How your contribution is used</h2>
+          <ul>
+            <li>Small-group visits where students meet scientists and work with simple activities.</li>
+            <li>Travel, materials, and coordination for outreach in rural, tribal, and urban schools.</li>
+            <li>Support for fellowships and the Chair Professorship associated with tAcT.</li>
+            <li>Documentation and materials that teachers can continue using after the visit.</li>
+          </ul>
+          <div class="donate-pill-row">
+            <span class="donate-pill">Transparent audited accounts</span>
+            <span class="donate-pill">Corpus-based long-term support</span>
+            <span class="donate-pill">Focus on science and education</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer-root"></div>
+  </div>
+
+  <script src="assets/js/site-chrome.js?v=20260323e"></script>
+  <script>
+    (function () {
+      if (window.TACT_CHROME) {
+        if (typeof window.TACT_CHROME.ensureHeader === "function") {
+          window.TACT_CHROME.ensureHeader();
+        } else {
+          window.TACT_CHROME.renderHeader();
+        }
+        window.TACT_CHROME.initDropdowns();
+      }
+    })();
+  </script>
+  <script src="assets/js/page-router.js?v=20260323d"></script>
+</body>
+</html>

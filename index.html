@@ -1,0 +1,1262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The Academy Trust — Science outreach and programmes</title>
+    <meta name="viewport" content="width=1240">
+    <meta
+      name="description"
+      content="The Academy Trust (tAcT), started in 2014 by the Indian Academy of Sciences, runs science outreach, student fellowships, and a Chair Professorship."
+    >
+    <link rel="preload" as="image" href="flauntimages/Main pic roll/1.jpg" fetchpriority="high">
+    <link rel="stylesheet" href="shared-ribbon.css">
+    <link rel="stylesheet" href="assets/css/public-site.css">
+    <style>
+      /* —— Shared palette & typography (aligned with existing site) —— */
+      :root {
+        --bg: #fbfbfa;
+        --card: #ffffff;
+        --muted: #6b6f6b;
+        --green: #0a7a3a;
+        --gold: #b8860b;
+        --glass: rgba(10, 10, 10, 0.04);
+        --radius: 18px;
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+        color-scheme: light;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          linear-gradient(180deg, rgba(10, 40, 20, 0.02), rgba(255, 255, 255, 0.02)),
+          radial-gradient(800px 400px at 10% 10%, rgba(10, 122, 58, 0.03), transparent 10%),
+          var(--bg);
+        color: #0f1b1a;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.45;
+        padding-bottom: 64px;
+      }
+
+      .wrap {
+        max-width: var(--site-wrap-max);
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      main {
+        margin-top: 24px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0 0 8px;
+        letter-spacing: -0.03em;
+      }
+
+      h1 {
+        font-size: 34px;
+        color: var(--green);
+      }
+
+      h2 {
+        font-size: 22px;
+        color: var(--green);
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+
+      p {
+        margin: 4px 0 10px;
+      }
+
+      a {
+        color: var(--green);
+        text-decoration: none;
+        position: relative;
+      }
+
+      a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 1px;
+        background: var(--green);
+        opacity: 0.8;
+        transition: width 0.18s ease-out, opacity 0.18s ease-out;
+      }
+
+      a:hover::after {
+        width: 100%;
+        opacity: 1;
+      }
+
+      a:focus-visible {
+        outline: 2px solid var(--green);
+        outline-offset: 3px;
+      }
+
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--green);
+        color: #ffffff;
+        padding: 8px 12px;
+        text-decoration: none;
+        z-index: 100;
+        border-radius: 0 0 8px 0;
+      }
+
+      .skip-link:focus {
+        top: 0;
+      }
+
+      /* —— Layout & sections —— */
+      .section {
+        margin-bottom: 28px;
+      }
+
+      .surface {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 20px 20px 18px;
+        border: 2px solid rgba(9, 9, 9, 0.02);
+        border-top: 3px solid rgba(184, 134, 11, 0.2);
+        box-shadow: 0 18px 60px rgba(20, 30, 20, 0.04);
+      }
+
+      .section header p {
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      /* Hero-like arrival layout (desktop-first) */
+      .arrival {
+        display: grid;
+        grid-template-columns: minmax(260px, 3.2fr) minmax(0, 2.3fr);
+        gap: 32px;
+        align-items: stretch;
+      }
+
+      .arrival-copy {
+        max-width: 560px;
+      }
+
+      .arrival-copy p {
+        font-size: 15px;
+      }
+
+      .hero-visual {
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 24px 60px rgba(12, 20, 14, 0.16);
+        background:
+          linear-gradient(160deg, rgba(10, 122, 58, 0.16), rgba(10, 122, 58, 0.02)),
+          radial-gradient(220px 220px at 20% 0%, rgba(184, 134, 11, 0.3), transparent 65%),
+          radial-gradient(260px 260px at 80% 110%, rgba(10, 122, 58, 0.25), transparent 70%),
+          #fdfdfc;
+        min-height: 320px;
+        position: relative;
+        transform: scale(1.02);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .hero-visual::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(80% 80% at 50% 30%, rgba(255, 255, 255, 0.18), transparent 60%),
+          linear-gradient(180deg, rgba(248, 250, 248, 0.9), rgba(234, 241, 236, 0.6));
+        opacity: 1;
+        transition: opacity 0.35s ease;
+        pointer-events: none;
+      }
+
+      .hero-media-ready .hero-visual::after {
+        opacity: 0;
+      }
+
+      .hero-visual:hover {
+        transform: scale(1.05);
+        box-shadow: 0 32px 80px rgba(12, 20, 14, 0.2);
+      }
+
+      .hero-visual-note {
+        display: none;
+      }
+
+      .home-events-board {
+        padding: 14px;
+        border-top-color: rgba(10, 122, 58, 0.24);
+      }
+
+      .home-events-layout {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 10px;
+        align-items: start;
+      }
+
+      .home-events-pane {
+        min-width: 0;
+        align-self: start;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.94));
+        border: 1px solid rgba(10, 20, 10, 0.08);
+        border-radius: 12px;
+        padding: 8px;
+      }
+
+      .home-events-pane h2 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+
+      .home-vertical-window {
+        height: 286px;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(10, 20, 10, 0.06);
+        border-radius: 10px;
+        padding: 0;
+        background: #ffffff;
+      }
+
+      .home-vertical-track {
+        display: grid;
+        gap: 0;
+      }
+
+      .home-upcoming-card {
+        height: 286px;
+        display: grid;
+        grid-template-columns: minmax(106px, 36%) minmax(0, 1fr);
+        gap: 0;
+      }
+
+      .home-upcoming-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        object-position: center;
+        background: linear-gradient(180deg, #f8faf8, #eef3ef);
+        padding: 0;
+      }
+
+      .home-upcoming-copy {
+        padding: 10px;
+      }
+
+      .home-upcoming-copy h3 {
+        margin: 0 0 6px;
+        font-size: 16px;
+        color: var(--green);
+        line-height: 1.25;
+      }
+
+      .home-upcoming-copy p {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.45;
+        color: #2f3d38;
+      }
+
+      .home-upcoming-dots {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        display: inline-flex;
+        gap: 6px;
+        z-index: 3;
+        padding: 4px 6px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(4px);
+      }
+
+      .home-upcoming-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        border: 0;
+        background: rgba(10, 122, 58, 0.28);
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .home-upcoming-dot.is-active {
+        background: rgba(10, 122, 58, 0.92);
+      }
+
+      .home-horizontal-window {
+        overflow: hidden;
+        max-height: none;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        background: transparent;
+      }
+
+      .home-horizontal-track {
+        display: grid;
+        gap: 7px;
+      }
+
+      .home-events-item {
+        display: grid;
+        grid-template-columns: 66px minmax(0, 1fr);
+        gap: 7px;
+        align-items: start;
+        padding: 6px;
+        border-radius: 10px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), #ffffff);
+        border: 1px solid rgba(10, 20, 10, 0.08);
+      }
+
+      .home-events-item img {
+        width: 66px;
+        height: 86px;
+        object-fit: fill;
+        object-position: center;
+        border-radius: 7px;
+        background: linear-gradient(180deg, #f8faf8, #eef3ef);
+        padding: 0;
+      }
+
+      .home-events-item--past {
+        min-width: 0;
+        grid-template-columns: 70px minmax(0, 1fr);
+      }
+
+      .home-events-item--past img {
+        width: 70px;
+        height: 94px;
+      }
+
+      .home-events-meta {
+        margin: 0 0 3px;
+        font-size: 12px;
+        line-height: 1.35;
+        color: var(--muted);
+      }
+
+      .home-events-item h3 {
+        margin: 0 0 3px;
+        font-size: 14px;
+        line-height: 1.3;
+        color: var(--green);
+      }
+
+      .home-events-item p {
+        margin: 0;
+        font-size: 12px;
+        line-height: 1.45;
+        color: #2f3d38;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .home-events-empty {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      /* Simple outreach grid */
+      .outreach-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 12px;
+      }
+
+      .outreach-item {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), #ffffff);
+        border-radius: 16px;
+        padding: 16px 18px;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        border-left: 3px solid rgba(184, 134, 11, 0.3);
+        box-shadow: 0 12px 36px rgba(12, 20, 10, 0.04);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+      }
+
+      .outreach-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 48px rgba(12, 20, 10, 0.08);
+        border-left-color: rgba(184, 134, 11, 0.5);
+      }
+
+      .outreach-item h3 {
+        margin-bottom: 4px;
+        color: var(--green);
+      }
+
+      .outreach-item p {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      /* Photo grid for outreach images */
+      .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      /* Slideshow for hero visual */
+      .slideshow-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .slideshow-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .slideshow-slide.active {
+        opacity: 1;
+      }
+
+      .slideshow-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        opacity: 0;
+        transition: opacity 0.28s ease, transform 1.5s ease-in-out;
+      }
+
+      .hero-media-ready .slideshow-slide img {
+        opacity: 1;
+      }
+
+      .slideshow-slide.active img {
+        transform: scale(1.2);
+        animation: zoomOut 1.5s ease-in-out forwards;
+      }
+
+      @keyframes zoomOut {
+        0% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* Flipping image boxes: smooth Mac-like continuous flip */
+      .flipping-images {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 32px;
+        width: 100%;
+      }
+
+      .flip-box {
+        position: relative;
+        width: 100%;
+        height: 220px;
+        perspective: 1200px;
+        border-radius: 18px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+      .flip-box:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(12, 20, 14, 0.15);
+      }
+
+      .flip-box-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        animation: flipCarousel 7s cubic-bezier(0.33, 0.01, 0.16, 0.99) infinite;
+      }
+
+      /* Slightly staggered starts so they feel like a mechanical trio */
+      .flipping-images .flip-box:nth-child(2) .flip-box-inner {
+        animation-delay: 1.2s;
+      }
+
+      .flipping-images .flip-box:nth-child(3) .flip-box-inner {
+        animation-delay: 2.4s;
+      }
+
+      /* Long show, quick but smooth flip, then show again */
+      @keyframes flipCarousel {
+        0%, 38% {
+          transform: rotateY(0deg);
+        }
+        46% {
+          transform: rotateY(190deg); /* tiny overshoot */
+        }
+        52% {
+          transform: rotateY(180deg);
+        }
+        60%, 88% {
+          transform: rotateY(180deg);
+        }
+        96% {
+          transform: rotateY(370deg); /* overshoot back */
+        }
+        100% {
+          transform: rotateY(360deg);
+        }
+      }
+
+      .flip-box-front, .flip-box-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 18px;
+        overflow: hidden;
+      }
+
+      .flip-box-back {
+        transform: rotateY(180deg);
+      }
+
+      .flip-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        transition: transform 0.5s ease;
+      }
+
+      .flip-box-link {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.2s ease;
+      }
+
+      .flip-box-link:hover {
+        transform: scale(1.02);
+      }
+
+      .flip-box-link:hover .flip-box {
+        box-shadow: 0 12px 32px rgba(10, 20, 10, 0.15);
+      }
+
+      .flip-box:hover img {
+        transform: scale(1.1);
+      }
+
+      .photo-grid figure {
+        margin: 0;
+        border-radius: 14px;
+        overflow: hidden;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.9), #ffffff),
+          radial-gradient(220px 220px at 10% 0%, rgba(10, 122, 58, 0.08), transparent 65%);
+        box-shadow: 0 10px 30px rgba(12, 20, 10, 0.04);
+      }
+
+      .photo-grid img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: fill;
+        aspect-ratio: 4 / 3;
+      }
+
+      .photo-grid figcaption {
+        font-size: 12px;
+        color: var(--muted);
+        padding: 6px 8px 8px;
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      .outreach-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+        margin-top: 32px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(184, 134, 11, 0.15);
+      }
+
+      .outreach-links .btn {
+        margin: 0;
+      }
+
+      .outreach-item h3 a {
+        color: var(--green);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .outreach-item h3 a:hover {
+        color: #07602c;
+        text-decoration: underline;
+      }
+
+      .outreach-item-link {
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        display: block;
+      }
+
+      .outreach-item-link:hover {
+        transform: translateY(-2px);
+      }
+
+      .outreach-item-link:hover .outreach-item {
+        box-shadow: 0 12px 32px rgba(10, 20, 10, 0.12);
+        border-top-color: rgba(184, 134, 11, 0.4);
+      }
+
+      /* CTAs */
+      .ctas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 20px;
+        border-radius: 14px;
+        border: 1px solid transparent;
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+        text-decoration: none;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          background 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .btn-primary {
+        background: linear-gradient(180deg, var(--green), #07602c);
+        color: #ffffff;
+        box-shadow: 0 12px 36px rgba(6, 80, 40, 0.14);
+        border: 1px solid rgba(184, 134, 11, 0.35);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-4px) scale(1.01);
+        box-shadow: 0 18px 52px rgba(6, 80, 40, 0.26);
+      }
+
+      .ctas .btn-secondary {
+        background: linear-gradient(180deg, var(--green), #07602c);
+        color: #ffffff;
+        box-shadow: 0 12px 36px rgba(6, 80, 40, 0.14);
+        border: 1px solid rgba(184, 134, 11, 0.35);
+      }
+
+      .ctas .btn-secondary:hover {
+        transform: translateY(-4px) scale(1.01);
+        box-shadow: 0 18px 52px rgba(6, 80, 40, 0.26);
+        border-color: rgba(184, 134, 11, 0.35);
+      }
+
+      .btn-secondary {
+        background: linear-gradient(180deg, #ffffff, #f6f5f2);
+        color: var(--muted);
+        border-color: rgba(0, 0, 0, 0.06);
+        box-shadow: 0 8px 24px rgba(10, 20, 10, 0.06);
+      }
+
+      .btn-secondary:hover {
+        transform: translateY(-3px) scale(1.01);
+        box-shadow: 0 14px 38px rgba(10, 20, 10, 0.16);
+        border-color: rgba(0, 0, 0, 0.12);
+      }
+
+      .btn:focus-visible {
+        outline: 2px solid var(--green);
+        outline-offset: 3px;
+      }
+
+      /* How-it-works list */
+      .steps {
+        padding-left: 20px;
+        margin: 8px 0 4px;
+      }
+
+      .steps li {
+        margin-bottom: 6px;
+      }
+
+      /* Info dropdown cards */
+      .info-card {
+        border-radius: 18px;
+        border: 1px solid rgba(15, 23, 42, 0.06);
+        box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
+        overflow: hidden;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), #f9fafb);
+      }
+
+      .info-card-toggle {
+        width: 100%;
+        border: 0;
+        background: transparent;
+        padding: 14px 16px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        cursor: pointer;
+      }
+
+      .info-card-toggle:focus-visible {
+        outline: 2px solid var(--green);
+        outline-offset: 2px;
+      }
+
+      .info-card-heading h2 {
+        margin: 0 0 4px;
+        font-size: 18px;
+      }
+
+      .info-card-heading p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .info-card-toggle::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        border: 2px solid rgba(184, 134, 11, 0.7);
+        border-left-color: transparent;
+        border-top-color: transparent;
+        transform: rotate(45deg);
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+
+      .info-card-toggle[aria-expanded="true"]::after {
+        transform: rotate(225deg);
+        border-color: rgba(10, 122, 58, 0.85);
+        border-left-color: transparent;
+        border-top-color: transparent;
+      }
+
+      .info-card-body {
+        padding: 0 16px 14px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-4px);
+        transition:
+          max-height 0.3s ease,
+          opacity 0.25s ease,
+          transform 0.25s ease;
+      }
+
+      .info-card.info-card--open .info-card-body {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Footer */
+      footer[aria-label="Site footer"] {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(184, 134, 11, 0.25);
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      /* Optimized animations */
+      .fade-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: opacity, transform;
+      }
+
+      .fade-section.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .surface:hover {
+        box-shadow: 0 20px 70px rgba(10, 20, 10, 0.06);
+        border-color: rgba(9, 9, 9, 0.04);
+      }
+
+      .surface:focus-within {
+        border-color: rgba(10, 122, 58, 0.35);
+      }
+
+      /* Respect reduced motion preferences */
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .fade-section {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+
+      }
+
+      /* Desktop-only layout lock */
+      html,
+      body {
+        min-width: 1240px;
+      }
+
+      body {
+        overflow-x: auto;
+      }
+
+      .wrap {
+        width: 1200px;
+        max-width: none;
+        min-width: 1200px;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .arrival {
+        grid-template-columns: minmax(260px, 3.2fr) minmax(0, 2.3fr);
+      }
+
+      .home-events-layout {
+        grid-template-columns: 1.2fr 1fr;
+      }
+
+      .outreach-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .photo-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .flipping-images {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .surface {
+        padding: 20px 20px 18px;
+      }
+
+      .hero-visual {
+        min-height: 320px;
+      }
+
+      .home-upcoming-card {
+        height: 286px;
+        grid-template-columns: minmax(106px, 36%) minmax(0, 1fr);
+      }
+
+      .home-vertical-window {
+        height: 286px;
+        max-height: none;
+      }
+
+      .home-events-item,
+      .home-events-item--past {
+        grid-template-columns: 70px minmax(0, 1fr);
+      }
+
+      .home-events-item img,
+      .home-events-item--past img {
+        width: 70px;
+        height: 94px;
+      }
+
+      .flip-box {
+        height: 240px;
+      }
+    </style>
+    <!-- Include shared ribbon CSS -->
+    <link rel="stylesheet" href="shared-ribbon.css">
+  </head>
+  <body>
+    <div class="wrap">
+      <div id="site-header-root"></div>
+
+      <main id="main">
+        <!-- ARRIVAL: first screen -->
+        <section
+          class="section surface fade-section arrival"
+          aria-labelledby="arrival-heading"
+        >
+          <aside class="hero-visual" aria-label="Photograph from an outreach visit">
+            <div class="slideshow-container">
+              <div class="slideshow-slide active">
+                <img
+                  src="flauntimages/Main pic roll/1.jpg"
+                  alt=""
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                >
+              </div>
+              <div class="slideshow-slide">
+                <img
+                  src="flauntimages/Main pic roll/2.jpg"
+                  alt=""
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                >
+              </div>
+              <div class="slideshow-slide">
+                <img
+                  src="flauntimages/Main pic roll/3.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+              <div class="slideshow-slide">
+                <img
+                  src="flauntimages/Main pic roll/4.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+              <div class="slideshow-slide">
+                <img
+                  src="flauntimages/Main pic roll/5.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+              <div class="slideshow-slide">
+                <img
+                  src="flauntimages/Main pic roll/6.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+              <div class="slideshow-slide">
+                <img
+                  src="flauntimages/Main pic roll/7.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+              <div class="slideshow-slide">
+                <img
+                  src="flauntimages/Main pic roll/8.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+            </div>
+          </aside>
+
+          <div class="arrival-copy">
+            <header>
+              <h1 id="arrival-heading">The Academy Trust (tAcT)</h1>
+              <p>
+                The Academy Trust is a public charitable trust set up in 2014 by the Indian Academy of Sciences, which was founded in 1934 by Nobel laureate Sir C. V. Raman. It was created to make science education more tangible in schools, colleges, and in society at large.
+              </p>
+            </header>
+            <p>
+              tAcT works through three strands: science education outreach programmes such as Vijnana Harate, Aranya, Yuvati, Nataka and Ganitha Mela; internships that link students, academia, and industry; and an endowment Chair Professorship that brings leading scientists to classrooms and research centres.
+            </p>
+          </div>
+        </section>
+
+        <section class="section surface fade-section home-events-board" aria-labelledby="home-events-heading">
+          <div class="home-events-layout">
+            <div class="home-events-pane" id="home-upcoming-pane">
+              <h2 id="home-events-heading">Upcoming Events</h2>
+              <div class="home-vertical-window">
+                <div id="home-upcoming-track" class="home-vertical-track"></div>
+                <div id="home-upcoming-dots" class="home-upcoming-dots" aria-label="Upcoming event navigation"></div>
+              </div>
+            </div>
+            <div class="home-events-pane" id="home-previous-pane">
+              <h2>Past Events</h2>
+              <div class="home-horizontal-window">
+                <div id="home-previous-track" class="home-horizontal-track"></div>
+              </div>
+              <div style="margin-top: 10px;">
+                <a class="btn btn-secondary" href="events.html#past">See more past events</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- OUTREACH OVERVIEW: what we do in institutions and communities -->
+        <section
+          class="section surface fade-section"
+          aria-labelledby="outreach-overview-heading"
+        >
+          <header>
+            <h2 id="outreach-overview-heading">What we do in schools, colleges, and communities</h2>
+            <p>
+              Our outreach programmes bring scientists and educators to classrooms, halls, and village centres in small, structured groups.
+            </p>
+          </header>
+
+          <!-- Future: outreach blocks with visuals and short descriptions for each program -->
+          <div class="outreach-grid" aria-label="Outreach experiences">
+            <a href="vijnana-harate.html" class="outreach-item-link">
+              <article class="outreach-item" aria-labelledby="harate-title">
+                <h3 id="harate-title">Vijnana Harate</h3>
+                <p>
+                  Informal conversations between students and scientists, usually held in classrooms or small groups on campus.
+                </p>
+              </article>
+            </a>
+
+            <a href="vijnana-aranya.html" class="outreach-item-link">
+              <article class="outreach-item" aria-labelledby="aranya-title">
+                <h3 id="aranya-title">Vijnana Aranya</h3>
+                <p>
+                  Outreach visits in rural, tribal, and remote areas, often in partnership with local schools and community organisations.
+                </p>
+              </article>
+            </a>
+
+            <a href="vijnana-yuvati.html" class="outreach-item-link">
+              <article class="outreach-item" aria-labelledby="yuvati-title">
+                <h3 id="yuvati-title">Vijnana Yuvati</h3>
+                <p>
+                  Sessions that centre girls and young women in science, with space for questions about study, work, and everyday life.
+                </p>
+              </article>
+            </a>
+
+            <a href="vijnana-nataka.html" class="outreach-item-link">
+              <article class="outreach-item" aria-labelledby="nataka-title">
+                <h3 id="nataka-title">Vijnana Nataka</h3>
+                <p>
+                  Theatre and music used as tools for science communication, with students preparing and performing short pieces.
+                </p>
+              </article>
+            </a>
+
+            <a href="ganitha-mela.html" class="outreach-item-link">
+              <article class="outreach-item" aria-labelledby="mela-title">
+                <h3 id="mela-title">Ganitha Mela</h3>
+                <p>
+                  Hands-on mathematics activities where students handle objects, puzzles, and simple experiments linked to school topics.
+                </p>
+              </article>
+            </a>
+          </div>
+
+          <!-- Continuously flipping image boxes -->
+          <div class="flipping-images" aria-label="Outreach program showcase">
+            <a href="vijnana-harate.html" class="flip-box-link">
+              <div class="flip-box" id="flip-box-1">
+                <div class="flip-box-inner">
+                  <div class="flip-box-front">
+                    <img src="flauntimages/Vijnana Harate/1.jpg" alt="Vijnana Harate - conversations with scientists" loading="lazy" decoding="async">
+                  </div>
+                  <div class="flip-box-back">
+                    <img src="flauntimages/Vijnana Harate/3.jpg" alt="Vijnana Harate - simple experiments" loading="lazy" decoding="async">
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="vijnana-nataka.html" class="flip-box-link">
+              <div class="flip-box" id="flip-box-2">
+                <div class="flip-box-inner">
+                  <div class="flip-box-front">
+                    <img src="flauntimages/Vijnana Nataka/1.jpg" alt="Vijnana Nataka - theatre and science" loading="lazy" decoding="async">
+                  </div>
+                  <div class="flip-box-back">
+                    <img src="flauntimages/Vijnana Nataka/3.jpg" alt="Vijnana Nataka - community performance" loading="lazy" decoding="async">
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="vijnana-yuvati.html" class="flip-box-link">
+              <div class="flip-box" id="flip-box-3">
+                <div class="flip-box-inner">
+                  <div class="flip-box-front">
+                    <img src="flauntimages/Vijnana Yuvati/1.jpg" alt="Vijnana Yuvati - women in STEM" loading="lazy" decoding="async">
+                  </div>
+                  <div class="flip-box-back">
+                    <img src="flauntimages/Vijnana Yuvati/2.jpg" alt="Vijnana Yuvati - mentorship and workshops" loading="lazy" decoding="async">
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Links to detailed outreach subpages -->
+          <div class="outreach-links">
+            <a href="vijnana-harate.html" class="btn btn-secondary">Learn about Vijnana Harate</a>
+            <a href="vijnana-aranya.html" class="btn btn-secondary">Explore Vijnana Aranya</a>
+            <a href="vijnana-yuvati.html" class="btn btn-secondary">Discover Vijnana Yuvati</a>
+            <a href="vijnana-nataka.html" class="btn btn-secondary">See Vijnana Nataka</a>
+            <a href="ganitha-mela.html" class="btn btn-secondary">Join Ganitha Mela</a>
+          </div>
+        </section>
+
+        <!-- HOW IT WORKS: for educators and institutions -->
+        <section
+          class="section surface fade-section"
+          aria-labelledby="how-it-works-heading"
+        >
+          <article class="info-card" aria-labelledby="how-it-works-heading">
+            <button
+              class="info-card-toggle"
+              type="button"
+              aria-expanded="false"
+              data-info-card-target="how-it-works-body"
+            >
+              <div class="info-card-heading">
+                <h2 id="how-it-works-heading">How a school or college works with us</h2>
+                <p>From the first email to the final discussion, most visits follow a simple four-step sequence.</p>
+              </div>
+            </button>
+            <div
+              id="how-it-works-body"
+              class="info-card-body"
+            >
+              <ol class="steps">
+                <li>
+                  You write to us with a short note about your institution, location, and the group of students you have in mind.
+                </li>
+                <li>
+                  We speak with you to understand your timetable, language of instruction, and possible dates.
+                </li>
+                <li>
+                  Together, we choose an outreach format that fits your students, staff availability, and space.
+                </li>
+                <li>
+                  We visit your campus or centre, run the sessions, and keep time for questions and discussion.
+                </li>
+              </ol>
+            </div>
+          </article>
+        </section>
+
+        <!-- TRUST: who runs this and how it is held -->
+        <section
+          class="section surface fade-section"
+          aria-labelledby="trust-heading"
+        >
+          <article class="info-card" aria-labelledby="trust-heading">
+            <button
+              class="info-card-toggle"
+              type="button"
+              aria-expanded="false"
+              data-info-card-target="trust-body"
+            >
+              <div class="info-card-heading">
+                <h2 id="trust-heading">Who runs this work and how we stay accountable</h2>
+                <p>The Academy Trust is a registered public charitable trust with audited accounts and statutory registrations.</p>
+              </div>
+            </button>
+            <div
+              id="trust-body"
+              class="info-card-body"
+            >
+              <p>
+                The Academy Trust was started in 2014 by the Indian Academy of Sciences, which was founded in 1934 by Sir C. V. Raman.
+              </p>
+              <p>
+                The Trust holds a corpus fund, maintains audited accounts, and keeps its registrations, including 80G and 12A, up to date so that support is handled with care.
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <!-- CLOSING ACTIONS: next steps for visitors -->
+        <section
+          class="section surface fade-section"
+          aria-labelledby="closing-heading"
+        >
+          <header>
+            <h2 id="closing-heading">If you are thinking about working with us</h2>
+            <p>
+              We hear from teachers, students, administrators, and donors, and we try to give clear and practical replies.
+            </p>
+          </header>
+
+          <p>
+            You can write to explore an outreach visit, to ask about fellowships and the Chair Professorship, or to discuss support for the corpus. We try to respond with clear next steps and realistic timelines.
+          </p>
+
+          <div class="ctas" aria-label="Next steps">
+            <a
+              href="mailto:trust@ias.ac.in?subject=Outreach%20visit%20request&amp;body=Please%20share%20a%20few%20lines%20about%20your%20institution,%20location,%20and%20students."
+              class="btn btn-primary"
+            >Request a Harate</a>
+            <a
+              href="donate.html"
+              class="btn btn-secondary"
+            >Donate to the cause of science</a>
+            <a
+              href="mailto:trust@ias.ac.in?subject=Question%20for%20The%20Academy%20Trust%20(tAcT)"
+              class="btn btn-secondary"
+            >Contact the tAcT office</a>
+          </div>
+        </section>
+      </main>
+
+      <div id="site-footer-root"></div>
+    </div>
+
+    <script src="assets/js/site-chrome.js?v=20260323e"></script>
+    <script src="assets/js/events-config.js"></script>
+    <script src="content/events/events-feed.js"></script>
+    <script src="assets/js/events-feed-loader.js"></script>
+    <script src="assets/js/home-events-board.js"></script>
+    <script src="assets/js/index-page.js"></script>
+    <script src="assets/js/page-router.js?v=20260323d"></script>
+  </body>
+</html>

@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>The Academy Trust — Outreach & Vijnana Harate</title>
+<meta name="description" content="tAcT (The Academy Trust) — outreach, Vijnana Harate tribal outreach, talks, events and educational programmes from the Indian Academy of Sciences." />
+<meta name="keywords" content="The Academy Trust, tAcT, Indian Academy of Sciences, Vijnana Harate, science outreach, education, tribal outreach, Bengaluru" />
+<meta name="author" content="The Academy Trust" />
+<meta property="og:title" content="The Academy Trust — Outreach & Vijnana Harate" />
+<meta property="og:description" content="tAcT brings science & learning to communities through Vijnana Harate tribal outreach, events, talks and hands-on programmes." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+  /* —— Theme palette —— */
+  :root{
+    --bg: #fbfbfa;
+    --card: #ffffff;
+    --muted: #6b6f6b;
+    --green: #0a7a3a;      /* primary */
+    --gold:  #b8860b;      /* accent */
+    --coral: #ff6b6b;      /* kid accent */
+    --sky:   #37b3e6;      /* kid accent */
+    --purple:#8f5ad6;      /* kid accent */
+    --glass: rgba(10,10,10,0.04);
+    --radius: 18px;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    color-scheme: light;
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:
+      linear-gradient(180deg, rgba(10,40,20,0.02), rgba(255,255,255,0.02)),
+      radial-gradient(800px 400px at 10% 10%, rgba(10,122,58,0.03), transparent 10%),
+      var(--bg);
+    color:#0f1b1a;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.45;
+    padding-bottom:64px;
+  }
+
+  .wrap{max-width:1200px;margin:0 auto;padding:20px;}
+  img{max-width:100%;height:auto;display:block}
+  figure{margin:0}
+
+  header.dock{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 6px;margin-bottom:18px;position:sticky;top:12px;background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.6));border-radius:28px;padding-left:18px;padding-right:18px;box-shadow:0 8px 30px rgba(10,20,10,0.06);backdrop-filter: blur(6px) saturate(120%);}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+  .brand .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(180deg,var(--green),#035b2e);box-shadow:0 8px 24px rgba(10,120,58,0.12);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:18px}
+  .brand .text strong{display:block}
+  .brand .text small{display:block;color:var(--muted);font-size:12px}
+  nav.dock-nav ul{display:flex;gap:8px;list-style:none;margin:0;padding:0}
+  nav.dock-nav a{display:inline-grid;place-items:center;padding:8px 12px;border-radius:12px;text-decoration:none;color:inherit;font-weight:600;font-size:14px;background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.5));border: 2px double rgba(0,0,0,0.03); box-shadow: 0 6px 16px rgba(18,30,22,0.04);}
+  nav.dock-nav a:hover{transform:translateY(-6px);transition:transform .18s ease, box-shadow .18s;box-shadow:0 18px 44px rgba(10,20,10,0.08)}
+  nav.dock-nav a:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+
+  .hero{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:center;margin:14px 0 28px}
+  .hero-art{border-radius:20px;overflow:hidden;box-shadow:0 18px 50px rgba(12,20,14,0.12);background:linear-gradient(180deg,rgba(0,0,0,0.06),rgba(0,0,0,0.02));max-height:420px}
+  .hero-art img{width:100%;height:100%;object-fit:cover}
+  .hero-card{background:var(--card);border-radius:20px;padding:24px;box-shadow:0 18px 60px rgba(20,30,20,0.04);border:2px solid rgba(9,9,9,0.02)}
+  .hero h1{font-size:34px;margin:0 0 8px;color:var(--green);letter-spacing:-0.5px}
+  .hero p.lead{color:var(--muted);margin:6px 0 14px}
+  .btn{padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:700;display:inline-block}
+  .btn-primary{background:linear-gradient(180deg,var(--green),#07602c);color:white;box-shadow:0 10px 30px rgba(6,80,40,0.12);transition:transform .2s ease, box-shadow .2s ease}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(6,80,40,0.18)}
+  .btn-primary:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+  .btn-ghost{background:transparent;border:1px solid rgba(10,10,10,0.06);color:var(--muted);transition:border-color .2s ease, color .2s ease}
+  .btn-ghost:hover{border-color:var(--green);color:var(--green)}
+  .btn-ghost:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+  button:focus-visible, input:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+
+  .split-two{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-bottom:18px}
+  .panel{background:var(--card);border-radius:14px;padding:16px;border:2px solid rgba(0,0,0,0.03);box-shadow:0 8px 30px rgba(10,20,10,0.03)}
+
+  .section-title{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+  .section-title h2{margin:0;font-size:20px;color:var(--green)}
+  .events-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:12px}
+  .event-card{border-radius:14px;padding:12px;background:linear-gradient(180deg,rgba(255,255,255,0.6),#fff);box-shadow: 0 12px 30px rgba(12,20,10,0.04);border:2px solid rgba(8,8,8,0.02);position:relative;overflow:hidden;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease}
+  .event-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(12,20,10,0.08)}
+  .event-card:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+  .event-card .date{display:inline-block;padding:6px 8px;border-radius:10px;background:linear-gradient(180deg,var(--gold),#a77108);color:white;font-weight:800;margin-bottom:8px;font-size:13px}
+  .event-card h3{margin:6px 0 6px;font-size:16px}
+  .event-card p{color:var(--muted);font-size:14px;margin:0}
+  .pill{display:inline-block;padding:6px 8px;border-radius:999px;background:linear-gradient(90deg,var(--coral),#ff8b8b);color:white;font-weight:700;font-size:12px;margin-right:6px}
+
+  .tabs{display:flex;gap:8px;flex-wrap:wrap}
+  .tab{padding:8px 12px;border-radius:12px;border:1px solid rgba(0,0,0,0.04);cursor:pointer;background:linear-gradient(180deg,rgba(255,255,255,0.8),#fff);font-weight:700;transition:all .2s ease}
+  .tab:hover{background:linear-gradient(180deg,rgba(10,122,58,0.08),rgba(10,122,58,0.05));border-color:var(--green)}
+  .tab.active{box-shadow:0 12px 40px rgba(10,20,10,0.04);border:2px double rgba(0,0,0,0.04);background:linear-gradient(180deg,var(--green),#07602c);color:white}
+  .tab:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+
+  .people-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:12px}
+  .person{padding:12px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.6),#fff);text-align:center}
+  .avatar{width:80px;height:80px;border-radius:999px;margin:0 auto 10px;background:linear-gradient(180deg,var(--sky),#2ea6da);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:20px;box-shadow:0 8px 24px rgba(0,0,0,0.06)}
+
+  .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+  .imgplaceholder{height:120px;border-radius:10px;background:linear-gradient(180deg,rgba(0,0,0,0.03),rgba(0,0,0,0.01));display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
+
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .iframe-ratio{position:relative;padding-top:56.25%;overflow:hidden;border-radius:10px}
+  .iframe-ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  footer.site-foot{margin-top:30px;padding:18px;text-align:center;color:var(--muted)}
+  .trust-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .badge{padding:6px 10px;border-radius:999px;background:linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01));font-weight:700;color:var(--muted)}
+
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;gap:12px}
+    .split-two{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr}
+    header.dock{flex-direction:column;align-items:stretch}
+    nav.dock-nav ul{justify-content:center;flex-wrap:wrap}
+    .hero h1{font-size:28px}
+  }
+  @media (max-width:600px){
+    .wrap{padding:12px}
+    .events-grid{grid-template-columns:1fr}
+    .people-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+    .gallery-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr))}
+  }
+  /* Documents section styling */
+  .docs-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  .docs-list li{background:linear-gradient(180deg,#fff,#fbfbfb);padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.04);transition:transform .2s ease, box-shadow .2s ease}
+  .docs-list li:hover{transform:translateX(4px);box-shadow:0 4px 12px rgba(0,0,0,0.06)}
+  .docs-meta{color:var(--muted);font-size:13px;margin-top:8px}
+  
+  /* Utility classes */
+  .ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .section-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .section-subtitle{color:var(--muted);font-size:13px}
+  .fade-in{animation:fadeIn .4s ease-in}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  
+  /* Loading and empty states */
+  .empty-state{color:var(--muted);text-align:center;padding:24px;font-style:italic}
+  .loading{opacity:0.6;pointer-events:none}
+  
+  /* Form enhancements */
+  input[type="email"]{transition:border-color .2s ease, box-shadow .2s ease}
+  input[type="email"]:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(10,122,58,0.1)}
+  .form-message{margin-top:8px;padding:8px;border-radius:8px;font-size:13px;display:none}
+  .form-message.success{background:rgba(10,122,58,0.1);color:var(--green);border:1px solid rgba(10,122,58,0.2)}
+  .form-message.error{background:rgba(255,107,107,0.1);color:var(--coral);border:1px solid rgba(255,107,107,0.2)}
+  
+  /* Skip to content link for accessibility */
+  .skip-link{position:absolute;top:-40px;left:0;background:var(--green);color:white;padding:8px;text-decoration:none;z-index:100}
+  .skip-link:focus{top:0}
+</style>
+</head>
+<body>
+  <a href="#home" class="skip-link">Skip to main content</a>
+  <div class="wrap">
+    <header class="dock" role="banner" aria-label="Top">
+      <a class="brand" href="alright.html">
+        <div class="logo" aria-hidden="true">tA</div>
+        <div class="text">
+          <strong>The Academy Trust</strong>
+          <small>tAcT — Outreach &amp; Vijnana Harate</small>
+        </div>
+      </a>
+
+      <nav class="dock-nav" role="navigation" aria-label="Main">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#documents">Documents</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#committee">Committee</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="hero-card">
+        <h1>Welcome to <span style="color:var(--gold)">The Academy Trust</span></h1>
+        <p class="lead">We bring science & learning to communities. Vijnana Harate is our tribal outreach — we design events, talks and hands-on programmes with local partners.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="#documents">Governance & Docs</a>
+          <a class="btn btn-ghost" href="#events">Events</a>
+          <a class="btn btn-ghost" href="#contact" id="donate">Contact Us</a>
+        </div>
+
+        <div class="trust-badges" aria-hidden="false">
+          <span class="badge">Indian Academy of Sciences</span>
+          <span class="badge">Registered Trust</span>
+          <span class="badge">Outreach & Education</span>
+        </div>
+      </div>
+
+      <figure class="hero-art" aria-hidden="true">
+        <img src="assets/images/tact.jpg"
+             srcset="assets/images/tact-400.jpg 400w, assets/images/tact-800.jpg 800w, assets/images/tact-1200.jpg 1200w"
+             sizes="(max-width:600px) 100vw, 420px"
+             loading="lazy" alt="tAcT outreach image">
+      </figure>
+    </section>
+
+    <!-- DOCUMENTS & GOVERNANCE -->
+    <section id="documents" class="panel" style="margin-top:16px" aria-labelledby="documents-title">
+      <div class="section-header">
+        <h2 id="documents-title">Documents & Governance</h2>
+        <div class="section-subtitle">Key trust documentation (transparency & compliance)</div>
+      </div>
+
+      <p class="docs-meta">The following documents and information are recommended to be made available on the TAcT website for transparency and public record:</p>
+
+      <ul class="docs-list" aria-labelledby="documents">
+        <li><strong>Name of the Trust</strong><br><small class="docs-meta">The Academy Trust (tAcT)</small></li>
+        <li><strong>Registration number & date of approval</strong><br><small class="docs-meta">Registration details (e.g. Registered on 19 August 2014). PDF of registration certificate and date.</small></li>
+        <li><strong>Founding members & contact particulars</strong><br><small class="docs-meta">List of founding members and contact info (Prof. D. Chatterjee, A.K. Sood, J. Srinivasan, Uday Maitra, R. Varadarajan, M. R. S. Rao, S. Chandrasekharan, R. Ramaswamy, S. Sivaram, Chandrima Shaha).</small></li>
+        <li><strong>Current Board of Trustees</strong><br><small class="docs-meta">Names, tenure, and appointment dates of current trustees.</small></li>
+        <li><strong>Audited & certified statement of accounts</strong><br><small class="docs-meta">Annual financial statements from 2014-15 onwards (balance sheet, liabilities, assets, investments, advances, cash & bank balances, notes).</small></li>
+        <li><strong>No-dues letters & tax compliance</strong><br><small class="docs-meta">Income tax/IT clearance and any relevant correspondence confirming settlement of taxes.</small></li>
+        <li><strong>Annual report of TAcT</strong><br><small class="docs-meta">Annual reports documenting activities, outreach metrics and programme outcomes.</small></li>
+        <li><strong>IT exemption approvals (section 35)</strong><br><small class="docs-meta">Copies of approvals for tax exemptions under relevant sections (if applicable).</small></li>
+        <li><strong>FCRA approval</strong><br><small class="docs-meta">Foreign Contribution Regulation Act registration number and certificate (if applicable).</small></li>
+      </ul>
+
+      <p class="docs-meta" style="margin-top:12px">We will add PDF links here as the documents are consolidated. Please upload official files to the shared G-Drive and we will link them from this page.</p>
+    </section>
+
+    <!-- UPCOMING EVENTS + PAST EVENTS -->
+    <section id="events" class="split-two">
+      <div class="panel" aria-labelledby="upcoming-title">
+        <div class="section-title">
+          <h2 id="upcoming-title">Upcoming Events</h2>
+          <div class="tabs" role="tablist" aria-label="Events filter">
+            <button class="tab active" data-tab="upcoming" role="tab" aria-selected="true">Upcoming</button>
+            <button class="tab" data-tab="past" role="tab" aria-selected="false">Past</button>
+          </div>
+        </div>
+
+        <div id="events-container">
+          <div class="events-grid" id="events-grid" role="region" aria-live="polite"></div>
+          <div class="events-grid" id="past-events-grid" role="region" aria-live="polite" style="display:none"></div>
+        </div>
+
+        <div style="margin-top:12px;color:var(--muted);font-size:13px">
+          <strong>Pro tip:</strong> Click an event card for more details or to register.
+        </div>
+      </div>
+
+      <aside class="panel" aria-labelledby="side-title">
+        <h3 id="side-title">Quick Links & Highlights</h3>
+        <div style="margin-top:10px">
+          <p style="margin:6px 0"><strong>Vijnana Harate</strong> — Tribal outreach initiative with school visits and skill workshops.</p>
+          <p style="margin:6px 0"><strong>Featured talk:</strong> Science for everyone — community edition.</p>
+        </div>
+
+        <hr style="margin:12px 0;border:none;border-top:1px dashed rgba(0,0,0,0.06)">
+
+        <h4 style="margin-bottom:6px">Join our newsletter</h4>
+        <form id="subscribe" onsubmit="subscribe(); return false" aria-label="Subscribe form">
+          <input id="sub-email" type="email" placeholder="you@example.com" required aria-label="Email address" style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)">
+          <div style="margin-top:8px">
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </div>
+        </form>
+      </aside>
+    </section>
+
+    <section class="panel" aria-labelledby="past-title" style="margin-top:16px">
+      <div class="section-title">
+        <h2 id="past-title">Past Events (Highlights)</h2>
+        <div style="display:flex;gap:8px;align-items:center">
+          <span style="font-weight:700;color:var(--purple)">Gallery</span>
+          <span style="font-size:13px;color:var(--muted)">Select images & recordings will appear here.</span>
+        </div>
+      </div>
+
+      <div class="events-grid" id="past-grid" style="margin-top:12px" role="region" aria-live="polite"></div>
+    </section>
+
+    <section id="committee" class="panel" style="margin-top:16px" aria-labelledby="committee-title">
+      <div class="section-header">
+        <h2 id="committee-title">Committee & Office</h2>
+        <div class="section-subtitle">Core team and office staff</div>
+      </div>
+
+      <div class="people-grid" id="committee-grid" style="margin-top:12px"></div>
+    </section>
+
+    <section id="gallery" class="panel" style="margin-top:16px" aria-labelledby="gallery-title">
+      <h2 id="gallery-title">Gallery</h2>
+      <div class="gallery-grid" style="margin-top:10px">
+        <div class="imgplaceholder">Add photos later</div>
+        <div class="imgplaceholder">Add photos later</div>
+        <div class="imgplaceholder">Add photos later</div>
+        <div class="imgplaceholder">Add photos later</div>
+      </div>
+    </section>
+
+    <section id="contact" class="panel" style="margin-top:16px" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact & Location</h2>
+      <div class="contact-grid" style="margin-top:12px">
+        <div>
+          <p><strong>The Academy Trust (tAcT)</strong><br/>Indian Academy of Sciences, C. V. Raman Avenue, Bengaluru</p>
+          <p>Email: <a href="mailto:office@ias.ac.in">office@ias.ac.in</a></p>
+          <p>Phone: +91 80 2363 0000 (example)</p>
+          <p style="color:var(--muted);font-size:13px">Want the team to visit your school/centre? Fill the contact form and we will get back.</p>
+        </div>
+        <div class="iframe-ratio">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31098.12809684691!2d77.57168638577362!3d13.018724774489431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17cb7694995d%3A0xa380def7093e88b9!2sIndian%20Academy%20of%20Sciences!5e0!3m2!1sen!2sin!4v1764181815476!5m2!1sen!2sin"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Map to Indian Academy of Sciences"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-foot">
+      <div style="max-width:900px;margin:0 auto">
+        <small>&copy; <span id="year"></span> The Academy Trust (tAcT) — outreach & education. Built with care.</small>
+      </div>
+    </footer>
+  </div>
+
+<script>
+  const upcomingEvents = [
+    { id:1, date:'2025-12-12', title:'Science for Schools — Bengaluru', place:'Indian Academy of Sciences', tags:['Workshop','Vijnana Harate'], desc:'Hands-on sessions for grade 8–12.' },
+    { id:2, date:'2026-01-18', title:'Community Science Day — Mysuru', place:'Town Hall', tags:['Outreach','Talk'], desc:'Public talk + interactive stalls.' }
+  ];
+
+  const pastEvents = [
+    { id:11, date:'2025-10-02', title:'Tact Talks — CV Raman Hall', place:'IASc', tags:['Talks'], desc:'A series of short science talks.'},
+    { id:12, date:'2025-08-20', title:'Vijnana Harate Field Visit', place:'Chamarajanagar', tags:['Tribal Outreach'], desc:'Community workshops and demonstration.'}
+  ];
+
+  const committee = [
+    { name:'Prof. D. Chatterjee', role:'Founding Member' },
+    { name:'Prof. A.K. Sood', role:'Founding Member' },
+    { name:'Prof. J. Srinivasan', role:'Founding Member' },
+    { name:'Prof. Uday Maitra', role:'Founding Member' },
+    { name:'Prof. R. Varadarajan', role:'Founding Member' },
+    { name:'Prof. M. R. S. Rao', role:'Founding Member' },
+    { name:'Prof. S. Chandrasekharan', role:'Founding Member' },
+    { name:'Prof. R. Ramaswamy', role:'Founding Member' },
+    { name:'Prof. S. Sivaram', role:'Founding Member' },
+    { name:'Dr. Chandrima Shaha', role:'Founding Member' }
+  ];
+
+  function formatDate(d){
+    try { const dt = new Date(d); return dt.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'}); }
+    catch(e){ return d; }
+  }
+
+  const eventsGrid = document.getElementById('events-grid');
+  const pastEventsGrid = document.getElementById('past-events-grid');
+  const pastGrid = document.getElementById('past-grid');
+  const committeeGrid = document.getElementById('committee-grid');
+
+  function makeEventCard(e){
+    const card = document.createElement('article');
+    card.className = 'event-card fade-in';
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', `Event: ${e.title} on ${formatDate(e.date)}`);
+    card.innerHTML = `
+      <div class="date">${formatDate(e.date)}</div>
+      <h3>${escapeHtml(e.title)}</h3>
+      <p class="meta" style="margin:6px 0 8px;font-weight:700">${escapeHtml(e.place)}</p>
+      <p>${escapeHtml(e.desc)}</p>
+      <div style="margin-top:10px">${(e.tags||[]).map(t=>`<span class="pill">${escapeHtml(t)}</span>`).join('')}</div>
+    `;
+    const handleActivate = ()=> {
+      // In a real implementation, this would open a modal or navigate to event details
+      console.log('Event selected:', e);
+      alert('Event details will be here: ' + e.title);
+    };
+    card.addEventListener('click', handleActivate);
+    card.addEventListener('keydown', (ev)=> {
+      if(ev.key === 'Enter' || ev.key === ' '){
+        ev.preventDefault();
+        handleActivate();
+      }
+    });
+    return card;
+  }
+  
+  function escapeHtml(text){
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  function populateUpcoming(){
+    eventsGrid.innerHTML = '';
+    if(!upcomingEvents.length){
+      eventsGrid.innerHTML = '<div class="empty-state">No upcoming events. Check back soon!</div>';
+      return;
+    }
+    upcomingEvents.forEach(ev=> eventsGrid.appendChild(makeEventCard(ev)));
+  }
+  function populatePast(){
+    pastGrid.innerHTML = '';
+    pastEventsGrid.innerHTML = '';
+    if(!pastEvents.length){
+      const emptyMsg = '<div class="empty-state">No past events yet.</div>';
+      pastGrid.innerHTML = emptyMsg;
+      pastEventsGrid.innerHTML = emptyMsg;
+      return;
+    }
+    pastEvents.forEach(ev=> {
+      pastGrid.appendChild(makeEventCard(ev));
+      pastEventsGrid.appendChild(makeEventCard(ev));
+    });
+  }
+  function populateCommittee(){
+    committeeGrid.innerHTML = '';
+    committee.forEach(p=>{
+      const d = document.createElement('div');
+      d.className = 'person';
+      const initials = p.name.split(' ').map(s=>s[0]).slice(0,2).join('').toUpperCase();
+      d.innerHTML = `<div class="avatar">${initials}</div><strong>${p.name}</strong><div style="color:var(--muted);margin-top:6px">${p.role}</div>`;
+      committeeGrid.appendChild(d);
+    });
+  }
+
+  document.querySelectorAll('.tab').forEach(btn=>{
+    btn.addEventListener('click', (ev)=>{
+      const clickedTab = ev.target;
+      const tabType = clickedTab.dataset.tab;
+      
+      // Update tab states
+      document.querySelectorAll('.tab').forEach(t=>{
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      clickedTab.classList.add('active');
+      clickedTab.setAttribute('aria-selected', 'true');
+      
+      // Show/hide appropriate grids
+      if(tabType === 'upcoming'){
+        eventsGrid.style.display = 'grid';
+        pastEventsGrid.style.display = 'none';
+        eventsGrid.setAttribute('aria-hidden', 'false');
+        pastEventsGrid.setAttribute('aria-hidden', 'true');
+      } else {
+        eventsGrid.style.display = 'none';
+        pastEventsGrid.style.display = 'grid';
+        eventsGrid.setAttribute('aria-hidden', 'true');
+        pastEventsGrid.setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+
+  function subscribe(){
+    const emailInput = document.getElementById('sub-email');
+    const email = emailInput.value.trim();
+    const messageEl = document.getElementById('subscribe-message');
+    
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if(!email){
+      showMessage('Please enter an email address', 'error');
+      emailInput.focus();
+      return false;
+    }
+    
+    if(!emailRegex.test(email)){
+      showMessage('Please enter a valid email address', 'error');
+      emailInput.focus();
+      return false;
+    }
+    
+    // In a real implementation, this would make an API call
+    showMessage('Thanks! We\'ll add ' + escapeHtml(email) + ' to our mailing list.', 'success');
+    emailInput.value = '';
+    
+    // Hide message after 5 seconds
+    setTimeout(()=> {
+      if(messageEl) messageEl.style.display = 'none';
+    }, 5000);
+    
+    return false;
+  }
+  
+  function showMessage(text, type){
+    let messageEl = document.getElementById('subscribe-message');
+    if(!messageEl){
+      messageEl = document.createElement('div');
+      messageEl.id = 'subscribe-message';
+      messageEl.className = 'form-message';
+      document.getElementById('subscribe').appendChild(messageEl);
+    }
+    messageEl.textContent = text;
+    messageEl.className = 'form-message ' + type;
+    messageEl.style.display = 'block';
+    messageEl.setAttribute('role', 'alert');
+  }
+
+  (function init(){
+    document.getElementById('year').textContent = new Date().getFullYear();
+    populateUpcoming();
+    populatePast();
+    populateCommittee();
+    
+    // Initialize tab states
+    eventsGrid.setAttribute('aria-hidden', 'false');
+    if(pastEventsGrid) pastEventsGrid.setAttribute('aria-hidden', 'true');
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const href = a.getAttribute('href');
+        if(href === '#') return;
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if(target){
+          target.scrollIntoView({behavior:'smooth',block:'start'});
+          // Update URL without jumping
+          history.pushState(null, '', href);
+        }
+      });
+    });
+    
+    // Make event cards keyboard accessible
+    document.addEventListener('keydown', (e)=> {
+      if(e.key === 'Escape'){
+        // Close any open modals/dropdowns in future implementations
+      }
+    });
+  })();
+</script>
+</body>
+</html>

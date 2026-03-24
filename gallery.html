@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1240">
+  <title>Gallery - The Academy Trust (tAcT)</title>
+  <meta name="description" content="Photo gallery of events and outreach moments from The Academy Trust (tAcT).">
+  <link rel="stylesheet" href="shared-ribbon.css">
+  <link rel="stylesheet" href="assets/css/public-site.css?v=20260323c">
+  <link rel="stylesheet" href="assets/css/gallery.css?v=20260323c">
+</head>
+<body data-page="gallery">
+  <div class="wrap">
+    <div id="site-header-root"></div>
+
+    <main id="main">
+      <section class="gallery-grid-shell" aria-label="Image gallery">
+        <div class="gallery-grid-head">
+          <h1 id="gallery-heading">Gallery</h1>
+        </div>
+        <div id="gallery-grid" class="gallery-grid"></div>
+        <p id="gallery-empty" class="gallery-empty" hidden>No gallery images have been published yet.</p>
+        <div id="gallery-sentinel" class="gallery-sentinel" hidden>Loading more images…</div>
+      </section>
+    </main>
+
+    <div id="site-footer-root"></div>
+  </div>
+
+  <div id="gallery-modal" class="gallery-modal" hidden>
+    <div class="gallery-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title">
+      <button id="gallery-modal-close" class="gallery-modal-close" type="button" aria-label="Close gallery modal" data-modal-dismiss>&times;</button>
+      <div class="gallery-modal-media">
+        <img id="gallery-modal-image" src="" alt="">
+      </div>
+      <div class="gallery-modal-copy">
+        <h2 id="gallery-modal-title"></h2>
+        <div class="gallery-modal-meta">
+          <span id="gallery-modal-date"></span>
+          <span id="gallery-modal-location"></span>
+        </div>
+        <p id="gallery-modal-description"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/site-chrome.js?v=20260323e"></script>
+  <script src="assets/js/events-config.js?v=20260323c"></script>
+  <script src="assets/js/gallery-data.js?v=20260323c"></script>
+  <script src="assets/js/gallery-page.js?v=20260323c"></script>
+  <script src="assets/js/page-router.js?v=20260323d"></script>
+</body>
+</html>

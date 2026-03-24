@@ -1,0 +1,1576 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>tAcT Admin - Events and Gallery</title>
+  <style>
+    :root {
+      --bg: #f5f7f4;
+      --card: #ffffff;
+      --card-soft: #f8fbf8;
+      --green: #0a7a3a;
+      --muted: #5c6760;
+      --line: rgba(10, 20, 10, 0.1);
+      --radius: 14px;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(700px 320px at 10% 0%, rgba(10, 122, 58, 0.06), transparent 55%),
+        linear-gradient(180deg, #f7faf7 0%, #f3f6f2 100%);
+      color: #142019;
+      padding: 16px;
+      min-height: 100vh;
+    }
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      display: grid;
+      gap: 12px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: 0 12px 34px rgba(10, 20, 10, 0.06);
+    }
+    .card-primary {
+      border-color: rgba(10, 122, 58, 0.28);
+      box-shadow: 0 16px 38px rgba(10, 122, 58, 0.12);
+    }
+    .subcard {
+      margin-top: 14px;
+      padding: 12px;
+      border: 1px solid rgba(10, 20, 10, 0.08);
+      border-radius: 12px;
+      background: linear-gradient(180deg, var(--card-soft), #ffffff);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    }
+    h1, h2 {
+      margin: 0 0 8px;
+      color: var(--green);
+      letter-spacing: -0.02em;
+    }
+    p {
+      margin: 0 0 8px;
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 14px;
+    }
+    .hidden { display: none; }
+    .grid {
+      display: grid;
+      gap: 10px;
+    }
+    .row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #284536;
+      display: block;
+      margin-bottom: 4px;
+    }
+    input, textarea, select, button {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 11px 10px;
+      font: inherit;
+      font-size: 14px;
+      background: #fff;
+    }
+    textarea { min-height: 92px; resize: vertical; }
+    input:focus, textarea:focus, select:focus {
+      outline: 2px solid rgba(10, 122, 58, 0.28);
+      border-color: rgba(10, 122, 58, 0.45);
+    }
+    button {
+      cursor: pointer;
+      background: linear-gradient(180deg, #0a7a3a, #08632f);
+      color: #fff;
+      border: 0;
+      font-weight: 700;
+    }
+    .secondary {
+      background: linear-gradient(180deg, #ffffff, #f5f6f4);
+      color: #20352b;
+      border: 1px solid var(--line);
+      font-weight: 600;
+    }
+    .accent {
+      background: linear-gradient(180deg, #1e5aa8, #184886);
+      color: #fff;
+    }
+    .danger {
+      background: linear-gradient(180deg, #bb3c2d, #9a2f22);
+      color: #fff;
+    }
+    .btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .status {
+      font-size: 13px;
+      margin-top: 8px;
+      color: #365548;
+      background: rgba(10, 122, 58, 0.08);
+      border: 1px solid rgba(10, 122, 58, 0.22);
+      border-radius: 8px;
+      padding: 8px 10px;
+    }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .mini { font-size: 12px; color: var(--muted); margin: 0; }
+    .section-kicker {
+      margin: 0 0 6px;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #557262;
+      font-weight: 700;
+    }
+    .subtle-title {
+      color: #335244;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+    .manager-toolbar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+    }
+    .event-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .event-item {
+      display: grid;
+      grid-template-columns: 72px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid rgba(10, 20, 10, 0.08);
+      border-radius: 12px;
+      background: linear-gradient(180deg, #ffffff, var(--card-soft));
+    }
+    .event-item img {
+      width: 72px;
+      height: 72px;
+      object-fit: fill;
+      border-radius: 10px;
+      border: 1px solid rgba(10, 20, 10, 0.08);
+      background: #eef3ee;
+    }
+    .event-item h3 {
+      margin: 0 0 4px;
+      font-size: 16px;
+      color: #173125;
+    }
+    .event-copy { min-width: 0; }
+    .event-meta {
+      margin: 0 0 4px;
+      font-size: 12px;
+      color: #5a6d62;
+    }
+    .event-slug {
+      margin: 0;
+      font-size: 12px;
+      color: #738278;
+      word-break: break-word;
+    }
+    .event-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .view-switch {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .view-switch button[data-active="true"] {
+      background: linear-gradient(180deg, #0a7a3a, #08632f);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 10px 20px rgba(10, 122, 58, 0.18);
+    }
+    .panel-head {
+      margin-bottom: 12px;
+    }
+    .gallery-list {
+      display: grid;
+      gap: 12px;
+    }
+    .gallery-block {
+      padding: 12px;
+      border: 1px solid rgba(10, 20, 10, 0.08);
+      border-radius: 12px;
+      background: linear-gradient(180deg, #ffffff, var(--card-soft));
+      display: grid;
+      gap: 10px;
+    }
+    .gallery-block-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .gallery-block-head strong {
+      color: #173125;
+      font-size: 14px;
+    }
+    .gallery-block-head button {
+      width: auto;
+      min-width: 120px;
+    }
+    .gallery-preview {
+      display: grid;
+      place-items: center;
+      min-height: 180px;
+      border: 1px dashed rgba(10, 20, 10, 0.14);
+      border-radius: 12px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(245, 248, 245, 0.96));
+      overflow: hidden;
+    }
+    .gallery-preview img {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-preview span {
+      color: #6b7b72;
+      font-size: 13px;
+      padding: 16px;
+      text-align: center;
+    }
+    .manager-toggle-row {
+      margin-bottom: 12px;
+    }
+    @media (max-width: 680px) {
+      .row-2, .btn-row, .view-switch { grid-template-columns: 1fr; }
+      .manager-toolbar { grid-template-columns: 1fr; }
+      .event-item {
+        grid-template-columns: 64px 1fr;
+        align-items: start;
+      }
+      .event-item img {
+        width: 64px;
+        height: 64px;
+      }
+      .event-actions {
+        grid-column: 1 / -1;
+        justify-content: stretch;
+      }
+      .event-actions button,
+      .gallery-block-head button {
+        width: 100%;
+      }
+      .gallery-block-head {
+        display: grid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="card">
+      <h1>tAcT Admin</h1>
+      <p>Use the same PIN-protected panel to publish events or add gallery collections without manual code edits.</p>
+    </section>
+
+    <section id="pin-card" class="card card-primary">
+      <p class="section-kicker">Start Here</p>
+      <h2>PIN Access</h2>
+      <p>Enter your admin PIN to unlock publishing tools.</p>
+      <div class="grid">
+        <div>
+          <label for="pin-input">Admin PIN</label>
+          <input id="pin-input" type="password" inputmode="numeric" autocomplete="one-time-code" placeholder="Enter PIN">
+        </div>
+        <button id="unlock-btn" type="button">Unlock Form</button>
+      </div>
+      <p id="pin-hint" class="status hidden">PIN accepted. Form unlocked.</p>
+
+      <div style="margin-top:12px;">
+        <button id="toggle-pin-tools-btn" type="button" class="secondary">Set / Change PIN</button>
+      </div>
+
+      <div id="pin-tools-panel" class="subcard hidden">
+        <p class="section-kicker">Secondary</p>
+        <h2 class="subtle-title">Set / Change PIN</h2>
+        <p class="mini" id="pin-mode-note">Checking PIN status...</p>
+        <div class="grid">
+          <div>
+            <label for="old-pin-input">Current PIN</label>
+            <input id="old-pin-input" type="password" inputmode="numeric" autocomplete="off" placeholder="Current PIN">
+          </div>
+          <div class="row-2">
+            <div>
+              <label for="new-pin-input">New PIN</label>
+              <input id="new-pin-input" type="password" inputmode="numeric" autocomplete="new-password" placeholder="At least 4 digits">
+            </div>
+            <div>
+              <label for="confirm-pin-input">Confirm New PIN</label>
+              <input id="confirm-pin-input" type="password" inputmode="numeric" autocomplete="new-password" placeholder="Repeat new PIN">
+            </div>
+          </div>
+          <button id="change-pin-btn" type="button" class="secondary">Save PIN</button>
+        </div>
+        <p id="pin-change-status" class="status hidden"></p>
+      </div>
+    </section>
+
+    <section id="form-card" class="card hidden">
+      <div class="view-switch">
+        <button id="show-event-panel-btn" type="button" class="secondary" data-active="true">Add Event</button>
+        <button id="show-gallery-panel-btn" type="button" class="secondary" data-active="false">Add Gallery</button>
+      </div>
+
+      <section id="event-panel">
+        <div class="manager-toggle-row">
+          <button id="toggle-manage-btn" type="button" class="accent">Manage Existing Events</button>
+        </div>
+
+        <section id="manage-card" class="subcard hidden">
+          <div class="manager-toolbar">
+            <div>
+              <h2>Manage Existing Events</h2>
+              <p>Synced from GitHub. Delete removes the full event folder and rebuilds the feed.</p>
+            </div>
+            <button id="refresh-events-btn" type="button" class="secondary">Refresh List</button>
+          </div>
+          <div id="manage-status" class="status hidden"></div>
+          <div id="event-list" class="event-list"></div>
+        </section>
+
+        <div class="panel-head">
+          <h2>Add Event</h2>
+          <p>Use this to publish event details and the poster image.</p>
+        </div>
+
+        <form id="admin-form" class="grid">
+          <div>
+            <label for="title">Event Title</label>
+            <input id="title" name="title" required>
+          </div>
+
+          <div class="row-2">
+            <div>
+              <label for="date">Date</label>
+              <input id="date" name="date" type="date" required>
+            </div>
+            <div class="row-2">
+              <div>
+                <label for="time-from">From Time</label>
+                <input id="time-from" name="timeFrom" type="time" required>
+              </div>
+              <div>
+                <label for="time-to">To Time</label>
+                <input id="time-to" name="timeTo" type="time" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="row-2">
+            <div>
+              <label for="location">Location</label>
+              <input id="location" name="location" required>
+            </div>
+            <div>
+              <label for="status">Status</label>
+              <select id="status" name="status">
+                <option value="scheduled">Scheduled</option>
+                <option value="completed">Completed</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="homepageMatter">Description</label>
+            <textarea id="homepageMatter" name="homepageMatter" placeholder="Event description"></textarea>
+          </div>
+
+          <div>
+            <label for="poster">Poster Image</label>
+            <input id="poster" name="poster" type="file" accept=".jpg,.jpeg,.png,.webp,.svg">
+            <p id="poster-meta" class="mono"></p>
+          </div>
+
+          <div class="btn-row">
+            <button id="event-submit-btn" type="submit">Submit Event</button>
+            <button id="clear-btn" type="button" class="secondary">Clear Form</button>
+          </div>
+        </form>
+
+        <div id="submit-status" class="status hidden"></div>
+      </section>
+
+      <section id="gallery-panel" class="hidden">
+        <div class="panel-head">
+          <h2>Add Gallery</h2>
+          <p>Create a dated gallery entry with one or more image and description pairs. It will save to <span class="mono">/data/gallery.json</span> and <span class="mono">/images/gallery/</span>.</p>
+        </div>
+
+        <form id="gallery-form" class="grid">
+          <div>
+            <label for="gallery-title">Title</label>
+            <input id="gallery-title" name="galleryTitle" required>
+          </div>
+
+          <div class="row-2">
+            <div>
+              <label for="gallery-date">Date</label>
+              <input id="gallery-date" name="galleryDate" type="date" required>
+            </div>
+            <div>
+              <label for="gallery-location">Location</label>
+              <input id="gallery-location" name="galleryLocation" required>
+            </div>
+          </div>
+
+          <div class="subcard">
+            <div class="gallery-block-head">
+              <strong>Gallery Images</strong>
+            </div>
+            <p class="mini">At least one image is required. Every image needs a description.</p>
+            <div id="gallery-image-list" class="gallery-list"></div>
+            <button id="add-gallery-image-btn" type="button" class="secondary">+ Add More Images</button>
+          </div>
+
+          <div class="btn-row">
+            <button id="gallery-submit-btn" type="submit">Save Gallery</button>
+            <button id="clear-gallery-btn" type="button" class="secondary">Clear Gallery Form</button>
+          </div>
+        </form>
+
+        <div id="gallery-status" class="status hidden"></div>
+      </section>
+    </section>
+  </div>
+
+  <template id="gallery-block-template">
+    <article class="gallery-block">
+      <div class="gallery-block-head">
+        <strong>Image <span data-image-index></span></strong>
+        <button type="button" class="danger" data-remove-gallery-block>Remove</button>
+      </div>
+      <div class="grid">
+        <div>
+          <label>Image Upload</label>
+          <input type="file" accept=".jpg,.jpeg,.png,.webp,.svg" data-gallery-file>
+          <p class="mini mono" data-gallery-file-meta></p>
+        </div>
+        <div class="gallery-preview" data-gallery-preview>
+          <span>Preview appears here before upload.</span>
+        </div>
+        <div>
+          <label>Description</label>
+          <textarea data-gallery-description placeholder="Describe the moment in this image." required></textarea>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="assets/js/events-config.js"></script>
+  <script>
+    const ADMIN_CONFIG = {
+      endpoint: String(
+        (
+          window.TACT_EVENTS_CONFIG &&
+          (window.TACT_EVENTS_CONFIG.adminEndpoint || window.TACT_EVENTS_CONFIG.apiEndpoint)
+        ) || ""
+      ).trim()
+    };
+
+    const pinCard = document.getElementById("pin-card");
+    const formCard = document.getElementById("form-card");
+    const pinInput = document.getElementById("pin-input");
+    const pinHint = document.getElementById("pin-hint");
+    const unlockBtn = document.getElementById("unlock-btn");
+    const togglePinToolsBtn = document.getElementById("toggle-pin-tools-btn");
+    const pinToolsPanel = document.getElementById("pin-tools-panel");
+    const oldPinInput = document.getElementById("old-pin-input");
+    const newPinInput = document.getElementById("new-pin-input");
+    const confirmPinInput = document.getElementById("confirm-pin-input");
+    const changePinBtn = document.getElementById("change-pin-btn");
+    const pinModeNote = document.getElementById("pin-mode-note");
+    const pinChangeStatus = document.getElementById("pin-change-status");
+
+    const showEventPanelBtn = document.getElementById("show-event-panel-btn");
+    const showGalleryPanelBtn = document.getElementById("show-gallery-panel-btn");
+    const eventPanel = document.getElementById("event-panel");
+    const galleryPanel = document.getElementById("gallery-panel");
+
+    const manageCard = document.getElementById("manage-card");
+    const toggleManageBtn = document.getElementById("toggle-manage-btn");
+    const refreshEventsBtn = document.getElementById("refresh-events-btn");
+    const manageStatus = document.getElementById("manage-status");
+    const eventList = document.getElementById("event-list");
+
+    const adminForm = document.getElementById("admin-form");
+    const posterInput = document.getElementById("poster");
+    const posterMeta = document.getElementById("poster-meta");
+    const statusBox = document.getElementById("submit-status");
+    const clearBtn = document.getElementById("clear-btn");
+    const eventSubmitBtn = document.getElementById("event-submit-btn");
+
+    const galleryForm = document.getElementById("gallery-form");
+    const galleryStatus = document.getElementById("gallery-status");
+    const galleryList = document.getElementById("gallery-image-list");
+    const galleryBlockTemplate = document.getElementById("gallery-block-template");
+    const addGalleryImageBtn = document.getElementById("add-gallery-image-btn");
+    const clearGalleryBtn = document.getElementById("clear-gallery-btn");
+    const gallerySubmitBtn = document.getElementById("gallery-submit-btn");
+
+    const STORAGE_KEYS = {
+      event: "tact-admin-event-draft-v1",
+      gallery: "tact-admin-gallery-draft-v1"
+    };
+
+    let unlockedPin = "";
+    let posterPayload = null;
+    let pinConfigured = true;
+    let adminMode = "event";
+
+    bootPinStatus();
+    ensureGalleryBlocks();
+    restoreDrafts();
+    bindDraftAutosave();
+
+    togglePinToolsBtn.addEventListener("click", function () {
+      const willShow = pinToolsPanel.classList.contains("hidden");
+      pinToolsPanel.classList.toggle("hidden", !willShow);
+      togglePinToolsBtn.textContent = willShow ? "Hide PIN Settings" : "Set / Change PIN";
+    });
+
+    showEventPanelBtn.addEventListener("click", function () {
+      switchAdminMode("event");
+    });
+
+    showGalleryPanelBtn.addEventListener("click", function () {
+      switchAdminMode("gallery");
+    });
+
+    pinInput.addEventListener("keydown", function (event) {
+      if (event.key !== "Enter") return;
+      event.preventDefault();
+      unlockBtn.click();
+    });
+
+    toggleManageBtn.addEventListener("click", function () {
+      const willShow = manageCard.classList.contains("hidden");
+      manageCard.classList.toggle("hidden", !willShow);
+      toggleManageBtn.textContent = willShow ? "Hide Existing Events" : "Manage Existing Events";
+      if (willShow) {
+        loadExistingEvents(false);
+      }
+    });
+
+    unlockBtn.addEventListener("click", async function () {
+      const pin = (pinInput.value || "").trim();
+      if (pin.length < 4) {
+        alert("Enter valid PIN.");
+        return;
+      }
+      if (!hasConfiguredEndpoint()) {
+        alert("Admin endpoint is not configured yet.");
+        return;
+      }
+
+      unlockBtn.disabled = true;
+      unlockBtn.textContent = "Checking...";
+
+      try {
+        const ok = await verifyPin(pin);
+        if (!ok) {
+          alert(pinConfigured ? "Invalid PIN." : "PIN not set yet. Use Set / Change PIN first.");
+          return;
+        }
+
+        unlockedPin = pin;
+        pinHint.classList.remove("hidden");
+        pinCard.classList.add("hidden");
+        formCard.classList.remove("hidden");
+        switchAdminMode(adminMode);
+      } catch (_err) {
+        alert("Could not verify PIN. Please try again.");
+      } finally {
+        unlockBtn.disabled = false;
+        unlockBtn.textContent = "Unlock Form";
+      }
+    });
+
+    changePinBtn.addEventListener("click", async function () {
+      if (!hasConfiguredEndpoint()) {
+        alert("Admin endpoint is not configured yet.");
+        return;
+      }
+
+      const oldPin = (oldPinInput.value || "").trim();
+      const newPin = (newPinInput.value || "").trim();
+      const confirmPin = (confirmPinInput.value || "").trim();
+
+      if (!/^[0-9]{4,}$/.test(newPin)) {
+        alert("New PIN must be at least 4 digits.");
+        return;
+      }
+      if (newPin !== confirmPin) {
+        alert("New PIN and confirmation do not match.");
+        return;
+      }
+      if (pinConfigured && !oldPin) {
+        alert("Enter current PIN to change.");
+        return;
+      }
+
+      changePinBtn.disabled = true;
+      pinChangeStatus.classList.remove("hidden");
+      pinChangeStatus.textContent = "Saving PIN...";
+
+      try {
+        const ok = await changePin(oldPin, newPin);
+        if (!ok) return;
+
+        pinConfigured = true;
+        unlockedPin = newPin;
+        pinInput.value = newPin;
+        pinHint.classList.remove("hidden");
+        pinCard.classList.add("hidden");
+        formCard.classList.remove("hidden");
+        pinModeNote.textContent = "PIN is set. To change it, enter current PIN and new PIN.";
+        oldPinInput.value = "";
+        newPinInput.value = "";
+        confirmPinInput.value = "";
+        pinChangeStatus.textContent = "PIN saved successfully.";
+      } finally {
+        changePinBtn.disabled = false;
+      }
+    });
+
+    refreshEventsBtn.addEventListener("click", function () {
+      loadExistingEvents(true);
+    });
+
+    posterInput.addEventListener("change", async function () {
+      const file = posterInput.files && posterInput.files[0];
+      if (!file) {
+        posterPayload = null;
+        posterMeta.textContent = "";
+        persistEventDraft();
+        return;
+      }
+
+      const prepared = await prepareUploadFile(file, {
+        maxDimension: 1900,
+        quality: 0.86,
+        minQuality: 0.72,
+        maxBytes: 900 * 1024
+      });
+      posterPayload = prepared.payload;
+      posterMeta.textContent = buildPreparedFileLabel(file, prepared);
+      persistEventDraft();
+    });
+
+    clearBtn.addEventListener("click", function () {
+      resetEventForm(true);
+    });
+
+    addGalleryImageBtn.addEventListener("click", function () {
+      addGalleryBlock();
+      persistGalleryDraft();
+    });
+
+    clearGalleryBtn.addEventListener("click", function () {
+      resetGalleryForm(true);
+    });
+
+    adminForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      if (!unlockedPin) {
+        alert("Unlock with PIN first.");
+        return;
+      }
+      if (!posterPayload) {
+        alert("Please choose a poster image.");
+        return;
+      }
+      if (!hasConfiguredEndpoint()) {
+        alert("Admin endpoint is not configured yet.");
+        return;
+      }
+
+      const title = valueOf("title");
+      const date = valueOf("date");
+      const time = buildTimeRange();
+      if (!time) {
+        alert("Enter valid from and to times.");
+        return;
+      }
+
+      const payload = {
+        pin: unlockedPin,
+        event: {
+          slug: slugify(date + "--" + title),
+          title: title,
+          date: date,
+          time: time,
+          location: valueOf("location"),
+          status: valueOf("status"),
+          teaser: "",
+          homepageMatter: valueOf("homepageMatter")
+        },
+        poster: posterPayload
+      };
+
+      try {
+        showStatus(statusBox, "Preparing event data...");
+        setSubmittingState(true, "event");
+
+        window.setTimeout(function () {
+          if (statusBox.textContent === "Preparing event data...") {
+            statusBox.textContent = "Uploading poster and event details...";
+          }
+        }, 400);
+
+        window.setTimeout(function () {
+          if (statusBox.textContent === "Uploading poster and event details...") {
+            statusBox.textContent = "Publishing to GitHub. This can take a little longer for large posters...";
+          }
+        }, 1800);
+
+        const body = await postAdminPayload(payload);
+        if (body && body.ok === false) {
+          throw new Error(body.error || "Submit failed");
+        }
+
+        resetEventForm(true);
+        showStatus(statusBox, "Submitted successfully. Form cleared for a fresh entry.");
+      } catch (err) {
+        showStatus(statusBox, "Submit failed: " + (err && err.message ? err.message : "Unknown error"), true);
+      } finally {
+        setSubmittingState(false, "event");
+      }
+    });
+
+    galleryForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      if (!unlockedPin) {
+        alert("Unlock with PIN first.");
+        return;
+      }
+      if (!hasConfiguredEndpoint()) {
+        alert("Admin endpoint is not configured yet.");
+        return;
+      }
+
+      const title = valueOf("gallery-title");
+      const date = valueOf("gallery-date");
+      const location = valueOf("gallery-location");
+      if (!title || !date || !location) {
+        alert("Fill title, date, and location.");
+        return;
+      }
+
+      const images = collectGalleryImages();
+      if (!images.ok) {
+        alert(images.error);
+        return;
+      }
+
+      const payload = {
+        action: "saveGallery",
+        pin: unlockedPin,
+        gallery: {
+          slug: slugify(date + "--" + title),
+          title: title,
+          date: date,
+          location: location
+        },
+        images: images.items
+      };
+
+      try {
+        showStatus(galleryStatus, "Preparing gallery upload...");
+        setSubmittingState(true, "gallery");
+
+        window.setTimeout(function () {
+          if (galleryStatus.textContent === "Preparing gallery upload...") {
+            galleryStatus.textContent = "Uploading images to GitHub and updating gallery data...";
+          }
+        }, 400);
+
+        const body = await postAdminPayload(payload);
+        if (body && body.ok === false) {
+          throw new Error(body.error || "Gallery save failed");
+        }
+
+        showStatus(galleryStatus, "Gallery saved successfully. The data file and image folder were updated.");
+        resetGalleryForm(true);
+        showStatus(galleryStatus, "Gallery saved successfully. Form cleared for a fresh entry.");
+      } catch (err) {
+        const rawMessage = err && err.message ? err.message : "Unknown error";
+        const hint = rawMessage === "Missing required event fields."
+          ? " Live admin endpoint is still using the old event-only backend. Redeploy the updated Apps Script web app, then try again."
+          : "";
+        showStatus(galleryStatus, "Gallery save failed: " + rawMessage + hint, true);
+      } finally {
+        setSubmittingState(false, "gallery");
+      }
+    });
+
+    function valueOf(id) {
+      return (document.getElementById(id).value || "").trim();
+    }
+
+    function slugify(text) {
+      return String(text || "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+    }
+
+    function buildTimeRange() {
+      const fromValue = valueOf("time-from");
+      const toValue = valueOf("time-to");
+      if (!fromValue || !toValue) return "";
+
+      const fromMinutes = toMinutes(fromValue);
+      const toMinutesValue = toMinutes(toValue);
+      if (fromMinutes === null || toMinutesValue === null || toMinutesValue <= fromMinutes) {
+        return "";
+      }
+
+      return formatTime(fromValue) + " - " + formatTime(toValue);
+    }
+
+    function toMinutes(value) {
+      const match = String(value || "").match(/^(\d{2}):(\d{2})$/);
+      if (!match) return null;
+      return Number(match[1]) * 60 + Number(match[2]);
+    }
+
+    function formatTime(value) {
+      const match = String(value || "").match(/^(\d{2}):(\d{2})$/);
+      if (!match) return value;
+
+      let hours = Number(match[1]);
+      const minutes = match[2];
+      const suffix = hours >= 12 ? "PM" : "AM";
+      hours = hours % 12 || 12;
+      return hours + ":" + minutes + " " + suffix;
+    }
+
+    function switchAdminMode(mode) {
+      adminMode = mode === "gallery" ? "gallery" : "event";
+      const isGallery = adminMode === "gallery";
+      eventPanel.classList.toggle("hidden", isGallery);
+      galleryPanel.classList.toggle("hidden", !isGallery);
+      showEventPanelBtn.dataset.active = String(!isGallery);
+      showGalleryPanelBtn.dataset.active = String(isGallery);
+    }
+
+    function ensureGalleryBlocks() {
+      if (galleryList.children.length) {
+        renumberGalleryBlocks();
+        placeAddGalleryButton();
+        return;
+      }
+      addGalleryBlock();
+    }
+
+    function addGalleryBlock(initialState) {
+      const fragment = galleryBlockTemplate.content.cloneNode(true);
+      const block = fragment.querySelector(".gallery-block");
+      const fileInput = block.querySelector("[data-gallery-file]");
+      const descriptionInput = block.querySelector("[data-gallery-description]");
+      const preview = block.querySelector("[data-gallery-preview]");
+      const meta = block.querySelector("[data-gallery-file-meta]");
+      const removeBtn = block.querySelector("[data-remove-gallery-block]");
+
+      block._payload = null;
+
+      if (initialState) {
+        descriptionInput.value = initialState.description || "";
+        if (initialState.payload && initialState.payload.data) {
+          block._payload = initialState.payload;
+          meta.textContent = buildRestoredFileLabel(initialState.payload);
+          renderRestoredPreview(preview, initialState.payload);
+        }
+      }
+
+      fileInput.addEventListener("change", async function () {
+        const file = fileInput.files && fileInput.files[0];
+        if (!file) {
+          block._payload = null;
+          meta.textContent = "";
+          preview.innerHTML = "<span>Preview appears here before upload.</span>";
+          return;
+        }
+
+        const prepared = await prepareUploadFile(file, {
+          maxDimension: 1700,
+          quality: 0.84,
+          minQuality: 0.7,
+          maxBytes: 700 * 1024
+        });
+        block._payload = prepared.payload;
+        meta.textContent = buildPreparedFileLabel(file, prepared);
+        preview.innerHTML = "";
+        const img = document.createElement("img");
+        img.src = URL.createObjectURL(file);
+        img.alt = file.name;
+        img.onload = function () {
+          URL.revokeObjectURL(img.src);
+        };
+        preview.appendChild(img);
+        persistGalleryDraft();
+      });
+
+      descriptionInput.addEventListener("input", function () {
+        hideStatus(galleryStatus);
+        persistGalleryDraft();
+      });
+
+      removeBtn.addEventListener("click", function () {
+        if (galleryList.children.length === 1) {
+          fileInput.value = "";
+          descriptionInput.value = "";
+          block._payload = null;
+          meta.textContent = "";
+          preview.innerHTML = "<span>Preview appears here before upload.</span>";
+          placeAddGalleryButton();
+          persistGalleryDraft();
+          return;
+        }
+        block.remove();
+        renumberGalleryBlocks();
+        placeAddGalleryButton();
+        persistGalleryDraft();
+      });
+
+      galleryList.appendChild(block);
+      renumberGalleryBlocks();
+      placeAddGalleryButton();
+    }
+
+    function renumberGalleryBlocks() {
+      Array.from(galleryList.children).forEach(function (block, index) {
+        const indexNode = block.querySelector("[data-image-index]");
+        if (indexNode) {
+          indexNode.textContent = String(index + 1);
+        }
+      });
+    }
+
+    function placeAddGalleryButton() {
+      const parent = addGalleryImageBtn.parentElement;
+      if (!parent) return;
+      parent.appendChild(addGalleryImageBtn);
+    }
+
+    function renderRestoredPreview(previewNode, payload) {
+      previewNode.innerHTML = "";
+      const img = document.createElement("img");
+      img.src = "data:" + String(payload.mime || "image/jpeg") + ";base64," + String(payload.data || "");
+      img.alt = String(payload.name || "Restored draft image");
+      previewNode.appendChild(img);
+    }
+
+    function bindDraftAutosave() {
+      adminForm.addEventListener("input", persistEventDraft);
+      adminForm.addEventListener("change", persistEventDraft);
+      galleryForm.addEventListener("input", persistGalleryDraft);
+      galleryForm.addEventListener("change", persistGalleryDraft);
+    }
+
+    function resetEventForm(clearDraft) {
+      adminForm.reset();
+      posterPayload = null;
+      posterMeta.textContent = "";
+      if (clearDraft) {
+        removeStoredDraft(STORAGE_KEYS.event);
+      }
+      hideStatus(statusBox);
+    }
+
+    function resetGalleryForm(clearDraft) {
+      galleryForm.reset();
+      galleryList.innerHTML = "";
+      ensureGalleryBlocks();
+      if (clearDraft) {
+        removeStoredDraft(STORAGE_KEYS.gallery);
+      }
+      hideStatus(galleryStatus);
+    }
+
+    function persistEventDraft() {
+      saveDraft(STORAGE_KEYS.event, {
+        values: {
+          title: valueOf("title"),
+          date: valueOf("date"),
+          timeFrom: valueOf("time-from"),
+          timeTo: valueOf("time-to"),
+          location: valueOf("location"),
+          status: valueOf("status"),
+          homepageMatter: valueOf("homepageMatter")
+        },
+        poster: posterPayload
+      });
+    }
+
+    function persistGalleryDraft() {
+      const blocks = Array.from(galleryList.querySelectorAll(".gallery-block")).map(function (block) {
+        return {
+          description: String((block.querySelector("[data-gallery-description]").value || "")).trim(),
+          payload: block._payload || null
+        };
+      });
+
+      saveDraft(STORAGE_KEYS.gallery, {
+        values: {
+          title: valueOf("gallery-title"),
+          date: valueOf("gallery-date"),
+          location: valueOf("gallery-location")
+        },
+        blocks: blocks
+      });
+    }
+
+    function restoreDrafts() {
+      restoreEventDraft();
+      restoreGalleryDraft();
+    }
+
+    function restoreEventDraft() {
+      const draft = readDraft(STORAGE_KEYS.event);
+      if (!draft || !draft.values) return;
+
+      setValue("title", draft.values.title);
+      setValue("date", draft.values.date);
+      setValue("time-from", draft.values.timeFrom);
+      setValue("time-to", draft.values.timeTo);
+      setValue("location", draft.values.location);
+      setValue("status", draft.values.status || "scheduled");
+      setValue("homepageMatter", draft.values.homepageMatter);
+
+      if (draft.poster && draft.poster.data) {
+        posterPayload = draft.poster;
+        posterMeta.textContent = buildRestoredFileLabel(draft.poster);
+      }
+    }
+
+    function restoreGalleryDraft() {
+      const draft = readDraft(STORAGE_KEYS.gallery);
+      if (!draft || !draft.values) return;
+
+      setValue("gallery-title", draft.values.title);
+      setValue("gallery-date", draft.values.date);
+      setValue("gallery-location", draft.values.location);
+
+      galleryList.innerHTML = "";
+      const blocks = Array.isArray(draft.blocks) && draft.blocks.length ? draft.blocks : [{ description: "", payload: null }];
+      blocks.forEach(function (item) {
+        addGalleryBlock(item);
+      });
+      renumberGalleryBlocks();
+      placeAddGalleryButton();
+    }
+
+    function setValue(id, value) {
+      const node = document.getElementById(id);
+      if (node) node.value = value || "";
+    }
+
+    function saveDraft(key, value) {
+      try {
+        window.localStorage.setItem(key, JSON.stringify(value || {}));
+      } catch (_err) {
+        // Ignore storage failures.
+      }
+    }
+
+    function readDraft(key) {
+      try {
+        const raw = window.localStorage.getItem(key);
+        return raw ? JSON.parse(raw) : null;
+      } catch (_err) {
+        return null;
+      }
+    }
+
+    function removeStoredDraft(key) {
+      try {
+        window.localStorage.removeItem(key);
+      } catch (_err) {
+        // Ignore storage failures.
+      }
+    }
+
+    function collectGalleryImages() {
+      const blocks = Array.from(galleryList.querySelectorAll(".gallery-block"));
+      if (!blocks.length) {
+        return { ok: false, error: "Add at least one image." };
+      }
+
+      const items = [];
+      for (const block of blocks) {
+        const description = (block.querySelector("[data-gallery-description]").value || "").trim();
+        if (!block._payload) {
+          return { ok: false, error: "Choose an image for every gallery block." };
+        }
+        if (!description) {
+          return { ok: false, error: "Write a description for every gallery image." };
+        }
+
+        items.push({
+          name: block._payload.name,
+          mime: block._payload.mime,
+          data: block._payload.data,
+          description: description
+        });
+      }
+
+      return { ok: true, items: items };
+    }
+
+    function setSubmittingState(isSubmitting, scope) {
+      unlockBtn.disabled = isSubmitting;
+      changePinBtn.disabled = isSubmitting;
+
+      if (!scope || scope === "event") {
+        clearBtn.disabled = isSubmitting;
+        posterInput.disabled = isSubmitting;
+        eventSubmitBtn.disabled = isSubmitting;
+        eventSubmitBtn.textContent = isSubmitting ? "Publishing..." : "Submit Event";
+      }
+
+      if (!scope || scope === "gallery") {
+        addGalleryImageBtn.disabled = isSubmitting;
+        clearGalleryBtn.disabled = isSubmitting;
+        gallerySubmitBtn.disabled = isSubmitting;
+        gallerySubmitBtn.textContent = isSubmitting ? "Saving..." : "Save Gallery";
+        Array.from(galleryList.querySelectorAll("input, textarea, button")).forEach(function (node) {
+          node.disabled = isSubmitting;
+        });
+      }
+    }
+
+    function readFileAsBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = function () {
+          const value = reader.result || "";
+          const commaIndex = String(value).indexOf(",");
+          resolve(commaIndex >= 0 ? String(value).slice(commaIndex + 1) : String(value));
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    async function prepareUploadFile(file, options) {
+      const settings = options || {};
+      const isRaster = isCompressibleRasterImage(file);
+      const originalPayload = {
+        name: file.name,
+        mime: file.type || "application/octet-stream",
+        data: await readFileAsBase64(file)
+      };
+
+      if (!isRaster) {
+        return { payload: originalPayload, compressed: false };
+      }
+
+      try {
+        const compressed = await compressImageFile(file, settings);
+        if (!compressed || !compressed.base64 || compressed.base64.length >= originalPayload.data.length) {
+          return { payload: originalPayload, compressed: false };
+        }
+
+        return {
+          payload: {
+            name: replaceExtension(file.name, compressed.extension),
+            mime: compressed.mime,
+            data: compressed.base64
+          },
+          compressed: true,
+          size: compressed.size
+        };
+      } catch (_err) {
+        return { payload: originalPayload, compressed: false };
+      }
+    }
+
+    function isCompressibleRasterImage(file) {
+      const mime = String((file && file.type) || "").toLowerCase();
+      return /^image\/(jpeg|jpg|png|webp)$/i.test(mime);
+    }
+
+    async function compressImageFile(file, options) {
+      const settings = options || {};
+      const maxDimension = Number(settings.maxDimension || 1700);
+      const targetBytes = Number(settings.maxBytes || 800 * 1024);
+      const startQuality = Number(settings.quality || 0.84);
+      const minQuality = Number(settings.minQuality || 0.7);
+      const outputMime = "image/jpeg";
+      const source = await loadImageFile(file);
+      try {
+        let width = source.width;
+        let height = source.height;
+        let quality = startQuality;
+        let best = null;
+
+        for (let attempt = 0; attempt < 7; attempt += 1) {
+          const scale = Math.min(1, maxDimension / Math.max(width, height));
+          const nextWidth = Math.max(1, Math.round(width * scale));
+          const nextHeight = Math.max(1, Math.round(height * scale));
+          const result = await renderCompressedImage(source.image, nextWidth, nextHeight, outputMime, quality);
+
+          if (!best || result.size < best.size) {
+            best = result;
+          }
+          if (result.size <= targetBytes) {
+            break;
+          }
+
+          if (quality > minQuality) {
+            quality = Math.max(minQuality, quality - 0.06);
+          } else {
+            width = Math.max(960, Math.round(nextWidth * 0.88));
+            height = Math.max(960, Math.round(nextHeight * 0.88));
+          }
+        }
+
+        if (!best) {
+          throw new Error("Compression failed.");
+        }
+
+        return {
+          mime: outputMime,
+          extension: ".jpg",
+          base64: best.base64,
+          size: best.size
+        };
+      } finally {
+        URL.revokeObjectURL(source.objectUrl);
+      }
+    }
+
+    function loadImageFile(file) {
+      return new Promise((resolve, reject) => {
+        const objectUrl = URL.createObjectURL(file);
+        const image = new Image();
+
+        image.onload = function () {
+          const width = image.naturalWidth || image.width;
+          const height = image.naturalHeight || image.height;
+          resolve({ image: image, width: width, height: height, objectUrl: objectUrl });
+        };
+
+        image.onerror = function () {
+          URL.revokeObjectURL(objectUrl);
+          reject(new Error("Could not read image."));
+        };
+
+        image.src = objectUrl;
+      });
+    }
+
+    function renderCompressedImage(image, width, height, mime, quality) {
+      return new Promise((resolve, reject) => {
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+        if (!context) {
+          reject(new Error("Canvas is not available."));
+          return;
+        }
+
+        canvas.width = width;
+        canvas.height = height;
+        context.fillStyle = "#ffffff";
+        context.fillRect(0, 0, width, height);
+        context.imageSmoothingEnabled = true;
+        context.imageSmoothingQuality = "high";
+        context.drawImage(image, 0, 0, width, height);
+
+        canvas.toBlob(function (blob) {
+          if (!blob) {
+            reject(new Error("Compression failed."));
+            return;
+          }
+
+          const reader = new FileReader();
+          reader.onload = function () {
+            const value = String(reader.result || "");
+            const commaIndex = value.indexOf(",");
+            resolve({
+              base64: commaIndex >= 0 ? value.slice(commaIndex + 1) : value,
+              size: blob.size
+            });
+          };
+          reader.onerror = reject;
+          reader.readAsDataURL(blob);
+        }, mime, quality);
+      });
+    }
+
+    function replaceExtension(name, extension) {
+      const base = String(name || "").replace(/\.[^.]+$/, "") || "upload";
+      return base + extension;
+    }
+
+    function buildPreparedFileLabel(originalFile, prepared) {
+      const originalSize = Math.round(Number(originalFile.size || 0) / 1024);
+      if (!prepared || !prepared.compressed) {
+        return "Selected: " + originalFile.name + " (" + originalSize + " KB)";
+      }
+
+      const nextSize = Math.round(Number(prepared.size || 0) / 1024);
+      return "Selected: " + originalFile.name + " (" + originalSize + " KB) -> balanced upload (" + nextSize + " KB)";
+    }
+
+    function buildRestoredFileLabel(payload) {
+      const bytes = estimateBase64Bytes(String((payload && payload.data) || ""));
+      const size = Math.round(bytes / 1024);
+      return "Recovered draft image: " + String((payload && payload.name) || "image.jpg") + " (" + size + " KB)";
+    }
+
+    function estimateBase64Bytes(value) {
+      const clean = String(value || "").replace(/\s+/g, "");
+      if (!clean) return 0;
+      const padding = clean.endsWith("==") ? 2 : clean.endsWith("=") ? 1 : 0;
+      return Math.max(0, Math.floor((clean.length * 3) / 4) - padding);
+    }
+
+    function hasConfiguredEndpoint() {
+      return !!ADMIN_CONFIG.endpoint;
+    }
+
+    function showStatus(node, text, isError) {
+      node.classList.remove("hidden");
+      node.textContent = text;
+      node.style.color = isError ? "#7f2017" : "";
+      node.style.borderColor = isError ? "rgba(187, 60, 45, 0.28)" : "";
+      node.style.background = isError ? "rgba(187, 60, 45, 0.08)" : "";
+    }
+
+    function hideStatus(node) {
+      node.classList.add("hidden");
+      node.textContent = "";
+      node.style.color = "";
+      node.style.borderColor = "";
+      node.style.background = "";
+    }
+
+    function showManageStatus(text, isError) {
+      showStatus(manageStatus, text, isError);
+    }
+
+    function clearManageStatus() {
+      hideStatus(manageStatus);
+    }
+
+    async function postAdminPayload(payload) {
+      const response = await fetch(ADMIN_CONFIG.endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
+      });
+
+      const text = await response.text();
+      let body = {};
+      try {
+        body = JSON.parse(text || "{}");
+      } catch (_err) {
+        body = {};
+      }
+
+      if (!response.ok) {
+        throw new Error((body && body.error) || text || "Request failed");
+      }
+      return body;
+    }
+
+    async function loadExistingEvents(showRefreshMessage) {
+      if (!unlockedPin || !hasConfiguredEndpoint()) return;
+
+      if (showRefreshMessage) {
+        showManageStatus("Refreshing events from GitHub...", false);
+      } else {
+        clearManageStatus();
+      }
+
+      refreshEventsBtn.disabled = true;
+      eventList.innerHTML = '<p class="mini">Loading events...</p>';
+
+      try {
+        const body = await postAdminPayload({ action: "listEvents", pin: unlockedPin });
+        if (!body || body.ok === false) {
+          throw new Error(body && body.error ? body.error : "Could not load events.");
+        }
+
+        renderEventList(Array.isArray(body.events) ? body.events : []);
+        if (showRefreshMessage) {
+          showManageStatus("Event list refreshed.", false);
+        }
+      } catch (err) {
+        eventList.innerHTML = "";
+        showManageStatus("Could not load events: " + (err && err.message ? err.message : "Unknown error"), true);
+      } finally {
+        refreshEventsBtn.disabled = false;
+      }
+    }
+
+    function renderEventList(events) {
+      eventList.innerHTML = "";
+
+      if (!events.length) {
+        eventList.innerHTML = '<p class="mini">No events found in GitHub.</p>';
+        return;
+      }
+
+      events.forEach(function (item) {
+        const article = document.createElement("article");
+        article.className = "event-item";
+
+        const poster = document.createElement("img");
+        poster.src = String(item.poster || "assets/images/tact-logo.jpg");
+        poster.alt = (item.title || "Event") + " poster";
+        poster.onerror = function () {
+          poster.onerror = null;
+          poster.src = "assets/images/tact-logo.jpg";
+        };
+
+        const details = document.createElement("div");
+        details.className = "event-copy";
+        details.innerHTML =
+          "<h3>" + escapeHtml(item.title || "Untitled Event") + "</h3>" +
+          '<p class="event-meta">' +
+          escapeHtml(formatDisplayDate(item.date)) + " | " +
+          escapeHtml(item.time || "Time TBA") + " | " +
+          escapeHtml(item.location || "Location TBA") +
+          "</p>" +
+          '<p class="event-slug">' + escapeHtml(item.slug || "") + "</p>";
+
+        const removeBtn = document.createElement("button");
+        removeBtn.type = "button";
+        removeBtn.className = "danger";
+        removeBtn.textContent = "Delete";
+        removeBtn.addEventListener("click", function () {
+          handleDeleteEvent(item, removeBtn);
+        });
+
+        const actions = document.createElement("div");
+        actions.className = "event-actions";
+        actions.appendChild(removeBtn);
+
+        article.appendChild(poster);
+        article.appendChild(details);
+        article.appendChild(actions);
+        eventList.appendChild(article);
+      });
+    }
+
+    async function handleDeleteEvent(item, button) {
+      const title = String((item && item.title) || "this event");
+      const slug = String((item && item.slug) || "");
+      if (!slug) return;
+
+      if (!window.confirm('Delete "' + title + '"? This removes the full event folder from GitHub.')) {
+        return;
+      }
+
+      button.disabled = true;
+      showManageStatus('Deleting "' + title + '" from GitHub...', false);
+
+      try {
+        const body = await postAdminPayload({ action: "deleteEvent", pin: unlockedPin, slug: slug });
+        if (!body || body.ok === false) {
+          throw new Error(body && body.error ? body.error : "Delete failed.");
+        }
+
+        showManageStatus('Deleted "' + title + '". Refreshing list...', false);
+        await loadExistingEvents(false);
+      } catch (err) {
+        showManageStatus("Delete failed: " + (err && err.message ? err.message : "Unknown error"), true);
+      } finally {
+        button.disabled = false;
+      }
+    }
+
+    async function verifyPin(pin) {
+      const body = await postAdminPayload({ action: "verifyPin", pin: pin });
+      return !!(body && body.ok);
+    }
+
+    async function bootPinStatus() {
+      if (!hasConfiguredEndpoint()) {
+        pinModeNote.textContent = "Configure endpoint first in assets/js/events-config.js";
+        return;
+      }
+
+      try {
+        const body = await postAdminPayload({ action: "pinStatus" });
+        pinConfigured = !!(body && body.pinConfigured);
+
+        if (pinConfigured) {
+          pinModeNote.textContent = "PIN is set. To change it, enter current PIN and new PIN.";
+          oldPinInput.disabled = false;
+          oldPinInput.placeholder = "Current PIN";
+          changePinBtn.textContent = "Change PIN";
+        } else {
+          pinModeNote.textContent = "No PIN set yet. Create your first PIN now.";
+          oldPinInput.disabled = true;
+          oldPinInput.placeholder = "Not needed for first-time setup";
+          changePinBtn.textContent = "Set First PIN";
+          pinToolsPanel.classList.remove("hidden");
+          togglePinToolsBtn.textContent = "Hide PIN Settings";
+        }
+      } catch (_err) {
+        pinModeNote.textContent = "Could not check PIN status. Try again after backend deploy.";
+      }
+    }
+
+    async function changePin(oldPin, newPin) {
+      const body = await postAdminPayload({ action: "changePin", oldPin: oldPin, newPin: newPin });
+      if (!body || !body.ok) {
+        pinChangeStatus.textContent = body && body.error ? body.error : "Could not save PIN.";
+        return false;
+      }
+      return true;
+    }
+
+    function escapeHtml(value) {
+      return String(value || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function formatDisplayDate(value) {
+      const date = new Date(String(value || "") + "T00:00:00");
+      if (isNaN(date.getTime())) return value || "";
+      return date.toLocaleDateString("en-IN", {
+        day: "numeric",
+        month: "short",
+        year: "numeric"
+      });
+    }
+  </script>
+</body>
+</html>

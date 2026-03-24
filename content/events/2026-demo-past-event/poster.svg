@@ -1,0 +1,7 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="480" height="680" viewBox="0 0 480 680">
+  <rect width="480" height="680" fill="#f4f7f5"/>
+  <rect x="26" y="26" width="428" height="628" rx="16" fill="#ffffff" stroke="#0a7a3a" stroke-width="2"/>
+  <text x="240" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" fill="#0a7a3a">Sample Poster</text>
+  <text x="240" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#2f3d38">Demo Past Event</text>
+  <text x="240" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#5a6a63">Replace with final artwork</text>
+</svg>
