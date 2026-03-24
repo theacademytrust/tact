@@ -400,6 +400,7 @@
       </div>
 
       <section id="manage-card" class="subcard hidden">
+        <section id="manage-list-card">
         <div class="manager-toolbar">
           <div>
             <h2>Manage Events & Gallery</h2>
@@ -409,6 +410,7 @@
         </div>
         <div id="manage-status" class="status hidden"></div>
         <div id="event-list" class="event-list"></div>
+        </section>
 
         <section id="event-edit-card" class="subcard hidden">
           <div class="panel-head">
@@ -637,6 +639,7 @@
     const galleryPanel = document.getElementById("gallery-panel");
 
     const manageCard = document.getElementById("manage-card");
+    const manageListCard = document.getElementById("manage-list-card");
     const toggleManageBtn = document.getElementById("toggle-manage-btn");
     const refreshEventsBtn = document.getElementById("refresh-events-btn");
     const manageStatus = document.getElementById("manage-status");
@@ -1800,7 +1803,7 @@
           closeManagedEventEditor();
         }
         if (!selectedManageSlug) {
-          eventList.classList.remove("hidden");
+          manageListCard.classList.remove("hidden");
         }
         renderEventList(eventCache);
         populateGalleryEventSelect();
@@ -1881,10 +1884,9 @@
     async function openManagedEventEditor(item) {
       if (!item || !item.slug) return;
 
-      eventList.classList.add("hidden");
+      manageListCard.classList.add("hidden");
       eventEditCard.classList.remove("hidden");
       showStatus(manageEditStatus, "Loading event details...");
-      renderEventList(eventCache);
 
       try {
         const detailBody = await fetchManageEventDetails(String(item.slug || ""));
@@ -1920,7 +1922,7 @@
       managePosterInput.value = "";
       managePosterMeta.textContent = "";
       eventEditCard.classList.add("hidden");
-      eventList.classList.remove("hidden");
+      manageListCard.classList.remove("hidden");
       hideStatus(manageEditStatus);
       manageTimeInput.value = "";
       manageLocationInput.value = "";
