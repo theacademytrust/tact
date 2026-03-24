@@ -208,29 +208,27 @@
     .panel-head {
       margin-bottom: 12px;
     }
-    .date-box {
+    .date-input,
+    .time-input {
+      background:
+        linear-gradient(180deg, #ffffff, rgba(248, 251, 248, 0.96));
+      border-color: rgba(10, 20, 10, 0.12);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+    }
+    .date-input {
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.02em;
+    }
+    .field-note {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #6b7b72;
+    }
+    .time-range {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 8px;
-      padding: 8px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: #fff;
-    }
-    .date-box:focus-within {
-      outline: 2px solid rgba(10, 122, 58, 0.28);
-      border-color: rgba(10, 122, 58, 0.45);
-    }
-    .date-box input {
-      border: 0;
-      border-radius: 8px;
-      padding: 10px 8px;
-      text-align: center;
-      background: rgba(245, 248, 245, 0.9);
-    }
-    .date-box input:focus {
-      outline: 2px solid rgba(10, 122, 58, 0.18);
-      border-color: transparent;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      align-items: end;
     }
     .gallery-list {
       display: grid;
@@ -326,7 +324,7 @@
       margin-bottom: 12px;
     }
     @media (max-width: 680px) {
-      .row-2, .btn-row, .view-switch, .date-box { grid-template-columns: 1fr; }
+      .row-2, .btn-row, .view-switch, .time-range { grid-template-columns: 1fr; }
       .manager-toolbar { grid-template-columns: 1fr; }
       .event-item {
         align-items: start;
@@ -492,21 +490,18 @@
 
           <div class="row-2">
             <div>
-              <label for="date-day">Date</label>
-              <div class="date-box">
-                <input id="date-day" name="dateDay" inputmode="numeric" maxlength="2" placeholder="Day" required>
-                <input id="date-month" name="dateMonth" inputmode="numeric" maxlength="2" placeholder="Month" required>
-                <input id="date-year" name="dateYear" inputmode="numeric" maxlength="4" placeholder="Year" required>
-              </div>
+              <label for="date">Date</label>
+              <input id="date" name="date" class="date-input" inputmode="numeric" maxlength="10" placeholder="DD/MM/YYYY" autocomplete="off" required>
+              <p class="field-note">Enter as `DD/MM/YYYY`. Slashes are added automatically.</p>
             </div>
-            <div class="row-2">
+            <div class="time-range">
               <div>
                 <label for="time-from">From Time</label>
-                <input id="time-from" name="timeFrom" type="time" required>
+                <input id="time-from" name="timeFrom" class="time-input" type="time" step="60" required>
               </div>
               <div>
                 <label for="time-to">To Time</label>
-                <input id="time-to" name="timeTo" type="time" required>
+                <input id="time-to" name="timeTo" class="time-input" type="time" step="60" required>
               </div>
             </div>
           </div>
@@ -665,9 +660,7 @@
     const manageDeleteEventBtn = document.getElementById("manage-delete-event-btn");
 
     const adminForm = document.getElementById("admin-form");
-    const eventDateDayInput = document.getElementById("date-day");
-    const eventDateMonthInput = document.getElementById("date-month");
-    const eventDateYearInput = document.getElementById("date-year");
+    const eventDateInput = document.getElementById("date");
     const posterInput = document.getElementById("poster");
     const posterMeta = document.getElementById("poster-meta");
     const statusBox = document.getElementById("submit-status");
@@ -894,6 +887,20 @@
       persistEventDraft();
     });
 
+    eventDateInput.addEventListener("input", function () {
+      const digits = String(eventDateInput.value || "").replace(/\D+/g, "").slice(0, 8);
+      let nextValue = digits;
+      if (digits.length > 2) {
+        nextValue = digits.slice(0, 2) + "/" + digits.slice(2);
+      }
+      if (digits.length > 4) {
+        nextValue = digits.slice(0, 2) + "/" + digits.slice(2, 4) + "/" + digits.slice(4);
+      }
+      if (eventDateInput.value !== nextValue) {
+        eventDateInput.value = nextValue;
+      }
+    });
+
     clearBtn.addEventListener("click", function () {
       resetEventForm(true);
     });
@@ -1052,7 +1059,7 @@
     }
 
     function buildCreateEventDateValue() {
-      return normalizeDateParts(eventDateDayInput.value, eventDateMonthInput.value, eventDateYearInput.value);
+      return normalizeDateInput(eventDateInput.value);
     }
 
     function normalizeDateInput(value) {
@@ -1073,34 +1080,13 @@
       return "";
     }
 
-    function normalizeDateParts(dayValue, monthValue, yearValue) {
-      const day = String(dayValue || "").replace(/\D+/g, "").padStart(2, "0");
-      const month = String(monthValue || "").replace(/\D+/g, "").padStart(2, "0");
-      const year = String(yearValue || "").replace(/\D+/g, "");
-      if (!/^\d{2}$/.test(day) || !/^\d{2}$/.test(month) || !/^\d{4}$/.test(year)) {
-        return "";
-      }
-      const iso = year + "-" + month + "-" + day;
-      const date = new Date(iso + "T00:00:00");
-      if (isNaN(date.getTime())) return "";
-      if (date.getFullYear() !== Number(year) || date.getMonth() + 1 !== Number(month) || date.getDate() !== Number(day)) {
-        return "";
-      }
-      return iso;
-    }
-
     function setCreateEventDateInputs(value) {
       const normalized = normalizeDateInput(value);
       if (!normalized) {
-        eventDateDayInput.value = "";
-        eventDateMonthInput.value = "";
-        eventDateYearInput.value = "";
+        eventDateInput.value = "";
         return;
       }
-      const parts = normalized.split("-");
-      eventDateYearInput.value = parts[0] || "";
-      eventDateMonthInput.value = parts[1] || "";
-      eventDateDayInput.value = parts[2] || "";
+      eventDateInput.value = formatDateInputValue(normalized);
     }
 
     function formatDateInputValue(value) {
