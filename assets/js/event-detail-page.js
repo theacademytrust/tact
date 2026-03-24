@@ -62,6 +62,37 @@
     return null;
   }
 
+  function sameDay(left, right) {
+    return String(left || "").trim() === String(right || "").trim();
+  }
+
+  function sameText(left, right) {
+    return String(left || "").trim().toLowerCase() === String(right || "").trim().toLowerCase();
+  }
+
+  function findGalleryEntry(eventItem, galleries) {
+    var list = Array.isArray(galleries) ? galleries : [];
+    var slug = String(eventItem && eventItem.slug || "");
+    var title = String(eventItem && eventItem.title || "");
+    var date = String(eventItem && eventItem.date || "");
+
+    for (var i = 0; i < list.length; i++) {
+      var entry = list[i] || {};
+      if (String(entry.eventSlug || entry.slug || "") === slug) {
+        return entry;
+      }
+    }
+
+    for (var j = 0; j < list.length; j++) {
+      var byMeta = list[j] || {};
+      if (sameDay(byMeta.date, date) && sameText(byMeta.title, title)) {
+        return byMeta;
+      }
+    }
+
+    return null;
+  }
+
   function buildGalleryItem(eventItem, image, index) {
     return {
       id: "gallery-" + index,
@@ -217,7 +248,7 @@
     var images = galleryEntry && Array.isArray(galleryEntry.images) ? galleryEntry.images : [];
     var gallerySection = images.length
       ? (
-        '<section class="surface">' +
+        '<section class="surface event-detail-gallery-shell">' +
           '<div class="event-detail-gallery-head">' +
             "<h2>Gallery</h2>" +
             "<p>Moments captured from this event.</p>" +
@@ -298,14 +329,7 @@
       galleries = await window.loadTactGalleryData({ forceRefresh: true });
     }
 
-    var galleryEntry = null;
-    for (var i = 0; i < galleries.length; i++) {
-      var entry = galleries[i];
-      if (String(entry.eventSlug || entry.slug || "") === slug) {
-        galleryEntry = entry;
-        break;
-      }
-    }
+    var galleryEntry = findGalleryEntry(eventItem, galleries);
 
     renderEventDetail(eventItem, galleryEntry);
   }

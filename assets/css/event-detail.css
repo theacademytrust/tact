@@ -13,8 +13,8 @@ body.modal-open {
 
 .event-detail-hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
-  gap: 22px;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: 18px;
   align-items: stretch;
 }
 
@@ -25,7 +25,7 @@ body.modal-open {
   border-radius: 24px;
   overflow: hidden;
   background: #edf3ed;
-  min-height: 680px;
+  min-height: 500px;
   cursor: pointer;
   box-shadow: 0 20px 58px rgba(15, 23, 42, 0.14);
 }
@@ -35,19 +35,19 @@ body.modal-open {
   width: 100%;
   height: 100%;
   object-fit: fill;
-  min-height: 680px;
+  min-height: 500px;
 }
 
 .event-detail-copy {
   display: grid;
-  gap: 18px;
+  gap: 14px;
   align-content: start;
 }
 
 .event-detail-copy h1 {
   margin: 0;
   color: var(--green);
-  font-size: 42px;
+  font-size: 34px;
   line-height: 1.05;
   letter-spacing: -0.045em;
 }
@@ -72,8 +72,8 @@ body.modal-open {
 .event-detail-description {
   margin: 0;
   color: #334155;
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 15px;
+  line-height: 1.7;
   white-space: pre-line;
 }
 
