@@ -372,9 +372,9 @@
 
     <section id="form-card" class="card hidden">
       <div class="view-switch" style="margin-bottom:0;">
-        <button id="toggle-manage-btn" type="button" class="secondary" data-active="false">Manage Events & Gallery</button>
         <button id="show-event-panel-btn" type="button" class="secondary" data-active="false">Add Event</button>
         <button id="show-gallery-panel-btn" type="button" class="secondary" data-active="false">Add Gallery</button>
+        <button id="toggle-manage-btn" type="button" class="secondary" data-active="false">Manage Events & Gallery</button>
       </div>
 
       <section id="manage-card" class="subcard hidden">
@@ -401,7 +401,7 @@
 
             <div class="btn-row">
               <button id="manage-remove-poster-btn" type="button" class="danger">Remove Poster</button>
-              <label class="secondary" for="manage-poster-input" style="display:flex;align-items:center;justify-content:center;cursor:pointer;">Add Poster</label>
+              <button id="manage-add-poster-btn" type="button" class="secondary">Add Poster</button>
             </div>
             <input id="manage-poster-input" type="file" accept=".jpg,.jpeg,.png,.webp,.svg" class="hidden">
             <p id="manage-poster-meta" class="mono"></p>
@@ -414,7 +414,7 @@
             <div class="row-2">
               <div>
                 <label for="manage-date">Date</label>
-                <input id="manage-date" name="manageDate" type="date">
+                <input id="manage-date" name="manageDate" placeholder="DD/MM/YYYY">
               </div>
               <div>
                 <label for="manage-time">Time</label>
@@ -436,7 +436,7 @@
 
             <div class="btn-row">
               <button id="manage-save-btn" type="button">Save / Update Event</button>
-              <button id="manage-clear-btn" type="button" class="secondary">Close Editor</button>
+              <button id="manage-clear-btn" type="button" class="secondary">Back to List</button>
             </div>
           </div>
 
@@ -469,7 +469,7 @@
           <div class="row-2">
             <div>
               <label for="date">Date</label>
-              <input id="date" name="date" type="date" required>
+              <input id="date" name="date" placeholder="DD/MM/YYYY" required>
             </div>
             <div class="row-2">
               <div>
@@ -621,6 +621,7 @@
     const eventEditCard = document.getElementById("event-edit-card");
     const managePosterPreview = document.getElementById("manage-poster-preview");
     const managePosterInput = document.getElementById("manage-poster-input");
+    const manageAddPosterBtn = document.getElementById("manage-add-poster-btn");
     const managePosterMeta = document.getElementById("manage-poster-meta");
     const manageRemovePosterBtn = document.getElementById("manage-remove-poster-btn");
     const manageTitleInput = document.getElementById("manage-title");
@@ -809,6 +810,10 @@
       renderManagePosterPreview(null, managePosterPayload);
     });
 
+    manageAddPosterBtn.addEventListener("click", function () {
+      managePosterInput.click();
+    });
+
     manageRemovePosterBtn.addEventListener("click", function () {
       managePosterPayload = null;
       managePosterRemoved = true;
@@ -894,8 +899,12 @@
       }
 
       const title = valueOf("title");
-      const date = valueOf("date");
+      const date = normalizeDateInput(valueOf("date"));
       const time = buildTimeRange();
+      if (!date) {
+        alert("Enter date in DD/MM/YYYY format.");
+        return;
+      }
       if (!time) {
         alert("Enter valid from and to times.");
         return;
@@ -1010,6 +1019,32 @@
 
     function valueOf(id) {
       return (document.getElementById(id).value || "").trim();
+    }
+
+    function normalizeDateInput(value) {
+      const raw = String(value || "").trim();
+      if (!raw) return "";
+      if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return raw;
+
+      const slash = raw.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+      if (slash) {
+        return slash[3] + "-" + slash[2] + "-" + slash[1];
+      }
+
+      const dash = raw.match(/^(\d{2})-(\d{2})-(\d{4})$/);
+      if (dash) {
+        return dash[3] + "-" + dash[2] + "-" + dash[1];
+      }
+
+      return "";
+    }
+
+    function formatDateInputValue(value) {
+      const raw = normalizeDateInput(value);
+      if (!raw) return value || "";
+      const parts = raw.split("-");
+      if (parts.length !== 3) return value || "";
+      return parts[2] + "/" + parts[1] + "/" + parts[0];
     }
 
     function slugify(text) {
@@ -1260,7 +1295,7 @@
       if (!draft || !draft.values) return;
 
       setValue("title", draft.values.title);
-      setValue("date", draft.values.date);
+      setValue("date", formatDateInputValue(draft.values.date));
       setValue("time-from", draft.values.timeFrom);
       setValue("time-to", draft.values.timeTo);
       setValue("location", draft.values.location);
@@ -1712,6 +1747,9 @@
         if (selectedManageSlug && !eventCache.some(function (item) { return String(item.slug || "") === selectedManageSlug; })) {
           closeManagedEventEditor();
         }
+        if (!selectedManageSlug) {
+          eventList.classList.remove("hidden");
+        }
         renderEventList(eventCache);
         populateGalleryEventSelect();
         if (showRefreshMessage) {
@@ -1787,13 +1825,14 @@
       managePosterMeta.textContent = "";
 
       manageTitleInput.value = String(item.title || "");
-      manageDateInput.value = String(item.date || "");
+      manageDateInput.value = formatDateInputValue(item.date);
       manageTimeInput.value = String(item.time || "");
       manageLocationInput.value = String(item.location || "");
       manageDescriptionInput.value = String(item.homepageMatter || "");
 
       renderManagePosterPreview(item, null);
       renderManagedGalleryImages();
+      eventList.classList.add("hidden");
       eventEditCard.classList.remove("hidden");
       hideStatus(manageEditStatus);
       renderEventList(eventCache);
@@ -1807,6 +1846,7 @@
       managePosterInput.value = "";
       managePosterMeta.textContent = "";
       eventEditCard.classList.add("hidden");
+      eventList.classList.remove("hidden");
       hideStatus(manageEditStatus);
       manageTimeInput.value = "";
       renderEventList(eventCache);
@@ -1884,6 +1924,11 @@
       const current = getSelectedManageEvent();
       if (!current) return;
       if (!unlockedPin || !hasConfiguredEndpoint()) return;
+      const normalizedManageDate = normalizeDateInput(String(manageDateInput.value || "").trim());
+      if (!normalizedManageDate) {
+        showStatus(manageEditStatus, "Enter date in DD/MM/YYYY format.", true);
+        return;
+      }
 
       const payload = {
         action: "updateEvent",
@@ -1892,7 +1937,7 @@
         event: {
           slug: current.slug,
           title: String(manageTitleInput.value || "").trim(),
-          date: String(manageDateInput.value || "").trim(),
+          date: normalizedManageDate,
           time: String(manageTimeInput.value || "").trim(),
           location: String(manageLocationInput.value || "").trim(),
           status: current.status || "scheduled",
