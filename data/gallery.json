@@ -122,5 +122,27 @@
         "description": "this is 4th image \nGallery save failed: Bandwidth quota exceeded: https://api.github.com/repos/Chdmbr/Tact/contents/images/gallery/2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef-01.jpg. Try reducing the rate of data transfer."
       }
     ]
+  },
+  {
+    "slug": "2026-demo-past-event",
+    "eventSlug": "2026-demo-past-event",
+    "pageUrl": "events/2026-demo-past-event.html",
+    "title": "Demo Past Event (Sample)",
+    "date": "2026-01-12",
+    "location": "Hubballi",
+    "images": [
+      {
+        "url": "content/events/2026-demo-past-event/gallery/image-01.jpg",
+        "description": "fo8utrdtyhuij"
+      },
+      {
+        "url": "content/events/2026-demo-past-event/gallery/image-02.jpg",
+        "description": "j rff hfierhgeuh frehguhguher 'oh uwehgfuehguheuoghehhgeroh;8erh;w9\ngknr wijgoirwjhgiwjgowie"
+      },
+      {
+        "url": "content/events/2026-demo-past-event/gallery/image-03.jpg",
+        "description": "h 3r87fhue3hfuhfiuwhrd8h2wr789f2wdhw29d2r9u2r"
+      }
+    ]
   }
 ]
