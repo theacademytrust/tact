@@ -155,10 +155,10 @@
     }
     .event-item {
       display: grid;
-      grid-template-columns: 72px 1fr auto;
-      gap: 12px;
-      align-items: center;
-      padding: 10px;
+      grid-template-columns: 1fr;
+      gap: 6px;
+      align-items: start;
+      padding: 12px;
       border: 1px solid rgba(10, 20, 10, 0.08);
       border-radius: 12px;
       background: linear-gradient(180deg, #ffffff, var(--card-soft));
@@ -171,22 +171,14 @@
       box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
       border-color: rgba(10, 122, 58, 0.2);
     }
-    .event-item img {
-      width: 72px;
-      height: 72px;
-      object-fit: fill;
-      border-radius: 10px;
-      border: 1px solid rgba(10, 20, 10, 0.08);
-      background: #eef3ee;
-    }
     .event-item h3 {
-      margin: 0 0 4px;
+      margin: 0;
       font-size: 16px;
       color: #173125;
     }
     .event-copy { min-width: 0; }
     .event-meta {
-      margin: 0 0 4px;
+      margin: 0;
       font-size: 12px;
       color: #5a6d62;
     }
@@ -203,7 +195,7 @@
     }
     .view-switch {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 10px;
       margin-bottom: 12px;
     }
@@ -313,12 +305,7 @@
       .row-2, .btn-row, .view-switch { grid-template-columns: 1fr; }
       .manager-toolbar { grid-template-columns: 1fr; }
       .event-item {
-        grid-template-columns: 64px 1fr;
         align-items: start;
-      }
-      .event-item img {
-        width: 64px;
-        height: 64px;
       }
       .event-actions {
         grid-column: 1 / -1;
@@ -384,8 +371,10 @@
     </section>
 
     <section id="form-card" class="card hidden">
-      <div class="manager-toggle-row">
-        <button id="toggle-manage-btn" type="button" class="accent">Manage Events & Gallery</button>
+      <div class="view-switch" style="margin-bottom:0;">
+        <button id="toggle-manage-btn" type="button" class="secondary" data-active="false">Manage Events & Gallery</button>
+        <button id="show-event-panel-btn" type="button" class="secondary" data-active="false">Add Event</button>
+        <button id="show-gallery-panel-btn" type="button" class="secondary" data-active="false">Add Gallery</button>
       </div>
 
       <section id="manage-card" class="subcard hidden">
@@ -428,6 +417,13 @@
                 <input id="manage-date" name="manageDate" type="date">
               </div>
               <div>
+                <label for="manage-time">Time</label>
+                <input id="manage-time" name="manageTime" placeholder="10:00 AM - 1:00 PM">
+              </div>
+            </div>
+
+            <div class="row-2">
+              <div>
                 <label for="manage-location">Location</label>
                 <input id="manage-location" name="manageLocation">
               </div>
@@ -457,11 +453,6 @@
           </div>
         </section>
       </section>
-
-      <div class="view-switch">
-        <button id="show-event-panel-btn" type="button" class="secondary" data-active="true">Add Event</button>
-        <button id="show-gallery-panel-btn" type="button" class="secondary" data-active="false">Add Gallery</button>
-      </div>
 
       <section id="event-panel">
         <div class="panel-head">
@@ -634,6 +625,7 @@
     const manageRemovePosterBtn = document.getElementById("manage-remove-poster-btn");
     const manageTitleInput = document.getElementById("manage-title");
     const manageDateInput = document.getElementById("manage-date");
+    const manageTimeInput = document.getElementById("manage-time");
     const manageLocationInput = document.getElementById("manage-location");
     const manageDescriptionInput = document.getElementById("manage-description");
     const manageSaveBtn = document.getElementById("manage-save-btn");
@@ -671,7 +663,7 @@
     let unlockedPin = "";
     let posterPayload = null;
     let pinConfigured = true;
-    let adminMode = "event";
+    let adminMode = "";
     let eventCache = [];
     let galleryEntriesCache = [];
     let pendingGalleryDraftSelection = "";
@@ -705,12 +697,7 @@
     });
 
     toggleManageBtn.addEventListener("click", function () {
-      const willShow = manageCard.classList.contains("hidden");
-      manageCard.classList.toggle("hidden", !willShow);
-      toggleManageBtn.textContent = willShow ? "Hide Events & Gallery" : "Manage Events & Gallery";
-      if (willShow) {
-        loadExistingEvents(false);
-      }
+      switchAdminMode("manage");
     });
 
     unlockBtn.addEventListener("click", async function () {
@@ -739,7 +726,7 @@
         pinCard.classList.add("hidden");
         formCard.classList.remove("hidden");
         await refreshGalleryContext(false);
-        switchAdminMode(adminMode);
+        showAdminHome();
       } catch (_err) {
         alert("Could not verify PIN. Please try again.");
       } finally {
@@ -785,6 +772,8 @@
         pinHint.classList.remove("hidden");
         pinCard.classList.add("hidden");
         formCard.classList.remove("hidden");
+        await refreshGalleryContext(false);
+        showAdminHome();
         pinModeNote.textContent = "PIN is set. To change it, enter current PIN and new PIN.";
         oldPinInput.value = "";
         newPinInput.value = "";
@@ -1062,17 +1051,34 @@
     }
 
     function switchAdminMode(mode) {
-      adminMode = mode === "gallery" ? "gallery" : "event";
+      adminMode = mode === "manage" || mode === "gallery" || mode === "event" ? mode : "";
+      const isManage = adminMode === "manage";
       const isGallery = adminMode === "gallery";
-      eventPanel.classList.toggle("hidden", isGallery);
+      const isEvent = adminMode === "event";
+      manageCard.classList.toggle("hidden", !isManage);
+      eventPanel.classList.toggle("hidden", !isEvent);
       galleryPanel.classList.toggle("hidden", !isGallery);
-      showEventPanelBtn.dataset.active = String(!isGallery);
+      toggleManageBtn.dataset.active = String(isManage);
+      showEventPanelBtn.dataset.active = String(isEvent);
       showGalleryPanelBtn.dataset.active = String(isGallery);
+      if (isManage) {
+        loadExistingEvents(false);
+      }
       if (isGallery) {
         refreshGalleryContext(false).catch(function (err) {
           showStatus(galleryStatus, "Could not refresh gallery context: " + (err && err.message ? err.message : "Unknown error"), true);
         });
       }
+    }
+
+    function showAdminHome() {
+      adminMode = "";
+      manageCard.classList.add("hidden");
+      eventPanel.classList.add("hidden");
+      galleryPanel.classList.add("hidden");
+      toggleManageBtn.dataset.active = "false";
+      showEventPanelBtn.dataset.active = "false";
+      showGalleryPanelBtn.dataset.active = "false";
     }
 
     function ensureGalleryBlocks() {
@@ -1748,48 +1754,19 @@
         const article = document.createElement("article");
         article.className = "event-item";
         article.dataset.selected = String(String(item.slug || "") === selectedManageSlug);
-        article.addEventListener("click", function (event) {
-          if (event.target.closest("button")) return;
+        article.addEventListener("click", function () {
           openManagedEventEditor(item);
         });
-
-        const poster = document.createElement("img");
-        poster.src = String(item.poster || "assets/images/tact-logo.jpg");
-        poster.alt = (item.title || "Event") + " poster";
-        poster.onerror = function () {
-          poster.onerror = null;
-          poster.src = "assets/images/tact-logo.jpg";
-        };
 
         const details = document.createElement("div");
         details.className = "event-copy";
         details.innerHTML =
           "<h3>" + escapeHtml(item.title || "Untitled Event") + "</h3>" +
           '<p class="event-meta">' +
-          escapeHtml(formatDisplayDate(item.date)) + " | " +
-          escapeHtml(item.time || "Time TBA") + " | " +
-          escapeHtml(item.location || "Location TBA") +
-          "</p>" +
-          '<p class="event-slug">' + escapeHtml(item.slug || "") + "</p>";
+          escapeHtml(formatDisplayDate(item.date)) +
+          "</p>";
 
-        const removeBtn = document.createElement("button");
-        removeBtn.type = "button";
-        removeBtn.className = "danger";
-        removeBtn.textContent = "Delete";
-        removeBtn.addEventListener("click", function (event) {
-          event.stopPropagation();
-        });
-        removeBtn.addEventListener("click", function () {
-          handleDeleteEvent(item, removeBtn);
-        });
-
-        const actions = document.createElement("div");
-        actions.className = "event-actions";
-        actions.appendChild(removeBtn);
-
-        article.appendChild(poster);
         article.appendChild(details);
-        article.appendChild(actions);
         eventList.appendChild(article);
       });
     }
@@ -1811,6 +1788,7 @@
 
       manageTitleInput.value = String(item.title || "");
       manageDateInput.value = String(item.date || "");
+      manageTimeInput.value = String(item.time || "");
       manageLocationInput.value = String(item.location || "");
       manageDescriptionInput.value = String(item.homepageMatter || "");
 
@@ -1830,6 +1808,7 @@
       managePosterMeta.textContent = "";
       eventEditCard.classList.add("hidden");
       hideStatus(manageEditStatus);
+      manageTimeInput.value = "";
       renderEventList(eventCache);
     }
 
@@ -1914,8 +1893,8 @@
           slug: current.slug,
           title: String(manageTitleInput.value || "").trim(),
           date: String(manageDateInput.value || "").trim(),
+          time: String(manageTimeInput.value || "").trim(),
           location: String(manageLocationInput.value || "").trim(),
-          time: current.time || "",
           status: current.status || "scheduled",
           teaser: current.teaser || "",
           homepageMatter: String(manageDescriptionInput.value || "").trim()
