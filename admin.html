@@ -162,6 +162,14 @@
       border: 1px solid rgba(10, 20, 10, 0.08);
       border-radius: 12px;
       background: linear-gradient(180deg, #ffffff, var(--card-soft));
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+    .event-item:hover,
+    .event-item[data-selected="true"] {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+      border-color: rgba(10, 122, 58, 0.2);
     }
     .event-item img {
       width: 72px;
@@ -295,6 +303,9 @@
       font-size: 12px;
       color: #5c6760;
     }
+    .existing-gallery-item button {
+      border-radius: 0;
+    }
     .manager-toggle-row {
       margin-bottom: 12px;
     }
@@ -373,28 +384,86 @@
     </section>
 
     <section id="form-card" class="card hidden">
+      <div class="manager-toggle-row">
+        <button id="toggle-manage-btn" type="button" class="accent">Manage Events & Gallery</button>
+      </div>
+
+      <section id="manage-card" class="subcard hidden">
+        <div class="manager-toolbar">
+          <div>
+            <h2>Manage Events & Gallery</h2>
+            <p>Open any event to edit its details, poster, and gallery content.</p>
+          </div>
+          <button id="refresh-events-btn" type="button" class="secondary">Refresh List</button>
+        </div>
+        <div id="manage-status" class="status hidden"></div>
+        <div id="event-list" class="event-list"></div>
+
+        <section id="event-edit-card" class="subcard hidden">
+          <div class="panel-head">
+            <h2>Edit Event</h2>
+            <p>Update the selected event and manage its poster and gallery.</p>
+          </div>
+
+          <div class="grid">
+            <div class="gallery-preview" id="manage-poster-preview">
+              <span>Poster preview appears here.</span>
+            </div>
+
+            <div class="btn-row">
+              <button id="manage-remove-poster-btn" type="button" class="danger">Remove Poster</button>
+              <label class="secondary" for="manage-poster-input" style="display:flex;align-items:center;justify-content:center;cursor:pointer;">Add Poster</label>
+            </div>
+            <input id="manage-poster-input" type="file" accept=".jpg,.jpeg,.png,.webp,.svg" class="hidden">
+            <p id="manage-poster-meta" class="mono"></p>
+
+            <div>
+              <label for="manage-title">Event Title</label>
+              <input id="manage-title" name="manageTitle">
+            </div>
+
+            <div class="row-2">
+              <div>
+                <label for="manage-date">Date</label>
+                <input id="manage-date" name="manageDate" type="date">
+              </div>
+              <div>
+                <label for="manage-location">Location</label>
+                <input id="manage-location" name="manageLocation">
+              </div>
+            </div>
+
+            <div>
+              <label for="manage-description">Description</label>
+              <textarea id="manage-description" name="manageDescription" placeholder="Event description"></textarea>
+            </div>
+
+            <div class="btn-row">
+              <button id="manage-save-btn" type="button">Save / Update Event</button>
+              <button id="manage-clear-btn" type="button" class="secondary">Close Editor</button>
+            </div>
+          </div>
+
+          <div id="manage-edit-status" class="status hidden"></div>
+
+          <div class="panel-head" style="margin-top:16px;">
+            <h2>Gallery Management</h2>
+            <p>Remove existing images or jump to the Add Gallery flow for this event.</p>
+          </div>
+          <div id="manage-gallery-list" class="existing-gallery-grid"></div>
+          <div class="btn-row" style="margin-top:10px;">
+            <button id="manage-add-gallery-btn" type="button" class="secondary">Add Gallery Images</button>
+            <button id="manage-delete-event-btn" type="button" class="danger">Delete Event</button>
+          </div>
+        </section>
+      </section>
+
       <div class="view-switch">
         <button id="show-event-panel-btn" type="button" class="secondary" data-active="true">Add Event</button>
         <button id="show-gallery-panel-btn" type="button" class="secondary" data-active="false">Add Gallery</button>
       </div>
 
       <section id="event-panel">
-        <div class="manager-toggle-row">
-          <button id="toggle-manage-btn" type="button" class="accent">Manage Existing Events</button>
-        </div>
-
-        <section id="manage-card" class="subcard hidden">
-          <div class="manager-toolbar">
-            <div>
-              <h2>Manage Existing Events</h2>
-              <p>Synced from GitHub. Delete removes the full event folder and rebuilds the feed.</p>
-            </div>
-            <button id="refresh-events-btn" type="button" class="secondary">Refresh List</button>
-          </div>
-          <div id="manage-status" class="status hidden"></div>
-          <div id="event-list" class="event-list"></div>
-        </section>
-
         <div class="panel-head">
           <h2>Add Event</h2>
           <p>Use this to publish event details and the poster image.</p>
@@ -558,6 +627,21 @@
     const refreshEventsBtn = document.getElementById("refresh-events-btn");
     const manageStatus = document.getElementById("manage-status");
     const eventList = document.getElementById("event-list");
+    const eventEditCard = document.getElementById("event-edit-card");
+    const managePosterPreview = document.getElementById("manage-poster-preview");
+    const managePosterInput = document.getElementById("manage-poster-input");
+    const managePosterMeta = document.getElementById("manage-poster-meta");
+    const manageRemovePosterBtn = document.getElementById("manage-remove-poster-btn");
+    const manageTitleInput = document.getElementById("manage-title");
+    const manageDateInput = document.getElementById("manage-date");
+    const manageLocationInput = document.getElementById("manage-location");
+    const manageDescriptionInput = document.getElementById("manage-description");
+    const manageSaveBtn = document.getElementById("manage-save-btn");
+    const manageClearBtn = document.getElementById("manage-clear-btn");
+    const manageEditStatus = document.getElementById("manage-edit-status");
+    const manageGalleryList = document.getElementById("manage-gallery-list");
+    const manageAddGalleryBtn = document.getElementById("manage-add-gallery-btn");
+    const manageDeleteEventBtn = document.getElementById("manage-delete-event-btn");
 
     const adminForm = document.getElementById("admin-form");
     const posterInput = document.getElementById("poster");
@@ -591,6 +675,9 @@
     let eventCache = [];
     let galleryEntriesCache = [];
     let pendingGalleryDraftSelection = "";
+    let selectedManageSlug = "";
+    let managePosterPayload = null;
+    let managePosterRemoved = false;
 
     bootPinStatus();
     ensureGalleryBlocks();
@@ -620,7 +707,7 @@
     toggleManageBtn.addEventListener("click", function () {
       const willShow = manageCard.classList.contains("hidden");
       manageCard.classList.toggle("hidden", !willShow);
-      toggleManageBtn.textContent = willShow ? "Hide Existing Events" : "Manage Existing Events";
+      toggleManageBtn.textContent = willShow ? "Hide Events & Gallery" : "Manage Events & Gallery";
       if (willShow) {
         loadExistingEvents(false);
       }
@@ -710,6 +797,57 @@
 
     refreshEventsBtn.addEventListener("click", function () {
       loadExistingEvents(true);
+    });
+
+    managePosterInput.addEventListener("change", async function () {
+      const file = managePosterInput.files && managePosterInput.files[0];
+      if (!file) {
+        managePosterPayload = null;
+        managePosterMeta.textContent = "";
+        renderManagePosterPreview(getSelectedManageEvent());
+        return;
+      }
+
+      const prepared = await prepareUploadFile(file, {
+        maxDimension: 1900,
+        quality: 0.86,
+        minQuality: 0.72,
+        maxBytes: 900 * 1024
+      });
+      managePosterPayload = prepared.payload;
+      managePosterRemoved = false;
+      managePosterMeta.textContent = buildPreparedFileLabel(file, prepared);
+      renderManagePosterPreview(null, managePosterPayload);
+    });
+
+    manageRemovePosterBtn.addEventListener("click", function () {
+      managePosterPayload = null;
+      managePosterRemoved = true;
+      managePosterInput.value = "";
+      managePosterMeta.textContent = "Poster will be removed when you save.";
+      renderManagePosterPreview(null, null);
+    });
+
+    manageSaveBtn.addEventListener("click", function () {
+      handleUpdateManagedEvent();
+    });
+
+    manageClearBtn.addEventListener("click", function () {
+      closeManagedEventEditor();
+    });
+
+    manageAddGalleryBtn.addEventListener("click", function () {
+      if (!selectedManageSlug) return;
+      switchAdminMode("gallery");
+      galleryEventSelect.value = selectedManageSlug;
+      updateGallerySelectionState();
+      galleryEventSelect.scrollIntoView({ block: "center", behavior: "smooth" });
+    });
+
+    manageDeleteEventBtn.addEventListener("click", function () {
+      const current = getSelectedManageEvent();
+      if (!current) return;
+      handleDeleteEvent(current, manageDeleteEventBtn);
     });
 
     posterInput.addEventListener("change", async function () {
@@ -1565,6 +1703,9 @@
         }
 
         eventCache = Array.isArray(body.events) ? body.events : [];
+        if (selectedManageSlug && !eventCache.some(function (item) { return String(item.slug || "") === selectedManageSlug; })) {
+          closeManagedEventEditor();
+        }
         renderEventList(eventCache);
         populateGalleryEventSelect();
         if (showRefreshMessage) {
@@ -1606,6 +1747,11 @@
       events.forEach(function (item) {
         const article = document.createElement("article");
         article.className = "event-item";
+        article.dataset.selected = String(String(item.slug || "") === selectedManageSlug);
+        article.addEventListener("click", function (event) {
+          if (event.target.closest("button")) return;
+          openManagedEventEditor(item);
+        });
 
         const poster = document.createElement("img");
         poster.src = String(item.poster || "assets/images/tact-logo.jpg");
@@ -1630,6 +1776,9 @@
         removeBtn.type = "button";
         removeBtn.className = "danger";
         removeBtn.textContent = "Delete";
+        removeBtn.addEventListener("click", function (event) {
+          event.stopPropagation();
+        });
         removeBtn.addEventListener("click", function () {
           handleDeleteEvent(item, removeBtn);
         });
@@ -1643,6 +1792,184 @@
         article.appendChild(actions);
         eventList.appendChild(article);
       });
+    }
+
+    function getSelectedManageEvent() {
+      return eventCache.find(function (item) {
+        return String(item.slug || "") === selectedManageSlug;
+      }) || null;
+    }
+
+    function openManagedEventEditor(item) {
+      if (!item || !item.slug) return;
+
+      selectedManageSlug = String(item.slug || "");
+      managePosterPayload = null;
+      managePosterRemoved = false;
+      managePosterInput.value = "";
+      managePosterMeta.textContent = "";
+
+      manageTitleInput.value = String(item.title || "");
+      manageDateInput.value = String(item.date || "");
+      manageLocationInput.value = String(item.location || "");
+      manageDescriptionInput.value = String(item.homepageMatter || "");
+
+      renderManagePosterPreview(item, null);
+      renderManagedGalleryImages();
+      eventEditCard.classList.remove("hidden");
+      hideStatus(manageEditStatus);
+      renderEventList(eventCache);
+      eventEditCard.scrollIntoView({ block: "start", behavior: "smooth" });
+    }
+
+    function closeManagedEventEditor() {
+      selectedManageSlug = "";
+      managePosterPayload = null;
+      managePosterRemoved = false;
+      managePosterInput.value = "";
+      managePosterMeta.textContent = "";
+      eventEditCard.classList.add("hidden");
+      hideStatus(manageEditStatus);
+      renderEventList(eventCache);
+    }
+
+    function renderManagePosterPreview(item, overridePayload) {
+      managePosterPreview.innerHTML = "";
+
+      if (overridePayload && overridePayload.data) {
+        const img = document.createElement("img");
+        img.src = "data:" + String(overridePayload.mime || "image/jpeg") + ";base64," + String(overridePayload.data || "");
+        img.alt = String(overridePayload.name || "Poster preview");
+        managePosterPreview.appendChild(img);
+        return;
+      }
+
+      if (managePosterRemoved) {
+        managePosterPreview.innerHTML = "<span>No poster selected. Use Add Poster to upload a new one.</span>";
+        return;
+      }
+
+      const imageUrl = String((item && item.poster) || "");
+      if (!imageUrl) {
+        managePosterPreview.innerHTML = "<span>No poster selected. Use Add Poster to upload one.</span>";
+        return;
+      }
+
+      const img = document.createElement("img");
+      img.src = imageUrl;
+      img.alt = String((item && item.title) || "Poster");
+      managePosterPreview.appendChild(img);
+    }
+
+    function renderManagedGalleryImages() {
+      manageGalleryList.innerHTML = "";
+      const entry = galleryEntriesCache.find(function (item) {
+        return String(item.eventSlug || item.slug || "") === selectedManageSlug;
+      });
+
+      if (!entry || !Array.isArray(entry.images) || !entry.images.length) {
+        manageGalleryList.innerHTML = '<p class="mini">No gallery images are attached to this event yet.</p>';
+        return;
+      }
+
+      entry.images.forEach(function (image, index) {
+        const card = document.createElement("article");
+        card.className = "existing-gallery-item";
+
+        const img = document.createElement("img");
+        img.src = String(image.url || "");
+        img.alt = "Gallery image " + String(index + 1);
+
+        const copy = document.createElement("div");
+        copy.className = "existing-gallery-copy";
+        copy.innerHTML =
+          "<strong>Image " + escapeHtml(String(index + 1)) + "</strong>" +
+          "<p>" + escapeHtml(String(image.description || "")) + "</p>";
+
+        const removeBtn = document.createElement("button");
+        removeBtn.type = "button";
+        removeBtn.className = "danger";
+        removeBtn.textContent = "Remove";
+        removeBtn.addEventListener("click", function () {
+          handleDeleteGalleryImage(String(image.url || ""));
+        });
+
+        card.appendChild(img);
+        card.appendChild(copy);
+        card.appendChild(removeBtn);
+        manageGalleryList.appendChild(card);
+      });
+    }
+
+    async function handleUpdateManagedEvent() {
+      const current = getSelectedManageEvent();
+      if (!current) return;
+      if (!unlockedPin || !hasConfiguredEndpoint()) return;
+
+      const payload = {
+        action: "updateEvent",
+        pin: unlockedPin,
+        removePoster: managePosterRemoved,
+        event: {
+          slug: current.slug,
+          title: String(manageTitleInput.value || "").trim(),
+          date: String(manageDateInput.value || "").trim(),
+          location: String(manageLocationInput.value || "").trim(),
+          time: current.time || "",
+          status: current.status || "scheduled",
+          teaser: current.teaser || "",
+          homepageMatter: String(manageDescriptionInput.value || "").trim()
+        },
+        poster: managePosterPayload
+      };
+
+      try {
+        showStatus(manageEditStatus, "Saving event changes...");
+        manageSaveBtn.disabled = true;
+        const body = await postAdminPayload(payload);
+        if (!body || body.ok === false) {
+          throw new Error(body && body.error ? body.error : "Could not update event.");
+        }
+
+        await refreshGalleryContext(false);
+        const refreshed = eventCache.find(function (item) {
+          return String(item.slug || "") === String(current.slug || "");
+        });
+        if (refreshed) {
+          openManagedEventEditor(refreshed);
+        }
+        showStatus(manageEditStatus, "Event updated successfully.");
+      } catch (err) {
+        showStatus(manageEditStatus, "Event update failed: " + (err && err.message ? err.message : "Unknown error"), true);
+      } finally {
+        manageSaveBtn.disabled = false;
+      }
+    }
+
+    async function handleDeleteGalleryImage(imageUrl) {
+      if (!selectedManageSlug || !imageUrl) return;
+      if (!window.confirm("Remove this gallery image from the selected event?")) {
+        return;
+      }
+
+      try {
+        showStatus(manageEditStatus, "Removing gallery image...");
+        const body = await postAdminPayload({
+          action: "deleteGalleryImage",
+          pin: unlockedPin,
+          eventSlug: selectedManageSlug,
+          imageUrl: imageUrl
+        });
+        if (!body || body.ok === false) {
+          throw new Error(body && body.error ? body.error : "Could not remove gallery image.");
+        }
+
+        await refreshGalleryEntries();
+        renderManagedGalleryImages();
+        showStatus(manageEditStatus, "Gallery image removed.");
+      } catch (err) {
+        showStatus(manageEditStatus, "Gallery image delete failed: " + (err && err.message ? err.message : "Unknown error"), true);
+      }
     }
 
     async function handleDeleteEvent(item, button) {
@@ -1663,6 +1990,9 @@
           throw new Error(body && body.error ? body.error : "Delete failed.");
         }
 
+        if (selectedManageSlug === slug) {
+          closeManagedEventEditor();
+        }
         showManageStatus('Deleted "' + title + '". Refreshing list...', false);
         await refreshGalleryContext(false);
       } catch (err) {
@@ -1726,11 +2056,10 @@
     function formatDisplayDate(value) {
       const date = new Date(String(value || "") + "T00:00:00");
       if (isNaN(date.getTime())) return value || "";
-      return date.toLocaleDateString("en-IN", {
-        day: "numeric",
-        month: "short",
-        year: "numeric"
-      });
+      const day = String(date.getDate()).padStart(2, "0");
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const year = String(date.getFullYear());
+      return day + "/" + month + "/" + year;
     }
   </script>
 </body>

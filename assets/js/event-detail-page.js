@@ -5,6 +5,21 @@
     eventsBound: false
   };
 
+  function getSiteRoot() {
+    var root = document.body && document.body.dataset ? document.body.dataset.siteRoot : "";
+    root = String(root || "").trim();
+    return root ? root.replace(/\/?$/, "/") : "";
+  }
+
+  function resolveSitePath(path) {
+    var raw = String(path || "").trim();
+    if (!raw) return "";
+    if (/^(?:[a-z]+:)?\/\//i.test(raw) || raw.indexOf("data:") === 0) {
+      return raw;
+    }
+    return getSiteRoot() + raw.replace(/^\/+/, "");
+  }
+
   function formatDate(value) {
     var parsed = new Date(String(value || "") + "T00:00:00");
     if (isNaN(parsed.getTime())) return value || "";
@@ -54,7 +69,7 @@
       date: String(eventItem.date || ""),
       location: String(eventItem.location || ""),
       description: String((image && image.description) || ""),
-      url: String((image && image.url) || "")
+      url: resolveSitePath(String((image && image.url) || ""))
     };
   }
 
@@ -65,7 +80,7 @@
       date: String(eventItem.date || ""),
       location: String(eventItem.location || ""),
       description: String(eventItem.homepageMatter || eventItem.teaser || ""),
-      url: String(eventItem.poster || "")
+      url: resolveSitePath(String(eventItem.poster || ""))
     };
   }
 
@@ -129,7 +144,7 @@
     document.getElementById("gallery-modal-date").textContent = formatDate(item.date);
     document.getElementById("gallery-modal-location").textContent = item.location;
     document.getElementById("gallery-modal-description").textContent = item.description;
-    dialog.style.setProperty("--gallery-modal-media-height", "90vh");
+    dialog.style.setProperty("--gallery-modal-media-height", "auto");
 
     modal.hidden = false;
     document.body.classList.add("modal-open");
@@ -199,11 +214,24 @@
 
     document.title = (eventItem.title || "Event") + " - The Academy Trust (tAcT)";
 
+    var images = galleryEntry && Array.isArray(galleryEntry.images) ? galleryEntry.images : [];
+    var gallerySection = images.length
+      ? (
+        '<section class="surface">' +
+          '<div class="event-detail-gallery-head">' +
+            "<h2>Gallery</h2>" +
+            "<p>Moments captured from this event.</p>" +
+          "</div>" +
+          '<div id="gallery-grid" class="gallery-grid"></div>' +
+        "</section>"
+      )
+      : "";
+
     main.innerHTML =
       '<div class="event-detail-shell">' +
         '<section class="surface event-detail-hero">' +
           '<button type="button" class="event-detail-poster-card" data-item-id="poster" aria-label="Open poster for ' + escapeHtml(eventItem.title || "event") + '">' +
-            '<img src="' + escapeHtml(eventItem.poster || "../assets/images/tact-logo.jpg") + '" alt="' + escapeHtml(eventItem.title || "Event poster") + '">' +
+            '<img src="' + escapeHtml(resolveSitePath(eventItem.poster || "assets/images/tact-logo.jpg")) + '" alt="' + escapeHtml(eventItem.title || "Event poster") + '">' +
           "</button>" +
           '<div class="event-detail-copy">' +
             "<h1>" + escapeHtml(eventItem.title || "Untitled event") + "</h1>" +
@@ -215,29 +243,16 @@
             '<p class="event-detail-description">' + escapeHtml(eventItem.homepageMatter || eventItem.teaser || "Description coming soon.") + "</p>" +
           "</div>" +
         "</section>" +
-        '<section class="surface">' +
-          '<div class="event-detail-gallery-head">' +
-            "<h2>Gallery</h2>" +
-            "<p>Moments captured from this event.</p>" +
-          "</div>" +
-          '<div id="gallery-grid" class="gallery-grid"></div>' +
-          '<p id="event-detail-empty" class="event-detail-empty" hidden>No gallery images have been added for this event yet.</p>' +
-        "</section>" +
+        gallerySection +
       "</div>";
 
     var posterItem = buildPosterItem(eventItem);
     state.itemsById = { poster: posterItem };
 
     var grid = document.getElementById("gallery-grid");
-    var empty = document.getElementById("event-detail-empty");
-    var images = galleryEntry && Array.isArray(galleryEntry.images) ? galleryEntry.images : [];
-
-    if (!images.length) {
-      if (empty) empty.hidden = false;
+    if (!images.length || !grid) {
       return;
     }
-
-    if (empty) empty.hidden = true;
 
     images.forEach(function (image, index) {
       var item = buildGalleryItem(eventItem, image, index + 1);

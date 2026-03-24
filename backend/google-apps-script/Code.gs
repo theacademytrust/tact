@@ -73,11 +73,17 @@ function doPost(e) {
     if (action === "deleteEvent") {
       return jsonOut(deleteEventFromGitHub(props, payload.slug), 200);
     }
+    if (action === "updateEvent") {
+      return jsonOut(updateEventInGitHub(props, payload.event, payload.poster, payload.removePoster), 200);
+    }
     if (action === "listGallery") {
       return jsonOut({ ok: true, galleries: listGalleryFromGitHub(props) }, 200);
     }
     if (action === "saveGallery") {
       return jsonOut(saveGalleryToGitHub(props, payload.gallery, payload.images), 200);
+    }
+    if (action === "deleteGalleryImage") {
+      return jsonOut(deleteGalleryImageFromGitHub(props, payload.eventSlug, payload.imageUrl), 200);
     }
 
     var result = publishEventToGitHub(props, eventObj, posterObj);
@@ -140,6 +146,64 @@ function publishEventToGitHub(props, eventObj, posterObj) {
     ok: true,
     slug: slug,
     posterPath: posterPath,
+    pagePath: buildEventPagePath(repo, slug, date, title),
+    feedPath: joinPath(repo.eventsRoot, "events-feed.js")
+  };
+}
+
+function updateEventInGitHub(props, eventObj, posterObj, removePosterValue) {
+  var repo = getRepoConfig(props);
+  var slug = sanitizeSlug(eventObj && eventObj.slug);
+  var currentMeta = getEventMeta(repo, slug);
+  if (!slug || !currentMeta) {
+    throw new Error("Selected event could not be found.");
+  }
+
+  var title = String(eventObj.title || currentMeta.title).trim();
+  var date = normalizeDate(eventObj.date || currentMeta.date);
+  var time = String(eventObj.time || currentMeta.time).trim();
+  var location = String(eventObj.location || currentMeta.location).trim();
+  var teaser = String(eventObj.teaser || currentMeta.teaser).trim();
+  var homepageMatter = String(eventObj.homepageMatter || currentMeta.homepageMatter).trim();
+  var status = normalizeStatus(eventObj.status || currentMeta.status);
+  var eventDir = joinPath(repo.eventsRoot, slug);
+  var eventPath = joinPath(eventDir, "event.json");
+  var removePoster = String(removePosterValue || "") === "true" || removePosterValue === true;
+  var posterPath = "";
+
+  if (!title || !date || !location) {
+    throw new Error("Missing required event fields.");
+  }
+
+  putTextFile(repo, eventPath, buildEventJson({
+    slug: slug,
+    title: title,
+    date: date,
+    time: time,
+    location: location,
+    teaser: teaser,
+    homepageMatter: homepageMatter,
+    status: status
+  }), "Update event metadata for " + slug);
+
+  if (removePoster) {
+    deletePosterFiles(repo, eventDir);
+  }
+
+  if (posterObj && posterObj.data) {
+    var ext = inferPosterExtension(posterObj);
+    posterPath = joinPath(eventDir, "poster" + ext);
+    removeOtherPosterVariants(repo, eventDir, "poster" + ext);
+    putBinaryFile(repo, posterPath, String(posterObj.data || ""), "Update event poster for " + slug);
+  }
+
+  rebuildFeed(repo);
+
+  return {
+    ok: true,
+    slug: slug,
+    posterPath: posterPath,
+    pagePath: buildEventPagePath(repo, slug, date, title),
     feedPath: joinPath(repo.eventsRoot, "events-feed.js")
   };
 }
@@ -209,7 +273,7 @@ function collectFeedEntries(repo) {
 
     var meta = parseJsonFile(repo, eventJsonPath);
     var poster = posterPath || fallbackPosterPath;
-    if (!meta || !meta.slug || !meta.title || !meta.date || !poster) continue;
+    if (!meta || !meta.slug || !meta.title || !meta.date) continue;
 
     feed.push({
       slug: String(meta.slug || ""),
@@ -219,7 +283,7 @@ function collectFeedEntries(repo) {
       location: String(meta.location || ""),
       status: normalizeStatus(meta.status),
       folder: dirPath,
-      pageUrl: buildEventPagePath(repo, String(meta.slug || "")),
+      pageUrl: buildEventPagePath(repo, String(meta.slug || ""), normalizeDate(meta.date), String(meta.title || "")),
       poster: poster,
       teaser: String(meta.teaser || ""),
       homepageMatter: String(meta.homepageMatter || "")
@@ -232,12 +296,19 @@ function collectFeedEntries(repo) {
 function deleteEventFromGitHub(props, slugValue) {
   var repo = getRepoConfig(props);
   var slug = sanitizeSlug(slugValue);
+  var currentMeta = getEventMeta(repo, slug);
   if (!slug) {
     throw new Error("Missing event slug.");
   }
 
   deleteDirectoryRecursive(repo, joinPath(repo.eventsRoot, slug));
-  deleteFileIfExists(repo, buildEventPagePath(repo, slug), "Delete generated event page for " + slug);
+  if (currentMeta) {
+    deleteFileIfExists(
+      repo,
+      buildEventPagePath(repo, slug, currentMeta.date, currentMeta.title),
+      "Delete generated event page for " + slug
+    );
+  }
   removeGalleryEntryForEvent(repo, slug);
   rebuildFeed(repo);
 
@@ -349,7 +420,7 @@ function saveGalleryToGitHub(props, galleryObj, imageList) {
   var nextEntry = {
     slug: eventSlug,
     eventSlug: eventSlug,
-    pageUrl: buildEventPagePath(repo, eventSlug),
+    pageUrl: buildEventPagePath(repo, eventSlug, eventMeta.date, eventMeta.title),
     title: String(eventMeta.title || ""),
     date: normalizeDate(eventMeta.date),
     location: String(eventMeta.location || ""),
@@ -389,6 +460,60 @@ function saveGalleryToGitHub(props, galleryObj, imageList) {
   };
 }
 
+function deleteGalleryImageFromGitHub(props, eventSlugValue, imageUrlValue) {
+  var repo = getRepoConfig(props);
+  var eventSlug = sanitizeSlug(eventSlugValue);
+  var imageUrl = trimSlashes(imageUrlValue || "");
+  if (!eventSlug || !imageUrl) {
+    throw new Error("Missing gallery image details.");
+  }
+
+  var entries = readGalleryEntries(repo);
+  var changed = false;
+  var nextEntries = [];
+  var totalImages = 0;
+
+  for (var i = 0; i < entries.length; i++) {
+    var entry = entries[i] || {};
+    if (String(entry.eventSlug || entry.slug || "") !== eventSlug) {
+      nextEntries.push(entry);
+      continue;
+    }
+
+    var keptImages = [];
+    var rowImages = Array.isArray(entry.images) ? entry.images : [];
+    for (var j = 0; j < rowImages.length; j++) {
+      var image = rowImages[j] || {};
+      if (String(image.url || "") === imageUrl) {
+        changed = true;
+        continue;
+      }
+      keptImages.push(image);
+    }
+
+    if (keptImages.length) {
+      entry.images = keptImages;
+      totalImages = keptImages.length;
+      nextEntries.push(entry);
+    }
+  }
+
+  if (!changed) {
+    throw new Error("Gallery image could not be found.");
+  }
+
+  deleteFileIfExists(repo, imageUrl, "Delete gallery image " + imageUrl);
+  putTextFile(repo, repo.galleryDataPath, buildGalleryJson(nextEntries), "Update gallery after image delete for " + eventSlug);
+  rebuildFeed(repo);
+
+  return {
+    ok: true,
+    slug: eventSlug,
+    imageUrl: imageUrl,
+    totalImageCount: totalImages
+  };
+}
+
 function readGalleryEntries(repo) {
   var file = getFile(repo, repo.galleryDataPath);
   if (!file.exists) return [];
@@ -407,7 +532,7 @@ function readGalleryEntries(repo) {
     var location = String(item.location || "").trim();
     var slug = sanitizeSlug(item.slug || buildSlug(date, title));
     var eventSlug = sanitizeSlug(item.eventSlug || slug);
-    var pageUrl = String(item.pageUrl || buildEventPagePath(repo, eventSlug)).trim();
+    var pageUrl = String(item.pageUrl || buildEventPagePath(repo, eventSlug, date, title)).trim();
     var images = Array.isArray(item.images) ? item.images : [];
     var normalizedImages = [];
 
@@ -446,22 +571,33 @@ function buildGalleryJson(entries) {
   return JSON.stringify(Array.isArray(entries) ? entries : [], null, 2) + "\n";
 }
 
-function buildEventPagePath(repo, slug) {
-  return joinPath(repo.eventPagesRoot, sanitizeSlug(slug) + ".html");
+function buildEventPagePath(repo, slug, date, title) {
+  var fileSlug = buildEventPageSlug(date, title, slug);
+  return joinPath(repo.eventPagesRoot, fileSlug + ".html");
+}
+
+function buildEventPageSlug(date, title, fallbackSlug) {
+  var fromMeta = sanitizeSlug(String(date || "") + "--" + String(title || ""));
+  if (fromMeta) return fromMeta;
+  return sanitizeSlug(fallbackSlug);
 }
 
 function rebuildEventPages(repo, feed) {
   var items = Array.isArray(feed) ? feed : [];
+  var keepMap = {};
   for (var i = 0; i < items.length; i++) {
     var item = items[i] || {};
     if (!item.slug) continue;
+    var pagePath = buildEventPagePath(repo, item.slug, item.date, item.title);
+    keepMap[pagePath] = true;
     putTextFile(
       repo,
-      buildEventPagePath(repo, item.slug),
+      pagePath,
       buildEventDetailPageHtml(item),
       "Rebuild event page for " + item.slug
     );
   }
+  deleteObsoleteEventPages(repo, keepMap);
 }
 
 function getEventMeta(repo, slug) {
@@ -518,6 +654,29 @@ function deleteFileIfExists(repo, path, message) {
     sha: String(file.sha || ""),
     branch: repo.branch
   });
+}
+
+function deleteObsoleteEventPages(repo, keepMap) {
+  var entries = [];
+  try {
+    entries = listDirectory(repo, repo.eventPagesRoot);
+  } catch (err) {
+    if (String(err && err.message || "").indexOf("404") >= 0) return;
+    throw err;
+  }
+
+  for (var i = 0; i < entries.length; i++) {
+    var entry = entries[i];
+    if (!entry || entry.type !== "file") continue;
+    if (!/\.html$/i.test(String(entry.name || ""))) continue;
+    if (keepMap[String(entry.path || "")]) continue;
+
+    githubRequest(repo, "delete", "contents/" + encodePath(entry.path), {
+      message: "Remove obsolete generated event page " + entry.name,
+      sha: String(entry.sha || ""),
+      branch: repo.branch
+    });
+  }
 }
 
 function buildEventDetailPageHtml(item) {
@@ -630,6 +789,28 @@ function putBinaryFile(repo, path, base64Content, message) {
   };
   if (file.exists && file.sha) payload.sha = file.sha;
   githubRequest(repo, "put", "contents/" + encodePath(path), payload);
+}
+
+function deletePosterFiles(repo, eventDir) {
+  var entries = [];
+  try {
+    entries = listDirectory(repo, eventDir);
+  } catch (err) {
+    if (String(err && err.message || "").indexOf("404") >= 0) return;
+    throw err;
+  }
+
+  for (var i = 0; i < entries.length; i++) {
+    var entry = entries[i];
+    if (!entry || entry.type !== "file") continue;
+    if (!/^poster\.(jpg|jpeg|png|webp|svg)$/i.test(String(entry.name || ""))) continue;
+
+    githubRequest(repo, "delete", "contents/" + encodePath(entry.path), {
+      message: "Delete poster " + entry.name,
+      sha: String(entry.sha || ""),
+      branch: repo.branch
+    });
+  }
 }
 
 function removeOtherPosterVariants(repo, eventDir, keepFilename) {

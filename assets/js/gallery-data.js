@@ -30,7 +30,7 @@
   function normalizeImage(image) {
     var row = image || {};
     return {
-      url: String(row.url || row.src || "").trim(),
+      url: resolveSitePath(String(row.url || row.src || "").trim()),
       description: String(row.description || row.caption || "").trim()
     };
   }
@@ -42,7 +42,7 @@
     var location = String(row.location || "").trim();
     var slug = String(row.slug || "").trim();
     var eventSlug = String(row.eventSlug || row.event_slug || slug).trim();
-    var pageUrl = String(row.pageUrl || row.page_url || "").trim();
+    var pageUrl = String(row.pageUrl || row.page_url || resolveSitePath("events/" + ((date + "--" + title).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")) + ".html")).trim();
     var images = (Array.isArray(row.images) ? row.images : [])
       .map(normalizeImage)
       .filter(function (image) {

@@ -59,6 +59,10 @@
   }
 
   function normalizeEvent(raw) {
+    var pageSlug = String((raw.date || "") + "--" + (raw.title || ""))
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
     return {
       slug: String(raw.slug || ""),
       title: String(raw.title || ""),
@@ -68,7 +72,8 @@
       teaser: String(raw.teaser || ""),
       homepageMatter: String(raw.homepageMatter || ""),
       status: normalizeStatus(raw.status),
-      poster: toPublicPosterUrl(raw.posterUrl || raw.poster || raw.image || "")
+      poster: toPublicPosterUrl(raw.posterUrl || raw.poster || raw.image || ""),
+      pageUrl: String(raw.pageUrl || raw.page_url || ("events/" + (pageSlug || String(raw.slug || "")) + ".html"))
     };
   }
 
@@ -137,7 +142,8 @@
         teaser: item.teaser || fallback.teaser,
         homepageMatter: item.homepageMatter || fallback.homepageMatter,
         status: item.status || fallback.status,
-        poster: fallback.poster || item.poster
+        poster: fallback.poster || item.poster,
+        pageUrl: item.pageUrl || fallback.pageUrl
       };
     });
   }

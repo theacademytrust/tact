@@ -156,6 +156,16 @@ function cssEscape(value) {
   return String(value || "").replace(/["\\]/g, "\\$&");
 }
 
+function buildEventPageUrl(item) {
+  var date = String(item && item.date || "").trim();
+  var title = String(item && item.title || "").trim();
+  var fromMeta = String(date + "--" + title)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return String(item && item.pageUrl || ("events/" + (fromMeta || String(item && item.slug || "").trim()) + ".html"));
+}
+
 function sameEventList(left, right) {
   return JSON.stringify(left || []) === JSON.stringify(right || []);
 }
@@ -210,7 +220,7 @@ function renderArchive(list) {
   list.forEach(function (item) {
     var link = document.createElement("a");
     link.className = "archive-item";
-    link.href = String(item.pageUrl || ("events/" + item.slug + ".html"));
+    link.href = buildEventPageUrl(item);
     link.innerHTML =
       '<img src="' +
       escapeHtml(item.poster || item.image || "assets/images/tact-logo.jpg") +
@@ -237,9 +247,10 @@ function renderArchive(list) {
 }
 
 function buildUpcomingCard(item, isPriority) {
-  var article = document.createElement("article");
-  article.className = "event-card" + (isPriority ? " event-card--priority" : "");
-  article.innerHTML =
+  var link = document.createElement("a");
+  link.className = "event-card" + (isPriority ? " event-card--priority" : "");
+  link.href = buildEventPageUrl(item);
+  link.innerHTML =
     '<img src="' +
     escapeHtml(item.poster || item.image || "assets/images/tact-logo.jpg") +
     '" onerror="this.onerror=null;this.src=\'assets/images/tact-logo.jpg\';" alt="' +
@@ -266,7 +277,7 @@ function buildUpcomingCard(item, isPriority) {
     escapeHtml(item.teaser || item.homepageMatter || "") +
     "</p>" +
     "</div>";
-  return article;
+  return link;
 }
 
 function escapeHtml(value) {

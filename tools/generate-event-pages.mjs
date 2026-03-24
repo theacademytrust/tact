@@ -5,6 +5,13 @@ const repoRoot = path.resolve("/home/tact/tact");
 const eventsRoot = path.join(repoRoot, "content", "events");
 const pagesRoot = path.join(repoRoot, "events");
 
+function sanitizeSlug(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 function shellFor(slug) {
   return `<!doctype html>
 <html lang="en">
@@ -56,6 +63,12 @@ function shellFor(slug) {
 async function main() {
   const entries = await fs.readdir(eventsRoot, { withFileTypes: true });
   await fs.mkdir(pagesRoot, { recursive: true });
+  const existingPages = await fs.readdir(pagesRoot, { withFileTypes: true });
+
+  for (const entry of existingPages) {
+    if (!entry.isFile() || !entry.name.endsWith(".html")) continue;
+    await fs.unlink(path.join(pagesRoot, entry.name));
+  }
 
   for (const entry of entries) {
     if (!entry.isDirectory() || entry.name.startsWith("_")) continue;
@@ -65,8 +78,9 @@ async function main() {
       const raw = await fs.readFile(eventJsonPath, "utf8");
       const parsed = JSON.parse(raw.replace(/^\uFEFF/, ""));
       const slug = String(parsed.slug || entry.name).trim();
-      if (!slug) continue;
-      await fs.writeFile(path.join(pagesRoot, `${slug}.html`), shellFor(slug), "utf8");
+      const fileSlug = sanitizeSlug(`${parsed.date || ""}--${parsed.title || ""}`) || slug;
+      if (!slug || !fileSlug) continue;
+      await fs.writeFile(path.join(pagesRoot, `${fileSlug}.html`), shellFor(slug), "utf8");
     } catch {
       // Skip folders without valid event metadata.
     }
