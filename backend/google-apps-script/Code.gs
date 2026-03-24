@@ -7,8 +7,8 @@
   Required Script Properties:
   - ADMIN_PIN = <admin pin>
   - GITHUB_TOKEN = <GitHub token with repo contents write access>
-  - GITHUB_OWNER = <repo owner, for example Chdmbr>
-  - GITHUB_REPO = <repo name, for example Tact>
+  - GITHUB_OWNER = <repo owner, for example theacademytrust>
+  - GITHUB_REPO = <repo name, for example tact>
 
   Optional Script Properties:
   - GITHUB_BRANCH = main
@@ -16,8 +16,8 @@
 */
 
 var DEFAULT_SETUP = {
-  GITHUB_OWNER: "Chdmbr",
-  GITHUB_REPO: "Tact",
+  GITHUB_OWNER: "theacademytrust",
+  GITHUB_REPO: "tact",
   GITHUB_BRANCH: "main",
   GITHUB_EVENTS_ROOT: "content/events",
   GITHUB_GALLERY_DATA_PATH: "data/gallery.json",

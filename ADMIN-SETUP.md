@@ -16,8 +16,8 @@ The backend publishes event content directly into the GitHub repo. Google Drive 
    - `GITHUB_BRANCH`
    - `GITHUB_EVENTS_ROOT`
 4. Recommended values:
-   - `GITHUB_OWNER=Chdmbr`
-   - `GITHUB_REPO=Tact`
+   - `GITHUB_OWNER=theacademytrust`
+   - `GITHUB_REPO=tact`
    - `GITHUB_BRANCH=main`
    - `GITHUB_EVENTS_ROOT=content/events`
 5. Deploy as a web app:
@@ -35,7 +35,7 @@ Create a fine-grained GitHub personal access token with access only to this repo
 3. `Personal access tokens`
 4. `Fine-grained tokens`
 5. `Generate new token`
-6. Repository access: `Only select repositories` -> `Tact`
+6. Repository access: `Only select repositories` -> `tact`
 7. Repository permissions:
    - `Contents`: `Read and write`
    - `Metadata`: `Read`
