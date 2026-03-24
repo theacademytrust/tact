@@ -70,6 +70,9 @@ function doPost(e) {
     if (action === "listEvents") {
       return jsonOut({ ok: true, events: listEventsFromGitHub(props) }, 200);
     }
+    if (action === "getEventDetails") {
+      return jsonOut({ ok: true, event: getEventDetailsFromGitHub(props, payload.slug), gallery: getGalleryEntryForEvent(props, payload.slug) }, 200);
+    }
     if (action === "deleteEvent") {
       return jsonOut(deleteEventFromGitHub(props, payload.slug), 200);
     }
@@ -233,7 +236,38 @@ function listEventsFromGitHub(props) {
     return String(b.date || "").localeCompare(String(a.date || ""));
   });
 
-  return feed;
+  var summaries = [];
+  for (var i = 0; i < feed.length; i++) {
+    var item = feed[i] || {};
+    summaries.push({
+      slug: String(item.slug || ""),
+      title: String(item.title || ""),
+      date: normalizeDate(item.date),
+      time: String(item.time || ""),
+      location: String(item.location || ""),
+      status: normalizeStatus(item.status)
+    });
+  }
+
+  return summaries;
+}
+
+function getEventDetailsFromGitHub(props, slugValue) {
+  var repo = getRepoConfig(props);
+  var slug = sanitizeSlug(slugValue);
+  if (!slug) {
+    throw new Error("Missing event slug.");
+  }
+
+  var feed = collectFeedEntries(repo);
+  for (var i = 0; i < feed.length; i++) {
+    var item = feed[i] || {};
+    if (String(item.slug || "") === slug) {
+      return item;
+    }
+  }
+
+  throw new Error("Selected event could not be found.");
 }
 
 function collectFeedEntries(repo) {
@@ -367,6 +401,22 @@ function getRepoConfig(props) {
 function listGalleryFromGitHub(props) {
   var repo = getRepoConfig(props);
   return readGalleryEntries(repo);
+}
+
+function getGalleryEntryForEvent(props, slugValue) {
+  var repo = getRepoConfig(props);
+  var slug = sanitizeSlug(slugValue);
+  if (!slug) return null;
+
+  var entries = readGalleryEntries(repo);
+  for (var i = 0; i < entries.length; i++) {
+    var item = entries[i] || {};
+    if (String(item.eventSlug || item.slug || "") === slug) {
+      return item;
+    }
+  }
+
+  return null;
 }
 
 function saveGalleryToGitHub(props, galleryObj, imageList) {

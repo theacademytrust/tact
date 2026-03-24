@@ -208,6 +208,30 @@
     .panel-head {
       margin-bottom: 12px;
     }
+    .date-box {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+    }
+    .date-box:focus-within {
+      outline: 2px solid rgba(10, 122, 58, 0.28);
+      border-color: rgba(10, 122, 58, 0.45);
+    }
+    .date-box input {
+      border: 0;
+      border-radius: 8px;
+      padding: 10px 8px;
+      text-align: center;
+      background: rgba(245, 248, 245, 0.9);
+    }
+    .date-box input:focus {
+      outline: 2px solid rgba(10, 122, 58, 0.18);
+      border-color: transparent;
+    }
     .gallery-list {
       display: grid;
       gap: 12px;
@@ -302,7 +326,7 @@
       margin-bottom: 12px;
     }
     @media (max-width: 680px) {
-      .row-2, .btn-row, .view-switch { grid-template-columns: 1fr; }
+      .row-2, .btn-row, .view-switch, .date-box { grid-template-columns: 1fr; }
       .manager-toolbar { grid-template-columns: 1fr; }
       .event-item {
         align-items: start;
@@ -454,7 +478,7 @@
         </section>
       </section>
 
-      <section id="event-panel">
+      <section id="event-panel" class="hidden">
         <div class="panel-head">
           <h2>Add Event</h2>
           <p>Use this to publish event details and the poster image.</p>
@@ -468,8 +492,12 @@
 
           <div class="row-2">
             <div>
-              <label for="date">Date</label>
-              <input id="date" name="date" placeholder="DD/MM/YYYY" required>
+              <label for="date-day">Date</label>
+              <div class="date-box">
+                <input id="date-day" name="dateDay" inputmode="numeric" maxlength="2" placeholder="Day" required>
+                <input id="date-month" name="dateMonth" inputmode="numeric" maxlength="2" placeholder="Month" required>
+                <input id="date-year" name="dateYear" inputmode="numeric" maxlength="4" placeholder="Year" required>
+              </div>
             </div>
             <div class="row-2">
               <div>
@@ -637,6 +665,9 @@
     const manageDeleteEventBtn = document.getElementById("manage-delete-event-btn");
 
     const adminForm = document.getElementById("admin-form");
+    const eventDateDayInput = document.getElementById("date-day");
+    const eventDateMonthInput = document.getElementById("date-month");
+    const eventDateYearInput = document.getElementById("date-year");
     const posterInput = document.getElementById("poster");
     const posterMeta = document.getElementById("poster-meta");
     const statusBox = document.getElementById("submit-status");
@@ -671,7 +702,6 @@
     let selectedManageSlug = "";
     let managePosterPayload = null;
     let managePosterRemoved = false;
-
     bootPinStatus();
     ensureGalleryBlocks();
     restoreDrafts();
@@ -726,7 +756,7 @@
         pinHint.classList.remove("hidden");
         pinCard.classList.add("hidden");
         formCard.classList.remove("hidden");
-        await refreshGalleryContext(false);
+        await refreshGalleryEntries();
         showAdminHome();
       } catch (_err) {
         alert("Could not verify PIN. Please try again.");
@@ -773,7 +803,7 @@
         pinHint.classList.remove("hidden");
         pinCard.classList.add("hidden");
         formCard.classList.remove("hidden");
-        await refreshGalleryContext(false);
+        await refreshGalleryEntries();
         showAdminHome();
         pinModeNote.textContent = "PIN is set. To change it, enter current PIN and new PIN.";
         oldPinInput.value = "";
@@ -899,10 +929,10 @@
       }
 
       const title = valueOf("title");
-      const date = normalizeDateInput(valueOf("date"));
+      const date = buildCreateEventDateValue();
       const time = buildTimeRange();
       if (!date) {
-        alert("Enter date in DD/MM/YYYY format.");
+        alert("Enter a valid date using day, month, and year.");
         return;
       }
       if (!time) {
@@ -1021,6 +1051,10 @@
       return (document.getElementById(id).value || "").trim();
     }
 
+    function buildCreateEventDateValue() {
+      return normalizeDateParts(eventDateDayInput.value, eventDateMonthInput.value, eventDateYearInput.value);
+    }
+
     function normalizeDateInput(value) {
       const raw = String(value || "").trim();
       if (!raw) return "";
@@ -1037,6 +1071,36 @@
       }
 
       return "";
+    }
+
+    function normalizeDateParts(dayValue, monthValue, yearValue) {
+      const day = String(dayValue || "").replace(/\D+/g, "").padStart(2, "0");
+      const month = String(monthValue || "").replace(/\D+/g, "").padStart(2, "0");
+      const year = String(yearValue || "").replace(/\D+/g, "");
+      if (!/^\d{2}$/.test(day) || !/^\d{2}$/.test(month) || !/^\d{4}$/.test(year)) {
+        return "";
+      }
+      const iso = year + "-" + month + "-" + day;
+      const date = new Date(iso + "T00:00:00");
+      if (isNaN(date.getTime())) return "";
+      if (date.getFullYear() !== Number(year) || date.getMonth() + 1 !== Number(month) || date.getDate() !== Number(day)) {
+        return "";
+      }
+      return iso;
+    }
+
+    function setCreateEventDateInputs(value) {
+      const normalized = normalizeDateInput(value);
+      if (!normalized) {
+        eventDateDayInput.value = "";
+        eventDateMonthInput.value = "";
+        eventDateYearInput.value = "";
+        return;
+      }
+      const parts = normalized.split("-");
+      eventDateYearInput.value = parts[0] || "";
+      eventDateMonthInput.value = parts[1] || "";
+      eventDateDayInput.value = parts[2] || "";
     }
 
     function formatDateInputValue(value) {
@@ -1260,7 +1324,7 @@
       saveDraft(STORAGE_KEYS.event, {
         values: {
           title: valueOf("title"),
-          date: valueOf("date"),
+          date: buildCreateEventDateValue(),
           timeFrom: valueOf("time-from"),
           timeTo: valueOf("time-to"),
           location: valueOf("location"),
@@ -1295,7 +1359,7 @@
       if (!draft || !draft.values) return;
 
       setValue("title", draft.values.title);
-      setValue("date", formatDateInputValue(draft.values.date));
+      setCreateEventDateInputs(draft.values.date);
       setValue("time-from", draft.values.timeFrom);
       setValue("time-to", draft.values.timeTo);
       setValue("location", draft.values.location);
@@ -1361,11 +1425,11 @@
     function updateGallerySelectionState() {
       const selectedEvent = getSelectedGalleryEvent();
       galleryUploadCard.classList.toggle("hidden", !selectedEvent);
-      existingGalleryWrap.classList.toggle("hidden", !selectedEvent);
 
       if (!selectedEvent) {
         galleryEventSummary.textContent = "Choose an event to manage its gallery.";
-        existingGalleryList.innerHTML = '<p class="mini">No event selected yet.</p>';
+        existingGalleryWrap.classList.add("hidden");
+        existingGalleryList.innerHTML = "";
         return;
       }
 
@@ -1381,9 +1445,11 @@
       existingGalleryList.innerHTML = "";
 
       if (!entry || !Array.isArray(entry.images) || !entry.images.length) {
-        existingGalleryList.innerHTML = '<p class="mini">No gallery images added for this event yet.</p>';
+        existingGalleryWrap.classList.add("hidden");
         return;
       }
+
+      existingGalleryWrap.classList.remove("hidden");
 
       entry.images.forEach(function (image, index) {
         const card = document.createElement("article");
@@ -1780,6 +1846,17 @@
       await refreshGalleryEntries();
     }
 
+    async function fetchManageEventDetails(slug) {
+      if (!slug || !unlockedPin || !hasConfiguredEndpoint()) {
+        throw new Error("Could not load event details.");
+      }
+      const body = await postAdminPayload({ action: "getEventDetails", pin: unlockedPin, slug: slug });
+      if (!body || body.ok === false || !body.event) {
+        throw new Error(body && body.error ? body.error : "Could not load event details.");
+      }
+      return body;
+    }
+
     function renderEventList(events) {
       eventList.innerHTML = "";
 
@@ -1815,28 +1892,39 @@
       }) || null;
     }
 
-    function openManagedEventEditor(item) {
+    async function openManagedEventEditor(item) {
       if (!item || !item.slug) return;
 
-      selectedManageSlug = String(item.slug || "");
-      managePosterPayload = null;
-      managePosterRemoved = false;
-      managePosterInput.value = "";
-      managePosterMeta.textContent = "";
-
-      manageTitleInput.value = String(item.title || "");
-      manageDateInput.value = formatDateInputValue(item.date);
-      manageTimeInput.value = String(item.time || "");
-      manageLocationInput.value = String(item.location || "");
-      manageDescriptionInput.value = String(item.homepageMatter || "");
-
-      renderManagePosterPreview(item, null);
-      renderManagedGalleryImages();
       eventList.classList.add("hidden");
       eventEditCard.classList.remove("hidden");
-      hideStatus(manageEditStatus);
+      showStatus(manageEditStatus, "Loading event details...");
       renderEventList(eventCache);
-      eventEditCard.scrollIntoView({ block: "start", behavior: "smooth" });
+
+      try {
+        const detailBody = await fetchManageEventDetails(String(item.slug || ""));
+        const detail = detailBody.event || {};
+        const galleryEntry = detailBody.gallery || null;
+
+        selectedManageSlug = String(detail.slug || item.slug || "");
+        managePosterPayload = null;
+        managePosterRemoved = false;
+        managePosterInput.value = "";
+        managePosterMeta.textContent = "";
+
+        manageTitleInput.value = String(detail.title || "");
+        manageDateInput.value = formatDateInputValue(detail.date);
+        manageTimeInput.value = String(detail.time || "");
+        manageLocationInput.value = String(detail.location || "");
+        manageDescriptionInput.value = String(detail.homepageMatter || "");
+
+        renderManagePosterPreview(detail, null);
+        renderManagedGalleryImages(galleryEntry);
+        hideStatus(manageEditStatus);
+        renderEventList(eventCache);
+      } catch (err) {
+        closeManagedEventEditor();
+        showManageStatus("Could not load event details: " + (err && err.message ? err.message : "Unknown error"), true);
+      }
     }
 
     function closeManagedEventEditor() {
@@ -1849,6 +1937,11 @@
       eventList.classList.remove("hidden");
       hideStatus(manageEditStatus);
       manageTimeInput.value = "";
+      manageLocationInput.value = "";
+      manageTitleInput.value = "";
+      manageDateInput.value = "";
+      manageDescriptionInput.value = "";
+      manageGalleryList.innerHTML = "";
       renderEventList(eventCache);
     }
 
@@ -1880,18 +1973,18 @@
       managePosterPreview.appendChild(img);
     }
 
-    function renderManagedGalleryImages() {
+    function renderManagedGalleryImages(entry) {
       manageGalleryList.innerHTML = "";
-      const entry = galleryEntriesCache.find(function (item) {
+      const galleryEntry = entry || galleryEntriesCache.find(function (item) {
         return String(item.eventSlug || item.slug || "") === selectedManageSlug;
       });
 
-      if (!entry || !Array.isArray(entry.images) || !entry.images.length) {
+      if (!galleryEntry || !Array.isArray(galleryEntry.images) || !galleryEntry.images.length) {
         manageGalleryList.innerHTML = '<p class="mini">No gallery images are attached to this event yet.</p>';
         return;
       }
 
-      entry.images.forEach(function (image, index) {
+      galleryEntry.images.forEach(function (image, index) {
         const card = document.createElement("article");
         card.className = "existing-gallery-item";
 
@@ -1955,12 +2048,13 @@
           throw new Error(body && body.error ? body.error : "Could not update event.");
         }
 
-        await refreshGalleryContext(false);
-        const refreshed = eventCache.find(function (item) {
+        await loadExistingEvents(false);
+        await refreshGalleryEntries();
+        const refreshedSummary = eventCache.find(function (item) {
           return String(item.slug || "") === String(current.slug || "");
         });
-        if (refreshed) {
-          openManagedEventEditor(refreshed);
+        if (refreshedSummary) {
+          await openManagedEventEditor(refreshedSummary);
         }
         showStatus(manageEditStatus, "Event updated successfully.");
       } catch (err) {
