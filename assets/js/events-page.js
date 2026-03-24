@@ -156,21 +156,12 @@ function cssEscape(value) {
   return String(value || "").replace(/["\\]/g, "\\$&");
 }
 
-function buildEventPageFileSlug(item) {
-  var date = String(item && item.date || "").trim();
-  var title = String(item && item.title || "").trim();
-  var parts = date.split("-");
-  var formattedDate = parts.length === 3 ? [parts[2], parts[1], parts[0]].join("-") : date;
-  var raw = String(formattedDate + "-" + title).trim();
-  var clean = raw
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-  return clean || String(item && item.slug || "").trim();
-}
-
 function buildEventPageUrl(item) {
-  return "events/" + buildEventPageFileSlug(item) + ".html";
+  var helpers = window.TACT_EVENT_PAGES || {};
+  if (typeof helpers.buildEventPageUrl === "function") {
+    return helpers.buildEventPageUrl(item);
+  }
+  return String(item && item.pageUrl || "").trim();
 }
 
 function sameEventList(left, right) {

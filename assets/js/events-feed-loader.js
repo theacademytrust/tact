@@ -59,12 +59,10 @@
   }
 
   function normalizeEvent(raw) {
-    var parts = String(raw.date || "").split("-");
-    var formattedDate = parts.length === 3 ? [parts[2], parts[1], parts[0]].join("-") : String(raw.date || "");
-    var pageSlug = String(formattedDate + "-" + (raw.title || ""))
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "");
+    var helpers = window.TACT_EVENT_PAGES || {};
+    var canonicalPageUrl = typeof helpers.buildEventPageUrl === "function"
+      ? helpers.buildEventPageUrl(raw)
+      : "";
     return {
       slug: String(raw.slug || ""),
       title: String(raw.title || ""),
@@ -75,7 +73,7 @@
       homepageMatter: String(raw.homepageMatter || ""),
       status: normalizeStatus(raw.status),
       poster: toPublicPosterUrl(raw.posterUrl || raw.poster || raw.image || ""),
-      pageUrl: "events/" + (pageSlug || String(raw.slug || "")) + ".html"
+      pageUrl: canonicalPageUrl || String(raw.pageUrl || "")
     };
   }
 
@@ -145,7 +143,11 @@
         homepageMatter: item.homepageMatter || fallback.homepageMatter,
         status: item.status || fallback.status,
         poster: fallback.poster || item.poster,
-        pageUrl: item.pageUrl || fallback.pageUrl
+        pageUrl: normalizeEvent({
+          slug: item.slug || fallback.slug,
+          title: item.title || fallback.title,
+          date: item.date || fallback.date
+        }).pageUrl
       };
     });
   }

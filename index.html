@@ -229,23 +229,54 @@
       }
 
       .home-upcoming-card {
-        height: 286px;
         display: grid;
-        grid-template-columns: minmax(106px, 36%) minmax(0, 1fr);
-        gap: 0;
+        grid-template-columns: 208px minmax(0, 1fr);
+        gap: 12px;
+        align-items: start;
+        min-height: 180px;
+        padding: 12px;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        border-radius: 12px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), #ffffff);
+      }
+
+      .home-upcoming-media {
+        position: relative;
+        width: 208px;
+        min-width: 208px;
+        max-width: 208px;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border-radius: 10px;
+        background: linear-gradient(180deg, #f8faf8, #eef3ef);
       }
 
       .home-upcoming-card img {
+        position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
+        display: block;
+        min-width: 100%;
+        min-height: 100%;
+        max-width: 100%;
+        max-height: 100%;
         object-fit: fill;
         object-position: center;
-        background: linear-gradient(180deg, #f8faf8, #eef3ef);
-        padding: 0;
+        border: 0;
       }
 
       .home-upcoming-copy {
         padding: 10px;
+        min-width: 0;
+        overflow: hidden;
+        display: grid;
+        align-content: start;
+        grid-auto-rows: max-content;
+        gap: 6px;
+        min-height: 156px;
       }
 
       .home-upcoming-copy h3 {
@@ -260,6 +291,28 @@
         font-size: 13px;
         line-height: 1.45;
         color: #2f3d38;
+        overflow: hidden;
+      }
+
+      .home-upcoming-copy .home-events-meta {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .home-upcoming-copy h3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .home-upcoming-copy p:last-child {
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
 
       .home-upcoming-dots {
@@ -312,6 +365,8 @@
         border-radius: 10px;
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), #ffffff);
         border: 1px solid rgba(10, 20, 10, 0.08);
+        text-decoration: none;
+        color: inherit;
       }
 
       .home-events-item img {
@@ -875,8 +930,14 @@
       }
 
       .home-upcoming-card {
-        height: 286px;
-        grid-template-columns: minmax(106px, 36%) minmax(0, 1fr);
+        grid-template-columns: 208px minmax(0, 1fr);
+        min-height: 180px;
+      }
+
+      .home-upcoming-media {
+        width: 208px;
+        min-width: 208px;
+        max-width: 208px;
       }
 
       .home-vertical-window {
@@ -1236,6 +1297,7 @@
     <script src="assets/js/site-chrome.js?v=20260323e"></script>
     <script src="assets/js/events-config.js"></script>
     <script src="content/events/events-feed.js"></script>
+    <script src="assets/js/event-page-paths.js"></script>
     <script src="assets/js/events-feed-loader.js"></script>
     <script src="assets/js/home-events-board.js"></script>
     <script src="assets/js/index-page.js"></script>

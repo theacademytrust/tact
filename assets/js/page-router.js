@@ -3,6 +3,7 @@
     "index.html": [
       "assets/js/events-config.js",
       "content/events/events-feed.js",
+      "assets/js/event-page-paths.js",
       "assets/js/events-feed-loader.js",
       "assets/js/home-events-board.js",
       "assets/js/index-page.js"
@@ -10,16 +11,19 @@
     "events.html": [
       "assets/js/events-config.js",
       "content/events/events-feed.js",
+      "assets/js/event-page-paths.js",
       "assets/js/events-feed-loader.js",
       "assets/js/events-page.js"
     ],
     "gallery.html": [
       "assets/js/events-config.js?v=20260323c",
+      "assets/js/event-page-paths.js",
       "assets/js/gallery-data.js?v=20260323c",
       "assets/js/gallery-page.js?v=20260323c"
     ],
     "calendar.html": [
       "assets/js/events-config.js?v=20260323c",
+      "assets/js/event-page-paths.js",
       "assets/js/gallery-data.js?v=20260323c",
       "assets/js/calendar-page.js?v=20260323c"
     ],

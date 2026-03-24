@@ -35,7 +35,7 @@ body {
 }
 
 main {
-  margin-top: 24px;
+  margin-top: 12px;
 }
 
 h1,
@@ -94,6 +94,11 @@ p {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.hero-section p {
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 .badge-row {
@@ -156,6 +161,18 @@ p {
   box-shadow: 0 4px 12px rgba(10, 20, 10, 0.1);
 }
 
+.hero-section .btn-secondary {
+  background: linear-gradient(180deg, var(--green), #07602c);
+  color: #ffffff;
+  border-color: rgba(184, 134, 11, 0.2);
+  box-shadow: 0 4px 12px rgba(6, 80, 40, 0.15);
+}
+
+.hero-section .btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(6, 80, 40, 0.2);
+}
+
 .image-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -200,7 +217,7 @@ footer {
 }
 
 main {
-  margin-top: 24px;
+  margin-top: 12px;
 }
 
 h1 {

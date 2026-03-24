@@ -9,7 +9,7 @@ window.TACT_EVENT_FEED = [
     "location": "Hubballi",
     "status": "completed",
     "folder": "content/events/2026-demo-past-event",
-    "pageUrl": "events/2026-demo-past-event.html",
+    "pageUrl": "events/12-01-2026-demo-past-event-sample.html",
     "poster": "content/events/2026-demo-past-event/poster.svg",
     "teaser": "Sample past event added for previewing the homepage past-events card layout.",
     "homepageMatter": "This is a demo entry with a lightweight placeholder poster so you can verify how two past event cards look."
@@ -22,7 +22,7 @@ window.TACT_EVENT_FEED = [
     "location": "Tumakuru",
     "status": "completed",
     "folder": "content/events/2026-nataka-community-stage",
-    "pageUrl": "events/2026-nataka-community-stage.html",
+    "pageUrl": "events/18-02-2026-vijnana-nataka-community-performance.html",
     "poster": "content/events/2026-nataka-community-stage/poster.jpg",
     "teaser": "Science theatre performance followed by open audience discussion.",
     "homepageMatter": "A community evening of science storytelling through theatre, music, and open audience conversation."
@@ -35,7 +35,7 @@ window.TACT_EVENT_FEED = [
     "location": "Bengaluru",
     "status": "scheduled",
     "folder": "content/events/2026-harate-pu-college",
-    "pageUrl": "events/2026-harate-pu-college.html",
+    "pageUrl": "events/22-03-2026-vijnana-harate-at-government-pu-college.html",
     "poster": "content/events/2026-harate-pu-college/poster.jpg",
     "teaser": "Interactive science conversations and simple experiment stations for students and teachers.",
     "homepageMatter": "Join us for a high-energy Harate session with scientists and educators. Students will explore hands-on demos and open Q&A circles."
@@ -87,7 +87,7 @@ window.TACT_EVENT_FEED = [
     "location": "Mysuru",
     "status": "scheduled",
     "folder": "content/events/2026-yuvati-mentorship-day",
-    "pageUrl": "events/2026-yuvati-mentorship-day.html",
+    "pageUrl": "events/10-04-2026-vijnana-yuvati-mentorship-day.html",
     "poster": "content/events/2026-yuvati-mentorship-day/poster.jpg",
     "teaser": "Mentor circles, scholarship clinic, and practical sessions on STEM pathways.",
     "homepageMatter": "A full-day programme focused on young women in STEM, with mentor hours, application guidance, and practical skilling workshops."

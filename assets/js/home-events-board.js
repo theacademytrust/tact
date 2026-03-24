@@ -204,8 +204,9 @@ function renderUpcomingCarousel(trackId, dotsId, items, emptyMessage) {
 }
 
 function buildCard(item, isPast) {
-  var card = document.createElement("article");
+  var card = document.createElement("a");
   card.className = "home-events-item" + (isPast ? " home-events-item--past" : "");
+  card.href = buildEventPageUrl(item);
   card.innerHTML =
     '<img src="' +
     escapeHtml(item.poster || "assets/images/tact-logo.jpg") +
@@ -231,14 +232,17 @@ function buildCard(item, isPast) {
 }
 
 function buildUpcomingCard(item) {
-  var card = document.createElement("article");
+  var card = document.createElement("a");
   card.className = "home-upcoming-card";
+  card.href = buildEventPageUrl(item);
   card.innerHTML =
+    '<div class="home-upcoming-media">' +
     '<img src="' +
     escapeHtml(item.poster || "assets/images/tact-logo.jpg") +
     '" onerror="this.onerror=null;this.src=\'assets/images/tact-logo.jpg\';" alt="' +
     escapeHtml((item.title || "Event") + " poster") +
     '" loading="eager" fetchpriority="high" decoding="async">' +
+    "</div>" +
     '<div class="home-upcoming-copy">' +
     '<p class="home-events-meta">' +
     escapeHtml(formatDate(item.date)) +
@@ -255,6 +259,14 @@ function buildUpcomingCard(item) {
     "</p>" +
     "</div>";
   return card;
+}
+
+function buildEventPageUrl(item) {
+  var helpers = window.TACT_EVENT_PAGES || {};
+  if (typeof helpers.buildEventPageUrl === "function") {
+    return helpers.buildEventPageUrl(item);
+  }
+  return String(item && item.pageUrl || "").trim();
 }
 
 function autoScrollUpcoming(state) {
