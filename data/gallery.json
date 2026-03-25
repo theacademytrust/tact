@@ -50,6 +50,28 @@
     ]
   },
   {
+    "slug": "2026-03-23-vijnana-aranya",
+    "eventSlug": "2026-03-23-vijnana-aranya",
+    "pageUrl": "events/23-03-2026-vijnana-aranya.html",
+    "title": "Vijnana Aranya",
+    "date": "2026-03-23",
+    "location": "Manasagangotri, Mysuru",
+    "images": [
+      {
+        "url": "content/events/2026-03-23-vijnana-aranya/gallery/image-01.jpg",
+        "description": "News Paper Article"
+      },
+      {
+        "url": "content/events/2026-03-23-vijnana-aranya/gallery/image-02.jpg",
+        "description": "Speaker Ms. XYZ adressing the audience"
+      },
+      {
+        "url": "content/events/2026-03-23-vijnana-aranya/gallery/image-03.jpg",
+        "description": "Audience"
+      }
+    ]
+  },
+  {
     "slug": "2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef",
     "eventSlug": "2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef",
     "pageUrl": "events/2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef.html",
