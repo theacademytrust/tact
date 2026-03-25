@@ -41,6 +41,19 @@ window.TACT_EVENT_FEED = [
     "homepageMatter": "Join us for a high-energy Harate session with scientists and educators. Students will explore hands-on demos and open Q&A circles."
   },
   {
+    "slug": "2026-03-23-vijnana-aranya",
+    "title": "Vijnana Aranya",
+    "date": "2026-03-23",
+    "time": "10:00 AM - 1:01 PM",
+    "location": "Manasagangotri, Mysuru",
+    "status": "completed",
+    "folder": "content/events/2026-03-23-vijnana-aranya",
+    "pageUrl": "events/23-03-2026-vijnana-aranya.html",
+    "poster": "content/events/2026-03-23-vijnana-aranya/poster.jpg",
+    "teaser": "",
+    "homepageMatter": "Archaeozoology Workshop"
+  },
+  {
     "slug": "2026-03-26-hi-hihihihihhi",
     "title": "hi hihihihihhi",
     "date": "2026-03-26",
@@ -48,7 +61,7 @@ window.TACT_EVENT_FEED = [
     "location": "rayachoty",
     "status": "scheduled",
     "folder": "content/events/2026-03-26-hi-hihihihihhi",
-    "pageUrl": "events/2026-03-26-hi-hihihihihhi.html",
+    "pageUrl": "events/26-03-2026-hi-hihihihihhi.html",
     "poster": "content/events/2026-03-26-hi-hihihihihhi/poster.png",
     "teaser": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     "homepageMatter": "hihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihi"
@@ -61,7 +74,7 @@ window.TACT_EVENT_FEED = [
     "location": "bandar",
     "status": "scheduled",
     "folder": "content/events/2026-03-28-hi-nitish",
-    "pageUrl": "events/2026-03-28-hi-nitish.html",
+    "pageUrl": "events/28-03-2026-hi-nitish.html",
     "poster": "content/events/2026-03-28-hi-nitish/poster.jpg",
     "teaser": "nithish",
     "homepageMatter": "nithish"
@@ -74,7 +87,7 @@ window.TACT_EVENT_FEED = [
     "location": "hyd",
     "status": "scheduled",
     "folder": "content/events/2026-03-29-hi-hihihihihhi",
-    "pageUrl": "events/2026-03-29-hi-hihihihihhi.html",
+    "pageUrl": "events/29-03-2026-hi-hihihihihhi.html",
     "poster": "content/events/2026-03-29-hi-hihihihihhi/poster.jpg",
     "teaser": "",
     "homepageMatter": "Use the same PIN-protected panel to publish events or add gallery collections without manual code edits.\nUse the same PIN-protected panel to publish events or add gallery collections without manual code edits.Use the same PIN-protected panel to publish events or add gallery collections without manual code edits."
