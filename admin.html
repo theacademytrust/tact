@@ -13,16 +13,6 @@
       --muted: #5c6760;
       --line: rgba(10, 20, 10, 0.1);
       --radius: 14px;
-      --text: #142019;
-      --label: #284536;
-      --status-text: #365548;
-      --kicker: #557262;
-      --title-soft: #335244;
-      --event-title: #173125;
-      --event-meta: #5a6d62;
-      --event-slug: #738278;
-      --secondary-text: #20352b;
-      color-scheme: light dark;
       font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     }
     * { box-sizing: border-box; }
@@ -31,7 +21,7 @@
       background:
         radial-gradient(700px 320px at 10% 0%, rgba(10, 122, 58, 0.06), transparent 55%),
         linear-gradient(180deg, #f7faf7 0%, #f3f6f2 100%);
-      color: var(--text);
+      color: #142019;
       padding: 16px;
       min-height: 100vh;
     }
@@ -84,7 +74,7 @@
     label {
       font-size: 13px;
       font-weight: 600;
-      color: var(--label);
+      color: #284536;
       display: block;
       margin-bottom: 4px;
     }
@@ -111,7 +101,7 @@
     }
     .secondary {
       background: linear-gradient(180deg, #ffffff, #f5f6f4);
-      color: var(--secondary-text);
+      color: #20352b;
       border: 1px solid var(--line);
       font-weight: 600;
     }
@@ -131,7 +121,7 @@
     .status {
       font-size: 13px;
       margin-top: 8px;
-      color: var(--status-text);
+      color: #365548;
       background: rgba(10, 122, 58, 0.08);
       border: 1px solid rgba(10, 122, 58, 0.22);
       border-radius: 8px;
@@ -144,11 +134,11 @@
       font-size: 11px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--kicker);
+      color: #557262;
       font-weight: 700;
     }
     .subtle-title {
-      color: var(--title-soft);
+      color: #335244;
       font-size: 18px;
       margin-bottom: 6px;
     }
@@ -184,18 +174,18 @@
     .event-item h3 {
       margin: 0;
       font-size: 16px;
-      color: var(--event-title);
+      color: #173125;
     }
     .event-copy { min-width: 0; }
     .event-meta {
       margin: 0;
       font-size: 12px;
-      color: var(--event-meta);
+      color: #5a6d62;
     }
     .event-slug {
       margin: 0;
       font-size: 12px;
-      color: var(--event-slug);
+      color: #738278;
       word-break: break-word;
     }
     .event-actions {
@@ -279,7 +269,7 @@
       display: block;
     }
     .gallery-preview span {
-      color: var(--event-meta);
+      color: #6b7b72;
       font-size: 13px;
       padding: 16px;
       text-align: center;
@@ -315,124 +305,19 @@
       gap: 4px;
     }
     .existing-gallery-copy strong {
-      color: var(--event-title);
+      color: #173125;
       font-size: 13px;
     }
     .existing-gallery-copy p {
       margin: 0;
       font-size: 12px;
-      color: var(--muted);
+      color: #5c6760;
     }
     .existing-gallery-item button {
       border-radius: 0;
     }
     .manager-toggle-row {
       margin-bottom: 12px;
-    }
-    .event-item:focus-visible {
-      outline: 2px solid rgba(10, 122, 58, 0.5);
-      outline-offset: 3px;
-    }
-    input:disabled, textarea:disabled, select:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
-    }
-    button:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
-      transform: none;
-      box-shadow: none;
-    }
-
-    /* Accessible dialog */
-    .dialog-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(12, 18, 16, 0.55);
-      display: grid;
-      place-items: center;
-      padding: 16px;
-      z-index: 1000;
-    }
-    .dialog-overlay[aria-hidden="true"] {
-      display: none;
-    }
-    .dialog {
-      width: 100%;
-      max-width: 520px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
-      padding: 14px 14px 12px;
-    }
-    .dialog h3 {
-      margin: 0 0 6px;
-      color: var(--event-title);
-      letter-spacing: -0.01em;
-      font-size: 16px;
-    }
-    .dialog p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.5;
-      font-size: 14px;
-    }
-    .dialog-actions {
-      margin-top: 14px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .dialog-actions[data-one="true"] {
-      grid-template-columns: 1fr;
-    }
-    .dialog-close-hint {
-      margin-top: 10px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    /* Dark mode: keep the same palette and switch only key tones */
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0c1210;
-        --card: #0f1714;
-        --card-soft: #0d1412;
-        --muted: #9bb3a8;
-        --line: rgba(255, 255, 255, 0.14);
-        --text: #e7f2ec;
-        --label: #cfe0d6;
-        --status-text: #b7d2c4;
-        --kicker: #88a493;
-        --title-soft: #cfe0d6;
-        --event-title: #e7f2ec;
-        --event-meta: #9bb3a8;
-        --event-slug: #95a79c;
-        --secondary-text: #e7f2ec;
-      }
-      body {
-        background:
-          radial-gradient(700px 320px at 10% 0%, rgba(45, 208, 111, 0.12), transparent 55%),
-          linear-gradient(180deg, #0d1512 0%, #0a0f0d 100%);
-      }
-      .subcard {
-        background: linear-gradient(180deg, var(--card-soft), rgba(15, 23, 20, 1));
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
-      }
-      input, textarea, select, button {
-        background: rgba(15, 23, 20, 0.95);
-        color: var(--text);
-      }
-      .date-input,
-      .time-input {
-        background:
-          linear-gradient(180deg, rgba(20, 30, 26, 0.95), rgba(10, 16, 14, 0.92));
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
-      }
-      .existing-gallery-item {
-        background: linear-gradient(180deg, rgba(255,255,255,0.04), var(--card-soft));
-      }
     }
     @media (max-width: 680px) {
       .row-2, .btn-row, .view-switch, .time-range { grid-template-columns: 1fr; }
@@ -472,10 +357,10 @@
         </div>
         <button id="unlock-btn" type="button">Unlock Form</button>
       </div>
-      <p id="pin-hint" class="status hidden" role="status" aria-live="polite">PIN accepted. Form unlocked.</p>
+      <p id="pin-hint" class="status hidden">PIN accepted. Form unlocked.</p>
 
       <div style="margin-top:12px;">
-        <button id="toggle-pin-tools-btn" type="button" class="secondary" aria-expanded="false" aria-controls="pin-tools-panel">Set / Change PIN</button>
+        <button id="toggle-pin-tools-btn" type="button" class="secondary">Set / Change PIN</button>
       </div>
 
       <div id="pin-tools-panel" class="subcard hidden">
@@ -499,15 +384,15 @@
           </div>
           <button id="change-pin-btn" type="button" class="secondary">Save PIN</button>
         </div>
-        <p id="pin-change-status" class="status hidden" role="status" aria-live="polite"></p>
+        <p id="pin-change-status" class="status hidden"></p>
       </div>
     </section>
 
     <section id="form-card" class="card hidden">
       <div class="view-switch" style="margin-bottom:0;">
-        <button id="show-event-panel-btn" type="button" class="secondary" data-active="false" aria-pressed="false" aria-controls="event-panel">Add Event</button>
-        <button id="show-gallery-panel-btn" type="button" class="secondary" data-active="false" aria-pressed="false" aria-controls="gallery-panel">Add Gallery</button>
-        <button id="toggle-manage-btn" type="button" class="secondary" data-active="false" aria-pressed="false" aria-controls="manage-card">Manage Events & Gallery</button>
+        <button id="show-event-panel-btn" type="button" class="secondary" data-active="false">Add Event</button>
+        <button id="show-gallery-panel-btn" type="button" class="secondary" data-active="false">Add Gallery</button>
+        <button id="toggle-manage-btn" type="button" class="secondary" data-active="false">Manage Events & Gallery</button>
       </div>
 
       <section id="manage-card" class="subcard hidden">
@@ -519,7 +404,7 @@
           </div>
           <button id="refresh-events-btn" type="button" class="secondary">Refresh List</button>
         </div>
-        <div id="manage-status" class="status hidden" role="status" aria-live="polite"></div>
+        <div id="manage-status" class="status hidden"></div>
         <div id="event-list" class="event-list"></div>
         </section>
 
@@ -575,7 +460,7 @@
             </div>
           </div>
 
-          <div id="manage-edit-status" class="status hidden" role="status" aria-live="polite"></div>
+          <div id="manage-edit-status" class="status hidden"></div>
 
           <div class="panel-head" style="margin-top:16px;">
             <h2>Gallery Management</h2>
@@ -649,7 +534,7 @@
           </div>
         </form>
 
-        <div id="submit-status" class="status hidden" role="status" aria-live="polite"></div>
+        <div id="submit-status" class="status hidden"></div>
       </section>
 
       <section id="gallery-panel" class="hidden">
@@ -690,47 +575,28 @@
           </div>
         </form>
 
-        <div id="gallery-status" class="status hidden" role="status" aria-live="polite"></div>
+        <div id="gallery-status" class="status hidden"></div>
       </section>
     </section>
-  </div>
-
-  <div id="dialog-overlay" class="dialog-overlay" aria-hidden="true">
-    <div
-      class="dialog"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="dialog-title"
-      aria-describedby="dialog-message"
-      tabindex="-1"
-    >
-      <h3 id="dialog-title">Message</h3>
-      <p id="dialog-message"></p>
-      <div class="dialog-actions" data-one="false">
-        <button id="dialog-cancel-btn" type="button" class="secondary">Cancel</button>
-        <button id="dialog-primary-btn" type="button">OK</button>
-      </div>
-      <div class="dialog-close-hint">Press <span class="mono">Esc</span> to close.</div>
-    </div>
   </div>
 
   <template id="gallery-block-template">
     <article class="gallery-block">
       <div class="gallery-block-head">
         <strong>Image <span data-image-index></span></strong>
-        <button type="button" class="danger" data-remove-gallery-block aria-label="Remove gallery image">Remove</button>
+        <button type="button" class="danger" data-remove-gallery-block>Remove</button>
       </div>
       <div class="grid">
         <div>
-          <label data-gallery-file-label>Image Upload</label>
-          <input type="file" accept=".jpg,.jpeg,.png,.webp,.svg" data-gallery-file aria-label="Upload gallery image">
+          <label>Image Upload</label>
+          <input type="file" accept=".jpg,.jpeg,.png,.webp,.svg" data-gallery-file>
           <p class="mini mono" data-gallery-file-meta></p>
         </div>
         <div class="gallery-preview" data-gallery-preview>
           <span>Preview appears here before upload.</span>
         </div>
         <div>
-          <label data-gallery-description-label>Description</label>
+          <label>Description</label>
           <textarea data-gallery-description placeholder="Describe the moment in this image." required></textarea>
         </div>
       </div>
@@ -840,7 +706,6 @@
       const willShow = pinToolsPanel.classList.contains("hidden");
       pinToolsPanel.classList.toggle("hidden", !willShow);
       togglePinToolsBtn.textContent = willShow ? "Hide PIN Settings" : "Set / Change PIN";
-      togglePinToolsBtn.setAttribute("aria-expanded", String(willShow));
     });
 
     showEventPanelBtn.addEventListener("click", function () {
@@ -864,11 +729,11 @@
     unlockBtn.addEventListener("click", async function () {
       const pin = (pinInput.value || "").trim();
       if (pin.length < 4) {
-        await showAlert("Enter valid PIN.");
+        alert("Enter valid PIN.");
         return;
       }
       if (!hasConfiguredEndpoint()) {
-        await showAlert("Admin endpoint is not configured yet.");
+        alert("Admin endpoint is not configured yet.");
         return;
       }
 
@@ -878,7 +743,7 @@
       try {
         const ok = await verifyPin(pin);
         if (!ok) {
-          await showAlert(pinConfigured ? "Invalid PIN." : "PIN not set yet. Use Set / Change PIN first.");
+          alert(pinConfigured ? "Invalid PIN." : "PIN not set yet. Use Set / Change PIN first.");
           return;
         }
 
@@ -889,7 +754,7 @@
         await loadExistingEvents(false);
         showAdminHome();
       } catch (_err) {
-        await showAlert("Could not verify PIN. Please try again.");
+        alert("Could not verify PIN. Please try again.");
       } finally {
         unlockBtn.disabled = false;
         unlockBtn.textContent = "Unlock Form";
@@ -898,7 +763,7 @@
 
     changePinBtn.addEventListener("click", async function () {
       if (!hasConfiguredEndpoint()) {
-        await showAlert("Admin endpoint is not configured yet.");
+        alert("Admin endpoint is not configured yet.");
         return;
       }
 
@@ -907,15 +772,15 @@
       const confirmPin = (confirmPinInput.value || "").trim();
 
       if (!/^[0-9]{4,}$/.test(newPin)) {
-        await showAlert("New PIN must be at least 4 digits.");
+        alert("New PIN must be at least 4 digits.");
         return;
       }
       if (newPin !== confirmPin) {
-        await showAlert("New PIN and confirmation do not match.");
+        alert("New PIN and confirmation do not match.");
         return;
       }
       if (pinConfigured && !oldPin) {
-        await showAlert("Enter current PIN to change.");
+        alert("Enter current PIN to change.");
         return;
       }
 
@@ -1099,15 +964,15 @@
     adminForm.addEventListener("submit", async function (event) {
       event.preventDefault();
       if (!unlockedPin) {
-        await showAlert("Unlock with PIN first.");
+        alert("Unlock with PIN first.");
         return;
       }
       if (!posterPayload) {
-        await showAlert("Please choose a poster image.");
+        alert("Please choose a poster image.");
         return;
       }
       if (!hasConfiguredEndpoint()) {
-        await showAlert("Admin endpoint is not configured yet.");
+        alert("Admin endpoint is not configured yet.");
         return;
       }
 
@@ -1115,11 +980,11 @@
       const date = buildCreateEventDateValue();
       const time = buildTimeRange();
       if (!date) {
-        await showAlert("Enter a valid date using day, month, and year.");
+        alert("Enter a valid date using day, month, and year.");
         return;
       }
       if (!time) {
-        await showAlert("Enter valid from and to times.");
+        alert("Enter valid from and to times.");
         return;
       }
 
@@ -1172,23 +1037,23 @@
     galleryForm.addEventListener("submit", async function (event) {
       event.preventDefault();
       if (!unlockedPin) {
-        await showAlert("Unlock with PIN first.");
+        alert("Unlock with PIN first.");
         return;
       }
       if (!hasConfiguredEndpoint()) {
-        await showAlert("Admin endpoint is not configured yet.");
+        alert("Admin endpoint is not configured yet.");
         return;
       }
 
       const selectedEvent = getSelectedGalleryEvent();
       if (!selectedEvent) {
-        await showAlert("Select an event first.");
+        alert("Select an event first.");
         return;
       }
 
       const images = collectGalleryImages();
       if (!images.ok) {
-        await showAlert(images.error);
+        alert(images.error);
         return;
       }
 
@@ -1414,19 +1279,6 @@
       toggleManageBtn.dataset.active = String(isManage);
       showEventPanelBtn.dataset.active = String(isEvent);
       showGalleryPanelBtn.dataset.active = String(isGallery);
-      toggleManageBtn.setAttribute("aria-pressed", String(isManage));
-      showEventPanelBtn.setAttribute("aria-pressed", String(isEvent));
-      showGalleryPanelBtn.setAttribute("aria-pressed", String(isGallery));
-
-      window.requestAnimationFrame(function () {
-        if (isEvent) {
-          eventDateInput.focus();
-        } else if (isGallery) {
-          galleryEventSelect.focus();
-        } else if (isManage) {
-          refreshEventsBtn.focus();
-        }
-      });
       if (isManage) {
         loadExistingEvents(false);
       }
@@ -1448,12 +1300,6 @@
       toggleManageBtn.dataset.active = "false";
       showEventPanelBtn.dataset.active = "false";
       showGalleryPanelBtn.dataset.active = "false";
-      toggleManageBtn.setAttribute("aria-pressed", "false");
-      showEventPanelBtn.setAttribute("aria-pressed", "false");
-      showGalleryPanelBtn.setAttribute("aria-pressed", "false");
-      window.requestAnimationFrame(function () {
-        showEventPanelBtn.focus();
-      });
     }
 
     function ensureGalleryBlocks() {
@@ -1470,22 +1316,11 @@
       const block = fragment.querySelector(".gallery-block");
       const fileInput = block.querySelector("[data-gallery-file]");
       const descriptionInput = block.querySelector("[data-gallery-description]");
-      const fileLabel = block.querySelector("[data-gallery-file-label]");
-      const descriptionLabel = block.querySelector("[data-gallery-description-label]");
       const preview = block.querySelector("[data-gallery-preview]");
       const meta = block.querySelector("[data-gallery-file-meta]");
       const removeBtn = block.querySelector("[data-remove-gallery-block]");
 
       block._payload = null;
-
-      // Connect labels to inputs for accessibility.
-      const uid = String(Date.now()) + "-" + String(Math.random()).slice(2);
-      const fileId = "gallery-file-" + uid;
-      const descId = "gallery-desc-" + uid;
-      fileInput.id = fileId;
-      descriptionInput.id = descId;
-      if (fileLabel) fileLabel.setAttribute("for", fileId);
-      if (descriptionLabel) descriptionLabel.setAttribute("for", descId);
 
       if (initialState) {
         descriptionInput.value = initialState.description || "";
@@ -2050,141 +1885,6 @@
       node.style.background = "";
     }
 
-    const dialogOverlay = document.getElementById("dialog-overlay");
-    const dialogTitle = document.getElementById("dialog-title");
-    const dialogMessage = document.getElementById("dialog-message");
-    const dialogCancelBtn = document.getElementById("dialog-cancel-btn");
-    const dialogPrimaryBtn = document.getElementById("dialog-primary-btn");
-    const dialogActions = dialogOverlay ? dialogOverlay.querySelector(".dialog-actions") : null;
-    const dialogEl = dialogOverlay ? dialogOverlay.querySelector(".dialog") : null;
-
-    let dialogLastFocus = null;
-
-    function getDialogFocusable() {
-      if (!dialogEl) return [];
-      const nodes = Array.from(dialogEl.querySelectorAll("button, [href], input, textarea, select, [tabindex]:not([tabindex='-1'])"));
-      return nodes.filter(function (n) { return !n.disabled && n.offsetParent !== null; });
-    }
-
-    function restoreFocus() {
-      if (dialogLastFocus && typeof dialogLastFocus.focus === "function") {
-        dialogLastFocus.focus();
-      }
-      dialogLastFocus = null;
-    }
-
-    function setDialogHidden(isHidden) {
-      if (!dialogOverlay) return;
-      dialogOverlay.setAttribute("aria-hidden", isHidden ? "true" : "false");
-    }
-
-    function showDialog(opts) {
-      const settings = opts || {};
-      const title = String(settings.title || "Message");
-      const message = String(settings.message || "");
-      const primaryText = String(settings.primaryText || "OK");
-      const cancelText = settings.cancelText === undefined ? null : settings.cancelText;
-
-      return new Promise(function (resolve) {
-        if (!dialogOverlay || !dialogEl || !dialogTitle || !dialogMessage || !dialogPrimaryBtn || !dialogCancelBtn) {
-          // Fallback to native dialogs if the overlay is missing for any reason.
-          // eslint-disable-next-line no-alert
-          alert(message);
-          resolve(true);
-          return;
-        }
-
-        dialogLastFocus = document.activeElement;
-
-        dialogTitle.textContent = title;
-        dialogMessage.textContent = message;
-        dialogPrimaryBtn.textContent = primaryText;
-
-        const hasCancel = cancelText !== null;
-        dialogCancelBtn.textContent = String(cancelText || "Cancel");
-        dialogCancelBtn.classList.toggle("hidden", !hasCancel);
-        if (dialogActions) dialogActions.dataset.one = String(!hasCancel);
-
-        function close(result) {
-          cleanup();
-          setDialogHidden(true);
-          resolve(result);
-          restoreFocus();
-        }
-
-        function cleanup() {
-          if (!dialogOverlay || !dialogEl) return;
-          dialogOverlay.removeEventListener("click", onOverlayClick, true);
-          dialogEl.removeEventListener("keydown", onKeyDown, true);
-        }
-
-        function onOverlayClick(e) {
-          if (e.target === dialogOverlay) {
-            close(false);
-          }
-        }
-
-        function onKeyDown(e) {
-          if (e.key === "Escape") {
-            e.preventDefault();
-            close(false);
-            return;
-          }
-
-          if (e.key !== "Tab") return;
-
-          const focusables = getDialogFocusable();
-          if (!focusables.length) return;
-
-          const first = focusables[0];
-          const last = focusables[focusables.length - 1];
-          const current = document.activeElement;
-
-          if (e.shiftKey && current === first) {
-            e.preventDefault();
-            last.focus();
-            return;
-          }
-          if (!e.shiftKey && current === last) {
-            e.preventDefault();
-            first.focus();
-          }
-        }
-
-        dialogPrimaryBtn.onclick = function () { close(true); };
-        dialogCancelBtn.onclick = function () { close(false); };
-
-        setDialogHidden(false);
-        dialogEl.focus();
-
-        if (hasCancel) {
-          dialogCancelBtn.focus();
-        } else {
-          dialogPrimaryBtn.focus();
-        }
-
-        dialogOverlay.addEventListener("click", onOverlayClick, true);
-        dialogEl.addEventListener("keydown", onKeyDown, true);
-      });
-    }
-
-    async function showAlert(message, opts) {
-      const settings = opts || {};
-      const title = settings.title ? String(settings.title) : "Notice";
-      await showDialog({ title: title, message: message, primaryText: String(settings.primaryText || "OK"), cancelText: null });
-    }
-
-    async function showConfirm(message, opts) {
-      const settings = opts || {};
-      const title = settings.title ? String(settings.title) : "Confirm";
-      return showDialog({
-        title: title,
-        message: message,
-        primaryText: String(settings.confirmText || "Confirm"),
-        cancelText: settings.cancelText === undefined ? "Cancel" : String(settings.cancelText)
-      });
-    }
-
     function showManageStatus(text, isError) {
       showStatus(manageStatus, text, isError);
     }
@@ -2297,20 +1997,9 @@
       events.forEach(function (item) {
         const article = document.createElement("article");
         article.className = "event-item";
-        const isSelected = String(String(item.slug || "") === selectedManageSlug);
-        article.dataset.selected = isSelected;
-        article.setAttribute("role", "button");
-        article.tabIndex = 0;
-        article.setAttribute("aria-selected", isSelected);
-        article.setAttribute("aria-label", "Edit event: " + String(item.title || "Untitled event"));
+        article.dataset.selected = String(String(item.slug || "") === selectedManageSlug);
         article.addEventListener("click", function () {
           openManagedEventEditor(item);
-        });
-        article.addEventListener("keydown", function (event) {
-          if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault();
-            openManagedEventEditor(item);
-          }
         });
 
         const details = document.createElement("div");
@@ -2360,9 +2049,6 @@
         renderManagedGalleryImages(galleryEntry);
         hideStatus(manageEditStatus);
         renderEventList(eventCache);
-        window.requestAnimationFrame(function () {
-          manageTitleInput.focus();
-        });
       } catch (err) {
         closeManagedEventEditor();
         showManageStatus("Could not load event details: " + (err && err.message ? err.message : "Unknown error"), true);
@@ -2385,10 +2071,6 @@
       manageDescriptionInput.value = "";
       manageGalleryList.innerHTML = "";
       renderEventList(eventCache);
-      window.requestAnimationFrame(function () {
-        const firstItem = eventList.querySelector(".event-item");
-        if (firstItem) firstItem.focus();
-      });
     }
 
     function renderManagePosterPreview(item, overridePayload) {
@@ -2512,11 +2194,9 @@
 
     async function handleDeleteGalleryImage(imageUrl) {
       if (!selectedManageSlug || !imageUrl) return;
-      const ok = await showConfirm(
-        "Remove this gallery image from the selected event?",
-        { title: "Remove Gallery Image", confirmText: "Remove", cancelText: "Cancel" }
-      );
-      if (!ok) return;
+      if (!window.confirm("Remove this gallery image from the selected event?")) {
+        return;
+      }
 
       try {
         showStatus(manageEditStatus, "Removing gallery image...");
@@ -2543,11 +2223,9 @@
       const slug = String((item && item.slug) || "");
       if (!slug) return;
 
-      const ok = await showConfirm(
-        'Delete "' + title + '"? This removes the event folder, generated event page, and event gallery from GitHub.',
-        { title: "Delete Event", confirmText: "Delete", cancelText: "Cancel" }
-      );
-      if (!ok) return;
+      if (!window.confirm('Delete "' + title + '"? This removes the event folder, generated event page, and event gallery from GitHub.')) {
+        return;
+      }
 
       button.disabled = true;
       showManageStatus('Deleting "' + title + '" from GitHub...', false);
@@ -2597,7 +2275,6 @@
           changePinBtn.textContent = "Set First PIN";
           pinToolsPanel.classList.remove("hidden");
           togglePinToolsBtn.textContent = "Hide PIN Settings";
-          togglePinToolsBtn.setAttribute("aria-expanded", "true");
         }
       } catch (_err) {
         pinModeNote.textContent = "Could not check PIN status. Try again after backend deploy.";
