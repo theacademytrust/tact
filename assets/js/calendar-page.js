@@ -10,6 +10,7 @@
     scrollObserver: null,
     previewTimers: [],
     activeDateItems: [],
+    activeDetailId: "",
     detailOpen: false,
     initInFlight: null,
     eventsBound: false
@@ -71,10 +72,13 @@
       entry.images.forEach(function (image, index) {
         days[key].push({
           id: entry.slug + "-" + index,
+          slug: entry.slug,
+          eventSlug: entry.eventSlug || entry.slug,
           title: entry.title,
           date: entry.date,
           location: entry.location,
           description: image.description,
+          previewDescription: image.description,
           url: image.url
         });
       });
@@ -168,7 +172,7 @@
       "<strong>" + escapeHtml(items[0].title) + "</strong>" +
       "<span>" + escapeHtml(formatDate(items[0].date)) + "</span>" +
       "<span>" + escapeHtml(items[0].location) + "</span>" +
-      "<span>" + escapeHtml(shortText(items[0].description, 90)) + "</span>";
+      "<span>" + escapeHtml(shortText(items[0].previewDescription || items[0].description, 90)) + "</span>";
     previewWrap.appendChild(overlay);
     button.appendChild(previewWrap);
 
@@ -182,7 +186,7 @@
           "<strong>" + escapeHtml(items[index].title) + "</strong>" +
           "<span>" + escapeHtml(formatDate(items[index].date)) + "</span>" +
           "<span>" + escapeHtml(items[index].location) + "</span>" +
-          "<span>" + escapeHtml(shortText(items[index].description, 90)) + "</span>";
+          "<span>" + escapeHtml(shortText(items[index].previewDescription || items[index].description, 90)) + "</span>";
       }, 3200));
     }
 
@@ -356,24 +360,48 @@
     image.onload = apply;
   }
 
+  function fallbackDetailDescription(item) {
+    return String(item.fullDescription || item.eventDescription || "").trim() || "Loading event description";
+  }
+
+  async function hydrateDetailDescription(item) {
+    if (!item) return "";
+    if (item.fullDescription) return item.fullDescription;
+    if (typeof window.loadTactEventDescription !== "function") return "";
+
+    var description = await window.loadTactEventDescription(item);
+    if (description) {
+      item.fullDescription = description;
+    }
+    return description;
+  }
+
   function openDetailModal(item) {
     var modal = document.getElementById("calendar-detail-modal");
     var layout = modal ? modal.querySelector(".calendar-detail-layout") : null;
     var image = document.getElementById("calendar-detail-image");
+    var description = document.getElementById("calendar-detail-description");
     if (!modal || !layout || !image || !item) return;
 
     state.detailOpen = true;
+    state.activeDetailId = item.id;
     image.src = item.url;
     image.alt = item.title;
     document.getElementById("calendar-detail-title").textContent = item.title;
     document.getElementById("calendar-detail-date").textContent = formatDate(item.date);
     document.getElementById("calendar-detail-location").textContent = item.location;
-    document.getElementById("calendar-detail-description").textContent = item.description;
+    if (description) description.textContent = fallbackDetailDescription(item);
     layout.style.setProperty("--calendar-detail-media-height", "76vh");
 
     modal.hidden = false;
     document.body.classList.add("modal-open");
     syncDetailModalHeight();
+
+    hydrateDetailDescription(item).then(function (fullDescription) {
+      if (!state.detailOpen || state.activeDetailId !== item.id || !description) return;
+      description.textContent = fullDescription || item.description || "";
+      syncDetailModalHeight();
+    });
   }
 
   function closeDetailModal() {
@@ -386,6 +414,7 @@
       layout.style.removeProperty("--calendar-detail-media-height");
     }
     state.detailOpen = false;
+    state.activeDetailId = "";
 
     var dateModal = document.getElementById("calendar-date-modal");
     if (!dateModal || dateModal.hidden) {

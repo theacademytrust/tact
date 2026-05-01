@@ -1,6 +1,7 @@
 (function () {
   var state = {
     modalOpen: false,
+    activeModalItemId: "",
     itemsById: {},
     eventsBound: false
   };
@@ -93,24 +94,35 @@
     return null;
   }
 
-  function buildGalleryItem(eventItem, image, index) {
+  async function loadFullEventDescription(eventItem) {
+    if (typeof window.loadTactEventDescription === "function") {
+      var description = await window.loadTactEventDescription(eventItem);
+      if (description) return description;
+    }
+
+    return String(eventItem.homepageMatter || eventItem.teaser || "").trim();
+  }
+
+  function buildGalleryItem(eventItem, image, index, fullDescription) {
     return {
       id: "gallery-" + index,
       title: String(eventItem.title || ""),
       date: String(eventItem.date || ""),
       location: String(eventItem.location || ""),
-      description: String((image && image.description) || ""),
+      description: String(fullDescription || (image && image.description) || ""),
+      previewDescription: String((image && image.description) || ""),
       url: String((image && image.url) || "")
     };
   }
 
-  function buildPosterItem(eventItem) {
+  function buildPosterItem(eventItem, fullDescription) {
     return {
       id: "poster",
       title: String(eventItem.title || ""),
       date: String(eventItem.date || ""),
       location: String(eventItem.location || ""),
-      description: String(eventItem.homepageMatter || eventItem.teaser || ""),
+      description: String(fullDescription || eventItem.homepageMatter || eventItem.teaser || ""),
+      previewDescription: String(eventItem.homepageMatter || eventItem.teaser || ""),
       url: resolveSitePath(String(eventItem.poster || ""))
     };
   }
@@ -135,7 +147,7 @@
       "<strong>" + escapeHtml(item.title) + "</strong>" +
       "<span>" + escapeHtml(formatDate(item.date)) + "</span>" +
       "<span>" + escapeHtml(item.location) + "</span>" +
-      "<span>" + escapeHtml(shortText(item.description, 120)) + "</span>";
+      "<span>" + escapeHtml(shortText(item.previewDescription || item.description, 120)) + "</span>";
 
     button.appendChild(image);
     button.appendChild(overlay);
@@ -163,18 +175,24 @@
     image.onload = apply;
   }
 
+  function modalDescriptionFor(item) {
+    return String(item.fullDescription || item.description || "").trim();
+  }
+
   function openModal(item) {
     var modal = document.getElementById("gallery-modal");
     var dialog = modal ? modal.querySelector(".gallery-modal-dialog") : null;
     var image = document.getElementById("gallery-modal-image");
+    var description = document.getElementById("gallery-modal-description");
     if (!modal || !dialog || !image || !item) return;
 
+    state.activeModalItemId = item.id;
     image.src = item.url;
     image.alt = item.title;
     document.getElementById("gallery-modal-title").textContent = item.title;
     document.getElementById("gallery-modal-date").textContent = formatDate(item.date);
     document.getElementById("gallery-modal-location").textContent = item.location;
-    document.getElementById("gallery-modal-description").textContent = item.description;
+    if (description) description.textContent = modalDescriptionFor(item);
     dialog.style.setProperty("--gallery-modal-media-height", "90vh");
 
     modal.hidden = false;
@@ -194,6 +212,7 @@
     }
     document.body.classList.remove("modal-open");
     state.modalOpen = false;
+    state.activeModalItemId = "";
   }
 
   function bindEvents() {
@@ -239,7 +258,7 @@
       "</p></section>";
   }
 
-  function renderEventDetail(eventItem, galleryEntry) {
+  function renderEventDetail(eventItem, galleryEntry, fullDescription) {
     var main = document.getElementById("main");
     if (!main || !eventItem) return;
 
@@ -271,13 +290,13 @@
               "<span>" + escapeHtml(eventItem.time || "Time TBA") + "</span>" +
               "<span>" + escapeHtml(eventItem.location || "Location TBA") + "</span>" +
             "</div>" +
-            '<p class="event-detail-description">' + escapeHtml(eventItem.homepageMatter || eventItem.teaser || "Description coming soon.") + "</p>" +
+            '<p class="event-detail-description">' + escapeHtml(fullDescription || "Description coming soon.") + "</p>" +
           "</div>" +
         "</section>" +
         gallerySection +
       "</div>";
 
-    var posterItem = buildPosterItem(eventItem);
+    var posterItem = buildPosterItem(eventItem, fullDescription);
     state.itemsById = { poster: posterItem };
 
     var grid = document.getElementById("gallery-grid");
@@ -286,7 +305,7 @@
     }
 
     images.forEach(function (image, index) {
-      var item = buildGalleryItem(eventItem, image, index + 1);
+      var item = buildGalleryItem(eventItem, image, index + 1, fullDescription);
       state.itemsById[item.id] = item;
       grid.appendChild(buildGalleryCard(item));
     });
@@ -330,8 +349,9 @@
     }
 
     var galleryEntry = findGalleryEntry(eventItem, galleries);
+    var fullDescription = await loadFullEventDescription(eventItem);
 
-    renderEventDetail(eventItem, galleryEntry);
+    renderEventDetail(eventItem, galleryEntry, fullDescription);
   }
 
   function boot() {

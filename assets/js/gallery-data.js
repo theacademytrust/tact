@@ -1,6 +1,8 @@
 (function () {
   var cache = null;
   var inFlight = null;
+  var descriptionCache = {};
+  var descriptionInFlight = {};
   var DATA_URL = resolveSitePath("data/gallery.json");
 
   function getSiteRoot() {
@@ -65,6 +67,65 @@
     };
   }
 
+  function normalizeDescription(value) {
+    return String(value || "")
+      .replace(/\r\n?/g, "\n")
+      .replace(/[ \t]+\n/g, "\n")
+      .replace(/\n{3,}/g, "\n\n")
+      .trim();
+  }
+
+  function eventFolderFrom(value) {
+    if (!value) return "";
+    if (typeof value === "string") {
+      var raw = value.replace(/^\/+|\/+$/g, "");
+      return raw.indexOf("content/events/") === 0 ? raw : "content/events/" + raw;
+    }
+
+    var folder = String(value.folder || "").trim();
+    if (folder) return folder.replace(/^\/+|\/+$/g, "");
+
+    var slug = String(value.eventSlug || value.slug || "").trim();
+    return slug ? "content/events/" + slug.replace(/^\/+|\/+$/g, "") : "";
+  }
+
+  function eventDescriptionPath(value) {
+    var folder = eventFolderFrom(value);
+    return folder ? folder + "/post-event.md" : "";
+  }
+
+  async function fetchEventDescription(value) {
+    var path = eventDescriptionPath(value);
+    if (!path) return "";
+
+    var key = path.toLowerCase();
+    if (Object.prototype.hasOwnProperty.call(descriptionCache, key)) {
+      return descriptionCache[key];
+    }
+    if (descriptionInFlight[key]) {
+      return descriptionInFlight[key];
+    }
+
+    descriptionInFlight[key] = fetch(resolveSitePath(path), { cache: "no-store" })
+      .then(function (response) {
+        if (!response.ok) return "";
+        return response.text();
+      })
+      .then(function (text) {
+        descriptionCache[key] = normalizeDescription(text);
+        return descriptionCache[key];
+      })
+      .catch(function () {
+        descriptionCache[key] = "";
+        return "";
+      })
+      .finally(function () {
+        descriptionInFlight[key] = null;
+      });
+
+    return descriptionInFlight[key];
+  }
+
   function parsePayload(payload) {
     var rows = [];
     if (Array.isArray(payload)) {
@@ -116,5 +177,15 @@
       });
 
     return inFlight;
+  };
+
+  window.getTactEventDescriptionSnapshot = function (entryOrSlug) {
+    var path = eventDescriptionPath(entryOrSlug);
+    if (!path) return "";
+    return descriptionCache[path.toLowerCase()] || "";
+  };
+
+  window.loadTactEventDescription = async function (entryOrSlug) {
+    return fetchEventDescription(entryOrSlug);
   };
 })();

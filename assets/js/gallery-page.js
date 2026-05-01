@@ -6,6 +6,7 @@
     batchSize: 12,
     observer: null,
     modalOpen: false,
+    activeModalItemId: "",
     initInFlight: null,
     eventsBound: false
   };
@@ -16,10 +17,13 @@
       entry.images.forEach(function (image, index) {
         output.push({
           id: entry.slug + "-" + index,
+          slug: entry.slug,
+          eventSlug: entry.eventSlug || entry.slug,
           title: entry.title,
           date: entry.date,
           location: entry.location,
           description: image.description,
+          previewDescription: image.description,
           url: image.url
         });
       });
@@ -77,7 +81,7 @@
       "<strong>" + escapeHtml(item.title) + "</strong>" +
       "<span>" + escapeHtml(formatDate(item.date)) + "</span>" +
       "<span>" + escapeHtml(item.location) + "</span>" +
-      "<span>" + escapeHtml(shortText(item.description, 120)) + "</span>";
+      "<span>" + escapeHtml(shortText(item.previewDescription || item.description, 120)) + "</span>";
 
     button.appendChild(image);
     button.appendChild(overlay);
@@ -169,24 +173,48 @@
     image.onload = apply;
   }
 
+  function fallbackModalDescription(item) {
+    return String(item.fullDescription || item.eventDescription || "").trim() || "Loading event description";
+  }
+
+  async function hydrateModalDescription(item) {
+    if (!item) return "";
+    if (item.fullDescription) return item.fullDescription;
+    if (typeof window.loadTactEventDescription !== "function") return "";
+
+    var description = await window.loadTactEventDescription(item);
+    if (description) {
+      item.fullDescription = description;
+    }
+    return description;
+  }
+
   function openModal(item) {
     var modal = document.getElementById("gallery-modal");
     var dialog = modal ? modal.querySelector(".gallery-modal-dialog") : null;
     var image = document.getElementById("gallery-modal-image");
+    var description = document.getElementById("gallery-modal-description");
     if (!modal || !dialog || !image || !item) return;
 
+    state.activeModalItemId = item.id;
     image.src = item.url;
     image.alt = item.title;
     document.getElementById("gallery-modal-title").textContent = item.title;
     document.getElementById("gallery-modal-date").textContent = formatDate(item.date);
     document.getElementById("gallery-modal-location").textContent = item.location;
-    document.getElementById("gallery-modal-description").textContent = item.description;
+    if (description) description.textContent = fallbackModalDescription(item);
     dialog.style.setProperty("--gallery-modal-media-height", "90vh");
 
     modal.hidden = false;
     document.body.classList.add("modal-open");
     state.modalOpen = true;
     syncModalHeight();
+
+    hydrateModalDescription(item).then(function (fullDescription) {
+      if (!state.modalOpen || state.activeModalItemId !== item.id || !description) return;
+      description.textContent = fullDescription || item.description || "";
+      syncModalHeight();
+    });
   }
 
   function closeModal() {
@@ -200,6 +228,7 @@
     }
     document.body.classList.remove("modal-open");
     state.modalOpen = false;
+    state.activeModalItemId = "";
   }
 
   function bindEvents() {

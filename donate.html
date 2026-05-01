@@ -1,550 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=1240">
-  <title>Donate – The Academy Trust (tAcT)</title>
-  <meta name="description" content="Support The Academy Trust (tAcT) and help strengthen science outreach, fellowships, and education across India.">
+  <title>Donate - The Academy Trust (tAcT)</title>
+  <meta name="description" content="Support The Academy Trust (tAcT) through bank transfer, cheque, Demand Draft, or institutional support.">
   <link rel="icon" href="assets/images/tact-favicon.png" type="image/png">
   <link rel="stylesheet" href="shared-ribbon.css">
   <link rel="stylesheet" href="assets/css/public-site.css">
-  <style>
-    :root {
-      --bg: #fdfdfc;
-      --card: #ffffff;
-      --green: #0a7a3a;
-      --muted: #4a5568;
-      --radius: 18px;
-      --gold: rgba(184, 134, 11, 0.95);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      background:
-        linear-gradient(180deg, rgba(10, 40, 20, 0.02), rgba(255, 255, 255, 0.02)),
-        radial-gradient(800px 400px at 10% 10%, rgba(10, 122, 58, 0.03), transparent 10%),
-        var(--bg);
-      color: #0f1b1a;
-      line-height: 1.45;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    .wrap {
-      max-width: var(--site-wrap-max);
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    main {
-      margin-top: 12px;
-      margin-bottom: 40px;
-    }
-
-    .donate-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 28px;
-      align-items: flex-start;
-    }
-
-    .donate-hero {
-      position: relative;
-      padding: 32px 28px 28px;
-      border-radius: 18px;
-      background: var(--card);
-      color: #0f1b1a;
-      overflow: hidden;
-      box-shadow: 0 18px 60px rgba(20, 30, 20, 0.04);
-      border: 2px solid rgba(9, 9, 9, 0.02);
-      border-top: 3px solid rgba(184, 134, 11, 0.2);
-    }
-
-    .donate-hero::before {
-      content: "";
-      position: absolute;
-      inset: -20%;
-      background:
-        url("assets/images/tact-logo.jpg") center/340px 340px no-repeat;
-      opacity: 0.03;
-      pointer-events: none;
-      transform: rotate(-10deg) translateX(12%);
-      filter: blur(0.5px);
-    }
-
-    .donate-hero-kicker {
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .donate-hero h1 {
-      margin: 0 0 12px;
-      font-size: 34px;
-      letter-spacing: -0.03em;
-      color: var(--green);
-    }
-
-    .donate-hero p {
-      margin: 4px 0 14px;
-      font-size: 15px;
-      line-height: 1.6;
-      max-width: 40rem;
-      color: var(--muted);
-    }
-
-    .donate-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .donate-badge {
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(10, 122, 58, 0.14);
-      font-size: 11px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--green);
-      background: rgba(10, 122, 58, 0.08);
-    }
-
-    .donate-hero-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 20px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-weight: 600;
-      font-size: 14px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: linear-gradient(180deg, var(--green), #07602c);
-      color: #ffffff;
-      border-color: rgba(184, 134, 11, 0.2);
-      box-shadow: 0 4px 12px rgba(6, 80, 40, 0.15);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(6, 80, 40, 0.2);
-    }
-
-    .btn-secondary {
-      background: linear-gradient(180deg, #ffffff, #f6f5f2);
-      color: var(--muted);
-      border-color: rgba(0, 0, 0, 0.06);
-      box-shadow: 0 2px 8px rgba(10, 20, 10, 0.06);
-    }
-
-    .btn-secondary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(10, 20, 10, 0.1);
-    }
-
-    .donate-sidecard {
-      background: var(--card);
-      border-radius: 18px;
-      padding: 22px 22px 20px;
-      box-shadow: 0 18px 60px rgba(20, 30, 20, 0.04);
-      border: 2px solid rgba(9, 9, 9, 0.02);
-      border-top: 3px solid rgba(184, 134, 11, 0.2);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .donate-sidecard::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(140% 220% at 0% 0%, rgba(10, 122, 58, 0.06), transparent 55%),
-        radial-gradient(140% 220% at 100% 0%, rgba(184, 134, 11, 0.06), transparent 55%);
-      opacity: 0.7;
-      pointer-events: none;
-    }
-
-    .donate-sidecard-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .donate-sidecard h2 {
-      margin: 0 0 12px;
-      font-size: 22px;
-      letter-spacing: -0.03em;
-      color: var(--green);
-    }
-
-    .donate-sidecard p {
-      margin: 4px 0 10px;
-      font-size: 15px;
-      color: #475569;
-      line-height: 1.6;
-    }
-
-    .donate-details {
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(148, 163, 184, 0.45);
-      font-size: 13px;
-      color: #1f2937;
-    }
-
-    .donate-details dt {
-      font-weight: 600;
-      margin-top: 6px;
-      color: #111827;
-    }
-
-    .donate-details dd {
-      margin: 0 0 4px;
-      white-space: pre-line;
-    }
-
-    .donate-section {
-      margin-top: 32px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 24px;
-      align-items: flex-start;
-    }
-
-    .donate-block {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 22px 22px 20px;
-      box-shadow: 0 18px 60px rgba(20, 30, 20, 0.04);
-      border: 2px solid rgba(9, 9, 9, 0.02);
-      border-top: 3px solid rgba(184, 134, 11, 0.2);
-    }
-
-    .donate-block h2 {
-      margin: 0 0 10px;
-      font-size: 22px;
-      letter-spacing: -0.03em;
-      color: var(--green);
-    }
-
-    .donate-block p, .donate-block li {
-      font-size: 15px;
-      color: #374151;
-      line-height: 1.6;
-    }
-
-    .donate-block ul {
-      padding-left: 18px;
-      margin: 6px 0 0;
-    }
-
-    .donate-highlight {
-      color: var(--green);
-      font-weight: 600;
-    }
-
-    .donate-note {
-      font-size: 12px;
-      color: #6b7280;
-      margin-top: 10px;
-    }
-
-    .donate-tax-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(22, 163, 74, 0.06);
-      color: #065f46;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border: 1px solid rgba(22, 163, 74, 0.28);
-      margin-top: 8px;
-    }
-
-    .donate-pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .donate-pill {
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      font-size: 11px;
-      color: #4b5563;
-      background: rgba(248, 250, 252, 0.9);
-    }
-
-    .donate-receipt-card {
-      margin-top: 14px;
-      padding: 14px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(10, 122, 58, 0.16);
-      background: linear-gradient(180deg, rgba(10, 122, 58, 0.06), rgba(255, 255, 255, 0.82));
-      font-size: 12px;
-      color: #4b5563;
-    }
-
-    .donate-receipt-card strong {
-      display: block;
-      margin-bottom: 4px;
-      color: #163a2a;
-      font-size: 13px;
-    }
-
-    .donate-checklist {
-      display: grid;
-      gap: 8px;
-      margin: 12px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .donate-checklist li {
-      position: relative;
-      padding-left: 18px;
-      margin: 0;
-    }
-
-    .donate-checklist li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.68em;
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--green);
-      box-shadow: 0 0 0 3px rgba(10, 122, 58, 0.1);
-    }
-
-    .donate-block--wide {
-      grid-column: 1 / -1;
-    }
-
-    .donate-contact-link {
-      color: var(--green);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .donate-contact-link:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      padding: 22px 0 10px;
-      font-size: 13px;
-      color: var(--muted);
-      border-top: 1px solid rgba(184, 134, 11, 0.25);
-      margin-top: 32px;
-    }
-
-    footer a {
-      color: var(--green);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Desktop-only layout lock */
-    html,
-    body {
-      min-width: 1240px;
-    }
-
-    body {
-      overflow-x: auto;
-    }
-
-    .wrap {
-      width: 1200px;
-      max-width: none;
-      min-width: 1200px;
-      padding: 20px;
-    }
-
-    main {
-      margin-top: 12px;
-      margin-bottom: 40px;
-    }
-
-    .donate-hero h1 {
-      font-size: 34px;
-    }
-
-    .donate-layout {
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-    }
-
-    .donate-section {
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-    }
-
-    .donate-sidecard {
-      order: initial;
-    }
-
-    .donate-hero {
-      padding: 32px 28px 28px;
-    }
-
-    .donate-sidecard,
-    .donate-block {
-      padding: 22px 22px 20px;
-      border-radius: 18px;
-    }
-
-    .donate-badges,
-    .donate-hero-ctas {
-      flex-direction: row;
-      align-items: center;
-    }
-
-    .btn {
-      width: auto;
-    }
-
-    footer {
-      padding: 22px 0 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/donate.css?v=20260501a">
 </head>
 <body>
   <div class="wrap">
     <div id="site-header-root"></div>
 
-    <main id="main">
-      <section class="donate-layout" aria-labelledby="donate-heading">
-        <div class="donate-hero">
-          <p class="donate-hero-kicker">Support science in classrooms, colleges, and communities</p>
+    <main id="main" class="donate-shell">
+      <section class="section surface donate-hero" aria-labelledby="donate-heading">
+        <div>
+          <p class="donate-kicker">Support science outreach</p>
           <h1 id="donate-heading">Donate to The Academy Trust</h1>
-          <p>
-            Your contribution helps take scientists, experiments, and conversations about science to schools and communities across India.
-            It also supports fellowships and the Chair Professorship that keep this work grounded in good science.
+          <p class="donate-lead">
+            Your contribution helps tAcT take scientists, experiments, and serious conversations about science to schools, colleges, and communities across India.
           </p>
-          <div class="donate-badges">
+          <p>
+            The most useful donation page should make the transaction clear first: use the bank details, then email the transfer reference and donor information so the office can issue the receipt.
+          </p>
+          <div class="donate-badges" aria-label="Trust status">
             <span class="donate-badge">Registered public charitable trust</span>
-            <span class="donate-badge">80G &amp; 12A tax exemptions</span>
+            <span class="donate-badge">80G and 12A eligible</span>
+            <span class="donate-badge">Audited accounts</span>
           </div>
-          <div class="donate-hero-ctas">
-            <a href="#how-to-give" class="btn btn-primary">See how to donate</a>
-            <a href="#bank-details" class="btn btn-secondary">Bank transfer details</a>
+          <div class="donate-action-row">
+            <a href="#bank-details" class="btn btn-primary">Bank details</a>
+            <a href="#receipt" class="btn btn-secondary">Receipt requirements</a>
           </div>
         </div>
 
-        <aside class="donate-sidecard" aria-label="Donation summary">
-          <div class="donate-sidecard-inner">
-            <h2>Your support does three things</h2>
-            <p><span class="donate-highlight">1.</span> Strengthens outreach visits to schools, colleges, and village centres.</p>
-            <p><span class="donate-highlight">2.</span> Sustains fellowships and the Chair Professorship under tAcT.</p>
-            <p><span class="donate-highlight">3.</span> Builds a stable corpus so that this work can continue over years.</p>
-
-            <div class="donate-details" id="bank-details">
-              <h2>Bank transfer details</h2>
-              <dl>
-                <dt>Account name</dt>
-                <dd>The Academy Trust</dd>
-                <dt>Bank &amp; branch</dt>
-                <dd>State Bank of India, Sadashivanagar Branch(01811), Bengaluru</dd>
-                <dt>Account number</dt>
-                <dd>34446403068</dd>
-                <dt>IFSC code</dt>
-                <dd>SBIN0001811</dd>
-                <dt>Type</dt>
-                <dd>Savings account</dd>
-              </dl>
-
-              <div class="donate-tax-tag">
-                <span>80G / 12A eligible</span>
-              </div>
-              <p class="donate-note">
-                All donations are eligible for tax exemption under Sections 80G and 12A of the Income Tax Act, subject to prevailing rules.
-                Please share your PAN and address when you make a transfer so that we can issue a receipt.
-              </p>
-
-              <div class="donate-receipt-card">
-                <strong>For receipts</strong>
-                After making a transfer, email the transaction reference, donor name, PAN, postal address, and contact number to
-                <a class="donate-contact-link" href="mailto:trust@ias.ac.in?subject=Donation%20receipt%20request">trust@ias.ac.in</a>.
-              </div>
+        <aside id="bank-details" class="donate-panel" aria-label="Bank transfer details">
+          <h2>Bank Transfer Details</h2>
+          <dl class="donate-bank">
+            <div class="donate-bank-row">
+              <dt>Account name</dt>
+              <dd>The Academy Trust</dd>
             </div>
-          </div>
+            <div class="donate-bank-row">
+              <dt>Bank</dt>
+              <dd>State Bank of India</dd>
+            </div>
+            <div class="donate-bank-row">
+              <dt>Branch</dt>
+              <dd>Sadashivanagar Branch (01811), Bengaluru</dd>
+            </div>
+            <div class="donate-bank-row">
+              <dt>Account no.</dt>
+              <dd>34446403068</dd>
+            </div>
+            <div class="donate-bank-row">
+              <dt>IFSC</dt>
+              <dd>SBIN0001811</dd>
+            </div>
+            <div class="donate-bank-row">
+              <dt>Type</dt>
+              <dd>Savings account</dd>
+            </div>
+          </dl>
         </aside>
       </section>
 
-      <section class="donate-section" id="how-to-give">
-        <div class="donate-block">
-          <h2>How to make a donation</h2>
-          <p>The Academy Trust currently accepts donations through bank transfer, cheque, Demand Draft, and institutional support routes.</p>
-          <ul>
-            <li><strong>Online bank transfer</strong> to the account listed above.</li>
-            <li><strong>Cheque or Demand Draft</strong> in favour of <span class="donate-highlight">"The Academy Trust"</span>, payable at Bengaluru.</li>
-            <li><strong>Institutional or CSR support</strong> for specific outreach programmes or fellowships.</li>
-          </ul>
-          <p class="donate-note">
-            Cheques / DDs may be mailed to the Executive Secretary, The Academy Trust, Indian Academy of Sciences, Bengaluru.
-            Please include your contact details to help us acknowledge the support.
-          </p>
-        </div>
+      <section class="section donate-grid three" aria-label="Donation steps">
+        <article class="donate-step">
+          <span class="donate-step-number">1</span>
+          <h3>Transfer</h3>
+          <p>Make a bank transfer to the account listed above, or prepare a cheque or Demand Draft in favour of The Academy Trust.</p>
+        </article>
+        <article class="donate-step">
+          <span class="donate-step-number">2</span>
+          <h3>Email details</h3>
+          <p>Send the transaction reference, donor name, PAN, postal address, email, and contact number to the Trust office.</p>
+        </article>
+        <article class="donate-step">
+          <span class="donate-step-number">3</span>
+          <h3>Receive receipt</h3>
+          <p>The office can issue receipt and tax documentation after it has the transfer and donor details required for records.</p>
+        </article>
+      </section>
 
-        <div class="donate-block">
-          <h2>Receipt and tax documentation</h2>
-          <p>To help the office issue the receipt correctly, share the following details after the donation is made.</p>
-          <ul class="donate-checklist">
-            <li>Donor name exactly as it should appear on the receipt.</li>
-            <li>PAN, postal address, email, and contact number.</li>
-            <li>Amount, transfer date, and transaction reference.</li>
-            <li>Purpose note, if the gift is intended for a specific programme or fellowship.</li>
-          </ul>
-          <p class="donate-note">
-            Receipt and exemption documentation are issued subject to prevailing statutory requirements and the details submitted by the donor.
-          </p>
-        </div>
-
-        <div class="donate-block donate-block--wide">
-          <h2>How your contribution is used</h2>
-          <ul>
-            <li>Small-group visits where students meet scientists and work with simple activities.</li>
-            <li>Travel, materials, and coordination for outreach in rural, tribal, and urban schools.</li>
-            <li>Support for fellowships and the Chair Professorship associated with tAcT.</li>
-            <li>Documentation and materials that teachers can continue using after the visit.</li>
-          </ul>
-          <div class="donate-pill-row">
-            <span class="donate-pill">Transparent audited accounts</span>
-            <span class="donate-pill">Corpus-based long-term support</span>
-            <span class="donate-pill">Focus on science and education</span>
+      <section id="receipt" class="section surface">
+        <h2>Receipt and Tax Documentation</h2>
+        <div class="donate-grid two">
+          <div>
+            <p>
+              Donations are eligible for tax exemption under Sections 80G and 12A of the Income Tax Act, subject to prevailing rules and the details submitted by the donor.
+            </p>
+            <ul class="donate-checklist">
+              <li>Donor name exactly as it should appear on the receipt.</li>
+              <li>PAN, postal address, email, and contact number.</li>
+              <li>Amount, transfer date, and transaction reference.</li>
+              <li>Purpose note, if the gift is intended for a specific programme or fellowship.</li>
+            </ul>
           </div>
+          <aside class="donate-contact-card">
+            <strong>Send receipt details to</strong>
+            <a class="donate-link" href="mailto:trust@ias.ac.in?subject=Donation%20receipt%20request">trust@ias.ac.in</a>
+            <p class="donate-fine-print">
+              Include the transaction reference and donor information in one email so the office can match the donation cleanly.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section surface">
+        <h2>How Your Contribution Is Used</h2>
+        <div class="donate-grid three">
+          <article class="donate-use-card">
+            <h3>Outreach visits</h3>
+            <p>Travel, materials, and coordination for school, college, rural, tribal, and community science outreach.</p>
+          </article>
+          <article class="donate-use-card">
+            <h3>Learning materials</h3>
+            <p>Demonstrations, activities, and documentation that teachers and students can continue using after an event.</p>
+          </article>
+          <article class="donate-use-card">
+            <h3>Long-term programmes</h3>
+            <p>Support for fellowships, industry internships, and the Chair Professorship associated with tAcT.</p>
+          </article>
+        </div>
+        <div class="donate-pill-row" aria-label="Donation governance">
+          <span class="donate-pill">Transparent audited accounts</span>
+          <span class="donate-pill">Corpus-based long-term support</span>
+          <span class="donate-pill">Science and education focus</span>
+        </div>
+      </section>
+
+      <section class="section surface">
+        <h2>Other Ways to Give</h2>
+        <div class="donate-grid two">
+          <article class="donate-note-card">
+            <h3>Cheque or Demand Draft</h3>
+            <p>
+              Cheques or Demand Drafts should be made in favour of The Academy Trust, payable at Bengaluru.
+            </p>
+            <p class="donate-fine-print">
+              Mail them to the Executive Secretary, The Academy Trust, Indian Academy of Sciences, C. V. Raman Avenue, Bengaluru. Include contact details for acknowledgement and receipt processing.
+            </p>
+          </article>
+          <article class="donate-note-card">
+            <h3>Institutional Support</h3>
+            <p>
+              Institutions and CSR teams can write to the Trust office to discuss support for specific outreach programmes, fellowships, or long-term corpus needs.
+            </p>
+            <p>
+              <a class="donate-link" href="mailto:trust@ias.ac.in?subject=Institutional%20support%20for%20The%20Academy%20Trust">trust@ias.ac.in</a>
+            </p>
+          </article>
         </div>
       </section>
     </main>
@@ -552,19 +160,7 @@
     <div id="site-footer-root"></div>
   </div>
 
-  <script src="assets/js/site-chrome.js?v=20260501e"></script>
-  <script>
-    (function () {
-      if (window.TACT_CHROME) {
-        if (typeof window.TACT_CHROME.ensureHeader === "function") {
-          window.TACT_CHROME.ensureHeader();
-        } else {
-          window.TACT_CHROME.renderHeader();
-        }
-        window.TACT_CHROME.initDropdowns();
-      }
-    })();
-  </script>
-  <script src="assets/js/page-router.js?v=20260323d"></script>
+  <script src="assets/js/site-chrome.js?v=20260501f"></script>
+  <script src="assets/js/page-router.js?v=20260501g"></script>
 </body>
 </html>

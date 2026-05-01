@@ -9,8 +9,9 @@ const pagesRoot = path.join(repoRoot, "events");
 const feedPath = path.join(eventsRoot, "events-feed.js");
 const posterNames = new Set(["poster.jpg", "poster.jpeg", "poster.png", "poster.webp", "poster.svg", "poster.avif"]);
 const galleryImageExtensions = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif", ".svg"]);
-const feedVersion = "20260501b";
-const chromeVersion = "20260501e";
+const feedVersion = "20260501c";
+const chromeVersion = "20260501f";
+const detailVersion = "20260501f";
 
 function sanitizeSlug(value) {
   return String(value || "")
@@ -112,8 +113,8 @@ function shellFor(slug) {
   <meta name="description" content="Event details from The Academy Trust (tAcT).">
   <link rel="stylesheet" href="../shared-ribbon.css">
   <link rel="stylesheet" href="../assets/css/public-site.css">
-  <link rel="stylesheet" href="../assets/css/gallery.css">
-  <link rel="stylesheet" href="../assets/css/event-detail.css">
+  <link rel="stylesheet" href="../assets/css/gallery.css?v=${detailVersion}">
+  <link rel="stylesheet" href="../assets/css/event-detail.css?v=${detailVersion}">
 </head>
 <body data-page="event-detail" data-site-root="../" data-event-slug="${slug}">
   <div class="wrap">
@@ -144,7 +145,7 @@ function shellFor(slug) {
   <script src="../assets/js/site-chrome.js?v=${chromeVersion}"></script>
   <script src="../content/events/events-feed.js?v=${feedVersion}"></script>
   <script src="../assets/js/gallery-data.js?v=${feedVersion}"></script>
-  <script src="../assets/js/event-detail-page.js"></script>
+  <script src="../assets/js/event-detail-page.js?v=${detailVersion}"></script>
 </body>
 </html>
 `;

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tact-v5';
+const CACHE_NAME = 'tact-v7';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -7,6 +7,12 @@ const urlsToCache = [
   '/assets/images/tact-logo.jpg',
   '/shared-ribbon.css',
   '/donate.html',
+  '/industry-internship.html',
+  '/chair-professorship.html',
+  '/assets/css/donate.css',
+  '/assets/css/initiative-page.css',
+  '/assets/js/site-chrome.js',
+  '/assets/js/page-router.js',
   '/vijnana-harate.html',
   '/vijnana-aranya.html',
   '/vijnana-yuvati.html',
@@ -37,8 +43,9 @@ function shouldUseNetworkFirst(request) {
 
   return (
     url.pathname.endsWith('/content/events/events-feed.js') ||
+    url.pathname.endsWith('/post-event.md') ||
     url.pathname.endsWith('/data/gallery.json') ||
-    /\.(?:js|css|html|json)$/i.test(url.pathname)
+    /\.(?:js|css|html|json|md)$/i.test(url.pathname)
   );
 }
 

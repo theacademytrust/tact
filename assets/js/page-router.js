@@ -2,34 +2,36 @@
   var ROUTE_SCRIPTS = {
     "index.html": [
       "assets/js/events-config.js",
-      "content/events/events-feed.js?v=20260501b",
+      "content/events/events-feed.js?v=20260501c",
       "assets/js/event-page-paths.js",
       "assets/js/events-feed-loader.js",
-      "assets/js/gallery-data.js?v=20260501b",
+      "assets/js/gallery-data.js?v=20260501c",
       "assets/js/home-events-board.js",
       "assets/js/index-page.js"
     ],
     "events.html": [
       "assets/js/events-config.js",
-      "content/events/events-feed.js?v=20260501b",
+      "content/events/events-feed.js?v=20260501c",
       "assets/js/event-page-paths.js",
       "assets/js/events-feed-loader.js",
-      "assets/js/gallery-data.js?v=20260501b",
+      "assets/js/gallery-data.js?v=20260501c",
       "assets/js/events-page.js"
     ],
     "gallery.html": [
       "assets/js/events-config.js?v=20260323c",
       "assets/js/event-page-paths.js",
-      "assets/js/gallery-data.js?v=20260501b",
-      "assets/js/gallery-page.js?v=20260323c"
+      "assets/js/gallery-data.js?v=20260501c",
+      "assets/js/gallery-page.js?v=20260501f"
     ],
     "calendar.html": [
       "assets/js/events-config.js?v=20260323c",
       "assets/js/event-page-paths.js",
-      "assets/js/gallery-data.js?v=20260501b",
-      "assets/js/calendar-page.js?v=20260501e"
+      "assets/js/gallery-data.js?v=20260501c",
+      "assets/js/calendar-page.js?v=20260501f"
     ],
     "donate.html": [],
+    "industry-internship.html": [],
+    "chair-professorship.html": [],
     "vijnana-harate.html": [
       "assets/js/program-data.js",
       "assets/js/program-page.js"
@@ -58,6 +60,8 @@
     "gallery.html": "initGalleryPage",
     "calendar.html": "initCalendarPage",
     "donate.html": null,
+    "industry-internship.html": null,
+    "chair-professorship.html": null,
     "vijnana-harate.html": "initProgramPage",
     "vijnana-aranya.html": "initProgramPage",
     "vijnana-yuvati.html": "initProgramPage",
@@ -328,10 +332,10 @@
       return !loadedScripts["assets/js/events-page.js"];
     }
     if (routeKey === "gallery.html") {
-      return !loadedScripts["assets/js/gallery-page.js?v=20260323c"];
+      return !loadedScripts["assets/js/gallery-page.js?v=20260501f"];
     }
     if (routeKey === "calendar.html") {
-      return !loadedScripts["assets/js/calendar-page.js?v=20260501e"];
+      return !loadedScripts["assets/js/calendar-page.js?v=20260501f"];
     }
     if (routeKey === "vijnana-harate.html" ||
         routeKey === "vijnana-aranya.html" ||

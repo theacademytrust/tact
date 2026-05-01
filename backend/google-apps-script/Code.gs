@@ -746,8 +746,8 @@ function buildEventDetailPageHtml(item) {
     '  <meta name="description" content="' + escapeHtmlAttribute(description) + '">\n' +
     '  <link rel="stylesheet" href="../shared-ribbon.css">\n' +
     '  <link rel="stylesheet" href="../assets/css/public-site.css">\n' +
-    '  <link rel="stylesheet" href="../assets/css/gallery.css">\n' +
-    '  <link rel="stylesheet" href="../assets/css/event-detail.css">\n' +
+    '  <link rel="stylesheet" href="../assets/css/gallery.css?v=20260501f">\n' +
+    '  <link rel="stylesheet" href="../assets/css/event-detail.css?v=20260501f">\n' +
     "</head>\n" +
     '<body data-page="event-detail" data-site-root="../" data-event-slug="' + escapeHtmlAttribute(slug) + '">\n' +
     '  <div class="wrap">\n' +
@@ -773,10 +773,10 @@ function buildEventDetailPageHtml(item) {
     "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
-    '  <script src="../assets/js/site-chrome.js"></script>\n' +
-    '  <script src="../content/events/events-feed.js"></script>\n' +
-    '  <script src="../assets/js/gallery-data.js"></script>\n' +
-    '  <script src="../assets/js/event-detail-page.js"></script>\n' +
+    '  <script src="../assets/js/site-chrome.js?v=20260501f"></script>\n' +
+    '  <script src="../content/events/events-feed.js?v=20260501c"></script>\n' +
+    '  <script src="../assets/js/gallery-data.js?v=20260501c"></script>\n' +
+    '  <script src="../assets/js/event-detail-page.js?v=20260501f"></script>\n' +
     "</body>\n" +
     "</html>\n"
   );

@@ -14,8 +14,8 @@
     {
       label: "Other Initiatives",
       links: [
-        ["Industry Internship", "wait.html"],
-        ["Chair Professorship", "wait.html"]
+        ["Industry Internship", "industry-internship.html"],
+        ["Chair Professorship", "chair-professorship.html"]
       ]
     },
     {

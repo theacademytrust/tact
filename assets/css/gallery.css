@@ -219,6 +219,7 @@ main {
   margin: 0;
   color: #334155;
   line-height: 1.7;
+  white-space: pre-line;
 }
 
 .gallery-modal-close {
