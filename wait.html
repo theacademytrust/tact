@@ -1,204 +1,299 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>The Academy Trust — Welcome</title>
-<meta name="description" content="Welcome to The Academy Trust — site under construction. Enter the secret keyword to preview work-in-progress." />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --canopy-1: #063b11;
-    --canopy-2: #0b6b2f;
-    --leaf: #0fa84b;
-    --accent: #ffd87b;
-    --muted: rgba(255,255,255,0.92);
-    --glass: rgba(255,255,255,0.06);
-    --radius: 14px;
-    font-family: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  }
-  html,body{height:100%;margin:0}
-  body{
-    background: radial-gradient(1200px 500px at 10% 10%, rgba(5,40,12,0.22), transparent),
-                linear-gradient(180deg, var(--canopy-1) 0%, var(--canopy-2) 55%, #082c16 100%);
-    color:var(--muted);
-    display:flex;align-items:center;justify-content:center;padding:32px;
-    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-  }
-  .card{
-    width:100%;max-width:920px;border-radius:18px;
-    padding:36px 34px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-    box-shadow: 0 30px 80px rgba(3,12,6,0.46), inset 0 -2px 18px rgba(0,0,0,0.12);
-    border: 1px solid rgba(255,255,255,0.03);
-    color: #eef7ec;
-    position:relative;
-    overflow:hidden;
-  }
-  .card:before{
-    content:"";
-    position:absolute;right:-8%;top:-10%;width:60%;height:160%;
-    background: radial-gradient(50% 30% at 20% 20%, rgba(15,168,75,0.08), transparent 30%),
-                radial-gradient(40% 40% at 80% 70%, rgba(11,107,47,0.06), transparent 40%);
-    transform: rotate(-12deg);
-    pointer-events:none;
-  }
-  h1{font-size: clamp(22px, 3.6vw, 36px); margin:0 0 10px; color:var(--accent); letter-spacing:-0.4px}
-  .sub{color: rgba(255,255,255,0.88); margin:0 0 22px; font-weight:500}
-  .typewrap{font-family: monospace, ui-monospace; font-size: clamp(16px, 2.2vw, 20px); line-height:1.4; color:#f7ffef; margin-bottom:22px; min-height:3.3em}
-  .caret{display:inline-block;width:10px;height:1.1em;background:linear-gradient(180deg,#fff0,#fff);margin-left:6px;vertical-align:bottom;animation:blink 1s steps(2) infinite}
-  @keyframes blink{50%{opacity:0}}
-  .secret-area{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-  input.secret{
-    min-width:260px;padding:12px 14px;border-radius:12px;border:0;background:rgba(255,255,255,0.04);
-    outline:none;font-weight:700;color:#052b15;box-shadow: inset 0 -1px 0 rgba(0,0,0,0.12);
-  }
-  button.unlock{padding:10px 14px;border-radius:12px;border:0;cursor:pointer;background:linear-gradient(180deg,var(--leaf),#0d8c3a);color:#fff;font-weight:800;box-shadow: 0 10px 26px rgba(6,80,40,0.24)}
-  .hint{font-size:13px;color:rgba(255,255,255,0.8);margin-top:12px}
-  .overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg, rgba(3,6,3,0.6), rgba(3,6,3,0.6));z-index:40;backdrop-filter: blur(4px);opacity:0;pointer-events:none;transition:opacity .28s ease}
-  .overlay.show{opacity:1;pointer-events:auto}
-  .overlay .panel{background:linear-gradient(180deg,#fff,#f9fff0);color:#052b15;padding:26px;border-radius:12px;box-shadow:0 30px 80px rgba(3,12,6,0.6)}
-  .shake{animation:shake .42s ease}
-  @keyframes shake{10%{transform:translateX(-6px)}30%{transform:translateX(6px)}50%{transform:translateX(-4px)}70%{transform:translateX(4px)}90%{transform:translateX(-2px)}100%{transform:translateX(0)}}
-  .meta{margin-top:18px;color:rgba(255,255,255,0.75);font-size:13px}
-  .smalllink{color:rgba(255,255,255,0.9);text-decoration:underline;cursor:pointer}
-  @media (max-width:560px){
-    body{padding:18px}
-    .card{padding:22px}
-    .typewrap{font-size:16px}
-    header{flex-direction:column;align-items:flex-start !important}
-    .secret-area{flex-direction:column;align-items:stretch}
-    input.secret{min-width:0;width:100%}
-    button.unlock{width:100%}
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1240">
+  <title>Governance - The Academy Trust (tAcT)</title>
+  <meta
+    name="description"
+    content="Governance details for The Academy Trust, including trustees, outreach committee, reports, statutory notes, and office contact."
+  >
+  <link rel="stylesheet" href="shared-ribbon.css">
+  <link rel="stylesheet" href="assets/css/public-site.css">
+  <style>
+    .governance-hero {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1.4fr 0.9fr;
+      align-items: start;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .governance-hero p,
+    .section-intro,
+    .meta-note,
+    .document-copy,
+    .contact-copy {
+      max-width: none;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .quick-links a {
+      border-radius: 999px;
+      border: 1px solid rgba(10, 122, 58, 0.16);
+      color: var(--green);
+      padding: 9px 14px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      background: rgba(10, 122, 58, 0.04);
+    }
+
+    .governance-summary {
+      display: grid;
+      gap: 12px;
+    }
+
+    .summary-card {
+      background: linear-gradient(180deg, rgba(10, 122, 58, 0.06), rgba(255, 255, 255, 0.95));
+      border: 1px solid rgba(10, 122, 58, 0.1);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .summary-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #0f1b1a;
+      font-size: 15px;
+    }
+
+    .governance-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .governance-grid.two-col {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .people-list,
+    .document-list,
+    .contact-list {
+      list-style: none;
+      margin: 14px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .people-list li,
+    .document-list li,
+    .contact-list li {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: #fbfcfa;
+      border: 1px solid rgba(10, 122, 58, 0.08);
+    }
+
+    .people-list strong,
+    .document-list strong,
+    .contact-list strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #0f1b1a;
+    }
+
+    .role-label {
+      color: var(--green);
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
+    .contact-list a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .section-stack {
+      display: grid;
+      gap: 18px;
+    }
+  </style>
 </head>
 <body>
-  <main class="card" role="main" aria-labelledby="welcome">
-    <header style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px">
-      <div>
-        <h1 id="welcome">Restricted area</h1>
-        <div class="sub">Sorry, this section of The Academy Trust site is still under development.</div>
-      </div>
-      <div style="text-align:right">
-        <div style="font-weight:700;color:rgba(255,255,255,0.85)">tAcT</div>
-        <div style="font-size:12px;color:rgba(255,255,255,0.7)">Indian Academy of Sciences</div>
-      </div>
-    </header>
+  <div class="wrap">
+    <div id="site-header-root"></div>
 
-    <section aria-label="Greeting">
-      <div class="typewrap" id="typewriter" aria-live="polite" role="status"></div>
-      <div class="caret" id="fakecaret" aria-hidden="true" style="display:none"></div>
-    </section>
+    <main id="main">
+      <section class="section surface governance-hero">
+        <div>
+          <div class="eyebrow">Governance</div>
+          <h1>Trust governance and public records</h1>
+          <p>
+            The Academy Trust (tAcT) was set up in August 2014 as a registered public charitable body under the aegis of the Indian Academy of Sciences, Bengaluru.
+          </p>
+          <p>
+            The current activity report describes the trust’s objectives, current trustees, outreach committee, and programme record for April 2022 to March 2025. The sections below bring those details into one public page for reference.
+          </p>
+          <div class="quick-links" aria-label="Governance section links">
+            <a href="#founding-trustees">Founding Trustees</a>
+            <a href="#current-trustees">Current Trustees</a>
+            <a href="#outreach-committee">Outreach Committee</a>
+            <a href="#annual-reports">Annual Reports</a>
+            <a href="#state-documents">State Documents</a>
+            <a href="#office-contact">Office & Contacts</a>
+          </div>
+        </div>
 
-    <section style="margin-top:18px" aria-label="Secret entry">
-      <div class="secret-area" id="secretRow" style="display:none" aria-hidden="true">
-        <input class="secret" id="secretInput" type="password" placeholder="Enter keyword…" aria-label="Secret keyword">
-        <button class="unlock" id="unlockBtn" aria-label="Unlock site">Reveal</button>
-      </div>
+        <aside class="governance-summary" aria-label="Governance summary">
+          <div class="summary-card">
+            <strong>Current report in use</strong>
+            <span>Activity Report APRIL 2022-MARCH 2025</span>
+          </div>
+          <div class="summary-card">
+            <strong>Core objectives listed in the report</strong>
+            <span>Science education outreach, academia-industry partnership, and endowment chair professorship.</span>
+          </div>
+          <div class="summary-card">
+            <strong>Committee model</strong>
+            <span>The outreach committee is composed of Trustees, Fellows, and Associates for a two-year term, extendable for a second term.</span>
+          </div>
+        </aside>
+      </section>
 
-      <div class="hint" id="hint">You are not allowed to see further because this area is still in development. However, if you know the keyword, enter it above to view the work in progress. For access, write to trust@ias.ac.in.</div>
+      <section id="founding-trustees" class="section surface">
+        <h2>Founding Trustees</h2>
+        <p class="section-intro">
+          The current activity report does not list the founding trustees separately. The existing governance draft in this website names the following founding members.
+        </p>
+        <ul class="people-list">
+          <li><span class="role-label">Founding Member</span><strong>Prof. D. Chatterjee</strong></li>
+          <li><span class="role-label">Founding Member</span><strong>Prof. A.K. Sood</strong></li>
+          <li><span class="role-label">Founding Member</span><strong>Prof. J. Srinivasan</strong></li>
+          <li><span class="role-label">Founding Member</span><strong>Prof. Uday Maitra</strong></li>
+          <li><span class="role-label">Founding Member</span><strong>Prof. R. Varadarajan</strong></li>
+          <li><span class="role-label">Founding Member</span><strong>Prof. M. R. S. Rao</strong></li>
+          <li><span class="role-label">Founding Member</span><strong>Prof. S. Chandrasekharan</strong></li>
+          <li><span class="role-label">Founding Member</span><strong>Prof. R. Ramaswamy</strong></li>
+          <li><span class="role-label">Founding Member</span><strong>Prof. S. Sivaram</strong></li>
+          <li><span class="role-label">Founding Member</span><strong>Dr. Chandrima Shaha</strong></li>
+        </ul>
+      </section>
 
-      <div style="margin-top:10px" class="meta">
-        <span class="smalllink" id="showIntent">Why is this hidden?</span>
-      </div>
-    </section>
-  </main>
+      <section id="current-trustees" class="section surface">
+        <h2>Current Trustees</h2>
+        <p class="section-intro">
+          The activity report states that the trustees are drawn from members of Council and senior Fellows of the Academy. The current trustees are listed as follows.
+        </p>
+        <div class="governance-grid two-col">
+          <div class="section-stack">
+            <ul class="people-list">
+              <li>
+                <span class="role-label">Chair and Managing Trustee</span>
+                <strong>Raghavan Varadarajan</strong>
+                <span>President</span>
+              </li>
+            </ul>
 
-  <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="panel">
-      <div style="font-weight:800;font-size:18px;margin-bottom:8px">Nice — access granted</div>
-      <div style="margin-bottom:14px">Redirecting you to the work-in-progress...</div>
-      <div style="font-size:13px;color:#28492b">If the redirect does not happen, <button id="goto" style="background:transparent;border:0;color:#0b6b35;font-weight:800;cursor:pointer">click here</button></div>
-    </div>
+            <h3>Ex-Officio Trustees</h3>
+            <ul class="people-list">
+              <li><strong>Umesh V Waghmare</strong><span>Previous President</span></li>
+              <li><strong>V A Raghunathan</strong><span>Treasurer</span></li>
+              <li><strong>Balasubramanian Gopal</strong><span>Secretary</span></li>
+              <li><strong>Gaiti Hasan</strong><span>Secretary</span></li>
+            </ul>
+          </div>
+
+          <div class="section-stack">
+            <h3>Trustees</h3>
+            <ul class="people-list">
+              <li><strong>K N Ganesh</strong><span>Director, Indian Institute of Science Education and Research, Pune</span></li>
+              <li><strong>S Sivaram</strong><span>Indian Institute of Science Education and Research, Pune</span></li>
+              <li><strong>V S Chauhan</strong><span>Visiting Scientist, International Centre for Genetic Engineering & Biotechnology, New Delhi</span></li>
+              <li><strong>Anil Kumar</strong><span>Scientist, National Chemical Laboratory, Pune</span></li>
+              <li><strong>Sujatha Ramadorai</strong><span>Professor, Department of Mathematics, University of British Columbia, Canada</span></li>
+              <li><strong>S Shivaji</strong><span>Director, Prof. Brien Holdon Eye Research, LV Prasad Eye Institute, Hyderabad</span></li>
+              <li><strong>Anil K Singh</strong><span>Professor, Indian Institute of Technology, Mumbai</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="outreach-committee" class="section surface">
+        <h2>Outreach Committee</h2>
+        <p class="section-intro">
+          The report says the committee is composed of Trustees, Fellows, and Associates set up by the President of the Academy for a term of two years, extendable for a second term.
+        </p>
+        <ul class="people-list">
+          <li><strong>Tirthankar Bhattacharya</strong><span>Chair</span></li>
+          <li><strong>N Sathyamurthy</strong><span>Member</span></li>
+        </ul>
+      </section>
+
+      <section id="annual-reports" class="section surface">
+        <h2>Annual Reports</h2>
+        <ul class="document-list">
+          <li>
+            <strong>Activity Report APRIL 2022-MARCH 2025</strong>
+            <span class="document-copy">The PDF in the source folder records the trust’s introduction, trustees, outreach committee, signature programmes, collaborative outreach, and related activities across the three-year span from April 2022 to March 2025.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="state-documents" class="section surface">
+        <h2>State Documents</h2>
+        <ul class="document-list">
+          <li>
+            <strong>Trust status note in the current activity report</strong>
+            <span class="document-copy">The report states that The Academy Trust (tAcT) was set up in August 2014 as a registered public charitable body under the aegis of the Indian Academy of Sciences, Bengaluru.</span>
+          </li>
+          <li>
+            <strong>Objectives statement in the current activity report</strong>
+            <span class="document-copy">The report describes the trust’s focus as capacity building, outreach where intervention is urgently needed, fostering innovation and excellence in science and technology, collaboration with other organisations, improvement of research and education in science and engineering, and setting up science education chair professorships.</span>
+          </li>
+          <li>
+            <strong>Separate statutory document titles</strong>
+            <span class="document-copy">The current activity report does not list separate downloadable statutory document names, registration certificates, or approval file references.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="office-contact" class="section surface">
+        <h2>Office & Contacts</h2>
+        <div class="governance-grid two-col">
+          <ul class="contact-list">
+            <li>
+              <strong>Office</strong>
+              <span class="contact-copy">The Academy Trust (tAcT)<br>Indian Academy of Sciences, C. V. Raman Avenue, Bengaluru</span>
+            </li>
+            <li>
+              <strong>Email</strong>
+              <span class="contact-copy"><a href="mailto:trust@ias.ac.in">trust@ias.ac.in</a></span>
+            </li>
+            <li>
+              <strong>Phone</strong>
+              <span class="contact-copy">No phone number is listed in the current activity report or in the existing governance draft files.</span>
+            </li>
+          </ul>
+
+          <div class="summary-card">
+            <strong>Office note</strong>
+            <span>The current PDF does not publish office phone or postal codes. The email route already used elsewhere on this site is retained here for contact.</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer-root"></div>
   </div>
 
-<script>
-/* SECRET landing — never stores keyword (requires entry each visit) */
-const SECRET = 'cvraaman';   // change as needed
-const TARGET = 'alright.html';
-
-const lines = [
-  "This part of The Academy Trust website is not yet public.",
-  "We are still shaping content about governance, documents, and other details.",
-  "If you know the secret keyword, enter it below to view the work in progress."
-];
-
-const typeEl = document.getElementById('typewriter');
-const secretRow = document.getElementById('secretRow');
-const input = document.getElementById('secretInput');
-const btn = document.getElementById('unlockBtn');
-const overlay = document.getElementById('overlay');
-const gotoBtn = document.getElementById('goto');
-const fakeCaret = document.getElementById('fakecaret');
-const showIntent = document.getElementById('showIntent');
-
-function typeLines(lines, cb){
-  let li = 0;
-  function typeLine(){
-    if(li >= lines.length){ cb && cb(); return; }
-    const str = lines[li];
-    let i=0;
-    // for multi-line effect, append lines separated by <br>
-    (function typer(){
-      // build current combined output
-      const previous = lines.slice(0,li).map(s=>s).join('<br>');
-      const current = str.slice(0,i);
-      typeEl.innerHTML = previous + (previous ? '<br>' : '') + current + '<span style="opacity:0.9;color:var(--accent)">|</span>';
-      if(i <= str.length){
-        i++;
-        setTimeout(typer, 24 + (Math.random()*18));
-      } else {
-        // finalize current line (remove caret) then next line
-        typeEl.innerHTML = previous + (previous ? '<br>' : '') + str;
-        li++;
-        setTimeout(typeLine, 450);
-      }
-    })();
-  }
-  typeLine();
-}
-
-function revealSecretArea(){
-  fakeCaret.style.display = 'inline-block';
-  secretRow.style.display = 'flex';
-  secretRow.scrollIntoView({behavior:'smooth'});
-  input.focus();
-}
-
-function tryUnlock(){
-  const v = input.value && input.value.trim();
-  if(!v){
-    input.classList.add('shake');
-    setTimeout(()=> input.classList.remove('shake'), 420);
-    return;
-  }
-  if(v === SECRET){
-    overlay.classList.add('show');
-    overlay.setAttribute('aria-hidden','false');
-    setTimeout(()=> location.href = TARGET, 700);
-  } else {
-    input.classList.add('shake');
-    input.value = '';
-    hintShake();
-    setTimeout(()=> input.classList.remove('shake'), 520);
-  }
-}
-
-function hintShake(){
-  const hint = document.getElementById('hint');
-  hint.classList.add('shake');
-  setTimeout(()=> hint.classList.remove('shake'),520);
-}
-
-btn.addEventListener('click', tryUnlock);
-input.addEventListener('keydown', e=>{ if(e.key === 'Enter') tryUnlock(); });
-gotoBtn.addEventListener('click', ()=> location.href = TARGET);
-showIntent.addEventListener('click', ()=> alert("We stage the full working site privately while under construction to avoid confusion. People who need preview access are given a keyword. For urgent access contact trust@ias.ac.in."));
-
-/* Kick off typing and then reveal input every visit */
-fakeCaret.style.display = 'none';
-typeLines(lines, ()=>{ setTimeout(revealSecretArea, 600); });
-</script>
+  <script src="assets/js/site-chrome.js?v=20260501d"></script>
+  <script src="assets/js/page-router.js?v=20260323d"></script>
 </body>
 </html>

@@ -1,0 +1,1 @@
+7th February 2025: The Academy and tAcT, in association with COSOL, organised a Vijnana Harate for high school students of Kallankuppe High School, Kanakapura. Frog expert KV Gururaja, Manipal Academy of Higher Education, enlightened the students on the wonderful and strange world of amphibians.

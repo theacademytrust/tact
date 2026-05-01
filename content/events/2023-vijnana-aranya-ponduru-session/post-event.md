@@ -1,0 +1,1 @@
+15th July 2023: Students of Systems Educational Institute, a Pre-University College in Ponduru, AP, took part in a day-long series of activities which included aerodynamic modelling, volumetric analysis, and experiments in Physics and Biology conducted by Prof. Yogendra Sarma, Deputy Director and Dean of Biological Sciences, IISERBerhampur.

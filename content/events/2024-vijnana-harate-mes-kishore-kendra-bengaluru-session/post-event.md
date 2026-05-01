@@ -1,0 +1,1 @@
+28th Aug 2024: In the second joint program, students of MES Kishore Kendra, Bengaluru, were treated to a series of highly engaging experiments and activities by Vinayak Pattar and his team. They also visited the HIV Lab and the CNR and Chemistry Galleries.

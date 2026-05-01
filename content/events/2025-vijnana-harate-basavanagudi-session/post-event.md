@@ -1,0 +1,1 @@
+3rd January 2025: tAcT participated in the 'Supernova 2025' event organised at National College Basavanagudi, where Madhusudhan of Jawaharlal Nehru Planetarium conducted a Vijnana Harate on experimental Physics.

@@ -1,0 +1,3 @@
+2nd February 2025: The next Vijnana Aranya program was conducted at Om Shantidhama Veda Gurukula, Kanakapura, inside the Mekedatu forest reserve. The morning session featured astronomical observation of sunspots with sophisticated telescopic equipment with guidance from M. Krishnamurthy, science & Astronomy educator, who then explained solar phenomena to the students and teachers of the school.
+
+The afternoon session was conducted by T.S. Channesh, Director of Srusti R&D Foundation and the Centre for Public Understanding of Science. He gave a talk on discovering the beauty and importance of soil biodiversity with the help of demo materials, then held a discussion with the students in which many unknown facts about soil came to light.

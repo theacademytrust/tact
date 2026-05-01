@@ -1,0 +1,3 @@
+24th September 2022: The first ever Kannada 'Vijnana Harate' was conducted in collaboration with Munnota Trust, an organisation that promotes science in the regional language. Around 50 people including students of a Kannada-medium school and members of general public, attended the event that was conducted in the local tongue Kannada, by Prof. MRN Murthy, a Fellow of the Academy.
+
+The topics ranged from Optics, Geometry and Botany, to Evolution and Genetics. A discussion on science education in schools and colleges, and the necessity of a healthy scientific awareness among the public was also held with an audience consisting of the general public.

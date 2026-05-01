@@ -1,0 +1,3 @@
+21st January 2023: The Kannada play 'Lilavathi' was held in the HN Kalakshetra auditorium of National College Jayanagar, in collaboration with Arivu Trust, Mysuru. It is based on the life of Bhaskara II who lived during 12th Century AD, introduces parts of Bhaskarcharya's treatise and explores contributions of Indian mathematics with a historical perspective. Written by Shashidhara Dongre, and directed by Nataka Academy award winner HS Umesh, a well-known theatre personality in Karnataka.
+
+NATIONAL SCIENCE DAY 2023 Like the previous year, tAcT celebrated National Science Day as a series of events spanning several days in different venues.

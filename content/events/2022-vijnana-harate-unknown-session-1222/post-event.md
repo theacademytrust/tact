@@ -1,0 +1,1 @@
+22nd December 2022: A Kannada 'Vijnana Harate' was conducted by Kollegal Sharma, former chief scientist of CFTRI, in collaboration with Munnota Trust. Children from Kannada medium schools and general public participated in the program held in the RRI campus.
