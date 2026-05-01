@@ -774,8 +774,8 @@ function buildEventDetailPageHtml(item) {
     "    </div>\n" +
     "  </div>\n" +
     '  <script src="../assets/js/site-chrome.js?v=20260501f"></script>\n' +
-    '  <script src="../content/events/events-feed.js?v=20260501c"></script>\n' +
-    '  <script src="../assets/js/gallery-data.js?v=20260501c"></script>\n' +
+    '  <script src="../content/events/events-feed.js?v=20260501d"></script>\n' +
+    '  <script src="../assets/js/gallery-data.js?v=20260501d"></script>\n' +
     '  <script src="../assets/js/event-detail-page.js?v=20260501f"></script>\n' +
     "</body>\n" +
     "</html>\n"

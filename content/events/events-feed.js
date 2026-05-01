@@ -897,44 +897,5 @@ window.TACT_EVENT_FEED = [
     "poster": "content/events/2025-soafal-biological-network-level-multidisciplinary-approach-lecture/gallery/image-01.jpg",
     "teaser": "08.03.2025 Saraswathi Vishveshwara Study of Protein Structures from Atomic Level to Biological Network Level: A Multidisciplinary Approach",
     "homepageMatter": "08.03.2025 Saraswathi Vishveshwara Study of Protein Structures from Atomic Level to Biological Network Level: A Multidisciplinary Approach"
-  },
-  {
-    "slug": "2026-community-science-meetup-bengaluru",
-    "title": "Community Science Meetup",
-    "date": "2026-05-20",
-    "time": "4:00 PM - 6:00 PM",
-    "location": "Bengaluru",
-    "status": "scheduled",
-    "folder": "content/events/2026-community-science-meetup-bengaluru",
-    "pageUrl": "events/20-05-2026-community-science-meetup.html",
-    "poster": "content/events/2026-community-science-meetup-bengaluru/poster.svg",
-    "teaser": "An open community meetup with short talks, discussion circles, and science activity tables.",
-    "homepageMatter": "Join us for an early evening community science meetup featuring short talks, informal conversations with volunteers, and activity tables for students, teachers, and parents."
-  },
-  {
-    "slug": "2026-hands-on-physics-workshop-hubballi",
-    "title": "Hands-on Physics Workshop",
-    "date": "2026-05-20",
-    "time": "2:00 PM - 5:00 PM",
-    "location": "Hubballi",
-    "status": "scheduled",
-    "folder": "content/events/2026-hands-on-physics-workshop-hubballi",
-    "pageUrl": "events/20-05-2026-hands-on-physics-workshop.html",
-    "poster": "content/events/2026-hands-on-physics-workshop-hubballi/poster.svg",
-    "teaser": "A practical workshop with simple demonstrations and small group activities around everyday physics.",
-    "homepageMatter": "This hands-on workshop offers a relaxed afternoon of demonstrations and small group activities built around motion, light, and everyday physics concepts for school students and educators."
-  },
-  {
-    "slug": "2026-stem-mentor-circle-mysuru",
-    "title": "STEM Mentor Circle",
-    "date": "2026-05-20",
-    "time": "10:30 AM - 12:30 PM",
-    "location": "Mysuru",
-    "status": "scheduled",
-    "folder": "content/events/2026-stem-mentor-circle-mysuru",
-    "pageUrl": "events/20-05-2026-stem-mentor-circle.html",
-    "poster": "content/events/2026-stem-mentor-circle-mysuru/poster.svg",
-    "teaser": "A mentor circle for students with guided Q and A on study paths, projects, and science careers.",
-    "homepageMatter": "This mentor circle brings together students and facilitators for a practical session on study choices, small project ideas, and ways to stay engaged with science beyond the classroom."
   }
 ];

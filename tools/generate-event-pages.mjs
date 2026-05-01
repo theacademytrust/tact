@@ -9,7 +9,7 @@ const pagesRoot = path.join(repoRoot, "events");
 const feedPath = path.join(eventsRoot, "events-feed.js");
 const posterNames = new Set(["poster.jpg", "poster.jpeg", "poster.png", "poster.webp", "poster.svg", "poster.avif"]);
 const galleryImageExtensions = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif", ".svg"]);
-const feedVersion = "20260501c";
+const feedVersion = "20260501d";
 const chromeVersion = "20260501f";
 const detailVersion = "20260501f";
 
