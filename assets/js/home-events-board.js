@@ -5,6 +5,7 @@ var homeEventsBoardState = {
 
 var HOME_EVENTS_UPCOMING_LIMIT = 6;
 var HOME_EVENTS_PAST_LIMIT = 2;
+var HOME_EVENTS_PAST_LIMIT_ARCHIVE_FOCUS = 4;
 var HOME_EVENTS_AUTOSCROLL_MS = 5200;
 var HOME_EVENTS_DAY_MS = 24 * 60 * 60 * 1000;
 
@@ -76,19 +77,23 @@ function renderBoard(feed) {
     return parseDate(right.date) - parseDate(left.date);
   });
 
+  applyBoardMode(upcoming, previous);
   updatePaneSummaries(upcoming, previous);
+  var archiveFocus = !upcoming.length && previous.length > 0;
 
   var upcomingState = renderUpcomingCarousel(
     "home-upcoming-track",
     "home-upcoming-dots",
     upcoming.slice(0, HOME_EVENTS_UPCOMING_LIMIT),
-    "No upcoming events right now."
+    "No upcoming events right now.",
+    archiveFocus
   );
   renderTrack(
     "home-previous-track",
-    previous.slice(0, HOME_EVENTS_PAST_LIMIT),
+    previous.slice(0, archiveFocus ? HOME_EVENTS_PAST_LIMIT_ARCHIVE_FOCUS : HOME_EVENTS_PAST_LIMIT),
     "Past events will appear here as the archive is updated.",
-    true
+    true,
+    false
   );
 
   if (upcomingState && upcomingState.count > 1) {
@@ -254,22 +259,47 @@ function setText(id, value) {
   if (node) node.textContent = value;
 }
 
-function renderTrack(rootId, items, emptyMessage, isPast) {
+function applyBoardMode(upcoming, previous) {
+  var layout = document.querySelector(".home-events-layout");
+  var upcomingPane = document.getElementById("home-upcoming-pane");
+  var upcomingWindow = document.querySelector("#home-upcoming-pane .home-vertical-window");
+  var archiveFocus = !upcoming.length && previous.length > 0;
+
+  if (document.body) {
+    document.body.classList.toggle("tact-home-events-archive-focus", archiveFocus);
+  }
+  if (layout) {
+    layout.classList.toggle("home-events-layout--archive-focus", archiveFocus);
+  }
+  if (upcomingPane) {
+    upcomingPane.classList.toggle("home-events-pane--compressed", archiveFocus);
+  }
+  if (upcomingWindow) {
+    upcomingWindow.classList.toggle("home-vertical-window--compact", archiveFocus);
+  }
+}
+
+function renderTrack(rootId, items, emptyMessage, isPast, expanded) {
   var root = document.getElementById(rootId);
   if (!root) return;
   root.innerHTML = "";
+  root.classList.remove("home-horizontal-track--expanded");
 
   if (!items.length) {
     root.innerHTML = '<p class="home-events-empty">' + escapeHtml(emptyMessage) + "</p>";
     return;
   }
 
+  if (expanded) {
+    root.classList.add("home-horizontal-track--expanded");
+  }
+
   items.forEach(function (item) {
-    root.appendChild(buildCard(item, isPast));
+    root.appendChild(buildCard(item, isPast, expanded));
   });
 }
 
-function renderUpcomingCarousel(trackId, dotsId, items, emptyMessage) {
+function renderUpcomingCarousel(trackId, dotsId, items, emptyMessage, compactEmptyState) {
   var track = document.getElementById(trackId);
   var dots = document.getElementById(dotsId);
   if (!track || !dots) return null;
@@ -280,7 +310,12 @@ function renderUpcomingCarousel(trackId, dotsId, items, emptyMessage) {
   track.style.transform = "translateY(0)";
 
   if (!items.length) {
-    track.innerHTML = '<p class="home-events-empty home-events-empty--upcoming">' + escapeHtml(emptyMessage) + "</p>";
+    track.innerHTML =
+      '<p class="home-events-empty home-events-empty--upcoming' +
+      (compactEmptyState ? " home-events-empty--upcoming-compact" : "") +
+      '">' +
+      escapeHtml(emptyMessage) +
+      "</p>";
     dots.style.display = "none";
     return { count: 0 };
   }
@@ -366,12 +401,15 @@ function renderUpcomingCarousel(trackId, dotsId, items, emptyMessage) {
   };
 }
 
-function buildCard(item, isPast) {
+function buildCard(item, isPast, expandedPastCard) {
   var card = document.createElement("a");
   var title = displayTitle(item.title);
   var thumbnail = eventThumbnailUrl(item);
   var fallback = generatedEventThumbnailUrl(item);
-  card.className = "home-events-item" + (isPast ? " home-events-item--past" : "");
+  card.className =
+    "home-events-item" +
+    (isPast ? " home-events-item--past" : "") +
+    (isPast && expandedPastCard ? " home-events-item--past-expanded" : "");
   card.href = buildEventPageUrl(item);
   card.setAttribute("aria-label", "View details for " + title);
   card.innerHTML =

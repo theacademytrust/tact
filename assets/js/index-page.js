@@ -17,6 +17,10 @@
 
     teardownIndexPage();
 
+    if (typeof window.TACT_PAGE_RUNTIME.initLogoBelt === "function") {
+      window.TACT_PAGE_RUNTIME.initLogoBelt();
+    }
+
     var prefersReduced =
       window.matchMedia &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
