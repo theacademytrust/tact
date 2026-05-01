@@ -8,8 +8,9 @@ const eventsRoot = path.join(repoRoot, "content", "events");
 const pagesRoot = path.join(repoRoot, "events");
 const feedPath = path.join(eventsRoot, "events-feed.js");
 const posterNames = new Set(["poster.jpg", "poster.jpeg", "poster.png", "poster.webp", "poster.svg", "poster.avif"]);
-const feedVersion = "20260501a";
-const chromeVersion = "20260501d";
+const galleryImageExtensions = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif", ".svg"]);
+const feedVersion = "20260501b";
+const chromeVersion = "20260501e";
 
 function sanitizeSlug(value) {
   return String(value || "")
@@ -31,8 +32,24 @@ function toPosixPath(value) {
 async function findPosterPath(eventDir, folderName) {
   const files = await fs.readdir(eventDir, { withFileTypes: true });
   const poster = files.find((entry) => entry.isFile() && posterNames.has(entry.name.toLowerCase()));
-  if (!poster) return "";
-  return toPosixPath(path.join("content", "events", folderName, poster.name));
+  if (poster) return toPosixPath(path.join("content", "events", folderName, poster.name));
+
+  return findFirstGalleryImagePath(eventDir, folderName);
+}
+
+async function findFirstGalleryImagePath(eventDir, folderName) {
+  const galleryDir = path.join(eventDir, "gallery");
+
+  try {
+    const files = await fs.readdir(galleryDir, { withFileTypes: true });
+    const image = files
+      .filter((entry) => entry.isFile() && galleryImageExtensions.has(path.extname(entry.name).toLowerCase()))
+      .sort((left, right) => left.name.localeCompare(right.name, "en", { numeric: true }))[0];
+
+    return image ? toPosixPath(path.join("content", "events", folderName, "gallery", image.name)) : "";
+  } catch {
+    return "";
+  }
 }
 
 function buildFeedContent(feed) {
@@ -126,7 +143,7 @@ function shellFor(slug) {
 
   <script src="../assets/js/site-chrome.js?v=${chromeVersion}"></script>
   <script src="../content/events/events-feed.js?v=${feedVersion}"></script>
-  <script src="../assets/js/gallery-data.js"></script>
+  <script src="../assets/js/gallery-data.js?v=${feedVersion}"></script>
   <script src="../assets/js/event-detail-page.js"></script>
 </body>
 </html>

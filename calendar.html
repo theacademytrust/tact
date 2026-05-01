@@ -7,7 +7,7 @@
   <meta name="description" content="Calendar view of The Academy Trust (tAcT) gallery activity.">
   <link rel="stylesheet" href="shared-ribbon.css">
   <link rel="stylesheet" href="assets/css/public-site.css?v=20260323c">
-  <link rel="stylesheet" href="assets/css/calendar.css?v=20260323c">
+  <link rel="stylesheet" href="assets/css/calendar.css?v=20260501e">
 </head>
 <body data-page="calendar">
   <div class="wrap">
@@ -19,25 +19,10 @@
           <div class="calendar-title">
             <h1 id="calendar-heading">Gallery Calendar</h1>
           </div>
-
-          <div class="calendar-nav" aria-label="Calendar month navigation">
-            <button id="calendar-prev-btn" type="button">Previous Month</button>
-            <div id="calendar-month-label" class="calendar-month-label" aria-live="polite"></div>
-            <button id="calendar-next-btn" type="button">Next Month</button>
-          </div>
         </div>
 
-        <div class="calendar-weekdays" aria-hidden="true">
-          <span>Sun</span>
-          <span>Mon</span>
-          <span>Tue</span>
-          <span>Wed</span>
-          <span>Thu</span>
-          <span>Fri</span>
-          <span>Sat</span>
-        </div>
-
-        <div id="calendar-grid" class="calendar-grid" aria-label="Monthly calendar grid"></div>
+        <div id="calendar-grid" class="calendar-grid" aria-label="Gallery event dates"></div>
+        <div id="calendar-sentinel" class="calendar-sentinel" aria-live="polite"></div>
       </section>
     </main>
 
@@ -73,11 +58,11 @@
     </div>
   </div>
 
-  <script src="assets/js/site-chrome.js?v=20260501d"></script>
+  <script src="assets/js/site-chrome.js?v=20260501e"></script>
   <script src="assets/js/events-config.js?v=20260323c"></script>
   <script src="assets/js/event-page-paths.js"></script>
-  <script src="assets/js/gallery-data.js?v=20260323c"></script>
-  <script src="assets/js/calendar-page.js?v=20260323c"></script>
+  <script src="assets/js/gallery-data.js?v=20260501b"></script>
+  <script src="assets/js/calendar-page.js?v=20260501e"></script>
   <script src="assets/js/page-router.js?v=20260323d"></script>
 </body>
 </html>

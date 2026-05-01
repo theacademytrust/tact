@@ -75,17 +75,16 @@ h3 {
 
 .event-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
   min-height: 398px;
 }
 
 .event-card {
-  display: grid;
-  grid-template-columns: 132px minmax(0, 1fr);
-  gap: 14px;
-  align-items: start;
-  min-height: 192px;
+  display: flex;
+  flex-direction: column;
+  min-height: 380px;
+  height: 100%;
   padding: 14px;
   border: 1px solid rgba(10, 20, 10, 0.08);
   border-radius: 12px;
@@ -111,9 +110,9 @@ h3 {
 }
 
 .event-card-placeholder__image {
-  width: 132px;
-  height: 164px;
-  border-radius: 10px;
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
   background: linear-gradient(120deg, rgba(220, 220, 220, 0.5), rgba(245, 245, 245, 0.95));
 }
 
@@ -130,15 +129,21 @@ h3 {
   background: linear-gradient(90deg, rgba(220, 220, 220, 0.6), rgba(250, 250, 250, 0.95));
 }
 
-.event-card img {
-  width: 132px;
-  height: 164px;
-  object-fit: cover;
-  display: block;
-  border-radius: 10px;
+.image-container {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 8px;
   background: #eef3ee;
-  max-width: 100%;
-  flex-shrink: 0;
+  flex: 0 0 180px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .event-body {
@@ -158,13 +163,10 @@ h3 {
 
 .archive-scroll {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
   min-height: 192px;
-  max-height: 560px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding-right: 4px;
+  overflow: visible;
 }
 
 .archive-item {
@@ -172,11 +174,10 @@ h3 {
   border-radius: 12px;
   padding: 14px;
   background: #fff;
-  display: grid;
-  grid-template-columns: 132px minmax(0, 1fr);
-  gap: 14px;
-  align-items: start;
-  min-height: 192px;
+  display: flex;
+  flex-direction: column;
+  min-height: 380px;
+  height: 100%;
   text-decoration: none;
   color: inherit;
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
@@ -187,15 +188,6 @@ h3 {
   transform: translateY(-2px);
   box-shadow: 0 20px 48px rgba(15, 23, 42, 0.1);
   border-color: rgba(10, 122, 58, 0.22);
-}
-
-.archive-item img {
-  width: 132px;
-  height: 164px;
-  object-fit: fill;
-  display: block;
-  border-radius: 10px;
-  background: #eef3ee;
 }
 
 .archive-body {
@@ -218,15 +210,6 @@ h3 {
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-.archive-scroll::-webkit-scrollbar {
-  width: 8px;
-}
-
-.archive-scroll::-webkit-scrollbar-thumb {
-  background: rgba(10, 122, 58, 0.32);
-  border-radius: 999px;
 }
 
 .empty {
@@ -268,31 +251,18 @@ main {
 }
 
 .event-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .archive-scroll {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-height: 560px;
-  overflow-y: auto;
-  padding-right: 4px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  overflow: visible;
 }
 
 .event-card,
 .archive-item {
   gap: 14px;
   padding: 14px;
-}
-
-.event-card {
-  grid-template-columns: 132px minmax(0, 1fr);
-  min-height: 192px;
-  height: auto;
-}
-
-.archive-item img {
-  width: 132px;
-  height: 164px;
 }
 
 .meta {

@@ -1,17 +1,93 @@
 (function () {
+  var activeScript = document.currentScript;
+  var NAV_GROUPS = [
+    {
+      label: "Outreach Programs",
+      links: [
+        ["Vijnana Harate", "vijnana-harate.html"],
+        ["Vijnana Aranya", "vijnana-aranya.html"],
+        ["Vijnana Yuvati", "vijnana-yuvati.html"],
+        ["Vijnana Nataka", "vijnana-nataka.html"],
+        ["Ganitha Mela", "ganitha-mela.html"]
+      ]
+    },
+    {
+      label: "Other Initiatives",
+      links: [
+        ["Industry Internship", "wait.html"],
+        ["Chair Professorship", "wait.html"]
+      ]
+    },
+    {
+      label: "Events & Media",
+      links: [
+        ["Upcoming Events", "events.html#upcoming"],
+        ["Past Events", "events.html#past"],
+        ["Gallery", "gallery.html"],
+        ["Calendar", "calendar.html"]
+      ]
+    },
+    {
+      label: "Governance",
+      links: [
+        ["Founding Trustees", "founding-trustees.html"],
+        ["Current Trustees", "current-trustees.html"],
+        ["Outreach Committee", "outreach-committee.html"],
+        ["Annual Reports", "annual-reports.html"],
+        ["State Documents", "state-documents.html"],
+        ["Office & Contacts", "office-contacts.html"]
+      ]
+    }
+  ];
+
   var chromeState = {
     globalDropdownBound: false,
     openItem: null
   };
 
+  function getScriptRoot() {
+    var src = activeScript && activeScript.getAttribute ? activeScript.getAttribute("src") : "";
+    var marker = "assets/js/site-chrome.js";
+    var markerIndex = String(src || "").indexOf(marker);
+    if (markerIndex === -1) return "";
+    return src.slice(0, markerIndex);
+  }
+
   function getSiteRoot() {
     var root = document.body && document.body.dataset ? document.body.dataset.siteRoot : "";
     root = String(root || "").trim();
+    if (!root) root = getScriptRoot();
     return root ? root.replace(/\/?$/, "/") : "";
   }
 
   function toSitePath(path) {
     return getSiteRoot() + String(path || "").replace(/^\/+/, "");
+  }
+
+  function ensureRibbonStylesheet() {
+    if (!document.head) return;
+    var existing = document.head.querySelector('link[href*="shared-ribbon.css"]');
+    if (existing) return;
+
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = toSitePath("shared-ribbon.css");
+    link.setAttribute("data-site-chrome-style", "true");
+    document.head.appendChild(link);
+  }
+
+  function ensureHeaderRoot() {
+    var root = document.getElementById("site-header-root");
+    if (root) return root;
+    if (!document.body) return null;
+
+    root = document.createElement("div");
+    root.id = "site-header-root";
+
+    var shell = document.querySelector(".wrap") || document.body;
+    var main = shell.querySelector("#main") || shell.querySelector("main");
+    shell.insertBefore(root, main || shell.firstChild);
+    return root;
   }
 
   function syncHeaderOffset() {
@@ -30,8 +106,24 @@
     document.documentElement.style.setProperty("--site-header-offset", totalOffset + "px");
   }
 
+  function renderNavGroup(group) {
+    var items = group.links.map(function (link) {
+      return '              <li><a href="' + toSitePath(link[1]) + '" role="menuitem">' + link[0] + "</a></li>";
+    }).join("");
+
+    return [
+      '          <li class="nav-item nav-item--has-menu">',
+      '            <button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">' + group.label + "</button>",
+      '            <ul class="nav-menu" role="menu">',
+      items,
+      "            </ul>",
+      "          </li>"
+    ].join("");
+  }
+
   function renderSiteHeader() {
-    var root = document.getElementById("site-header-root");
+    ensureRibbonStylesheet();
+    var root = ensureHeaderRoot();
     if (!root) return;
 
     root.innerHTML = [
@@ -49,43 +141,7 @@
       '    <div class="site-header-center">',
       '      <nav class="site-nav" aria-label="Primary navigation">',
       '        <ul class="nav-list">',
-      '          <li class="nav-item nav-item--has-menu">',
-      '            <button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">Outreach Programs</button>',
-      '            <ul class="nav-menu" role="menu">',
-      '              <li><a href="' + toSitePath("vijnana-harate.html") + '" role="menuitem">Vijnana Harate</a></li>',
-      '              <li><a href="' + toSitePath("vijnana-aranya.html") + '" role="menuitem">Vijnana Aranya</a></li>',
-      '              <li><a href="' + toSitePath("vijnana-yuvati.html") + '" role="menuitem">Vijnana Yuvati</a></li>',
-      '              <li><a href="' + toSitePath("vijnana-nataka.html") + '" role="menuitem">Vijnana Nataka</a></li>',
-      '              <li><a href="' + toSitePath("ganitha-mela.html") + '" role="menuitem">Ganitha Mela</a></li>',
-      "            </ul>",
-      "          </li>",
-      '          <li class="nav-item nav-item--has-menu">',
-      '            <button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">Other Initiatives</button>',
-      '            <ul class="nav-menu" role="menu">',
-      '              <li><a href="' + toSitePath("wait.html") + '" role="menuitem">Industry Internship</a></li>',
-      '              <li><a href="' + toSitePath("wait.html") + '" role="menuitem">Chair Professorship</a></li>',
-      "            </ul>",
-      "          </li>",
-      '          <li class="nav-item nav-item--has-menu">',
-      '            <button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">Events & Media</button>',
-      '            <ul class="nav-menu" role="menu">',
-      '              <li><a href="' + toSitePath("events.html#upcoming") + '" role="menuitem">Upcoming Events</a></li>',
-      '              <li><a href="' + toSitePath("events.html#past") + '" role="menuitem">Past Events</a></li>',
-      '              <li><a href="' + toSitePath("gallery.html") + '" role="menuitem">Gallery</a></li>',
-      '              <li><a href="' + toSitePath("calendar.html") + '" role="menuitem">Calendar</a></li>',
-      "            </ul>",
-      "          </li>",
-      '          <li class="nav-item nav-item--has-menu">',
-      '            <button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">Governance</button>',
-      '            <ul class="nav-menu" role="menu">',
-      '              <li><a href="' + toSitePath("founding-trustees.html") + '" role="menuitem">Founding Trustees</a></li>',
-      '              <li><a href="' + toSitePath("current-trustees.html") + '" role="menuitem">Current Trustees</a></li>',
-      '              <li><a href="' + toSitePath("outreach-committee.html") + '" role="menuitem">Outreach Committee</a></li>',
-      '              <li><a href="' + toSitePath("annual-reports.html") + '" role="menuitem">Annual Reports</a></li>',
-      '              <li><a href="' + toSitePath("state-documents.html") + '" role="menuitem">State Documents</a></li>',
-      '              <li><a href="' + toSitePath("office-contacts.html") + '" role="menuitem">Office & Contacts</a></li>',
-      "            </ul>",
-      "          </li>",
+      NAV_GROUPS.map(renderNavGroup).join(""),
       "        </ul>",
       "      </nav>",
       "    </div>",
@@ -111,7 +167,8 @@
   }
 
   function ensureHeader() {
-    var root = document.getElementById("site-header-root");
+    ensureRibbonStylesheet();
+    var root = ensureHeaderRoot();
     if (root && !root.querySelector(".site-header")) {
       renderSiteHeader();
     }
@@ -130,7 +187,7 @@
     if (!root || root.dataset.dropdownInit === "true") return;
     root.dataset.dropdownInit = "true";
 
-    var navItems = document.querySelectorAll(".nav-item--has-menu");
+    var navItems = root.querySelectorAll(".nav-item--has-menu");
 
     function closeMenu(item) {
       if (!item) return;
@@ -186,6 +243,7 @@
   window.TACT_CHROME = {
     ensureHeader: ensureHeader,
     ensureFooter: ensureFooter,
+    ensureStylesheet: ensureRibbonStylesheet,
     renderHeader: renderSiteHeader,
     renderFooter: renderSiteFooter,
     initDropdowns: initDropdowns,

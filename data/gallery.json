@@ -1,158 +1,17 @@
 [
   {
-    "slug": "2026-04-02-1",
-    "eventSlug": "2026-04-02-1",
-    "pageUrl": "events/2026-04-02-1.html",
-    "title": "1",
-    "date": "2026-04-02",
-    "location": "iisc",
-    "images": [
-      {
-        "url": "images/gallery/2026-04-02-1-01.jpg",
-        "description": "https://www.aakash.ac.in/blog/web-stories/why-is-1729-called-ramanujan-number/\nhttps://www.aakash.ac.in/blog/web-stories/why-is-1729-called-ramanujan-number/"
-      }
-    ]
-  },
-  {
-    "slug": "2026-03-29-hi-hihihihihhi",
-    "eventSlug": "2026-03-29-hi-hihihihihhi",
-    "pageUrl": "events/2026-03-29-hi-hihihihihhi.html",
-    "title": "hi hihihihihhi",
-    "date": "2026-03-29",
-    "location": "hyd",
-    "images": [
-      {
-        "url": "content/events/2026-03-29-hi-hihihihihhi/gallery/image-01.jpg",
-        "description": "123445567890-9876544332456789098643567890"
-      },
-      {
-        "url": "content/events/2026-03-29-hi-hihihihihhi/gallery/image-02.jpg",
-        "description": "ttrewaesdfghuijszdghj"
-      }
-    ]
-  },
-  {
-    "slug": "2026-03-25-letcy",
-    "eventSlug": "2026-03-25-letcy",
-    "pageUrl": "events/2026-03-25-letcy.html",
-    "title": "letcy",
-    "date": "2026-03-25",
-    "location": "LH1",
-    "images": [
-      {
-        "url": "images/gallery/2026-03-25-letcy-01.jpg",
-        "description": "L to R many people"
-      },
-      {
-        "url": "images/gallery/2026-03-25-letcy-02.jpg",
-        "description": "33.5"
-      }
-    ]
-  },
-  {
-    "slug": "2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef",
-    "eventSlug": "2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef",
-    "pageUrl": "events/2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef.html",
-    "title": "eh fuewh ifwuhfeuwfhwefhgw yef",
-    "date": "2026-03-22",
-    "location": "iisc",
-    "images": [
-      {
-        "url": "images/gallery/2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef-01.jpg",
-        "description": "https://chdmbr.github.io/Tact/https://chdmbr.github.io/Tact/https://chdmbr.github.io/Tact/https://chdmbr.github.io/Tact/https://chdmbr.github.io/Tact/https://chdmbr.github.io/Tact/https://chdmbr.github.io/Tact/https://chdmbr.github.io/Tact/https://chdmbr.github.io/Tact/https://chdmbr.github.io/Tact/https://chdmbr.github.io/Tact/"
-      }
-    ]
-  },
-  {
-    "slug": "2026-03-22-fehf-ghw-effhuewhf",
-    "eventSlug": "2026-03-22-fehf-ghw-effhuewhf",
-    "pageUrl": "events/2026-03-22-fehf-ghw-effhuewhf.html",
-    "title": "fehf ghw'effhuewhf'",
-    "date": "2026-03-22",
-    "location": "iisc",
-    "images": [
-      {
-        "url": "images/gallery/2026-03-22-fehf-ghw-effhuewhf-01.jpg",
-        "description": "Create a page called `calendar.html` similar to Google Calendar UI.\n\nRequirements:\n\n1. Layout\n- Same header and footer as other pages.\n- Main section contains:\n  - Top toolbar\n  - Calendar grid\n\n2. Toolbar\n- Buttons:\n  - Previous Month\n  - Next Month\n- Display:\n  - Current Month + Year"
-      },
-      {
-        "url": "images/gallery/2026-03-22-fehf-ghw-effhuewhf-02.jpg",
-        "description": "Create a page called `calendar.html` similar to Google Calendar UI.\n\nRequirements:\n\n1. Layout\n- Same header and footer as other pages.\n- Main section contains:\n  - Top toolbar\n  - Calendar grid\n\n2. Toolbar\n- Buttons:\n  - Previous Month\n  - Next Month\n- Display:\n  - Current Month + Year"
-      },
-      {
-        "url": "images/gallery/2026-03-22-fehf-ghw-effhuewhf-03.jpg",
-        "description": "Create a page called `calendar.html` similar to Google Calendar UI.\n\nRequirements:\n\n1. Layout\n- Same header and footer as other pages.\n- Main section contains:\n  - Top toolbar\n  - Calendar grid\n\n2. Toolbar\n- Buttons:\n  - Previous Month\n  - Next Month\n- Display:\n  - Current Month + Year"
-      },
-      {
-        "url": "images/gallery/2026-03-22-fehf-ghw-effhuewhf-04.jpg",
-        "description": "Create a page called `calendar.html` similar to Google Calendar UI.\n\nRequirements:\n\n1. Layout\n- Same header and footer as other pages.\n- Main section contains:\n  - Top toolbar\n  - Calendar grid\n\n2. Toolbar\n- Buttons:\n  - Previous Month\n  - Next Month\n- Display:\n  - Current Month + Year"
-      },
-      {
-        "url": "images/gallery/2026-03-22-fehf-ghw-effhuewhf-05.jpg",
-        "description": "Create a page called `calendar.html` similar to Google Calendar UI.\n\nRequirements:\n\n1. Layout\n- Same header and footer as other pages.\n- Main section contains:\n  - Top toolbar\n  - Calendar grid\n\n2. Toolbar\n- Buttons:\n  - Previous Month\n  - Next Month\n- Display:\n  - Current Month + Year"
-      },
-      {
-        "url": "images/gallery/2026-03-22-fehf-ghw-effhuewhf-06.jpg",
-        "description": "Create a page called `calendar.html` similar to Google Calendar UI.\n\nRequirements:\n\n1. Layout\n- Same header and footer as other pages.\n- Main section contains:\n  - Top toolbar\n  - Calendar grid\n\n2. Toolbar\n- Buttons:\n  - Previous Month\n  - Next Month\n- Display:\n  - Current Month + Year"
-      },
-      {
-        "url": "images/gallery/2026-03-22-fehf-ghw-effhuewhf-07.jpg",
-        "description": "Create a page called `calendar.html` similar to Google Calendar UI.\n\nRequirements:\n\n1. Layout\n- Same header and footer as other pages.\n- Main section contains:\n  - Top toolbar\n  - Calendar grid\n\n2. Toolbar\n- Buttons:\n  - Previous Month\n  - Next Month\n- Display:\n  - Current Month + Year"
-      }
-    ]
-  },
-  {
-    "slug": "2026-03-21-second-gallery",
-    "eventSlug": "2026-03-21-second-gallery",
-    "pageUrl": "events/2026-03-21-second-gallery.html",
-    "title": "second gallery",
-    "date": "2026-03-21",
-    "location": "rayachoty",
-    "images": [
-      {
-        "url": "images/gallery/2026-03-21-second-gallery-01.jpg",
-        "description": "this is 2nd image\nGallery save failed: Bandwidth quota exceeded: https://api.github.com/repos/Chdmbr/Tact/contents/images/gallery/2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef-01.jpg. Try reducing the rate of data transfer.Gallery save failed: Bandwidth quota exceeded: https://api.github.com/repos/Chdmbr/Tact/contents/images/gallery/2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef-01.jpg. Try reducing the rate of data transfer.Gallery save failed: Bandwidth quota exceeded: https://api.github.com/repos/Chdmbr/Tact/contents/images/gallery/2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef-01.jpg. Try reducing the rate of data transfer.Gallery save failed: Bandwidth quota exceeded: https://api.github.com/repos/Chdmbr/Tact/contents/images/gallery/2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef-01.jpg. Try reducing the rate of data transfer."
-      },
-      {
-        "url": "images/gallery/2026-03-21-second-gallery-02.jpg",
-        "description": "this is 3rd image\nGallery save failed: Bandwidth quota exceeded: https://api.github.com/repos/Chdmbr/Tact/contents/images/gallery/2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef-01.jpg. Try reducing the rate of data transfer.Gallery save failed: Bandwidth quota exceeded: https://api.github.com/repos/Chdmbr/Tact/contents/images/gallery/2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef-01.jpg. Try reducing the rate of data transfer.Gallery save failed: Bandwidth quota exceeded: https://api.github.com/repos/Chdmbr/Tact/contents/images/gallery/2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef-01.jpg. Try reducing the rate of data transfer.Gallery save failed: Bandwidth quota exceeded: https://api.github.com/repos/Chdmbr/Tact/contents/images/gallery/2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef-01.jpg. Try reducing the rate of data transfer."
-      },
-      {
-        "url": "images/gallery/2026-03-21-second-gallery-03.jpg",
-        "description": "this is 4th image \nGallery save failed: Bandwidth quota exceeded: https://api.github.com/repos/Chdmbr/Tact/contents/images/gallery/2026-03-22-eh-fuewh-ifwuhfeuwfhwefhgw-yef-01.jpg. Try reducing the rate of data transfer."
-      }
-    ]
-  },
-  {
-    "slug": "2026-demo-past-event",
-    "eventSlug": "2026-demo-past-event",
-    "pageUrl": "events/2026-demo-past-event.html",
-    "title": "Demo Past Event (Sample)",
-    "date": "2026-01-12",
-    "location": "Hubballi",
-    "images": [
-      {
-        "url": "content/events/2026-demo-past-event/gallery/image-01.jpg",
-        "description": "fo8utrdtyhuij"
-      },
-      {
-        "url": "content/events/2026-demo-past-event/gallery/image-02.jpg",
-        "description": "j rff hfierhgeuh frehguhguher 'oh uwehgfuehguheuoghehhgeroh;8erh;w9\ngknr wijgoirwjhgiwjgowie"
-      },
-      {
-        "url": "content/events/2026-demo-past-event/gallery/image-03.jpg",
-        "description": "h 3r87fhue3hfuhfiuwhrd8h2wr789f2wdhw29d2r9u2r"
-      }
-    ]
-  },
-  {
     "slug": "2022-vijnana-harate-malleswaram-session",
     "eventSlug": "2022-vijnana-harate-malleswaram-session",
     "pageUrl": "events/2022-vijnana-harate-malleswaram-session.html",
     "title": "vijnana harate malleswaram session",
     "date": "2022-07-08",
     "location": "Malleswaram",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2022-vijnana-harate-malleswaram-session/gallery/image-01.jpg",
+        "description": "vijnana harate malleswaram session photo 1"
+      }
+    ]
   },
   {
     "slug": "2022-vijnana-harate-unknown-session",
@@ -182,11 +41,11 @@
     "images": [
       {
         "url": "content/events/2022-vijnana-harate-sri-charan-vidyaniketan-and-srm-university-bengaluru-session/gallery/image-01.jpg",
-        "description": "vijnana harate sri charan vidyaniketan and srm university bengaluru session..."
+        "description": "vijnana harate sri charan vidyaniketan and srm university bengaluru session photo 1"
       },
       {
         "url": "content/events/2022-vijnana-harate-sri-charan-vidyaniketan-and-srm-university-bengaluru-session/gallery/image-02.jpg",
-        "description": "vijnana harate sri charan vidyaniketan and srm university bengaluru session..."
+        "description": "vijnana harate sri charan vidyaniketan and srm university bengaluru session photo 2"
       }
     ]
   },
@@ -245,7 +104,12 @@
     "title": "vijnana nataka unknown session",
     "date": "2022-12-09",
     "location": "Unknown",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2022-vijnana-nataka-unknown-session/gallery/image-01.jpg",
+        "description": "vijnana nataka unknown session photo 1"
+      }
+    ]
   },
   {
     "slug": "2022-vijnana-nataka-unknown-session-1223",
@@ -268,7 +132,12 @@
     "title": "vijnana nataka mysuru session",
     "date": "2023-01-21",
     "location": "Mysuru",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2023-vijnana-nataka-mysuru-session/gallery/image-01.jpg",
+        "description": "vijnana nataka mysuru session photo 1"
+      }
+    ]
   },
   {
     "slug": "2023-national-science-day-unknown-session",
@@ -291,7 +160,12 @@
     "title": "national science day bengaluru session",
     "date": "2023-02-28",
     "location": "Bengaluru",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2023-national-science-day-bengaluru-session/gallery/image-01.jpg",
+        "description": "national science day bengaluru session photo 1"
+      }
+    ]
   },
   {
     "slug": "2022-teacher-training-bengaluru-session",
@@ -358,7 +232,12 @@
     "title": "vijnana harate basavanagudi session",
     "date": "2023-04-29",
     "location": "Basavanagudi",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2023-vijnana-harate-basavanagudi-session/gallery/image-01.jpg",
+        "description": "vijnana harate basavanagudi session photo 1"
+      }
+    ]
   },
   {
     "slug": "2023-vijnana-harate-devanahalli-session",
@@ -417,7 +296,12 @@
     "title": "vijnana harate mysuru session",
     "date": "2023-09-09",
     "location": "Mysuru",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2023-vijnana-harate-mysuru-session/gallery/image-01.jpg",
+        "description": "vijnana harate mysuru session photo 1"
+      }
+    ]
   },
   {
     "slug": "2023-vijnana-harate-siddaganga-public-school-unknown-session",
@@ -490,7 +374,12 @@
     "title": "vijnana aranya unknown session",
     "date": "2023-04-13",
     "location": "Unknown",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2023-vijnana-aranya-unknown-session/gallery/image-01.jpg",
+        "description": "vijnana aranya unknown session photo 1"
+      }
+    ]
   },
   {
     "slug": "2023-vijnana-aranya-government-college-srikakulam-session",
@@ -499,7 +388,12 @@
     "title": "vijnana aranya government college srikakulam session",
     "date": "2023-04-13",
     "location": "Srikakulam",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2023-vijnana-aranya-government-college-srikakulam-session/gallery/image-01.jpg",
+        "description": "vijnana aranya government college srikakulam session photo 1"
+      }
+    ]
   },
   {
     "slug": "2023-vijnana-aranya-ponduru-session",
@@ -754,7 +648,12 @@
     "title": "vijnana harate anantha vidyaniketan unknown session",
     "date": "2024-07-23",
     "location": "Unknown",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-vijnana-harate-anantha-vidyaniketan-unknown-session/gallery/image-01.jpg",
+        "description": "vijnana harate anantha vidyaniketan unknown session photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-vijnana-harate-unknown-session",
@@ -777,7 +676,12 @@
     "title": "vijnana harate vanita sadan mysuru session",
     "date": "2024-08-26",
     "location": "Mysuru",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-vijnana-harate-vanita-sadan-mysuru-session/gallery/image-01.jpg",
+        "description": "vijnana harate vanita sadan mysuru session photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-vijnana-harate-mes-kishore-kendra-bengaluru-session",
@@ -800,7 +704,12 @@
     "title": "vijnana harate unknown session",
     "date": "2024-09-23",
     "location": "Unknown",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-vijnana-harate-unknown-session-0923/gallery/image-01.jpg",
+        "description": "vijnana harate unknown session photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-vijnana-harate-bhubaneswar-session",
@@ -823,7 +732,12 @@
     "title": "vijnana harate bel bengaluru session",
     "date": "2025-01-03",
     "location": "Bengaluru",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2025-vijnana-harate-bel-bengaluru-session/gallery/image-01.jpg",
+        "description": "vijnana harate bel bengaluru session photo 1"
+      }
+    ]
   },
   {
     "slug": "2025-vijnana-harate-basavanagudi-session",
@@ -864,7 +778,12 @@
     "title": "vijnana aranya mc thalalu govt school saragur session",
     "date": "2024-09-13",
     "location": "Saragur",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-vijnana-aranya-mc-thalalu-govt-school-saragur-session/gallery/image-01.jpg",
+        "description": "vijnana aranya mc thalalu govt school saragur session photo 1"
+      }
+    ]
   },
   {
     "slug": "2025-vijnana-aranya-om-kanakapura-session",
@@ -873,7 +792,12 @@
     "title": "vijnana aranya om kanakapura session",
     "date": "2025-02-02",
     "location": "Kanakapura",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2025-vijnana-aranya-om-kanakapura-session/gallery/image-01.jpg",
+        "description": "vijnana aranya om kanakapura session photo 1"
+      }
+    ]
   },
   {
     "slug": "2025-vijnana-aranya-mysuru-session",
@@ -964,7 +888,12 @@
     "title": "soafal  lecture",
     "date": "2024-04-20",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-lecture/gallery/image-01.jpg",
+        "description": "soafal  lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-hejmadi-lecture",
@@ -973,7 +902,12 @@
     "title": "soafal hejmadi lecture",
     "date": "2024-05-11",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-hejmadi-lecture/gallery/image-01.png",
+        "description": "soafal hejmadi lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-lecture-0601",
@@ -982,7 +916,12 @@
     "title": "soafal  lecture",
     "date": "2024-06-01",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-lecture-0601/gallery/image-01.png",
+        "description": "soafal  lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-lecture-0608",
@@ -991,7 +930,12 @@
     "title": "soafal  lecture",
     "date": "2024-06-08",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-lecture-0608/gallery/image-01.png",
+        "description": "soafal  lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-lecture-0706",
@@ -1000,7 +944,12 @@
     "title": "soafal  lecture",
     "date": "2024-07-06",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-lecture-0706/gallery/image-01.jpeg",
+        "description": "soafal  lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-lecture-0713",
@@ -1009,7 +958,12 @@
     "title": "soafal  lecture",
     "date": "2024-07-13",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-lecture-0713/gallery/image-01.jpeg",
+        "description": "soafal  lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-lecture-0727",
@@ -1018,7 +972,12 @@
     "title": "soafal  lecture",
     "date": "2024-07-27",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-lecture-0727/gallery/image-01.jpg",
+        "description": "soafal  lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-sciences-lecture",
@@ -1027,7 +986,12 @@
     "title": "soafal sciences lecture",
     "date": "2024-08-10",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-sciences-lecture/gallery/image-01.jpg",
+        "description": "soafal sciences lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-lecture-0817",
@@ -1036,7 +1000,12 @@
     "title": "soafal  lecture",
     "date": "2024-08-17",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-lecture-0817/gallery/image-01.png",
+        "description": "soafal  lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-trajectory-lab-lecture",
@@ -1045,7 +1014,12 @@
     "title": "soafal trajectory lab lecture",
     "date": "2024-09-14",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-trajectory-lab-lecture/gallery/image-01.png",
+        "description": "soafal trajectory lab lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-journey-lecture",
@@ -1054,7 +1028,12 @@
     "title": "soafal journey lecture",
     "date": "2024-09-21",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-journey-lecture/gallery/image-01.png",
+        "description": "soafal journey lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-microscopic-world-lecture",
@@ -1063,7 +1042,12 @@
     "title": "soafal microscopic world lecture",
     "date": "2024-09-28",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-microscopic-world-lecture/gallery/image-01.jpeg",
+        "description": "soafal microscopic world lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-journey-lecture-1005",
@@ -1072,7 +1056,12 @@
     "title": "soafal journey lecture",
     "date": "2024-10-05",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-journey-lecture-1005/gallery/image-01.jpg",
+        "description": "soafal journey lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-field-space-weather-lecture",
@@ -1081,7 +1070,12 @@
     "title": "soafal field space weather lecture",
     "date": "2024-10-19",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-field-space-weather-lecture/gallery/image-01.jpg",
+        "description": "soafal field space weather lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-lecture-1102",
@@ -1090,7 +1084,12 @@
     "title": "soafal  lecture",
     "date": "2024-11-02",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-lecture-1102/gallery/image-01.jpg",
+        "description": "soafal  lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-health-disease-lecture",
@@ -1099,7 +1098,12 @@
     "title": "soafal health disease lecture",
     "date": "2024-11-16",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-health-disease-lecture/gallery/image-01.jpg",
+        "description": "soafal health disease lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-in-silico-perspective-lecture",
@@ -1108,7 +1112,12 @@
     "title": "soafal in silico perspective lecture",
     "date": "2024-12-14",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-in-silico-perspective-lecture/gallery/image-01.png",
+        "description": "soafal in silico perspective lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-equations-lecture",
@@ -1117,7 +1126,12 @@
     "title": "soafal equations lecture",
     "date": "2024-12-21",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-equations-lecture/gallery/image-01.png",
+        "description": "soafal equations lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-lecture-1228",
@@ -1126,7 +1140,12 @@
     "title": "soafal  lecture",
     "date": "2024-12-28",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2024-soafal-lecture-1228/gallery/image-01.png",
+        "description": "soafal  lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2025-soafal-causality-lecture",
@@ -1135,7 +1154,12 @@
     "title": "soafal causality lecture",
     "date": "2025-01-11",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2025-soafal-causality-lecture/gallery/image-01.jpg",
+        "description": "soafal causality lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2025-soafal-my-evolutionary-journey-lecture",
@@ -1144,7 +1168,12 @@
     "title": "soafal my evolutionary journey lecture",
     "date": "2025-01-18",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2025-soafal-my-evolutionary-journey-lecture/gallery/image-01.jpg",
+        "description": "soafal my evolutionary journey lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2025-soafal-intelligence-healthcare-lecture",
@@ -1153,7 +1182,12 @@
     "title": "soafal intelligence healthcare lecture",
     "date": "2025-02-08",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2025-soafal-intelligence-healthcare-lecture/gallery/image-01.jpg",
+        "description": "soafal intelligence healthcare lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2025-soafal-lecture",
@@ -1162,7 +1196,12 @@
     "title": "soafal  lecture",
     "date": "2025-03-01",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2025-soafal-lecture/gallery/image-01.jpg",
+        "description": "soafal  lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2025-soafal-biological-network-level-multidisciplinary-approach-lecture",
@@ -1171,7 +1210,12 @@
     "title": "soafal biological network level multidisciplinary approach lecture",
     "date": "2025-03-08",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2025-soafal-biological-network-level-multidisciplinary-approach-lecture/gallery/image-01.jpg",
+        "description": "soafal biological network level multidisciplinary approach lecture photo 1"
+      }
+    ]
   },
   {
     "slug": "2015-soafal-series-also-included-memorial-lecture-rohini-lecture",
@@ -1180,7 +1224,16 @@
     "title": "soafal series also included memorial lecture rohini lecture",
     "date": "2015-03-15",
     "location": "Online",
-    "images": []
+    "images": [
+      {
+        "url": "content/events/2015-soafal-series-also-included-memorial-lecture-rohini-lecture/gallery/image-01.png",
+        "description": "soafal series also included memorial lecture rohini lecture photo 1"
+      },
+      {
+        "url": "content/events/2015-soafal-series-also-included-memorial-lecture-rohini-lecture/gallery/image-02.jpeg",
+        "description": "soafal series also included memorial lecture rohini lecture photo 2"
+      }
+    ]
   },
   {
     "slug": "2024-soafal-30th-november-2024-in-honour-rohini-lecture",

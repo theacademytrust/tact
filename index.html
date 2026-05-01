@@ -188,39 +188,84 @@
       }
 
       .home-events-board {
-        padding: 14px;
-        border-top-color: rgba(10, 122, 58, 0.24);
+        padding: 16px;
+        border-top-color: rgba(10, 122, 58, 0.28);
+        background:
+          radial-gradient(520px 220px at 8% 0%, rgba(10, 122, 58, 0.08), transparent 68%),
+          radial-gradient(420px 240px at 96% 0%, rgba(184, 134, 11, 0.08), transparent 70%),
+          var(--card);
       }
 
       .home-events-layout {
         display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: 10px;
-        align-items: start;
+        grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+        gap: 12px;
+        align-items: stretch;
       }
 
       .home-events-pane {
         min-width: 0;
-        align-self: start;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.94));
-        border: 1px solid rgba(10, 20, 10, 0.08);
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr) auto;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(252, 253, 251, 0.98));
+        border: 1px solid rgba(10, 20, 10, 0.09);
         border-radius: 12px;
-        padding: 8px;
+        padding: 10px;
+        box-shadow: 0 14px 38px rgba(10, 20, 10, 0.05);
       }
 
-      .home-events-pane h2 {
+      .home-events-panel-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+
+      .home-events-panel-head h2 {
         margin: 0 0 8px;
         font-size: 18px;
+        line-height: 1.2;
+      }
+
+      .home-events-kicker {
+        margin: 0 0 3px;
+        color: rgba(184, 134, 11, 0.92);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .home-events-note {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .home-events-count {
+        flex: 0 0 auto;
+        border: 1px solid rgba(10, 122, 58, 0.16);
+        border-radius: 999px;
+        background: rgba(10, 122, 58, 0.08);
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 800;
+        line-height: 1;
+        padding: 7px 10px;
+        white-space: nowrap;
       }
 
       .home-vertical-window {
-        height: 286px;
+        height: 318px;
         position: relative;
         overflow: hidden;
-        border: 1px solid rgba(10, 20, 10, 0.06);
-        border-radius: 10px;
+        border: 1px solid rgba(10, 20, 10, 0.08);
+        border-radius: 12px;
         padding: 0;
-        background: #ffffff;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 248, 0.98));
       }
 
       .home-vertical-track {
@@ -230,89 +275,202 @@
 
       .home-upcoming-card {
         display: grid;
-        grid-template-columns: 208px minmax(0, 1fr);
-        gap: 12px;
-        align-items: start;
-        min-height: 180px;
-        padding: 12px;
+        grid-template-columns: 224px minmax(0, 1fr);
+        gap: 14px;
+        align-items: stretch;
+        height: 318px;
+        padding: 14px;
         overflow: hidden;
         text-decoration: none;
         color: inherit;
-        border-radius: 12px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), #ffffff);
+        border-radius: 11px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.98), #ffffff);
+        transition: background 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .home-upcoming-card:hover,
+      .home-upcoming-card:focus-visible {
+        background:
+          linear-gradient(180deg, rgba(250, 253, 250, 0.98), #ffffff);
+        box-shadow: inset 4px 0 0 rgba(10, 122, 58, 0.42);
       }
 
       .home-upcoming-media {
         position: relative;
-        width: 208px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 224px;
         min-width: 208px;
-        max-width: 208px;
-        aspect-ratio: 4 / 3;
+        max-width: 224px;
+        height: 100%;
         overflow: hidden;
         border-radius: 10px;
-        background: linear-gradient(180deg, #f8faf8, #eef3ef);
+        border: 1px solid rgba(10, 20, 10, 0.08);
+        background:
+          linear-gradient(180deg, #f8faf8, #eef3ef);
       }
 
       .home-upcoming-card img {
-        position: absolute;
-        inset: 0;
+        position: static;
         width: 100%;
         height: 100%;
         display: block;
-        min-width: 100%;
-        min-height: 100%;
+        min-width: 0;
+        min-height: 0;
         max-width: 100%;
         max-height: 100%;
-        object-fit: fill;
+        object-fit: contain;
         object-position: center;
         border: 0;
       }
 
       .home-upcoming-copy {
-        padding: 10px;
+        padding: 5px 4px 4px;
         min-width: 0;
         overflow: hidden;
         display: grid;
         align-content: start;
         grid-auto-rows: max-content;
-        gap: 6px;
-        min-height: 156px;
+        gap: 8px;
       }
 
       .home-upcoming-copy h3 {
-        margin: 0 0 6px;
-        font-size: 16px;
+        margin: 0;
+        font-size: 18px;
         color: var(--green);
-        line-height: 1.25;
+        line-height: 1.18;
       }
 
       .home-upcoming-copy p {
         margin: 0;
-        font-size: 13px;
+        font-size: 13.5px;
         line-height: 1.45;
         color: #2f3d38;
         overflow: hidden;
       }
 
-      .home-upcoming-copy .home-events-meta {
+      .home-event-card-head {
+        display: grid;
+        grid-template-columns: 58px minmax(0, 1fr);
+        gap: 10px;
+        align-items: start;
+      }
+
+      .home-event-card-meta {
+        display: grid;
+        gap: 6px;
+        min-width: 0;
+      }
+
+      .home-event-date {
+        display: grid;
+        justify-items: center;
+        align-content: center;
+        min-height: 66px;
+        border-radius: 12px;
+        border: 1px solid rgba(184, 134, 11, 0.2);
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(250, 246, 234, 0.96));
+        color: #153127;
+        box-shadow: 0 8px 20px rgba(10, 20, 10, 0.06);
+      }
+
+      .home-event-date span,
+      .home-event-date small {
+        font-size: 11px;
+        font-weight: 800;
+        line-height: 1;
+        color: rgba(184, 134, 11, 0.96);
+        text-transform: uppercase;
+      }
+
+      .home-event-date strong {
+        margin: 3px 0;
+        color: var(--green);
+        font-size: 24px;
+        line-height: 1;
+      }
+
+      .home-event-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        min-width: 0;
+      }
+
+      .home-event-badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 22px;
+        max-width: 100%;
+        border-radius: 999px;
+        border: 1px solid rgba(10, 20, 10, 0.08);
+        background: rgba(15, 23, 42, 0.04);
+        color: #21332b;
+        font-size: 11px;
+        font-weight: 800;
+        line-height: 1;
+        padding: 5px 8px;
+      }
+
+      .home-event-badge--soon {
+        border-color: rgba(10, 122, 58, 0.18);
+        background: rgba(10, 122, 58, 0.09);
+        color: var(--green);
+      }
+
+      .home-event-badge--past {
+        border-color: rgba(184, 134, 11, 0.18);
+        background: rgba(184, 134, 11, 0.09);
+        color: #8a6508;
+      }
+
+      .home-events-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px 8px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .home-events-meta span {
+        min-width: 0;
+      }
+
+      .home-events-meta span + span::before {
+        content: "";
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        margin: 0 8px 2px 0;
+        border-radius: 999px;
+        background: rgba(184, 134, 11, 0.52);
+      }
+
+      .home-upcoming-copy h3,
+      .home-upcoming-copy p:not(.home-events-meta) {
         display: -webkit-box;
-        -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
       }
 
       .home-upcoming-copy h3 {
-        display: -webkit-box;
         -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
       }
 
-      .home-upcoming-copy p:last-child {
-        display: -webkit-box;
-        -webkit-line-clamp: 6;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+      .home-upcoming-copy p:not(.home-events-meta) {
+        -webkit-line-clamp: 5;
+      }
+
+      .home-event-link-text {
+        align-self: end;
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 800;
       }
 
       .home-upcoming-dots {
@@ -353,54 +511,69 @@
 
       .home-horizontal-track {
         display: grid;
-        gap: 7px;
+        gap: 8px;
       }
 
       .home-events-item {
         display: grid;
-        grid-template-columns: 66px minmax(0, 1fr);
-        gap: 7px;
-        align-items: start;
-        padding: 6px;
+        grid-template-columns: 72px minmax(0, 1fr);
+        gap: 9px;
+        align-items: stretch;
+        min-height: 94px;
+        padding: 8px;
         border-radius: 10px;
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), #ffffff);
         border: 1px solid rgba(10, 20, 10, 0.08);
         text-decoration: none;
         color: inherit;
+        transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
       }
 
-      .home-events-item img {
-        width: 66px;
-        height: 86px;
-        object-fit: fill;
-        object-position: center;
-        border-radius: 7px;
+      .home-events-item:hover,
+      .home-events-item:focus-visible {
+        border-color: rgba(10, 122, 58, 0.22);
+        box-shadow: 0 10px 26px rgba(10, 20, 10, 0.06);
+        transform: translateY(-1px);
+      }
+
+      .home-events-thumb {
+        display: block;
+        width: 72px;
+        height: 92px;
+        overflow: hidden;
+        border-radius: 8px;
+        border: 1px solid rgba(10, 20, 10, 0.06);
         background: linear-gradient(180deg, #f8faf8, #eef3ef);
-        padding: 0;
+      }
+
+      .home-events-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        display: block;
       }
 
       .home-events-item--past {
         min-width: 0;
-        grid-template-columns: 70px minmax(0, 1fr);
       }
 
-      .home-events-item--past img {
-        width: 70px;
-        height: 94px;
-      }
-
-      .home-events-meta {
-        margin: 0 0 3px;
-        font-size: 12px;
-        line-height: 1.35;
-        color: var(--muted);
+      .home-events-body {
+        display: grid;
+        align-content: start;
+        gap: 5px;
+        min-width: 0;
       }
 
       .home-events-item h3 {
-        margin: 0 0 3px;
+        margin: 0;
         font-size: 14px;
-        line-height: 1.3;
+        line-height: 1.25;
         color: var(--green);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
 
       .home-events-item p {
@@ -415,8 +588,25 @@
       }
 
       .home-events-empty {
+        min-height: 180px;
+        display: grid;
+        place-items: center;
+        margin: 0;
+        padding: 16px;
+        border: 1px dashed rgba(10, 122, 58, 0.2);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.66);
         color: var(--muted);
         font-style: italic;
+        text-align: center;
+      }
+
+      .home-events-empty--upcoming {
+        min-height: 318px;
+      }
+
+      .home-events-actions {
+        margin-top: 10px;
       }
 
       /* Simple outreach grid */
@@ -487,7 +677,7 @@
       .slideshow-slide img {
         width: 100%;
         height: 100%;
-        object-fit: fill;
+        object-fit: contain;
         opacity: 0;
         transition: opacity 0.28s ease, transform 1.5s ease-in-out;
       }
@@ -590,7 +780,7 @@
       .flip-box img {
         width: 100%;
         height: 100%;
-        object-fit: fill;
+        object-fit: contain;
         transition: transform 0.5s ease;
       }
 
@@ -627,7 +817,7 @@
         width: 100%;
         height: 100%;
         display: block;
-        object-fit: fill;
+        object-fit: contain;
         aspect-ratio: 4 / 3;
       }
 
@@ -905,7 +1095,7 @@
       }
 
       .home-events-layout {
-        grid-template-columns: 1.2fr 1fr;
+        grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
       }
 
       .outreach-grid {
@@ -930,38 +1120,36 @@
       }
 
       .home-upcoming-card {
-        grid-template-columns: 208px minmax(0, 1fr);
-        min-height: 180px;
+        grid-template-columns: 224px minmax(0, 1fr);
+        height: 318px;
+        min-height: 318px;
       }
 
       .home-upcoming-media {
-        width: 208px;
+        width: 224px;
         min-width: 208px;
-        max-width: 208px;
+        max-width: 224px;
       }
 
       .home-vertical-window {
-        height: 286px;
+        height: 318px;
         max-height: none;
       }
 
       .home-events-item,
       .home-events-item--past {
-        grid-template-columns: 70px minmax(0, 1fr);
+        grid-template-columns: 72px minmax(0, 1fr);
       }
 
-      .home-events-item img,
-      .home-events-item--past img {
-        width: 70px;
-        height: 94px;
+      .home-events-thumb {
+        width: 72px;
+        height: 92px;
       }
 
       .flip-box {
         height: 240px;
       }
     </style>
-    <!-- Include shared ribbon CSS -->
-    <link rel="stylesheet" href="shared-ribbon.css">
   </head>
   <body>
     <div class="wrap">
@@ -1060,18 +1248,32 @@
         <section class="section surface fade-section home-events-board" aria-labelledby="home-events-heading">
           <div class="home-events-layout">
             <div class="home-events-pane" id="home-upcoming-pane">
-              <h2 id="home-events-heading">Upcoming Events</h2>
+              <div class="home-events-panel-head">
+                <div>
+                  <p class="home-events-kicker">Next on calendar</p>
+                  <h2 id="home-events-heading">Upcoming Events</h2>
+                  <p id="home-upcoming-note" class="home-events-note">Loading events...</p>
+                </div>
+                <span id="home-upcoming-count" class="home-events-count">0 scheduled</span>
+              </div>
               <div class="home-vertical-window">
                 <div id="home-upcoming-track" class="home-vertical-track"></div>
                 <div id="home-upcoming-dots" class="home-upcoming-dots" aria-label="Upcoming event navigation"></div>
               </div>
             </div>
             <div class="home-events-pane" id="home-previous-pane">
-              <h2>Past Events</h2>
+              <div class="home-events-panel-head">
+                <div>
+                  <p class="home-events-kicker">Recently completed</p>
+                  <h2>Past Events</h2>
+                  <p id="home-past-note" class="home-events-note">Loading archive...</p>
+                </div>
+                <span id="home-past-count" class="home-events-count">0 archived</span>
+              </div>
               <div class="home-horizontal-window">
                 <div id="home-previous-track" class="home-horizontal-track"></div>
               </div>
-              <div style="margin-top: 10px;">
+              <div class="home-events-actions">
                 <a class="btn btn-secondary" href="events.html#past">See more past events</a>
               </div>
             </div>
@@ -1294,11 +1496,12 @@
       <div id="site-footer-root"></div>
     </div>
 
-    <script src="assets/js/site-chrome.js?v=20260501d"></script>
+    <script src="assets/js/site-chrome.js?v=20260501e"></script>
     <script src="assets/js/events-config.js"></script>
-    <script src="content/events/events-feed.js?v=20260501a"></script>
+    <script src="content/events/events-feed.js?v=20260501b"></script>
     <script src="assets/js/event-page-paths.js"></script>
     <script src="assets/js/events-feed-loader.js"></script>
+    <script src="assets/js/gallery-data.js?v=20260501b"></script>
     <script src="assets/js/home-events-board.js"></script>
     <script src="assets/js/index-page.js"></script>
     <script src="assets/js/page-router.js?v=20260323d"></script>

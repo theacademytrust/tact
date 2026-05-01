@@ -2,30 +2,32 @@
   var ROUTE_SCRIPTS = {
     "index.html": [
       "assets/js/events-config.js",
-      "content/events/events-feed.js",
+      "content/events/events-feed.js?v=20260501b",
       "assets/js/event-page-paths.js",
       "assets/js/events-feed-loader.js",
+      "assets/js/gallery-data.js?v=20260501b",
       "assets/js/home-events-board.js",
       "assets/js/index-page.js"
     ],
     "events.html": [
       "assets/js/events-config.js",
-      "content/events/events-feed.js",
+      "content/events/events-feed.js?v=20260501b",
       "assets/js/event-page-paths.js",
       "assets/js/events-feed-loader.js",
+      "assets/js/gallery-data.js?v=20260501b",
       "assets/js/events-page.js"
     ],
     "gallery.html": [
       "assets/js/events-config.js?v=20260323c",
       "assets/js/event-page-paths.js",
-      "assets/js/gallery-data.js?v=20260323c",
+      "assets/js/gallery-data.js?v=20260501b",
       "assets/js/gallery-page.js?v=20260323c"
     ],
     "calendar.html": [
       "assets/js/events-config.js?v=20260323c",
       "assets/js/event-page-paths.js",
-      "assets/js/gallery-data.js?v=20260323c",
-      "assets/js/calendar-page.js?v=20260323c"
+      "assets/js/gallery-data.js?v=20260501b",
+      "assets/js/calendar-page.js?v=20260501e"
     ],
     "donate.html": [],
     "vijnana-harate.html": [
@@ -329,7 +331,7 @@
       return !loadedScripts["assets/js/gallery-page.js?v=20260323c"];
     }
     if (routeKey === "calendar.html") {
-      return !loadedScripts["assets/js/calendar-page.js?v=20260323c"];
+      return !loadedScripts["assets/js/calendar-page.js?v=20260501e"];
     }
     if (routeKey === "vijnana-harate.html" ||
         routeKey === "vijnana-aranya.html" ||

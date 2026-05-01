@@ -10,7 +10,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2015-soafal-series-also-included-memorial-lecture-rohini-lecture",
     "pageUrl": "events/15-03-2015-soafal-series-also-included-memorial-lecture-rohini-lecture.html",
-    "poster": "",
+    "poster": "content/events/2015-soafal-series-also-included-memorial-lecture-rohini-lecture/gallery/image-01.png",
     "teaser": "15.03.2015 Sulabha K Kulkarni Materials Matter The series also included a Memorial Lecture, \"Rohini Godbole: A Tireless Champion for...",
     "homepageMatter": "15.03.2015 Sulabha K Kulkarni Materials Matter The series also included a Memorial Lecture, \"Rohini Godbole: A Tireless Champion for Science, and Women in Science\" by Ram Ramaswamy on"
   },
@@ -23,7 +23,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2022-vijnana-harate-malleswaram-session",
     "pageUrl": "events/08-07-2022-vijnana-harate-malleswaram-session.html",
-    "poster": "",
+    "poster": "content/events/2022-vijnana-harate-malleswaram-session/gallery/image-01.jpg",
     "teaser": "8th July 2022: The full-day program was a collaboration between the Academy Trust, Indian Academy of Sciences and Raman Research Institute....",
     "homepageMatter": "8th July 2022: The full-day program was a collaboration between the Academy Trust, Indian Academy of Sciences and Raman Research Institute. About 80 students from Bapu Composite Pre-University College, Yeshwanthpur, and..."
   },
@@ -36,7 +36,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2022-teacher-training-bengaluru-session",
     "pageUrl": "events/09-09-2022-teacher-training-bengaluru-session.html",
-    "poster": "",
+    "poster": "content/events/2022-teacher-training-bengaluru-session/gallery/image-01.jpg",
     "teaser": "9th September 2022: About 35 science teachers from various schools in and around Bengaluru participated in the full-day science and...",
     "homepageMatter": "9th September 2022: About 35 science teachers from various schools in and around Bengaluru participated in the full-day science and pedagogy workshop which was facilitated by our collaborators ScienceUtsav and..."
   },
@@ -49,7 +49,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2022-vijnana-harate-unknown-session",
     "pageUrl": "events/24-09-2022-vijnana-harate-unknown-session.html",
-    "poster": "",
+    "poster": "content/events/2022-vijnana-harate-unknown-session/gallery/image-01.jpg",
     "teaser": "24th September 2022: The first ever Kannada 'Vijnana Harate' was conducted in collaboration with Munnota Trust, an organisation that...",
     "homepageMatter": "24th September 2022: The first ever Kannada 'Vijnana Harate' was conducted in collaboration with Munnota Trust, an organisation that promotes science in the regional language. Around 50 people including students of a..."
   },
@@ -62,7 +62,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2022-vijnana-harate-sri-charan-vidyaniketan-and-srm-university-bengaluru-session",
     "pageUrl": "events/04-11-2022-vijnana-harate-sri-charan-vidyaniketan-and-srm-university-bengaluru-session.html",
-    "poster": "",
+    "poster": "content/events/2022-vijnana-harate-sri-charan-vidyaniketan-and-srm-university-bengaluru-session/gallery/image-01.jpg",
     "teaser": "4-6th November 2022: 3 days of programs were conducted by tAcT during the Academy's 88th Annual Meeting at SRM University, AP. The first...",
     "homepageMatter": "4-6th November 2022: 3 days of programs were conducted by tAcT during the Academy's 88th Annual Meeting at SRM University, AP. The first day's program was conducted by Madhusudan of Jawaharlal Nehru Planetarium,..."
   },
@@ -75,7 +75,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2022-vijnana-nataka-unknown-session",
     "pageUrl": "events/09-12-2022-vijnana-nataka-unknown-session.html",
-    "poster": "",
+    "poster": "content/events/2022-vijnana-nataka-unknown-session/gallery/image-01.jpg",
     "teaser": "9th December 2022: The first was on Nobel laureate Richard Feynman.",
     "homepageMatter": "9th December 2022: The first was on Nobel laureate Richard Feynman."
   },
@@ -88,7 +88,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2022-national-mathematics-day-mysuru-session",
     "pageUrl": "events/22-12-2022-national-mathematics-day-mysuru-session.html",
-    "poster": "",
+    "poster": "content/events/2022-national-mathematics-day-mysuru-session/gallery/image-01.jpg",
     "teaser": "22nd December 2022: tAcT collaborated with the Ramanujan Mathematics Club and the Department of Mathematics of Acharya Patshala College to...",
     "homepageMatter": "22nd December 2022: tAcT collaborated with the Ramanujan Mathematics Club and the Department of Mathematics of Acharya Patshala College to celebrate National Mathematics Day 2022. More than 100 participants from..."
   },
@@ -101,7 +101,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2022-vijnana-harate-unknown-session-1222",
     "pageUrl": "events/22-12-2022-vijnana-harate-unknown-session.html",
-    "poster": "",
+    "poster": "content/events/2022-vijnana-harate-unknown-session-1222/gallery/image-01.jpg",
     "teaser": "22nd December 2022: A Kannada 'Vijnana Harate' was conducted by Kollegal Sharma, former chief scientist of CFTRI, in collaboration with...",
     "homepageMatter": "22nd December 2022: A Kannada 'Vijnana Harate' was conducted by Kollegal Sharma, former chief scientist of CFTRI, in collaboration with Munnota Trust. Children from Kannada medium schools and general public participated..."
   },
@@ -114,7 +114,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2022-vijnana-nataka-unknown-session-1223",
     "pageUrl": "events/23-12-2022-vijnana-nataka-unknown-session.html",
-    "poster": "",
+    "poster": "content/events/2022-vijnana-nataka-unknown-session-1223/gallery/image-01.jpg",
     "teaser": "23rd December 2022: The second was on Nobel laureate Abdus Salam. Portraying both the characters was actor Yatheesh Kollegal, who also...",
     "homepageMatter": "23rd December 2022: The second was on Nobel laureate Abdus Salam. Portraying both the characters was actor Yatheesh Kollegal, who also directed the plays. Both plays were translated into Kannada by Shashidhar Dongre..."
   },
@@ -127,7 +127,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2023-vijnana-harate-bengaluru-session",
     "pageUrl": "events/06-01-2023-vijnana-harate-bengaluru-session.html",
-    "poster": "",
+    "poster": "content/events/2023-vijnana-harate-bengaluru-session/gallery/image-01.jpg",
     "teaser": "6-8 January 2023: tAcT participated in Science in Action, Bengaluru's biggest science fest, held at the BVJ Science Centre between 6-8...",
     "homepageMatter": "6-8 January 2023: tAcT participated in Science in Action, Bengaluru's biggest science fest, held at the BVJ Science Centre between 6-8 January 2023, featuring exhibitions, demonstrations and activities by organisations..."
   },
@@ -140,7 +140,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2023-vijnana-nataka-mysuru-session",
     "pageUrl": "events/21-01-2023-vijnana-nataka-mysuru-session.html",
-    "poster": "",
+    "poster": "content/events/2023-vijnana-nataka-mysuru-session/gallery/image-01.jpg",
     "teaser": "21st January 2023: The Kannada play 'Lilavathi' was held in the HN Kalakshetra auditorium of National College Jayanagar, in collaboration...",
     "homepageMatter": "21st January 2023: The Kannada play 'Lilavathi' was held in the HN Kalakshetra auditorium of National College Jayanagar, in collaboration with Arivu Trust, Mysuru. It is based on the life of Bhaskara II who lived during..."
   },
@@ -153,7 +153,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2023-national-science-day-unknown-session",
     "pageUrl": "events/21-02-2023-national-science-day-unknown-session.html",
-    "poster": "",
+    "poster": "content/events/2023-national-science-day-unknown-session/gallery/image-01.jpg",
     "teaser": "21st February 2023 - APS College of Arts & Science The day featured a colourful variety of science-themed activities including Quiz,...",
     "homepageMatter": "21st February 2023 - APS College of Arts & Science The day featured a colourful variety of science-themed activities including Quiz, Painting, Debate, Essay and Rangoli competitions. Materials scientist Prof. Arun..."
   },
@@ -166,7 +166,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2023-national-science-day-bengaluru-session",
     "pageUrl": "events/28-02-2023-national-science-day-bengaluru-session.html",
-    "poster": "",
+    "poster": "content/events/2023-national-science-day-bengaluru-session/gallery/image-01.jpg",
     "teaser": "28th February 2023 - Bangalore City University Organised in collaboration with the Academy, National Science Day was celebrated at...",
     "homepageMatter": "28th February 2023 - Bangalore City University Organised in collaboration with the Academy, National Science Day was celebrated at Bangalore University Central College campus, where Sir CV Raman made the official..."
   },
@@ -179,7 +179,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2023-teacher-training-goa-session",
     "pageUrl": "events/03-03-2023-teacher-training-goa-session.html",
-    "poster": "",
+    "poster": "content/events/2023-teacher-training-goa-session/gallery/image-01.jpg",
     "teaser": "3rd March 2023 - Indian Academy of Sciences Organised in collaboration with the Academy and Science Utsav, this full-day event was designed...",
     "homepageMatter": "3rd March 2023 - Indian Academy of Sciences Organised in collaboration with the Academy and Science Utsav, this full-day event was designed as a practical guide that science teachers could use on a regular basis...."
   },
@@ -192,7 +192,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2023-vijnana-aranya-government-college-srikakulam-session",
     "pageUrl": "events/13-04-2023-vijnana-aranya-government-college-srikakulam-session.html",
-    "poster": "",
+    "poster": "content/events/2023-vijnana-aranya-government-college-srikakulam-session/gallery/image-01.jpg",
     "teaser": "13-27th April 2023: The first Vijnana Aranya (remote and rural science outreach) program was organised in collaboration with the Centre for...",
     "homepageMatter": "13-27th April 2023: The first Vijnana Aranya (remote and rural science outreach) program was organised in collaboration with the Centre for Applied Sciences, Government Degree College (Men), Andhra Pradesh. With the..."
   },
@@ -205,7 +205,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2023-vijnana-aranya-unknown-session",
     "pageUrl": "events/13-04-2023-vijnana-aranya-unknown-session.html",
-    "poster": "",
+    "poster": "content/events/2023-vijnana-aranya-unknown-session/gallery/image-01.jpg",
     "teaser": "",
     "homepageMatter": ""
   },
@@ -218,7 +218,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2023-vijnana-harate-basavanagudi-session",
     "pageUrl": "events/29-04-2023-vijnana-harate-basavanagudi-session.html",
-    "poster": "",
+    "poster": "content/events/2023-vijnana-harate-basavanagudi-session/gallery/image-01.jpg",
     "teaser": "29th April 2023: Conducted by Academy Fellow Prof. KN Ganeshaiah on 29th April 2023 at National College Basavanagudi, where he illustrated...",
     "homepageMatter": "29th April 2023: Conducted by Academy Fellow Prof. KN Ganeshaiah on 29th April 2023 at National College Basavanagudi, where he illustrated the importance of curiosity and rigorous scientific study with demos and several..."
   },
@@ -231,7 +231,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2023-vijnana-harate-devanahalli-session",
     "pageUrl": "events/14-07-2023-vijnana-harate-devanahalli-session.html",
-    "poster": "",
+    "poster": "content/events/2023-vijnana-harate-devanahalli-session/gallery/image-01.jpg",
     "teaser": "14th July 2023: Conducted by Dr. Seetha Somasundaram, Program Director of ISRO's Space Science Program Office during the Mars Orbiter...",
     "homepageMatter": "14th July 2023: Conducted by Dr. Seetha Somasundaram, Program Director of ISRO's Space Science Program Office during the Mars Orbiter Mission, for high school students of Anantha Vidyanikethan, Devanahalli. Although the..."
   },
@@ -244,7 +244,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2023-vijnana-aranya-ponduru-session",
     "pageUrl": "events/15-07-2023-vijnana-aranya-ponduru-session.html",
-    "poster": "",
+    "poster": "content/events/2023-vijnana-aranya-ponduru-session/gallery/image-01.jpg",
     "teaser": "15th July 2023: Students of Systems Educational Institute, a Pre-University College in Ponduru, AP, took part in a day-long series of...",
     "homepageMatter": "15th July 2023: Students of Systems Educational Institute, a Pre-University College in Ponduru, AP, took part in a day-long series of activities which included aerodynamic modelling, volumetric analysis, and experiments..."
   },
@@ -257,7 +257,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2023-vijnana-harate-unknown-session",
     "pageUrl": "events/21-08-2023-vijnana-harate-unknown-session.html",
-    "poster": "",
+    "poster": "content/events/2023-vijnana-harate-unknown-session/gallery/image-01.jpg",
     "teaser": "21st August 2023: Students from 2 institutions, SBS PU College and Vishwa Vidyapeeth, participated in a full-day program that featured...",
     "homepageMatter": "21st August 2023: Students from 2 institutions, SBS PU College and Vishwa Vidyapeeth, participated in a full-day program that featured presentations by two eminent speakers. Prof. Jayarama Kadandale, Director of Centre..."
   },
@@ -270,7 +270,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session",
     "pageUrl": "events/26-08-2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session.html",
-    "poster": "",
+    "poster": "content/events/2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session/gallery/image-01.jpg",
     "teaser": "26th August 2023: Holy Cross College, Nagercoil The comprehensive one-day entrepreneurship workshop for women: Science for Sustainable...",
     "homepageMatter": "26th August 2023: Holy Cross College, Nagercoil The comprehensive one-day entrepreneurship workshop for women: Science for Sustainable Livelihood was conducted at Holy Cross College Nagercoil, and was sponsored by..."
   },
@@ -283,7 +283,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2023-vijnana-harate-unknown-session-0830",
     "pageUrl": "events/30-08-2023-vijnana-harate-unknown-session.html",
-    "poster": "",
+    "poster": "content/events/2023-vijnana-harate-unknown-session-0830/gallery/image-01.jpg",
     "teaser": "30th August 2023: Organised in collaboration with KSCST, for high school students of Aditi Public school the day featured demonstration of...",
     "homepageMatter": "30th August 2023: Organised in collaboration with KSCST, for high school students of Aditi Public school the day featured demonstration of the Scientific Method by veteran science communicator Madhusudhan of JN..."
   },
@@ -296,7 +296,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2023-vijnana-harate-mysuru-session",
     "pageUrl": "events/09-09-2023-vijnana-harate-mysuru-session.html",
-    "poster": "",
+    "poster": "content/events/2023-vijnana-harate-mysuru-session/gallery/image-01.jpg",
     "teaser": "9th September 2023: Dr. S. Seetha, former Director, Space Science Program, ISRO, conducted two harates at two venues in Mysuru. The first...",
     "homepageMatter": "9th September 2023: Dr. S. Seetha, former Director, Space Science Program, ISRO, conducted two harates at two venues in Mysuru. The first was at Vanitha Sadana, a school for girls from underprivileged communities, where..."
   },
@@ -309,7 +309,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2023-teacher-training-basavanagudi-session",
     "pageUrl": "events/02-11-2023-teacher-training-basavanagudi-session.html",
-    "poster": "",
+    "poster": "content/events/2023-teacher-training-basavanagudi-session/gallery/image-01.jpg",
     "teaser": "2nd November 2023 - BITS Pilani Goa As part of the Joint Science Academies' Education Panel (SEP) Mini-Symposium for invited teachers held...",
     "homepageMatter": "2nd November 2023 - BITS Pilani Goa As part of the Joint Science Academies' Education Panel (SEP) Mini-Symposium for invited teachers held during the Academy's 89th Annual Meeting at BITS Pilani - K K Birla Goa Campus,..."
   },
@@ -322,7 +322,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session",
     "pageUrl": "events/16-11-2023-vijnana-harate-siddaganga-public-school-unknown-session.html",
-    "poster": "",
+    "poster": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-01.jpg",
     "teaser": "16th November 2023: Prof. Vikram Jayaram, who conducted the harate for high school students of Siddaganga Public School, started with Lord...",
     "homepageMatter": "16th November 2023: Prof. Vikram Jayaram, who conducted the harate for high school students of Siddaganga Public School, started with Lord Rayleigh's century-old experiment and explained how that led to the invention of..."
   },
@@ -335,7 +335,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session",
     "pageUrl": "events/18-12-2023-national-mathematics-day-vishwa-yelahanka-session.html",
-    "poster": "",
+    "poster": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-01.jpg",
     "teaser": "Ganitha Mela 2023, 18 - 22 December 2023 (Monday to Friday), held at Vishwa Vidyapeeth, Yelahanka Organized jointly by tAcT, Vishwa...",
     "homepageMatter": "Ganitha Mela 2023, 18 - 22 December 2023 (Monday to Friday), held at Vishwa Vidyapeeth, Yelahanka Organized jointly by tAcT, Vishwa Vidyapeeth School, Seed2Sapling Education; and supported by Karnataka State Council for..."
   },
@@ -348,7 +348,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2023-national-mathematics-day-bengaluru-session",
     "pageUrl": "events/22-12-2023-national-mathematics-day-bengaluru-session.html",
-    "poster": "",
+    "poster": "content/events/2023-national-mathematics-day-bengaluru-session/gallery/image-01.jpg",
     "teaser": "22 December 2023 - Acharya Patshala College tAcT also collaborated with the Ramanujan Mathematics Club and the Department of Mathematics of...",
     "homepageMatter": "22 December 2023 - Acharya Patshala College tAcT also collaborated with the Ramanujan Mathematics Club and the Department of Mathematics of Acharya Patshala College to celebrate National Mathematics Day 2023. More than..."
   },
@@ -361,7 +361,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-lecture",
     "pageUrl": "events/20-04-2024-soafal-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-lecture/gallery/image-01.jpg",
     "teaser": "20.04.2024 Shikha Varma Excitements in Nanotechnology",
     "homepageMatter": "20.04.2024 Shikha Varma Excitements in Nanotechnology"
   },
@@ -374,7 +374,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-hejmadi-lecture",
     "pageUrl": "events/11-05-2024-soafal-hejmadi-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-hejmadi-lecture/gallery/image-01.png",
     "teaser": "11.05. 2024 Priyambada Mohanty The Amazing World of Life Science Hejmadi",
     "homepageMatter": "11.05. 2024 Priyambada Mohanty The Amazing World of Life Science Hejmadi"
   },
@@ -387,7 +387,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-lecture-0601",
     "pageUrl": "events/01-06-2024-soafal-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-lecture-0601/gallery/image-01.png",
     "teaser": "01.06. 2024 Pushpa Khare Understanding the Universe",
     "homepageMatter": "01.06. 2024 Pushpa Khare Understanding the Universe"
   },
@@ -400,7 +400,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-lecture-0608",
     "pageUrl": "events/08-06-2024-soafal-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-lecture-0608/gallery/image-01.png",
     "teaser": "08.06. 2024 Prajval Shastri Meandering into Astrophysics",
     "homepageMatter": "08.06. 2024 Prajval Shastri Meandering into Astrophysics"
   },
@@ -413,7 +413,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-lecture-0706",
     "pageUrl": "events/06-07-2024-soafal-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-lecture-0706/gallery/image-01.jpeg",
     "teaser": "06.07. 2024 Sujatha Ramdorai The Art of Math",
     "homepageMatter": "06.07. 2024 Sujatha Ramdorai The Art of Math"
   },
@@ -426,7 +426,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-lecture-0713",
     "pageUrl": "events/13-07-2024-soafal-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-lecture-0713/gallery/image-01.jpeg",
     "teaser": "13.07. 2024 Tanusri Saha-Dasgupta Women in Science: A Braided Trail",
     "homepageMatter": "13.07. 2024 Tanusri Saha-Dasgupta Women in Science: A Braided Trail"
   },
@@ -439,7 +439,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-vijnana-nataka-mysuru-session",
     "pageUrl": "events/20-07-2024-vijnana-nataka-mysuru-session.html",
-    "poster": "",
+    "poster": "content/events/2024-vijnana-nataka-mysuru-session/gallery/image-01.jpg",
     "teaser": "20-23 July 2024 in partnership with Kutuhali, Parivarthana Ranga Samaja, Arivu Trust and Kalasuruchi Mysuru, played to house-full audiences...",
     "homepageMatter": "20-23 July 2024 in partnership with Kutuhali, Parivarthana Ranga Samaja, Arivu Trust and Kalasuruchi Mysuru, played to house-full audiences composed of students and the general public. Day 1: Vignana Vikasada Vaada, a..."
   },
@@ -452,7 +452,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-vijnana-harate-anantha-vidyaniketan-unknown-session",
     "pageUrl": "events/23-07-2024-vijnana-harate-anantha-vidyaniketan-unknown-session.html",
-    "poster": "",
+    "poster": "content/events/2024-vijnana-harate-anantha-vidyaniketan-unknown-session/gallery/image-01.jpg",
     "teaser": "23rd July 2024: With the recent discoveries made by the James Webb telescope and ISRO's string of successful missions, interest in...",
     "homepageMatter": "23rd July 2024: With the recent discoveries made by the James Webb telescope and ISRO's string of successful missions, interest in astronomy is at a peak. Prof Ram Sagar, who conducted the harate with several..."
   },
@@ -465,7 +465,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-lecture-0727",
     "pageUrl": "events/27-07-2024-soafal-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-lecture-0727/gallery/image-01.jpg",
     "teaser": "27.07.2024 Shobhana Narasimhan My Journey as a \"Materials Girl\"",
     "homepageMatter": "27.07.2024 Shobhana Narasimhan My Journey as a \"Materials Girl\""
   },
@@ -478,7 +478,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-vijnana-harate-unknown-session",
     "pageUrl": "events/01-08-2024-vijnana-harate-unknown-session.html",
-    "poster": "",
+    "poster": "content/events/2024-vijnana-harate-unknown-session/gallery/image-01.jpg",
     "teaser": "1st Aug 2024: From the serendipitous discovery of detergents, to smart memory- materials that help prevent heart attacks, Prof Vikram...",
     "homepageMatter": "1st Aug 2024: From the serendipitous discovery of detergents, to smart memory- materials that help prevent heart attacks, Prof Vikram Jayaram revealed the impact of materials engineering research on everyday things we..."
   },
@@ -491,7 +491,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-sciences-lecture",
     "pageUrl": "events/10-08-2024-soafal-sciences-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-sciences-lecture/gallery/image-01.jpg",
     "teaser": "10.08. 2024 Bindu A Bambah Factors Affecting Gender Equality in the Sciences",
     "homepageMatter": "10.08. 2024 Bindu A Bambah Factors Affecting Gender Equality in the Sciences"
   },
@@ -504,7 +504,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-lecture-0817",
     "pageUrl": "events/17-08-2024-soafal-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-lecture-0817/gallery/image-01.png",
     "teaser": "17.08.2024 Supurna Sinha Down Memory Lane: A Scientific Journey.",
     "homepageMatter": "17.08.2024 Supurna Sinha Down Memory Lane: A Scientific Journey."
   },
@@ -517,7 +517,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-vijnana-harate-vanita-sadan-mysuru-session",
     "pageUrl": "events/26-08-2024-vijnana-harate-vanita-sadan-mysuru-session.html",
-    "poster": "",
+    "poster": "content/events/2024-vijnana-harate-vanita-sadan-mysuru-session/gallery/image-01.jpg",
     "teaser": "26th Aug 2024: In the first joint program with JNCASR, students of Vanita Sadan, a school for economically deprived children in Mysuru,...",
     "homepageMatter": "26th Aug 2024: In the first joint program with JNCASR, students of Vanita Sadan, a school for economically deprived children in Mysuru, spent a curiosity-fuelled day in the JNCASR campus and labs guided by Vinayak..."
   },
@@ -530,7 +530,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-vijnana-harate-mes-kishore-kendra-bengaluru-session",
     "pageUrl": "events/28-08-2024-vijnana-harate-mes-kishore-kendra-bengaluru-session.html",
-    "poster": "",
+    "poster": "content/events/2024-vijnana-harate-mes-kishore-kendra-bengaluru-session/gallery/image-01.jpg",
     "teaser": "28th Aug 2024: In the second joint program, students of MES Kishore Kendra, Bengaluru, were treated to a series of highly engaging...",
     "homepageMatter": "28th Aug 2024: In the second joint program, students of MES Kishore Kendra, Bengaluru, were treated to a series of highly engaging experiments and activities by Vinayak Pattar and his team. They also visited the HIV Lab..."
   },
@@ -543,7 +543,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-vijnana-aranya-mc-thalalu-govt-school-saragur-session",
     "pageUrl": "events/13-09-2024-vijnana-aranya-mc-thalalu-govt-school-saragur-session.html",
-    "poster": "",
+    "poster": "content/events/2024-vijnana-aranya-mc-thalalu-govt-school-saragur-session/gallery/image-01.jpg",
     "teaser": "13th Sep 2024: The first program was conducted at MC Thalalu Govt School, Saragur, where primary students participated in science demos and...",
     "homepageMatter": "13th Sep 2024: The first program was conducted at MC Thalalu Govt School, Saragur, where primary students participated in science demos and a puppet show on ecology by award-winning science educator Subbulakshmi. The..."
   },
@@ -556,7 +556,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-trajectory-lab-lecture",
     "pageUrl": "events/14-09-2024-soafal-trajectory-lab-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-trajectory-lab-lecture/gallery/image-01.png",
     "teaser": "14.09.2024 Vidita Vaidya Life Experiences Shape the Brain and the Trajectory of a Lab",
     "homepageMatter": "14.09.2024 Vidita Vaidya Life Experiences Shape the Brain and the Trajectory of a Lab"
   },
@@ -569,7 +569,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-journey-lecture",
     "pageUrl": "events/21-09-2024-soafal-journey-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-journey-lecture/gallery/image-01.png",
     "teaser": "21.09.2024 Annapurni Subramaniam Astronomy from Ground and Space: My Journey",
     "homepageMatter": "21.09.2024 Annapurni Subramaniam Astronomy from Ground and Space: My Journey"
   },
@@ -582,7 +582,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-vijnana-harate-unknown-session-0923",
     "pageUrl": "events/23-09-2024-vijnana-harate-unknown-session.html",
-    "poster": "",
+    "poster": "content/events/2024-vijnana-harate-unknown-session-0923/gallery/image-01.jpg",
     "teaser": "23rd Sep 2024: Students from two institutions, Sri Bandeshwara Swamy Pre- university College and Vishwa Vidyapeeth, participated in a...",
     "homepageMatter": "23rd Sep 2024: Students from two institutions, Sri Bandeshwara Swamy Pre- university College and Vishwa Vidyapeeth, participated in a Vijnana Harate conducted by reputed maths educator VSS Sastry, who engaged them in..."
   },
@@ -595,7 +595,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-microscopic-world-lecture",
     "pageUrl": "events/28-09-2024-soafal-microscopic-world-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-microscopic-world-lecture/gallery/image-01.jpeg",
     "teaser": "28.09.2024 Qudsia Tahseen Nematodes Unveiled: A Glimpse into their Microscopic World.",
     "homepageMatter": "28.09.2024 Qudsia Tahseen Nematodes Unveiled: A Glimpse into their Microscopic World."
   },
@@ -608,7 +608,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-journey-lecture-1005",
     "pageUrl": "events/05-10-2024-soafal-journey-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-journey-lecture-1005/gallery/image-01.jpg",
     "teaser": "05.10.2024 Srubabati Goswami The Quest for the Elusive Neutrino: The Nobel Journey",
     "homepageMatter": "05.10.2024 Srubabati Goswami The Quest for the Elusive Neutrino: The Nobel Journey"
   },
@@ -621,7 +621,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-field-space-weather-lecture",
     "pageUrl": "events/19-10-2024-soafal-field-space-weather-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-field-space-weather-lecture/gallery/image-01.jpg",
     "teaser": "19.10.2024 Archana Bhattacharyya Exploring the Links between Earth's Magnetic Field and Space Weather",
     "homepageMatter": "19.10.2024 Archana Bhattacharyya Exploring the Links between Earth's Magnetic Field and Space Weather"
   },
@@ -634,7 +634,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-lecture-1102",
     "pageUrl": "events/02-11-2024-soafal-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-lecture-1102/gallery/image-01.jpg",
     "teaser": "02/11/2024 Usha Vijayaraghavan Codes for the Making of a Rice Flowering Stem",
     "homepageMatter": "02/11/2024 Usha Vijayaraghavan Codes for the Making of a Rice Flowering Stem"
   },
@@ -647,7 +647,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-vijnana-harate-bhubaneswar-session",
     "pageUrl": "events/08-11-2024-vijnana-harate-bhubaneswar-session.html",
-    "poster": "",
+    "poster": "content/events/2024-vijnana-harate-bhubaneswar-session/gallery/image-01.jpg",
     "teaser": "8th Nov 2024: Students from five regional schools attended a full-day program organised jointly by tAcT and the outreach team of NISER...",
     "homepageMatter": "8th Nov 2024: Students from five regional schools attended a full-day program organised jointly by tAcT and the outreach team of NISER Bhubaneswar, held during the Academy's 90th Annual Meeting. Vijnana harate sessions..."
   },
@@ -660,7 +660,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-health-disease-lecture",
     "pageUrl": "events/16-11-2024-soafal-health-disease-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-health-disease-lecture/gallery/image-01.jpg",
     "teaser": "16/11/2024 BK Thelma Genome Treasure Hunt and Leads for Human Health and Disease",
     "homepageMatter": "16/11/2024 BK Thelma Genome Treasure Hunt and Leads for Human Health and Disease"
   },
@@ -673,7 +673,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-young-kalam-science-fest-bengaluru",
     "pageUrl": "events/29-11-2024-young-kalam-science-fest-bengaluru.html",
-    "poster": "",
+    "poster": "content/events/2024-young-kalam-science-fest-bengaluru/gallery/image-01.jpg",
     "teaser": "29th November 2024: The Academy and tAcT hosted the 2024 Young Kalam Science Fest organised by HCL Foundation in the Academy auditorium and...",
     "homepageMatter": "29th November 2024: The Academy and tAcT hosted the 2024 Young Kalam Science Fest organised by HCL Foundation in the Academy auditorium and RRI Library and campus. School students and teachers from several Government..."
   },
@@ -686,7 +686,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-30th-november-2024-in-honour-rohini-lecture",
     "pageUrl": "events/30-11-2024-soafal-30th-november-2024-in-honour-rohini-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-30th-november-2024-in-honour-rohini-lecture/gallery/image-01.jpg",
     "teaser": "30th November 2024, in honour of Rohini Godbole. The collection of lectures were later published by SoA University in a book, SOAFAL Mala...",
     "homepageMatter": "30th November 2024, in honour of Rohini Godbole. The collection of lectures were later published by SoA University in a book, SOAFAL Mala Vol IV, for distribution among libraries and the general public."
   },
@@ -699,7 +699,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-in-silico-perspective-lecture",
     "pageUrl": "events/14-12-2024-soafal-in-silico-perspective-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-in-silico-perspective-lecture/gallery/image-01.png",
     "teaser": "14.12.2024 Manju Bansal From Stabilizing Collagen to Destabilizing DNA: an in-silico Perspective",
     "homepageMatter": "14.12.2024 Manju Bansal From Stabilizing Collagen to Destabilizing DNA: an in-silico Perspective"
   },
@@ -712,7 +712,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-equations-lecture",
     "pageUrl": "events/21-12-2024-soafal-equations-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-equations-lecture/gallery/image-01.png",
     "teaser": "21.12.2024 Mythily Ramaswamy My Journey in the World of Differential Equations",
     "homepageMatter": "21.12.2024 Mythily Ramaswamy My Journey in the World of Differential Equations"
   },
@@ -725,7 +725,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-national-mathematics-day-unknown-session",
     "pageUrl": "events/24-12-2024-national-mathematics-day-unknown-session.html",
-    "poster": "",
+    "poster": "content/events/2024-national-mathematics-day-unknown-session/gallery/image-01.jpg",
     "teaser": "24 December 2024. More than 100 participants from different colleges attended the event which sought to enhance students' mathematical...",
     "homepageMatter": "24 December 2024. More than 100 participants from different colleges attended the event which sought to enhance students' mathematical reasoning and problem-solving abilities, with the long-tern view of inspiring..."
   },
@@ -738,7 +738,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2024-soafal-lecture-1228",
     "pageUrl": "events/28-12-2024-soafal-lecture.html",
-    "poster": "",
+    "poster": "content/events/2024-soafal-lecture-1228/gallery/image-01.png",
     "teaser": "28.12.2024 Chandrima Saha The Joy of Being a Scientist",
     "homepageMatter": "28.12.2024 Chandrima Saha The Joy of Being a Scientist"
   },
@@ -751,7 +751,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2025-vijnana-harate-basavanagudi-session",
     "pageUrl": "events/03-01-2025-vijnana-harate-basavanagudi-session.html",
-    "poster": "",
+    "poster": "content/events/2025-vijnana-harate-basavanagudi-session/gallery/image-01.jpg",
     "teaser": "3rd January 2025: tAcT participated in the 'Supernova 2025' event organised at National College Basavanagudi, where Madhusudhan of...",
     "homepageMatter": "3rd January 2025: tAcT participated in the 'Supernova 2025' event organised at National College Basavanagudi, where Madhusudhan of Jawaharlal Nehru Planetarium conducted a Vijnana Harate on experimental Physics."
   },
@@ -764,7 +764,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2025-vijnana-harate-bel-bengaluru-session",
     "pageUrl": "events/03-01-2025-vijnana-harate-bel-bengaluru-session.html",
-    "poster": "",
+    "poster": "content/events/2025-vijnana-harate-bel-bengaluru-session/gallery/image-01.jpg",
     "teaser": "3rd January 2025: The Academy and tAcT, in association with Karnataka Jnana Vijnana Samiti Bengaluru Chapter, organised a Vijnana Harate...",
     "homepageMatter": "3rd January 2025: The Academy and tAcT, in association with Karnataka Jnana Vijnana Samiti Bengaluru Chapter, organised a Vijnana Harate for high school students of BEL Public School. Conducted by veteran maths and..."
   },
@@ -777,7 +777,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2025-soafal-causality-lecture",
     "pageUrl": "events/11-01-2025-soafal-causality-lecture.html",
-    "poster": "",
+    "poster": "content/events/2025-soafal-causality-lecture/gallery/image-01.jpg",
     "teaser": "11.01.2025 Sumati Surya Light, Order-Action! Reconstructing Spacetime from Causality",
     "homepageMatter": "11.01.2025 Sumati Surya Light, Order-Action! Reconstructing Spacetime from Causality"
   },
@@ -790,7 +790,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2025-soafal-my-evolutionary-journey-lecture",
     "pageUrl": "events/18-01-2025-soafal-my-evolutionary-journey-lecture.html",
-    "poster": "",
+    "poster": "content/events/2025-soafal-my-evolutionary-journey-lecture/gallery/image-01.jpg",
     "teaser": "18.01.2025 Anuradha Lohia From Entamoeba Histolytica to Homo Sapiens: My Evolutionary Journey",
     "homepageMatter": "18.01.2025 Anuradha Lohia From Entamoeba Histolytica to Homo Sapiens: My Evolutionary Journey"
   },
@@ -803,7 +803,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2025-vijnana-aranya-om-kanakapura-session",
     "pageUrl": "events/02-02-2025-vijnana-aranya-om-kanakapura-session.html",
-    "poster": "",
+    "poster": "content/events/2025-vijnana-aranya-om-kanakapura-session/gallery/image-01.jpg",
     "teaser": "2nd February 2025: The next Vijnana Aranya program was conducted at Om Shantidhama Veda Gurukula, Kanakapura, inside the Mekedatu forest...",
     "homepageMatter": "2nd February 2025: The next Vijnana Aranya program was conducted at Om Shantidhama Veda Gurukula, Kanakapura, inside the Mekedatu forest reserve. The morning session featured astronomical observation of sunspots with..."
   },
@@ -816,7 +816,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2025-vijnana-harate-kallankuppe-high-school-kanakapura-session",
     "pageUrl": "events/07-02-2025-vijnana-harate-kallankuppe-high-school-kanakapura-session.html",
-    "poster": "",
+    "poster": "content/events/2025-vijnana-harate-kallankuppe-high-school-kanakapura-session/gallery/image-01.jpg",
     "teaser": "7th February 2025: The Academy and tAcT, in association with COSOL, organised a Vijnana Harate for high school students of Kallankuppe High...",
     "homepageMatter": "7th February 2025: The Academy and tAcT, in association with COSOL, organised a Vijnana Harate for high school students of Kallankuppe High School, Kanakapura. Frog expert KV Gururaja, Manipal Academy of Higher..."
   },
@@ -829,7 +829,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2025-soafal-intelligence-healthcare-lecture",
     "pageUrl": "events/08-02-2025-soafal-intelligence-healthcare-lecture.html",
-    "poster": "",
+    "poster": "content/events/2025-soafal-intelligence-healthcare-lecture/gallery/image-01.jpg",
     "teaser": "08.02.2025 Sushmita Mitra Life is a Journey: Harnessing Artificial Intelligence for Healthcare",
     "homepageMatter": "08.02.2025 Sushmita Mitra Life is a Journey: Harnessing Artificial Intelligence for Healthcare"
   },
@@ -842,7 +842,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2025-women-and-girls-in-science-bengaluru",
     "pageUrl": "events/11-02-2025-women-and-girls-in-science-bengaluru.html",
-    "poster": "",
+    "poster": "content/events/2025-women-and-girls-in-science-bengaluru/gallery/image-01.jpg",
     "teaser": "11th February 2025 tAcT, in collaboration with the Academy, its Women-in-Science Panel, the Inter- Academy's Women-in-Science initiative...",
     "homepageMatter": "11th February 2025 tAcT, in collaboration with the Academy, its Women-in-Science Panel, the Inter- Academy's Women-in-Science initiative (IAP-WiSTEMM), and in association with Karnataka Jnana Vijnana Samiti Bengaluru..."
   },
@@ -855,7 +855,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2025-national-science-day-bapu-high-school-bengaluru-session",
     "pageUrl": "events/28-02-2025-national-science-day-bapu-high-school-bengaluru-session.html",
-    "poster": "",
+    "poster": "content/events/2025-national-science-day-bapu-high-school-bengaluru-session/gallery/image-01.jpg",
     "teaser": "28th February every year to commemorate the discovery of the Raman Effect. This year's event was celebrated by the Academy and tAcT, in...",
     "homepageMatter": "28th February every year to commemorate the discovery of the Raman Effect. This year's event was celebrated by the Academy and tAcT, in association with Karnataka Jnana Vijnana Samiti Bengaluru Chapter. The full-day..."
   },
@@ -868,7 +868,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2025-soafal-lecture",
     "pageUrl": "events/01-03-2025-soafal-lecture.html",
-    "poster": "",
+    "poster": "content/events/2025-soafal-lecture/gallery/image-01.jpg",
     "teaser": "01.03.2025 Sulabha Pathak Taking the long way home",
     "homepageMatter": "01.03.2025 Sulabha Pathak Taking the long way home"
   },
@@ -881,7 +881,7 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2025-vijnana-aranya-mysuru-session",
     "pageUrl": "events/01-03-2025-vijnana-aranya-mysuru-session.html",
-    "poster": "",
+    "poster": "content/events/2025-vijnana-aranya-mysuru-session/gallery/image-01.jpg",
     "teaser": "1st March 2025: Extending the National Science Day program into a remote outreach, tAcT organised the third Vijnana Aranya at Dr. APJ Abdul...",
     "homepageMatter": "1st March 2025: Extending the National Science Day program into a remote outreach, tAcT organised the third Vijnana Aranya at Dr. APJ Abdul Kalam Residential School, Doddakaanya village near Nanjangud. More than a..."
   },
@@ -894,99 +894,47 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2025-soafal-biological-network-level-multidisciplinary-approach-lecture",
     "pageUrl": "events/08-03-2025-soafal-biological-network-level-multidisciplinary-approach-lecture.html",
-    "poster": "",
+    "poster": "content/events/2025-soafal-biological-network-level-multidisciplinary-approach-lecture/gallery/image-01.jpg",
     "teaser": "08.03.2025 Saraswathi Vishveshwara Study of Protein Structures from Atomic Level to Biological Network Level: A Multidisciplinary Approach",
     "homepageMatter": "08.03.2025 Saraswathi Vishveshwara Study of Protein Structures from Atomic Level to Biological Network Level: A Multidisciplinary Approach"
   },
   {
-    "slug": "2026-demo-past-event",
-    "title": "Demo Past Event (Sample)",
-    "date": "2026-01-12",
-    "time": "2:00 PM - 4:00 PM",
-    "location": "Hubballi",
-    "status": "completed",
-    "folder": "content/events/2026-demo-past-event",
-    "pageUrl": "events/12-01-2026-demo-past-event-sample.html",
-    "poster": "content/events/2026-demo-past-event/poster.svg",
-    "teaser": "Sample past event added for previewing the homepage past-events card layout.",
-    "homepageMatter": "This is a demo entry with a lightweight placeholder poster so you can verify how two past event cards look."
-  },
-  {
-    "slug": "2026-nataka-community-stage",
-    "title": "Vijnana Nataka Community Performance",
-    "date": "2026-02-18",
-    "time": "5:00 PM - 7:00 PM",
-    "location": "Tumakuru",
-    "status": "completed",
-    "folder": "content/events/2026-nataka-community-stage",
-    "pageUrl": "events/18-02-2026-vijnana-nataka-community-performance.html",
-    "poster": "content/events/2026-nataka-community-stage/poster.jpg",
-    "teaser": "Science theatre performance followed by open audience discussion.",
-    "homepageMatter": "A community evening of science storytelling through theatre, music, and open audience conversation."
-  },
-  {
-    "slug": "2026-harate-pu-college",
-    "title": "Vijnana Harate at Government PU College",
-    "date": "2026-03-22",
-    "time": "10:30 AM - 1:00 PM",
+    "slug": "2026-community-science-meetup-bengaluru",
+    "title": "Community Science Meetup",
+    "date": "2026-05-20",
+    "time": "4:00 PM - 6:00 PM",
     "location": "Bengaluru",
     "status": "scheduled",
-    "folder": "content/events/2026-harate-pu-college",
-    "pageUrl": "events/22-03-2026-vijnana-harate-at-government-pu-college.html",
-    "poster": "content/events/2026-harate-pu-college/poster.jpg",
-    "teaser": "Interactive science conversations and simple experiment stations for students and teachers.",
-    "homepageMatter": "Join us for a high-energy Harate session with scientists and educators. Students will explore hands-on demos and open Q&A circles."
+    "folder": "content/events/2026-community-science-meetup-bengaluru",
+    "pageUrl": "events/20-05-2026-community-science-meetup.html",
+    "poster": "content/events/2026-community-science-meetup-bengaluru/poster.svg",
+    "teaser": "An open community meetup with short talks, discussion circles, and science activity tables.",
+    "homepageMatter": "Join us for an early evening community science meetup featuring short talks, informal conversations with volunteers, and activity tables for students, teachers, and parents."
   },
   {
-    "slug": "2026-03-26-hi-hihihihihhi",
-    "title": "hi hihihihihhi",
-    "date": "2026-03-26",
-    "time": "10:00 AM - 1:00 PM",
-    "location": "rayachoty",
+    "slug": "2026-hands-on-physics-workshop-hubballi",
+    "title": "Hands-on Physics Workshop",
+    "date": "2026-05-20",
+    "time": "2:00 PM - 5:00 PM",
+    "location": "Hubballi",
     "status": "scheduled",
-    "folder": "content/events/2026-03-26-hi-hihihihihhi",
-    "pageUrl": "events/26-03-2026-hi-hihihihihhi.html",
-    "poster": "content/events/2026-03-26-hi-hihihihihhi/poster.png",
-    "teaser": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-    "homepageMatter": "hihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihi"
+    "folder": "content/events/2026-hands-on-physics-workshop-hubballi",
+    "pageUrl": "events/20-05-2026-hands-on-physics-workshop.html",
+    "poster": "content/events/2026-hands-on-physics-workshop-hubballi/poster.svg",
+    "teaser": "A practical workshop with simple demonstrations and small group activities around everyday physics.",
+    "homepageMatter": "This hands-on workshop offers a relaxed afternoon of demonstrations and small group activities built around motion, light, and everyday physics concepts for school students and educators."
   },
   {
-    "slug": "2026-03-28-hi-nitish",
-    "title": "hi nitish",
-    "date": "2026-03-28",
-    "time": "10:00 AM - 1:00 PM",
-    "location": "bandar",
-    "status": "scheduled",
-    "folder": "content/events/2026-03-28-hi-nitish",
-    "pageUrl": "events/28-03-2026-hi-nitish.html",
-    "poster": "content/events/2026-03-28-hi-nitish/poster.jpg",
-    "teaser": "nithish",
-    "homepageMatter": "nithish"
-  },
-  {
-    "slug": "2026-03-29-hi-hihihihihhi",
-    "title": "hi hihihihihhi",
-    "date": "2026-03-29",
-    "time": "6:00 AM - 6:30 AM",
-    "location": "hyd",
-    "status": "scheduled",
-    "folder": "content/events/2026-03-29-hi-hihihihihhi",
-    "pageUrl": "events/29-03-2026-hi-hihihihihhi.html",
-    "poster": "content/events/2026-03-29-hi-hihihihihhi/poster.jpg",
-    "teaser": "",
-    "homepageMatter": "Use the same PIN-protected panel to publish events or add gallery collections without manual code edits.\nUse the same PIN-protected panel to publish events or add gallery collections without manual code edits.Use the same PIN-protected panel to publish events or add gallery collections without manual code edits."
-  },
-  {
-    "slug": "2026-yuvati-mentorship-day",
-    "title": "Vijnana Yuvati Mentorship Day",
-    "date": "2026-04-10",
-    "time": "9:30 AM - 4:00 PM",
+    "slug": "2026-stem-mentor-circle-mysuru",
+    "title": "STEM Mentor Circle",
+    "date": "2026-05-20",
+    "time": "10:30 AM - 12:30 PM",
     "location": "Mysuru",
     "status": "scheduled",
-    "folder": "content/events/2026-yuvati-mentorship-day",
-    "pageUrl": "events/10-04-2026-vijnana-yuvati-mentorship-day.html",
-    "poster": "content/events/2026-yuvati-mentorship-day/poster.jpg",
-    "teaser": "Mentor circles, scholarship clinic, and practical sessions on STEM pathways.",
-    "homepageMatter": "A full-day programme focused on young women in STEM, with mentor hours, application guidance, and practical skilling workshops."
+    "folder": "content/events/2026-stem-mentor-circle-mysuru",
+    "pageUrl": "events/20-05-2026-stem-mentor-circle.html",
+    "poster": "content/events/2026-stem-mentor-circle-mysuru/poster.svg",
+    "teaser": "A mentor circle for students with guided Q and A on study paths, projects, and science careers.",
+    "homepageMatter": "This mentor circle brings together students and facilitators for a practical session on study choices, small project ideas, and ways to stay engaged with science beyond the classroom."
   }
 ];

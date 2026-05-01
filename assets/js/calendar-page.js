@@ -1,8 +1,13 @@
 (function () {
+  var CALENDAR_BATCH_SIZE = 12;
+
   var state = {
     entries: [],
     dayMap: {},
-    currentMonth: startOfMonth(new Date()),
+    sortedDateKeys: [],
+    renderedCount: 0,
+    lastRenderedMonthKey: "",
+    scrollObserver: null,
     previewTimers: [],
     activeDateItems: [],
     detailOpen: false,
@@ -10,20 +15,9 @@
     eventsBound: false
   };
 
-  function startOfMonth(value) {
-    return new Date(value.getFullYear(), value.getMonth(), 1);
-  }
-
   function parseDate(value) {
     var parsed = new Date(String(value || "") + "T00:00:00");
     return isNaN(parsed.getTime()) ? null : parsed;
-  }
-
-  function formatMonth(value) {
-    return value.toLocaleDateString("en-IN", {
-      month: "long",
-      year: "numeric"
-    });
   }
 
   function formatDate(value) {
@@ -32,6 +26,21 @@
     return parsed.toLocaleDateString("en-IN", {
       day: "numeric",
       month: "short",
+      year: "numeric"
+    });
+  }
+
+  function monthKeyFor(dateKey) {
+    var parsed = parseDate(dateKey);
+    if (!parsed) return "";
+    return parsed.getFullYear() + "-" + String(parsed.getMonth() + 1).padStart(2, "0");
+  }
+
+  function monthLabelFor(dateKey) {
+    var parsed = parseDate(dateKey);
+    if (!parsed) return "";
+    return parsed.toLocaleDateString("en-IN", {
+      month: "long",
       year: "numeric"
     });
   }
@@ -81,21 +90,66 @@
     state.previewTimers = [];
   }
 
-  function buildDayCell(dayNumber, isCurrentMonth, dateKey, items) {
+  function disconnectScrollObserver() {
+    if (!state.scrollObserver) return;
+    state.scrollObserver.disconnect();
+    state.scrollObserver = null;
+  }
+
+  function uniqueTextValues(items, key) {
+    var seen = {};
+    var values = [];
+
+    items.forEach(function (item) {
+      var value = String(item && item[key] || "").trim();
+      var normalized = value.toLowerCase();
+      if (!value || seen[normalized]) return;
+      seen[normalized] = true;
+      values.push(value);
+    });
+
+    return values;
+  }
+
+  function eventCountLabel(items) {
+    var eventCount = uniqueTextValues(items, "title").length || items.length;
+    return eventCount + " event" + (eventCount === 1 ? "" : "s");
+  }
+
+  function imageCountLabel(items) {
+    return items.length + " image" + (items.length === 1 ? "" : "s");
+  }
+
+  function buildEventDateCard(dateKey, items) {
     var button = document.createElement("button");
     button.type = "button";
-    button.className = "calendar-day" + (isCurrentMonth ? "" : " is-outside") + (items.length ? " has-gallery" : "");
-    button.disabled = !isCurrentMonth || !items.length;
-    if (dateKey) button.dataset.dateKey = dateKey;
+    button.className = "calendar-day calendar-event-card has-gallery";
+    button.dataset.dateKey = dateKey;
 
-    var dayLabel = document.createElement("span");
-    dayLabel.className = "calendar-day-number";
-    dayLabel.textContent = isCurrentMonth ? String(dayNumber) : "";
-    button.appendChild(dayLabel);
+    var parsedDate = parseDate(dateKey) || new Date();
+    var titles = uniqueTextValues(items, "title");
+    var locations = uniqueTextValues(items, "location");
+    var title = titles[0] || "Gallery event";
+    var extraTitleCount = Math.max(0, titles.length - 1);
 
-    if (!items.length) {
-      return button;
-    }
+    var head = document.createElement("span");
+    head.className = "calendar-date-card-head";
+
+    var dateChip = document.createElement("span");
+    dateChip.className = "calendar-date-chip";
+    dateChip.innerHTML =
+      "<strong>" + escapeHtml(String(parsedDate.getDate())) + "</strong>" +
+      "<span>" + escapeHtml(parsedDate.toLocaleDateString("en-IN", { weekday: "short" })) + "</span>";
+
+    var summary = document.createElement("span");
+    summary.className = "calendar-date-summary";
+    summary.innerHTML =
+      "<strong>" + escapeHtml(formatDate(dateKey)) + "</strong>" +
+      "<span>" + escapeHtml(locations.join(" / ") || "Location TBA") + "</span>";
+
+    head.appendChild(dateChip);
+    head.appendChild(summary);
+    button.appendChild(head);
 
     var previewWrap = document.createElement("span");
     previewWrap.className = "calendar-preview";
@@ -134,42 +188,102 @@
 
     var count = document.createElement("span");
     count.className = "calendar-day-count";
-    count.textContent = items.length + " image" + (items.length === 1 ? "" : "s");
+    count.textContent = eventCountLabel(items) + " · " + imageCountLabel(items);
     button.appendChild(count);
+
+    var eventTitle = document.createElement("span");
+    eventTitle.className = "calendar-event-title";
+    eventTitle.textContent = extraTitleCount ? title + " +" + extraTitleCount + " more" : title;
+    button.appendChild(eventTitle);
 
     return button;
   }
 
+  function buildMonthBreak(dateKey) {
+    var node = document.createElement("div");
+    node.className = "calendar-month-break";
+    node.setAttribute("role", "heading");
+    node.setAttribute("aria-level", "2");
+    node.textContent = monthLabelFor(dateKey);
+    return node;
+  }
+
+  function visibleDateKeys() {
+    return Object.keys(state.dayMap).filter(function (dateKey) {
+      return parseDate(dateKey) && (state.dayMap[dateKey] || []).length;
+    }).sort(function (left, right) {
+      return String(right).localeCompare(String(left));
+    });
+  }
+
+  function appendNextBatch() {
+    var grid = document.getElementById("calendar-grid");
+    var sentinel = document.getElementById("calendar-sentinel");
+    if (!grid) return;
+
+    var nextKeys = state.sortedDateKeys.slice(state.renderedCount, state.renderedCount + CALENDAR_BATCH_SIZE);
+    nextKeys.forEach(function (dateKey) {
+      var monthKey = monthKeyFor(dateKey);
+      if (monthKey && monthKey !== state.lastRenderedMonthKey) {
+        grid.appendChild(buildMonthBreak(dateKey));
+        state.lastRenderedMonthKey = monthKey;
+      }
+      grid.appendChild(buildEventDateCard(dateKey, state.dayMap[dateKey] || []));
+    });
+
+    state.renderedCount += nextKeys.length;
+
+    if (sentinel) {
+      sentinel.hidden = state.renderedCount >= state.sortedDateKeys.length;
+      sentinel.textContent = sentinel.hidden ? "" : "Loading more";
+    }
+  }
+
+  function setupScrollLoader() {
+    var sentinel = document.getElementById("calendar-sentinel");
+    if (!sentinel || state.renderedCount >= state.sortedDateKeys.length) return;
+
+    if (!("IntersectionObserver" in window)) {
+      while (state.renderedCount < state.sortedDateKeys.length) appendNextBatch();
+      return;
+    }
+
+    state.scrollObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) appendNextBatch();
+      });
+    }, { rootMargin: "420px 0px" });
+    state.scrollObserver.observe(sentinel);
+  }
+
   function renderCalendar() {
     cleanupPreviewTimers();
+    disconnectScrollObserver();
 
-    var label = document.getElementById("calendar-month-label");
     var grid = document.getElementById("calendar-grid");
-    if (!label || !grid) return;
+    var sentinel = document.getElementById("calendar-sentinel");
+    if (!grid) return;
 
-    label.textContent = formatMonth(state.currentMonth);
+    state.sortedDateKeys = visibleDateKeys();
+    state.renderedCount = 0;
+    state.lastRenderedMonthKey = "";
     grid.innerHTML = "";
 
-    var year = state.currentMonth.getFullYear();
-    var month = state.currentMonth.getMonth();
-    var firstDay = new Date(year, month, 1);
-    var totalDays = new Date(year, month + 1, 0).getDate();
-    var offset = firstDay.getDay();
-    var totalSlots = Math.ceil((offset + totalDays) / 7) * 7;
-
-    for (var i = 0; i < totalSlots; i++) {
-      var dayNumber = i - offset + 1;
-      var isCurrentMonth = dayNumber >= 1 && dayNumber <= totalDays;
-      var dateKey = isCurrentMonth
-        ? [
-            year,
-            String(month + 1).padStart(2, "0"),
-            String(dayNumber).padStart(2, "0")
-          ].join("-")
-        : "";
-      var items = dateKey ? state.dayMap[dateKey] || [] : [];
-      grid.appendChild(buildDayCell(dayNumber, isCurrentMonth, dateKey, items));
+    if (!state.sortedDateKeys.length) {
+      var empty = document.createElement("p");
+      empty.className = "calendar-empty";
+      empty.textContent = "Gallery dates will appear here as images are added.";
+      grid.appendChild(empty);
+      if (sentinel) {
+        sentinel.hidden = true;
+        sentinel.textContent = "";
+      }
+      return;
     }
+
+    if (sentinel) sentinel.hidden = false;
+    appendNextBatch();
+    setupScrollLoader();
   }
 
   function openDateModal(dateKey) {
@@ -286,22 +400,6 @@
     document.addEventListener("click", function (event) {
       if (document.body && document.body.dataset.page !== "calendar") return;
 
-      var prev = event.target.closest("#calendar-prev-btn");
-      if (prev) {
-        event.preventDefault();
-        state.currentMonth = new Date(state.currentMonth.getFullYear(), state.currentMonth.getMonth() - 1, 1);
-        renderCalendar();
-        return;
-      }
-
-      var next = event.target.closest("#calendar-next-btn");
-      if (next) {
-        event.preventDefault();
-        state.currentMonth = new Date(state.currentMonth.getFullYear(), state.currentMonth.getMonth() + 1, 1);
-        renderCalendar();
-        return;
-      }
-
       var calendarGrid = document.getElementById("calendar-grid");
       if (calendarGrid && calendarGrid.contains(event.target)) {
         var day = event.target.closest(".calendar-day[data-date-key]");
@@ -383,6 +481,7 @@
       closeDetailModal();
       closeDateModal();
       cleanupPreviewTimers();
+      disconnectScrollObserver();
 
       state.entries = await window.loadTactGalleryData();
       state.dayMap = flattenEntries(state.entries);

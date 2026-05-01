@@ -302,14 +302,61 @@
       background: rgba(248, 250, 252, 0.9);
     }
 
-    .qr-placeholder {
+    .donate-receipt-card {
       margin-top: 14px;
       padding: 14px 12px;
       border-radius: 14px;
-      border: 1px dashed rgba(148, 163, 184, 0.9);
-      background: repeating-linear-gradient(135deg, #f9fafb 0, #f9fafb 6px, #f3f4f6 6px, #f3f4f6 12px);
+      border: 1px solid rgba(10, 122, 58, 0.16);
+      background: linear-gradient(180deg, rgba(10, 122, 58, 0.06), rgba(255, 255, 255, 0.82));
       font-size: 12px;
       color: #4b5563;
+    }
+
+    .donate-receipt-card strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #163a2a;
+      font-size: 13px;
+    }
+
+    .donate-checklist {
+      display: grid;
+      gap: 8px;
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .donate-checklist li {
+      position: relative;
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    .donate-checklist li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.68em;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: 0 0 0 3px rgba(10, 122, 58, 0.1);
+    }
+
+    .donate-block--wide {
+      grid-column: 1 / -1;
+    }
+
+    .donate-contact-link {
+      color: var(--green);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .donate-contact-link:hover {
+      text-decoration: underline;
     }
 
     footer {
@@ -412,7 +459,7 @@
           </div>
           <div class="donate-hero-ctas">
             <a href="#how-to-give" class="btn btn-primary">See how to donate</a>
-            <a href="#bank-details" class="btn btn-secondary">Bank &amp; UPI details</a>
+            <a href="#bank-details" class="btn btn-secondary">Bank transfer details</a>
           </div>
         </div>
 
@@ -446,8 +493,10 @@
                 Please share your PAN and address when you make a transfer so that we can issue a receipt.
               </p>
 
-              <div class="qr-placeholder">
-                UPI / QR code will be made available soon.
+              <div class="donate-receipt-card">
+                <strong>For receipts</strong>
+                After making a transfer, email the transaction reference, donor name, PAN, postal address, and contact number to
+                <a class="donate-contact-link" href="mailto:trust@ias.ac.in?subject=Donation%20receipt%20request">trust@ias.ac.in</a>.
               </div>
             </div>
           </div>
@@ -457,7 +506,7 @@
       <section class="donate-section" id="how-to-give">
         <div class="donate-block">
           <h2>How to make a donation</h2>
-          <p>You can support The Academy Trust in whichever way is easiest for you:</p>
+          <p>The Academy Trust currently accepts donations through bank transfer, cheque, Demand Draft, and institutional support routes.</p>
           <ul>
             <li><strong>Online bank transfer</strong> to the account listed above.</li>
             <li><strong>Cheque or Demand Draft</strong> in favour of <span class="donate-highlight">"The Academy Trust"</span>, payable at Bengaluru.</li>
@@ -470,6 +519,20 @@
         </div>
 
         <div class="donate-block">
+          <h2>Receipt and tax documentation</h2>
+          <p>To help the office issue the receipt correctly, share the following details after the donation is made.</p>
+          <ul class="donate-checklist">
+            <li>Donor name exactly as it should appear on the receipt.</li>
+            <li>PAN, postal address, email, and contact number.</li>
+            <li>Amount, transfer date, and transaction reference.</li>
+            <li>Purpose note, if the gift is intended for a specific programme or fellowship.</li>
+          </ul>
+          <p class="donate-note">
+            Receipt and exemption documentation are issued subject to prevailing statutory requirements and the details submitted by the donor.
+          </p>
+        </div>
+
+        <div class="donate-block donate-block--wide">
           <h2>How your contribution is used</h2>
           <ul>
             <li>Small-group visits where students meet scientists and work with simple activities.</li>
@@ -489,7 +552,7 @@
     <div id="site-footer-root"></div>
   </div>
 
-  <script src="assets/js/site-chrome.js?v=20260501d"></script>
+  <script src="assets/js/site-chrome.js?v=20260501e"></script>
   <script>
     (function () {
       if (window.TACT_CHROME) {

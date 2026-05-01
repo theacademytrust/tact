@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tact-v3';
+const CACHE_NAME = 'tact-v5';
 const urlsToCache = [
   '/',
   '/index.html',

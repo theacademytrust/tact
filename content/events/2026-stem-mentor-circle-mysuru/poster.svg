@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1200" viewBox="0 0 960 1200">
+  <defs>
+    <linearGradient id="bg-b" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eef6ff"/>
+      <stop offset="100%" stop-color="#f7eadf"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="1200" fill="url(#bg-b)"/>
+  <rect x="64" y="64" width="832" height="1072" rx="36" fill="#fffefe" stroke="#1a5f9e" stroke-width="8"/>
+  <text x="96" y="180" fill="#1a5f9e" font-family="Georgia, serif" font-size="44" font-weight="700">The Academy Trust</text>
+  <text x="96" y="300" fill="#16212b" font-family="Arial, sans-serif" font-size="82" font-weight="700">STEM Mentor</text>
+  <text x="96" y="388" fill="#16212b" font-family="Arial, sans-serif" font-size="82" font-weight="700">Circle</text>
+  <text x="96" y="500" fill="#5d6870" font-family="Arial, sans-serif" font-size="34">20 May 2026  |  10:30 AM - 12:30 PM</text>
+  <text x="96" y="556" fill="#5d6870" font-family="Arial, sans-serif" font-size="34">Mysuru</text>
+  <text x="96" y="698" fill="#16212b" font-family="Arial, sans-serif" font-size="38">Study paths, projects, and career questions</text>
+  <rect x="646" y="214" width="146" height="146" rx="28" fill="#dcecff"/>
+  <rect x="736" y="306" width="112" height="112" rx="24" fill="#f0c14b"/>
+  <rect x="682" y="388" width="72" height="72" rx="18" fill="#1a5f9e"/>
+  <rect x="96" y="930" width="300" height="72" rx="36" fill="#1a5f9e"/>
+  <text x="246" y="976" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="700">Test Event</text>
+</svg>

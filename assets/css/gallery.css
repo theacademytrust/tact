@@ -62,8 +62,9 @@ main {
 }
 
 .gallery-grid {
-  column-count: 3;
-  column-gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
 }
 
 .gallery-card {
@@ -74,14 +75,13 @@ main {
   border: 0;
   border-radius: 18px;
   overflow: hidden;
-  min-height: 0;
-  margin: 0 0 16px;
+  height: 100%;
+  min-height: 360px;
+  margin: 0;
   background: #edf3ed;
   cursor: pointer;
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
   transition: transform 0.22s ease, box-shadow 0.22s ease;
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
 }
 
 .gallery-card:hover,
@@ -93,7 +93,10 @@ main {
 .gallery-card-image {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .gallery-card-overlay {
@@ -267,7 +270,7 @@ body {
 
 @media (max-width: 1024px) {
   .gallery-grid {
-    column-count: 2;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
 
   .gallery-modal-dialog {
@@ -287,7 +290,7 @@ body {
   }
 
   .gallery-grid {
-    column-count: 1;
+    grid-template-columns: 1fr;
   }
 
   .gallery-grid-shell {
