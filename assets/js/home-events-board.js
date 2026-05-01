@@ -237,12 +237,12 @@ function relativeDateLabel(value) {
 }
 
 function updatePaneSummaries(upcoming, previous) {
-  setText("home-upcoming-count", countLabel(upcoming.length, "scheduled"));
+  setText("home-upcoming-count", upcomingCountLabel(upcoming.length));
   setText("home-past-count", countLabel(previous.length, "archived"));
 
   setText(
     "home-upcoming-note",
-    upcoming.length ? "Next: " + formatDate(upcoming[0].date) : "New dates will appear here."
+    upcoming.length ? "Next: " + formatDate(upcoming[0].date) : "Keep an eye on this space!"
   );
   setText(
     "home-past-note",
@@ -252,6 +252,10 @@ function updatePaneSummaries(upcoming, previous) {
 
 function countLabel(count, suffix) {
   return count + " " + suffix;
+}
+
+function upcomingCountLabel(count) {
+  return count > 0 ? countLabel(count, "scheduled") : "Stay tuned!";
 }
 
 function setText(id, value) {
@@ -414,7 +418,10 @@ function buildCard(item, isPast, expandedPastCard) {
   card.setAttribute("aria-label", "View details for " + title);
   card.innerHTML =
     '<span class="home-events-thumb">' +
-    '<img src="' +
+    '<img class="home-events-thumb-fill" src="' +
+    escapeHtml(thumbnail) +
+    '" onerror="this.onerror=null;this.src=\'' + escapeHtml(fallback) + '\';" alt="" aria-hidden="true" loading="lazy" decoding="async">' +
+    '<img class="home-events-thumb-main" src="' +
     escapeHtml(thumbnail) +
     '" onerror="this.onerror=null;this.src=\'' + escapeHtml(fallback) + '\';" alt="' +
     escapeHtml(title + " poster") +

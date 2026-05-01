@@ -106,8 +106,22 @@ if (document.getElementById("upcoming-list") && document.getElementById("archive
 
 function renderEventSections(events) {
   var buckets = splitEvents(events);
+  applyEventsPageLayout(buckets.upcoming, buckets.archive);
   renderUpcoming(buckets.upcoming);
   renderArchive(buckets.archive);
+}
+
+function applyEventsPageLayout(upcoming, archive) {
+  var upcomingSection = document.getElementById("upcoming");
+  var pastSection = document.getElementById("past");
+  var archiveFocus = (!upcoming || !upcoming.length) && archive && archive.length;
+
+  if (upcomingSection) {
+    upcomingSection.classList.toggle("surface--compressed", !!archiveFocus);
+  }
+  if (pastSection) {
+    pastSection.classList.toggle("surface--archive-focus", !!archiveFocus);
+  }
 }
 
 function mergeGalleryFallbacks(events, galleries) {
@@ -305,6 +319,11 @@ function programLabel(item) {
   return "Outreach";
 }
 
+function isSoafalEvent(item) {
+  var source = String((item && item.slug || "") + " " + (item && item.title || "")).toLowerCase();
+  return source.indexOf("soafal") >= 0;
+}
+
 function thumbnailPalette(label) {
   var key = normalizeKey(label);
   if (key.indexOf("soafal") >= 0) return { start: "#17416a", end: "#0a7a3a", glow: "#d3a11f" };
@@ -422,10 +441,11 @@ function renderArchive(list) {
     var link = document.createElement("a");
     var imageUrl = eventThumbnailUrl(item);
     var fallback = generatedEventThumbnailUrl(item);
+    var imageClass = isSoafalEvent(item) ? "thumbnail--top" : "";
     link.className = "archive-item";
     link.href = buildEventPageUrl(item);
     link.innerHTML =
-      '<div class="image-container"><img src="' +
+      '<div class="image-container"><img class="' + imageClass + '" src="' +
       escapeHtml(imageUrl) +
       '" onerror="this.onerror=null;this.src=\'' + escapeHtml(fallback) + '\';" alt="' +
       escapeHtml(item.title || "Event image") +
@@ -445,8 +465,39 @@ function renderArchive(list) {
       escapeHtml(item.teaser || item.homepageMatter || "") +
       "</p>" +
       "</div>";
+
+    var image = link.querySelector(".image-container img");
+    var container = link.querySelector(".image-container");
+    if (image && container) {
+      bindArchiveThumbnailRatio(image, container);
+    }
+
     root.appendChild(link);
   });
+}
+
+function bindArchiveThumbnailRatio(image, container) {
+  function applyRatio() {
+    var width = Number(image.naturalWidth || 0);
+    var height = Number(image.naturalHeight || 0);
+    if (!width || !height) return;
+
+    var ratio = width / height;
+    var normalized = normalizeArchiveThumbnailRatio(ratio);
+    container.style.setProperty("--archive-thumb-ratio", normalized.toFixed(4) + " / 1");
+  }
+
+  if (image.complete && image.naturalWidth) {
+    applyRatio();
+    return;
+  }
+
+  image.addEventListener("load", applyRatio, { once: true });
+}
+
+function normalizeArchiveThumbnailRatio(ratio) {
+  if (!ratio || !isFinite(ratio)) return 1.6;
+  return Math.max(0.9, Math.min(1.75, ratio));
 }
 
 function buildUpcomingCard(item, isPriority) {

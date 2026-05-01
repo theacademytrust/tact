@@ -661,16 +661,41 @@
       }
 
       .home-events-thumb {
+        position: relative;
         display: block;
         width: 72px;
-        height: 92px;
+        height: 72px;
+        aspect-ratio: 1 / 1;
         overflow: hidden;
         border-radius: 8px;
         border: 1px solid rgba(10, 20, 10, 0.06);
-        background: linear-gradient(180deg, #f8faf8, #eef3ef);
+        background: #eef1ed;
       }
 
-      .home-events-thumb img {
+      .home-events-thumb-fill,
+      .home-events-thumb-main {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .home-events-thumb-fill {
+        display: none;
+      }
+
+      .home-events-thumb-main {
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .home-events-thumb-main,
+      .home-upcoming-media img {
+        image-rendering: auto;
+      }
+
+      .home-upcoming-media img {
         width: 100%;
         height: 100%;
         object-fit: contain;
@@ -691,7 +716,7 @@
 
       .home-events-item--past-expanded .home-events-thumb {
         width: 108px;
-        height: 132px;
+        height: 108px;
       }
 
       .home-events-item--past-expanded h3 {
@@ -1427,7 +1452,7 @@
                   <h2 id="home-events-heading">Upcoming Events</h2>
                   <p id="home-upcoming-note" class="home-events-note">Loading events...</p>
                 </div>
-                <span id="home-upcoming-count" class="home-events-count">0 scheduled</span>
+                <span id="home-upcoming-count" class="home-events-count">Stay tuned!</span>
               </div>
               <div class="home-vertical-window">
                 <div id="home-upcoming-track" class="home-vertical-track"></div>
@@ -1561,76 +1586,6 @@
             <a href="vijnana-nataka.html" class="btn btn-secondary">See Vijnana Nataka</a>
             <a href="ganitha-mela.html" class="btn btn-secondary">Join Ganitha Mela</a>
           </div>
-        </section>
-
-        <!-- HOW IT WORKS: for educators and institutions -->
-        <section
-          class="section surface fade-section"
-          aria-labelledby="how-it-works-heading"
-        >
-          <article class="info-card" aria-labelledby="how-it-works-heading">
-            <button
-              class="info-card-toggle"
-              type="button"
-              aria-expanded="false"
-              data-info-card-target="how-it-works-body"
-            >
-              <div class="info-card-heading">
-                <h2 id="how-it-works-heading">How a school or college works with us</h2>
-                <p>From the first email to the final discussion, most visits follow a simple four-step sequence.</p>
-              </div>
-            </button>
-            <div
-              id="how-it-works-body"
-              class="info-card-body"
-            >
-              <ol class="steps">
-                <li>
-                  You write to us with a short note about your institution, location, and the group of students you have in mind.
-                </li>
-                <li>
-                  We speak with you to understand your timetable, language of instruction, and possible dates.
-                </li>
-                <li>
-                  Together, we choose an outreach format that fits your students, staff availability, and space.
-                </li>
-                <li>
-                  We visit your campus or centre, run the sessions, and keep time for questions and discussion.
-                </li>
-              </ol>
-            </div>
-          </article>
-        </section>
-
-        <!-- TRUST: who runs this and how it is held -->
-        <section
-          class="section surface fade-section"
-          aria-labelledby="trust-heading"
-        >
-          <article class="info-card" aria-labelledby="trust-heading">
-            <button
-              class="info-card-toggle"
-              type="button"
-              aria-expanded="false"
-              data-info-card-target="trust-body"
-            >
-              <div class="info-card-heading">
-                <h2 id="trust-heading">Who runs this work and how we stay accountable</h2>
-                <p>The Academy Trust is a registered public charitable trust with audited accounts and statutory registrations.</p>
-              </div>
-            </button>
-            <div
-              id="trust-body"
-              class="info-card-body"
-            >
-              <p>
-                The Academy Trust was started in 2014 by the Indian Academy of Sciences, which was founded in 1934 by Sir C. V. Raman.
-              </p>
-              <p>
-                The Trust holds a corpus fund, maintains audited accounts, and keeps its registrations, including 80G and 12A, up to date so that support is handled with care.
-              </p>
-            </div>
-          </article>
         </section>
 
         <!-- CLOSING ACTIONS: next steps for visitors -->
