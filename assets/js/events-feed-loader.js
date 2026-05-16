@@ -60,9 +60,12 @@
 
   function normalizeEvent(raw) {
     var helpers = window.TACT_EVENT_PAGES || {};
-    var canonicalPageUrl = typeof helpers.buildEventPageUrl === "function"
-      ? helpers.buildEventPageUrl(raw)
-      : "";
+    var explicitPageUrl = String(raw.pageUrl || "").trim();
+    var canonicalPageUrl = explicitPageUrl || (
+      typeof helpers.buildEventPageUrl === "function"
+        ? helpers.buildEventPageUrl(raw)
+        : ""
+    );
     return {
       slug: String(raw.slug || ""),
       title: String(raw.title || ""),
@@ -73,7 +76,7 @@
       homepageMatter: String(raw.homepageMatter || ""),
       status: normalizeStatus(raw.status),
       poster: toPublicPosterUrl(raw.posterUrl || raw.poster || raw.image || ""),
-      pageUrl: canonicalPageUrl || String(raw.pageUrl || "")
+      pageUrl: canonicalPageUrl
     };
   }
 
@@ -223,6 +226,11 @@
     var config = window.TACT_EVENTS_CONFIG || {};
     var endpoint = String(config.apiEndpoint || "").trim();
     return getBaseFeed(endpoint).initial;
+  };
+
+  window.resetTactEventFeedCache = function () {
+    cache = null;
+    inFlight = null;
   };
 
   window.loadTactEventFeed = async function (options) {

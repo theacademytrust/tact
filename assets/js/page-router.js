@@ -3,6 +3,7 @@
     "index.html": [
       "assets/js/events-config.js",
       "content/events/events-feed.js?v=20260501d",
+      "assets/js/preview-events.js",
       "assets/js/event-page-paths.js",
       "assets/js/events-feed-loader.js",
       "assets/js/gallery-data.js?v=20260501c",
@@ -12,6 +13,7 @@
     "events.html": [
       "assets/js/events-config.js",
       "content/events/events-feed.js?v=20260501d",
+      "assets/js/preview-events.js",
       "assets/js/event-page-paths.js",
       "assets/js/events-feed-loader.js",
       "assets/js/gallery-data.js?v=20260501c",

@@ -4,15 +4,15 @@ window.TACT_PROGRAMS = {
     heroImage: "flauntimages/Vijnana Harate/1.jpg",
     badges: ["Informal interaction", "Scientists with students", "Regional languages"],
     heroText:
-      "A Harate is a carefully held conversation: scientists, educators, teachers, and students work through science with questions, demonstrations, and local language comfort.",
+      "A Harate is a carefully held conversation: scientists, educators, teachers, and students work through science together — with questions, demonstrations, and the comfort of a local language.",
     stats: [
-      { value: "20", label: "Harate-linked events in the archive" },
-      { value: "2022-25", label: "recorded across the activity report" },
+      { value: "20+", label: "school and campus visits since 2022" },
+      { value: "Kannada & English", label: "sessions run in regional and national languages" },
       { value: "Schools + labs", label: "classroom talks, demos, and campus visits" }
     ],
     aboutTitle: "What this programme is for",
     about: [
-      "The activity report describes Vijnana Harate as informal interactions between students and scientists or educators. The format is deliberately human-scale: a topic is opened through conversation, then made concrete through demonstrations, stories, questions, and time with teachers.",
+      "Vijnana Harate is an informal interaction between students and scientists or educators. The format is deliberately human-scale: a topic is opened through conversation, then made concrete through demonstrations, stories, questions, and time with teachers.",
       "Harate works especially well where students may not often meet practicing scientists. It has been run in Kannada-medium settings, school campuses, Academy spaces, regional institutions, and partner labs. The strength of the format is that it can adapt without becoming casual about the science."
     ],
     profile: [
@@ -92,8 +92,8 @@ window.TACT_PROGRAMS = {
     ],
     aboutTitle: "What this programme is for",
     about: [
-      "The report defines Vijnana Aranya as outreach in rural, tribal, and remote areas. The point is not to move a city lecture into a village. The programme is built around the place: its forest edge, school ground, soil, insects, farming practice, water, and local questions.",
-      "Aranya sessions often combine school activities with community participation. A single visit may include ecology talks, astronomy observation, organic farming, beekeeping, botanical art, soil biodiversity, or student science projects."
+      "Vijnana Aranya takes science to rural, tribal, and remote areas. The point is not to move a city lecture into a village — the programme is built around the place itself: its forest edge, school ground, soil, insects, farming practice, water, and the questions that come from living there.",
+      "Aranya visits often combine school activities with community participation. A single visit may include ecology talks, astronomy observation, organic farming, beekeeping, botanical art, soil biodiversity, or student science projects."
     ],
     profile: [
       { label: "Audience", value: "Students in rural and remote schools, teachers, villagers, and community learners." },
@@ -165,14 +165,14 @@ window.TACT_PROGRAMS = {
     heroText:
       "Vijnana Yuvati is skill-oriented outreach for young women: practical exposure, candid mentoring, and visible routes into science, technology, and livelihood.",
     stats: [
-      { value: "2", label: "Yuvati-linked archive entries" },
+      { value: "2", label: "workshops documented since 2022" },
       { value: "Women + girls", label: "school and college participants" },
       { value: "Skills", label: "workshops, exposure, applications, and mentoring" }
     ],
     aboutTitle: "What this programme is for",
     about: [
-      "The activity report says Vijnana Yuvati was conceived to empower young women by training them in specific scientific and technical knowledge that can support career or livelihood. The programme works best when encouragement is paired with something practical to do next.",
-      "The documented events show a programme that combines workshops, role-model conversations, science practice, and honest discussion about routes through study and work."
+      "Vijnana Yuvati was set up to help young women build specific scientific and technical knowledge connected to career and livelihood. Encouragement is paired with something practical: a skill, a next step, a path that can be followed.",
+      "Sessions combine workshops, time with role models, science practice, and frank conversation about routes through study and work."
     ],
     profile: [
       { label: "Audience", value: "Girl students, young women in colleges, teachers, and mentoring groups." },
@@ -226,7 +226,7 @@ window.TACT_PROGRAMS = {
     impact:
       "Yuvati should leave students with confidence that is practical, not vague. The programme is strongest when a participant knows the next form, next experiment, next mentor, or next local project to pursue.",
     impactPoints: [
-      "The programme centres young women as active participants, not passive beneficiaries.",
+      "Sessions are designed for young women as practitioners — doing, questioning, and building skills — not as a general audience.",
       "Workshops connect scientific knowledge to livelihood, study, and confidence.",
       "Mentoring gives room for the questions that do not fit inside a formal lecture."
     ]
@@ -238,14 +238,14 @@ window.TACT_PROGRAMS = {
     heroText:
       "Vijnana Nataka carries science through theatre and music, using story, character, rhythm, and public performance to make scientific temper memorable.",
     stats: [
-      { value: "4", label: "Nataka entries in the archive" },
+      { value: "4", label: "documented theatre events since 2022" },
       { value: "4 days", label: "Mysuru Science Theatre Festival 2024" },
       { value: "Public stage", label: "students, families, and general audiences" }
     ],
     aboutTitle: "What this programme is for",
     about: [
-      "The report calls Vijnana Nataka one of tAcT's unique ways of propagating science and scientific temper in society. It uses theatre and music not as decoration, but as a serious communication method.",
-      "The plays documented in the report range from Richard Feynman and the Kannada play Lilavathi to the Mysuru Science Theatre Festival, where scientific temperament, research lives, cosmology, infection, and the work of scientists were staged for full houses."
+      "Vijnana Nataka uses theatre and music as a serious method for putting science and scientific temper into public circulation. Performance is not decoration here — it is the main channel.",
+      "Productions have ranged from a play on Richard Feynman to the Kannada play Lilavathi and the Mysuru Science Theatre Festival, where scientific temperament, research lives, cosmology, infection, and the work of scientists were staged for full houses."
     ],
     profile: [
       { label: "Audience", value: "Students, teachers, families, theatre-goers, and the general public." },
@@ -325,8 +325,8 @@ window.TACT_PROGRAMS = {
     ],
     aboutTitle: "What this programme is for",
     about: [
-      "The report describes Ganitha Mela as exploring mathematics through activities, games, and cultural or entertainment programmes. The 2023 edition at Vishwa Vidyapeeth, Yelahanka brought together students, teachers, mathematicians, communicators, games, performances, and activity kits.",
-      "The important design choice is that mathematics is not presented as a fear to overcome. It is handled as pattern, play, structure, history, craft, music, performance, and problem-solving."
+      "Ganitha Mela explores mathematics through activities, games, and cultural programmes. The 2023 edition at Vishwa Vidyapeeth, Yelahanka brought together students, teachers, mathematicians, communicators, games, performances, and activity kits.",
+      "The central design choice is that mathematics is not presented as a fear to overcome. It is handled as pattern, play, structure, history, craft, music, performance, and problem-solving."
     ],
     profile: [
       { label: "Audience", value: "Students, teachers, families, math enthusiasts, and the public." },

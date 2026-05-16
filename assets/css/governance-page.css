@@ -87,6 +87,10 @@
   gap: 12px;
 }
 
+.people-list--two-col {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .people-list li,
 .document-list li,
 .contact-list li {

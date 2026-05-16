@@ -45,10 +45,13 @@
     var slug = String(row.slug || "").trim();
     var eventSlug = String(row.eventSlug || row.event_slug || slug).trim();
     var helpers = window.TACT_EVENT_PAGES || {};
+    var explicitPageUrl = String(row.pageUrl || "").trim();
     var pageUrl = resolveSitePath(
-      typeof helpers.buildEventPageUrl === "function"
-        ? helpers.buildEventPageUrl({ date: date, title: title, slug: eventSlug || slug })
-        : "events/" + String(eventSlug || slug).trim() + ".html"
+      explicitPageUrl
+        ? explicitPageUrl
+        : typeof helpers.buildEventPageUrl === "function"
+          ? helpers.buildEventPageUrl({ date: date, title: title, slug: eventSlug || slug })
+          : "events/" + String(eventSlug || slug).trim() + ".html"
     );
     var images = (Array.isArray(row.images) ? row.images : [])
       .map(normalizeImage)

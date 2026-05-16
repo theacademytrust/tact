@@ -5,7 +5,7 @@ var homeEventsBoardState = {
 
 var HOME_EVENTS_UPCOMING_LIMIT = 6;
 var HOME_EVENTS_PAST_LIMIT = 2;
-var HOME_EVENTS_PAST_LIMIT_ARCHIVE_FOCUS = 4;
+var HOME_EVENTS_PAST_LIMIT_ARCHIVE_FOCUS = 3;
 var HOME_EVENTS_AUTOSCROLL_MS = 5200;
 var HOME_EVENTS_DAY_MS = 24 * 60 * 60 * 1000;
 
@@ -242,7 +242,7 @@ function updatePaneSummaries(upcoming, previous) {
 
   setText(
     "home-upcoming-note",
-    upcoming.length ? "Next: " + formatDate(upcoming[0].date) : "Keep an eye on this space!"
+    upcoming.length ? "Next: " + formatDate(upcoming[0].date) : ""
   );
   setText(
     "home-past-note",
@@ -255,7 +255,7 @@ function countLabel(count, suffix) {
 }
 
 function upcomingCountLabel(count) {
-  return count > 0 ? countLabel(count, "scheduled") : "Stay tuned!";
+  return count > 0 ? countLabel(count, "scheduled") : "";
 }
 
 function setText(id, value) {
@@ -367,7 +367,7 @@ function renderUpcomingCarousel(trackId, dotsId, items, emptyMessage, compactEmp
 
     isAnimating = true;
     var step = firstCard.offsetHeight;
-    track.style.transition = "transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)";
+    track.style.transition = "transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)";
     track.style.transform = "translateY(-" + step + "px)";
 
     window.setTimeout(function () {
@@ -446,38 +446,54 @@ function buildCard(item, isPast, expandedPastCard) {
 function buildUpcomingCard(item) {
   var card = document.createElement("a");
   var title = displayTitle(item.title);
-  var thumbnail = eventThumbnailUrl(item);
+  var src = eventThumbnailUrl(item);
   var fallback = generatedEventThumbnailUrl(item);
   card.className = "home-upcoming-card";
   card.href = buildEventPageUrl(item);
   card.setAttribute("aria-label", "View details for " + title);
-  card.innerHTML =
-    '<div class="home-upcoming-media">' +
-    '<img src="' +
-    escapeHtml(thumbnail) +
-    '" onerror="this.onerror=null;this.src=\'' + escapeHtml(fallback) + '\';" alt="' +
-    escapeHtml(title + " poster") +
-    '" loading="eager" fetchpriority="high" decoding="async">' +
-    "</div>" +
-    '<div class="home-upcoming-copy">' +
+
+  /* ── Media: blurred background fill + sharp main image ── */
+  var media = document.createElement("div");
+  media.className = "home-upcoming-media";
+
+  var blur = document.createElement("img");
+  blur.className = "upc-blur";
+  blur.setAttribute("aria-hidden", "true");
+  blur.setAttribute("loading", "eager");
+  blur.setAttribute("decoding", "async");
+  blur.onerror = function () { this.onerror = null; this.src = fallback; };
+  blur.src = src;
+
+  var main = document.createElement("img");
+  main.className = "upc-main";
+  main.alt = title + " poster";
+  main.setAttribute("loading", "eager");
+  main.setAttribute("fetchpriority", "high");
+  main.setAttribute("decoding", "async");
+  main.onerror = function () { this.onerror = null; this.src = fallback; };
+  main.src = src;
+
+  media.appendChild(blur);
+  media.appendChild(main);
+
+  /* ── Copy: plain block so text wraps around the float ── */
+  var copy = document.createElement("div");
+  copy.className = "home-upcoming-copy";
+  copy.innerHTML =
     '<div class="home-event-card-head">' +
     buildDateTile(item.date) +
     '<div class="home-event-card-meta">' +
     buildBadges(item, false) +
     '<p class="home-events-meta">' +
-    '<span>' + escapeHtml(cleanMeta(item.time, "Time TBA")) + "</span>" +
-    '<span>' + escapeHtml(cleanMeta(item.location, "Location TBA")) + "</span>" +
-    "</p>" +
-    "</div>" +
-    "</div>" +
-    "<h3>" +
-    escapeHtml(title) +
-    "</h3>" +
-    "<p>" +
-    escapeHtml(eventSummary(item)) +
-    "</p>" +
-    '<span class="home-event-link-text">View details</span>' +
-    "</div>";
+    '<span>' + escapeHtml(cleanMeta(item.time, "Time TBA")) + '</span>' +
+    '<span>' + escapeHtml(cleanMeta(item.location, "Location TBA")) + '</span>' +
+    '</p></div></div>' +
+    '<h3>' + escapeHtml(title) + '</h3>' +
+    '<p>' + escapeHtml(eventSummary(item)) + '</p>' +
+    '<span class="home-event-link-text">View details →</span>';
+
+  card.appendChild(media);
+  card.appendChild(copy);
   return card;
 }
 
@@ -697,11 +713,13 @@ function dateTitleKeyFor(item) {
 }
 
 function buildEventPageUrl(item) {
+  var explicit = String(item && item.pageUrl || "").trim();
+  if (explicit) return explicit;
   var helpers = window.TACT_EVENT_PAGES || {};
   if (typeof helpers.buildEventPageUrl === "function") {
     return helpers.buildEventPageUrl(item) || "events.html";
   }
-  return String(item && item.pageUrl || "").trim() || "events.html";
+  return "events.html";
 }
 
 function autoScrollUpcoming(state) {

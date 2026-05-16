@@ -1,169 +1,29 @@
 [
   {
+    "slug": "2015-soafal-series-also-included-memorial-lecture-rohini-lecture",
+    "eventSlug": "2015-soafal-series-also-included-memorial-lecture-rohini-lecture",
+    "pageUrl": "events/2015-soafal-series-also-included-memorial-lecture-rohini-lecture.html",
+    "title": "SOAFAL Lecture — Sulabha K Kulkarni: Materials Matter",
+    "date": "2015-03-15",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
+    "images": [
+      {
+        "url": "content/events/2015-soafal-series-also-included-memorial-lecture-rohini-lecture/gallery/image-01.png",
+        "description": "Online poster for the SOAFAL lecture by Sulabha K Kulkarni on 'Materials Matter', 15 March 2015 — an earlier lecture in the 'Lilavati's Daughters: Women Scientists of India' series"
+      }
+    ]
+  },
+  {
     "slug": "2022-vijnana-harate-malleswaram-session",
     "eventSlug": "2022-vijnana-harate-malleswaram-session",
     "pageUrl": "events/2022-vijnana-harate-malleswaram-session.html",
-    "title": "vijnana harate malleswaram session",
+    "title": "Vijnana Harate — Bapu Composite PU College & Govt. High School, Malleswaram, Bengaluru",
     "date": "2022-07-08",
-    "location": "Malleswaram",
+    "location": "Raman Research Institute, Bengaluru",
     "images": [
       {
         "url": "content/events/2022-vijnana-harate-malleswaram-session/gallery/image-01.jpg",
-        "description": "vijnana harate malleswaram session photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2022-vijnana-harate-unknown-session",
-    "eventSlug": "2022-vijnana-harate-unknown-session",
-    "pageUrl": "events/2022-vijnana-harate-unknown-session.html",
-    "title": "vijnana harate unknown session",
-    "date": "2022-09-24",
-    "location": "Unknown",
-    "images": [
-      {
-        "url": "content/events/2022-vijnana-harate-unknown-session/gallery/image-01.jpg",
-        "description": "vijnana harate unknown session photo 1"
-      },
-      {
-        "url": "content/events/2022-vijnana-harate-unknown-session/gallery/image-02.jpg",
-        "description": "vijnana harate unknown session photo 2"
-      }
-    ]
-  },
-  {
-    "slug": "2022-vijnana-harate-sri-charan-vidyaniketan-and-srm-university-bengaluru-session",
-    "eventSlug": "2022-vijnana-harate-sri-charan-vidyaniketan-and-srm-university-bengaluru-session",
-    "pageUrl": "events/2022-vijnana-harate-sri-charan-vidyaniketan-and-srm-university-bengaluru-session.html",
-    "title": "vijnana harate sri charan vidyaniketan and srm university bengaluru session",
-    "date": "2022-11-04",
-    "location": "Bengaluru",
-    "images": [
-      {
-        "url": "content/events/2022-vijnana-harate-sri-charan-vidyaniketan-and-srm-university-bengaluru-session/gallery/image-01.jpg",
-        "description": "vijnana harate sri charan vidyaniketan and srm university bengaluru session photo 1"
-      },
-      {
-        "url": "content/events/2022-vijnana-harate-sri-charan-vidyaniketan-and-srm-university-bengaluru-session/gallery/image-02.jpg",
-        "description": "vijnana harate sri charan vidyaniketan and srm university bengaluru session photo 2"
-      }
-    ]
-  },
-  {
-    "slug": "2022-vijnana-harate-unknown-session-1222",
-    "eventSlug": "2022-vijnana-harate-unknown-session-1222",
-    "pageUrl": "events/2022-vijnana-harate-unknown-session-1222.html",
-    "title": "vijnana harate unknown session",
-    "date": "2022-12-22",
-    "location": "Unknown",
-    "images": [
-      {
-        "url": "content/events/2022-vijnana-harate-unknown-session-1222/gallery/image-01.jpg",
-        "description": "vijnana harate unknown session photo 1"
-      },
-      {
-        "url": "content/events/2022-vijnana-harate-unknown-session-1222/gallery/image-02.jpg",
-        "description": "vijnana harate unknown session photo 2"
-      },
-      {
-        "url": "content/events/2022-vijnana-harate-unknown-session-1222/gallery/image-03.jpg",
-        "description": "vijnana harate unknown session photo 3"
-      },
-      {
-        "url": "content/events/2022-vijnana-harate-unknown-session-1222/gallery/image-04.jpg",
-        "description": "vijnana harate unknown session photo 4"
-      }
-    ]
-  },
-  {
-    "slug": "2023-vijnana-harate-bengaluru-session",
-    "eventSlug": "2023-vijnana-harate-bengaluru-session",
-    "pageUrl": "events/2023-vijnana-harate-bengaluru-session.html",
-    "title": "vijnana harate bengaluru session",
-    "date": "2023-01-06",
-    "location": "Bengaluru",
-    "images": [
-      {
-        "url": "content/events/2023-vijnana-harate-bengaluru-session/gallery/image-01.jpg",
-        "description": "vijnana harate bengaluru session photo 1"
-      },
-      {
-        "url": "content/events/2023-vijnana-harate-bengaluru-session/gallery/image-02.jpg",
-        "description": "vijnana harate bengaluru session photo 2"
-      },
-      {
-        "url": "content/events/2023-vijnana-harate-bengaluru-session/gallery/image-03.jpg",
-        "description": "vijnana harate bengaluru session photo 3"
-      }
-    ]
-  },
-  {
-    "slug": "2022-vijnana-nataka-unknown-session",
-    "eventSlug": "2022-vijnana-nataka-unknown-session",
-    "pageUrl": "events/2022-vijnana-nataka-unknown-session.html",
-    "title": "vijnana nataka unknown session",
-    "date": "2022-12-09",
-    "location": "Unknown",
-    "images": [
-      {
-        "url": "content/events/2022-vijnana-nataka-unknown-session/gallery/image-01.jpg",
-        "description": "vijnana nataka unknown session photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2022-vijnana-nataka-unknown-session-1223",
-    "eventSlug": "2022-vijnana-nataka-unknown-session-1223",
-    "pageUrl": "events/2022-vijnana-nataka-unknown-session-1223.html",
-    "title": "vijnana nataka unknown session",
-    "date": "2022-12-23",
-    "location": "Unknown",
-    "images": [
-      {
-        "url": "content/events/2022-vijnana-nataka-unknown-session-1223/gallery/image-01.jpg",
-        "description": "vijnana nataka unknown session photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2023-vijnana-nataka-mysuru-session",
-    "eventSlug": "2023-vijnana-nataka-mysuru-session",
-    "pageUrl": "events/2023-vijnana-nataka-mysuru-session.html",
-    "title": "vijnana nataka mysuru session",
-    "date": "2023-01-21",
-    "location": "Mysuru",
-    "images": [
-      {
-        "url": "content/events/2023-vijnana-nataka-mysuru-session/gallery/image-01.jpg",
-        "description": "vijnana nataka mysuru session photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2023-national-science-day-unknown-session",
-    "eventSlug": "2023-national-science-day-unknown-session",
-    "pageUrl": "events/2023-national-science-day-unknown-session.html",
-    "title": "national science day unknown session",
-    "date": "2023-02-21",
-    "location": "Unknown",
-    "images": [
-      {
-        "url": "content/events/2023-national-science-day-unknown-session/gallery/image-01.jpg",
-        "description": "national science day unknown session photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2023-national-science-day-bengaluru-session",
-    "eventSlug": "2023-national-science-day-bengaluru-session",
-    "pageUrl": "events/2023-national-science-day-bengaluru-session.html",
-    "title": "national science day bengaluru session",
-    "date": "2023-02-28",
-    "location": "Bengaluru",
-    "images": [
-      {
-        "url": "content/events/2023-national-science-day-bengaluru-session/gallery/image-01.jpg",
-        "description": "national science day bengaluru session photo 1"
+        "description": "About 80 students from Bapu Composite Pre-University College and Govt. High School Malleswaram assembled at RRI for the full-day Vijnana Harate, a collaboration between tAcT, Indian Academy of Sciences and Raman Research Institute"
       }
     ]
   },
@@ -171,43 +31,67 @@
     "slug": "2022-teacher-training-bengaluru-session",
     "eventSlug": "2022-teacher-training-bengaluru-session",
     "pageUrl": "events/2022-teacher-training-bengaluru-session.html",
-    "title": "teacher training bengaluru session",
+    "title": "Teacher Training Workshop — Indian Academy of Sciences, Bengaluru",
     "date": "2022-09-09",
-    "location": "Bengaluru",
+    "location": "Indian Academy of Sciences, Bengaluru",
     "images": [
       {
         "url": "content/events/2022-teacher-training-bengaluru-session/gallery/image-01.jpg",
-        "description": "teacher training bengaluru session photo 1"
+        "description": "About 35 science teachers from schools in and around Bengaluru participate in hands-on pedagogy sessions during the full-day Teachers' Day workshop at the Indian Academy of Sciences, facilitated by ScienceUtsav and Seed2Sapling Education"
       },
       {
         "url": "content/events/2022-teacher-training-bengaluru-session/gallery/image-02.jpg",
-        "description": "teacher training bengaluru session photo 2"
+        "description": "Group photograph of teachers with tAcT organisers at the Teachers' Day 2022 workshop at the Indian Academy of Sciences, Bengaluru, following sessions by S2S team, Shashank of ScienceUtsav and Prof. Abdul Rehman Pasha"
       }
     ]
   },
   {
-    "slug": "2023-teacher-training-goa-session",
-    "eventSlug": "2023-teacher-training-goa-session",
-    "pageUrl": "events/2023-teacher-training-goa-session.html",
-    "title": "teacher training goa session",
-    "date": "2023-03-03",
-    "location": "Goa",
+    "slug": "2022-vijnana-harate-unknown-session",
+    "eventSlug": "2022-vijnana-harate-unknown-session",
+    "pageUrl": "events/2022-vijnana-harate-unknown-session.html",
+    "title": "Vijnana Harate (Kannada) — Bengaluru",
+    "date": "2022-09-24",
+    "location": "Bengaluru",
     "images": [
       {
-        "url": "content/events/2023-teacher-training-goa-session/gallery/image-01.jpg",
-        "description": "teacher training goa session photo 1"
+        "url": "content/events/2022-vijnana-harate-unknown-session/gallery/image-01.jpg",
+        "description": "Prof. MRN Murthy (Fellow, IISc) conducts the first ever Kannada Vijnana Harate, in collaboration with Munnota Trust, with students of a Kannada-medium school and general public"
       },
       {
-        "url": "content/events/2023-teacher-training-goa-session/gallery/image-02.jpg",
-        "description": "teacher training goa session photo 2"
+        "url": "content/events/2022-vijnana-harate-unknown-session/gallery/image-02.jpg",
+        "description": "Around 50 participants including students and members of the general public take part in the outdoor science activities during the first Kannada-language Vijnana Harate"
+      }
+    ]
+  },
+  {
+    "slug": "2022-vijnana-harate-sri-charan-vidyaniketan-and-srm-university-bengaluru-session",
+    "eventSlug": "2022-vijnana-harate-sri-charan-vidyaniketan-and-srm-university-bengaluru-session",
+    "pageUrl": "events/2022-vijnana-harate-sri-charan-vidyaniketan-and-srm-university-bengaluru-session.html",
+    "title": "Vijnana Harate — 88th Annual Meeting, SRM University, Andhra Pradesh",
+    "date": "2022-11-04",
+    "location": "SRM University, Andhra Pradesh",
+    "images": [
+      {
+        "url": "content/events/2022-vijnana-harate-sri-charan-vidyaniketan-and-srm-university-bengaluru-session/gallery/image-01.jpg",
+        "description": "Madhusudan of Jawaharlal Nehru Planetarium, Bengaluru, conducts experiments in optics, thermodynamics and sound for students of Sri Charan Vidyaniketan and SRM University on Day 1 of the 3-day tAcT program at the Academy's 88th Annual Meeting"
       },
       {
-        "url": "content/events/2023-teacher-training-goa-session/gallery/image-03.jpg",
-        "description": "teacher training goa session photo 3"
-      },
+        "url": "content/events/2022-vijnana-harate-sri-charan-vidyaniketan-and-srm-university-bengaluru-session/gallery/image-02.jpg",
+        "description": "Day 3: Prof. Ram Sagar (IIA Bengaluru) conducts an Astronomy and Astrophysics harate for students of Lakireddy Balireddy Engineering College at SRM University campus"
+      }
+    ]
+  },
+  {
+    "slug": "2022-vijnana-nataka-unknown-session",
+    "eventSlug": "2022-vijnana-nataka-unknown-session",
+    "pageUrl": "events/2022-vijnana-nataka-unknown-session.html",
+    "title": "Vijnana Nataka — 'QED' (Richard Feynman), National College Jayanagar, Bengaluru",
+    "date": "2022-12-09",
+    "location": "HN Kalakshetra, National College Jayanagar, Bengaluru",
+    "images": [
       {
-        "url": "content/events/2023-teacher-training-goa-session/gallery/image-04.jpg",
-        "description": "teacher training goa session photo 4"
+        "url": "content/events/2022-vijnana-nataka-unknown-session/gallery/image-01.jpg",
+        "description": "Scene from 'QED', the Kannada play on Nobel laureate Richard Feynman, performed in the HN Kalakshetra auditorium of National College Jayanagar in collaboration with Arivu Trust, Mysuru. Actor and director: Yatheesh Kollegal."
       }
     ]
   },
@@ -215,169 +99,143 @@
     "slug": "2022-national-mathematics-day-mysuru-session",
     "eventSlug": "2022-national-mathematics-day-mysuru-session",
     "pageUrl": "events/2022-national-mathematics-day-mysuru-session.html",
-    "title": "national mathematics day mysuru session",
+    "title": "National Mathematics Day 2022 — Acharya Patshala College, Bengaluru",
     "date": "2022-12-22",
-    "location": "Mysuru",
+    "location": "Acharya Patshala College, Bengaluru",
     "images": [
       {
         "url": "content/events/2022-national-mathematics-day-mysuru-session/gallery/image-01.jpg",
-        "description": "national mathematics day mysuru session photo 1"
+        "description": "V. Sivashankara Sastry presents 'Magic Squares in Indian Culture' to 100+ participants at Acharya Patshala College, Bengaluru, during the National Mathematics Day 2022 celebration organised jointly by tAcT, the Ramanujan Mathematics Club and the Department of Mathematics"
       }
     ]
   },
   {
-    "slug": "2023-vijnana-harate-basavanagudi-session",
-    "eventSlug": "2023-vijnana-harate-basavanagudi-session",
-    "pageUrl": "events/2023-vijnana-harate-basavanagudi-session.html",
-    "title": "vijnana harate basavanagudi session",
-    "date": "2023-04-29",
-    "location": "Basavanagudi",
+    "slug": "2022-vijnana-harate-unknown-session-1222",
+    "eventSlug": "2022-vijnana-harate-unknown-session-1222",
+    "pageUrl": "events/2022-vijnana-harate-unknown-session-1222.html",
+    "title": "Vijnana Harate (Kannada) — RRI Campus, Bengaluru",
+    "date": "2022-12-22",
+    "location": "Raman Research Institute, Bengaluru",
     "images": [
       {
-        "url": "content/events/2023-vijnana-harate-basavanagudi-session/gallery/image-01.jpg",
-        "description": "vijnana harate basavanagudi session photo 1"
+        "url": "content/events/2022-vijnana-harate-unknown-session-1222/gallery/image-01.jpg",
+        "description": "Veteran science communicator Kollegal Sharma (former Chief Scientist, CFTRI) conducts a Kannada Vijnana Harate at the RRI campus in collaboration with Munnota Trust"
+      },
+      {
+        "url": "content/events/2022-vijnana-harate-unknown-session-1222/gallery/image-02.jpg",
+        "description": "Children from Kannada medium schools explore the RRI campus as part of the science activities and observation-based exercises"
+      },
+      {
+        "url": "content/events/2022-vijnana-harate-unknown-session-1222/gallery/image-03.jpg",
+        "description": "Students participate in hands-on activities exploring measurement methods and the empirical scientific method during the Kannada Vijnana Harate at RRI"
+      },
+      {
+        "url": "content/events/2022-vijnana-harate-unknown-session-1222/gallery/image-04.jpg",
+        "description": "Students work collaboratively on an innovation challenge — inventing solutions with limited resources — during the Kannada Vijnana Harate at RRI, Bengaluru"
       }
     ]
   },
   {
-    "slug": "2023-vijnana-harate-devanahalli-session",
-    "eventSlug": "2023-vijnana-harate-devanahalli-session",
-    "pageUrl": "events/2023-vijnana-harate-devanahalli-session.html",
-    "title": "vijnana harate devanahalli session",
-    "date": "2023-07-14",
-    "location": "Devanahalli",
+    "slug": "2022-vijnana-nataka-unknown-session-1223",
+    "eventSlug": "2022-vijnana-nataka-unknown-session-1223",
+    "pageUrl": "events/2022-vijnana-nataka-unknown-session-1223.html",
+    "title": "Vijnana Nataka — 'The Trial of Abdus Salam', National College Jayanagar, Bengaluru",
+    "date": "2022-12-23",
+    "location": "HN Kalakshetra, National College Jayanagar, Bengaluru",
     "images": [
       {
-        "url": "content/events/2023-vijnana-harate-devanahalli-session/gallery/image-01.jpg",
-        "description": "vijnana harate devanahalli session photo 1"
+        "url": "content/events/2022-vijnana-nataka-unknown-session-1223/gallery/image-01.jpg",
+        "description": "Scene from 'The Trial of Abdus Salam', the Kannada play on Nobel laureate Abdus Salam, performed in the HN Kalakshetra auditorium of National College Jayanagar. Portrayed by actor Yatheesh Kollegal; translated by Shashidhar Dongre."
       }
     ]
   },
   {
-    "slug": "2023-vijnana-harate-unknown-session",
-    "eventSlug": "2023-vijnana-harate-unknown-session",
-    "pageUrl": "events/2023-vijnana-harate-unknown-session.html",
-    "title": "vijnana harate unknown session",
-    "date": "2023-08-21",
-    "location": "Unknown",
+    "slug": "2023-vijnana-harate-bengaluru-session",
+    "eventSlug": "2023-vijnana-harate-bengaluru-session",
+    "pageUrl": "events/2023-vijnana-harate-bengaluru-session.html",
+    "title": "Vijnana Harate — Science in Action Fest, BVJ Science Centre, Bengaluru",
+    "date": "2023-01-06",
+    "location": "BVJ Science Centre, Bengaluru",
     "images": [
       {
-        "url": "content/events/2023-vijnana-harate-unknown-session/gallery/image-01.jpg",
-        "description": "vijnana harate unknown session photo 1"
+        "url": "content/events/2023-vijnana-harate-bengaluru-session/gallery/image-01.jpg",
+        "description": "tAcT's exhibition stall and harate program at Science in Action 2023 — Bengaluru's biggest science fest — held at BVJ Science Centre, featuring organisations like ISRO, FSSAI, JN Planetarium and Agastya Foundation"
+      },
+      {
+        "url": "content/events/2023-vijnana-harate-bengaluru-session/gallery/image-02.jpg",
+        "description": "Shashi Thutupalli of NCBS conducts a harate on Saturday exploring the most fundamental questions of science with high school students and general public at the Science in Action festival"
+      },
+      {
+        "url": "content/events/2023-vijnana-harate-bengaluru-session/gallery/image-03.jpg",
+        "description": "Prof. Uday Maitra of IISc, assisted by his wife Samita, holds an audience captivated with colourful chemistry demonstrations at Science in Action 2023, showing how 'Chemistry is everywhere!'"
       }
     ]
   },
   {
-    "slug": "2023-vijnana-harate-unknown-session-0830",
-    "eventSlug": "2023-vijnana-harate-unknown-session-0830",
-    "pageUrl": "events/2023-vijnana-harate-unknown-session-0830.html",
-    "title": "vijnana harate unknown session",
-    "date": "2023-08-30",
-    "location": "Unknown",
+    "slug": "2023-vijnana-nataka-mysuru-session",
+    "eventSlug": "2023-vijnana-nataka-mysuru-session",
+    "pageUrl": "events/2023-vijnana-nataka-mysuru-session.html",
+    "title": "Vijnana Nataka — 'Lilavathi', National College Jayanagar, Bengaluru",
+    "date": "2023-01-21",
+    "location": "HN Kalakshetra, National College Jayanagar, Bengaluru",
     "images": [
       {
-        "url": "content/events/2023-vijnana-harate-unknown-session-0830/gallery/image-01.jpg",
-        "description": "vijnana harate unknown session photo 1"
-      },
-      {
-        "url": "content/events/2023-vijnana-harate-unknown-session-0830/gallery/image-02.jpg",
-        "description": "vijnana harate unknown session photo 2"
-      },
-      {
-        "url": "content/events/2023-vijnana-harate-unknown-session-0830/gallery/image-03.jpg",
-        "description": "vijnana harate unknown session photo 3"
+        "url": "content/events/2023-vijnana-nataka-mysuru-session/gallery/image-01.jpg",
+        "description": "Scene from the Kannada play 'Lilavathi', based on the life of mathematician Bhaskara II, staged in the HN Kalakshetra auditorium of National College Jayanagar. Written by Shashidhara Dongre; directed by Nataka Academy award winner HS Umesh."
       }
     ]
   },
   {
-    "slug": "2023-vijnana-harate-mysuru-session",
-    "eventSlug": "2023-vijnana-harate-mysuru-session",
-    "pageUrl": "events/2023-vijnana-harate-mysuru-session.html",
-    "title": "vijnana harate mysuru session",
-    "date": "2023-09-09",
-    "location": "Mysuru",
+    "slug": "2023-national-science-day-unknown-session",
+    "eventSlug": "2023-national-science-day-unknown-session",
+    "pageUrl": "events/2023-national-science-day-unknown-session.html",
+    "title": "National Science Day 2023 — APS College of Arts & Science, Bengaluru",
+    "date": "2023-02-21",
+    "location": "APS College of Arts & Science, Bengaluru",
     "images": [
       {
-        "url": "content/events/2023-vijnana-harate-mysuru-session/gallery/image-01.jpg",
-        "description": "vijnana harate mysuru session photo 1"
+        "url": "content/events/2023-national-science-day-unknown-session/gallery/image-01.jpg",
+        "description": "Materials scientist Prof. Arun Umarji (IISc, Retd.) interacts with students at APS College of Arts & Science, Bengaluru, as part of the National Science Day 2023 program, which also featured Quiz, Painting, Debate, Essay and Rangoli competitions"
       }
     ]
   },
   {
-    "slug": "2023-vijnana-harate-siddaganga-public-school-unknown-session",
-    "eventSlug": "2023-vijnana-harate-siddaganga-public-school-unknown-session",
-    "pageUrl": "events/2023-vijnana-harate-siddaganga-public-school-unknown-session.html",
-    "title": "vijnana harate siddaganga public school unknown session",
-    "date": "2023-11-16",
-    "location": "Unknown",
+    "slug": "2023-national-science-day-bengaluru-session",
+    "eventSlug": "2023-national-science-day-bengaluru-session",
+    "pageUrl": "events/2023-national-science-day-bengaluru-session.html",
+    "title": "National Science Day 2023 — Bangalore City University Central College, Bengaluru",
+    "date": "2023-02-28",
+    "location": "Bangalore City University Central College, Bengaluru",
     "images": [
       {
-        "url": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-01.jpg",
-        "description": "vijnana harate siddaganga public school unknown session photo 1"
-      },
-      {
-        "url": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-02.jpg",
-        "description": "vijnana harate siddaganga public school unknown session photo 2"
-      },
-      {
-        "url": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-03.jpg",
-        "description": "vijnana harate siddaganga public school unknown session photo 3"
-      },
-      {
-        "url": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-04.jpg",
-        "description": "vijnana harate siddaganga public school unknown session photo 4"
-      },
-      {
-        "url": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-05.jpg",
-        "description": "vijnana harate siddaganga public school unknown session photo 5"
-      },
-      {
-        "url": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-06.jpg",
-        "description": "vijnana harate siddaganga public school unknown session photo 6"
-      },
-      {
-        "url": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-07.jpg",
-        "description": "vijnana harate siddaganga public school unknown session photo 7"
-      },
-      {
-        "url": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-08.jpg",
-        "description": "vijnana harate siddaganga public school unknown session photo 8"
-      },
-      {
-        "url": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-09.jpg",
-        "description": "vijnana harate siddaganga public school unknown session photo 9"
+        "url": "content/events/2023-national-science-day-bengaluru-session/gallery/image-01.jpg",
+        "description": "Prof. Utpal Nath of IISc and Prof. GC Anupama of IIA interact with students at Bangalore University Central College campus, the historic site where CV Raman made the official announcement of the Raman Effect, during National Science Day 2023"
       }
     ]
   },
   {
-    "slug": "2023-teacher-training-basavanagudi-session",
-    "eventSlug": "2023-teacher-training-basavanagudi-session",
-    "pageUrl": "events/2023-teacher-training-basavanagudi-session.html",
-    "title": "teacher training basavanagudi session",
-    "date": "2023-11-02",
-    "location": "Basavanagudi",
+    "slug": "2023-teacher-training-goa-session",
+    "eventSlug": "2023-teacher-training-goa-session",
+    "pageUrl": "events/2023-teacher-training-goa-session.html",
+    "title": "Teacher Training Workshop — Indian Academy of Sciences, Bengaluru",
+    "date": "2023-03-03",
+    "location": "Indian Academy of Sciences, Bengaluru",
     "images": [
       {
-        "url": "content/events/2023-teacher-training-basavanagudi-session/gallery/image-01.jpg",
-        "description": "teacher training basavanagudi session photo 1"
+        "url": "content/events/2023-teacher-training-goa-session/gallery/image-01.jpg",
+        "description": "Science communicator Manasa Chidambar engages teachers in craftwork and hands-on activities during the full-day Teacher Training Workshop at the Indian Academy of Sciences, Bengaluru, organised in collaboration with Academy and Science Utsav"
       },
       {
-        "url": "content/events/2023-teacher-training-basavanagudi-session/gallery/image-02.jpg",
-        "description": "teacher training basavanagudi session photo 2"
-      }
-    ]
-  },
-  {
-    "slug": "2023-vijnana-aranya-unknown-session",
-    "eventSlug": "2023-vijnana-aranya-unknown-session",
-    "pageUrl": "events/2023-vijnana-aranya-unknown-session.html",
-    "title": "vijnana aranya unknown session",
-    "date": "2023-04-13",
-    "location": "Unknown",
-    "images": [
+        "url": "content/events/2023-teacher-training-goa-session/gallery/image-02.jpg",
+        "description": "Teachers participate in tinkering activities in Electronics and Coding during the practical pedagogy workshop at IASc, Bengaluru — designed as tools they could implement in their own classrooms"
+      },
       {
-        "url": "content/events/2023-vijnana-aranya-unknown-session/gallery/image-01.jpg",
-        "description": "vijnana aranya unknown session photo 1"
+        "url": "content/events/2023-teacher-training-goa-session/gallery/image-03.jpg",
+        "description": "Dr. YC Kamala, veteran Teacher Trainer and Principal of National College Jayanagar, shares case studies on student research projects and scientific presentation skills with participating teachers"
+      },
+      {
+        "url": "content/events/2023-teacher-training-goa-session/gallery/image-04.jpg",
+        "description": "Group photograph of teacher participants and resource persons at the Teacher Training Workshop, Indian Academy of Sciences, Bengaluru, 3 March 2023"
       }
     ]
   },
@@ -385,13 +243,55 @@
     "slug": "2023-vijnana-aranya-government-college-srikakulam-session",
     "eventSlug": "2023-vijnana-aranya-government-college-srikakulam-session",
     "pageUrl": "events/2023-vijnana-aranya-government-college-srikakulam-session.html",
-    "title": "vijnana aranya government college srikakulam session",
+    "title": "Vijnana Aranya — Government Degree College, Srikakulam, Andhra Pradesh",
     "date": "2023-04-13",
-    "location": "Srikakulam",
+    "location": "Government Degree College (Men), Srikakulam, Andhra Pradesh",
     "images": [
       {
         "url": "content/events/2023-vijnana-aranya-government-college-srikakulam-session/gallery/image-01.jpg",
-        "description": "vijnana aranya government college srikakulam session photo 1"
+        "description": "Students of Government Degree College (Men), Srikakulam, participate in the first Vijnana Aranya workshop on Life Sciences and Ecology, conducted by Prof. HS Misra of GITAM University, Visakhapatnam, with M. Pradeep"
+      }
+    ]
+  },
+  {
+    "slug": "2023-vijnana-aranya-unknown-session",
+    "eventSlug": "2023-vijnana-aranya-unknown-session",
+    "pageUrl": "events/2023-vijnana-aranya-unknown-session.html",
+    "title": "Vijnana Aranya — Srikakulam District, Andhra Pradesh",
+    "date": "2023-04-13",
+    "location": "Srikakulam District, Andhra Pradesh",
+    "images": [
+      {
+        "url": "content/events/2023-vijnana-aranya-unknown-session/gallery/image-01.jpg",
+        "description": "Prof. HS Misra of GITAM University oversees the first Vijnana Aranya program in Srikakulam District, Andhra Pradesh — a series of four full-day Life Sciences and Ecology workshops across multiple junior colleges in April 2023"
+      }
+    ]
+  },
+  {
+    "slug": "2023-vijnana-harate-basavanagudi-session",
+    "eventSlug": "2023-vijnana-harate-basavanagudi-session",
+    "pageUrl": "events/2023-vijnana-harate-basavanagudi-session.html",
+    "title": "Vijnana Harate — National College Basavanagudi, Bengaluru",
+    "date": "2023-04-29",
+    "location": "National College Basavanagudi, Bengaluru",
+    "images": [
+      {
+        "url": "content/events/2023-vijnana-harate-basavanagudi-session/gallery/image-01.jpg",
+        "description": "Prof. KN Ganeshaiah (Academy Fellow) illustrates the importance of curiosity and rigorous scientific study at National College Basavanagudi, with examples from zoopharmacognosy and bird-nesting behaviour, followed by an interactive Q&A session"
+      }
+    ]
+  },
+  {
+    "slug": "2023-vijnana-harate-devanahalli-session",
+    "eventSlug": "2023-vijnana-harate-devanahalli-session",
+    "pageUrl": "events/2023-vijnana-harate-devanahalli-session.html",
+    "title": "Vijnana Harate — Anantha Vidyanikethan, Devanahalli",
+    "date": "2023-07-14",
+    "location": "Anantha Vidyanikethan, Devanahalli",
+    "images": [
+      {
+        "url": "content/events/2023-vijnana-harate-devanahalli-session/gallery/image-01.jpg",
+        "description": "Dr. Seetha Somasundaram (Program Director, ISRO's Space Science Program Office during the Mars Orbiter Mission) conducts a harate on astronomy and space science for high school students of Anantha Vidyanikethan, Devanahalli, followed by a visit to the RRI Archives Gallery"
       }
     ]
   },
@@ -399,17 +299,31 @@
     "slug": "2023-vijnana-aranya-ponduru-session",
     "eventSlug": "2023-vijnana-aranya-ponduru-session",
     "pageUrl": "events/2023-vijnana-aranya-ponduru-session.html",
-    "title": "vijnana aranya ponduru session",
+    "title": "Vijnana Aranya — Systems Educational Institute, Ponduru, Andhra Pradesh",
     "date": "2023-07-15",
-    "location": "Ponduru",
+    "location": "Systems Educational Institute, Ponduru, Andhra Pradesh",
     "images": [
       {
         "url": "content/events/2023-vijnana-aranya-ponduru-session/gallery/image-01.jpg",
-        "description": "vijnana aranya ponduru session photo 1"
+        "description": "Students of Systems Educational Institute, Ponduru, AP, with Prof. Yogendra Sarma (Deputy Director, Dean of Biological Sciences, IISER-Berhampur) during the day-long activities including aerodynamic modelling and volumetric analysis"
       },
       {
         "url": "content/events/2023-vijnana-aranya-ponduru-session/gallery/image-02.jpg",
-        "description": "vijnana aranya ponduru session photo 2"
+        "description": "Prof. Yogendra Sarma conducts hands-on experiments in Physics and Biology for students of Systems Educational Institute, Ponduru — one of the rural outreach Vijnana Aranya programs in Andhra Pradesh"
+      }
+    ]
+  },
+  {
+    "slug": "2023-vijnana-harate-unknown-session",
+    "eventSlug": "2023-vijnana-harate-unknown-session",
+    "pageUrl": "events/2023-vijnana-harate-unknown-session.html",
+    "title": "Vijnana Harate — RRI Campus, Bengaluru (SBS PU College & Vishwa Vidyapeeth)",
+    "date": "2023-08-21",
+    "location": "Raman Research Institute, Bengaluru",
+    "images": [
+      {
+        "url": "content/events/2023-vijnana-harate-unknown-session/gallery/image-01.jpg",
+        "description": "Students from SBS Pre-University College and Vishwa Vidyapeeth attend the full-day Vijnana Harate at RRI; Prof. Jayarama Kadandale (Centre for Human Genetics) explains chromosomal abnormalities and karyotyping, while Dr. Yelamaggad (CeNS) talks on exotic materials and invisibility"
       }
     ]
   },
@@ -417,45 +331,145 @@
     "slug": "2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session",
     "eventSlug": "2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session",
     "pageUrl": "events/2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session.html",
-    "title": "vijnana yuvati holy cross college nagercoil nagercoil session",
+    "title": "Vijnana Yuvati — Holy Cross College, Nagercoil",
     "date": "2023-08-26",
-    "location": "Nagercoil",
+    "location": "Holy Cross College, Nagercoil, Tamil Nadu",
     "images": [
       {
         "url": "content/events/2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session/gallery/image-01.jpg",
-        "description": "vijnana yuvati holy cross college nagercoil nagercoil session photo 1"
+        "description": "About a hundred young women from neighbouring villages attend the opening session of the 'Science for Sustainable Livelihood' entrepreneurship workshop at Holy Cross College, Nagercoil, sponsored by Emcure Pharmaceuticals"
       },
       {
         "url": "content/events/2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session/gallery/image-02.jpg",
-        "description": "vijnana yuvati holy cross college nagercoil nagercoil session photo 2"
+        "description": "V. Samuel Gnana Prakash (EMBO, DAAD and Marie Curie Fellow) addresses participants on the role of science in magnifying entrepreneurial opportunities at the Vijnana Yuvati workshop, Holy Cross College, Nagercoil"
       },
       {
         "url": "content/events/2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session/gallery/image-03.jpg",
-        "description": "vijnana yuvati holy cross college nagercoil nagercoil session photo 3"
+        "description": "Participants create jute products — purses, carry bags and files — using sewing machines in the Jute Product Creation and Sales session, led by Ms. Packialakshmi of M/s Sarakontrai Jute Products"
       },
       {
         "url": "content/events/2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session/gallery/image-04.jpg",
-        "description": "vijnana yuvati holy cross college nagercoil nagercoil session photo 4"
+        "description": "Young women learn fish product preservation and marketing during the hands-on training session covering fish manufacturing, meat and vegetable pickle making, and FSSI certification at Vijnana Yuvati, Nagercoil"
       },
       {
         "url": "content/events/2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session/gallery/image-05.jpg",
-        "description": "vijnana yuvati holy cross college nagercoil nagercoil session photo 5"
+        "description": "Participants work with organic grow-bags, cow-dung and earth-worms in the Vermicomposting and Vermiculture session at Cross Verm Composting Centre, learning sustainable farming practices"
       },
       {
         "url": "content/events/2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session/gallery/image-06.jpg",
-        "description": "vijnana yuvati holy cross college nagercoil nagercoil session photo 6"
+        "description": "Hands-on aquarium construction session at Holy Cross College: participants receive training in making aquarium tanks, fish breeding, aerator pumps and decorative materials for aquarium-based enterprise"
       },
       {
         "url": "content/events/2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session/gallery/image-07.jpg",
-        "description": "vijnana yuvati holy cross college nagercoil nagercoil session photo 7"
+        "description": "Arul Jerald Prakash (former Director, Kerala State Science and Technology Museum) addresses participants on eco-entrepreneurship and the use of local resources and government schemes for women entrepreneurs"
       },
       {
         "url": "content/events/2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session/gallery/image-08.jpg",
-        "description": "vijnana yuvati holy cross college nagercoil nagercoil session photo 8"
+        "description": "Group photograph of all participants with resource persons and organisers at the conclusion of the Vijnana Yuvati 'Science for Sustainable Livelihood' workshop at Holy Cross College, Nagercoil, where certificates were distributed"
       },
       {
         "url": "content/events/2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session/gallery/image-09.jpg",
-        "description": "vijnana yuvati holy cross college nagercoil nagercoil session photo 9"
+        "description": "Banner and signage at the Holy Cross College Nagercoil venue for the Vijnana Yuvati workshop 'Science for Sustainable Livelihood', the first Vijnana Yuvati program conceived to empower young rural women aged 18–25"
+      }
+    ]
+  },
+  {
+    "slug": "2023-vijnana-harate-unknown-session-0830",
+    "eventSlug": "2023-vijnana-harate-unknown-session-0830",
+    "pageUrl": "events/2023-vijnana-harate-unknown-session-0830.html",
+    "title": "Vijnana Harate — RRI Campus, Bengaluru (Aditi Public School)",
+    "date": "2023-08-30",
+    "location": "Raman Research Institute, Bengaluru",
+    "images": [
+      {
+        "url": "content/events/2023-vijnana-harate-unknown-session-0830/gallery/image-01.jpg",
+        "description": "Madhusudhan of JN Planetarium demonstrates the Scientific Method to high school students of Aditi Public School at the RRI campus, in a program organised in collaboration with KSCST"
+      },
+      {
+        "url": "content/events/2023-vijnana-harate-unknown-session-0830/gallery/image-02.jpg",
+        "description": "Students of Aditi Public School participate in the experiment-observe-infer activity conducted by the creative professionals team from Navakshitija, in the RRI campus gardens"
+      },
+      {
+        "url": "content/events/2023-vijnana-harate-unknown-session-0830/gallery/image-03.jpg",
+        "description": "Group photograph of Aditi Public School students with tAcT and RRI staff at the conclusion of the harate day, which ended with a visit to the Raman Museum and RRI Archives Gallery"
+      }
+    ]
+  },
+  {
+    "slug": "2023-vijnana-harate-mysuru-session",
+    "eventSlug": "2023-vijnana-harate-mysuru-session",
+    "pageUrl": "events/2023-vijnana-harate-mysuru-session.html",
+    "title": "Vijnana Harate — Vanitha Sadana & Social Welfare Hostel, Mysuru",
+    "date": "2023-09-09",
+    "location": "Vanitha Sadana & Social Welfare Dept. Hostel, Mysuru",
+    "images": [
+      {
+        "url": "content/events/2023-vijnana-harate-mysuru-session/gallery/image-01.jpg",
+        "description": "Dr. S. Seetha (former Director, Space Science Program, ISRO) conducts harates at two venues in Mysuru — first at Vanitha Sadana (school for underprivileged girls) on astronomy and the Aditya Solar Mission, and then at a Social Welfare Department hostel for young women"
+      }
+    ]
+  },
+  {
+    "slug": "2023-teacher-training-basavanagudi-session",
+    "eventSlug": "2023-teacher-training-basavanagudi-session",
+    "pageUrl": "events/2023-teacher-training-basavanagudi-session.html",
+    "title": "Teacher Training Workshop — BITS Pilani KK Birla Goa Campus (89th Annual Meeting)",
+    "date": "2023-11-02",
+    "location": "BITS Pilani – KK Birla Goa Campus, Goa",
+    "images": [
+      {
+        "url": "content/events/2023-teacher-training-basavanagudi-session/gallery/image-01.jpg",
+        "description": "Teachers and tAcT representatives at the Joint Science Academies' SEP Mini-Symposium for invited teachers, held during the Academy's 89th Annual Meeting at BITS Pilani – KK Birla Goa Campus"
+      },
+      {
+        "url": "content/events/2023-teacher-training-basavanagudi-session/gallery/image-02.jpg",
+        "description": "Dr. YC Kamala, Principal of National College Basavanagudi, conducts her pedagogy session at BITS Pilani Goa, sharing practical tips on engaging students through observation, experiments, research papers and professional presentations"
+      }
+    ]
+  },
+  {
+    "slug": "2023-vijnana-harate-siddaganga-public-school-unknown-session",
+    "eventSlug": "2023-vijnana-harate-siddaganga-public-school-unknown-session",
+    "pageUrl": "events/2023-vijnana-harate-siddaganga-public-school-unknown-session.html",
+    "title": "Vijnana Harate — Siddaganga Public School, Tumkur",
+    "date": "2023-11-16",
+    "location": "Siddaganga Public School, Tumkur, Karnataka",
+    "images": [
+      {
+        "url": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-01.jpg",
+        "description": "Prof. Vikram Jayaram (IISc) conducts the harate for high school students of Siddaganga Public School, starting with Lord Rayleigh's century-old experiment and connecting it to the invention of detergents and advances in materials engineering"
+      },
+      {
+        "url": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-02.jpg",
+        "description": "Students of Siddaganga Public School, Tumkur, in the interactive harate on materials science, where Prof. Vikram Jayaram covered topics from aviation safety to rare earth resources and geopolitics"
+      },
+      {
+        "url": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-03.jpg",
+        "description": "Students examine material samples and objects used by Prof. Vikram Jayaram to demonstrate the practical impact of materials engineering research on everyday life"
+      },
+      {
+        "url": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-04.jpg",
+        "description": "Interactive Q&A session with students of Siddaganga Public School during the materials science harate — questions ranged from familiar household objects to geopolitics of rare earth resources"
+      },
+      {
+        "url": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-05.jpg",
+        "description": "Students of Siddaganga Public School, Tumkur, listen as Prof. Vikram Jayaram explains how smart memory-materials help prevent heart attacks and how durable materials transformed aviation"
+      },
+      {
+        "url": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-06.jpg",
+        "description": "Prof. Vikram Jayaram demonstrates a scientific concept using everyday objects during the Vijnana Harate at Siddaganga Public School, Tumkur"
+      },
+      {
+        "url": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-07.jpg",
+        "description": "Students of Siddaganga Public School in a group discussion during the materials science harate conducted by Prof. Vikram Jayaram"
+      },
+      {
+        "url": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-08.jpg",
+        "description": "Prof. Vikram Jayaram with students and teachers at Siddaganga Public School, Tumkur, at the conclusion of the Vijnana Harate on materials science and engineering"
+      },
+      {
+        "url": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-09.jpg",
+        "description": "Group photograph of students of Siddaganga Public School, Tumkur, with tAcT representatives after the Vijnana Harate conducted by Prof. Vikram Jayaram on 16 November 2023"
       }
     ]
   },
@@ -463,129 +477,129 @@
     "slug": "2023-national-mathematics-day-vishwa-yelahanka-session",
     "eventSlug": "2023-national-mathematics-day-vishwa-yelahanka-session",
     "pageUrl": "events/2023-national-mathematics-day-vishwa-yelahanka-session.html",
-    "title": "national mathematics day vishwa yelahanka session",
+    "title": "Ganitha Mela 2023 — Vishwa Vidyapeeth School, Yelahanka, Bengaluru",
     "date": "2023-12-18",
-    "location": "Yelahanka",
+    "location": "Vishwa Vidyapeeth School, Yelahanka, Bengaluru",
     "images": [
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-01.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 1"
+        "description": "Inauguration of Ganitha Mela 2023 at Vishwa Vidyapeeth School, Yelahanka, by Padma Shri Kiran Kumar (ISRO) — the event drew 8000+ math enthusiasts from 60+ schools across India over five days"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-02.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 2"
+        "description": "Padma Shri Kiran Kumar of ISRO interacts with young participants at Ganitha Mela 2023, emphasising the role of observations, asking questions and the significance of mathematics in our lives"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-03.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 3"
+        "description": "Students from dozens of schools across Karnataka and other states attend Vijnana Harates conducted by eminent mathematicians including Sujatha Ramdorai, Tirthankar Bhattacharyya and Rohini Godbole at Ganitha Mela 2023"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-04.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 4"
+        "description": "Students explore math concepts at interactive activity stalls featuring pi, Pythagoras theorem, Fibonacci sequence and logic puzzles at Ganitha Mela 2023 — widely reported as the largest Mathematics Fair in India"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-05.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 5"
+        "description": "Students play Aaliguli Mane, Snakes and Ladders, Tower of Hanoi and other classical games with mathematical properties at the interactive games zone of Ganitha Mela 2023"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-06.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 6"
+        "description": "Outdoor games based on mathematical concepts — students use their bodies to experience pi, Fibonacci sequences and geometric patterns on the Vishwa Vidyapeeth campus at Ganitha Mela 2023"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-07.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 7"
+        "description": "A harate session conducted by Rajaram Nityananda or Samuel Joseph of ICTS, exploring geometry and soap bubbles with students at Ganitha Mela 2023, Yelahanka"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-08.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 8"
+        "description": "Evening cultural program at Ganitha Mela 2023 — a performance celebrating the intersection of mathematics and the arts, including classical dance, music and the acclaimed Kannada play 'Lilavathi' on Bhaskara II"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-09.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 9"
+        "description": "Bharatanatyam-Kathak Jugalbandhi performance on a mathematical theme during the evening cultural program at Ganitha Mela 2023, Vishwa Vidyapeeth, Yelahanka"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-10.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 10"
+        "description": "Padma Shri Parshuram Gangavane presents shadow puppetry as part of the evening's cultural celebrations at Ganitha Mela 2023"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-11.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 11"
+        "description": "Math-magic and mind-reading performance by a student entertainer at Ganitha Mela 2023 evening program, Vishwa Vidyapeeth, Yelahanka"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-12.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 12"
+        "description": "Guests and speakers being honoured with custom-made Ganitha Mela mementos during the closing ceremony of the 5-day festival at Vishwa Vidyapeeth, Yelahanka"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-13.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 13"
+        "description": "Maths-related activity kits being distributed to visiting school students at Ganitha Mela 2023 — the event was organised jointly by tAcT, Vishwa Vidyapeeth School and Seed2Sapling Education, supported by KSCST"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-14.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 14"
+        "description": "Newspaper and TV coverage montage of Ganitha Mela 2023, which received wide national and regional media attention as a first-of-its-kind event"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-15.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 15"
+        "description": "Students seated on the ground in an outdoor session at Ganitha Mela 2023, exploring mathematical concepts through play and activity"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-16.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 16"
+        "description": "Participants at a group activity stall at Ganitha Mela 2023, working through puzzles and interactive mathematics challenges"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-17.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 17"
+        "description": "Large outdoor audience attending one of the harate or cultural performances at Ganitha Mela 2023, Vishwa Vidyapeeth, Yelahanka"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-18.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 18"
+        "description": "Science communicator Kollegala Sharma engages students with interactive mathematical and scientific activities at Ganitha Mela 2023"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-19.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 19"
+        "description": "VSS Sastry, veteran math communicator, conducts a harate on mathematical patterns and problem-solving at Ganitha Mela 2023, Yelahanka"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-20.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 20"
+        "description": "BS Krishnamurthy leads a 'Dance of Maths' activity session with student participants at Ganitha Mela 2023"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-21.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 21"
+        "description": "Students at Ganitha Mela 2023 explore mathematical patterns on giant floor boards during the outdoor activity sessions at Vishwa Vidyapeeth, Yelahanka"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-22.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 22"
+        "description": "An art-and-mathematics exhibition on display at Ganitha Mela 2023, showcasing the intersection of geometric patterns, artistic tradition and mathematical principles"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-23.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 23"
+        "description": "Students in bright uniforms from different schools assembled for a group session at Ganitha Mela 2023 — students from Karnataka and other states participated in the week-long festival"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-24.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 24"
+        "description": "A carnatic classical music jugalbandi on mathematical themes performed during the evening cultural program at Ganitha Mela 2023"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-25.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 25"
+        "description": "Game of chess being played as part of the interactive mathematics activities at Ganitha Mela 2023 — classical games with deep mathematical structure were a highlight of the festival"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-26.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 26"
+        "description": "Students discover math-in-nature at the activity stalls of Ganitha Mela 2023, including spirals, fractals and symmetry patterns"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-27.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 27"
+        "description": "Amitabh Joshi (JNCASR) engages school students in a Vijnana Harate on mathematical concepts in biology and evolution at Ganitha Mela 2023"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-28.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 28"
+        "description": "Nithin Nagaraj (NIAS) conducts a harate on chaos, complexity and mathematics at Ganitha Mela 2023 for students from multiple schools"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-29.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 29"
+        "description": "Students perform a dance or theatre act with a mathematical theme during the evening cultural celebrations at Ganitha Mela 2023, showcasing the artistic side of mathematics"
       },
       {
         "url": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-30.jpg",
-        "description": "national mathematics day vishwa yelahanka session photo 30"
+        "description": "Closing moments of Ganitha Mela 2023 at Vishwa Vidyapeeth, Yelahanka — the five-day festival concluded on 22 December 2023, National Mathematics Day"
       }
     ]
   },
@@ -593,291 +607,21 @@
     "slug": "2023-national-mathematics-day-bengaluru-session",
     "eventSlug": "2023-national-mathematics-day-bengaluru-session",
     "pageUrl": "events/2023-national-mathematics-day-bengaluru-session.html",
-    "title": "national mathematics day bengaluru session",
+    "title": "National Mathematics Day 2023 — Acharya Patshala College, Bengaluru",
     "date": "2023-12-22",
-    "location": "Bengaluru",
+    "location": "Acharya Patshala College, Bengaluru",
     "images": [
       {
         "url": "content/events/2023-national-mathematics-day-bengaluru-session/gallery/image-01.jpg",
-        "description": "national mathematics day bengaluru session photo 1"
+        "description": "Participants at the National Mathematics Day 2023 celebration at Acharya Patshala College, Bengaluru — 160+ students from different colleges attended this event organised by tAcT with the Ramanujan Mathematics Club"
       },
       {
         "url": "content/events/2023-national-mathematics-day-bengaluru-session/gallery/image-02.jpg",
-        "description": "national mathematics day bengaluru session photo 2"
+        "description": "N.S. Kumar, Educationist and Researcher, explains Ramanujan numbers, Magic Squares and Determinant concepts in a session on 'Fun with Maths Counting and Computing' at Acharya Patshala College"
       },
       {
         "url": "content/events/2023-national-mathematics-day-bengaluru-session/gallery/image-03.jpg",
-        "description": "national mathematics day bengaluru session photo 3"
-      }
-    ]
-  },
-  {
-    "slug": "2024-vijnana-nataka-mysuru-session",
-    "eventSlug": "2024-vijnana-nataka-mysuru-session",
-    "pageUrl": "events/2024-vijnana-nataka-mysuru-session.html",
-    "title": "vijnana nataka mysuru session",
-    "date": "2024-07-20",
-    "location": "Mysuru",
-    "images": [
-      {
-        "url": "content/events/2024-vijnana-nataka-mysuru-session/gallery/image-01.jpg",
-        "description": "vijnana nataka mysuru session photo 1"
-      },
-      {
-        "url": "content/events/2024-vijnana-nataka-mysuru-session/gallery/image-02.jpg",
-        "description": "vijnana nataka mysuru session photo 2"
-      },
-      {
-        "url": "content/events/2024-vijnana-nataka-mysuru-session/gallery/image-03.jpg",
-        "description": "vijnana nataka mysuru session photo 3"
-      },
-      {
-        "url": "content/events/2024-vijnana-nataka-mysuru-session/gallery/image-04.jpg",
-        "description": "vijnana nataka mysuru session photo 4"
-      },
-      {
-        "url": "content/events/2024-vijnana-nataka-mysuru-session/gallery/image-05.jpg",
-        "description": "vijnana nataka mysuru session photo 5"
-      }
-    ]
-  },
-  {
-    "slug": "2024-vijnana-harate-anantha-vidyaniketan-unknown-session",
-    "eventSlug": "2024-vijnana-harate-anantha-vidyaniketan-unknown-session",
-    "pageUrl": "events/2024-vijnana-harate-anantha-vidyaniketan-unknown-session.html",
-    "title": "vijnana harate anantha vidyaniketan unknown session",
-    "date": "2024-07-23",
-    "location": "Unknown",
-    "images": [
-      {
-        "url": "content/events/2024-vijnana-harate-anantha-vidyaniketan-unknown-session/gallery/image-01.jpg",
-        "description": "vijnana harate anantha vidyaniketan unknown session photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2024-vijnana-harate-unknown-session",
-    "eventSlug": "2024-vijnana-harate-unknown-session",
-    "pageUrl": "events/2024-vijnana-harate-unknown-session.html",
-    "title": "vijnana harate unknown session",
-    "date": "2024-08-01",
-    "location": "Unknown",
-    "images": [
-      {
-        "url": "content/events/2024-vijnana-harate-unknown-session/gallery/image-01.jpg",
-        "description": "vijnana harate unknown session photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2024-vijnana-harate-vanita-sadan-mysuru-session",
-    "eventSlug": "2024-vijnana-harate-vanita-sadan-mysuru-session",
-    "pageUrl": "events/2024-vijnana-harate-vanita-sadan-mysuru-session.html",
-    "title": "vijnana harate vanita sadan mysuru session",
-    "date": "2024-08-26",
-    "location": "Mysuru",
-    "images": [
-      {
-        "url": "content/events/2024-vijnana-harate-vanita-sadan-mysuru-session/gallery/image-01.jpg",
-        "description": "vijnana harate vanita sadan mysuru session photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2024-vijnana-harate-mes-kishore-kendra-bengaluru-session",
-    "eventSlug": "2024-vijnana-harate-mes-kishore-kendra-bengaluru-session",
-    "pageUrl": "events/2024-vijnana-harate-mes-kishore-kendra-bengaluru-session.html",
-    "title": "vijnana harate mes kishore kendra bengaluru session",
-    "date": "2024-08-28",
-    "location": "Bengaluru",
-    "images": [
-      {
-        "url": "content/events/2024-vijnana-harate-mes-kishore-kendra-bengaluru-session/gallery/image-01.jpg",
-        "description": "vijnana harate mes kishore kendra bengaluru session photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2024-vijnana-harate-unknown-session-0923",
-    "eventSlug": "2024-vijnana-harate-unknown-session-0923",
-    "pageUrl": "events/2024-vijnana-harate-unknown-session-0923.html",
-    "title": "vijnana harate unknown session",
-    "date": "2024-09-23",
-    "location": "Unknown",
-    "images": [
-      {
-        "url": "content/events/2024-vijnana-harate-unknown-session-0923/gallery/image-01.jpg",
-        "description": "vijnana harate unknown session photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2024-vijnana-harate-bhubaneswar-session",
-    "eventSlug": "2024-vijnana-harate-bhubaneswar-session",
-    "pageUrl": "events/2024-vijnana-harate-bhubaneswar-session.html",
-    "title": "vijnana harate bhubaneswar session",
-    "date": "2024-11-08",
-    "location": "Bhubaneswar",
-    "images": [
-      {
-        "url": "content/events/2024-vijnana-harate-bhubaneswar-session/gallery/image-01.jpg",
-        "description": "vijnana harate bhubaneswar session photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2025-vijnana-harate-bel-bengaluru-session",
-    "eventSlug": "2025-vijnana-harate-bel-bengaluru-session",
-    "pageUrl": "events/2025-vijnana-harate-bel-bengaluru-session.html",
-    "title": "vijnana harate bel bengaluru session",
-    "date": "2025-01-03",
-    "location": "Bengaluru",
-    "images": [
-      {
-        "url": "content/events/2025-vijnana-harate-bel-bengaluru-session/gallery/image-01.jpg",
-        "description": "vijnana harate bel bengaluru session photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2025-vijnana-harate-basavanagudi-session",
-    "eventSlug": "2025-vijnana-harate-basavanagudi-session",
-    "pageUrl": "events/2025-vijnana-harate-basavanagudi-session.html",
-    "title": "vijnana harate basavanagudi session",
-    "date": "2025-01-03",
-    "location": "Basavanagudi",
-    "images": [
-      {
-        "url": "content/events/2025-vijnana-harate-basavanagudi-session/gallery/image-01.jpg",
-        "description": "vijnana harate basavanagudi session photo 1"
-      },
-      {
-        "url": "content/events/2025-vijnana-harate-basavanagudi-session/gallery/image-02.jpg",
-        "description": "vijnana harate basavanagudi session photo 2"
-      }
-    ]
-  },
-  {
-    "slug": "2025-vijnana-harate-kallankuppe-high-school-kanakapura-session",
-    "eventSlug": "2025-vijnana-harate-kallankuppe-high-school-kanakapura-session",
-    "pageUrl": "events/2025-vijnana-harate-kallankuppe-high-school-kanakapura-session.html",
-    "title": "vijnana harate kallankuppe high school kanakapura session",
-    "date": "2025-02-07",
-    "location": "Kanakapura",
-    "images": [
-      {
-        "url": "content/events/2025-vijnana-harate-kallankuppe-high-school-kanakapura-session/gallery/image-01.jpg",
-        "description": "vijnana harate kallankuppe high school kanakapura session photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2024-vijnana-aranya-mc-thalalu-govt-school-saragur-session",
-    "eventSlug": "2024-vijnana-aranya-mc-thalalu-govt-school-saragur-session",
-    "pageUrl": "events/2024-vijnana-aranya-mc-thalalu-govt-school-saragur-session.html",
-    "title": "vijnana aranya mc thalalu govt school saragur session",
-    "date": "2024-09-13",
-    "location": "Saragur",
-    "images": [
-      {
-        "url": "content/events/2024-vijnana-aranya-mc-thalalu-govt-school-saragur-session/gallery/image-01.jpg",
-        "description": "vijnana aranya mc thalalu govt school saragur session photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2025-vijnana-aranya-om-kanakapura-session",
-    "eventSlug": "2025-vijnana-aranya-om-kanakapura-session",
-    "pageUrl": "events/2025-vijnana-aranya-om-kanakapura-session.html",
-    "title": "vijnana aranya om kanakapura session",
-    "date": "2025-02-02",
-    "location": "Kanakapura",
-    "images": [
-      {
-        "url": "content/events/2025-vijnana-aranya-om-kanakapura-session/gallery/image-01.jpg",
-        "description": "vijnana aranya om kanakapura session photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2025-vijnana-aranya-mysuru-session",
-    "eventSlug": "2025-vijnana-aranya-mysuru-session",
-    "pageUrl": "events/2025-vijnana-aranya-mysuru-session.html",
-    "title": "vijnana aranya mysuru session",
-    "date": "2025-03-01",
-    "location": "Mysuru",
-    "images": [
-      {
-        "url": "content/events/2025-vijnana-aranya-mysuru-session/gallery/image-01.jpg",
-        "description": "vijnana aranya mysuru session photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2024-national-mathematics-day-unknown-session",
-    "eventSlug": "2024-national-mathematics-day-unknown-session",
-    "pageUrl": "events/2024-national-mathematics-day-unknown-session.html",
-    "title": "national mathematics day unknown session",
-    "date": "2024-12-24",
-    "location": "Unknown",
-    "images": [
-      {
-        "url": "content/events/2024-national-mathematics-day-unknown-session/gallery/image-01.jpg",
-        "description": "national mathematics day unknown session photo 1"
-      },
-      {
-        "url": "content/events/2024-national-mathematics-day-unknown-session/gallery/image-02.jpg",
-        "description": "national mathematics day unknown session photo 2"
-      }
-    ]
-  },
-  {
-    "slug": "2025-women-and-girls-in-science-bengaluru",
-    "eventSlug": "2025-women-and-girls-in-science-bengaluru",
-    "pageUrl": "events/2025-women-and-girls-in-science-bengaluru.html",
-    "title": "women and girls in science bengaluru",
-    "date": "2025-02-11",
-    "location": "Bengaluru",
-    "images": [
-      {
-        "url": "content/events/2025-women-and-girls-in-science-bengaluru/gallery/image-01.jpg",
-        "description": "women and girls in science bengaluru photo 1"
-      },
-      {
-        "url": "content/events/2025-women-and-girls-in-science-bengaluru/gallery/image-02.jpg",
-        "description": "women and girls in science bengaluru photo 2"
-      },
-      {
-        "url": "content/events/2025-women-and-girls-in-science-bengaluru/gallery/image-03.jpg",
-        "description": "women and girls in science bengaluru photo 3"
-      }
-    ]
-  },
-  {
-    "slug": "2025-national-science-day-bapu-high-school-bengaluru-session",
-    "eventSlug": "2025-national-science-day-bapu-high-school-bengaluru-session",
-    "pageUrl": "events/2025-national-science-day-bapu-high-school-bengaluru-session.html",
-    "title": "national science day bapu high school bengaluru session",
-    "date": "2025-02-28",
-    "location": "Bengaluru",
-    "images": [
-      {
-        "url": "content/events/2025-national-science-day-bapu-high-school-bengaluru-session/gallery/image-01.jpg",
-        "description": "national science day bapu high school bengaluru session photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2024-young-kalam-science-fest-bengaluru",
-    "eventSlug": "2024-young-kalam-science-fest-bengaluru",
-    "pageUrl": "events/2024-young-kalam-science-fest-bengaluru.html",
-    "title": "young kalam science fest bengaluru",
-    "date": "2024-11-29",
-    "location": "Bhubaneswar",
-    "images": [
-      {
-        "url": "content/events/2024-young-kalam-science-fest-bengaluru/gallery/image-01.jpg",
-        "description": "young kalam science fest bengaluru photo 1"
+        "description": "T.K. Prasanna Murthy, Karnataka State Resource Person for Secondary School Mathematics, demonstrates mathematical models related to Ramanujan's contributions, Pell's equation and Brahmagupta's formula at Acharya Patshala College"
       }
     ]
   },
@@ -885,13 +629,13 @@
     "slug": "2024-soafal-lecture",
     "eventSlug": "2024-soafal-lecture",
     "pageUrl": "events/2024-soafal-lecture.html",
-    "title": "soafal  lecture",
+    "title": "SOAFAL Lecture — Shikha Varma: Excitements in Nanotechnology",
     "date": "2024-04-20",
-    "location": "Online",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
     "images": [
       {
         "url": "content/events/2024-soafal-lecture/gallery/image-01.jpg",
-        "description": "soafal  lecture photo 1"
+        "description": "Online poster for the SOAFAL 'Lilavati's Daughters' lecture by Shikha Varma on 'Excitements in Nanotechnology', 20 April 2024 — part of the joint online lecture series by tAcT and SOA University, Bhubaneswar, featuring women scientists from the Academy's book 'Lilavati's Daughters'"
       }
     ]
   },
@@ -899,13 +643,13 @@
     "slug": "2024-soafal-hejmadi-lecture",
     "eventSlug": "2024-soafal-hejmadi-lecture",
     "pageUrl": "events/2024-soafal-hejmadi-lecture.html",
-    "title": "soafal hejmadi lecture",
+    "title": "SOAFAL Lecture — Priyambada Mohanty Hejmadi: The Amazing World of Life Science",
     "date": "2024-05-11",
-    "location": "Online",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
     "images": [
       {
         "url": "content/events/2024-soafal-hejmadi-lecture/gallery/image-01.png",
-        "description": "soafal hejmadi lecture photo 1"
+        "description": "Online poster for the SOAFAL lecture by Priyambada Mohanty Hejmadi on 'The Amazing World of Life Science', 11 May 2024 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
       }
     ]
   },
@@ -913,13 +657,13 @@
     "slug": "2024-soafal-lecture-0601",
     "eventSlug": "2024-soafal-lecture-0601",
     "pageUrl": "events/2024-soafal-lecture-0601.html",
-    "title": "soafal  lecture",
+    "title": "SOAFAL Lecture — Pushpa Khare: Understanding the Universe",
     "date": "2024-06-01",
-    "location": "Online",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
     "images": [
       {
         "url": "content/events/2024-soafal-lecture-0601/gallery/image-01.png",
-        "description": "soafal  lecture photo 1"
+        "description": "Online poster for the SOAFAL lecture by Pushpa Khare on 'Understanding the Universe', 1 June 2024 — part of the 'Lilavati's Daughters: Women Scientists of India' online lecture series"
       }
     ]
   },
@@ -927,13 +671,13 @@
     "slug": "2024-soafal-lecture-0608",
     "eventSlug": "2024-soafal-lecture-0608",
     "pageUrl": "events/2024-soafal-lecture-0608.html",
-    "title": "soafal  lecture",
+    "title": "SOAFAL Lecture — Prajval Shastri: Meandering into Astrophysics",
     "date": "2024-06-08",
-    "location": "Online",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
     "images": [
       {
         "url": "content/events/2024-soafal-lecture-0608/gallery/image-01.png",
-        "description": "soafal  lecture photo 1"
+        "description": "Online poster for the SOAFAL lecture by Prajval Shastri on 'Meandering into Astrophysics', 8 June 2024 — part of the 'Lilavati's Daughters: Women Scientists of India' online lecture series"
       }
     ]
   },
@@ -941,13 +685,13 @@
     "slug": "2024-soafal-lecture-0706",
     "eventSlug": "2024-soafal-lecture-0706",
     "pageUrl": "events/2024-soafal-lecture-0706.html",
-    "title": "soafal  lecture",
+    "title": "SOAFAL Lecture — Sujatha Ramdorai: The Art of Math",
     "date": "2024-07-06",
-    "location": "Online",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
     "images": [
       {
         "url": "content/events/2024-soafal-lecture-0706/gallery/image-01.jpeg",
-        "description": "soafal  lecture photo 1"
+        "description": "Online poster for the SOAFAL lecture by Sujatha Ramdorai (University of British Columbia) on 'The Art of Math', 6 July 2024 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
       }
     ]
   },
@@ -955,13 +699,57 @@
     "slug": "2024-soafal-lecture-0713",
     "eventSlug": "2024-soafal-lecture-0713",
     "pageUrl": "events/2024-soafal-lecture-0713.html",
-    "title": "soafal  lecture",
+    "title": "SOAFAL Lecture — Tanusri Saha-Dasgupta: Women in Science: A Braided Trail",
     "date": "2024-07-13",
-    "location": "Online",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
     "images": [
       {
         "url": "content/events/2024-soafal-lecture-0713/gallery/image-01.jpeg",
-        "description": "soafal  lecture photo 1"
+        "description": "Online poster for the SOAFAL lecture by Tanusri Saha-Dasgupta on 'Women in Science: A Braided Trail', 13 July 2024 — part of the 'Lilavati's Daughters: Women Scientists of India' online lecture series"
+      }
+    ]
+  },
+  {
+    "slug": "2024-vijnana-nataka-mysuru-session",
+    "eventSlug": "2024-vijnana-nataka-mysuru-session",
+    "pageUrl": "events/2024-vijnana-nataka-mysuru-session.html",
+    "title": "Vijnana Nataka — 7th Mysuru Science Theatre Festival, Mysuru",
+    "date": "2024-07-20",
+    "location": "Rangayana, Mysuru",
+    "images": [
+      {
+        "url": "content/events/2024-vijnana-nataka-mysuru-session/gallery/image-01.jpg",
+        "description": "Day 1: 'Vignana Vikasada Vaada' — a Kannada play on the history of scientific temperament from Galileo to Darwin, directed by Yatheesh Kollegala and performed by Viveka Ranga (a troupe of girl students from across Karnataka), at the 7th Mysuru Science Theatre Festival"
+      },
+      {
+        "url": "content/events/2024-vijnana-nataka-mysuru-session/gallery/image-02.jpg",
+        "description": "Day 2: 'AC vs DC' — a Kannada play on the conflict between Edison and Tesla, by faculty members of an engineering college in Dharwad, exploring professionalism and ethics in science"
+      },
+      {
+        "url": "content/events/2024-vijnana-nataka-mysuru-session/gallery/image-03.jpg",
+        "description": "Day 3: 'Galileo's Daughter' — an English play by the Parivarthana troupe (ex-ISRO scientists, theatre veterans and first-timers), depicting a scientist's struggle against unyielding authority"
+      },
+      {
+        "url": "content/events/2024-vijnana-nataka-mysuru-session/gallery/image-04.jpg",
+        "description": "Day 4: 'Hasire Honnu' — a Kannada biographical play by Arivu Trust on eminent Kannada litterateur and botanist BGL Swamy, playing to a house-full audience at Rangayana, Mysuru"
+      },
+      {
+        "url": "content/events/2024-vijnana-nataka-mysuru-session/gallery/image-05.jpg",
+        "description": "Prelude event at the 7th Mysuru Science Theatre Festival 2024 — featuring science-themed songs in Kannada and an Art-and-Mathematics exhibition curated by BS Krishnamurthy, which preceded the main performance each evening"
+      }
+    ]
+  },
+  {
+    "slug": "2024-vijnana-harate-anantha-vidyaniketan-unknown-session",
+    "eventSlug": "2024-vijnana-harate-anantha-vidyaniketan-unknown-session",
+    "pageUrl": "events/2024-vijnana-harate-anantha-vidyaniketan-unknown-session.html",
+    "title": "Vijnana Harate — RRI Campus, Bengaluru (Anantha Vidyaniketan)",
+    "date": "2024-07-23",
+    "location": "Raman Research Institute, Bengaluru",
+    "images": [
+      {
+        "url": "content/events/2024-vijnana-harate-anantha-vidyaniketan-unknown-session/gallery/image-01.jpg",
+        "description": "Prof. Ram Sagar (IIA, Bengaluru) conducts an astronomy harate with anecdotes and demonstrations for students of Anantha Vidyaniketan at RRI; the students also visited the Raman Museum and RRI Archives Gallery"
       }
     ]
   },
@@ -969,13 +757,27 @@
     "slug": "2024-soafal-lecture-0727",
     "eventSlug": "2024-soafal-lecture-0727",
     "pageUrl": "events/2024-soafal-lecture-0727.html",
-    "title": "soafal  lecture",
+    "title": "SOAFAL Lecture — Shobhana Narasimhan: My Journey as a \"Materials Girl\"",
     "date": "2024-07-27",
-    "location": "Online",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
     "images": [
       {
         "url": "content/events/2024-soafal-lecture-0727/gallery/image-01.jpg",
-        "description": "soafal  lecture photo 1"
+        "description": "Online poster for the SOAFAL lecture by Shobhana Narasimhan (JNCASR) on 'My Journey as a \"Materials Girl\"', 27 July 2024 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
+      }
+    ]
+  },
+  {
+    "slug": "2024-vijnana-harate-unknown-session",
+    "eventSlug": "2024-vijnana-harate-unknown-session",
+    "pageUrl": "events/2024-vijnana-harate-unknown-session.html",
+    "title": "Vijnana Harate — RRI Campus, Bengaluru (Deens Academy)",
+    "date": "2024-08-01",
+    "location": "Raman Research Institute, Bengaluru",
+    "images": [
+      {
+        "url": "content/events/2024-vijnana-harate-unknown-session/gallery/image-01.jpg",
+        "description": "Prof. Vikram Jayaram (IISc) with students of Deens Academy at the RRI campus, revealing how materials engineering research — from detergent discovery to smart memory-materials — impacts everyday life, followed by a visit to the Raman Museum"
       }
     ]
   },
@@ -983,13 +785,13 @@
     "slug": "2024-soafal-sciences-lecture",
     "eventSlug": "2024-soafal-sciences-lecture",
     "pageUrl": "events/2024-soafal-sciences-lecture.html",
-    "title": "soafal sciences lecture",
+    "title": "SOAFAL Lecture — Bindu A Bambah: Factors Affecting Gender Equality in the Sciences",
     "date": "2024-08-10",
-    "location": "Online",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
     "images": [
       {
         "url": "content/events/2024-soafal-sciences-lecture/gallery/image-01.jpg",
-        "description": "soafal sciences lecture photo 1"
+        "description": "Online poster for the SOAFAL lecture by Bindu A Bambah on 'Factors Affecting Gender Equality in the Sciences', 10 August 2024 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
       }
     ]
   },
@@ -997,13 +799,55 @@
     "slug": "2024-soafal-lecture-0817",
     "eventSlug": "2024-soafal-lecture-0817",
     "pageUrl": "events/2024-soafal-lecture-0817.html",
-    "title": "soafal  lecture",
+    "title": "SOAFAL Lecture — Supurna Sinha: Down Memory Lane: A Scientific Journey",
     "date": "2024-08-17",
-    "location": "Online",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
     "images": [
       {
         "url": "content/events/2024-soafal-lecture-0817/gallery/image-01.png",
-        "description": "soafal  lecture photo 1"
+        "description": "Online poster for the SOAFAL lecture by Supurna Sinha on 'Down Memory Lane: A Scientific Journey', 17 August 2024 — part of the 'Lilavati's Daughters: Women Scientists of India' online lecture series"
+      }
+    ]
+  },
+  {
+    "slug": "2024-vijnana-harate-vanita-sadan-mysuru-session",
+    "eventSlug": "2024-vijnana-harate-vanita-sadan-mysuru-session",
+    "pageUrl": "events/2024-vijnana-harate-vanita-sadan-mysuru-session.html",
+    "title": "Vijnana Harate — JNCASR Campus, Bengaluru (Vanita Sadan, Mysuru)",
+    "date": "2024-08-26",
+    "location": "JNCASR Campus, Bengaluru",
+    "images": [
+      {
+        "url": "content/events/2024-vijnana-harate-vanita-sadan-mysuru-session/gallery/image-01.jpg",
+        "description": "Students of Vanita Sadan (school for economically deprived children, Mysuru) spend a day at JNCASR guided by Vinayak Pattar — the first joint tAcT-JNCASR program; many girls expressed interest in pursuing a science research career"
+      }
+    ]
+  },
+  {
+    "slug": "2024-vijnana-harate-mes-kishore-kendra-bengaluru-session",
+    "eventSlug": "2024-vijnana-harate-mes-kishore-kendra-bengaluru-session",
+    "pageUrl": "events/2024-vijnana-harate-mes-kishore-kendra-bengaluru-session.html",
+    "title": "Vijnana Harate — JNCASR Campus, Bengaluru (MES Kishore Kendra)",
+    "date": "2024-08-28",
+    "location": "JNCASR Campus, Bengaluru",
+    "images": [
+      {
+        "url": "content/events/2024-vijnana-harate-mes-kishore-kendra-bengaluru-session/gallery/image-01.jpg",
+        "description": "Students of MES Kishore Kendra, Bengaluru, with Vinayak Pattar and team at JNCASR — the second joint tAcT-JNCASR program featured experiments, activities and a visit to the HIV Lab and CNR and Chemistry Galleries"
+      }
+    ]
+  },
+  {
+    "slug": "2024-vijnana-aranya-mc-thalalu-govt-school-saragur-session",
+    "eventSlug": "2024-vijnana-aranya-mc-thalalu-govt-school-saragur-session",
+    "pageUrl": "events/2024-vijnana-aranya-mc-thalalu-govt-school-saragur-session.html",
+    "title": "Vijnana Aranya — MC Thalalu Govt High School, Saragur",
+    "date": "2024-09-13",
+    "location": "MC Thalalu Govt High School, Saragur, Mysuru District",
+    "images": [
+      {
+        "url": "content/events/2024-vijnana-aranya-mc-thalalu-govt-school-saragur-session/gallery/image-01.jpg",
+        "description": "Award-winning science educator Subbulakshmi conducts a puppet show on ecology for primary students of MC Thalalu Govt High School, Saragur; the afternoon session by apiculturist Guruprasad on beekeeping was attended by high school students and interested villagers"
       }
     ]
   },
@@ -1011,13 +855,13 @@
     "slug": "2024-soafal-trajectory-lab-lecture",
     "eventSlug": "2024-soafal-trajectory-lab-lecture",
     "pageUrl": "events/2024-soafal-trajectory-lab-lecture.html",
-    "title": "soafal trajectory lab lecture",
+    "title": "SOAFAL Lecture — Vidita Vaidya: Life Experiences Shape the Brain and the Trajectory of a Lab",
     "date": "2024-09-14",
-    "location": "Online",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
     "images": [
       {
         "url": "content/events/2024-soafal-trajectory-lab-lecture/gallery/image-01.png",
-        "description": "soafal trajectory lab lecture photo 1"
+        "description": "Online poster for the SOAFAL lecture by Vidita Vaidya on 'Life Experiences Shape the Brain and the Trajectory of a Lab', 14 September 2024 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
       }
     ]
   },
@@ -1025,13 +869,27 @@
     "slug": "2024-soafal-journey-lecture",
     "eventSlug": "2024-soafal-journey-lecture",
     "pageUrl": "events/2024-soafal-journey-lecture.html",
-    "title": "soafal journey lecture",
+    "title": "SOAFAL Lecture — Annapurni Subramaniam: Astronomy from Ground and Space: My Journey",
     "date": "2024-09-21",
-    "location": "Online",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
     "images": [
       {
         "url": "content/events/2024-soafal-journey-lecture/gallery/image-01.png",
-        "description": "soafal journey lecture photo 1"
+        "description": "Online poster for the SOAFAL lecture by Annapurni Subramaniam on 'Astronomy from Ground and Space: My Journey', 21 September 2024 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
+      }
+    ]
+  },
+  {
+    "slug": "2024-vijnana-harate-unknown-session-0923",
+    "eventSlug": "2024-vijnana-harate-unknown-session-0923",
+    "pageUrl": "events/2024-vijnana-harate-unknown-session-0923.html",
+    "title": "Vijnana Harate — RRI Campus, Bengaluru (Sri Bandeshwara Swamy PU College & Vishwa Vidyapeeth)",
+    "date": "2024-09-23",
+    "location": "Raman Research Institute, Bengaluru",
+    "images": [
+      {
+        "url": "content/events/2024-vijnana-harate-unknown-session-0923/gallery/image-01.jpg",
+        "description": "VSS Sastry, reputed maths educator, engages students from Sri Bandeshwara Swamy Pre-university College and Vishwa Vidyapeeth in mathematical storytelling, art and origami at the RRI campus — demonstrating mathematical discoveries through visual and creative methods"
       }
     ]
   },
@@ -1039,13 +897,13 @@
     "slug": "2024-soafal-microscopic-world-lecture",
     "eventSlug": "2024-soafal-microscopic-world-lecture",
     "pageUrl": "events/2024-soafal-microscopic-world-lecture.html",
-    "title": "soafal microscopic world lecture",
+    "title": "SOAFAL Lecture — Qudsia Tahseen: Nematodes Unveiled: A Glimpse into their Microscopic World",
     "date": "2024-09-28",
-    "location": "Online",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
     "images": [
       {
         "url": "content/events/2024-soafal-microscopic-world-lecture/gallery/image-01.jpeg",
-        "description": "soafal microscopic world lecture photo 1"
+        "description": "Online poster for the SOAFAL lecture by Qudsia Tahseen on 'Nematodes Unveiled: A Glimpse into their Microscopic World', 28 September 2024 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
       }
     ]
   },
@@ -1053,13 +911,13 @@
     "slug": "2024-soafal-journey-lecture-1005",
     "eventSlug": "2024-soafal-journey-lecture-1005",
     "pageUrl": "events/2024-soafal-journey-lecture-1005.html",
-    "title": "soafal journey lecture",
+    "title": "SOAFAL Lecture — Srubabati Goswami: The Quest for the Elusive Neutrino: The Nobel Journey",
     "date": "2024-10-05",
-    "location": "Online",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
     "images": [
       {
         "url": "content/events/2024-soafal-journey-lecture-1005/gallery/image-01.jpg",
-        "description": "soafal journey lecture photo 1"
+        "description": "Online poster for the SOAFAL lecture by Srubabati Goswami on 'The Quest for the Elusive Neutrino: The Nobel Journey', 5 October 2024 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
       }
     ]
   },
@@ -1067,13 +925,13 @@
     "slug": "2024-soafal-field-space-weather-lecture",
     "eventSlug": "2024-soafal-field-space-weather-lecture",
     "pageUrl": "events/2024-soafal-field-space-weather-lecture.html",
-    "title": "soafal field space weather lecture",
+    "title": "SOAFAL Lecture — Archana Bhattacharyya: Exploring the Links between Earth's Magnetic Field and Space Weather",
     "date": "2024-10-19",
-    "location": "Online",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
     "images": [
       {
         "url": "content/events/2024-soafal-field-space-weather-lecture/gallery/image-01.jpg",
-        "description": "soafal field space weather lecture photo 1"
+        "description": "Online poster for the SOAFAL lecture by Archana Bhattacharyya on 'Exploring the Links between Earth's Magnetic Field and Space Weather', 19 October 2024 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
       }
     ]
   },
@@ -1081,13 +939,27 @@
     "slug": "2024-soafal-lecture-1102",
     "eventSlug": "2024-soafal-lecture-1102",
     "pageUrl": "events/2024-soafal-lecture-1102.html",
-    "title": "soafal  lecture",
+    "title": "SOAFAL Lecture — Usha Vijayaraghavan: Codes for the Making of a Rice Flowering Stem",
     "date": "2024-11-02",
-    "location": "Online",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
     "images": [
       {
         "url": "content/events/2024-soafal-lecture-1102/gallery/image-01.jpg",
-        "description": "soafal  lecture photo 1"
+        "description": "Online poster for the SOAFAL lecture by Usha Vijayaraghavan on 'Codes for the Making of a Rice Flowering Stem', 2 November 2024 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
+      }
+    ]
+  },
+  {
+    "slug": "2024-vijnana-harate-bhubaneswar-session",
+    "eventSlug": "2024-vijnana-harate-bhubaneswar-session",
+    "pageUrl": "events/2024-vijnana-harate-bhubaneswar-session.html",
+    "title": "Vijnana Harate — NISER Bhubaneswar (90th Annual Meeting)",
+    "date": "2024-11-08",
+    "location": "NISER, Bhubaneswar, Odisha",
+    "images": [
+      {
+        "url": "content/events/2024-vijnana-harate-bhubaneswar-session/gallery/image-01.jpg",
+        "description": "Students from five regional schools at NISER Bhubaneswar for the full-day program organised by tAcT and the NISER outreach team during the Academy's 90th Annual Meeting; harates by Prof. Sankara Rao (IISc) on India's trees, and Prof. Ranganath Navalgund (ISRO) on satellite technology"
       }
     ]
   },
@@ -1095,143 +967,27 @@
     "slug": "2024-soafal-health-disease-lecture",
     "eventSlug": "2024-soafal-health-disease-lecture",
     "pageUrl": "events/2024-soafal-health-disease-lecture.html",
-    "title": "soafal health disease lecture",
+    "title": "SOAFAL Lecture — BK Thelma: Genome Treasure Hunt and Leads for Human Health and Disease",
     "date": "2024-11-16",
-    "location": "Online",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
     "images": [
       {
         "url": "content/events/2024-soafal-health-disease-lecture/gallery/image-01.jpg",
-        "description": "soafal health disease lecture photo 1"
+        "description": "Online poster for the SOAFAL lecture by BK Thelma on 'Genome Treasure Hunt and Leads for Human Health and Disease', 16 November 2024 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
       }
     ]
   },
   {
-    "slug": "2024-soafal-in-silico-perspective-lecture",
-    "eventSlug": "2024-soafal-in-silico-perspective-lecture",
-    "pageUrl": "events/2024-soafal-in-silico-perspective-lecture.html",
-    "title": "soafal in silico perspective lecture",
-    "date": "2024-12-14",
-    "location": "Online",
+    "slug": "2024-young-kalam-science-fest-bengaluru",
+    "eventSlug": "2024-young-kalam-science-fest-bengaluru",
+    "pageUrl": "events/2024-young-kalam-science-fest-bengaluru.html",
+    "title": "Young Kalam Science Fest 2024 — Indian Academy of Sciences, Bengaluru",
+    "date": "2024-11-29",
+    "location": "Indian Academy of Sciences and RRI Library, Bengaluru",
     "images": [
       {
-        "url": "content/events/2024-soafal-in-silico-perspective-lecture/gallery/image-01.png",
-        "description": "soafal in silico perspective lecture photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2024-soafal-equations-lecture",
-    "eventSlug": "2024-soafal-equations-lecture",
-    "pageUrl": "events/2024-soafal-equations-lecture.html",
-    "title": "soafal equations lecture",
-    "date": "2024-12-21",
-    "location": "Online",
-    "images": [
-      {
-        "url": "content/events/2024-soafal-equations-lecture/gallery/image-01.png",
-        "description": "soafal equations lecture photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2024-soafal-lecture-1228",
-    "eventSlug": "2024-soafal-lecture-1228",
-    "pageUrl": "events/2024-soafal-lecture-1228.html",
-    "title": "soafal  lecture",
-    "date": "2024-12-28",
-    "location": "Online",
-    "images": [
-      {
-        "url": "content/events/2024-soafal-lecture-1228/gallery/image-01.png",
-        "description": "soafal  lecture photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2025-soafal-causality-lecture",
-    "eventSlug": "2025-soafal-causality-lecture",
-    "pageUrl": "events/2025-soafal-causality-lecture.html",
-    "title": "soafal causality lecture",
-    "date": "2025-01-11",
-    "location": "Online",
-    "images": [
-      {
-        "url": "content/events/2025-soafal-causality-lecture/gallery/image-01.jpg",
-        "description": "soafal causality lecture photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2025-soafal-my-evolutionary-journey-lecture",
-    "eventSlug": "2025-soafal-my-evolutionary-journey-lecture",
-    "pageUrl": "events/2025-soafal-my-evolutionary-journey-lecture.html",
-    "title": "soafal my evolutionary journey lecture",
-    "date": "2025-01-18",
-    "location": "Online",
-    "images": [
-      {
-        "url": "content/events/2025-soafal-my-evolutionary-journey-lecture/gallery/image-01.jpg",
-        "description": "soafal my evolutionary journey lecture photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2025-soafal-intelligence-healthcare-lecture",
-    "eventSlug": "2025-soafal-intelligence-healthcare-lecture",
-    "pageUrl": "events/2025-soafal-intelligence-healthcare-lecture.html",
-    "title": "soafal intelligence healthcare lecture",
-    "date": "2025-02-08",
-    "location": "Online",
-    "images": [
-      {
-        "url": "content/events/2025-soafal-intelligence-healthcare-lecture/gallery/image-01.jpg",
-        "description": "soafal intelligence healthcare lecture photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2025-soafal-lecture",
-    "eventSlug": "2025-soafal-lecture",
-    "pageUrl": "events/2025-soafal-lecture.html",
-    "title": "soafal  lecture",
-    "date": "2025-03-01",
-    "location": "Online",
-    "images": [
-      {
-        "url": "content/events/2025-soafal-lecture/gallery/image-01.jpg",
-        "description": "soafal  lecture photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2025-soafal-biological-network-level-multidisciplinary-approach-lecture",
-    "eventSlug": "2025-soafal-biological-network-level-multidisciplinary-approach-lecture",
-    "pageUrl": "events/2025-soafal-biological-network-level-multidisciplinary-approach-lecture.html",
-    "title": "soafal biological network level multidisciplinary approach lecture",
-    "date": "2025-03-08",
-    "location": "Online",
-    "images": [
-      {
-        "url": "content/events/2025-soafal-biological-network-level-multidisciplinary-approach-lecture/gallery/image-01.jpg",
-        "description": "soafal biological network level multidisciplinary approach lecture photo 1"
-      }
-    ]
-  },
-  {
-    "slug": "2015-soafal-series-also-included-memorial-lecture-rohini-lecture",
-    "eventSlug": "2015-soafal-series-also-included-memorial-lecture-rohini-lecture",
-    "pageUrl": "events/2015-soafal-series-also-included-memorial-lecture-rohini-lecture.html",
-    "title": "soafal series also included memorial lecture rohini lecture",
-    "date": "2015-03-15",
-    "location": "Online",
-    "images": [
-      {
-        "url": "content/events/2015-soafal-series-also-included-memorial-lecture-rohini-lecture/gallery/image-01.png",
-        "description": "soafal series also included memorial lecture rohini lecture photo 1"
-      },
-      {
-        "url": "content/events/2015-soafal-series-also-included-memorial-lecture-rohini-lecture/gallery/image-02.jpeg",
-        "description": "soafal series also included memorial lecture rohini lecture photo 2"
+        "url": "content/events/2024-young-kalam-science-fest-bengaluru/gallery/image-01.jpg",
+        "description": "School students and teachers from several Government primary schools across Karnataka at the 2024 Young Kalam Science Fest, hosted by the Academy and tAcT at the Academy auditorium and RRI Library; the event featured a science model exhibition judged by RRI scientists"
       }
     ]
   },
@@ -1239,53 +995,293 @@
     "slug": "2024-soafal-30th-november-2024-in-honour-rohini-lecture",
     "eventSlug": "2024-soafal-30th-november-2024-in-honour-rohini-lecture",
     "pageUrl": "events/2024-soafal-30th-november-2024-in-honour-rohini-lecture.html",
-    "title": "soafal 30th november 2024 in honour rohini lecture",
+    "title": "SOAFAL Memorial Lecture — Ram Ramaswamy: 'Rohini Godbole: A Tireless Champion for Science, and Women in Science'",
     "date": "2024-11-30",
-    "location": "Online",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
     "images": [
       {
         "url": "content/events/2024-soafal-30th-november-2024-in-honour-rohini-lecture/gallery/image-01.jpg",
-        "description": "soafal 30th november 2024 in honour rohini lecture photo 1"
+        "description": "Announcement and programme poster for the SOAFAL Memorial Lecture in honour of Prof. Rohini Godbole, delivered by Ram Ramaswamy on 30 November 2024"
       },
       {
         "url": "content/events/2024-soafal-30th-november-2024-in-honour-rohini-lecture/gallery/image-02.jpg",
-        "description": "soafal 30th november 2024 in honour rohini lecture photo 2"
+        "description": "Ram Ramaswamy delivers the Memorial Lecture 'Rohini Godbole: A Tireless Champion for Science, and Women in Science' as part of the SOAFAL series on 30 November 2024"
       },
       {
         "url": "content/events/2024-soafal-30th-november-2024-in-honour-rohini-lecture/gallery/image-03.jpg",
-        "description": "soafal 30th november 2024 in honour rohini lecture photo 3"
+        "description": "The SOAFAL Mala Vol IV book — containing the collection of lectures from the 2024–25 series — published by SOA University, Bhubaneswar, for distribution among libraries and the general public"
       },
       {
         "url": "content/events/2024-soafal-30th-november-2024-in-honour-rohini-lecture/gallery/image-04.jpg",
-        "description": "soafal 30th november 2024 in honour rohini lecture photo 4"
+        "description": "Participants in the online Memorial Lecture for Prof. Rohini Godbole, attended by women scientists, Academy Fellows and members of the public on 30 November 2024"
       },
       {
         "url": "content/events/2024-soafal-30th-november-2024-in-honour-rohini-lecture/gallery/image-05.jpg",
-        "description": "soafal 30th november 2024 in honour rohini lecture photo 5"
+        "description": "Tribute photograph of Prof. Rohini Godbole displayed during the SOAFAL Memorial Lecture in her honour on 30 November 2024"
       },
       {
         "url": "content/events/2024-soafal-30th-november-2024-in-honour-rohini-lecture/gallery/image-06.jpg",
-        "description": "soafal 30th november 2024 in honour rohini lecture photo 6"
+        "description": "Screenshot from the online Memorial Lecture event showing the speaker and audience panels during the SOAFAL lecture on 30 November 2024"
       },
       {
         "url": "content/events/2024-soafal-30th-november-2024-in-honour-rohini-lecture/gallery/image-07.jpg",
-        "description": "soafal 30th november 2024 in honour rohini lecture photo 7"
+        "description": "Online gathering of scientists and Academy Fellows attending the Memorial Lecture 'Rohini Godbole: A Tireless Champion for Science, and Women in Science' on 30 November 2024"
       },
       {
         "url": "content/events/2024-soafal-30th-november-2024-in-honour-rohini-lecture/gallery/image-08.jpg",
-        "description": "soafal 30th november 2024 in honour rohini lecture photo 8"
+        "description": "Audience interaction and Q&A session following the SOAFAL Memorial Lecture for Prof. Rohini Godbole on 30 November 2024"
       },
       {
         "url": "content/events/2024-soafal-30th-november-2024-in-honour-rohini-lecture/gallery/image-09.jpg",
-        "description": "soafal 30th november 2024 in honour rohini lecture photo 9"
+        "description": "The SOAFAL lecture series runs every second and fourth Saturday, 4:30–5:30 PM online, with an average audience of 100–150 UG science students, faculty and invited guests"
       },
       {
         "url": "content/events/2024-soafal-30th-november-2024-in-honour-rohini-lecture/gallery/image-10.jpg",
-        "description": "soafal 30th november 2024 in honour rohini lecture photo 10"
+        "description": "Cover page of SOAFAL Mala Vol IV, the published collection of 2024–25 lectures from the 'Lilavati's Daughters: Women Scientists of India' series, published by SOA University for public distribution"
       },
       {
         "url": "content/events/2024-soafal-30th-november-2024-in-honour-rohini-lecture/gallery/image-11.jpg",
-        "description": "soafal 30th november 2024 in honour rohini lecture photo 11"
+        "description": "Closing moments of the SOAFAL Memorial Lecture for Prof. Rohini Godbole, 30 November 2024 — the lecture was held in her honour as part of the continuing SOAFAL series jointly conducted by tAcT and SOA University, Bhubaneswar"
+      }
+    ]
+  },
+  {
+    "slug": "2024-soafal-in-silico-perspective-lecture",
+    "eventSlug": "2024-soafal-in-silico-perspective-lecture",
+    "pageUrl": "events/2024-soafal-in-silico-perspective-lecture.html",
+    "title": "SOAFAL Lecture — Manju Bansal: From Stabilizing Collagen to Destabilizing DNA: an in-silico Perspective",
+    "date": "2024-12-14",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
+    "images": [
+      {
+        "url": "content/events/2024-soafal-in-silico-perspective-lecture/gallery/image-01.png",
+        "description": "Online poster for the SOAFAL lecture by Manju Bansal on 'From Stabilizing Collagen to Destabilizing DNA: an in-silico Perspective', 14 December 2024 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
+      }
+    ]
+  },
+  {
+    "slug": "2024-soafal-equations-lecture",
+    "eventSlug": "2024-soafal-equations-lecture",
+    "pageUrl": "events/2024-soafal-equations-lecture.html",
+    "title": "SOAFAL Lecture — Mythily Ramaswamy: My Journey in the World of Differential Equations",
+    "date": "2024-12-21",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
+    "images": [
+      {
+        "url": "content/events/2024-soafal-equations-lecture/gallery/image-01.png",
+        "description": "Online poster for the SOAFAL lecture by Mythily Ramaswamy on 'My Journey in the World of Differential Equations', 21 December 2024 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
+      }
+    ]
+  },
+  {
+    "slug": "2024-national-mathematics-day-unknown-session",
+    "eventSlug": "2024-national-mathematics-day-unknown-session",
+    "pageUrl": "events/2024-national-mathematics-day-unknown-session.html",
+    "title": "National Mathematics Day 2024 — Acharya Patshala College, Bengaluru",
+    "date": "2024-12-24",
+    "location": "Acharya Patshala College, Bengaluru",
+    "images": [
+      {
+        "url": "content/events/2024-national-mathematics-day-unknown-session/gallery/image-01.jpg",
+        "description": "Krishna Chaitanya, well-known math communicator, presents 'Unlocking the Wonders of the Essence of Math' to 100+ participants at Acharya Patshala College during National Mathematics Day 2024, organised by tAcT with the Ramanujan Mathematics Club"
+      },
+      {
+        "url": "content/events/2024-national-mathematics-day-unknown-session/gallery/image-02.jpg",
+        "description": "Prof. Ramesh BK of Jain College conducts an afternoon session on 'Numbers Beyond Counting: The Magic of Number Theory', covering prime numbers and their cryptographic applications, at Acharya Patshala College, Bengaluru"
+      }
+    ]
+  },
+  {
+    "slug": "2024-soafal-lecture-1228",
+    "eventSlug": "2024-soafal-lecture-1228",
+    "pageUrl": "events/2024-soafal-lecture-1228.html",
+    "title": "SOAFAL Lecture — Chandrima Saha: The Joy of Being a Scientist",
+    "date": "2024-12-28",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
+    "images": [
+      {
+        "url": "content/events/2024-soafal-lecture-1228/gallery/image-01.png",
+        "description": "Online poster for the SOAFAL lecture by Chandrima Saha on 'The Joy of Being a Scientist', 28 December 2024 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
+      }
+    ]
+  },
+  {
+    "slug": "2025-vijnana-harate-basavanagudi-session",
+    "eventSlug": "2025-vijnana-harate-basavanagudi-session",
+    "pageUrl": "events/2025-vijnana-harate-basavanagudi-session.html",
+    "title": "Vijnana Harate — National College Basavanagudi, Bengaluru (Supernova 2025)",
+    "date": "2025-01-03",
+    "location": "National College Basavanagudi, Bengaluru",
+    "images": [
+      {
+        "url": "content/events/2025-vijnana-harate-basavanagudi-session/gallery/image-01.jpg",
+        "description": "Madhusudhan of Jawaharlal Nehru Planetarium conducts a Vijnana Harate on experimental Physics at the 'Supernova 2025' science event organised at National College Basavanagudi"
+      },
+      {
+        "url": "content/events/2025-vijnana-harate-basavanagudi-session/gallery/image-02.jpg",
+        "description": "Students at National College Basavanagudi attend the Supernova 2025 event, where tAcT participated with a Vijnana Harate on experimental Physics conducted by Madhusudhan of JN Planetarium"
+      }
+    ]
+  },
+  {
+    "slug": "2025-vijnana-harate-bel-bengaluru-session",
+    "eventSlug": "2025-vijnana-harate-bel-bengaluru-session",
+    "pageUrl": "events/2025-vijnana-harate-bel-bengaluru-session.html",
+    "title": "Vijnana Harate — BEL Public School, Bengaluru",
+    "date": "2025-01-03",
+    "location": "Raman Research Institute, Bengaluru",
+    "images": [
+      {
+        "url": "content/events/2025-vijnana-harate-bel-bengaluru-session/gallery/image-01.jpg",
+        "description": "VSS Sastry conducts the Vijnana Harate for high school students of BEL Public School at RRI, in association with Karnataka Jnana Vijnana Samiti — students learned mathematical concepts through origami and experienced the scale of the Solar System using props spread across the campus"
+      }
+    ]
+  },
+  {
+    "slug": "2025-soafal-causality-lecture",
+    "eventSlug": "2025-soafal-causality-lecture",
+    "pageUrl": "events/2025-soafal-causality-lecture.html",
+    "title": "SOAFAL Lecture — Sumati Surya: Light, Order-Action! Reconstructing Spacetime from Causality",
+    "date": "2025-01-11",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
+    "images": [
+      {
+        "url": "content/events/2025-soafal-causality-lecture/gallery/image-01.jpg",
+        "description": "Online poster for the SOAFAL lecture by Sumati Surya on 'Light, Order-Action! Reconstructing Spacetime from Causality', 11 January 2025 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
+      }
+    ]
+  },
+  {
+    "slug": "2025-soafal-my-evolutionary-journey-lecture",
+    "eventSlug": "2025-soafal-my-evolutionary-journey-lecture",
+    "pageUrl": "events/2025-soafal-my-evolutionary-journey-lecture.html",
+    "title": "SOAFAL Lecture — Anuradha Lohia: From Entamoeba Histolytica to Homo Sapiens: My Evolutionary Journey",
+    "date": "2025-01-18",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
+    "images": [
+      {
+        "url": "content/events/2025-soafal-my-evolutionary-journey-lecture/gallery/image-01.jpg",
+        "description": "Online poster for the SOAFAL lecture by Anuradha Lohia on 'From Entamoeba Histolytica to Homo Sapiens: My Evolutionary Journey', 18 January 2025 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
+      }
+    ]
+  },
+  {
+    "slug": "2025-vijnana-aranya-om-kanakapura-session",
+    "eventSlug": "2025-vijnana-aranya-om-kanakapura-session",
+    "pageUrl": "events/2025-vijnana-aranya-om-kanakapura-session.html",
+    "title": "Vijnana Aranya — Om Shantidhama Veda Gurukula, Kanakapura",
+    "date": "2025-02-02",
+    "location": "Om Shantidhama Veda Gurukula, Kanakapura (inside Mekedatu forest reserve)",
+    "images": [
+      {
+        "url": "content/events/2025-vijnana-aranya-om-kanakapura-session/gallery/image-01.jpg",
+        "description": "Students and teachers of Om Shantidhama Veda Gurukula, Kanakapura, observe sunspots through sophisticated telescopes guided by M. Krishnamurthy (astronomy educator) in the morning session of the Vijnana Aranya program in the Mekedatu forest reserve"
+      }
+    ]
+  },
+  {
+    "slug": "2025-vijnana-harate-kallankuppe-high-school-kanakapura-session",
+    "eventSlug": "2025-vijnana-harate-kallankuppe-high-school-kanakapura-session",
+    "pageUrl": "events/2025-vijnana-harate-kallankuppe-high-school-kanakapura-session.html",
+    "title": "Vijnana Harate — Kallankuppe High School, Kanakapura",
+    "date": "2025-02-07",
+    "location": "Kallankuppe High School, Kanakapura",
+    "images": [
+      {
+        "url": "content/events/2025-vijnana-harate-kallankuppe-high-school-kanakapura-session/gallery/image-01.jpg",
+        "description": "Frog expert KV Gururaja (Manipal Academy of Higher Education) introduces high school students of Kallankuppe High School, Kanakapura, to the wonderful and strange world of amphibians, in a program organised by the Academy and tAcT in association with COSOL"
+      }
+    ]
+  },
+  {
+    "slug": "2025-soafal-intelligence-healthcare-lecture",
+    "eventSlug": "2025-soafal-intelligence-healthcare-lecture",
+    "pageUrl": "events/2025-soafal-intelligence-healthcare-lecture.html",
+    "title": "SOAFAL Lecture — Sushmita Mitra: Life is a Journey: Harnessing Artificial Intelligence for Healthcare",
+    "date": "2025-02-08",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
+    "images": [
+      {
+        "url": "content/events/2025-soafal-intelligence-healthcare-lecture/gallery/image-01.jpg",
+        "description": "Online poster for the SOAFAL lecture by Sushmita Mitra on 'Life is a Journey: Harnessing Artificial Intelligence for Healthcare', 8 February 2025 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
+      }
+    ]
+  },
+  {
+    "slug": "2025-women-and-girls-in-science-bengaluru",
+    "eventSlug": "2025-women-and-girls-in-science-bengaluru",
+    "pageUrl": "events/2025-women-and-girls-in-science-bengaluru.html",
+    "title": "International Day of Women and Girls in Science — Raman Research Institute, Bengaluru",
+    "date": "2025-02-11",
+    "location": "Raman Research Institute, Bengaluru",
+    "images": [
+      {
+        "url": "content/events/2025-women-and-girls-in-science-bengaluru/gallery/image-01.jpg",
+        "description": "Morning session at the RRI auditorium: Shobhana Narasimhan (Chair, Academy's Women in Science Panel, JNCASR) and her group perform a skit on common gender biases in science, which was then discussed and debated with the audience at the International Day of Women and Girls in Science event"
+      },
+      {
+        "url": "content/events/2025-women-and-girls-in-science-bengaluru/gallery/image-02.jpg",
+        "description": "Release of the Kannada and Odia language editions of the Academy publication 'Lilavati's Daughters' by Pushpa Murthy (Michigan Tech), Shobhana Narasimhan, Ram Ramaswamy and Kamala YC, during the International Day of Women and Girls in Science 2025"
+      },
+      {
+        "url": "content/events/2025-women-and-girls-in-science-bengaluru/gallery/image-03.jpg",
+        "description": "Students from 3 high schools and Maharani's Science College for Women, Bengaluru, participate in the full-day science workshop in honour of Prof. Rohini Godbole and Dr. Manju Sharma, organised by tAcT with the Academy, IAP-WiSTEMM and Karnataka Jnana Vijnana Samiti"
+      }
+    ]
+  },
+  {
+    "slug": "2025-national-science-day-bapu-high-school-bengaluru-session",
+    "eventSlug": "2025-national-science-day-bapu-high-school-bengaluru-session",
+    "pageUrl": "events/2025-national-science-day-bapu-high-school-bengaluru-session.html",
+    "title": "National Science Day 2025 — Indian Academy of Sciences, Bengaluru",
+    "date": "2025-02-28",
+    "location": "Indian Academy of Sciences, Bengaluru",
+    "images": [
+      {
+        "url": "content/events/2025-national-science-day-bapu-high-school-bengaluru-session/gallery/image-01.jpg",
+        "description": "High school students of Bapu High School at the National Science Day 2025 full-day event at the Indian Academy of Sciences, Bengaluru, featuring three Vijnana Harate sessions by VSS Sastry & Praveen (maths via origami), Prof. Vikram Jayaram (materials engineering), and astrophysicist Kartik Sarkar (RRI)"
+      }
+    ]
+  },
+  {
+    "slug": "2025-soafal-lecture",
+    "eventSlug": "2025-soafal-lecture",
+    "pageUrl": "events/2025-soafal-lecture.html",
+    "title": "SOAFAL Lecture — Sulabha Pathak: Taking the Long Way Home",
+    "date": "2025-03-01",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
+    "images": [
+      {
+        "url": "content/events/2025-soafal-lecture/gallery/image-01.jpg",
+        "description": "Online poster for the SOAFAL lecture by Sulabha Pathak on 'Taking the Long Way Home', 1 March 2025 — part of the 'Lilavati's Daughters: Women Scientists of India' online lecture series"
+      }
+    ]
+  },
+  {
+    "slug": "2025-vijnana-aranya-mysuru-session",
+    "eventSlug": "2025-vijnana-aranya-mysuru-session",
+    "pageUrl": "events/2025-vijnana-aranya-mysuru-session.html",
+    "title": "Vijnana Aranya — Dr. APJ Abdul Kalam Residential School, Doddakaanya, Nanjangud",
+    "date": "2025-03-01",
+    "location": "Dr. APJ Abdul Kalam Residential School, Doddakaanya village, near Nanjangud",
+    "images": [
+      {
+        "url": "content/events/2025-vijnana-aranya-mysuru-session/gallery/image-01.jpg",
+        "description": "More than 100 students (grades 6–9) of Dr. APJ Abdul Kalam Residential School, Doddakaanya, near Nanjangud, participate in the third Vijnana Aranya — combining National Science Day outreach with remote village education; 'Pelican' Manu on ecology and Dr. Abhijit APC on spiders"
+      }
+    ]
+  },
+  {
+    "slug": "2025-soafal-biological-network-level-multidisciplinary-approach-lecture",
+    "eventSlug": "2025-soafal-biological-network-level-multidisciplinary-approach-lecture",
+    "pageUrl": "events/2025-soafal-biological-network-level-multidisciplinary-approach-lecture.html",
+    "title": "SOAFAL Lecture — Saraswathi Vishveshwara: Study of Protein Structures from Atomic Level to Biological Network Level: A Multidisciplinary Approach",
+    "date": "2025-03-08",
+    "location": "Online (Shiksha 'O' Anusandhan University, Bhubaneswar)",
+    "images": [
+      {
+        "url": "content/events/2025-soafal-biological-network-level-multidisciplinary-approach-lecture/gallery/image-01.jpg",
+        "description": "Online poster for the SOAFAL lecture by Saraswathi Vishveshwara on 'Study of Protein Structures from Atomic Level to Biological Network Level: A Multidisciplinary Approach', 8 March 2025 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
       }
     ]
   }

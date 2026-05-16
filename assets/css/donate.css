@@ -1,3 +1,5 @@
+html, body { min-width: 1240px; overflow-x: auto; }
+
 :root {
   --donate-soft: rgba(10, 122, 58, 0.06);
   --donate-line: rgba(10, 122, 58, 0.13);

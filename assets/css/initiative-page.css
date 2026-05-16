@@ -1,3 +1,5 @@
+html, body { min-width: 1240px; overflow-x: auto; }
+
 :root {
   --initiative-soft: rgba(10, 122, 58, 0.06);
   --initiative-line: rgba(10, 122, 58, 0.12);
@@ -9,6 +11,35 @@
   grid-template-columns: minmax(0, 1.35fr) 360px;
   gap: 22px;
   align-items: stretch;
+}
+
+.initiative-hero > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.initiative-hero > div .initiative-actions {
+  margin-top: 16px;
+}
+
+.initiative-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.initiative-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(10, 122, 58, 0.18);
+  background: rgba(10, 122, 58, 0.06);
+  color: #155a33;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
 }
 
 .initiative-kicker {
@@ -206,6 +237,53 @@
 .initiative-inline-link:hover,
 .initiative-inline-link:focus-visible {
   text-decoration: underline;
+}
+
+details.student-list-toggle {
+  margin-top: 14px;
+}
+
+details.student-list-toggle > summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green);
+  border: 1px solid rgba(10, 122, 58, 0.22);
+  background: rgba(10, 122, 58, 0.06);
+  border-radius: 10px;
+  padding: 9px 16px;
+  user-select: none;
+  transition: background 0.18s ease;
+}
+
+details.student-list-toggle > summary::-webkit-details-marker { display: none; }
+
+details.student-list-toggle > summary::before {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--green);
+  border-bottom: 2px solid var(--green);
+  transform: rotate(-45deg);
+  transition: transform 0.2s ease;
+  margin-right: 2px;
+}
+
+details.student-list-toggle[open] > summary::before {
+  transform: rotate(45deg);
+}
+
+details.student-list-toggle > summary:hover {
+  background: rgba(10, 122, 58, 0.1);
+}
+
+details.student-list-toggle > .student-grid {
+  margin-top: 12px;
 }
 
 @media (max-width: 900px) {

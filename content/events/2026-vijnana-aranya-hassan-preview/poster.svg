@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0" stop-color="#14532d"/>
+      <stop offset="1" stop-color="#1a3a12"/>
+    </linearGradient>
+    <radialGradient id="glow2" cx="20%" cy="85%" r="65%">
+      <stop offset="0" stop-color="#86efac" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#86efac" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="400" height="560" fill="url(#bg2)"/>
+  <rect width="400" height="560" fill="url(#glow2)"/>
+
+  <!-- Tree-like geometric pattern -->
+  <polygon points="200,115 230,160 170,160" fill="rgba(134,239,172,0.10)"/>
+  <polygon points="200,90 245,155 155,155" fill="rgba(134,239,172,0.06)"/>
+  <circle cx="50" cy="80" r="80" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="360" cy="480" r="100" fill="rgba(134,239,172,0.06)"/>
+
+  <!-- Top accent -->
+  <rect y="0" width="400" height="5" fill="#86efac"/>
+
+  <!-- PREVIEW band -->
+  <rect y="12" width="400" height="22" fill="rgba(0,0,0,0.28)"/>
+  <text x="200" y="27" text-anchor="middle" font-size="9" fill="rgba(134,239,172,0.85)"
+        font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" letter-spacing="4">
+    EXAMPLE · PREVIEW ONLY · NOT A REAL EVENT
+  </text>
+
+  <!-- Org header -->
+  <text x="200" y="72" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.5)"
+        font-family="'Helvetica Neue',Arial,sans-serif" letter-spacing="2.5" font-weight="500">
+    INDIAN ACADEMY OF SCIENCES
+  </text>
+  <text x="200" y="90" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.8)"
+        font-family="'Helvetica Neue',Arial,sans-serif" letter-spacing="2" font-weight="700">
+    THE ACADEMY TRUST (tAcT)
+  </text>
+
+  <line x1="60" y1="104" x2="340" y2="104" stroke="rgba(134,239,172,0.3)" stroke-width="1"/>
+
+  <!-- Program name -->
+  <text x="200" y="148" text-anchor="middle" font-size="26" fill="#86efac"
+        font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" letter-spacing="1">
+    VIJNANA ARANYA
+  </text>
+  <text x="200" y="170" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.5)"
+        font-family="'Helvetica Neue',Arial,sans-serif" letter-spacing="2">
+    SCIENCE IN THE WILD
+  </text>
+
+  <!-- Event title -->
+  <text x="200" y="228" text-anchor="middle" font-size="21" fill="#ffffff"
+        font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700">Rural School</text>
+  <text x="200" y="256" text-anchor="middle" font-size="21" fill="#ffffff"
+        font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700">Outreach Visit</text>
+  <text x="200" y="280" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.6)"
+        font-family="'Helvetica Neue',Arial,sans-serif">Hassan District, Karnataka</text>
+
+  <!-- Leaf/nature accent line -->
+  <path d="M 100 300 Q 200 280 300 300" stroke="rgba(134,239,172,0.25)" stroke-width="1.5" fill="none"/>
+
+  <!-- Info card -->
+  <rect x="36" y="316" width="328" height="148" rx="14" fill="rgba(0,0,0,0.28)"/>
+  <rect x="36" y="316" width="328" height="4" rx="2" fill="rgba(134,239,172,0.5)"/>
+
+  <text x="200" y="348" text-anchor="middle" font-size="20" fill="#86efac"
+        font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800">5 July 2026</text>
+  <text x="200" y="370" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.6)"
+        font-family="'Helvetica Neue',Arial,sans-serif">9:30 AM – 3:00 PM</text>
+
+  <line x1="80" y1="384" x2="320" y2="384" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+  <text x="200" y="406" text-anchor="middle" font-size="14" fill="rgba(255,255,255,0.9)"
+        font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600">Hassan District, Karnataka</text>
+  <text x="200" y="426" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.45)"
+        font-family="'Helvetica Neue',Arial,sans-serif">Government Higher Secondary School</text>
+
+  <line x1="80" y1="440" x2="320" y2="440" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+  <text x="200" y="458" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.5)"
+        font-family="'Helvetica Neue',Arial,sans-serif">Science outreach · Rural and tribal areas</text>
+
+  <text x="200" y="492" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.38)"
+        font-family="'Helvetica Neue',Arial,sans-serif">Scientists visit remote schools bringing hands-on</text>
+  <text x="200" y="508" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.38)"
+        font-family="'Helvetica Neue',Arial,sans-serif">demonstrations and open science Q&amp;A.</text>
+
+  <line x1="60" y1="526" x2="340" y2="526" stroke="rgba(134,239,172,0.15)" stroke-width="1"/>
+  <text x="200" y="544" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.3)"
+        font-family="'Helvetica Neue',Arial,sans-serif" letter-spacing="1">trust@ias.ac.in · theacademytrust.org</text>
+
+  <rect y="555" width="400" height="5" fill="#86efac"/>
+</svg>

@@ -147,9 +147,7 @@
 
     var summary = document.createElement("span");
     summary.className = "calendar-date-summary";
-    summary.innerHTML =
-      "<strong>" + escapeHtml(formatDate(dateKey)) + "</strong>" +
-      "<span>" + escapeHtml(locations.join(" / ") || "Location TBA") + "</span>";
+    summary.innerHTML = "<strong>" + escapeHtml(formatDate(dateKey)) + "</strong>";
 
     head.appendChild(dateChip);
     head.appendChild(summary);
@@ -157,6 +155,14 @@
 
     var previewWrap = document.createElement("span");
     previewWrap.className = "calendar-preview";
+
+    var bgImage = document.createElement("img");
+    bgImage.className = "calendar-preview-bg";
+    bgImage.src = items[0].url;
+    bgImage.setAttribute("aria-hidden", "true");
+    bgImage.loading = "lazy";
+    bgImage.decoding = "async";
+    previewWrap.appendChild(bgImage);
 
     var image = document.createElement("img");
     image.className = "calendar-preview-image";
@@ -180,6 +186,7 @@
       var index = 0;
       state.previewTimers.push(window.setInterval(function () {
         index = (index + 1) % items.length;
+        bgImage.src = items[index].url;
         image.src = items[index].url;
         image.alt = items[index].title;
         overlay.innerHTML =
@@ -189,11 +196,6 @@
           "<span>" + escapeHtml(shortText(items[index].previewDescription || items[index].description, 90)) + "</span>";
       }, 3200));
     }
-
-    var count = document.createElement("span");
-    count.className = "calendar-day-count";
-    count.textContent = eventCountLabel(items) + " · " + imageCountLabel(items);
-    button.appendChild(count);
 
     var eventTitle = document.createElement("span");
     eventTitle.className = "calendar-event-title";
@@ -308,11 +310,16 @@
       button.className = "calendar-modal-card";
       button.dataset.itemIndex = String(index);
 
+      var mediaWrap = document.createElement("span");
+      mediaWrap.className = "calendar-modal-card-media";
+
       var image = document.createElement("img");
       image.src = item.url;
       image.alt = item.title;
       image.loading = "lazy";
       image.decoding = "async";
+
+      mediaWrap.appendChild(image);
 
       var meta = document.createElement("span");
       meta.className = "calendar-modal-card-meta";
@@ -320,7 +327,7 @@
         "<strong>" + escapeHtml(item.title) + "</strong>" +
         "<span>" + escapeHtml(item.location) + "</span>";
 
-      button.appendChild(image);
+      button.appendChild(mediaWrap);
       button.appendChild(meta);
       grid.appendChild(button);
     });

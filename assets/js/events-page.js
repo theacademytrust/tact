@@ -1,11 +1,25 @@
 async function initEventsPage() {
-  renderPlaceholders();
+  // Reset cache so we re-read the live TACT_EVENT_FEED (ensures preview events are included
+  // regardless of which page was loaded first in this session).
+  if (typeof window.resetTactEventFeedCache === "function") {
+    window.resetTactEventFeedCache();
+  }
 
   var initialEvents = [];
   if (typeof window.getTactEventFeedSnapshot === "function") {
     initialEvents = window.getTactEventFeedSnapshot();
   } else {
     initialEvents = Array.isArray(window.TACT_EVENT_FEED) ? window.TACT_EVENT_FEED.slice() : [];
+  }
+
+  var initialBuckets = splitEvents(initialEvents);
+
+  if (initialEvents.length) {
+    applyEventsPageLayout(initialBuckets.upcoming, initialBuckets.archive);
+    renderUpcoming(initialBuckets.upcoming);
+    renderArchive(initialBuckets.archive);
+  } else {
+    renderPlaceholders();
   }
 
   var eventsToRender = initialEvents;
@@ -17,7 +31,7 @@ async function initEventsPage() {
 
   if (typeof window.loadTactGalleryData === "function") {
     try {
-      var freshGalleries = await window.loadTactGalleryData({ forceRefresh: true });
+      var freshGalleries = await window.loadTactGalleryData({ forceRefresh: !galleries.length });
       if (Array.isArray(freshGalleries) && freshGalleries.length) {
         galleries = freshGalleries;
       }
@@ -28,7 +42,7 @@ async function initEventsPage() {
 
   if (typeof window.loadTactEventFeed === "function") {
     try {
-      var freshEvents = await window.loadTactEventFeed({ forceRefresh: true });
+      var freshEvents = await window.loadTactEventFeed({ forceRefresh: !initialEvents.length });
       if (Array.isArray(freshEvents) && freshEvents.length) {
         eventsToRender = freshEvents;
       }
@@ -38,10 +52,18 @@ async function initEventsPage() {
   }
 
   eventsToRender = mergeGalleryFallbacks(eventsToRender, galleries);
+  var freshBuckets = splitEvents(eventsToRender);
 
+  applyEventsPageLayout(freshBuckets.upcoming, freshBuckets.archive);
   preloadPriorityPoster(eventsToRender);
-  renderEventSections(eventsToRender);
-  setEventsPageLoading(false);
+
+  // Only re-render each section when its data actually changed to prevent visual shaking.
+  if (!sameEventList(freshBuckets.upcoming, initialBuckets.upcoming)) {
+    renderUpcoming(freshBuckets.upcoming);
+  }
+  if (!sameEventList(freshBuckets.archive, initialBuckets.archive)) {
+    renderArchive(freshBuckets.archive);
+  }
 
   scheduleAsync(function () {
     if (window.TACT_CHROME) {
@@ -238,11 +260,13 @@ function cssEscape(value) {
 }
 
 function buildEventPageUrl(item) {
+  var explicit = String(item && item.pageUrl || "").trim();
+  if (explicit) return explicit;
   var helpers = window.TACT_EVENT_PAGES || {};
   if (typeof helpers.buildEventPageUrl === "function") {
     return helpers.buildEventPageUrl(item);
   }
-  return String(item && item.pageUrl || "").trim();
+  return "";
 }
 
 function sameEventList(left, right) {
@@ -416,15 +440,11 @@ function renderUpcoming(list) {
     return;
   }
 
-  root.appendChild(buildUpcomingCard(list[0], true));
-
-  if (list.length > 1) {
-    scheduleAsync(function () {
-      list.slice(1).forEach(function (item) {
-        root.appendChild(buildUpcomingCard(item, false));
-      });
-    });
-  }
+  var fragment = document.createDocumentFragment();
+  list.forEach(function (item, index) {
+    fragment.appendChild(buildUpcomingCard(item, index === 0));
+  });
+  root.appendChild(fragment);
 }
 
 function renderArchive(list) {
@@ -437,6 +457,7 @@ function renderArchive(list) {
     return;
   }
 
+  var fragment = document.createDocumentFragment();
   list.forEach(function (item) {
     var link = document.createElement("a");
     var imageUrl = eventThumbnailUrl(item);
@@ -472,8 +493,9 @@ function renderArchive(list) {
       bindArchiveThumbnailRatio(image, container);
     }
 
-    root.appendChild(link);
+    fragment.appendChild(link);
   });
+  root.appendChild(fragment);
 }
 
 function bindArchiveThumbnailRatio(image, container) {
