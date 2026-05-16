@@ -10,24 +10,14 @@ html, body { min-width: 1240px; overflow-x: auto; }
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) 360px;
   gap: 22px;
-  align-items: stretch;
-}
-
-.initiative-hero > div {
-  display: flex;
-  flex-direction: column;
-}
-
-.initiative-hero > div .initiative-actions {
-  margin-top: 16px;
+  align-items: start;
 }
 
 .initiative-badge-row {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: auto;
-  padding-top: 18px;
+  margin-top: 16px;
 }
 
 .initiative-badge {
