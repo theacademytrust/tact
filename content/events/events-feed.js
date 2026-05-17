@@ -1367,6 +1367,19 @@ window.TACT_EVENT_FEED = [
     "homepageMatter": "On 1 August 2025, students of Anantha Vidyaniketan visited the Molecular Cell Biology (MCB) Unit, IISc, Bengaluru, for a Vijnana Harate session."
   },
   {
+    "slug": "2025-vitm-tact-renee-borges",
+    "title": "Life in Natural Microcosms: Challenges and Opportunities",
+    "date": "2025-08-08",
+    "time": "11:00 AM",
+    "location": "VITM Auditorium, Bengaluru",
+    "status": "completed",
+    "folder": "content/events/2025-vitm-tact-renee-borges",
+    "pageUrl": "events/08-08-2025-life-in-natural-microcosms-challenges-and-opportunities.html",
+    "poster": "",
+    "teaser": "VITM–tAcT Lecture Series \"Indian Women in Science\" — inaugural lecture by Prof. Renee M. Borges (IISc) on life in natural microcosms.",
+    "homepageMatter": "The inaugural VITM–tAcT \"Indian Women in Science\" lecture was delivered by Prof. Renee M. Borges, Centre for Ecological Sciences, IISc Bengaluru, on 8 August 2025. She spoke on life in natural microcosms: the challenges and opportunities in ecological research."
+  },
+  {
     "slug": "2025-vijnana-aranya-chiguru-shaale-august-session",
     "title": "Vijnana Aranya, Chiguru Srujana Shaale, Hosabidarahalli",
     "date": "2025-08-13",
@@ -1391,6 +1404,32 @@ window.TACT_EVENT_FEED = [
     "poster": "content/events/2025-vijnana-aranya-kaliyuva-mane-session/gallery/image-01.jpg",
     "teaser": "Vijnana Aranya at Kaliyuva Mane, Kenchalagūdu: sessions on science of eco-friendly papermaking and science experiments with math puzzles.",
     "homepageMatter": "On 5 September 2025, tAcT conducted a Vijnana Aranya at Kaliyuva Mane, Kenchalagūdu, Mysore Rural. Sessions covered the science of eco-friendly papermaking and hands-on science experiments with math puzzles by the Agastya International Foundation."
+  },
+  {
+    "slug": "2025-vitm-tact-seetha",
+    "title": "Why is Space Science Challenging",
+    "date": "2025-09-19",
+    "time": "11:00 AM",
+    "location": "VITM Auditorium, Bengaluru",
+    "status": "completed",
+    "folder": "content/events/2025-vitm-tact-seetha",
+    "pageUrl": "events/19-09-2025-why-is-space-science-challenging.html",
+    "poster": "",
+    "teaser": "VITM–tAcT Lecture Series \"Indian Women in Science\" — Dr. S. Seetha (Former Director, ISRO Space Science Programme) on the challenges of space science.",
+    "homepageMatter": "The second VITM–tAcT \"Indian Women in Science\" lecture was delivered by Dr. S. Seetha, Former Director of the Space Science Programme at ISRO HQ and Honorary member of RRI, Bengaluru, on 19 September 2025."
+  },
+  {
+    "slug": "2025-vitm-tact-prajval-shastri",
+    "title": "Meandering into Astrophysics and Around Giant Black Holes",
+    "date": "2025-10-13",
+    "time": "11:00 AM",
+    "location": "VITM Auditorium, Bengaluru",
+    "status": "completed",
+    "folder": "content/events/2025-vitm-tact-prajval-shastri",
+    "pageUrl": "events/13-10-2025-meandering-into-astrophysics-and-around-giant-black-holes.html",
+    "poster": "",
+    "teaser": "VITM–tAcT Lecture Series \"Indian Women in Science\" — Prof. Prajval Shastri (Indian Institute of Astrophysics, retd.) on astrophysics and giant black holes.",
+    "homepageMatter": "The third VITM–tAcT \"Indian Women in Science\" lecture was delivered by Prof. Prajval Shastri, Indian Institute of Astrophysics (retd.) and Adjunct Professor, ICRAR Australia, on 13 October 2025."
   },
   {
     "slug": "2025-vijnana-aranya-om-shantidhama-kanakapura-session",
@@ -1430,6 +1469,19 @@ window.TACT_EVENT_FEED = [
     "poster": "content/events/2025-vijnana-aranya-mysuru-nemichandra-session/gallery/image-01.jpg",
     "teaser": "Two-day Vijnana Aranya across multiple venues in Mysuru with Ms. Nemichandra, covering Marie Curie and C.V. Raman, emotional resilience, women scientists, and inspirational stories for visually challenged students.",
     "homepageMatter": "On 7–8 November 2025, tAcT conducted a Vijnana Aranya across multiple venues in Mysuru. Ms. Nemichandra (Writer, Biographer, Former GM HAL) spoke on Marie Curie and C.V. Raman, emotional resilience, women scientists, and inspirational real-life stories for visually challenged PU students."
+  },
+  {
+    "slug": "2025-vitm-tact-h-ila",
+    "title": "My Life in Science: Adventures of a Woman Chemist",
+    "date": "2025-11-11",
+    "time": "11:00 AM",
+    "location": "VITM Auditorium, Bengaluru",
+    "status": "completed",
+    "folder": "content/events/2025-vitm-tact-h-ila",
+    "pageUrl": "events/11-11-2025-my-life-in-science-adventures-of-a-woman-chemist.html",
+    "poster": "",
+    "teaser": "VITM–tAcT Lecture Series \"Indian Women in Science\" — Prof. H. Ila (JNCASR) on her life in science as a chemist.",
+    "homepageMatter": "The fourth VITM–tAcT \"Indian Women in Science\" lecture was delivered by Prof. H. Ila, FNA, FASc, Hindustan Lever Research Professor, New Chemistry Unit, JNCASR, Bengaluru, on 11 November 2025."
   },
   {
     "slug": "2025-annual-meeting-outreach-iiser-tirupati",
@@ -1523,6 +1575,19 @@ window.TACT_EVENT_FEED = [
     "homepageMatter": "On 29 December 2025, the Ramanujan Mathematics Club and Department of Mathematics of Acharya Pathasala College, in association with tAcT, KSTA, and KRVP, organised the \"Infinity Anantha\" mathematics workshop. Sri Tejas N.S. (NIE Mysuru) spoke on the mathematical wonders of Ramanujan."
   },
   {
+    "slug": "2026-vitm-tact-sujatha-ramdorai",
+    "title": "The Numbers",
+    "date": "2026-01-06",
+    "time": "11:00 AM",
+    "location": "VITM Auditorium, Bengaluru",
+    "status": "completed",
+    "folder": "content/events/2026-vitm-tact-sujatha-ramdorai",
+    "pageUrl": "events/06-01-2026-the-numbers.html",
+    "poster": "",
+    "teaser": "VITM–tAcT Lecture Series \"Indian Women in Science\" — Prof. Sujatha Ramdorai (Canada Research Chair in Mathematics, University of British Columbia) on numbers.",
+    "homepageMatter": "The fifth VITM–tAcT \"Indian Women in Science\" lecture was delivered by Prof. Sujatha Ramdorai, Canada Research Chair in Mathematics at the University of British Columbia, on 6 January 2026."
+  },
+  {
     "slug": "2026-vijnana-aranya-divyajyothi-mysuru-session",
     "title": "Dance with Maths — Accessible Mathematics Workshop, Divya Jyothi Trust",
     "date": "2026-01-10",
@@ -1573,6 +1638,19 @@ window.TACT_EVENT_FEED = [
     "poster": "content/events/2026-vijnana-aranya-morarji-desai-melukote-session/gallery/image-01.jpg",
     "teaser": "Vijnana Aranya at Morarji Desai Residential School, Melukote: classroom science demonstrations by Shivappa and a meeting with Santosh Koulagi, Founder of Janapada Seva Trust.",
     "homepageMatter": "On 14 February 2026, tAcT conducted a Vijnana Aranya at Morarji Desai Residential School, Melukote. Shivappa (Science Communicator) led classroom science demonstrations, followed by a meeting with Santosh Koulagi of Janapada Seva Trust."
+  },
+  {
+    "slug": "2026-vitm-tact-shobhana-narasimhan",
+    "title": "VITM–tAcT Lecture: Indian Women in Science — Shobhana Narasimhan",
+    "date": "2026-02-23",
+    "time": "11:00 AM",
+    "location": "VITM Auditorium, Bengaluru",
+    "status": "completed",
+    "folder": "content/events/2026-vitm-tact-shobhana-narasimhan",
+    "pageUrl": "events/23-02-2026-vitm-tact-lecture-indian-women-in-science-shobhana-narasimhan.html",
+    "poster": "",
+    "teaser": "VITM–tAcT Lecture Series \"Indian Women in Science\" — lecture by Prof. Shobhana Narasimhan, JNCASR, Bengaluru.",
+    "homepageMatter": "The sixth VITM–tAcT \"Indian Women in Science\" lecture was delivered by Prof. Shobhana Narasimhan, JNCASR, Bengaluru, on 23 February 2026."
   },
   {
     "slug": "2026-national-science-day-trial-of-abdus-salam",
