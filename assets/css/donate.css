@@ -8,7 +8,11 @@ html, body { min-width: 1240px; overflow-x: auto; }
 
 .donate-shell {
   display: grid;
-  gap: 24px;
+  gap: 16px;
+}
+
+.donate-shell > .section {
+  margin-bottom: 0;
 }
 
 .donate-hero {
@@ -21,7 +25,7 @@ html, body { min-width: 1240px; overflow-x: auto; }
 .donate-kicker {
   margin: 0 0 8px;
   color: var(--gold);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -88,7 +92,7 @@ html, body { min-width: 1240px; overflow-x: auto; }
 
 .donate-bank dt {
   color: #526055;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -97,7 +101,7 @@ html, body { min-width: 1240px; overflow-x: auto; }
 .donate-bank dd {
   margin: 0;
   color: #0f1b1a;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1.45;
 }
@@ -115,7 +119,7 @@ html, body { min-width: 1240px; overflow-x: auto; }
   align-items: center;
   width: fit-content;
   border-radius: 999px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -180,7 +184,7 @@ html, body { min-width: 1240px; overflow-x: auto; }
   position: relative;
   padding-left: 18px;
   color: #374151;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -223,7 +227,7 @@ html, body { min-width: 1240px; overflow-x: auto; }
 
 .donate-fine-print {
   color: #64748b;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.6;
 }
 

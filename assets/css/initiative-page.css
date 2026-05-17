@@ -27,7 +27,7 @@ html, body { min-width: 1240px; overflow-x: auto; }
   border: 1px solid rgba(10, 122, 58, 0.18);
   background: rgba(10, 122, 58, 0.06);
   color: #155a33;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   padding: 6px 12px;
 }
@@ -35,7 +35,7 @@ html, body { min-width: 1240px; overflow-x: auto; }
 .initiative-kicker {
   margin: 0 0 8px;
   color: var(--gold);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -86,14 +86,14 @@ html, body { min-width: 1240px; overflow-x: auto; }
 .initiative-note strong {
   display: block;
   color: #0f1b1a;
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 5px;
 }
 
 .initiative-stat span,
 .initiative-note span {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.55;
 }
 
@@ -155,14 +155,14 @@ html, body { min-width: 1240px; overflow-x: auto; }
 .student-card strong {
   display: block;
   color: #0f1b1a;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .advisor-list span,
 .student-card span {
   display: block;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.45;
   margin-top: 3px;
 }
@@ -185,7 +185,7 @@ html, body { min-width: 1240px; overflow-x: auto; }
 .record-head p {
   margin: 0;
   color: var(--gold);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -205,7 +205,7 @@ html, body { min-width: 1240px; overflow-x: auto; }
 .timeline-item strong {
   color: var(--green);
   display: block;
-  font-size: 13px;
+  font-size: 15px;
   margin-bottom: 5px;
 }
 
@@ -215,7 +215,7 @@ html, body { min-width: 1240px; overflow-x: auto; }
 }
 
 .source-card p {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .initiative-inline-link {
@@ -239,7 +239,7 @@ details.student-list-toggle > summary {
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--green);
   border: 1px solid rgba(10, 122, 58, 0.22);
@@ -276,6 +276,192 @@ details.student-list-toggle > .student-grid {
   margin-top: 12px;
 }
 
+/* Industry Internship page */
+
+.iip-lead {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #344054;
+  margin-top: 12px;
+  max-width: none;
+}
+
+.iip-selection-note {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+
+.iip-partner-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.iip-partner-logos {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 52px;
+}
+
+.iip-partner-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.iip-partner-logo--iisc {
+  height: 48px;
+}
+
+.iip-partner-logo--axis {
+  height: 30px;
+}
+
+/* Chair page intro */
+
+.chair-intro-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.chair-intro-lead {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #344054;
+  margin: 0 0 14px;
+}
+
+.chair-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.chair-jump:hover,
+.chair-jump:focus-visible {
+  text-decoration: underline;
+}
+
+.chair-facts {
+  margin: 0;
+  border: 1px solid var(--initiative-line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.chair-facts > div {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--initiative-line);
+  font-size: 15px;
+}
+
+.chair-facts > div:last-child {
+  border-bottom: none;
+}
+
+.chair-facts dt {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.chair-facts dd {
+  margin: 0;
+  color: #0f1b1a;
+}
+
+/* Past Chair Professors */
+
+.past-chair-list {
+  display: grid;
+  gap: 20px;
+  margin-top: 14px;
+}
+
+.past-chair-entry {
+  background: linear-gradient(180deg, var(--initiative-card), #ffffff);
+  border: 1px solid var(--initiative-line);
+  border-radius: 16px;
+  padding: 20px 22px;
+}
+
+.past-chair-year {
+  display: inline-block;
+  background: rgba(10, 122, 58, 0.08);
+  border: 1px solid rgba(10, 122, 58, 0.18);
+  color: #155a33;
+  font-size: 13px;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 4px 12px;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.past-chair-entry h3 {
+  color: #0f1b1a;
+  margin: 0 0 3px;
+  font-size: 18px;
+}
+
+.past-chair-affil {
+  color: var(--muted);
+  font-size: 15px;
+  margin: 0 0 14px;
+}
+
+.past-chair-entry p {
+  margin-bottom: 10px;
+}
+
+.past-chair-entry p:last-child {
+  margin-bottom: 0;
+}
+
+.past-chair-institutes {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.past-chair-institutes li {
+  background: var(--initiative-soft);
+  border: 1px solid var(--initiative-line);
+  border-radius: 999px;
+  font-size: 14px;
+  padding: 4px 12px;
+  color: #344054;
+}
+
+.past-chair-photos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.past-chair-photos img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--initiative-line);
+}
+
 @media (max-width: 900px) {
   .initiative-hero,
   .initiative-grid.two,
@@ -283,5 +469,9 @@ details.student-list-toggle > .student-grid {
   .timeline,
   .advisor-list {
     grid-template-columns: 1fr;
+  }
+
+  .past-chair-photos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

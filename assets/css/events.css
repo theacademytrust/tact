@@ -80,7 +80,7 @@ h3 {
 
 p {
   margin: 4px 0 10px;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -182,7 +182,7 @@ h3 {
 
 .meta {
   display: inline-block;
-  font-size: 12px;
+  font-size: 13px;
   color: #5e6a63;
   background: rgba(10, 122, 58, 0.08);
   border-radius: 999px;
@@ -274,7 +274,7 @@ footer[aria-label="Site footer"] {
   padding-bottom: 22px;
   color: var(--muted);
   border-top: 1px solid rgba(184, 134, 11, 0.25);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 /* Desktop-only layout lock */
@@ -318,6 +318,6 @@ main {
 .meta {
   display: inline-block;
   border-radius: 999px;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.45;
 }
