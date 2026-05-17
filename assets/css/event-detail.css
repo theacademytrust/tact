@@ -115,6 +115,18 @@ body.modal-open {
   padding: 18px;
 }
 
+.event-detail-gallery-shell .gallery-card {
+  width: auto;
+  height: auto;
+}
+
+.event-detail-gallery-shell .gallery-card-image {
+  display: block;
+  height: 260px;
+  width: auto;
+  object-fit: fill;
+}
+
 .event-detail-gallery-head {
   margin-bottom: 14px;
 }

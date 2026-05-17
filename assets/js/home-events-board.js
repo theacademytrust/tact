@@ -96,9 +96,23 @@ function renderBoard(feed) {
     false
   );
 
+  addManagedListener(window, "resize", syncVerticalWindow);
+  window.requestAnimationFrame(syncVerticalWindow);
+
   if (upcomingState && upcomingState.count > 1) {
     autoScrollUpcoming(upcomingState);
   }
+}
+
+function syncVerticalWindow() {
+  var track = document.getElementById("home-upcoming-track");
+  if (!track) return;
+  var firstCard = track.firstElementChild;
+  if (!firstCard || !firstCard.classList.contains("home-upcoming-card")) return;
+  var vert = track.closest(".home-vertical-window");
+  if (!vert) return;
+  var h = Math.round(firstCard.getBoundingClientRect().height || firstCard.offsetHeight);
+  if (h > 0) vert.style.height = h + "px";
 }
 
 function mergeGalleryFallbacks(events, galleries) {

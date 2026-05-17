@@ -7,6 +7,7 @@
     sortedDateKeys: [],
     renderedCount: 0,
     lastRenderedMonthKey: "",
+    lastMonthRow: null,
     scrollObserver: null,
     previewTimers: [],
     activeDateItems: [],
@@ -124,6 +125,191 @@
     return items.length + " image" + (items.length === 1 ? "" : "s");
   }
 
+  var calendarModalLayoutPending = false;
+
+  function layoutCalendarModal() {
+    var grid = document.getElementById("calendar-date-grid");
+    if (!grid) return;
+
+    var containerWidth = grid.getBoundingClientRect().width;
+    if (!(containerWidth > 0)) return;
+
+    var H = 220;
+    var GAP = 14;
+
+    var cards = Array.from(grid.querySelectorAll(".calendar-modal-card"));
+    if (!cards.length) return;
+
+    var items = cards.map(function (card) {
+      var img = card.querySelector("img");
+      var ratio = (img && img.naturalWidth && img.naturalHeight)
+        ? img.naturalWidth / img.naturalHeight
+        : 4 / 3;
+      return { card: card, ratio: ratio };
+    });
+
+    var rows = [];
+    var row = [];
+    var rowSumWidths = 0;
+
+    items.forEach(function (item) {
+      var nw = H * item.ratio;
+
+      if (row.length === 0) {
+        row.push(item);
+        rowSumWidths = nw;
+        return;
+      }
+
+      var totalIfAdded = rowSumWidths + nw + row.length * GAP;
+
+      if (totalIfAdded <= containerWidth) {
+        row.push(item);
+        rowSumWidths += nw;
+      } else {
+        var scaleWith    = (containerWidth -  row.length      * GAP) / (rowSumWidths + nw);
+        var scaleWithout = (containerWidth - (row.length - 1) * GAP) /  rowSumWidths;
+        var distortWith    = Math.max(scaleWith,    1 / scaleWith);
+        var distortWithout = Math.max(scaleWithout, 1 / scaleWithout);
+        var include = distortWith < distortWithout;
+
+        if (include) { row.push(item); rowSumWidths += nw; }
+        rows.push({ items: row.slice(), last: false });
+        if (include) { row = []; rowSumWidths = 0; }
+        else         { row = [item]; rowSumWidths = nw; }
+      }
+    });
+
+    if (row.length) {
+      rows.push({ items: row, last: true });
+    }
+
+    rows.forEach(function (rowData) {
+      var n = rowData.items.length;
+      var available = containerWidth - (n - 1) * GAP;
+      var totalNaturalWidth = rowData.items.reduce(function (s, item) {
+        return s + H * item.ratio;
+      }, 0);
+      var scale = rowData.last ? 1.0 : available / totalNaturalWidth;
+
+      var assignedWidth = 0;
+      rowData.items.forEach(function (item, i) {
+        var isLast = i === n - 1;
+        var w = (!rowData.last && isLast)
+          ? Math.round(available - assignedWidth)
+          : Math.round(H * item.ratio * scale);
+        w = Math.max(10, w);
+        assignedWidth += w;
+        item.card.style.flex = "0 0 " + w + "px";
+        item.card.style.width = w + "px";
+      });
+    });
+  }
+
+  function scheduleCalendarModalLayout() {
+    if (calendarModalLayoutPending) return;
+    calendarModalLayoutPending = true;
+    requestAnimationFrame(function () {
+      calendarModalLayoutPending = false;
+      layoutCalendarModal();
+    });
+  }
+
+  var calendarLayoutPending = false;
+
+  function layoutCalendarMonthRow(monthRow) {
+    if (!monthRow) return;
+    var containerWidth = monthRow.getBoundingClientRect().width;
+    if (!(containerWidth > 0)) return;
+
+    var H = 200;
+    var GAP = 14;
+
+    var cards = Array.from(monthRow.querySelectorAll(".calendar-day"));
+    if (!cards.length) return;
+
+    var items = cards.map(function (card) {
+      var img = card.querySelector(".calendar-preview-image");
+      var ratio = (img && img.naturalWidth && img.naturalHeight)
+        ? img.naturalWidth / img.naturalHeight
+        : 4 / 3;
+      return { card: card, ratio: ratio };
+    });
+
+    var rows = [];
+    var row = [];
+    var rowSumWidths = 0;
+
+    items.forEach(function (item) {
+      var nw = H * item.ratio;
+
+      if (row.length === 0) {
+        row.push(item);
+        rowSumWidths = nw;
+        return;
+      }
+
+      var totalIfAdded = rowSumWidths + nw + row.length * GAP;
+
+      if (totalIfAdded <= containerWidth) {
+        row.push(item);
+        rowSumWidths += nw;
+      } else {
+        var scaleWith    = (containerWidth -  row.length      * GAP) / (rowSumWidths + nw);
+        var scaleWithout = (containerWidth - (row.length - 1) * GAP) /  rowSumWidths;
+        var distortWith    = Math.max(scaleWith,    1 / scaleWith);
+        var distortWithout = Math.max(scaleWithout, 1 / scaleWithout);
+        var include = distortWith < distortWithout;
+
+        if (include) { row.push(item); rowSumWidths += nw; }
+        rows.push({ items: row.slice(), last: false });
+        if (include) { row = []; rowSumWidths = 0; }
+        else         { row = [item]; rowSumWidths = nw; }
+      }
+    });
+
+    if (row.length) {
+      rows.push({ items: row, last: true });
+    }
+
+    rows.forEach(function (rowData) {
+      var n = rowData.items.length;
+      var available = containerWidth - (n - 1) * GAP;
+      var totalNaturalWidth = rowData.items.reduce(function (s, item) {
+        return s + H * item.ratio;
+      }, 0);
+      var scale = rowData.last ? 1.0 : available / totalNaturalWidth;
+
+      var assignedWidth = 0;
+      rowData.items.forEach(function (item, i) {
+        var isLast = i === n - 1;
+        var w = (!rowData.last && isLast)
+          ? Math.round(available - assignedWidth)
+          : Math.round(H * item.ratio * scale);
+        w = Math.max(10, w);
+        assignedWidth += w;
+        item.card.style.flex = "0 0 " + w + "px";
+        item.card.style.width = w + "px";
+      });
+    });
+  }
+
+  function layoutAllCalendarMonthRows() {
+    var monthRows = document.querySelectorAll(".calendar-month-row");
+    monthRows.forEach(function (monthRow) {
+      layoutCalendarMonthRow(monthRow);
+    });
+  }
+
+  function scheduleCalendarLayout() {
+    if (calendarLayoutPending) return;
+    calendarLayoutPending = true;
+    requestAnimationFrame(function () {
+      calendarLayoutPending = false;
+      layoutAllCalendarMonthRows();
+    });
+  }
+
   function buildEventDateCard(dateKey, items) {
     var button = document.createElement("button");
     button.type = "button";
@@ -170,6 +356,7 @@
     image.alt = items[0].title;
     image.loading = "lazy";
     image.decoding = "async";
+    image.addEventListener("load", scheduleCalendarLayout);
     previewWrap.appendChild(image);
 
     var overlay = document.createElement("span");
@@ -231,10 +418,18 @@
     nextKeys.forEach(function (dateKey) {
       var monthKey = monthKeyFor(dateKey);
       if (monthKey && monthKey !== state.lastRenderedMonthKey) {
-        grid.appendChild(buildMonthBreak(dateKey));
+        var section = document.createElement("div");
+        section.className = "calendar-month-section";
+        section.appendChild(buildMonthBreak(dateKey));
+        state.lastMonthRow = document.createElement("div");
+        state.lastMonthRow.className = "calendar-month-row";
+        section.appendChild(state.lastMonthRow);
+        grid.appendChild(section);
         state.lastRenderedMonthKey = monthKey;
       }
-      grid.appendChild(buildEventDateCard(dateKey, state.dayMap[dateKey] || []));
+      if (state.lastMonthRow) {
+        state.lastMonthRow.appendChild(buildEventDateCard(dateKey, state.dayMap[dateKey] || []));
+      }
     });
 
     state.renderedCount += nextKeys.length;
@@ -243,6 +438,8 @@
       sentinel.hidden = state.renderedCount >= state.sortedDateKeys.length;
       sentinel.textContent = sentinel.hidden ? "" : "Loading more";
     }
+
+    scheduleCalendarLayout();
   }
 
   function setupScrollLoader() {
@@ -273,6 +470,7 @@
     state.sortedDateKeys = visibleDateKeys();
     state.renderedCount = 0;
     state.lastRenderedMonthKey = "";
+    state.lastMonthRow = null;
     grid.innerHTML = "";
 
     if (!state.sortedDateKeys.length) {
@@ -319,6 +517,7 @@
       image.loading = "lazy";
       image.decoding = "async";
 
+      image.addEventListener("load", scheduleCalendarModalLayout);
       mediaWrap.appendChild(image);
 
       var meta = document.createElement("span");
@@ -334,6 +533,7 @@
 
     modal.hidden = false;
     document.body.classList.add("modal-open");
+    scheduleCalendarModalLayout();
   }
 
   function closeDateModal() {
@@ -442,7 +642,13 @@
         if (!day || day.disabled) return;
 
         event.preventDefault();
-        openDateModal(String(day.dataset.dateKey || ""));
+        var dateKey = String(day.dataset.dateKey || "");
+        var dayItems = state.dayMap[dateKey] || [];
+        if (dayItems.length === 1) {
+          openDetailModal(dayItems[0]);
+        } else {
+          openDateModal(dateKey);
+        }
         return;
       }
 
@@ -494,6 +700,7 @@
     });
 
     window.addEventListener("resize", syncDetailModalHeight);
+    window.addEventListener("resize", scheduleCalendarLayout);
   }
 
   async function initCalendarPage() {

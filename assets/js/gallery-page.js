@@ -61,6 +61,103 @@
       .replace(/'/g, "&#39;");
   }
 
+  var layoutPending = false;
+
+  function layoutGallery() {
+    var grid = document.getElementById("gallery-grid");
+    if (!grid) return;
+
+    var containerWidth = grid.getBoundingClientRect().width;
+    if (!(containerWidth > 0)) return;
+
+    var H = 260;  // every image in every row is exactly this many pixels tall
+    var GAP = 10;
+
+    var cards = Array.from(grid.querySelectorAll(".gallery-card"));
+    if (!cards.length) return;
+
+    var items = cards.map(function (card) {
+      var img = card.querySelector(".gallery-card-image");
+      var ratio = (img && img.naturalWidth && img.naturalHeight)
+        ? img.naturalWidth / img.naturalHeight
+        : 4 / 3;
+      return { card: card, ratio: ratio };
+    });
+
+    // Pack images into rows at fixed height H.
+    // When adding the next image would overflow, compare both choices:
+    //   include → compress (scale < 1)   vs   exclude → stretch (scale > 1)
+    // Pick whichever scale deviates less from 1.0 — minimises visible distortion.
+    var rows = [];
+    var row = [];
+    var rowSumWidths = 0;
+
+    items.forEach(function (item) {
+      var nw = H * item.ratio;
+
+      if (row.length === 0) {
+        row.push(item);
+        rowSumWidths = nw;
+        return;
+      }
+
+      var totalIfAdded = rowSumWidths + nw + row.length * GAP;
+
+      if (totalIfAdded <= containerWidth) {
+        row.push(item);
+        rowSumWidths += nw;
+      } else {
+        var scaleWith    = (containerWidth -  row.length      * GAP) / (rowSumWidths + nw);
+        var scaleWithout = (containerWidth - (row.length - 1) * GAP) /  rowSumWidths;
+        var distortWith    = Math.max(scaleWith,    1 / scaleWith);
+        var distortWithout = Math.max(scaleWithout, 1 / scaleWithout);
+        var include = distortWith < distortWithout;
+
+        if (include) { row.push(item); rowSumWidths += nw; }
+        rows.push({ items: row.slice(), last: false });
+        if (include) { row = []; rowSumWidths = 0; }
+        else         { row = [item]; rowSumWidths = nw; }
+      }
+    });
+
+    if (row.length) {
+      rows.push({ items: row, last: true });
+    }
+
+    // Apply: H px tall for every card, widths scaled to fill containerWidth.
+    // Last (partial) row: natural widths, left-aligned — no gross stretching.
+    rows.forEach(function (rowData) {
+      var n = rowData.items.length;
+      var available = containerWidth - (n - 1) * GAP;
+      var totalNaturalWidth = rowData.items.reduce(function (s, item) {
+        return s + H * item.ratio;
+      }, 0);
+      var scale = rowData.last ? 1.0 : available / totalNaturalWidth;
+
+      var assignedWidth = 0;
+      rowData.items.forEach(function (item, i) {
+        var isLast = i === n - 1;
+        var w = (!rowData.last && isLast)
+          ? Math.round(available - assignedWidth)
+          : Math.round(H * item.ratio * scale);
+        w = Math.max(10, w);
+        assignedWidth += w;
+        item.card.style.flex = "0 0 " + w + "px";
+        item.card.style.width = w + "px";
+        item.card.style.height = H + "px";
+      });
+    });
+  }
+
+  function scheduleLayout() {
+    if (layoutPending) return;
+    layoutPending = true;
+    requestAnimationFrame(function () {
+      layoutPending = false;
+      layoutGallery();
+    });
+  }
+
   function buildGalleryCard(item) {
     var button = document.createElement("button");
     button.type = "button";
@@ -74,6 +171,8 @@
     image.alt = item.title;
     image.loading = "lazy";
     image.decoding = "async";
+
+    image.addEventListener("load", scheduleLayout);
 
     var overlay = document.createElement("span");
     overlay.className = "gallery-card-overlay";
@@ -105,6 +204,7 @@
       grid.appendChild(buildGalleryCard(item));
     });
     state.rendered = Math.min(state.items.length, state.rendered + state.batchSize);
+    scheduleLayout();
 
     if (sentinel) {
       sentinel.hidden = state.rendered >= state.items.length;
@@ -267,6 +367,7 @@
     });
 
     window.addEventListener("resize", syncModalHeight);
+    window.addEventListener("resize", scheduleLayout);
   }
 
   async function initGalleryPage() {

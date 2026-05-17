@@ -442,9 +442,199 @@ function renderUpcoming(list) {
 
   var fragment = document.createDocumentFragment();
   list.forEach(function (item, index) {
-    fragment.appendChild(buildUpcomingCard(item, index === 0));
+    var card = buildUpcomingCard(item, index === 0);
+    var image = card.querySelector(".image-container img");
+    if (image) {
+      image.addEventListener("load", scheduleUpcomingLayout);
+    }
+    fragment.appendChild(card);
   });
   root.appendChild(fragment);
+  scheduleUpcomingLayout();
+}
+
+var upcomingLayoutPending = false;
+
+function layoutUpcoming() {
+  var list = document.getElementById("upcoming-list");
+  if (!list) return;
+
+  var containerWidth = list.getBoundingClientRect().width;
+  if (!(containerWidth > 0)) return;
+
+  var H = 260;
+  var CARD_H = 480;
+  var GAP = 16;
+
+  var cards = Array.from(list.querySelectorAll(".event-card:not(.event-card-placeholder)"));
+  if (!cards.length) return;
+
+  var items = cards.map(function (card) {
+    var img = card.querySelector(".image-container img");
+    var ratio = (img && img.naturalWidth && img.naturalHeight)
+      ? img.naturalWidth / img.naturalHeight
+      : 4 / 3;
+    return { card: card, ratio: ratio };
+  });
+
+  var rows = [];
+  var row = [];
+  var rowSumWidths = 0;
+
+  items.forEach(function (item) {
+    var nw = H * item.ratio;
+
+    if (row.length === 0) {
+      row.push(item);
+      rowSumWidths = nw;
+      return;
+    }
+
+    var totalIfAdded = rowSumWidths + nw + row.length * GAP;
+
+    if (totalIfAdded <= containerWidth) {
+      row.push(item);
+      rowSumWidths += nw;
+    } else {
+      var scaleWith    = (containerWidth -  row.length      * GAP) / (rowSumWidths + nw);
+      var scaleWithout = (containerWidth - (row.length - 1) * GAP) /  rowSumWidths;
+      var distortWith    = Math.max(scaleWith,    1 / scaleWith);
+      var distortWithout = Math.max(scaleWithout, 1 / scaleWithout);
+      var include = distortWith < distortWithout;
+
+      if (include) { row.push(item); rowSumWidths += nw; }
+      rows.push({ items: row.slice(), last: false });
+      if (include) { row = []; rowSumWidths = 0; }
+      else         { row = [item]; rowSumWidths = nw; }
+    }
+  });
+
+  if (row.length) {
+    rows.push({ items: row, last: true });
+  }
+
+  rows.forEach(function (rowData) {
+    var n = rowData.items.length;
+    var available = containerWidth - (n - 1) * GAP;
+    var totalNaturalWidth = rowData.items.reduce(function (s, item) {
+      return s + H * item.ratio;
+    }, 0);
+    var scale = rowData.last ? 1.0 : available / totalNaturalWidth;
+
+    var assignedWidth = 0;
+    rowData.items.forEach(function (item, i) {
+      var isLast = i === n - 1;
+      var w = (!rowData.last && isLast)
+        ? Math.round(available - assignedWidth)
+        : Math.round(H * item.ratio * scale);
+      w = Math.max(10, w);
+      assignedWidth += w;
+      item.card.style.flex = "0 0 " + w + "px";
+      item.card.style.width = w + "px";
+      item.card.style.height = CARD_H + "px";
+    });
+  });
+}
+
+function scheduleUpcomingLayout() {
+  if (upcomingLayoutPending) return;
+  upcomingLayoutPending = true;
+  requestAnimationFrame(function () {
+    upcomingLayoutPending = false;
+    layoutUpcoming();
+  });
+}
+
+var archiveLayoutPending = false;
+
+function layoutArchive() {
+  var list = document.getElementById("archive-list");
+  if (!list) return;
+
+  var containerWidth = list.getBoundingClientRect().width;
+  if (!(containerWidth > 0)) return;
+
+  var H = 220;
+  var CARD_H = 400;
+  var GAP = 16;
+
+  var cards = Array.from(list.querySelectorAll(".archive-item"));
+  if (!cards.length) return;
+
+  var items = cards.map(function (card) {
+    var img = card.querySelector(".image-container img");
+    var ratio = (img && img.naturalWidth && img.naturalHeight)
+      ? img.naturalWidth / img.naturalHeight
+      : 4 / 3;
+    return { card: card, ratio: ratio };
+  });
+
+  var rows = [];
+  var row = [];
+  var rowSumWidths = 0;
+
+  items.forEach(function (item) {
+    var nw = H * item.ratio;
+
+    if (row.length === 0) {
+      row.push(item);
+      rowSumWidths = nw;
+      return;
+    }
+
+    var totalIfAdded = rowSumWidths + nw + row.length * GAP;
+
+    if (totalIfAdded <= containerWidth) {
+      row.push(item);
+      rowSumWidths += nw;
+    } else {
+      var scaleWith    = (containerWidth -  row.length      * GAP) / (rowSumWidths + nw);
+      var scaleWithout = (containerWidth - (row.length - 1) * GAP) /  rowSumWidths;
+      var distortWith    = Math.max(scaleWith,    1 / scaleWith);
+      var distortWithout = Math.max(scaleWithout, 1 / scaleWithout);
+      var include = distortWith < distortWithout;
+
+      if (include) { row.push(item); rowSumWidths += nw; }
+      rows.push({ items: row.slice(), last: false });
+      if (include) { row = []; rowSumWidths = 0; }
+      else         { row = [item]; rowSumWidths = nw; }
+    }
+  });
+
+  if (row.length) {
+    rows.push({ items: row, last: true });
+  }
+
+  rows.forEach(function (rowData) {
+    var n = rowData.items.length;
+    var available = containerWidth - (n - 1) * GAP;
+    var totalNaturalWidth = rowData.items.reduce(function (s, item) {
+      return s + H * item.ratio;
+    }, 0);
+    var scale = rowData.last ? 1.0 : available / totalNaturalWidth;
+
+    var assignedWidth = 0;
+    rowData.items.forEach(function (item, i) {
+      var isLast = i === n - 1;
+      var w = (!rowData.last && isLast)
+        ? Math.round(available - assignedWidth)
+        : Math.round(H * item.ratio * scale);
+      w = Math.max(10, w);
+      assignedWidth += w;
+      item.card.style.flex = "0 0 " + w + "px";
+      item.card.style.width = w + "px";
+      item.card.style.height = CARD_H + "px";
+    });
+  });
+}
+
+function scheduleArchiveLayout() {
+  if (archiveLayoutPending) return;
+  archiveLayoutPending = true;
+  requestAnimationFrame(function () {
+    archiveLayoutPending = false;
+    layoutArchive();
+  });
 }
 
 function renderArchive(list) {
@@ -491,11 +681,13 @@ function renderArchive(list) {
     var container = link.querySelector(".image-container");
     if (image && container) {
       bindArchiveThumbnailRatio(image, container);
+      image.addEventListener("load", scheduleArchiveLayout);
     }
 
     fragment.appendChild(link);
   });
   root.appendChild(fragment);
+  scheduleArchiveLayout();
 }
 
 function bindArchiveThumbnailRatio(image, container) {
@@ -566,3 +758,6 @@ function escapeHtml(value) {
     .replace(/\"/g, "&quot;")
     .replace(/'/g, "&#39;");
 }
+
+window.addEventListener("resize", scheduleUpcomingLayout);
+window.addEventListener("resize", scheduleArchiveLayout);
