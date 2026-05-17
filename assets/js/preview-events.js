@@ -42,9 +42,9 @@
     }
   ];
 
-  if (Array.isArray(window.TACT_EVENT_FEED)) {
-    window.TACT_EVENT_FEED = preview.concat(window.TACT_EVENT_FEED);
-  } else {
-    window.TACT_EVENT_FEED = preview;
-  }
+  var existing = Array.isArray(window.TACT_EVENT_FEED) ? window.TACT_EVENT_FEED : [];
+  var existingSlugs = {};
+  existing.forEach(function (e) { if (e.slug) existingSlugs[e.slug] = true; });
+  var toAdd = preview.filter(function (e) { return !existingSlugs[e.slug]; });
+  window.TACT_EVENT_FEED = toAdd.concat(existing);
 })();

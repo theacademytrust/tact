@@ -664,10 +664,9 @@ function renderArchive(list) {
       '<div class="archive-body">' +
       '<span class="meta">' +
       escapeHtml(formatDate(item.date)) +
+      (item.time ? " | " + escapeHtml(item.time) : "") +
       " | " +
-      escapeHtml(item.time || "Time TBA") +
-      " | " +
-      escapeHtml(item.location || "TBA") +
+      escapeHtml(item.location || "") +
       "</span>" +
       "<h3>" +
       escapeHtml(item.title || "Untitled event") +
@@ -735,10 +734,9 @@ function buildUpcomingCard(item, isPriority) {
     '<div class="event-body">' +
     '<span class="meta">' +
     escapeHtml(formatDate(item.date)) +
+    (item.time ? " | " + escapeHtml(item.time) : "") +
     " | " +
-    escapeHtml(item.time || "Time TBA") +
-    " | " +
-    escapeHtml(item.location || "TBA") +
+    escapeHtml(item.location || "") +
     "</span>" +
     "<h3>" +
     escapeHtml(item.title || "Untitled event") +
