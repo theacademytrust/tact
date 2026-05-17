@@ -1,0 +1,5 @@
+A Science Fair was jointly organized by the Indian Academy of Sciences, the Indian Young Scientists' Association, the Mysore Science Foundation, Teresian High School and Chaitra School over two days in Mysore.
+
+On 28 June 2018, the Science Fair was held at Teresian High School, Siddhartha Nagara, Mysore. About 200 high school students attended. The programme included talks on 'Sir C V Raman and his Legacy' by Pradeep Kumar, 'Nanomaterials: What Makes them interesting' by Ranjani Viswanatha, and 'Value based education and our environment' by Ranjit Kumar. A short film, 'A Pilgrim's Progress', was screened, followed by poster presentations evaluated by members of the Indian Young Scientists' Association.
+
+On 29 June 2018, the Science Fair continued at Chaitra School. About 100 high school students attended. V.S.S. Sastry led hands-on sessions on mathematics through origami and paper rocket models. AKVS Sharma gave a talk on how to become a researcher, and Dr. Rajesh spoke on the biological clock.

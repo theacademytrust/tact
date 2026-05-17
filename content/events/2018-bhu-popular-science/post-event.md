@@ -1,0 +1,3 @@
+A series of Popular Science Lectures for 11th and 12th standard Science students was held at S. S. Joshi Hall, Department of Chemistry, Banaras Hindu University, Varanasi, on 1 November 2018. Eleven schools participated, with a total of 192 students attending.
+
+Two lectures were delivered: Prof. S. C. Lakhotia (BHU) spoke on 'What makes Developmental Biology so exciting?' and Prof. Amitabh Joshi (JNCASR, Bangalore) spoke on 'What is biology?'.

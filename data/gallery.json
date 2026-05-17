@@ -14,6 +14,222 @@
     ]
   },
   {
+    "slug": "2018-mcc-june",
+    "eventSlug": "2018-mcc-june",
+    "pageUrl": "events/26-06-2018-mcc-june-2018.html",
+    "title": "MCC, June 2018",
+    "date": "2018-06-26",
+    "location": "MCC",
+    "images": [
+      {
+        "url": "content/events/2018-mcc-june/gallery/image-01.jpg",
+        "description": "Science outreach event at MCC, 26 June 2018"
+      }
+    ]
+  },
+  {
+    "slug": "2018-mysuru-science-fair",
+    "eventSlug": "2018-mysuru-science-fair",
+    "pageUrl": "events/28-06-2018-science-fair-mysore.html",
+    "title": "Science Fair, Mysore",
+    "date": "2018-06-28",
+    "location": "Mysore",
+    "images": [
+      {
+        "url": "content/events/2018-mysuru-science-fair/gallery/image-01.jpg",
+        "description": "Inauguration ceremony at the Science Fair, Mysore, June 2018, jointly organized by the Indian Academy of Sciences, IYSA and Mysore Science Foundation"
+      },
+      {
+        "url": "content/events/2018-mysuru-science-fair/gallery/image-02.jpg",
+        "description": "Students attending the Science Fair at Chaitra School, Mysore, 29 June 2018"
+      },
+      {
+        "url": "content/events/2018-mysuru-science-fair/gallery/image-03.jpg",
+        "description": "Hands-on session at the Science Fair, Chaitra School, Mysore, 29 June 2018"
+      },
+      {
+        "url": "content/events/2018-mysuru-science-fair/gallery/image-04.jpg",
+        "description": "Students participating in the Science Fair activities at Chaitra School, Mysore, 29 June 2018"
+      },
+      {
+        "url": "content/events/2018-mysuru-science-fair/gallery/image-05.jpg",
+        "description": "Students at the Science Fair, Chaitra School, Mysore, 29 June 2018"
+      },
+      {
+        "url": "content/events/2018-mysuru-science-fair/gallery/image-06.jpg",
+        "description": "Science Fair activity session, Mysore, June 2018"
+      },
+      {
+        "url": "content/events/2018-mysuru-science-fair/gallery/image-07.jpg",
+        "description": "Science Fair participants, Mysore, June 2018"
+      },
+      {
+        "url": "content/events/2018-mysuru-science-fair/gallery/image-08.jpg",
+        "description": "Science Fair, Mysore, June 2018 — jointly organized by IAS, IYSA and Mysore Science Foundation"
+      },
+      {
+        "url": "content/events/2018-mysuru-science-fair/gallery/image-09.jpg",
+        "description": "Group photograph of participants at the Science Fair, Mysore, June 2018"
+      }
+    ]
+  },
+  {
+    "slug": "2018-bharathi-school-james-chelliah",
+    "eventSlug": "2018-bharathi-school-james-chelliah",
+    "pageUrl": "events/20-07-2018-lecture-on-the-brain-bharathi-school.html",
+    "title": "Lecture on the Brain — Bharathi School",
+    "date": "2018-07-20",
+    "location": "Bharathi School",
+    "images": [
+      {
+        "url": "content/events/2018-bharathi-school-james-chelliah/gallery/image-01.jpg",
+        "description": "Dr. James Chelliah (JNCASR) during his Popular Science Lecture on the Brain at Bharathi School, 20 July 2018"
+      },
+      {
+        "url": "content/events/2018-bharathi-school-james-chelliah/gallery/image-02.jpg",
+        "description": "Students at the Popular Science Lecture by Dr. James Chelliah at Bharathi School, 20 July 2018"
+      }
+    ]
+  },
+  {
+    "slug": "2018-vanita-sadana-mysuru",
+    "eventSlug": "2018-vanita-sadana-mysuru",
+    "pageUrl": "events/04-08-2018-karnataka-s-wildlife-vanita-sadana-mysore.html",
+    "title": "Karnataka's Wildlife — Vanita Sadana, Mysore",
+    "date": "2018-08-04",
+    "location": "Vanita Sadana, Mysore",
+    "images": [
+      {
+        "url": "content/events/2018-vanita-sadana-mysuru/gallery/image-01.jpg",
+        "description": "Science outreach programme 'Karnataka's Wildlife' at Vanita Sadana, Mysore, 4 August 2018"
+      },
+      {
+        "url": "content/events/2018-vanita-sadana-mysuru/gallery/image-02.jpg",
+        "description": "Students attending the 'Karnataka's Wildlife' programme at Vanita Sadana, Mysore, 4 August 2018"
+      },
+      {
+        "url": "content/events/2018-vanita-sadana-mysuru/gallery/image-03.jpg",
+        "description": "Session at the 'Karnataka's Wildlife' science outreach programme, Vanita Sadana, Mysore, 4 August 2018"
+      }
+    ]
+  },
+  {
+    "slug": "2018-mcc-august",
+    "eventSlug": "2018-mcc-august",
+    "pageUrl": "events/11-08-2018-mcc-august-2018.html",
+    "title": "MCC, August 2018",
+    "date": "2018-08-11",
+    "location": "MCC",
+    "images": [
+      {
+        "url": "content/events/2018-mcc-august/gallery/image-01.jpg",
+        "description": "Science outreach event at MCC, 11 August 2018"
+      },
+      {
+        "url": "content/events/2018-mcc-august/gallery/image-02.jpg",
+        "description": "Science outreach event at MCC, 11 August 2018"
+      }
+    ]
+  },
+  {
+    "slug": "2018-adarsha-vidyalaya",
+    "eventSlug": "2018-adarsha-vidyalaya",
+    "pageUrl": "events/04-10-2018-adarsha-vidyalaya-2018.html",
+    "title": "Adarsha Vidyalaya, 2018",
+    "date": "2018-10-04",
+    "location": "Adarsha Vidyalaya",
+    "images": [
+      {
+        "url": "content/events/2018-adarsha-vidyalaya/gallery/image-01.jpg",
+        "description": "Science outreach event at Adarsha Vidyalaya, 4 October 2018"
+      },
+      {
+        "url": "content/events/2018-adarsha-vidyalaya/gallery/image-02.jpg",
+        "description": "Science outreach event at Adarsha Vidyalaya, 4 October 2018"
+      },
+      {
+        "url": "content/events/2018-adarsha-vidyalaya/gallery/image-03.jpg",
+        "description": "Science outreach event at Adarsha Vidyalaya, 4 October 2018"
+      }
+    ]
+  },
+  {
+    "slug": "2018-canadian-school",
+    "eventSlug": "2018-canadian-school",
+    "pageUrl": "events/10-10-2018-canadian-school-2018.html",
+    "title": "Canadian School, 2018",
+    "date": "2018-10-10",
+    "location": "Canadian School",
+    "images": [
+      {
+        "url": "content/events/2018-canadian-school/gallery/image-01.jpg",
+        "description": "Science outreach event at Canadian School, 10 October 2018"
+      }
+    ]
+  },
+  {
+    "slug": "2018-bhu-popular-science",
+    "eventSlug": "2018-bhu-popular-science",
+    "pageUrl": "events/01-11-2018-popular-science-lectures-for-11th-12th-standard-science-students.html",
+    "title": "Popular Science Lectures for 11th–12th standard Science Students",
+    "date": "2018-11-01",
+    "location": "Banaras Hindu University, Varanasi",
+    "images": [
+      {
+        "url": "content/events/2018-bhu-popular-science/gallery/image-01.jpg",
+        "description": "Students attending the Popular Science Lectures at S. S. Joshi Hall, Banaras Hindu University, Varanasi, 1 November 2018"
+      }
+    ]
+  },
+  {
+    "slug": "2018-nina-fedoroff-oxford-college",
+    "eventSlug": "2018-nina-fedoroff-oxford-college",
+    "pageUrl": "events/26-11-2018-gm-crops-and-their-social-impact-oxford-college-bengaluru.html",
+    "title": "GM Crops and Their Social Impact — Oxford College, Bengaluru",
+    "date": "2018-11-26",
+    "location": "Oxford College, Bengaluru",
+    "images": [
+      {
+        "url": "content/events/2018-nina-fedoroff-oxford-college/gallery/image-01.jpg",
+        "description": "Nina Fedoroff during her lecture on 'GM crops and their social impact' at Oxford College, Bengaluru, 26 November 2018"
+      },
+      {
+        "url": "content/events/2018-nina-fedoroff-oxford-college/gallery/image-02.jpg",
+        "description": "Students attending Nina Fedoroff's lecture at Oxford College, Bengaluru, 26 November 2018"
+      }
+    ]
+  },
+  {
+    "slug": "2018-vsoe-vtcl",
+    "eventSlug": "2018-vsoe-vtcl",
+    "pageUrl": "events/11-12-2018-vsoe-vtcl-december-2018.html",
+    "title": "VSOE & VTCL, December 2018",
+    "date": "2018-12-11",
+    "location": "VSOE & VTCL",
+    "images": [
+      {
+        "url": "content/events/2018-vsoe-vtcl/gallery/image-01.jpg",
+        "description": "Science outreach event at VSOE & VTCL, 11 December 2018"
+      },
+      {
+        "url": "content/events/2018-vsoe-vtcl/gallery/image-02.jpg",
+        "description": "Science outreach event at VSOE & VTCL, 11 December 2018"
+      },
+      {
+        "url": "content/events/2018-vsoe-vtcl/gallery/image-03.jpg",
+        "description": "Science outreach event at VSOE & VTCL, 11–12 December 2018"
+      },
+      {
+        "url": "content/events/2018-vsoe-vtcl/gallery/image-04.jpg",
+        "description": "Science outreach event at VSOE & VTCL, 11–12 December 2018"
+      },
+      {
+        "url": "content/events/2018-vsoe-vtcl/gallery/image-05.jpg",
+        "description": "Science outreach event at VSOE & VTCL, 12 December 2018"
+      }
+    ]
+  },
+  {
     "slug": "2022-vijnana-harate-malleswaram-session",
     "eventSlug": "2022-vijnana-harate-malleswaram-session",
     "pageUrl": "events/2022-vijnana-harate-malleswaram-session.html",
