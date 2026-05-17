@@ -2366,5 +2366,35 @@
         "description": "Vijnana Aranya at Mysuru, Archaeological Sciences by Dr. CV Sharada, March 2026"
       }
     ]
+  },
+  {
+    "slug": "2019-anantha-vidyaniketan",
+    "eventSlug": "2019-anantha-vidyaniketan",
+    "pageUrl": "events/2019-anantha-vidyaniketan.html",
+    "title": "Vijnana Harate, Anantha Vidyaniketan",
+    "date": "2019-12-18",
+    "location": "Anantha Vidyaniketan, Bengaluru",
+    "images": [
+      {
+        "url": "content/events/2019-anantha-vidyaniketan/gallery/image-01.jpg",
+        "description": "Vijnana Harate at Anantha Vidyaniketan, Bengaluru, December 2019"
+      },
+      {
+        "url": "content/events/2019-anantha-vidyaniketan/gallery/image-02.jpg",
+        "description": "Vijnana Harate at Anantha Vidyaniketan, Bengaluru, December 2019"
+      },
+      {
+        "url": "content/events/2019-anantha-vidyaniketan/gallery/image-03.jpg",
+        "description": "Vijnana Harate at Anantha Vidyaniketan, Bengaluru, December 2019"
+      },
+      {
+        "url": "content/events/2019-anantha-vidyaniketan/gallery/image-04.jpg",
+        "description": "Vijnana Harate at Anantha Vidyaniketan, Bengaluru, December 2019"
+      },
+      {
+        "url": "content/events/2019-anantha-vidyaniketan/gallery/image-05.jpg",
+        "description": "Vijnana Harate at Anantha Vidyaniketan, Bengaluru, December 2019"
+      }
+    ]
   }
 ]

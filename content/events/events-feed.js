@@ -236,6 +236,19 @@ window.TACT_EVENT_FEED = [
     "homepageMatter": "A science outreach programme at the School of Life Sciences, University of Hyderabad, on 8 November 2019, in collaboration with UoH. Students (Class VIII–XII) participated in a science quiz and elocution competition, followed by lectures on medieval buildings and polar life forms."
   },
   {
+    "slug": "2019-anantha-vidyaniketan",
+    "title": "Vijnana Harate, Anantha Vidyaniketan",
+    "date": "2019-12-18",
+    "time": "",
+    "location": "Anantha Vidyaniketan, Bengaluru",
+    "status": "completed",
+    "folder": "content/events/2019-anantha-vidyaniketan",
+    "pageUrl": "events/18-12-2019-vijnana-harate-anantha-vidyaniketan.html",
+    "poster": "content/events/2019-anantha-vidyaniketan/gallery/image-01.jpg",
+    "teaser": "Vijnana Harate session at Anantha Vidyaniketan, Bengaluru, on 18 December 2019.",
+    "homepageMatter": "A Vijnana Harate session was held at Anantha Vidyaniketan, Bengaluru, on 18 December 2019."
+  },
+  {
     "slug": "2020-rajasthan-dst-evolutionary-biology",
     "title": "Evolutionary & Organismal Biology Webinar, Rajasthan DST",
     "date": "2020-06-07",
