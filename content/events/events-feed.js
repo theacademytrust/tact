@@ -3,7 +3,7 @@
 window.TACT_EVENT_FEED = [
   {
     "slug": "2015-soafal-series-also-included-memorial-lecture-rohini-lecture",
-    "title": "SOAFAL Lecture — Sulabha K Kulkarni: Materials Matter",
+    "title": "SOAFAL Lecture, Sulabha K Kulkarni: Materials Matter",
     "date": "2015-03-15",
     "time": "TBD",
     "location": "Online",
@@ -16,7 +16,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2022-vijnana-harate-malleswaram-session",
-    "title": "Vijnana Harate — Bapu Composite PU College & Govt. High School, Malleswaram, Bengaluru",
+    "title": "Vijnana Harate, Bapu Composite PU College & Govt. High School, Malleswaram, Bengaluru",
     "date": "2022-07-08",
     "time": "TBD",
     "location": "Raman Research Institute, Bengaluru",
@@ -29,7 +29,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2022-teacher-training-bengaluru-session",
-    "title": "Teacher Training Workshop — Indian Academy of Sciences, Bengaluru",
+    "title": "Teacher Training Workshop, Indian Academy of Sciences, Bengaluru",
     "date": "2022-09-09",
     "time": "TBD",
     "location": "Indian Academy of Sciences, Bengaluru",
@@ -42,7 +42,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2022-vijnana-harate-unknown-session",
-    "title": "Vijnana Harate (Kannada) — Bengaluru",
+    "title": "Vijnana Harate (Kannada), Bengaluru",
     "date": "2022-09-24",
     "time": "TBD",
     "location": "Munnota Trust Venue, Bengaluru",
@@ -55,7 +55,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2022-vijnana-harate-sri-charan-vidyaniketan-and-srm-university-bengaluru-session",
-    "title": "Vijnana Harate — 88th Annual Meeting, SRM University, Andhra Pradesh",
+    "title": "Vijnana Harate, 88th Annual Meeting, SRM University, Andhra Pradesh",
     "date": "2022-11-04",
     "time": "TBD",
     "location": "SRM University, Andhra Pradesh",
@@ -68,7 +68,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2022-vijnana-nataka-unknown-session",
-    "title": "Vijnana Nataka — 'QED' (Richard Feynman), National College Jayanagar, Bengaluru",
+    "title": "Vijnana Nataka, 'QED' (Richard Feynman), National College Jayanagar, Bengaluru",
     "date": "2022-12-09",
     "time": "TBD",
     "location": "HN Kalakshetra, National College Jayanagar, Bengaluru",
@@ -81,7 +81,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2022-national-mathematics-day-mysuru-session",
-    "title": "National Mathematics Day 2022 — Acharya Patshala College, Bengaluru",
+    "title": "National Mathematics Day 2022, Acharya Patshala College, Bengaluru",
     "date": "2022-12-22",
     "time": "TBD",
     "location": "Acharya Patshala College, Bengaluru",
@@ -90,11 +90,11 @@ window.TACT_EVENT_FEED = [
     "pageUrl": "events/22-12-2022-national-mathematics-day-mysuru-session.html",
     "poster": "content/events/2022-national-mathematics-day-mysuru-session/gallery/image-01.jpg",
     "teaser": "22nd December 2022: tAcT collaborated with the Ramanujan Mathematics Club and the Department of Mathematics of Acharya Patshala College to celebrate National Mathematics Day 2022, with more than 100 participants.",
-    "homepageMatter": "22nd December 2022: tAcT collaborated with the Ramanujan Mathematics Club and the Department of Mathematics of Acharya Patshala College to celebrate National Mathematics Day 2022. More than 100 participants from various institutions attended. V. Sivashankara Sastry spoke on 'Magic Squares in Indian Culture', and B.S. Krishnamurthy delighted the audience with 'Dance of Maths — The Art of Learning Mathematics.'"
+    "homepageMatter": "22nd December 2022: tAcT collaborated with the Ramanujan Mathematics Club and the Department of Mathematics of Acharya Patshala College to celebrate National Mathematics Day 2022. More than 100 participants from various institutions attended. V. Sivashankara Sastry spoke on 'Magic Squares in Indian Culture', and B.S. Krishnamurthy delighted the audience with 'Dance of Maths, The Art of Learning Mathematics.'"
   },
   {
     "slug": "2022-vijnana-harate-unknown-session-1222",
-    "title": "Vijnana Harate (Kannada) — RRI Campus, Bengaluru",
+    "title": "Vijnana Harate (Kannada), RRI Campus, Bengaluru",
     "date": "2022-12-22",
     "time": "TBD",
     "location": "Raman Research Institute, Bengaluru",
@@ -107,7 +107,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2022-vijnana-nataka-unknown-session-1223",
-    "title": "Vijnana Nataka — 'The Trial of Abdus Salam', National College Jayanagar, Bengaluru",
+    "title": "Vijnana Nataka, 'The Trial of Abdus Salam', National College Jayanagar, Bengaluru",
     "date": "2022-12-23",
     "time": "TBD",
     "location": "HN Kalakshetra, National College Jayanagar, Bengaluru",
@@ -120,7 +120,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2023-vijnana-harate-bengaluru-session",
-    "title": "Vijnana Harate — Science in Action Fest, BVJ Science Centre, Bengaluru",
+    "title": "Vijnana Harate, Science in Action Fest, BVJ Science Centre, Bengaluru",
     "date": "2023-01-06",
     "time": "TBD",
     "location": "BVJ Science Centre, Bengaluru",
@@ -133,7 +133,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2023-vijnana-nataka-mysuru-session",
-    "title": "Vijnana Nataka — 'Lilavathi', National College Jayanagar, Bengaluru",
+    "title": "Vijnana Nataka, 'Lilavathi', National College Jayanagar, Bengaluru",
     "date": "2023-01-21",
     "time": "TBD",
     "location": "HN Kalakshetra, National College Jayanagar, Bengaluru",
@@ -146,7 +146,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2023-national-science-day-unknown-session",
-    "title": "National Science Day 2023 — APS College of Arts & Science, Bengaluru",
+    "title": "National Science Day 2023, APS College of Arts & Science, Bengaluru",
     "date": "2023-02-21",
     "time": "TBD",
     "location": "APS College of Arts & Science, Bengaluru",
@@ -154,12 +154,12 @@ window.TACT_EVENT_FEED = [
     "folder": "content/events/2023-national-science-day-unknown-session",
     "pageUrl": "events/21-02-2023-national-science-day-unknown-session.html",
     "poster": "content/events/2023-national-science-day-unknown-session/gallery/image-01.jpg",
-    "teaser": "21st February 2023 — APS College of Arts & Science: The day featured science-themed activities including Quiz, Painting, Debate, Essay and Rangoli competitions, with a lecture by materials scientist Prof. Arun Umarji (IISc, Retd.).",
-    "homepageMatter": "21st February 2023 — APS College of Arts & Science: The day featured science-themed activities including Quiz, Painting, Debate, Essay and Rangoli competitions. Materials scientist Prof. Arun Umarji (IISc, Retd.) delivered a talk on ceramics in everyday life and the role of science in the progress of the country."
+    "teaser": "21st February 2023, APS College of Arts & Science: The day featured science-themed activities including Quiz, Painting, Debate, Essay and Rangoli competitions, with a lecture by materials scientist Prof. Arun Umarji (IISc, Retd.).",
+    "homepageMatter": "21st February 2023, APS College of Arts & Science: The day featured science-themed activities including Quiz, Painting, Debate, Essay and Rangoli competitions. Materials scientist Prof. Arun Umarji (IISc, Retd.) delivered a talk on ceramics in everyday life and the role of science in the progress of the country."
   },
   {
     "slug": "2023-national-science-day-bengaluru-session",
-    "title": "National Science Day 2023 — Bangalore City University Central College, Bengaluru",
+    "title": "National Science Day 2023, Bangalore City University Central College, Bengaluru",
     "date": "2023-02-28",
     "time": "TBD",
     "location": "Bangalore City University Central College, Bengaluru",
@@ -167,12 +167,12 @@ window.TACT_EVENT_FEED = [
     "folder": "content/events/2023-national-science-day-bengaluru-session",
     "pageUrl": "events/28-02-2023-national-science-day-bengaluru-session.html",
     "poster": "content/events/2023-national-science-day-bengaluru-session/gallery/image-01.jpg",
-    "teaser": "28th February 2023 — Bangalore City University: Organised in collaboration with the Academy, National Science Day was celebrated at Bangalore University Central College campus, the historic site where Sir CV Raman made the official announcement of the Raman Effect.",
-    "homepageMatter": "28th February 2023 — Bangalore City University: Organised in collaboration with the Academy, National Science Day was celebrated at Bangalore University Central College campus, where Sir CV Raman made the official announcement of the Raman Effect. Prof. Utpal Nath (IISc) spoke on how genes regulate plant growth, and Prof. GC Anupama (IIA) on the journey of the Cosmos."
+    "teaser": "28th February 2023, Bangalore City University: Organised in collaboration with the Academy, National Science Day was celebrated at Bangalore University Central College campus, the historic site where Sir CV Raman made the official announcement of the Raman Effect.",
+    "homepageMatter": "28th February 2023, Bangalore City University: Organised in collaboration with the Academy, National Science Day was celebrated at Bangalore University Central College campus, where Sir CV Raman made the official announcement of the Raman Effect. Prof. Utpal Nath (IISc) spoke on how genes regulate plant growth, and Prof. GC Anupama (IIA) on the journey of the Cosmos."
   },
   {
     "slug": "2023-teacher-training-goa-session",
-    "title": "Teacher Training Workshop — Indian Academy of Sciences, Bengaluru",
+    "title": "Teacher Training Workshop, Indian Academy of Sciences, Bengaluru",
     "date": "2023-03-03",
     "time": "TBD",
     "location": "Indian Academy of Sciences, Bengaluru",
@@ -180,12 +180,12 @@ window.TACT_EVENT_FEED = [
     "folder": "content/events/2023-teacher-training-goa-session",
     "pageUrl": "events/03-03-2023-teacher-training-goa-session.html",
     "poster": "content/events/2023-teacher-training-goa-session/gallery/image-01.jpg",
-    "teaser": "3rd March 2023 — Indian Academy of Sciences: Organised in collaboration with the Academy and Science Utsav, this full-day event was designed as a practical guide that science teachers could use on a regular basis in their own classrooms.",
-    "homepageMatter": "3rd March 2023 — Indian Academy of Sciences: Organised in collaboration with the Academy and Science Utsav, this full-day event was designed as a practical guide that science teachers could use on a regular basis. Science communicator Manasa Chidambar led craftwork activities; Dr. YC Kamala (Principal, National College Jayanagar) shared case studies on methodical research and presentation skills; and Shashank Karnam demonstrated how simple materials can be used to illustrate complex scientific phenomena."
+    "teaser": "3rd March 2023, Indian Academy of Sciences: Organised in collaboration with the Academy and Science Utsav, this full-day event was designed as a practical guide that science teachers could use on a regular basis in their own classrooms.",
+    "homepageMatter": "3rd March 2023, Indian Academy of Sciences: Organised in collaboration with the Academy and Science Utsav, this full-day event was designed as a practical guide that science teachers could use on a regular basis. Science communicator Manasa Chidambar led craftwork activities; Dr. YC Kamala (Principal, National College Jayanagar) shared case studies on methodical research and presentation skills; and Shashank Karnam demonstrated how simple materials can be used to illustrate complex scientific phenomena."
   },
   {
     "slug": "2023-vijnana-aranya-government-college-srikakulam-session",
-    "title": "Vijnana Aranya — Government Degree College, Srikakulam, Andhra Pradesh",
+    "title": "Vijnana Aranya, Government Degree College, Srikakulam, Andhra Pradesh",
     "date": "2023-04-13",
     "time": "TBD",
     "location": "Government Degree College (Men), Srikakulam, Andhra Pradesh",
@@ -198,7 +198,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2023-vijnana-aranya-unknown-session",
-    "title": "Vijnana Aranya — Srikakulam District, Andhra Pradesh",
+    "title": "Vijnana Aranya, Srikakulam District, Andhra Pradesh",
     "date": "2023-04-13",
     "time": "TBD",
     "location": "Srikakulam District, Andhra Pradesh",
@@ -211,7 +211,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2023-vijnana-harate-basavanagudi-session",
-    "title": "Vijnana Harate — National College Basavanagudi, Bengaluru",
+    "title": "Vijnana Harate, National College Basavanagudi, Bengaluru",
     "date": "2023-04-29",
     "time": "TBD",
     "location": "National College Basavanagudi, Bengaluru",
@@ -224,7 +224,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2023-vijnana-harate-devanahalli-session",
-    "title": "Vijnana Harate — Anantha Vidyanikethan, Devanahalli",
+    "title": "Vijnana Harate, Anantha Vidyanikethan, Devanahalli",
     "date": "2023-07-14",
     "time": "TBD",
     "location": "Anantha Vidyanikethan, Devanahalli",
@@ -237,7 +237,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2023-vijnana-aranya-ponduru-session",
-    "title": "Vijnana Aranya — Systems Educational Institute, Ponduru, Andhra Pradesh",
+    "title": "Vijnana Aranya, Systems Educational Institute, Ponduru, Andhra Pradesh",
     "date": "2023-07-15",
     "time": "TBD",
     "location": "Systems Educational Institute, Ponduru, Srikakulam District, Andhra Pradesh",
@@ -250,7 +250,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2023-vijnana-harate-unknown-session",
-    "title": "Vijnana Harate — RRI Campus, Bengaluru (SBS PU College & Vishwa Vidyapeeth)",
+    "title": "Vijnana Harate, RRI Campus, Bengaluru (SBS PU College & Vishwa Vidyapeeth)",
     "date": "2023-08-21",
     "time": "TBD",
     "location": "Raman Research Institute, Bengaluru",
@@ -258,12 +258,12 @@ window.TACT_EVENT_FEED = [
     "folder": "content/events/2023-vijnana-harate-unknown-session",
     "pageUrl": "events/21-08-2023-vijnana-harate-unknown-session.html",
     "poster": "content/events/2023-vijnana-harate-unknown-session/gallery/image-01.jpg",
-    "teaser": "21st August 2023: Students from SBS PU College and Vishwa Vidyapeeth participated in a full-day program at RRI that featured presentations by two eminent speakers — Prof. Jayarama Kadandale on genetics and birth defects, and Dr. Yelamaggad on exotic materials research.",
+    "teaser": "21st August 2023: Students from SBS PU College and Vishwa Vidyapeeth participated in a full-day program at RRI that featured presentations by two eminent speakers, Prof. Jayarama Kadandale on genetics and birth defects, and Dr. Yelamaggad on exotic materials research.",
     "homepageMatter": "21st August 2023: Students from SBS PU College and Vishwa Vidyapeeth participated in a full-day program that featured presentations by two eminent speakers. Prof. Jayarama Kadandale (Director, Centre for Human Genetics) demonstrated karyotyping and explained the genetic basis of birth defects. Dr. Yelamaggad (CeNS) showed how exotic materials research could one day render things invisible. Students also visited the Raman Museum and RRI Archives Gallery."
   },
   {
     "slug": "2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session",
-    "title": "Vijnana Yuvati — Holy Cross College, Nagercoil",
+    "title": "Vijnana Yuvati, Holy Cross College, Nagercoil",
     "date": "2023-08-26",
     "time": "TBD",
     "location": "Holy Cross College, Nagercoil, Tamil Nadu",
@@ -272,11 +272,11 @@ window.TACT_EVENT_FEED = [
     "pageUrl": "events/26-08-2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session.html",
     "poster": "content/events/2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session/gallery/image-01.jpg",
     "teaser": "26th August 2023: The one-day entrepreneurship workshop 'Science for Sustainable Livelihood' was conducted at Holy Cross College, Nagercoil, for about 100 young women from neighbouring villages, sponsored by Emcure Pharmaceuticals (CSR).",
-    "homepageMatter": "26th August 2023: Holy Cross College, Nagercoil — The one-day entrepreneurship workshop for women, 'Science for Sustainable Livelihood', was conducted at Holy Cross College, Nagercoil, and was sponsored by Emcure Pharmaceuticals (CSR). About 100 young women from neighbouring villages participated in sessions on Fish Product Preservation, Jute Product Creation, Vermicomposting, and Aquarium Production — practical skills for sustainable livelihoods."
+    "homepageMatter": "26th August 2023: The one-day entrepreneurship workshop for women, 'Science for Sustainable Livelihood', was conducted at Holy Cross College, Nagercoil, and was sponsored by Emcure Pharmaceuticals (CSR). About 100 young women from neighbouring villages participated in sessions on Fish Product Preservation, Jute Product Creation, Vermicomposting, and Aquarium Production: practical skills for sustainable livelihoods."
   },
   {
     "slug": "2023-vijnana-harate-unknown-session-0830",
-    "title": "Vijnana Harate — RRI Campus, Bengaluru (Aditi Public School)",
+    "title": "Vijnana Harate, RRI Campus, Bengaluru (Aditi Public School)",
     "date": "2023-08-30",
     "time": "TBD",
     "location": "Raman Research Institute, Bengaluru",
@@ -289,7 +289,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2023-vijnana-harate-mysuru-session",
-    "title": "Vijnana Harate — Vanitha Sadana & Social Welfare Hostel, Mysuru",
+    "title": "Vijnana Harate, Vanitha Sadana & Social Welfare Hostel, Mysuru",
     "date": "2023-09-09",
     "time": "TBD",
     "location": "Vanitha Sadana & Social Welfare Dept. Hostel, Mysuru",
@@ -297,12 +297,12 @@ window.TACT_EVENT_FEED = [
     "folder": "content/events/2023-vijnana-harate-mysuru-session",
     "pageUrl": "events/09-09-2023-vijnana-harate-mysuru-session.html",
     "poster": "content/events/2023-vijnana-harate-mysuru-session/gallery/image-01.jpg",
-    "teaser": "9th September 2023: Dr. S. Seetha, former Director of ISRO's Space Science Program, conducted two harates at two venues in Mysuru — first for girls at Vanitha Sadana, then at the Social Welfare Department hostel for young women.",
+    "teaser": "9th September 2023: Dr. S. Seetha, former Director of ISRO's Space Science Program, conducted two harates at two venues in Mysuru, first for girls at Vanitha Sadana, then at the Social Welfare Department hostel for young women.",
     "homepageMatter": "9th September 2023: Dr. S. Seetha, former Director, Space Science Program, ISRO, conducted two harates at two venues in Mysuru. The first was at Vanitha Sadana, a school for girls from underprivileged communities, where students had spirited questions on astronomy and the Aditya (Solar) Mission. The second session, arranged by Kollegala Sharma of Kutuhali, was at a Social Welfare Department hostel for young women."
   },
   {
     "slug": "2023-teacher-training-basavanagudi-session",
-    "title": "Teacher Training Workshop — BITS Pilani KK Birla Goa Campus (89th Annual Meeting)",
+    "title": "Teacher Training Workshop, BITS Pilani KK Birla Goa Campus (89th Annual Meeting)",
     "date": "2023-11-02",
     "time": "TBD",
     "location": "BITS Pilani – KK Birla Goa Campus, Goa",
@@ -310,12 +310,12 @@ window.TACT_EVENT_FEED = [
     "folder": "content/events/2023-teacher-training-basavanagudi-session",
     "pageUrl": "events/02-11-2023-teacher-training-basavanagudi-session.html",
     "poster": "content/events/2023-teacher-training-basavanagudi-session/gallery/image-01.jpg",
-    "teaser": "2nd November 2023 — BITS Pilani Goa: As part of the Joint Science Academies' Education Panel (SEP) Mini-Symposium during the 89th Annual Meeting, Dr. YC Kamala (Principal, National College Basavanagudi) led a teacher workshop on engaging students with observation, experiments and research papers.",
-    "homepageMatter": "2nd November 2023 — BITS Pilani Goa: As part of the Joint Science Academies' Education Panel (SEP) Mini-Symposium for invited teachers held during the Academy's 89th Annual Meeting at BITS Pilani KK Birla Goa Campus, Dr. YC Kamala (Principal, National College Basavanagudi) conducted a pedagogy session. She engaged participating teachers with methods for student observation, experimental design, research paper reading and presentation skills."
+    "teaser": "2nd November 2023, BITS Pilani Goa: As part of the Joint Science Academies' Education Panel (SEP) Mini-Symposium during the 89th Annual Meeting, Dr. YC Kamala (Principal, National College Basavanagudi) led a teacher workshop on engaging students with observation, experiments and research papers.",
+    "homepageMatter": "2nd November 2023, BITS Pilani Goa: As part of the Joint Science Academies' Education Panel (SEP) Mini-Symposium for invited teachers held during the Academy's 89th Annual Meeting at BITS Pilani KK Birla Goa Campus, Dr. YC Kamala (Principal, National College Basavanagudi) conducted a pedagogy session. She engaged participating teachers with methods for student observation, experimental design, research paper reading and presentation skills."
   },
   {
     "slug": "2023-vijnana-harate-siddaganga-public-school-unknown-session",
-    "title": "Vijnana Harate — Siddaganga Public School, Tumkur",
+    "title": "Vijnana Harate, Siddaganga Public School, Tumkur",
     "date": "2023-11-16",
     "time": "TBD",
     "location": "Siddaganga Public School, Tumkur, Karnataka",
@@ -324,11 +324,11 @@ window.TACT_EVENT_FEED = [
     "pageUrl": "events/16-11-2023-vijnana-harate-siddaganga-public-school-unknown-session.html",
     "poster": "content/events/2023-vijnana-harate-siddaganga-public-school-unknown-session/gallery/image-01.jpg",
     "teaser": "16th November 2023: Prof. Vikram Jayaram (IISc) conducted a Vijnana Harate for high school students of Siddaganga Public School, Tumkur, starting with Lord Rayleigh's century-old experiment and ending with rare-earth geopolitics.",
-    "homepageMatter": "16th November 2023: Prof. Vikram Jayaram (IISc), who conducted the harate for high school students of Siddaganga Public School, started with Lord Rayleigh's century-old experiment and explained how that led to the invention of detergents, then traced the path of materials engineering research to modern aviation safety and smart memory-materials that help prevent heart attacks — culminating in a discussion on rare-earth resources and their geopolitical implications."
+    "homepageMatter": "16th November 2023: Prof. Vikram Jayaram (IISc), who conducted the harate for high school students of Siddaganga Public School, started with Lord Rayleigh's century-old experiment and explained how that led to the invention of detergents, then traced the path of materials engineering research to modern aviation safety and smart memory-materials that help prevent heart attacks, culminating in a discussion on rare-earth resources and their geopolitical implications."
   },
   {
     "slug": "2023-national-mathematics-day-vishwa-yelahanka-session",
-    "title": "Ganitha Mela 2023 — Vishwa Vidyapeeth School, Yelahanka, Bengaluru",
+    "title": "Ganitha Mela 2023, Vishwa Vidyapeeth School, Yelahanka, Bengaluru",
     "date": "2023-12-18",
     "time": "TBD",
     "location": "Vishwa Vidyapeeth School, Yelahanka, Bengaluru",
@@ -337,11 +337,11 @@ window.TACT_EVENT_FEED = [
     "pageUrl": "events/18-12-2023-national-mathematics-day-vishwa-yelahanka-session.html",
     "poster": "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-01.jpg",
     "teaser": "Ganitha Mela 2023, 18–22 December 2023: Organised jointly by tAcT, Vishwa Vidyapeeth School and Seed2Sapling Education at Vishwa Vidyapeeth, Yelahanka, with support from KSCST. Over 8000 math enthusiasts from 60+ schools across India attended, inaugurated by Padma Shri Kiran Kumar of ISRO.",
-    "homepageMatter": "Ganitha Mela 2023, 18–22 December 2023 (Monday to Friday), held at Vishwa Vidyapeeth, Yelahanka — Organised jointly by tAcT, Vishwa Vidyapeeth School, Seed2Sapling Education, and supported by Karnataka State Council for Science and Technology (KSCST). Over 8000 math enthusiasts from 60+ schools across India attended this landmark event — widely reported as the largest Mathematics Fair in India. The week-long fair featured math games and puzzles, lectures by eminent mathematicians (including Sujatha Ramdorai, Rohini Godbole, Tirthankar Bhattacharyya), and cultural programs including shadow puppetry by Padma Shri Parshuram Gangavane."
+    "homepageMatter": "Ganitha Mela 2023, 18–22 December 2023 (Monday to Friday), held at Vishwa Vidyapeeth, Yelahanka, organised jointly by tAcT, Vishwa Vidyapeeth School, Seed2Sapling Education, and supported by Karnataka State Council for Science and Technology (KSCST). Over 8000 math enthusiasts from 60+ schools across India attended this landmark event, widely reported as the largest Mathematics Fair in India. The week-long fair featured math games and puzzles, lectures by eminent mathematicians (including Sujatha Ramdorai, Rohini Godbole, Tirthankar Bhattacharyya), and cultural programs including shadow puppetry by Padma Shri Parshuram Gangavane."
   },
   {
     "slug": "2023-national-mathematics-day-bengaluru-session",
-    "title": "National Mathematics Day 2023 — Acharya Patshala College, Bengaluru",
+    "title": "National Mathematics Day 2023, Acharya Patshala College, Bengaluru",
     "date": "2023-12-22",
     "time": "TBD",
     "location": "Acharya Patshala College, Bengaluru",
@@ -349,12 +349,12 @@ window.TACT_EVENT_FEED = [
     "folder": "content/events/2023-national-mathematics-day-bengaluru-session",
     "pageUrl": "events/22-12-2023-national-mathematics-day-bengaluru-session.html",
     "poster": "content/events/2023-national-mathematics-day-bengaluru-session/gallery/image-01.jpg",
-    "teaser": "22 December 2023 — Acharya Patshala College: tAcT collaborated with the Ramanujan Mathematics Club and the Department of Mathematics of Acharya Patshala College to celebrate National Mathematics Day 2023, with more than 160 participants.",
-    "homepageMatter": "22 December 2023 — Acharya Patshala College: tAcT collaborated with the Ramanujan Mathematics Club and the Department of Mathematics of Acharya Patshala College to celebrate National Mathematics Day 2023. More than 160 participants attended lectures by D. Radha Krishna on Ramanujan's life, N.S. Kumar on 'Fun with Maths Counting and Computing', and T.K. Prasanna Murthy on Ramanujan's works, infinite series, and Brahmagupta's formula. Certificates were also distributed to winners of the Maths Talent Search Examination."
+    "teaser": "22 December 2023, Acharya Patshala College: tAcT collaborated with the Ramanujan Mathematics Club and the Department of Mathematics of Acharya Patshala College to celebrate National Mathematics Day 2023, with more than 160 participants.",
+    "homepageMatter": "22 December 2023, Acharya Patshala College: tAcT collaborated with the Ramanujan Mathematics Club and the Department of Mathematics of Acharya Patshala College to celebrate National Mathematics Day 2023. More than 160 participants attended lectures by D. Radha Krishna on Ramanujan's life, N.S. Kumar on 'Fun with Maths Counting and Computing', and T.K. Prasanna Murthy on Ramanujan's works, infinite series, and Brahmagupta's formula. Certificates were also distributed to winners of the Maths Talent Search Examination."
   },
   {
     "slug": "2024-soafal-lecture",
-    "title": "SOAFAL Lecture — Shikha Varma: Excitements in Nanotechnology",
+    "title": "SOAFAL Lecture, Shikha Varma: Excitements in Nanotechnology",
     "date": "2024-04-20",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -367,7 +367,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-soafal-hejmadi-lecture",
-    "title": "SOAFAL Lecture — Priyambada Mohanty Hejmadi: The Amazing World of Life Science",
+    "title": "SOAFAL Lecture, Priyambada Mohanty Hejmadi: The Amazing World of Life Science",
     "date": "2024-05-11",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -380,7 +380,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-soafal-lecture-0601",
-    "title": "SOAFAL Lecture — Pushpa Khare: Understanding the Universe",
+    "title": "SOAFAL Lecture, Pushpa Khare: Understanding the Universe",
     "date": "2024-06-01",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -393,7 +393,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-soafal-lecture-0608",
-    "title": "SOAFAL Lecture — Prajval Shastri: Meandering into Astrophysics",
+    "title": "SOAFAL Lecture, Prajval Shastri: Meandering into Astrophysics",
     "date": "2024-06-08",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -406,7 +406,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-soafal-lecture-0706",
-    "title": "SOAFAL Lecture — Sujatha Ramdorai: The Art of Math",
+    "title": "SOAFAL Lecture, Sujatha Ramdorai: The Art of Math",
     "date": "2024-07-06",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -419,7 +419,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-soafal-lecture-0713",
-    "title": "SOAFAL Lecture — Tanusri Saha-Dasgupta: Women in Science: A Braided Trail",
+    "title": "SOAFAL Lecture, Tanusri Saha-Dasgupta: Women in Science: A Braided Trail",
     "date": "2024-07-13",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -432,7 +432,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-vijnana-nataka-mysuru-session",
-    "title": "Vijnana Nataka — 7th Mysuru Science Theatre Festival, Mysuru",
+    "title": "Vijnana Nataka, 7th Mysuru Science Theatre Festival, Mysuru",
     "date": "2024-07-20",
     "time": "TBD",
     "location": "Rangayana, Mysuru",
@@ -441,11 +441,11 @@ window.TACT_EVENT_FEED = [
     "pageUrl": "events/20-07-2024-vijnana-nataka-mysuru-session.html",
     "poster": "content/events/2024-vijnana-nataka-mysuru-session/gallery/image-01.jpg",
     "teaser": "20-23 July 2024: The 7th annual Mysuru Science Theatre Festival, organised in partnership with Kutuhali, Parivarthana Ranga Samaja, Arivu Trust and Kalasuruchi Mysuru, played to house-full audiences with four different science plays at Rangayana, Mysuru.",
-    "homepageMatter": "20-23 July 2024: The 7th annual Mysuru Science Theatre Festival played to house-full audiences composed of students and the general public at Rangayana, Mysuru. Four plays were staged over four days — 'Vignana Vikasada Vaada' (Day 1), 'AC vs DC' (Day 2), 'Galileo's Daughter' (Day 3), and 'Hasire Honnu' (Day 4) — co-organised with Kutuhali, Parivarthana Ranga Samaja, Arivu Trust and Kalasuruchi Mysuru. Each day's program also featured science songs and an art-maths exhibition by BS Krishnamurthy."
+    "homepageMatter": "20-23 July 2024: The 7th annual Mysuru Science Theatre Festival played to house-full audiences composed of students and the general public at Rangayana, Mysuru. Four plays were staged over four days, 'Vignana Vikasada Vaada' (Day 1), 'AC vs DC' (Day 2), 'Galileo's Daughter' (Day 3), and 'Hasire Honnu' (Day 4), co-organised with Kutuhali, Parivarthana Ranga Samaja, Arivu Trust and Kalasuruchi Mysuru. Each day's program also featured science songs and an art-maths exhibition by BS Krishnamurthy."
   },
   {
     "slug": "2024-vijnana-harate-anantha-vidyaniketan-unknown-session",
-    "title": "Vijnana Harate — RRI Campus, Bengaluru (Anantha Vidyaniketan)",
+    "title": "Vijnana Harate, RRI Campus, Bengaluru (Anantha Vidyaniketan)",
     "date": "2024-07-23",
     "time": "TBD",
     "location": "Raman Research Institute, Bengaluru",
@@ -458,7 +458,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-soafal-lecture-0727",
-    "title": "SOAFAL Lecture — Shobhana Narasimhan: My Journey as a \"Materials Girl\"",
+    "title": "SOAFAL Lecture, Shobhana Narasimhan: My Journey as a \"Materials Girl\"",
     "date": "2024-07-27",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -471,7 +471,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-vijnana-harate-unknown-session",
-    "title": "Vijnana Harate — RRI Campus, Bengaluru (Deens Academy)",
+    "title": "Vijnana Harate, RRI Campus, Bengaluru (Deens Academy)",
     "date": "2024-08-01",
     "time": "TBD",
     "location": "Raman Research Institute, Bengaluru",
@@ -484,7 +484,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-soafal-sciences-lecture",
-    "title": "SOAFAL Lecture — Bindu A Bambah: Factors Affecting Gender Equality in the Sciences",
+    "title": "SOAFAL Lecture, Bindu A Bambah: Factors Affecting Gender Equality in the Sciences",
     "date": "2024-08-10",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -497,7 +497,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-soafal-lecture-0817",
-    "title": "SOAFAL Lecture — Supurna Sinha: Down Memory Lane: A Scientific Journey",
+    "title": "SOAFAL Lecture, Supurna Sinha: Down Memory Lane: A Scientific Journey",
     "date": "2024-08-17",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -510,7 +510,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-vijnana-harate-vanita-sadan-mysuru-session",
-    "title": "Vijnana Harate — JNCASR Campus, Bengaluru (Vanita Sadan, Mysuru)",
+    "title": "Vijnana Harate, JNCASR Campus, Bengaluru (Vanita Sadan, Mysuru)",
     "date": "2024-08-26",
     "time": "TBD",
     "location": "JNCASR Campus, Bengaluru",
@@ -518,12 +518,12 @@ window.TACT_EVENT_FEED = [
     "folder": "content/events/2024-vijnana-harate-vanita-sadan-mysuru-session",
     "pageUrl": "events/26-08-2024-vijnana-harate-vanita-sadan-mysuru-session.html",
     "poster": "content/events/2024-vijnana-harate-vanita-sadan-mysuru-session/gallery/image-01.jpg",
-    "teaser": "26th August 2024: In the first joint program with JNCASR, students of Vanita Sadan — a school for economically deprived children in Mysuru — spent a day in the JNCASR campus and labs guided by Vinayak Pattar.",
+    "teaser": "26th August 2024: In the first joint program with JNCASR, students of Vanita Sadan, a school for economically deprived children in Mysuru, spent a day in the JNCASR campus and labs guided by Vinayak Pattar.",
     "homepageMatter": "26th August 2024: In the first joint program with JNCASR, students of Vanita Sadan, a school for economically deprived children in Mysuru, spent a day in the JNCASR campus and labs guided by Vinayak Pattar, Ranjani Viswanatha and Shwetha Shivaprasad. Many girls expressed interest in a science research career following the experience in world-class research laboratories."
   },
   {
     "slug": "2024-vijnana-harate-mes-kishore-kendra-bengaluru-session",
-    "title": "Vijnana Harate — JNCASR Campus, Bengaluru (MES Kishore Kendra)",
+    "title": "Vijnana Harate, JNCASR Campus, Bengaluru (MES Kishore Kendra)",
     "date": "2024-08-28",
     "time": "TBD",
     "location": "JNCASR Campus, Bengaluru",
@@ -536,7 +536,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-vijnana-aranya-mc-thalalu-govt-school-saragur-session",
-    "title": "Vijnana Aranya — MC Thalalu Govt High School, Saragur",
+    "title": "Vijnana Aranya, MC Thalalu Govt High School, Saragur",
     "date": "2024-09-13",
     "time": "TBD",
     "location": "MC Thalalu Govt High School, Saragur, HD Kote taluk, Mysuru District",
@@ -544,12 +544,12 @@ window.TACT_EVENT_FEED = [
     "folder": "content/events/2024-vijnana-aranya-mc-thalalu-govt-school-saragur-session",
     "pageUrl": "events/13-09-2024-vijnana-aranya-mc-thalalu-govt-school-saragur-session.html",
     "poster": "content/events/2024-vijnana-aranya-mc-thalalu-govt-school-saragur-session/gallery/image-01.jpg",
-    "teaser": "13th September 2024: The second Vijnana Aranya was conducted at MC Thalalu Govt School, Saragur — primary students participated in science demos and an ecology puppet show by award-winning educator Subbulakshmi, and high school students learned about beekeeping for supplementary income.",
+    "teaser": "13th September 2024: The second Vijnana Aranya was conducted at MC Thalalu Govt School, Saragur, where primary students participated in science demos and an ecology puppet show by award-winning educator Subbulakshmi, and high school students learned about beekeeping for supplementary income.",
     "homepageMatter": "13th September 2024: The second Vijnana Aranya was conducted at MC Thalalu Govt High School, Saragur, HD Kote taluk. Primary students participated in science demos and a puppet show on ecology by award-winning science educator Subbulakshmi. High school students and villagers received a practical session on beekeeping for supplementary income by professional apiculturist Guruprasad. The day also featured an exhibition of student science projects."
   },
   {
     "slug": "2024-soafal-trajectory-lab-lecture",
-    "title": "SOAFAL Lecture — Vidita Vaidya: Life Experiences Shape the Brain and the Trajectory of a Lab",
+    "title": "SOAFAL Lecture, Vidita Vaidya: Life Experiences Shape the Brain and the Trajectory of a Lab",
     "date": "2024-09-14",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -562,7 +562,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-soafal-journey-lecture",
-    "title": "SOAFAL Lecture — Annapurni Subramaniam: Astronomy from Ground and Space: My Journey",
+    "title": "SOAFAL Lecture, Annapurni Subramaniam: Astronomy from Ground and Space: My Journey",
     "date": "2024-09-21",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -575,7 +575,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-vijnana-harate-unknown-session-0923",
-    "title": "Vijnana Harate — RRI Campus, Bengaluru (Sri Bandeshwara Swamy PU College & Vishwa Vidyapeeth)",
+    "title": "Vijnana Harate, RRI Campus, Bengaluru (Sri Bandeshwara Swamy PU College & Vishwa Vidyapeeth)",
     "date": "2024-09-23",
     "time": "TBD",
     "location": "Raman Research Institute, Bengaluru",
@@ -588,7 +588,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-soafal-microscopic-world-lecture",
-    "title": "SOAFAL Lecture — Qudsia Tahseen: Nematodes Unveiled: A Glimpse into their Microscopic World",
+    "title": "SOAFAL Lecture, Qudsia Tahseen: Nematodes Unveiled: A Glimpse into their Microscopic World",
     "date": "2024-09-28",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -601,7 +601,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-soafal-journey-lecture-1005",
-    "title": "SOAFAL Lecture — Srubabati Goswami: The Quest for the Elusive Neutrino: The Nobel Journey",
+    "title": "SOAFAL Lecture, Srubabati Goswami: The Quest for the Elusive Neutrino: The Nobel Journey",
     "date": "2024-10-05",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -614,7 +614,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-soafal-field-space-weather-lecture",
-    "title": "SOAFAL Lecture — Archana Bhattacharyya: Exploring the Links between Earth's Magnetic Field and Space Weather",
+    "title": "SOAFAL Lecture, Archana Bhattacharyya: Exploring the Links between Earth's Magnetic Field and Space Weather",
     "date": "2024-10-19",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -627,7 +627,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-soafal-lecture-1102",
-    "title": "SOAFAL Lecture — Usha Vijayaraghavan: Codes for the Making of a Rice Flowering Stem",
+    "title": "SOAFAL Lecture, Usha Vijayaraghavan: Codes for the Making of a Rice Flowering Stem",
     "date": "2024-11-02",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -640,7 +640,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-vijnana-harate-bhubaneswar-session",
-    "title": "Vijnana Harate — NISER Bhubaneswar (90th Annual Meeting)",
+    "title": "Vijnana Harate, NISER Bhubaneswar (90th Annual Meeting)",
     "date": "2024-11-08",
     "time": "TBD",
     "location": "NISER, Bhubaneswar, Odisha",
@@ -653,7 +653,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-soafal-health-disease-lecture",
-    "title": "SOAFAL Lecture — BK Thelma: Genome Treasure Hunt and Leads for Human Health and Disease",
+    "title": "SOAFAL Lecture, BK Thelma: Genome Treasure Hunt and Leads for Human Health and Disease",
     "date": "2024-11-16",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -666,7 +666,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-young-kalam-science-fest-bengaluru",
-    "title": "Young Kalam Science Fest 2024 — Indian Academy of Sciences, Bengaluru",
+    "title": "Young Kalam Science Fest 2024, Indian Academy of Sciences, Bengaluru",
     "date": "2024-11-29",
     "time": "TBD",
     "location": "Indian Academy of Sciences and RRI Library, Bengaluru",
@@ -679,7 +679,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-soafal-30th-november-2024-in-honour-rohini-lecture",
-    "title": "SOAFAL Memorial Lecture — Ram Ramaswamy: Rohini Godbole: A Tireless Champion for Science, and Women in Science",
+    "title": "SOAFAL Memorial Lecture, Ram Ramaswamy: Rohini Godbole: A Tireless Champion for Science, and Women in Science",
     "date": "2024-11-30",
     "time": "TBD",
     "location": "Bengaluru",
@@ -692,7 +692,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-soafal-in-silico-perspective-lecture",
-    "title": "SOAFAL Lecture — Manju Bansal: From Stabilizing Collagen to Destabilizing DNA: an in-silico Perspective",
+    "title": "SOAFAL Lecture, Manju Bansal: From Stabilizing Collagen to Destabilizing DNA: an in-silico Perspective",
     "date": "2024-12-14",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -705,7 +705,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-soafal-equations-lecture",
-    "title": "SOAFAL Lecture — Mythily Ramaswamy: My Journey in the World of Differential Equations",
+    "title": "SOAFAL Lecture, Mythily Ramaswamy: My Journey in the World of Differential Equations",
     "date": "2024-12-21",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -718,7 +718,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-national-mathematics-day-unknown-session",
-    "title": "National Mathematics Day 2024 — Acharya Patshala College, Bengaluru",
+    "title": "National Mathematics Day 2024, Acharya Patshala College, Bengaluru",
     "date": "2024-12-24",
     "time": "TBD",
     "location": "Acharya Patshala College, Bengaluru",
@@ -731,7 +731,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2024-soafal-lecture-1228",
-    "title": "SOAFAL Lecture — Chandrima Saha: The Joy of Being a Scientist",
+    "title": "SOAFAL Lecture, Chandrima Saha: The Joy of Being a Scientist",
     "date": "2024-12-28",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -744,7 +744,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2025-vijnana-harate-basavanagudi-session",
-    "title": "Vijnana Harate — National College Basavanagudi, Bengaluru (Supernova 2025)",
+    "title": "Vijnana Harate, National College Basavanagudi, Bengaluru (Supernova 2025)",
     "date": "2025-01-03",
     "time": "TBD",
     "location": "National College Basavanagudi, Bengaluru",
@@ -757,7 +757,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2025-vijnana-harate-bel-bengaluru-session",
-    "title": "Vijnana Harate — BEL Public School, Bengaluru",
+    "title": "Vijnana Harate, BEL Public School, Bengaluru",
     "date": "2025-01-03",
     "time": "TBD",
     "location": "Raman Research Institute, Bengaluru",
@@ -770,7 +770,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2025-soafal-causality-lecture",
-    "title": "SOAFAL Lecture — Sumati Surya: Light, Order-Action! Reconstructing Spacetime from Causality",
+    "title": "SOAFAL Lecture, Sumati Surya: Light, Order-Action! Reconstructing Spacetime from Causality",
     "date": "2025-01-11",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -783,7 +783,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2025-soafal-my-evolutionary-journey-lecture",
-    "title": "SOAFAL Lecture — Anuradha Lohia: From Entamoeba Histolytica to Homo Sapiens: My Evolutionary Journey",
+    "title": "SOAFAL Lecture, Anuradha Lohia: From Entamoeba Histolytica to Homo Sapiens: My Evolutionary Journey",
     "date": "2025-01-18",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -796,7 +796,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2025-vijnana-aranya-om-kanakapura-session",
-    "title": "Vijnana Aranya — Om Shantidhama Veda Gurukula, Kanakapura",
+    "title": "Vijnana Aranya, Om Shantidhama Veda Gurukula, Kanakapura",
     "date": "2025-02-02",
     "time": "TBD",
     "location": "Om Shantidhama Veda Gurukula, Kanakapura (Mekedatu forest reserve)",
@@ -804,12 +804,12 @@ window.TACT_EVENT_FEED = [
     "folder": "content/events/2025-vijnana-aranya-om-kanakapura-session",
     "pageUrl": "events/02-02-2025-vijnana-aranya-om-kanakapura-session.html",
     "poster": "content/events/2025-vijnana-aranya-om-kanakapura-session/gallery/image-01.jpg",
-    "teaser": "2nd February 2025: The next Vijnana Aranya program was conducted at Om Shantidhama Veda Gurukula, Kanakapura, inside the Mekedatu forest reserve — with astronomical observation of sunspots in the morning and a soil biodiversity session in the afternoon.",
+    "teaser": "2nd February 2025: The next Vijnana Aranya program was conducted at Om Shantidhama Veda Gurukula, Kanakapura, inside the Mekedatu forest reserve, with astronomical observation of sunspots in the morning and a soil biodiversity session in the afternoon.",
     "homepageMatter": "2nd February 2025: The next Vijnana Aranya program was conducted at Om Shantidhama Veda Gurukula, Kanakapura, inside the Mekedatu forest reserve. The morning session featured astronomical observation of sunspots with telescopic equipment, led by M. Krishnamurthy (science and astronomy educator). The afternoon session covered soil biodiversity with demonstration materials, led by T.S. Channesh (Director, Srusti R&D Foundation)."
   },
   {
     "slug": "2025-vijnana-harate-kallankuppe-high-school-kanakapura-session",
-    "title": "Vijnana Harate — Kallankuppe High School, Kanakapura",
+    "title": "Vijnana Harate, Kallankuppe High School, Kanakapura",
     "date": "2025-02-07",
     "time": "TBD",
     "location": "Kallankuppe High School, Kanakapura",
@@ -817,12 +817,12 @@ window.TACT_EVENT_FEED = [
     "folder": "content/events/2025-vijnana-harate-kallankuppe-high-school-kanakapura-session",
     "pageUrl": "events/07-02-2025-vijnana-harate-kallankuppe-high-school-kanakapura-session.html",
     "poster": "content/events/2025-vijnana-harate-kallankuppe-high-school-kanakapura-session/gallery/image-01.jpg",
-    "teaser": "7th February 2025: The Academy and tAcT, in association with COSOL, organised a Vijnana Harate for high school students of Kallankuppe High School, Kanakapura — frog expert KV Gururaja of Manipal Academy introduced students to the wonderful and strange world of amphibians.",
+    "teaser": "7th February 2025: The Academy and tAcT, in association with COSOL, organised a Vijnana Harate for high school students of Kallankuppe High School, Kanakapura, where frog expert KV Gururaja of Manipal Academy introduced students to the wonderful and strange world of amphibians.",
     "homepageMatter": "7th February 2025: The Academy and tAcT, in association with COSOL, organised a Vijnana Harate for high school students of Kallankuppe High School, Kanakapura. Frog expert KV Gururaja (Manipal Academy of Higher Education) introduced students to the wonderful and strange world of amphibians, covering ecology, behaviour and the importance of amphibians as bioindicators of environmental health."
   },
   {
     "slug": "2025-soafal-intelligence-healthcare-lecture",
-    "title": "SOAFAL Lecture — Sushmita Mitra: Life is a Journey: Harnessing Artificial Intelligence for Healthcare",
+    "title": "SOAFAL Lecture, Sushmita Mitra: Life is a Journey: Harnessing Artificial Intelligence for Healthcare",
     "date": "2025-02-08",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -835,7 +835,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2025-women-and-girls-in-science-bengaluru",
-    "title": "International Day of Women and Girls in Science — Raman Research Institute, Bengaluru",
+    "title": "International Day of Women and Girls in Science, Raman Research Institute, Bengaluru",
     "date": "2025-02-11",
     "time": "TBD",
     "location": "Raman Research Institute, Bengaluru",
@@ -848,7 +848,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2025-national-science-day-bapu-high-school-bengaluru-session",
-    "title": "National Science Day 2025 — Indian Academy of Sciences, Bengaluru",
+    "title": "National Science Day 2025, Indian Academy of Sciences, Bengaluru",
     "date": "2025-02-28",
     "time": "TBD",
     "location": "Indian Academy of Sciences, Bengaluru",
@@ -861,7 +861,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2025-soafal-lecture",
-    "title": "SOAFAL Lecture — Sulabha Pathak: Taking the Long Way Home",
+    "title": "SOAFAL Lecture, Sulabha Pathak: Taking the Long Way Home",
     "date": "2025-03-01",
     "time": "4:30–5:30 PM",
     "location": "Online",
@@ -874,7 +874,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2025-vijnana-aranya-mysuru-session",
-    "title": "Vijnana Aranya — Dr. APJ Abdul Kalam Residential School, Doddakaanya, Nanjangud",
+    "title": "Vijnana Aranya, Dr. APJ Abdul Kalam Residential School, Doddakaanya, Nanjangud",
     "date": "2025-03-01",
     "time": "TBD",
     "location": "Dr. APJ Abdul Kalam Residential School, Doddakaanya village, near Nanjangud, Mysuru",
@@ -882,12 +882,12 @@ window.TACT_EVENT_FEED = [
     "folder": "content/events/2025-vijnana-aranya-mysuru-session",
     "pageUrl": "events/01-03-2025-vijnana-aranya-mysuru-session.html",
     "poster": "content/events/2025-vijnana-aranya-mysuru-session/gallery/image-01.jpg",
-    "teaser": "1st March 2025: Extending the National Science Day program into a remote outreach, tAcT organised the third Vijnana Aranya at Dr. APJ Abdul Kalam Residential School, Doddakaanya village near Nanjangud — more than 100 students from grades 6–9 participated.",
+    "teaser": "1st March 2025: Extending the National Science Day program into a remote outreach, tAcT organised the third Vijnana Aranya at Dr. APJ Abdul Kalam Residential School, Doddakaanya village near Nanjangud, where more than 100 students from grades 6–9 participated.",
     "homepageMatter": "1st March 2025: Extending the National Science Day program into a remote outreach, tAcT organised the third Vijnana Aranya at Dr. APJ Abdul Kalam Residential School, Doddakaanya village near Nanjangud. More than 100 students from grades 6–9 participated. The morning session, led by 'Pelican' Manu (popular science educator), covered ecology, environment, organic farming and botanical art. The afternoon session, led by Dr. Abhijit APC of Mysuru (arachnologist), revealed the secrets of household spiders and their role in ecological balance."
   },
   {
     "slug": "2025-soafal-biological-network-level-multidisciplinary-approach-lecture",
-    "title": "SOAFAL Lecture — Saraswathi Vishveshwara: Study of Protein Structures from Atomic Level to Biological Network Level: A Multidisciplinary Approach",
+    "title": "SOAFAL Lecture, Saraswathi Vishveshwara: Study of Protein Structures from Atomic Level to Biological Network Level: A Multidisciplinary Approach",
     "date": "2025-03-08",
     "time": "4:30–5:30 PM",
     "location": "Online",

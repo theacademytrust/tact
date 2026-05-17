@@ -4,7 +4,7 @@ window.TACT_PROGRAMS = {
     heroImage: "flauntimages/Vijnana Harate/1.jpg",
     badges: ["Informal interaction", "Scientists with students", "Regional languages"],
     heroText:
-      "A Harate is a carefully held conversation: scientists, educators, teachers, and students work through science together — with questions, demonstrations, and the comfort of a local language.",
+      "A Harate is a carefully held conversation: scientists, educators, teachers, and students work through science together, with questions, demonstrations, and the comfort of a local language.",
     stats: [
       { value: "20+", label: "school and campus visits since 2022" },
       { value: "Kannada & English", label: "sessions run in regional and national languages" },
@@ -92,7 +92,7 @@ window.TACT_PROGRAMS = {
     ],
     aboutTitle: "What this programme is for",
     about: [
-      "Vijnana Aranya takes science to rural, tribal, and remote areas. The point is not to move a city lecture into a village — the programme is built around the place itself: its forest edge, school ground, soil, insects, farming practice, water, and the questions that come from living there.",
+      "Vijnana Aranya takes science to rural, tribal, and remote areas. The point is not to move a city lecture into a village. The programme is built around the place itself: its forest edge, school ground, soil, insects, farming practice, water, and the questions that come from living there.",
       "Aranya visits often combine school activities with community participation. A single visit may include ecology talks, astronomy observation, organic farming, beekeeping, botanical art, soil biodiversity, or student science projects."
     ],
     profile: [
@@ -226,7 +226,7 @@ window.TACT_PROGRAMS = {
     impact:
       "Yuvati should leave students with confidence that is practical, not vague. The programme is strongest when a participant knows the next form, next experiment, next mentor, or next local project to pursue.",
     impactPoints: [
-      "Sessions are designed for young women as practitioners — doing, questioning, and building skills — not as a general audience.",
+      "Sessions are designed for young women as practitioners: doing, questioning, and building skills, not as a general audience.",
       "Workshops connect scientific knowledge to livelihood, study, and confidence.",
       "Mentoring gives room for the questions that do not fit inside a formal lecture."
     ]
@@ -244,7 +244,7 @@ window.TACT_PROGRAMS = {
     ],
     aboutTitle: "What this programme is for",
     about: [
-      "Vijnana Nataka uses theatre and music as a serious method for putting science and scientific temper into public circulation. Performance is not decoration here — it is the main channel.",
+      "Vijnana Nataka uses theatre and music as a serious method for putting science and scientific temper into public circulation. Performance is not decoration here; it is the main channel.",
       "Productions have ranged from a play on Richard Feynman to the Kannada play Lilavathi and the Mysuru Science Theatre Festival, where scientific temperament, research lives, cosmology, infection, and the work of scientists were staged for full houses."
     ],
     profile: [

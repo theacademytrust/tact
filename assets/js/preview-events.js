@@ -6,7 +6,7 @@
   var preview = [
     {
       slug: "2026-vijnana-harate-bengaluru-preview",
-      title: "Vijnana Harate — Bengaluru School Session",
+      title: "Vijnana Harate, Bengaluru School Session",
       date: "2026-06-10",
       time: "10:00 AM – 1:00 PM",
       location: "Bengaluru, Karnataka",
@@ -18,7 +18,7 @@
     },
     {
       slug: "2026-vijnana-aranya-hassan-preview",
-      title: "Vijnana Aranya — Rural Outreach Visit",
+      title: "Vijnana Aranya, Rural Outreach Visit",
       date: "2026-07-05",
       time: "9:30 AM – 3:00 PM",
       location: "Hassan District, Karnataka",
@@ -30,7 +30,7 @@
     },
     {
       slug: "2026-ganitha-mela-mysuru-preview",
-      title: "Ganitha Mela — Mysuru",
+      title: "Ganitha Mela, Mysuru",
       date: "2026-08-20",
       time: "10:30 AM – 4:00 PM",
       location: "Mysuru, Karnataka",
@@ -38,7 +38,7 @@
       poster: "content/events/2026-ganitha-mela-mysuru-preview/poster.svg",
       pageUrl: "events/20-08-2026-ganitha-mela-mysuru-preview.html",
       teaser: "A full-day mathematics festival with hands-on activities, puzzles, and maths games making abstract concepts tangible and joyful.",
-      homepageMatter: "A full-day Ganitha Mela in Mysuru — hands-on mathematics activities, puzzles, and games for school students, making abstract ideas tangible and connected to everyday life."
+      homepageMatter: "A full-day Ganitha Mela in Mysuru with hands-on mathematics activities, puzzles, and games for school students, making abstract ideas tangible and connected to everyday life."
     }
   ];
 
