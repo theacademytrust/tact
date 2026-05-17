@@ -1694,5 +1694,117 @@
         "description": "Online poster for the SOAFAL lecture by Saraswathi Vishveshwara on 'Study of Protein Structures from Atomic Level to Biological Network Level: A Multidisciplinary Approach', 8 March 2025 — part of the 'Lilavati's Daughters: Women Scientists of India' lecture series"
       }
     ]
+  },
+  {
+    "slug": "2020-rajasthan-dst-evolutionary-biology",
+    "eventSlug": "2020-rajasthan-dst-evolutionary-biology",
+    "pageUrl": "events/2020-rajasthan-dst-evolutionary-biology.html",
+    "title": "Evolutionary & Organismal Biology Webinar, Rajasthan DST",
+    "date": "2020-06-07",
+    "location": "Online",
+    "images": [
+      {
+        "url": "content/events/2020-rajasthan-dst-evolutionary-biology/gallery/image-01.jpg",
+        "description": "Webinar flyer: Evolutionary and Organismal Biology, organised by Rajasthan DST and tAcT"
+      }
+    ]
+  },
+  {
+    "slug": "2020-jbnsts-sars-cov2-webinar",
+    "eventSlug": "2020-jbnsts-sars-cov2-webinar",
+    "pageUrl": "events/2020-jbnsts-sars-cov2-webinar.html",
+    "title": "Evolution and Spread of SARS-CoV-2 Webinar",
+    "date": "2020-07-07",
+    "location": "Online",
+    "images": [
+      {
+        "url": "content/events/2020-jbnsts-sars-cov2-webinar/gallery/image-01.jpg",
+        "description": "Webinar invitation flyer: Evolution and Spread of SARS-CoV-2, JBNSTS and tAcT"
+      }
+    ]
+  },
+  {
+    "slug": "2020-bkc-kolkata-quantum-physics",
+    "eventSlug": "2020-bkc-kolkata-quantum-physics",
+    "pageUrl": "events/2020-bkc-kolkata-quantum-physics.html",
+    "title": "National Webinar on Quantum and Particle Physics",
+    "date": "2020-08-29",
+    "location": "Online",
+    "images": [
+      {
+        "url": "content/events/2020-bkc-kolkata-quantum-physics/gallery/image-01.jpg",
+        "description": "Webinar poster: National Webinar on Quantum and Particle Physics, BKC College Kolkata"
+      }
+    ]
+  },
+  {
+    "slug": "2020-igntu-science-webinar",
+    "eventSlug": "2020-igntu-science-webinar",
+    "pageUrl": "events/2020-igntu-science-webinar.html",
+    "title": "IGNTU–tAcT Science Webinar",
+    "date": "2020-09-28",
+    "location": "Online",
+    "images": [
+      {
+        "url": "content/events/2020-igntu-science-webinar/gallery/image-01.jpg",
+        "description": "Webinar poster: IGNTU–tAcT Science Webinar, 28 September 2020"
+      }
+    ]
+  },
+  {
+    "slug": "2020-gsk-innovation-webinar",
+    "eventSlug": "2020-gsk-innovation-webinar",
+    "pageUrl": "events/2020-gsk-innovation-webinar.html",
+    "title": "Next-Gen Innovations through Interdisciplinary Research",
+    "date": "2020-10-15",
+    "location": "Online",
+    "images": [
+      {
+        "url": "content/events/2020-gsk-innovation-webinar/gallery/image-01.jpg",
+        "description": "Webinar poster: Next-Gen Innovations through Interdisciplinary Research, tAcT and GlaxoSmithKline"
+      }
+    ]
+  },
+  {
+    "slug": "2020-kmc-delhi-science-webinar",
+    "eventSlug": "2020-kmc-delhi-science-webinar",
+    "pageUrl": "events/2020-kmc-delhi-science-webinar.html",
+    "title": "3-Day Science Webinar, Kirori Mal College Delhi",
+    "date": "2020-11-09",
+    "location": "Online",
+    "images": [
+      {
+        "url": "content/events/2020-kmc-delhi-science-webinar/gallery/image-01.jpg",
+        "description": "3-Day Science Webinar poster: Kirori Mal College Delhi, 9–11 November 2020"
+      }
+    ]
+  },
+  {
+    "slug": "2020-jcb-anniversary-lecture",
+    "eventSlug": "2020-jcb-anniversary-lecture",
+    "pageUrl": "events/2020-jcb-anniversary-lecture.html",
+    "title": "162nd J.C. Bose Birth Anniversary Lecture",
+    "date": "2020-11-30",
+    "location": "Online",
+    "images": [
+      {
+        "url": "content/events/2020-jcb-anniversary-lecture/gallery/image-01.jpg",
+        "description": "162nd J.C. Bose Birth Anniversary Lecture, 30 November 2020"
+      }
+    ]
+  },
+  {
+    "slug": "2020-national-mathematics-day-lectures",
+    "eventSlug": "2020-national-mathematics-day-lectures",
+    "pageUrl": "events/2020-national-mathematics-day-lectures.html",
+    "title": "Infinity and Beyond: National Mathematics Day Lectures 2020",
+    "date": "2020-12-21",
+    "location": "Online",
+    "images": [
+      {
+        "url": "content/events/2020-national-mathematics-day-lectures/gallery/image-01.jpg",
+        "description": "National Mathematics Day Lectures poster: Infinity and Beyond, 21–22 December 2020"
+      }
+    ]
   }
 ]
