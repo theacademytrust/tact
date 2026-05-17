@@ -1,4 +1,4 @@
-## Vijnana Aranya, Mysuru — Archaeological Sciences Lectures
+## Vijnana Aranya, Mysuru, Archaeological Sciences Lectures
 
 A two-day Vijnana Aranya was conducted across multiple venues in Mysuru on 22–23 March 2026.
 

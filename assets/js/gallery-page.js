@@ -61,6 +61,25 @@
       .replace(/'/g, "&#39;");
   }
 
+  function stripMarkdown(text) {
+    return String(text || "")
+      .replace(/^#+\s*/gm, "")
+      .replace(/\*\*(.+?)\*\*/g, "$1")
+      .trim();
+  }
+
+  function renderMarkdown(text) {
+    if (!text) return "";
+    return String(text).split("\n").map(function (line) {
+      var m = line.match(/^(#+)\s+(.*)/);
+      if (m) {
+        var content = escapeHtml(m[2]).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+        return '<span class="md-heading">' + content + "</span>";
+      }
+      return escapeHtml(line).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+    }).join("\n");
+  }
+
   var layoutPending = false;
 
   function layoutGallery() {
@@ -87,7 +106,7 @@
     // Pack images into rows at fixed height H.
     // When adding the next image would overflow, compare both choices:
     //   include → compress (scale < 1)   vs   exclude → stretch (scale > 1)
-    // Pick whichever scale deviates less from 1.0 — minimises visible distortion.
+    // Pick whichever scale deviates less from 1.0, minimises visible distortion.
     var rows = [];
     var row = [];
     var rowSumWidths = 0;
@@ -125,7 +144,7 @@
     }
 
     // Apply: H px tall for every card, widths scaled to fill containerWidth.
-    // Last (partial) row: natural widths, left-aligned — no gross stretching.
+    // Last (partial) row: natural widths, left-aligned, no gross stretching.
     rows.forEach(function (rowData) {
       var n = rowData.items.length;
       var available = containerWidth - (n - 1) * GAP;
@@ -180,7 +199,7 @@
       "<strong>" + escapeHtml(item.title) + "</strong>" +
       "<span>" + escapeHtml(formatDate(item.date)) + "</span>" +
       "<span>" + escapeHtml(item.location) + "</span>" +
-      "<span>" + escapeHtml(shortText(item.previewDescription || item.description, 120)) + "</span>";
+      "<span>" + escapeHtml(shortText(stripMarkdown(item.previewDescription || item.description), 120)) + "</span>";
 
     button.appendChild(image);
     button.appendChild(overlay);
@@ -302,7 +321,7 @@
     document.getElementById("gallery-modal-title").textContent = item.title;
     document.getElementById("gallery-modal-date").textContent = formatDate(item.date);
     document.getElementById("gallery-modal-location").textContent = item.location;
-    if (description) description.textContent = fallbackModalDescription(item);
+    if (description) description.innerHTML = renderMarkdown(fallbackModalDescription(item));
     dialog.style.setProperty("--gallery-modal-media-height", "90vh");
 
     modal.hidden = false;
@@ -312,7 +331,7 @@
 
     hydrateModalDescription(item).then(function (fullDescription) {
       if (!state.modalOpen || state.activeModalItemId !== item.id || !description) return;
-      description.textContent = fullDescription || item.description || "";
+      description.innerHTML = renderMarkdown(fullDescription || item.description || "");
       syncModalHeight();
     });
   }

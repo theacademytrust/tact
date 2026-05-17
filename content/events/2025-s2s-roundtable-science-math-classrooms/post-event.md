@@ -7,7 +7,7 @@ The gathering brought together educators and school leaders from diverse institu
 **Programme:**
 - 9:00–9:15 AM: Introduction
 - 9:15–11:15 AM: Roundtable discussions on nurturing thinking, empowering educators, differentiated learning, and future-ready learners
-- 11:15–12:00 PM: Exploration stations — experiencing the Joy of Science and Math
+- 11:15–12:00 PM: Exploration stations, experiencing the Joy of Science and Math
 - 12:00–12:15 PM: Discussion on explorations
 - 12:15–1:00 PM: Presentation on Pre-Text Pedagogy by The Heritage Experiential School, Delhi (in collaboration with Harvard Mittal Institute)
 - 1:00–1:45 PM: Lunch and networking

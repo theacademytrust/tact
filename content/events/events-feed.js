@@ -42,7 +42,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2018-bharathi-school-james-chelliah",
-    "title": "Lecture on the Brain — Bharathi School",
+    "title": "Lecture on the Brain, Bharathi School",
     "date": "2018-07-20",
     "time": "",
     "location": "Bharathi School",
@@ -55,7 +55,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2018-vanita-sadana-mysuru",
-    "title": "Karnataka's Wildlife — Vanita Sadana, Mysore",
+    "title": "Karnataka's Wildlife, Vanita Sadana, Mysore",
     "date": "2018-08-04",
     "time": "",
     "location": "Vanita Sadana, Mysore",
@@ -120,7 +120,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2018-nina-fedoroff-oxford-college",
-    "title": "GM Crops and Their Social Impact — Oxford College, Bengaluru",
+    "title": "GM Crops and Their Social Impact, Oxford College, Bengaluru",
     "date": "2018-11-26",
     "time": "",
     "location": "Oxford College, Bengaluru",
@@ -146,7 +146,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2018-poorna-prajna-bharat-ratra",
-    "title": "The Accelerating Expanding Universe — Poorna Prajna School",
+    "title": "The Accelerating Expanding Universe, Poorna Prajna School",
     "date": "2018-12-18",
     "time": "",
     "location": "Poorna Prajna School, Bengaluru",
@@ -159,7 +159,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2019-arivina-angala",
-    "title": "Arivina Angala — Science Fest for Kannada Medium Students",
+    "title": "Arivina Angala, Science Fest for Kannada Medium Students",
     "date": "2019-02-01",
     "time": "",
     "location": "Indian Academy of Sciences, Bengaluru",
@@ -172,7 +172,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2019-national-science-day",
-    "title": "National Science Day 2019 — Teachers' Training Workshop",
+    "title": "National Science Day 2019, Teachers' Training Workshop",
     "date": "2019-02-28",
     "time": "",
     "location": "Indian Academy of Sciences, Bengaluru",
@@ -185,7 +185,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2019-vidyanjali-bharat-ratra",
-    "title": "Bharat Ratra Lecture on Astrophysics — Vidyanjali Academy",
+    "title": "Bharat Ratra Lecture on Astrophysics, Vidyanjali Academy",
     "date": "2019-06-28",
     "time": "",
     "location": "Vidyanjali Academy for Learning, Bengaluru",
@@ -198,7 +198,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2019-daffodils-climate-change",
-    "title": "Lecture on Climate Change — Daffodils School",
+    "title": "Lecture on Climate Change, Daffodils School",
     "date": "2019-08-28",
     "time": "",
     "location": "Indian Academy of Sciences, Bengaluru",
@@ -224,7 +224,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2019-uoh-science-outreach",
-    "title": "Science Outreach Programme — University of Hyderabad",
+    "title": "Science Outreach Programme, University of Hyderabad",
     "date": "2019-11-08",
     "time": "",
     "location": "School of Life Sciences, University of Hyderabad",
@@ -260,32 +260,6 @@ window.TACT_EVENT_FEED = [
     "poster": "content/events/2020-rajasthan-dst-evolutionary-biology/gallery/image-01.jpg",
     "teaser": "Webinar on Evolutionary and Organismal Biology for college and school students, organised by the Department of Science and Technology, Govt. of Rajasthan, with tAcT and IASc. Speaker: Prof. Amitabh Joshi (JNCASR).",
     "homepageMatter": "On 7 June 2020, tAcT partnered with the Department of Science and Technology, Govt. of Rajasthan, to deliver a webinar on Evolutionary and Organismal Biology for college and school students across Rajasthan. Prof. Amitabh Joshi of JNCASR, Bengaluru, was the speaker."
-  },
-  {
-    "slug": "2020-rajasthan-dst-earthquake-webinar",
-    "title": "Earthquake and Challenges: Balance between Nature and Technology",
-    "date": "2020-06-17",
-    "time": "",
-    "location": "Online",
-    "status": "completed",
-    "folder": "content/events/2020-rajasthan-dst-earthquake-webinar",
-    "pageUrl": "events/17-06-2020-earthquake-and-challenges-balance-between-nature-and-technology.html",
-    "poster": "",
-    "teaser": "Webinar on \"Earthquake and Challenges: Balance between Nature and Technology\", coordinated by Rajasthan DST with speakers Dr. Vineet Gahalaut (IASc Fellow) and Dr. CP Rajendran (JNCASR).",
-    "homepageMatter": "On 17 June 2020, tAcT partnered with the Department of Science and Technology, Rajasthan, for a webinar on earthquakes and related challenges. The session featured Academy Fellow Dr. Vineet Gahalaut and Dr. CP Rajendran of JNCASR as speakers."
-  },
-  {
-    "slug": "2020-jnv-bengaluru-science-talk",
-    "title": "Science Talk, Jawahar Navodaya Vidyalaya Bengaluru",
-    "date": "2020-06-29",
-    "time": "",
-    "location": "Online",
-    "status": "completed",
-    "folder": "content/events/2020-jnv-bengaluru-science-talk",
-    "pageUrl": "events/29-06-2020-science-talk-jawahar-navodaya-vidyalaya-bengaluru.html",
-    "poster": "",
-    "teaser": "An online science talk by Prof. Partha Pratim Majumder for students and teachers of Jawahar Navodaya Vidyalaya, Bengaluru, with around 68 participants.",
-    "homepageMatter": "On 29 June 2020, Prof. Partha Pratim Majumder delivered an online science talk to students and teachers of Jawahar Navodaya Vidyalaya, Bengaluru. The session drew around 68 participants and included a Q&A on the virus and related topics."
   },
   {
     "slug": "2020-jbnsts-sars-cov2-webinar",
@@ -380,14 +354,14 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2021-raman-science-festival",
-    "title": "Raman Science Festival — National Science Day 2021",
+    "title": "Raman Science Festival, National Science Day 2021",
     "date": "2021-02-28",
     "time": "",
     "location": "Online",
     "status": "completed",
     "folder": "content/events/2021-raman-science-festival",
     "pageUrl": "events/28-02-2021-raman-science-festival-national-science-day-2021.html",
-    "poster": "",
+    "poster": "content/events/2021-raman-science-festival/gallery/image-01.jpg",
     "teaser": "National Science Day 2021 was celebrated by tAcT in collaboration with Science Utsav as the \"Raman Science Festival\", webcast live to over 3,200 registered participants across India.",
     "homepageMatter": "On 28 February 2021, tAcT and Science Utsav jointly celebrated National Science Day as the \"Raman Science Festival\", reaching over 4,600 live viewers and 13,000+ total online views. The day-long programme featured talks, hands-on demonstrations, a coding workshop, and science games for school students."
   },
@@ -406,20 +380,20 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2021-in-celebration-of-diversity",
-    "title": "In Celebration of Diversity — Lecture Series",
+    "title": "In Celebration of Diversity, Lecture Series",
     "date": "2021-10-01",
     "time": "4:00 PM",
     "location": "Online",
     "status": "completed",
     "folder": "content/events/2021-in-celebration-of-diversity",
     "pageUrl": "events/01-10-2021-in-celebration-of-diversity-lecture-series.html",
-    "poster": "",
+    "poster": "content/events/2021-in-celebration-of-diversity/gallery/image-01.jpg",
     "teaser": "Six-week online lecture series on diversity in India, jointly organised by tAcT and the National Council of Science Museums. Topics included physical, animal, plant, ecological, human, and linguistic diversity.",
     "homepageMatter": "tAcT and the National Council of Science Museums (NCSM) jointly organised \"In Celebration of Diversity\", a six-week online lecture series from October 1 to November 10, 2021. Speakers from IISc, ISI, NIPGR, Jadavpur University, and other institutions covered the many dimensions of India's natural and human diversity."
   },
   {
     "slug": "2022-science-week-nsd",
-    "title": "Science Week — National Science Day 2022",
+    "title": "Science Week, National Science Day 2022",
     "date": "2022-02-26",
     "time": "",
     "location": "Online",
@@ -1329,7 +1303,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2025-vijnana-harate-anantha-vidyaniketan-july-session",
-    "title": "Vijnana Harate, Anantha Vidyaniketan — IASc and RRI Visit",
+    "title": "Vijnana Harate, Anantha Vidyaniketan, IASc and RRI Visit",
     "date": "2025-07-22",
     "time": "9:00 AM",
     "location": "Indian Academy of Sciences, Bengaluru",
@@ -1388,8 +1362,8 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2025-vitm-tact-renee-borges",
     "pageUrl": "events/08-08-2025-life-in-natural-microcosms-challenges-and-opportunities.html",
-    "poster": "",
-    "teaser": "VITM–tAcT Lecture Series \"Indian Women in Science\" — inaugural lecture by Prof. Renee M. Borges (IISc) on life in natural microcosms.",
+    "poster": "content/events/2025-vitm-tact-renee-borges/gallery/image-01.jpg",
+    "teaser": "VITM–tAcT Lecture Series \"Indian Women in Science\", inaugural lecture by Prof. Renee M. Borges (IISc) on life in natural microcosms.",
     "homepageMatter": "The inaugural VITM–tAcT \"Indian Women in Science\" lecture was delivered by Prof. Renee M. Borges, Centre for Ecological Sciences, IISc Bengaluru, on 8 August 2025. She spoke on life in natural microcosms: the challenges and opportunities in ecological research."
   },
   {
@@ -1427,8 +1401,8 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2025-vitm-tact-seetha",
     "pageUrl": "events/19-09-2025-why-is-space-science-challenging.html",
-    "poster": "",
-    "teaser": "VITM–tAcT Lecture Series \"Indian Women in Science\" — Dr. S. Seetha (Former Director, ISRO Space Science Programme) on the challenges of space science.",
+    "poster": "content/events/2025-vitm-tact-seetha/gallery/image-01.jpg",
+    "teaser": "VITM–tAcT Lecture Series \"Indian Women in Science\", Dr. S. Seetha (Former Director, ISRO Space Science Programme) on the challenges of space science.",
     "homepageMatter": "The second VITM–tAcT \"Indian Women in Science\" lecture was delivered by Dr. S. Seetha, Former Director of the Space Science Programme at ISRO HQ and Honorary member of RRI, Bengaluru, on 19 September 2025."
   },
   {
@@ -1440,8 +1414,8 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2025-vitm-tact-prajval-shastri",
     "pageUrl": "events/13-10-2025-meandering-into-astrophysics-and-around-giant-black-holes.html",
-    "poster": "",
-    "teaser": "VITM–tAcT Lecture Series \"Indian Women in Science\" — Prof. Prajval Shastri (Indian Institute of Astrophysics, retd.) on astrophysics and giant black holes.",
+    "poster": "content/events/2025-vitm-tact-prajval-shastri/gallery/image-01.jpg",
+    "teaser": "VITM–tAcT Lecture Series \"Indian Women in Science\", Prof. Prajval Shastri (Indian Institute of Astrophysics, retd.) on astrophysics and giant black holes.",
     "homepageMatter": "The third VITM–tAcT \"Indian Women in Science\" lecture was delivered by Prof. Prajval Shastri, Indian Institute of Astrophysics (retd.) and Adjunct Professor, ICRAR Australia, on 13 October 2025."
   },
   {
@@ -1459,7 +1433,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2025-vijnana-aranya-chiguru-bengaluru-visit-session",
-    "title": "Vijnana Aranya — Chiguru Srujana Shaale Visit to Bengaluru",
+    "title": "Vijnana Aranya, Chiguru Srujana Shaale Visit to Bengaluru",
     "date": "2025-10-30",
     "time": "",
     "location": "Bengaluru (VITM, Raman Museum, IASc)",
@@ -1472,7 +1446,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2025-vijnana-aranya-mysuru-nemichandra-session",
-    "title": "Vijnana Aranya, Mysuru — Talks by Nemichandra",
+    "title": "Vijnana Aranya, Mysuru, Talks by Nemichandra",
     "date": "2025-11-07",
     "time": "",
     "location": "Multiple venues, Mysuru",
@@ -1492,8 +1466,8 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2025-vitm-tact-h-ila",
     "pageUrl": "events/11-11-2025-my-life-in-science-adventures-of-a-woman-chemist.html",
-    "poster": "",
-    "teaser": "VITM–tAcT Lecture Series \"Indian Women in Science\" — Prof. H. Ila (JNCASR) on her life in science as a chemist.",
+    "poster": "content/events/2025-vitm-tact-h-ila/gallery/image-01.jpg",
+    "teaser": "VITM–tAcT Lecture Series \"Indian Women in Science\", Prof. H. Ila (JNCASR) on her life in science as a chemist.",
     "homepageMatter": "The fourth VITM–tAcT \"Indian Women in Science\" lecture was delivered by Prof. H. Ila, FNA, FASc, Hindustan Lever Research Professor, New Chemistry Unit, JNCASR, Bengaluru, on 11 November 2025."
   },
   {
@@ -1524,7 +1498,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2025-vijnana-aranya-food-mela-chiguru-session",
-    "title": "Vijnana Aranya — Food Mela, Chiguru Srujana Shaale",
+    "title": "Vijnana Aranya, Food Mela, Chiguru Srujana Shaale",
     "date": "2025-11-22",
     "time": "",
     "location": "Chiguru Srujana Shaale, Hosabidarahalli, H.D. Kote",
@@ -1532,7 +1506,7 @@ window.TACT_EVENT_FEED = [
     "folder": "content/events/2025-vijnana-aranya-food-mela-chiguru-session",
     "pageUrl": "events/22-11-2025-vijnana-aranya-food-mela-chiguru-srujana-shaale.html",
     "poster": "content/events/2025-vijnana-aranya-food-mela-chiguru-session/gallery/image-01.jpg",
-    "teaser": "Vijnana Aranya — Food Mela at Chiguru Srujana Shaale, Hosabidarahalli, 22 November 2025.",
+    "teaser": "Vijnana Aranya, Food Mela at Chiguru Srujana Shaale, Hosabidarahalli, 22 November 2025.",
     "homepageMatter": "A Vijnana Aranya with a Food Mela theme was held at Chiguru Srujana Shaale, Hosabidarahalli, H.D. Kote taluk, on 22 November 2025."
   },
   {
@@ -1570,13 +1544,13 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2025-national-mathematics-day-sadvidya-mysuru",
     "pageUrl": "events/22-12-2025-national-mathematics-day-at-sadvidya-pu-college-mysuru.html",
-    "poster": "",
+    "poster": "content/events/2025-national-mathematics-day-sadvidya-mysuru/gallery/image-01.jpg",
     "teaser": "National Mathematics Day celebration at Sadvidya PU College, Mysuru, 22 December 2025.",
     "homepageMatter": "tAcT participated in National Mathematics Day celebrations at Sadvidya Semi-Residential PU College, Mysuru, on 22 December 2025."
   },
   {
     "slug": "2025-national-mathematics-day-aps-college",
-    "title": "Infinity Anantha — National Mathematics Day Workshop, APS College",
+    "title": "Infinity Anantha, National Mathematics Day Workshop, APS College",
     "date": "2025-12-29",
     "time": "11:00 AM",
     "location": "Acharya Pathasala College of Arts and Science, Bengaluru",
@@ -1596,13 +1570,13 @@ window.TACT_EVENT_FEED = [
     "status": "completed",
     "folder": "content/events/2026-vitm-tact-sujatha-ramdorai",
     "pageUrl": "events/06-01-2026-the-numbers.html",
-    "poster": "",
-    "teaser": "VITM–tAcT Lecture Series \"Indian Women in Science\" — Prof. Sujatha Ramdorai (Canada Research Chair in Mathematics, University of British Columbia) on numbers.",
+    "poster": "content/events/2026-vitm-tact-sujatha-ramdorai/gallery/image-01.jpg",
+    "teaser": "VITM–tAcT Lecture Series \"Indian Women in Science\", Prof. Sujatha Ramdorai (Canada Research Chair in Mathematics, University of British Columbia) on numbers.",
     "homepageMatter": "The fifth VITM–tAcT \"Indian Women in Science\" lecture was delivered by Prof. Sujatha Ramdorai, Canada Research Chair in Mathematics at the University of British Columbia, on 6 January 2026."
   },
   {
     "slug": "2026-vijnana-aranya-divyajyothi-mysuru-session",
-    "title": "Dance with Maths — Accessible Mathematics Workshop, Divya Jyothi Trust",
+    "title": "Dance with Maths, Accessible Mathematics Workshop, Divya Jyothi Trust",
     "date": "2026-01-10",
     "time": "",
     "location": "Divya Jyothi Charitable Trust, Mysuru",
@@ -1615,7 +1589,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2026-vijnana-aranya-mathru-mandali-iiet-mysuru-session",
-    "title": "Vijnana Aranya — Mathru Mandali and IIET, Mysuru",
+    "title": "Vijnana Aranya, Mathru Mandali and IIET, Mysuru",
     "date": "2026-01-24",
     "time": "10:30 AM",
     "location": "Mathru Mandali Vidya Samsthe and IIET, Mysuru",
@@ -1654,20 +1628,20 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2026-vitm-tact-shobhana-narasimhan",
-    "title": "VITM–tAcT Lecture: Indian Women in Science — Shobhana Narasimhan",
+    "title": "VITM–tAcT Lecture: Indian Women in Science, Shobhana Narasimhan",
     "date": "2026-02-23",
     "time": "11:00 AM",
     "location": "VITM Auditorium, Bengaluru",
     "status": "completed",
     "folder": "content/events/2026-vitm-tact-shobhana-narasimhan",
     "pageUrl": "events/23-02-2026-vitm-tact-lecture-indian-women-in-science-shobhana-narasimhan.html",
-    "poster": "",
-    "teaser": "VITM–tAcT Lecture Series \"Indian Women in Science\" — lecture by Prof. Shobhana Narasimhan, JNCASR, Bengaluru.",
+    "poster": "content/events/2026-vitm-tact-shobhana-narasimhan/gallery/image-01.jpg",
+    "teaser": "VITM–tAcT Lecture Series \"Indian Women in Science\", lecture by Prof. Shobhana Narasimhan, JNCASR, Bengaluru.",
     "homepageMatter": "The sixth VITM–tAcT \"Indian Women in Science\" lecture was delivered by Prof. Shobhana Narasimhan, JNCASR, Bengaluru, on 23 February 2026."
   },
   {
     "slug": "2026-national-science-day-trial-of-abdus-salam",
-    "title": "National Science Day — The Trial of Abdus Salam",
+    "title": "National Science Day, The Trial of Abdus Salam",
     "date": "2026-02-28",
     "time": "",
     "location": "Rangashankara, Bengaluru",
@@ -1680,7 +1654,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2026-vijnana-aranya-mysuru-sharada-session",
-    "title": "Vijnana Aranya, Mysuru — Archaeological Sciences Lectures by Dr. CV Sharada",
+    "title": "Vijnana Aranya, Mysuru, Archaeological Sciences Lectures by Dr. CV Sharada",
     "date": "2026-03-22",
     "time": "11:00 AM",
     "location": "Multiple venues, Mysuru",
@@ -1693,7 +1667,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2026-vijnana-harate-bengaluru-preview",
-    "title": "Vijnana Harate — Bengaluru School Session",
+    "title": "Vijnana Harate, Bengaluru School Session",
     "date": "2026-06-10",
     "time": "10:00 AM – 1:00 PM",
     "location": "Bengaluru, Karnataka",
@@ -1706,7 +1680,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2026-vijnana-aranya-hassan-preview",
-    "title": "Vijnana Aranya — Rural Outreach Visit",
+    "title": "Vijnana Aranya, Rural Outreach Visit",
     "date": "2026-07-05",
     "time": "9:30 AM – 3:00 PM",
     "location": "Hassan District, Karnataka",
@@ -1719,7 +1693,7 @@ window.TACT_EVENT_FEED = [
   },
   {
     "slug": "2026-ganitha-mela-mysuru-preview",
-    "title": "Ganitha Mela — Mysuru",
+    "title": "Ganitha Mela, Mysuru",
     "date": "2026-08-20",
     "time": "10:30 AM – 4:00 PM",
     "location": "Mysuru, Karnataka",
@@ -1728,6 +1702,6 @@ window.TACT_EVENT_FEED = [
     "pageUrl": "events/20-08-2026-ganitha-mela-mysuru.html",
     "poster": "content/events/2026-ganitha-mela-mysuru-preview/poster.svg",
     "teaser": "A full-day mathematics festival in Mysuru with hands-on activities, puzzles, and maths games designed to make abstract concepts tangible and joyful.",
-    "homepageMatter": "An upcoming Ganitha Mela in Mysuru — a full-day festival of hands-on mathematics activities, puzzles, and games for school students. Designed to make abstract mathematical ideas tangible, enjoyable, and connected to everyday life."
+    "homepageMatter": "An upcoming Ganitha Mela in Mysuru, a full-day festival of hands-on mathematics activities, puzzles, and games for school students. Designed to make abstract mathematical ideas tangible, enjoyable, and connected to everyday life."
   }
 ];

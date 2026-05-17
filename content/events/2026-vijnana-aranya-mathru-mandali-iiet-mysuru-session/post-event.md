@@ -1,4 +1,4 @@
-## Vijnana Aranya — Mathru Mandali and IIET, Mysuru
+## Vijnana Aranya, Mathru Mandali and IIET, Mysuru
 
 A Vijnana Aranya was conducted at two venues in Mysuru on 24 January 2026.
 

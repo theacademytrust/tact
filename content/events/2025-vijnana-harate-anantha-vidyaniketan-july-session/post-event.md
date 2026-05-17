@@ -1,4 +1,4 @@
-## Vijnana Harate, Anantha Vidyaniketan — IASc and RRI Visit
+## Vijnana Harate, Anantha Vidyaniketan, IASc and RRI Visit
 
 60 students of 9th grade from Anantha Vidyaniketan visited the Indian Academy of Sciences and RRI, Bengaluru, on 22 July 2025.
 

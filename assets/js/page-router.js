@@ -1,6 +1,8 @@
 (function () {
   var ROUTE_SCRIPTS = {
     "index.html": [
+      "logobelt/logobelt-manifest.js?v=20260502a",
+      "assets/js/logo-belt.js?v=20260502a",
       "assets/js/events-config.js",
       "content/events/events-feed.js?v=20260501d",
       "assets/js/preview-events.js",

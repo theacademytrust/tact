@@ -40,6 +40,18 @@
       .replace(/'/g, "&#39;");
   }
 
+  function renderMarkdown(text) {
+    if (!text) return "";
+    return String(text).split("\n").map(function (line) {
+      var m = line.match(/^(#+)\s+(.*)/);
+      if (m) {
+        var content = escapeHtml(m[2]).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+        return '<span class="md-heading">' + content + "</span>";
+      }
+      return escapeHtml(line).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+    }).join("\n");
+  }
+
   function shortText(value, limit) {
     var text = String(value || "").trim();
     if (text.length <= limit) return text;
@@ -192,7 +204,7 @@
     document.getElementById("gallery-modal-title").textContent = item.title;
     document.getElementById("gallery-modal-date").textContent = formatDate(item.date);
     document.getElementById("gallery-modal-location").textContent = item.location;
-    if (description) description.textContent = modalDescriptionFor(item);
+    if (description) description.innerHTML = renderMarkdown(modalDescriptionFor(item));
     dialog.style.setProperty("--gallery-modal-media-height", "90vh");
 
     modal.hidden = false;
@@ -290,7 +302,7 @@
               "<span>" + escapeHtml(eventItem.time || "Time TBA") + "</span>" +
               "<span>" + escapeHtml(eventItem.location || "Location TBA") + "</span>" +
             "</div>" +
-            '<p class="event-detail-description">' + escapeHtml(fullDescription || "Description coming soon.") + "</p>" +
+            '<div class="event-detail-description">' + renderMarkdown(fullDescription || "Description coming soon.") + "</div>" +
           "</div>" +
         "</section>" +
         gallerySection +

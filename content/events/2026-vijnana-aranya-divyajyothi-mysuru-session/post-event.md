@@ -1,4 +1,4 @@
-## Dance with Maths — Accessible Mathematics Workshop
+## Dance with Maths, Accessible Mathematics Workshop
 
 A "Dance with Maths" workshop on accessible mathematics was conducted at the Hostel-plus-Special Skills Learning Centre of Divya Jyothi Charitable Trust, Mysuru, on 10 January 2026.
 

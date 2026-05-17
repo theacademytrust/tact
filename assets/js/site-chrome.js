@@ -34,7 +34,7 @@
         ["Current Trustees", "current-trustees.html"],
         ["Outreach Committee", "outreach-committee.html"],
         ["Annual Reports", "annual-reports.html"],
-        ["State Documents", "state-documents.html"],
+        ["Trust Documents", "trust-documents.html"],
         ["Office & Contacts", "office-contacts.html"]
       ]
     }
@@ -159,9 +159,37 @@
     var root = document.getElementById("site-footer-root");
     if (!root) return;
 
+    var footerGroups = NAV_GROUPS.map(function (group) {
+      var links = group.links.map(function (link) {
+        return '          <li><a href="' + toSitePath(link[1]) + '">' + link[0] + "</a></li>";
+      }).join("");
+
+      return [
+        '      <section class="site-footer-group" aria-labelledby="footer-' + group.label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") + '">',
+        '        <h2 id="footer-' + group.label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") + '">' + group.label + "</h2>",
+        '        <ul class="site-footer-links">',
+        links,
+        "        </ul>",
+        "      </section>"
+      ].join("");
+    }).join("");
+
     root.innerHTML = [
-      '<footer class="site-footer" aria-label="Site footer">',
-      "  <p>&copy; 2026 Academic Trust Science Outreach</p>",
+      '<footer class="site-footer" aria-label="Site footer" role="contentinfo">',
+      '  <div class="site-footer-shell">',
+      '    <a href="' + toSitePath("index.html") + '" class="site-footer-brand-link" aria-label="Go to homepage">',
+      '      <img src="' + toSitePath("assets/images/tact-logo.jpg") + '" alt="tAcT logo" class="site-footer-brand-logo" loading="lazy" decoding="async">',
+      "    </a>",
+      '    <nav class="site-footer-nav" aria-label="Footer navigation">',
+      footerGroups,
+      "    </nav>",
+      '    <aside class="site-footer-donate" aria-labelledby="footer-donate-heading">',
+      '      <h2 id="footer-donate-heading">Donate</h2>',
+      '      <p>Support science outreach, fellowships, and public programmes.</p>',
+      '      <a href="' + toSitePath("donate.html") + '" class="site-footer-donate-link">Support tAcT</a>',
+      "    </aside>",
+      "  </div>",
+      '  <p class="site-footer-meta">&copy; 2026 The Academy Trust (tAcT). Science outreach and public programmes.</p>',
       "</footer>"
     ].join("");
   }

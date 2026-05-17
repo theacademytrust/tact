@@ -12,8 +12,8 @@ window.TACT_PROGRAMS = {
     ],
     aboutTitle: "What this programme is for",
     about: [
-      "Vijnana Harate is an informal interaction between students and scientists or educators. The format is deliberately human-scale: a topic is opened through conversation, then made concrete through demonstrations, stories, questions, and time with teachers.",
-      "Harate works especially well where students may not often meet practicing scientists. It has been run in Kannada-medium settings, school campuses, Academy spaces, regional institutions, and partner labs. The strength of the format is that it can adapt without becoming casual about the science."
+      "Vijnana Harate is an informal interaction between students and scientists or educators. A session begins with a topic, opened through conversation, and made concrete through demonstrations, stories, and questions.",
+      "Harate works especially well where students may not often meet practicing scientists. It has been run in Kannada-medium settings, school campuses, Academy spaces, regional institutions, and partner labs."
     ],
     profile: [
       { label: "Audience", value: "School and college students, teachers, and sometimes parents or the wider public." },
@@ -21,11 +21,11 @@ window.TACT_PROGRAMS = {
       { label: "Method", value: "Conversation first, then small demonstrations, question time, and a link back to the students' own context." },
       { label: "Good for", value: "Breaking hesitation, making science feel reachable, and turning a visit into classroom follow-up." }
     ],
-    visitTitle: "How a Harate is shaped",
+    visitTitle: "How a Harate works",
     visit: [
       {
-        title: "Begin with what students already notice",
-        text: "The scientist starts from a question, object, story, or local observation rather than a formal lecture outline."
+        title: "A concrete opening, question, object, or observation",
+        text: "The scientist or educator starts from something visible: an object, a phenomenon, a story, or a local observation."
       },
       {
         title: "Make the idea visible",
@@ -72,7 +72,7 @@ window.TACT_PROGRAMS = {
       { type: "image", src: "flauntimages/Vijnana Harate/8.jpg", alt: "Hands-on science outreach moment", caption: "Everyday materials often carry the strongest explanation." }
     ],
     impact:
-      "The lasting value of Harate is not one polished talk. It is the shift in the room: students ask earlier, teachers have an activity to reuse, and science stops feeling distant.",
+      "The lasting value of a Harate is not a single polished talk. After a well-run session, teachers have specific activities they can reuse, and students who came in hesitant have asked questions they would not have raised otherwise.",
     impactPoints: [
       "Regional-language sessions help students enter the discussion without first translating their questions.",
       "Campus and lab visits connect textbook topics to people, instruments, and working spaces.",
@@ -86,7 +86,7 @@ window.TACT_PROGRAMS = {
     heroText:
       "Vijnana Aranya takes science to rural, tribal, and remote settings, where ecology, livelihoods, observation, and school science can meet in the same day.",
     stats: [
-      { value: "6", label: "Aranya events in the archive" },
+      { value: "8", label: "field visits documented in 2023–25" },
       { value: "3", label: "programmes recorded in 2024-25" },
       { value: "Field + classroom", label: "demos, walks, village forums, and projects" }
     ],
@@ -101,7 +101,7 @@ window.TACT_PROGRAMS = {
       { label: "Method", value: "Use the local setting as a laboratory: observe, collect, discuss, demonstrate, and connect to livelihood where useful." },
       { label: "Good for", value: "Science that feels relevant to ecology, farming, biodiversity, conservation, and local work." }
     ],
-    visitTitle: "How an Aranya visit is shaped",
+    visitTitle: "How an Aranya visit works",
     visit: [
       {
         title: "Start from the site",
@@ -126,7 +126,7 @@ window.TACT_PROGRAMS = {
         date: "13-27 Apr 2023",
         place: "Srikakulam, Andhra Pradesh",
         title: "First Vijnana Aranya series",
-        text: "The first remote and rural outreach series ran with the Centre for Applied Sciences and Government Degree College, with workshops in life sciences and ecology.",
+        text: "Prof. HS Misra of GITAM University, Visakhapatnam, conducted four full-day workshops on Life Sciences and Ecology for students across four colleges in Srikakulam district, in collaboration with the Centre for Applied Sciences.",
         pageUrl: "events/13-04-2023-vijnana-aranya-government-college-srikakulam-session.html"
       },
       {
@@ -180,7 +180,7 @@ window.TACT_PROGRAMS = {
       { label: "Method", value: "Skill sessions, mentor hours, exposure to scientists, hands-on work, and next-step guidance." },
       { label: "Good for", value: "Reducing hesitation, making pathways visible, and connecting aspiration to practical action." }
     ],
-    visitTitle: "How a Yuvati session is shaped",
+    visitTitle: "How a Yuvati session works",
     visit: [
       {
         title: "Begin with access, not abstraction",
@@ -188,15 +188,15 @@ window.TACT_PROGRAMS = {
       },
       {
         title: "Give participants a usable skill",
-        text: "A session may focus on entrepreneurship, sustainable livelihood, scientific technique, writing, application habits, or project thinking."
+        text: "A session may focus on entrepreneurship, sustainable livelihood, scientific technique, or hands-on manufacturing, something participants can apply."
       },
       {
-        title: "Make questions safe",
-        text: "Mentoring time is structured so students can ask about uncertainty, family pressure, study routes, and careers without embarrassment."
+        title: "Dedicated mentoring time",
+        text: "Time is set aside for students to ask scientists directly about career routes, study options, and what a scientific path actually looks like."
       },
       {
-        title: "Close with a next step",
-        text: "The useful outcome is a plan: whom to write to, what to apply for, what to read, what to practice, or what project to start."
+        title: "Close with something concrete",
+        text: "Sessions close with a specific outcome, a completed project, a new skill, a certificate, or knowledge of a particular scheme or opportunity."
       }
     ],
     momentsTitle: "Documented moments",
@@ -245,7 +245,7 @@ window.TACT_PROGRAMS = {
     aboutTitle: "What this programme is for",
     about: [
       "Vijnana Nataka uses theatre and music as a serious method for putting science and scientific temper into public circulation. Performance is not decoration here; it is the main channel.",
-      "Productions have ranged from a play on Richard Feynman to the Kannada play Lilavathi and the Mysuru Science Theatre Festival, where scientific temperament, research lives, cosmology, infection, and the work of scientists were staged for full houses."
+      "Productions have included plays on Richard Feynman and Abdus Salam, the Kannada play Lilavathi on mathematician Bhaskara II, and the 2024 Mysuru Science Theatre Festival, where scientific temperament, research lives, and the conflicts scientists face were staged for full houses."
     ],
     profile: [
       { label: "Audience", value: "Students, teachers, families, theatre-goers, and the general public." },
@@ -253,23 +253,23 @@ window.TACT_PROGRAMS = {
       { label: "Method", value: "Scripts, songs, performance, local language, post-show discussion, and collaboration with theatre groups." },
       { label: "Good for", value: "Scientific temper, public memory, cultural access, and topics that benefit from story." }
     ],
-    visitTitle: "How a Nataka programme is shaped",
+    visitTitle: "How a Nataka event works",
     visit: [
       {
-        title: "Choose the science that needs a public form",
-        text: "Biographies, scientific temper, health, environment, mathematics, and research lives can all become stage material."
+        title: "Choose the science that suits a stage",
+        text: "Biographies, scientific temper, research conflicts, and mathematical history can all become stage material."
       },
       {
         title: "Work with theatre partners",
         text: "Scripts, direction, performance, and local idiom matter as much as scientific accuracy."
       },
       {
-        title: "Let the audience stay in the circle",
-        text: "Post-performance conversations make the science discussable rather than merely watched."
+        title: "Post-show discussion",
+        text: "After the performance, the audience can talk with the cast and scientists, questions about the science, the history, or the characters become part of the event."
       },
       {
         title: "Keep the cultural route open",
-        text: "Music, Kannada theatre, folk forms, and festival settings help science travel beyond a classroom audience."
+        text: "Kannada theatre, music, folk forms, and festival settings help science reach audiences beyond a classroom."
       }
     ],
     momentsTitle: "Documented moments",
@@ -277,22 +277,29 @@ window.TACT_PROGRAMS = {
       {
         date: "9 Dec 2022",
         place: "National College Jayanagar",
-        title: "Play on Richard Feynman",
-        text: "One of the early science theatre events held with Arivu Trust at H. N. Kalakshetra.",
+        title: "QED – Play on Richard Feynman",
+        text: "Staged at H. N. Kalakshetra auditorium with Arivu Trust, Mysuru. Actor Yatheesh Kollegal played Feynman in the Kannada translation of Peter Parnell's QED by Shashidhar Dongre.",
         pageUrl: "events/09-12-2022-vijnana-nataka-unknown-session.html"
+      },
+      {
+        date: "23 Dec 2022",
+        place: "National College Jayanagar",
+        title: "The Trial of Abdus Salam",
+        text: "The second play in the 2022 series, also staged at H. N. Kalakshetra with Arivu Trust. Yatheesh Kollegal played Nobel laureate Abdus Salam in Shashidhar Dongre's Kannada translation of Nilanjan Choudhury's play.",
+        pageUrl: "events/23-12-2022-vijnana-nataka-unknown-session.html"
       },
       {
         date: "21 Jan 2023",
         place: "Bengaluru",
         title: "Lilavathi",
-        text: "The Kannada play on Bhaskara II introduced parts of Bhaskaracharya's treatise and Indian mathematical history.",
+        text: "Written by Shashidhara Dongre and directed by Nataka Academy award winner HS Umesh, the Kannada play on mathematician Bhaskara II was staged at H. N. Kalakshetra auditorium with Arivu Trust.",
         pageUrl: "events/21-01-2023-vijnana-nataka-mysuru-session.html"
       },
       {
         date: "20-23 Jul 2024",
         place: "Mysuru",
         title: "Mysuru Science Theatre Festival",
-        text: "tAcT co-organised the 7th annual festival, a four-day programme with house-full audiences.",
+        text: "tAcT co-organised with Kutuhali, Parivarthana Ranga Samaja, Arivu Trust, and Kalasuruchi Mysuru. The four-day programme played to house-full audiences of students and the general public.",
         pageUrl: "events/20-07-2024-vijnana-nataka-mysuru-session.html"
       }
     ],
@@ -325,8 +332,8 @@ window.TACT_PROGRAMS = {
     ],
     aboutTitle: "What this programme is for",
     about: [
-      "Ganitha Mela explores mathematics through activities, games, and cultural programmes. The 2023 edition at Vishwa Vidyapeeth, Yelahanka brought together students, teachers, mathematicians, communicators, games, performances, and activity kits.",
-      "The central design choice is that mathematics is not presented as a fear to overcome. It is handled as pattern, play, structure, history, craft, music, performance, and problem-solving."
+      "Ganitha Mela explores mathematics through activities, games, and cultural programmes. tAcT's National Mathematics Day events began in 2022 at Acharya Patshala College and grew to the five-day Ganitha Mela 2023 at Vishwa Vidyapeeth, Yelahanka, the first event of its kind, which brought together students, teachers, mathematicians, communicators, games, performances, and activity kits.",
+      "The format treats mathematics as pattern, play, structure, history, craft, and performance, carried through activity stalls, games, and cultural events rather than lectures."
     ],
     profile: [
       { label: "Audience", value: "Students, teachers, families, math enthusiasts, and the public." },
@@ -334,7 +341,7 @@ window.TACT_PROGRAMS = {
       { label: "Method", value: "Rotating stalls, puzzles, games, harates, demonstrations, cultural programmes, and take-home kits." },
       { label: "Good for", value: "Reducing math anxiety, building number sense, and showing the cultural life of mathematics." }
     ],
-    visitTitle: "How a Mela is shaped",
+    visitTitle: "How a Ganitha Mela works",
     visit: [
       {
         title: "Build stations, not a single stage",
@@ -359,7 +366,7 @@ window.TACT_PROGRAMS = {
         date: "18-22 Dec 2023",
         place: "Vishwa Vidyapeeth, Yelahanka",
         title: "Ganitha Mela 2023",
-        text: "The week-long event brought more than 8,000 participants from over 60 schools, with talks, games, puzzles, cultural programmes, and kits.",
+        text: "Organised jointly by tAcT, Vishwa Vidyapeeth, and Seed2Sapling Education, and inaugurated by Padma Shri Kiran Kumar of ISRO, the five-day event drew more than 8,000 participants from over 60 schools, with harates, games, puzzles, cultural programmes, and activity kits.",
         pageUrl: "events/18-12-2023-national-mathematics-day-vishwa-yelahanka-session.html"
       },
       {
@@ -371,9 +378,9 @@ window.TACT_PROGRAMS = {
       },
       {
         date: "24 Dec 2024",
-        place: "Mathematics Day programme",
-        title: "Mathematics outreach continues",
-        text: "Later mathematics events kept the pattern of talks, activities, and public engagement active beyond the large mela format.",
+        place: "Acharya Patshala College",
+        title: "National Mathematics Day 2024",
+        text: "More than 100 participants attended. Krishna Chaitanya held a session on 'Unlocking the Wonders of the Essence of Math', and Prof. Ramesh BK of Jain College spoke on 'Numbers Beyond Counting: The Magic of Number Theory', covering prime numbers and cryptographic applications.",
         pageUrl: "events/24-12-2024-national-mathematics-day-unknown-session.html"
       }
     ],

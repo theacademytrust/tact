@@ -59,7 +59,7 @@ main {
 .gallery-grid-head h1 {
   margin: 0;
   color: var(--green);
-  font-size: 36px;
+  font-size: 30px;
   letter-spacing: -0.04em;
 }
 
@@ -126,7 +126,7 @@ main {
 }
 
 .gallery-card-overlay span {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.88);
 }
@@ -136,7 +136,7 @@ main {
   text-align: center;
   color: var(--muted);
   padding: 18px 10px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .gallery-modal {
@@ -209,7 +209,7 @@ main {
   border-radius: 999px;
   background: rgba(10, 122, 58, 0.08);
   color: #134e32;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
 }
 
@@ -218,6 +218,16 @@ main {
   color: #334155;
   line-height: 1.7;
   white-space: pre-line;
+}
+
+.md-heading {
+  display: block;
+  font-weight: 700;
+  color: var(--green);
+  font-size: 0.97em;
+  letter-spacing: -0.01em;
+  margin-top: 10px;
+  margin-bottom: 2px;
 }
 
 .gallery-modal-close {
@@ -242,7 +252,7 @@ footer[aria-label="Site footer"] {
   padding-bottom: 22px;
   color: var(--muted);
   border-top: 1px solid rgba(184, 134, 11, 0.25);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .wrap {

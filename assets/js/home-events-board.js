@@ -9,6 +9,10 @@ var HOME_EVENTS_PAST_LIMIT_ARCHIVE_FOCUS = 3;
 var HOME_EVENTS_AUTOSCROLL_MS = 5200;
 var HOME_EVENTS_DAY_MS = 24 * 60 * 60 * 1000;
 
+function slugList(feed) {
+  return (Array.isArray(feed) ? feed : []).map(function (e) { return String(e && e.slug || ""); }).join(",");
+}
+
 async function initHomeEventsBoard() {
   teardownHomeEventsBoard();
   clearHomeEventsBoard();
@@ -25,14 +29,19 @@ async function initHomeEventsBoard() {
     galleries = window.getTactGallerySnapshot();
   }
 
-  renderBoard(mergeGalleryFallbacks(initialFeed, galleries));
+  var currentFeed = mergeGalleryFallbacks(initialFeed, galleries);
+  renderBoard(currentFeed);
 
   if (typeof window.loadTactGalleryData === "function") {
     try {
       var freshGalleries = await window.loadTactGalleryData({ forceRefresh: true });
       if (Array.isArray(freshGalleries)) {
         galleries = freshGalleries;
-        renderBoard(mergeGalleryFallbacks(initialFeed, galleries));
+        var withGallery = mergeGalleryFallbacks(initialFeed, galleries);
+        if (slugList(withGallery) !== slugList(currentFeed)) {
+          currentFeed = withGallery;
+          renderBoard(currentFeed);
+        }
       }
     } catch (_galleryError) {
       galleries = galleries || [];
@@ -43,7 +52,10 @@ async function initHomeEventsBoard() {
     try {
       var freshFeed = await window.loadTactEventFeed({ forceRefresh: true });
       if (Array.isArray(freshFeed) && freshFeed.length) {
-        renderBoard(mergeGalleryFallbacks(freshFeed, galleries));
+        var freshMerged = mergeGalleryFallbacks(freshFeed, galleries);
+        if (slugList(freshMerged) !== slugList(currentFeed)) {
+          renderBoard(freshMerged);
+        }
       }
     } catch (_error) {
       // Keep the already-rendered local snapshot.

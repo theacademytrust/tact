@@ -418,7 +418,7 @@ function wrapSvgText(value, maxLength, maxLines) {
   if (current) lines.push(current);
   if (lines.length <= maxLines) return lines;
   var clipped = lines.slice(0, maxLines);
-  clipped[maxLines - 1] = clipped[maxLines - 1].replace(/\s+\S*$/, "") + "...";
+  clipped[maxLines - 1] = clipped[maxLines - 1].replace(/\s+\S*$/, "") + "…";
   return clipped;
 }
 
@@ -672,7 +672,7 @@ function renderArchive(list) {
       escapeHtml(item.title || "Untitled event") +
       "</h3>" +
       "<p>" +
-      escapeHtml(item.teaser || item.homepageMatter || "") +
+      escapeHtml(truncateText(item.teaser || item.homepageMatter || "", 200)) +
       "</p>" +
       "</div>";
 
@@ -742,7 +742,7 @@ function buildUpcomingCard(item, isPriority) {
     escapeHtml(item.title || "Untitled event") +
     "</h3>" +
     "<p>" +
-    escapeHtml(item.teaser || item.homepageMatter || "") +
+    escapeHtml(truncateText(item.teaser || item.homepageMatter || "", 200)) +
     "</p>" +
     "</div>";
   return link;
@@ -755,6 +755,12 @@ function escapeHtml(value) {
     .replace(/>/g, "&gt;")
     .replace(/\"/g, "&quot;")
     .replace(/'/g, "&#39;");
+}
+
+function truncateText(value, limit) {
+  var text = String(value || "").trim();
+  if (text.length <= limit) return text;
+  return text.slice(0, limit).replace(/\s+\S*$/, "") + "…";
 }
 
 window.addEventListener("resize", scheduleUpcomingLayout);

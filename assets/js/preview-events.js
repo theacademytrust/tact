@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   PREVIEW EVENTS — for boss review/demo only
+   PREVIEW EVENTS, for boss review/demo only
    TO DELETE: remove this file + its <script> tag from every page
    ══════════════════════════════════════════════════════════════ */
 (function () {
