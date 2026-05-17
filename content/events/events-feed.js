@@ -366,6 +366,45 @@ window.TACT_EVENT_FEED = [
     "homepageMatter": "tAcT and the Indian Academy of Sciences celebrated National Mathematics Day 2020 with two lectures on 21–22 December. Ken Ono (University of Virginia) spoke on \"Why Does Ramanujan, the Man Who Knew Infinity, Matter?\" and Rajendra Bhatia (Ashoka University) on \"The Marvellous Number Pi\"."
   },
   {
+    "slug": "2021-raman-science-festival",
+    "title": "Raman Science Festival — National Science Day 2021",
+    "date": "2021-02-28",
+    "time": "",
+    "location": "Online",
+    "status": "completed",
+    "folder": "content/events/2021-raman-science-festival",
+    "pageUrl": "events/28-02-2021-raman-science-festival-national-science-day-2021.html",
+    "poster": "",
+    "teaser": "National Science Day 2021 was celebrated by tAcT in collaboration with Science Utsav as the \"Raman Science Festival\", webcast live to over 3,200 registered participants across India.",
+    "homepageMatter": "On 28 February 2021, tAcT and Science Utsav jointly celebrated National Science Day as the \"Raman Science Festival\", reaching over 4,600 live viewers and 13,000+ total online views. The day-long programme featured talks, hands-on demonstrations, a coding workshop, and science games for school students."
+  },
+  {
+    "slug": "2021-dav-delhi-celebration-of-science",
+    "title": "A Celebration of Science, DAV Public School Delhi",
+    "date": "2021-08-27",
+    "time": "4:50 PM",
+    "location": "Online",
+    "status": "completed",
+    "folder": "content/events/2021-dav-delhi-celebration-of-science",
+    "pageUrl": "events/27-08-2021-a-celebration-of-science-dav-public-school-delhi.html",
+    "poster": "content/events/2021-dav-delhi-celebration-of-science/gallery/image-01.jpg",
+    "teaser": "Two-day online science programme jointly presented by DAV Public School and the Indian Academy of Sciences, 27–28 August 2021. Lectures on mathematics, biology, physics, and chemistry for school students.",
+    "homepageMatter": "tAcT and the Indian Academy of Sciences presented a two-day \"Celebration of Science\" with DAV Public School, Delhi, on 27–28 August 2021. Topics spanned prime numbers, 21st-century biology, gravitational waves, the Higgs boson, black holes, and fun chemistry demonstrations."
+  },
+  {
+    "slug": "2021-in-celebration-of-diversity",
+    "title": "In Celebration of Diversity — Lecture Series",
+    "date": "2021-10-01",
+    "time": "4:00 PM",
+    "location": "Online",
+    "status": "completed",
+    "folder": "content/events/2021-in-celebration-of-diversity",
+    "pageUrl": "events/01-10-2021-in-celebration-of-diversity-lecture-series.html",
+    "poster": "",
+    "teaser": "Six-week online lecture series on diversity in India, jointly organised by tAcT and the National Council of Science Museums. Topics included physical, animal, plant, ecological, human, and linguistic diversity.",
+    "homepageMatter": "tAcT and the National Council of Science Museums (NCSM) jointly organised \"In Celebration of Diversity\", a six-week online lecture series from October 1 to November 10, 2021. Speakers from IISc, ISI, NIPGR, Jadavpur University, and other institutions covered the many dimensions of India's natural and human diversity."
+  },
+  {
     "slug": "2022-vijnana-harate-malleswaram-session",
     "title": "vijnana harate malleswaram session",
     "date": "2022-07-08",
