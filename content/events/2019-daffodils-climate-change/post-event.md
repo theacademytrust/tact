@@ -1,0 +1,1 @@
+Prof. S. K. Satheesh, Indian Institute of Science, Bengaluru, gave a talk on Climate Change at the Academy auditorium.

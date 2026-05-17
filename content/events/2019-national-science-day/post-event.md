@@ -1,0 +1,5 @@
+National Science Day (28th February) commemorates the announcement of the discovery of the Raman Effect, named after Sir C V Raman.
+
+A full-day Teachers' Training workshop was conducted in collaboration with the Academy and ScienceUtsav. The first presentation was 'Optical Phenomena in Nature', by H. R. Madhusudan of the Jawaharlal Nehru Planetarium, in which he explained the fascinating physics behind common and uncommon natural phenomena. This was followed by demonstrations on the properties of light and electricity. After that, teachers assembled working models in a workshop on electronics and robotics.
+
+The afternoon session consisted of a discussion on 'Pedagogical Challenges in Teaching Science & Math', moderated by Dr. N. S. Leela of the MES Teachers Training College (Retd.). The day finished with a visit to the Raman museum by all the teachers.
