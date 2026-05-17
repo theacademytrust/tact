@@ -405,6 +405,19 @@ window.TACT_EVENT_FEED = [
     "homepageMatter": "tAcT and the National Council of Science Museums (NCSM) jointly organised \"In Celebration of Diversity\", a six-week online lecture series from October 1 to November 10, 2021. Speakers from IISc, ISI, NIPGR, Jadavpur University, and other institutions covered the many dimensions of India's natural and human diversity."
   },
   {
+    "slug": "2022-science-week-nsd",
+    "title": "Science Week — National Science Day 2022",
+    "date": "2022-02-26",
+    "time": "",
+    "location": "Online",
+    "status": "completed",
+    "folder": "content/events/2022-science-week-nsd",
+    "pageUrl": "events/26-02-2022-science-week-national-science-day-2022.html",
+    "poster": "content/events/2022-science-week-nsd/gallery/image-01.jpg",
+    "teaser": "Science Week 2022 (26 Feb – 6 Mar) jointly organised by tAcT and Seed2Sapling Education, celebrating National Science Day with talks, exploratory sessions, and a question contest for students and teachers.",
+    "homepageMatter": "tAcT and Seed2Sapling Education jointly celebrated National Science Day 2022 with an eight-day Science Week (26 February – 6 March). Eight 90-minute online sessions featured distinguished scientists alongside hands-on exploratory workshops for school students and teachers."
+  },
+  {
     "slug": "2022-vijnana-harate-malleswaram-session",
     "title": "vijnana harate malleswaram session",
     "date": "2022-07-08",

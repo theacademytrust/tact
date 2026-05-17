@@ -1820,5 +1820,23 @@
         "description": "Event poster: A Celebration of Science, DAV Public School and IASc, 27–28 August 2021"
       }
     ]
+  },
+  {
+    "slug": "2022-science-week-nsd",
+    "eventSlug": "2022-science-week-nsd",
+    "pageUrl": "events/2022-science-week-nsd.html",
+    "title": "Science Week — National Science Day 2022",
+    "date": "2022-02-26",
+    "location": "Online",
+    "images": [
+      {
+        "url": "content/events/2022-science-week-nsd/gallery/image-01.jpg",
+        "description": "Science Week NSD 2022 brochure cover"
+      },
+      {
+        "url": "content/events/2022-science-week-nsd/gallery/image-02.jpg",
+        "description": "Science Week 2022 all-events poster"
+      }
+    ]
   }
 ]
