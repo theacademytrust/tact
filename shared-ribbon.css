@@ -500,10 +500,25 @@ html {
   margin: 0 -20px;
   padding: 36px 20px 20px;
   background: #f1f6f3;
-  border-top: 1px solid rgba(10, 122, 58, 0.09);
+  border-top: none;
   text-align: left;
   font-size: 14px;
   color: #4a5568;
+}
+
+#site-footer-root .site-footer-v2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background:
+    linear-gradient(90deg, rgba(184, 134, 11, 0), rgba(184, 134, 11, 0.52) 18%, rgba(10, 122, 58, 0.62) 50%, rgba(184, 134, 11, 0.52) 82%, rgba(184, 134, 11, 0)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  background-size: 100% 2px, 100% 10px;
+  background-repeat: no-repeat;
+  background-position: center top, center top;
 }
 
 .sfv2-grid {
@@ -523,7 +538,7 @@ html {
 .sfv2-brand-link {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
   text-decoration: none;
 }
 
