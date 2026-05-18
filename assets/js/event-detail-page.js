@@ -277,7 +277,7 @@
     document.title = (eventItem.title || "Event") + " - The Academy Trust (tAcT)";
 
     var images = galleryEntry && Array.isArray(galleryEntry.images) ? galleryEntry.images : [];
-    var gallerySection = images.length
+    var gallerySection = images.length > 1
       ? (
         '<section class="surface event-detail-gallery-shell">' +
           '<div class="event-detail-gallery-head">' +
