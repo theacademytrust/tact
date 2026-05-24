@@ -1,5 +1,5 @@
-A science fest organised exclusively for Kannada-medium students, in collaboration with the Academy, Banavasi Balaga and ScienceUtsav. The participants were primary-class students from 7 different Kannada-medium schools in and around the city.
+A science fest organised exclusively for regional-language students, in collaboration with the Academy, Banavasi Balaga and ScienceUtsav. The participants were primary-class students from 7 different regional-language schools in and around the city.
 
 The full-day event featured experiments, demonstrative lectures and interactive sessions on all the core science subjects: Physics, Chemistry, Biology and Information Technology. A visit to the Raman museum generated immense excitement. This was followed by a science quiz contest. Prizes were distributed to the winners, and books and mementos gifted to all the schools.
 
-Jointly organised with Banavasi Balaga, a Bengaluru-based organisation propagating education in mother tongue, and ScienceUtsav, an organisation specialising in hands-on science education. The participants consisted of about 75 students of upper primary classes and science teachers from selected Kannada-medium schools in and around Bengaluru.
+Jointly organised with Banavasi Balaga, a Bengaluru-based organisation propagating education in mother tongue, and ScienceUtsav, an organisation specialising in hands-on science education. The participants consisted of about 75 students of upper primary classes and science teachers from selected regional-language schools in and around Bengaluru.

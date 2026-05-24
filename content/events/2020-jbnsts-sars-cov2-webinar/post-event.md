@@ -1,5 +1,3 @@
-## Evolution and Spread of SARS-CoV-2 Webinar
-
 An interactive webinar on the evolution and spread of SARS-CoV-2 was jointly organised by JBNSTS (Jagadis Bose National Science Talent Search), Kolkata, and The Academy Trust (tAcT) on 7 July 2020.
 
 **Speaker:** Prof. Partha Pratim Majumder, National Science Chair, Govt. of India; Distinguished Scientist, NIBMG

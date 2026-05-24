@@ -1,5 +1,3 @@
-11th February 2025 tAcT, in collaboration with the Academy, its Women-in-Science Panel, the InterAcademy's Women-in-Science initiative (IAP-WiSTEMM), and in association with Karnataka Jnana Vijnana Samiti Bengaluru Chapter, organised a full-day science workshop for girl students in honour of Prof. Rohini Godbole and Dr. Manju Sharma. The participants included students from 3 high schools and a batch from Maharani's Science College for Women, Bengaluru.
-
 The morning session was held in the RRI auditorium, where Shobhana Narasimhan, Chair of the Academy's Women in Science Panel, and her group from JNCASR started off the day with a skit on common gender biases prevalent in society. Each Act was discussed and debated with the audience after it played out and ways to overcome these situations were explored. This was followed by the release of Kannada and Odia language editions of Academy publication "Lilavati's Daughters" by Pushpa Murthy, Shobhana Narasimhan, Ram Ramaswamy and Kamala YC.
 
 Pushpa Murthy of Michigan Tech spoke to the audience about her journey and all the hurdles a woman scientist faces while navigating the world of academia and a career in science.

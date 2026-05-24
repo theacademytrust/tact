@@ -1,5 +1,3 @@
-## In Celebration of Diversity, Lecture Series
-
 "In Celebration of Diversity" was a six-week online lecture series jointly organised by The Academy Trust (tAcT) and the National Council of Science Museums (NCSM), from 1 October to 10 November 2021. All sessions were held on Fridays at 4:00 PM.
 
 **Programme:**

@@ -1,5 +1,3 @@
-## Meandering into Astrophysics and Around Giant Black Holes
-
 Part of the VITM–tAcT Lecture Series "Indian Women in Science", jointly presented by Visvesvaraya Industrial and Technological Museum (VITM) and The Academy Trust (tAcT).
 
 **Lecture 3, 13 October 2025**

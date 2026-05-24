@@ -431,9 +431,29 @@ function renderUpcomingCarousel(trackId, dotsId, items, emptyMessage, compactEmp
   };
 }
 
+function buildPastMetaSpan(item) {
+  var parts = [];
+  var loc = cleanMeta(item.location);
+  parts.push(escapeHtml(formatDate(item.date)));
+  if (loc) parts.push(escapeHtml(loc));
+  var inner = parts.map(function (p) { return "<span>" + p + "</span>"; }).join("");
+  return inner ? '<span class="home-events-meta">' + inner + "</span>" : "";
+}
+
+function buildUpcomingMetaP(item) {
+  var t = cleanMeta(item.time);
+  var loc = cleanMeta(item.location);
+  var parts = [];
+  if (t) parts.push(escapeHtml(t));
+  if (loc) parts.push(escapeHtml(loc));
+  if (!parts.length) return "";
+  var inner = parts.map(function (p) { return "<span>" + p + "</span>"; }).join("");
+  return '<p class="home-events-meta">' + inner + "</p>";
+}
+
 function buildCard(item, isPast, expandedPastCard) {
   var card = document.createElement("a");
-  var title = displayTitle(item.title);
+  var title = displayTitle(item.title) || programLabel(item);
   var thumbnail = eventThumbnailUrl(item);
   var fallback = generatedEventThumbnailUrl(item);
   card.className =
@@ -455,10 +475,7 @@ function buildCard(item, isPast, expandedPastCard) {
     "</span>" +
     '<span class="home-events-body">' +
     buildBadges(item, isPast) +
-    '<span class="home-events-meta">' +
-    '<span>' + escapeHtml(formatDate(item.date)) + "</span>" +
-    '<span>' + escapeHtml(cleanMeta(item.location, "Location TBA")) + "</span>" +
-    "</span>" +
+    buildPastMetaSpan(item) +
     "<h3>" +
     escapeHtml(title) +
     "</h3>" +
@@ -471,7 +488,7 @@ function buildCard(item, isPast, expandedPastCard) {
 
 function buildUpcomingCard(item) {
   var card = document.createElement("a");
-  var title = displayTitle(item.title);
+  var title = displayTitle(item.title) || programLabel(item);
   var src = eventThumbnailUrl(item);
   var fallback = generatedEventThumbnailUrl(item);
   card.className = "home-upcoming-card";
@@ -510,10 +527,8 @@ function buildUpcomingCard(item) {
     buildDateTile(item.date) +
     '<div class="home-event-card-meta">' +
     buildBadges(item, false) +
-    '<p class="home-events-meta">' +
-    '<span>' + escapeHtml(cleanMeta(item.time, "Time TBA")) + '</span>' +
-    '<span>' + escapeHtml(cleanMeta(item.location, "Location TBA")) + '</span>' +
-    '</p></div></div>' +
+    buildUpcomingMetaP(item) +
+    '</div></div>' +
     '<h3>' + escapeHtml(title) + '</h3>' +
     '<p>' + escapeHtml(eventSummary(item)) + '</p>' +
     '<span class="home-event-link-text">View details →</span>';
@@ -570,7 +585,7 @@ function generatedEventThumbnailUrl(item) {
   var date = formatDate(item && item.date);
   var palette = thumbnailPalette(label);
   var titleLines = wrapSvgText(title, 29, 3);
-  var subtitle = [date, cleanMeta(item && item.location, "")].filter(Boolean).join(" | ");
+  var subtitle = [date, cleanMeta(item && item.location)].filter(Boolean).join(" | ");
   var subtitleLines = wrapSvgText(subtitle, 36, 2);
   var titleMarkup = titleLines.map(function (line, index) {
     return '<text x="36" y="' + (126 + index * 34) + '" font-size="28" font-weight="800" fill="#f8faf8">' + escapeSvg(line) + "</text>";
@@ -654,15 +669,30 @@ function eventSummary(item) {
   return text || "Details will be added soon.";
 }
 
-function cleanMeta(value, fallback) {
-  var text = String(value || "").replace(/\s+/g, " ").trim();
-  if (!text || /^(tbd|unknown|na|n\/a)$/i.test(text)) return fallback;
-  return text;
+function cleanMeta(value) {
+  if (value === null || value === undefined) return "";
+  var s = String(value).trim();
+  if (!s) return "";
+  var lower = s.toLowerCase();
+  if (lower === "tba" || lower === "tbd" || lower === "unknown" || lower === "n/a" || lower === "na") return "";
+  return s;
 }
 
 function displayTitle(value) {
   var text = String(value || "").replace(/\s+/g, " ").trim();
-  if (!text) return "Event";
+  if (!text) return "";
+
+  // Strip junk tokens from auto-generated titles
+  text = text.replace(/\bunknown\s+session\b/gi, "");
+  text = text.replace(/\bunknown\b/gi, "");
+  // Strip embedded date-like tails (e.g. "24 Sept 2022", "11 Feb 2024")
+  text = text.replace(/\b\d{1,2}\s+(?:jan|feb|mar|apr|may|jun|jul|aug|sept?|oct|nov|dec)[a-z]*\.?\s+\d{4}\b/gi, "");
+  // Strip time tokens (e.g. "11 AM", "10:00 AM")
+  text = text.replace(/\b\d{1,2}(?::\d{2})?\s*(?:am|pm)\b/gi, "");
+  // Collapse leftover whitespace and trailing punctuation
+  text = text.replace(/\s+/g, " ").replace(/[\s,;:\-–—]+$/g, "").trim();
+
+  if (!text) return "";
 
   var lower = text.toLowerCase();
   var smallWords = {
@@ -679,14 +709,33 @@ function displayTitle(value) {
     with: true
   };
   var acronyms = {
+    aps: "APS",
     bel: "BEL",
+    bits: "BITS",
+    dav: "DAV",
+    dst: "DST",
+    iasc: "IASc",
     ias: "IAS",
+    iisc: "IISc",
+    iiser: "IISER",
+    iiet: "IIET",
+    iit: "IIT",
+    igntu: "IGNTU",
+    isro: "ISRO",
+    jncasr: "JNCASR",
+    mcb: "MCB",
+    mcc: "MCC",
     mes: "MES",
+    ncert: "NCERT",
+    niser: "NISER",
+    nit: "NIT",
     om: "OM",
+    rri: "RRI",
     soafal: "SOAFAL",
     srm: "SRM",
     stem: "STEM",
-    tact: "tAcT"
+    tact: "tAcT",
+    vitm: "VITM"
   };
 
   return lower.split(" ").map(function (word, index) {

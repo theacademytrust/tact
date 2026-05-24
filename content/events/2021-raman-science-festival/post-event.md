@@ -1,5 +1,3 @@
-## Raman Science Festival, National Science Day 2021
-
 On 28 February 2021, The Academy Trust (tAcT) and Science Utsav jointly celebrated National Science Day with the Raman Science Festival, webcast live from IASc Bengaluru.
 
 **Highlights:**

@@ -30,15 +30,43 @@ window.TACT_LOGO_BELT = [
     "src": "logobelt/logo SoA.png"
   },
   {
-    "name": "St Joseph's University logo",
-    "src": "logobelt/St Joseph's University logo.png"
-  },
-  {
     "name": "TRAERF",
     "src": "logobelt/logo TRAERF.jpg"
   },
   {
     "name": "WISlogo",
     "src": "logobelt/WISlogo.jpg"
+  },
+  {
+    "name": "Springer Nature",
+    "src": "logobelt/springer-nature.svg"
+  },
+  {
+    "name": "TCS",
+    "src": "logobelt/tcs.svg"
+  },
+  {
+    "name": "IISc–Axis Bank Centre for Mathematics and Computing",
+    "src": "logobelt/iisc-axis-bank-maths.png"
+  },
+  {
+    "name": "Zydus Lifesciences",
+    "src": "logobelt/zydus.png"
+  },
+  {
+    "name": "IISc",
+    "src": "logobelt/iisc.png"
+  },
+  {
+    "name": "JNCASR",
+    "src": "logobelt/jncasr.png"
+  },
+  {
+    "name": "IISER Tirupati",
+    "src": "logobelt/iiser-tirupati.png"
+  },
+  {
+    "name": "ScienceUtsav",
+    "src": "logobelt/scienceutsav.webp"
   }
 ];

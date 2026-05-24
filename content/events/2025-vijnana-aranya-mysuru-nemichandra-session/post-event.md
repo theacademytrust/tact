@@ -1,5 +1,3 @@
-## Vijnana Aranya, Mysuru, Talks by Nemichandra
-
 A two-day Vijnana Aranya was conducted across multiple venues in Mysuru on 7–8 November 2025. The main presenter was Ms. Nemichandra, Writer, Biographer, Speaker, and Former General Manager, HAL.
 
 **7 November 2025, Friday**

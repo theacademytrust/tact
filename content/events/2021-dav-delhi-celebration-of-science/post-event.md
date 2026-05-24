@@ -1,5 +1,3 @@
-## A Celebration of Science, DAV Public School Delhi
-
 A two-day online Celebration of Science was jointly organised by DAV Public School, The Academy Trust (tAcT), and the Indian Academy of Sciences on 27–28 August 2021.
 
 **27 August 2021**

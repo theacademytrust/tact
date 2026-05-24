@@ -1,5 +1,3 @@
-## 3-Day Science Webinar, Kirori Mal College Delhi
-
 A 3-day science webinar was jointly organised by Kirori Mal College, Delhi, The Academy Trust (tAcT), and the Indian Academy of Sciences, from 9 to 11 November 2020.
 
 **Programme:**

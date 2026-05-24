@@ -1,5 +1,3 @@
-## Vijnana Aranya, Mysuru, Archaeological Sciences Lectures
-
 A two-day Vijnana Aranya was conducted across multiple venues in Mysuru on 22–23 March 2026.
 
 **Speaker:** Dr. CV Sharada, Assistant Professor, Archaeological Sciences Centre, IIT-Gandhinagar

@@ -1,1 +1,1 @@
-Prof. Bharat Ratra, Distinguished Professor of Physics at Kansas State University, conducted a talk on astrophysics at Poorna Prajna School, Bengaluru. He spoke to about 350 high school students and teachers on 'The Accelerating Expanding Universe', using audio-visual presentations and simple models such as beaded rubber bands and elastic sheets. A Q&A session followed, after which the speaker distributed Science Facts cards to all participants.
+

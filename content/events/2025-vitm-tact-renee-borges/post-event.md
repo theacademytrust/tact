@@ -1,5 +1,3 @@
-## Life in Natural Microcosms: Challenges and Opportunities
-
 Part of the VITM–tAcT Lecture Series "Indian Women in Science", jointly presented by Visvesvaraya Industrial and Technological Museum (VITM) and The Academy Trust (tAcT).
 
 **Lecture 1, 8 August 2025**

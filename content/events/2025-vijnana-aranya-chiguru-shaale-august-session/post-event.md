@@ -1,5 +1,3 @@
-## Vijnana Aranya, Chiguru Srujana Shaale, Hosabidarahalli
-
 A Vijnana Aranya was conducted at Chiguru Srujana Shaale, Hosabidarahalli, H.D. Kote taluk, on 13 August 2025.
 
 **Session 1 (11 AM – 12:30 PM):**

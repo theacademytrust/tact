@@ -1,5 +1,3 @@
-## Science Week, National Science Day 2022
-
 The Academy Trust (tAcT), Indian Academy of Sciences, in collaboration with Seed2Sapling Education, organised "Science Week" from 26 February to 6 March 2022, to celebrate National Science Day.
 
 The week-long programme consisted of eight 90-minute online sessions open to all, with specific sessions for students and for schoolteachers.

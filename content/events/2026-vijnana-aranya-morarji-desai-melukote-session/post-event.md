@@ -1,5 +1,3 @@
-## Vijnana Aranya, Morarji Desai Residential School, Melukote
-
 A Vijnana Aranya was conducted at Morarji Desai Residential School, Melukote, on 14 February 2026, for students and teachers.
 
 **Programme:**

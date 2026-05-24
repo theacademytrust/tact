@@ -63,6 +63,7 @@
       slug: slug || [date, title].join("--").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""),
       eventSlug: eventSlug || slug || [date, title].join("--").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""),
       pageUrl: pageUrl,
+      program: String(row.program || "").trim(),
       title: title,
       date: date,
       location: location,

@@ -1,5 +1,3 @@
-## Infinity and Beyond: National Mathematics Day Lectures 2020
-
 National Mathematics Day 2020 was celebrated by The Academy Trust (tAcT) and the Indian Academy of Sciences with two online lectures.
 
 **21 December 2020, 6:30 PM**

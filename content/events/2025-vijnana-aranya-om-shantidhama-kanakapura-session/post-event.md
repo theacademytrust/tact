@@ -1,5 +1,3 @@
-## Vijnana Aranya, Om Shantidhama Veda Gurukula, Kanakapura
-
 A Vijnana Aranya was conducted at Om Shantidhama Veda Gurukula, Kanakapura, on 19 October 2025, for students and teachers of the school.
 
 **Programme:**

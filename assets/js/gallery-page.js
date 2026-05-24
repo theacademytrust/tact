@@ -19,6 +19,7 @@
           id: entry.slug + "-" + index,
           slug: entry.slug,
           eventSlug: entry.eventSlug || entry.slug,
+          program: entry.program || "",
           title: entry.title,
           date: entry.date,
           location: entry.location,
@@ -389,6 +390,45 @@
     window.addEventListener("resize", scheduleLayout);
   }
 
+  var PROGRAM_NAMES = {
+    harate: "Vijnana Harate",
+    aranya: "Vijnana Aranya",
+    yuvati: "Vijnana Yuvati",
+    nataka: "Vijnana Nataka",
+    mela:   "Ganitha Mela"
+  };
+
+  function readProgramFilter() {
+    var hash = window.location.hash || "";
+    var m = hash.match(/(?:^#|&)program=([a-z]+)/);
+    return m ? m[1] : "";
+  }
+
+  function renderFilterBanner(filterTag) {
+    var shell = document.querySelector(".gallery-grid-shell");
+    var existing = document.getElementById("gallery-filter-banner");
+    if (existing) existing.remove();
+
+    if (!filterTag || !shell) return;
+
+    var programName = PROGRAM_NAMES[filterTag] || filterTag;
+    var banner = document.createElement("div");
+    banner.id = "gallery-filter-banner";
+    banner.className = "gallery-filter-banner";
+    banner.innerHTML =
+      '<span class="gallery-filter-label">Filtered: <strong>' +
+      escapeHtml(programName) +
+      "</strong></span>" +
+      '<a href="gallery.html" class="gallery-filter-clear">Show all</a>';
+
+    var head = shell.querySelector(".gallery-grid-head");
+    if (head && head.nextSibling) {
+      shell.insertBefore(banner, head.nextSibling);
+    } else {
+      shell.insertBefore(banner, shell.firstChild);
+    }
+  }
+
   async function initGalleryPage() {
     if (state.initInFlight) return state.initInFlight;
 
@@ -410,8 +450,19 @@
       resetGrid();
       closeModal();
 
+      var filterTag = readProgramFilter();
+      renderFilterBanner(filterTag);
+
       var entries = await window.loadTactGalleryData();
-      state.items = flattenEntries(entries);
+      var allItems = flattenEntries(entries);
+
+      if (filterTag) {
+        allItems = allItems.filter(function (item) {
+          return item.program === filterTag;
+        });
+      }
+
+      state.items = allItems;
       state.itemsById = {};
       state.items.forEach(function (item) {
         state.itemsById[item.id] = item;
@@ -429,6 +480,9 @@
   function bootGalleryPage() {
     if (document.body && document.body.dataset.page === "gallery") {
       initGalleryPage();
+      window.addEventListener("hashchange", function () {
+        window.location.reload();
+      });
     }
   }
 

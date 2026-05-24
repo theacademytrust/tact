@@ -1,5 +1,3 @@
-## IGNTU–tAcT Science Webinar
-
 A science webinar was jointly organised by Indira Gandhi National Tribal University (IGNTU), Amarkantak, Madhya Pradesh, and The Academy Trust (tAcT), Indian Academy of Sciences, Bengaluru, on 28 September 2020.
 
 **Speakers:**

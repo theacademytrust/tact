@@ -5,15 +5,10 @@ window.TACT_PROGRAMS = {
     badges: ["Informal interaction", "Scientists with students", "Regional languages"],
     heroText:
       "A Harate is an informal science-themed interaction between scientists/educators and the audience in a non-academic setting.",
-    stats: [
-      { value: "20+", label: "school and campus visits since 2022" },
-      { value: "Kannada & English", label: "sessions run in regional and national languages" },
-      { value: "Schools + labs", label: "classroom talks, demos, and campus visits" }
-    ],
     aboutTitle: "What this programme is for",
     about: [
       "Vijnana Harate is an informal interaction between students and scientists or educators. A session begins with a topic, opened through conversation, and made concrete through demonstrations, stories, and questions.",
-      "Harate works especially well where students may not often meet practicing scientists. It has been run in Kannada-medium settings, school campuses, Academy spaces, regional institutions, and partner labs."
+      "Harate works especially well where students may not often meet practicing scientists. It has been run in regional-language settings, school campuses, Academy spaces, regional institutions, and partner labs."
     ],
     profile: [
       { label: "Audience", value: "School and college students, teachers, and sometimes parents or the wider public." },
@@ -40,13 +35,13 @@ window.TACT_PROGRAMS = {
         text: "Teachers are treated as partners so the session can continue as an activity, reading, or discussion after the visit."
       }
     ],
-    momentsTitle: "Documented moments",
+    momentsTitle: "Harate in practice",
     moments: [
       {
         date: "24 Sep 2022",
         place: "Bengaluru",
-        title: "First Kannada Vijnana Harate",
-        text: "Run with Munnota Trust, the session brought Kannada-medium students and members of the public into a regional-language science conversation.",
+        title: "First regional-language Vijnana Harate",
+        text: "Run with Munnota Trust, the session brought regional-language students and members of the public into a regional-language science conversation.",
         pageUrl: "events/24-09-2022-vijnana-harate-unknown-session.html"
       },
       {
@@ -64,12 +59,9 @@ window.TACT_PROGRAMS = {
         pageUrl: "events/07-02-2025-vijnana-harate-kallankuppe-high-school-kanakapura-session.html"
       }
     ],
-    galleryTitle: "Harate in practice",
+    galleryTitle: "Gallery",
     gallery: [
-      { type: "image", src: "flauntimages/Vijnana Harate/2.jpg", alt: "Students trying simple experiments", caption: "Small demonstrations keep the conversation grounded." },
-      { type: "image", src: "flauntimages/Vijnana Harate/4.jpg", alt: "A classroom interaction during Vijnana Harate", caption: "Questions are treated as the centre of the visit." },
-      { type: "image", src: "flauntimages/Vijnana Harate/6.jpg", alt: "Teachers and students working together", caption: "Teachers stay close to the activity so it can continue." },
-      { type: "image", src: "flauntimages/Vijnana Harate/8.jpg", alt: "Hands-on science outreach moment", caption: "Everyday materials often carry the strongest explanation." }
+      { type: "gallery_link", programTag: "harate", linkText: "View Gallery" }
     ],
     impact:
       "The lasting value of a Harate is not a single polished talk. After a well-run session, teachers have specific activities they can reuse, and students who came in hesitant have asked questions they would not have raised otherwise.",
@@ -85,11 +77,6 @@ window.TACT_PROGRAMS = {
     badges: ["Remote outreach", "Ecology + livelihood", "Place-based science"],
     heroText:
       "Vijnana Aranya takes science to rural, tribal, and remote settings, where ecology, livelihoods, observation, and school science can meet in the same day.",
-    stats: [
-      { value: "8", label: "field visits documented in 2023–25" },
-      { value: "3", label: "programmes recorded in 2024-25" },
-      { value: "Field + classroom", label: "demos, walks, village forums, and projects" }
-    ],
     aboutTitle: "What this programme is for",
     about: [
       "Vijnana Aranya takes science to rural, tribal, and remote areas. The point is not to move a city lecture into a village. The programme is built around the place itself: its forest edge, school ground, soil, insects, farming practice, water, and the questions that come from living there.",
@@ -120,7 +107,7 @@ window.TACT_PROGRAMS = {
         text: "Projects, field notes, botanical art, and group work help the session stay visible after the visiting team leaves."
       }
     ],
-    momentsTitle: "Documented moments",
+    momentsTitle: "Aranya in practice",
     moments: [
       {
         date: "13-27 Apr 2023",
@@ -144,11 +131,9 @@ window.TACT_PROGRAMS = {
         pageUrl: "events/01-03-2025-vijnana-aranya-mysuru-session.html"
       }
     ],
-    galleryTitle: "Aranya in the field",
+    galleryTitle: "Gallery",
     gallery: [
-      { type: "image", src: "flauntimages/Vijnana Aranya/1.jpg", alt: "Rural outreach gathering", caption: "The site becomes part of the teaching material." },
-      { type: "image", src: "flauntimages/Vijnana Aranya/2.jpg", alt: "Students in an outdoor science session", caption: "Observation and discussion stay close together." },
-      { type: "image", src: "flauntimages/Vijnana Aranya/3.jpg", alt: "Science activity during Vijnana Aranya", caption: "Activities are chosen for local relevance and repeatability." }
+      { type: "gallery_link", programTag: "aranya", linkText: "View Gallery" }
     ],
     impact:
       "Aranya is strongest when the school and community can see science as a way to read their own surroundings. It gives teachers practical entry points and gives students a reason to look more carefully at where they live.",
@@ -164,11 +149,6 @@ window.TACT_PROGRAMS = {
     badges: ["Young women in science", "Skills + confidence", "Mentoring"],
     heroText:
       "Vijnana Yuvati is skill-oriented outreach for young women: practical exposure, candid mentoring, and visible routes into science, technology, and livelihood.",
-    stats: [
-      { value: "2", label: "workshops documented since 2022" },
-      { value: "Women + girls", label: "school and college participants" },
-      { value: "Skills", label: "workshops, exposure, applications, and mentoring" }
-    ],
     aboutTitle: "What this programme is for",
     about: [
       "Vijnana Yuvati was set up to help young women build specific scientific and technical knowledge connected to career and livelihood. Encouragement is paired with something practical: a skill, a next step, a path that can be followed.",
@@ -199,7 +179,7 @@ window.TACT_PROGRAMS = {
         text: "Sessions close with a specific outcome, a completed project, a new skill, a certificate, or knowledge of a particular scheme or opportunity."
       }
     ],
-    momentsTitle: "Documented moments",
+    momentsTitle: "Yuvati in practice",
     moments: [
       {
         date: "26 Aug 2023",
@@ -216,12 +196,9 @@ window.TACT_PROGRAMS = {
         pageUrl: "events/11-02-2025-women-and-girls-in-science-bengaluru.html"
       }
     ],
-    galleryTitle: "Yuvati in session",
+    galleryTitle: "Gallery",
     gallery: [
-      { type: "image", src: "flauntimages/Vijnana Yuvati/1.jpg", alt: "Students at a Vijnana Yuvati session", caption: "Role models matter most when conversation is possible." },
-      { type: "image", src: "flauntimages/Vijnana Yuvati/2.jpg", alt: "Workshop in progress", caption: "Skill and confidence are built together." },
-      { type: "image", src: "flauntimages/Vijnana Yuvati/3.jpg", alt: "Small group mentoring discussion", caption: "Small groups make the questions more honest." },
-      { type: "image", src: "content/events/2023-vijnana-yuvati-holy-cross-college-nagercoil-nagercoil-session/gallery/image-01.jpg", alt: "Vijnana Yuvati workshop participants", caption: "Documented workshop material from the event archive." }
+      { type: "gallery_link", programTag: "yuvati", linkText: "View Gallery" }
     ],
     impact:
       "Yuvati should leave students with confidence that is practical, not vague. The programme is strongest when a participant knows the next form, next experiment, next mentor, or next local project to pursue.",
@@ -237,11 +214,6 @@ window.TACT_PROGRAMS = {
     badges: ["Science theatre", "Music + performance", "Public audiences"],
     heroText:
       "Vijnana Nataka carries science through theatre and music, using story, character, rhythm, and public performance to make scientific temper memorable.",
-    stats: [
-      { value: "4", label: "documented theatre events since 2022" },
-      { value: "4 days", label: "Mysuru Science Theatre Festival 2024" },
-      { value: "Public stage", label: "students, families, and general audiences" }
-    ],
     aboutTitle: "What this programme is for",
     about: [
       "Vijnana Nataka uses theatre and music as a serious method for putting science and scientific temper into public circulation. Performance is not decoration here; it is the main channel.",
@@ -272,7 +244,7 @@ window.TACT_PROGRAMS = {
         text: "Kannada theatre, music, folk forms, and festival settings help science reach audiences beyond a classroom."
       }
     ],
-    momentsTitle: "Documented moments",
+    momentsTitle: "Nataka in practice",
     moments: [
       {
         date: "9 Dec 2022",
@@ -303,13 +275,9 @@ window.TACT_PROGRAMS = {
         pageUrl: "events/20-07-2024-vijnana-nataka-mysuru-session.html"
       }
     ],
-    galleryTitle: "Science on stage",
+    galleryTitle: "Gallery",
     gallery: [
-      { type: "image", src: "flauntimages/Vijnana Nataka/1.jpg", alt: "Science theatre performance", caption: "Performance gives scientific ideas a public body." },
-      { type: "image", src: "flauntimages/Vijnana Nataka/2.jpg", alt: "Street play on science awareness", caption: "Theatre can hold attention where lectures cannot." },
-      { type: "image", src: "flauntimages/Vijnana Nataka/3.jpg", alt: "Interactive drama workshop", caption: "Workshops connect voice, movement, and accuracy." },
-      { type: "image", src: "flauntimages/Vijnana Nataka/4.jpg", alt: "Community science theatre", caption: "Local language and cultural memory carry the message." },
-      { type: "image", src: "flauntimages/Vijnana Nataka/5.jpg", alt: "Audience engagement moment", caption: "The discussion after the play is part of the programme." }
+      { type: "gallery_link", programTag: "nataka", linkText: "View Gallery" }
     ],
     impact:
       "Nataka reaches people who may not choose a lecture but will sit for a story. The aim is not simplification alone; it is public recall, shared language, and a more durable scientific temper.",
@@ -325,11 +293,6 @@ window.TACT_PROGRAMS = {
     badges: ["Games + puzzles", "Mathematics festival", "Culture + activity"],
     heroText:
       "Ganitha Mela makes mathematics public, physical, and festive through games, puzzles, activity stalls, talks, performances, and reusable classroom material.",
-    stats: [
-      { value: "8,000+", label: "participants at Ganitha Mela 2023" },
-      { value: "60+", label: "schools represented in 2023" },
-      { value: "5 days", label: "Vishwa Vidyapeeth, Yelahanka" }
-    ],
     aboutTitle: "What this programme is for",
     about: [
       "Ganitha Mela explores mathematics through activities, games, and cultural programmes. tAcT's National Mathematics Day events began in 2022 at Acharya Patshala College and grew to the five-day Ganitha Mela 2023 at Vishwa Vidyapeeth, Yelahanka, the first event of its kind, which brought together students, teachers, mathematicians, communicators, games, performances, and activity kits.",
@@ -360,7 +323,7 @@ window.TACT_PROGRAMS = {
         text: "Kits and reusable ideas help teachers keep the mathematics alive after the mela day."
       }
     ],
-    momentsTitle: "Documented moments",
+    momentsTitle: "Ganitha Mela in practice",
     moments: [
       {
         date: "18-22 Dec 2023",
@@ -384,16 +347,9 @@ window.TACT_PROGRAMS = {
         pageUrl: "events/24-12-2024-national-mathematics-day-unknown-session.html"
       }
     ],
-    galleryTitle: "A mathematics fair in motion",
+    galleryTitle: "Gallery",
     gallery: [
-      { type: "image", src: "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-01.jpg", alt: "Ganitha Mela gathering", caption: "Large gatherings can still be activity-led." },
-      { type: "image", src: "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-02.jpg", alt: "Mathematics activity stall", caption: "Stalls let students move, test, and compare ideas." },
-      { type: "image", src: "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-06.jpg", alt: "Ganitha Mela participants", caption: "Games and puzzles carry serious mathematical structure." },
-      {
-        type: "card",
-        title: "What belongs in the mela",
-        text: "Number games, geometry, Fibonacci patterns, Pythagoras, Tower of Hanoi, Aaliguli Mane, Snakes and Ladders, math-magic, music, dance, and talks."
-      }
+      { type: "gallery_link", programTag: "mela", linkText: "View Gallery" }
     ],
     impact:
       "Ganitha Mela changes the emotional entry point to mathematics. Students can begin with play, teachers get repeatable material, and families see mathematics as something to do together.",

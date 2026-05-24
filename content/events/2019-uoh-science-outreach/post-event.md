@@ -1,3 +1,1 @@
-A science outreach programme was held on 8 November 2019 in collaboration with the School of Life Sciences, University of Hyderabad. Students of Class VIII–XII participated in a Science Quiz and a Science Elocution Competition.
-
 The afternoon featured two lectures: Prof. Sanjay Subodh (UoH) spoke on 'Science in Medieval Buildings', and Dr. Shivaji (LVPEI) spoke on 'Footsteps across Antarctica to Arctic in Search of Life Forms'. The programme concluded with prize distribution and closing remarks.

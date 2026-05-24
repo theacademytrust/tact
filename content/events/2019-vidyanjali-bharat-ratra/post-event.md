@@ -1,1 +1,1 @@
-Prof. Bharat Ratra, Distinguished Professor of Physics at Kansas State University, conducted a talk on Astrophysics at Vidyanjali Academy for Learning, Bengaluru.
+

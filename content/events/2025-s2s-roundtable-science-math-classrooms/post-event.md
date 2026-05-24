@@ -1,5 +1,3 @@
-## Small Actions, Big Shifts: Reimagining Science & Math Classrooms
-
 An invite-only roundtable jointly hosted by Seed2Sapling Education and The Academy Trust (tAcT), Indian Academy of Sciences, on 29 May 2025 at IASc, Bengaluru.
 
 The gathering brought together educators and school leaders from diverse institutions including The Heritage School (Delhi), Kaveri Group of Schools (Pune), and grassroots partners working with government schools in Karnataka.
