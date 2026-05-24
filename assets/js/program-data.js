@@ -4,7 +4,7 @@ window.TACT_PROGRAMS = {
     heroImage: "flauntimages/Vijnana Harate/1.jpg",
     badges: ["Informal interaction", "Scientists with students", "Regional languages"],
     heroText:
-      "A Harate is a carefully held conversation: scientists, educators, teachers, and students work through science together, with questions, demonstrations, and the comfort of a local language.",
+      "A Harate is an informal science-themed interaction between scientists/educators and the audience in a non-academic setting.",
     stats: [
       { value: "20+", label: "school and campus visits since 2022" },
       { value: "Kannada & English", label: "sessions run in regional and national languages" },
