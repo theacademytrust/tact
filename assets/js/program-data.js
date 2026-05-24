@@ -4,7 +4,7 @@ window.TACT_PROGRAMS = {
     heroImage: "flauntimages/Vijnana Harate/1.jpg",
     badges: ["Informal interaction", "Scientists with students", "Regional languages"],
     heroText:
-      "A Harate is an informal science-themed interaction between scientists/educators and the audience in a non-academic setting.",
+      "Vijnana Harate is an informal science-themed interaction between scientists/educators and the audience in a non-academic setting.",
     aboutTitle: "What this programme is for",
     about: [
       "Vijnana Harate is an informal interaction between students and scientists or educators. A session begins with a topic, opened through conversation, and made concrete through demonstrations, stories, and questions.",
