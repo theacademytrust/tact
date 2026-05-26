@@ -293,7 +293,14 @@ function applyBoardMode(upcoming, previous) {
   var layout = document.querySelector(".home-events-layout");
   var upcomingPane = document.getElementById("home-upcoming-pane");
   var upcomingWindow = document.querySelector("#home-upcoming-pane .home-vertical-window");
-  var archiveFocus = !upcoming.length && previous.length > 0;
+  var hasUpcoming = upcoming.length > 0;
+  var archiveFocus = !hasUpcoming && previous.length > 0;
+
+  // Hide the entire Upcoming Events card when there are no upcoming events.
+  var upcomingSection = upcomingPane ? upcomingPane.closest("section") : null;
+  if (upcomingSection) {
+    upcomingSection.hidden = !hasUpcoming;
+  }
 
   if (document.body) {
     document.body.classList.toggle("tact-home-events-archive-focus", archiveFocus);

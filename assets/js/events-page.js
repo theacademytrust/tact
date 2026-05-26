@@ -136,9 +136,12 @@ function renderEventSections(events) {
 function applyEventsPageLayout(upcoming, archive) {
   var upcomingSection = document.getElementById("upcoming");
   var pastSection = document.getElementById("past");
-  var archiveFocus = (!upcoming || !upcoming.length) && archive && archive.length;
+  var hasUpcoming = upcoming && upcoming.length > 0;
+  var archiveFocus = !hasUpcoming && archive && archive.length;
 
   if (upcomingSection) {
+    // Hide the entire Upcoming Events section when there are no upcoming events.
+    upcomingSection.hidden = !hasUpcoming;
     upcomingSection.classList.toggle("surface--compressed", !!archiveFocus);
   }
   if (pastSection) {

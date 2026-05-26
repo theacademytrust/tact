@@ -1803,47 +1803,5 @@ window.TACT_EVENT_FEED = [
     "poster": "content/events/2026-vijnana-aranya-mysuru-sharada-session/gallery/image-01.jpg",
     "teaser": "Two-day Vijnana Aranya across multiple Mysuru venues with Dr. CV Sharada (IIT-Gandhinagar): lectures on archaeological science, zoological archaeology, and water in environmental archaeology.",
     "homepageMatter": "On 22–23 March 2026, Dr. CV Sharada of IIT-Gandhinagar delivered three lectures at different Mysuru venues as part of a Vijnana Aranya: \"New Horizons on Old Worlds\" at IIET, \"Zoological Archaeology\" at Manasagangotri, and \"Water in Environmental Archaeology\" at JSS Academy."
-  },
-  {
-    "slug": "2026-vijnana-harate-bengaluru-preview",
-    "program": "harate",
-    "title": "Vijnana Harate, Bengaluru School Session",
-    "date": "2026-06-10",
-    "time": "10:00 AM – 1:00 PM",
-    "location": "Bengaluru, Karnataka",
-    "status": "scheduled",
-    "folder": "content/events/2026-vijnana-harate-bengaluru-preview",
-    "pageUrl": "events/10-06-2026-vijnana-harate-bengaluru-school-session.html",
-    "poster": "content/events/2026-vijnana-harate-bengaluru-preview/poster.svg",
-    "teaser": "Scientists meet school students for informal conversations about research, careers, and everyday science in this upcoming Bengaluru session.",
-    "homepageMatter": "An upcoming Vijnana Harate session bringing scientists and school students together for relaxed, informal conversations about science, research, and what it means to be curious about the world."
-  },
-  {
-    "slug": "2026-vijnana-aranya-hassan-preview",
-    "program": "aranya",
-    "title": "Vijnana Aranya, Rural Outreach Visit",
-    "date": "2026-07-05",
-    "time": "9:30 AM – 3:00 PM",
-    "location": "Hassan District, Karnataka",
-    "status": "scheduled",
-    "folder": "content/events/2026-vijnana-aranya-hassan-preview",
-    "pageUrl": "events/05-07-2026-vijnana-aranya-rural-outreach-visit.html",
-    "poster": "content/events/2026-vijnana-aranya-hassan-preview/poster.svg",
-    "teaser": "Outreach visit to a rural government school in Hassan District, connecting local students with scientists for hands-on demonstrations and science Q&A.",
-    "homepageMatter": "An upcoming Vijnana Aranya visit to a rural government school in Hassan District. Scientists will engage students with hands-on demonstrations, open Q&A on science and nature, and conversations about careers in research."
-  },
-  {
-    "slug": "2026-ganitha-mela-mysuru-preview",
-    "program": "mela",
-    "title": "Ganitha Mela, Mysuru",
-    "date": "2026-08-20",
-    "time": "10:30 AM – 4:00 PM",
-    "location": "Mysuru, Karnataka",
-    "status": "scheduled",
-    "folder": "content/events/2026-ganitha-mela-mysuru-preview",
-    "pageUrl": "events/20-08-2026-ganitha-mela-mysuru.html",
-    "poster": "content/events/2026-ganitha-mela-mysuru-preview/poster.svg",
-    "teaser": "A full-day mathematics festival in Mysuru with hands-on activities, puzzles, and maths games designed to make abstract concepts tangible and joyful.",
-    "homepageMatter": "An upcoming Ganitha Mela in Mysuru, a full-day festival of hands-on mathematics activities, puzzles, and games for school students. Designed to make abstract mathematical ideas tangible, enjoyable, and connected to everyday life."
   }
 ];

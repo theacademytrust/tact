@@ -241,7 +241,7 @@ window.TACT_PROGRAMS = {
       },
       {
         title: "Keep the cultural route open",
-        text: "Kannada theatre, music, folk forms, and festival settings help science reach audiences beyond a classroom."
+        text: "Theatre, music, folk forms, and festival settings help science reach audiences beyond a classroom."
       }
     ],
     momentsTitle: "Nataka in practice",
@@ -280,7 +280,7 @@ window.TACT_PROGRAMS = {
       { type: "gallery_link", programTag: "nataka", linkText: "View Gallery" }
     ],
     impact:
-      "Nataka reaches people who may not choose a lecture but will sit for a story. The aim is not simplification alone; it is public recall, shared language, and a more durable scientific temper.",
+      "Vijnana Nataka reaches people who may not choose a lecture but will sit for a story. The aim is not simplification alone; it is public recall, shared language, and a more durable scientific temper.",
     impactPoints: [
       "Theatre makes scientific lives, ideas, and doubts discussable across age groups.",
       "Partnerships with theatre groups bring craft and credibility to the format.",
