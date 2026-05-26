@@ -409,9 +409,7 @@ html {
 }
 
 /* Desktop-only layout lock */
-#site-header-root {
-  min-width: 1200px;
-}
+/* #site-header-root min-width removed — viewport scaling via JS zoom handles this */
 
 .site-header {
   top: 12px;

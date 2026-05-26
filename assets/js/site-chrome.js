@@ -271,6 +271,26 @@
     }
   }
 
+  // ── Viewport scaling: shrink the 1240px desktop layout to fit narrow windows ──
+  // Uses CSS `zoom` (not transform) so:
+  //   • layout dimensions shrink proportionally — no extra whitespace at page bottom
+  //   • position:fixed header stays fixed to the viewport (zoom ≠ transform for fixed elements)
+  //   • click/touch hit-testing is correct at all scales
+  // Triggered on load and every resize. Mobile browsers handle scaling themselves via
+  // the <meta name="viewport" content="width=1240"> tag; this JS only fires on desktop.
+  var DESIGN_WIDTH = 1240;
+
+  function applyViewportScale() {
+    var vw = window.innerWidth;
+    if (vw < DESIGN_WIDTH) {
+      document.body.style.zoom = String(vw / DESIGN_WIDTH);
+      document.documentElement.style.overflowX = "hidden";
+    } else {
+      document.body.style.zoom = "";
+      document.documentElement.style.overflowX = "";
+    }
+  }
+
   window.TACT_CHROME = {
     ensureHeader: ensureHeader,
     ensureFooter: ensureFooter,
@@ -278,14 +298,17 @@
     renderHeader: renderSiteHeader,
     renderFooter: renderSiteFooter,
     initDropdowns: initDropdowns,
-    syncHeaderOffset: syncHeaderOffset
+    syncHeaderOffset: syncHeaderOffset,
+    applyViewportScale: applyViewportScale
   };
 
+  window.addEventListener("resize", applyViewportScale);
   window.addEventListener("resize", syncHeaderOffset);
 
   function bootChrome() {
     ensureHeader();
     initDropdowns();
+    applyViewportScale();
   }
 
   if (document.readyState === "loading") {

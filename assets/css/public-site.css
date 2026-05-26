@@ -297,14 +297,7 @@ button:focus-visible {
 }
 
 /* Desktop-only layout lock */
-html,
-body {
-  min-width: 1240px;
-}
-
-body {
-  overflow-x: hidden;
-}
+/* min-width and overflow-x removed — viewport scaling is handled by JS zoom in site-chrome.js */
 
 .wrap {
   width: 1200px;
