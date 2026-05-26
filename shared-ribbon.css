@@ -21,7 +21,11 @@ html {
   position: fixed;
   left: 50%;
   top: 12px;
-  transform: translateX(-50%);
+  /* translateX(-50%) centres the header in the viewport.
+     scale(--vp-scale) shrinks it proportionally on narrow windows.
+     transform-origin: top center keeps the header centred while scaling. */
+  transform: translateX(-50%) scale(var(--vp-scale, 1));
+  transform-origin: top center;
   width: 1160px;
   z-index: 60;
   margin: 0;
