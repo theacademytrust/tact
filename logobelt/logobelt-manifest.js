@@ -14,15 +14,15 @@ window.TACT_LOGO_BELT = [
     "src": "logobelt/logo KJVS.png"
   },
   {
-    "name": "kscst",
+    "name": "KSCST",
     "src": "logobelt/logo kscst.png"
   },
   {
-    "name": "ncsm logo",
+    "name": "NCSM",
     "src": "logobelt/ncsm-logo.png"
   },
   {
-    "name": "s2s logo",
+    "name": "S2S",
     "src": "logobelt/s2s-logo.png"
   },
   {
@@ -34,7 +34,7 @@ window.TACT_LOGO_BELT = [
     "src": "logobelt/logo TRAERF.jpg"
   },
   {
-    "name": "WISlogo",
+    "name": "WIS",
     "src": "logobelt/WISlogo.jpg"
   },
   {
@@ -46,7 +46,7 @@ window.TACT_LOGO_BELT = [
     "src": "logobelt/tcs.svg"
   },
   {
-    "name": "IISc–Axis Bank Centre for Mathematics and Computing",
+    "name": "IISc–Axis Bank Centre",
     "src": "logobelt/iisc-axis-bank-maths.png"
   },
   {

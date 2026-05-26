@@ -166,7 +166,7 @@
         background:
           linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(250, 251, 249, 0.98)),
           radial-gradient(500px 180px at 10% 0%, rgba(10, 122, 58, 0.06), transparent 70%);
-        padding: 16px 0;
+        padding: 20px 0 18px;
         position: relative;
         overflow: hidden;
       }
@@ -174,51 +174,60 @@
       .logo-belt-viewport {
         position: relative;
         overflow: hidden;
+        cursor: grab;
+        touch-action: pan-y;
+      }
+
+      .logo-belt-viewport.is-dragging {
+        cursor: grabbing;
       }
 
       .logo-belt-track {
         display: flex;
         align-items: center;
-        gap: 14px;
         width: max-content;
-        padding: 4px 18px;
         will-change: transform;
-      }
-
-      .logo-belt-track.is-animated {
-        animation: logo-belt-scroll var(--logo-belt-duration, 34s) linear infinite;
-      }
-
-      .logo-belt-shell:hover .logo-belt-track.is-animated {
-        animation-play-state: paused;
       }
 
       .logo-belt-item {
         flex: 0 0 auto;
-        width: 180px;
-        min-width: 180px;
-        height: 92px;
-        display: grid;
-        place-items: center;
-        padding: 14px 18px;
-        border-radius: 12px;
-        border: 1px solid rgba(10, 20, 10, 0.08);
-        background: rgba(255, 255, 255, 0.88);
-        box-shadow: 0 12px 28px rgba(10, 20, 10, 0.04);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 4px 26px 6px;
+      }
+
+      /* Fixed-height image zone — keeps all labels at the same Y */
+      .logo-belt-img-wrap {
+        height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .logo-belt-item img {
-        max-width: 100%;
-        max-height: 48px;
+        max-width: 148px;
+        max-height: 76px;
         width: auto;
         height: auto;
         object-fit: contain;
-        filter: saturate(0.92) contrast(1.02);
-        opacity: 0.96;
+        display: block;
+        user-select: none;
+        -webkit-user-drag: none;
+        pointer-events: none;
       }
 
-      .logo-belt-item--wide img {
-        max-height: 42px;
+      .logo-belt-label {
+        font-size: 10px;
+        font-weight: 700;
+        color: #7a8a7a;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        text-align: center;
+        white-space: nowrap;
+        user-select: none;
+        line-height: 1;
       }
 
       .logo-belt-empty {
@@ -226,15 +235,6 @@
         padding: 8px 18px 2px;
         color: var(--muted);
         font-size: 15px;
-      }
-
-      @keyframes logo-belt-scroll {
-        from {
-          transform: translateX(0);
-        }
-        to {
-          transform: translateX(calc(-1 * var(--logo-belt-distance, 0px)));
-        }
       }
 
       .home-events-pane {
@@ -1099,13 +1099,20 @@
       }
 
       .logo-belt-item {
-        width: 160px;
-        min-width: 160px;
-        height: 86px;
+        padding: 4px 18px 6px;
+      }
+
+      .logo-belt-img-wrap {
+        height: 60px;
       }
 
       .logo-belt-item img {
-        max-height: 44px;
+        max-width: 110px;
+        max-height: 58px;
+      }
+
+      .logo-belt-label {
+        font-size: 9px;
       }
 
       .outreach-grid {
@@ -1311,8 +1318,8 @@ END FLIP-BOX IMAGES -->
     </div>
 
     <script src="assets/js/site-chrome.js?v=20260501f"></script>
-    <script src="logobelt/logobelt-manifest.js?v=20260502a"></script>
-    <script src="assets/js/logo-belt.js?v=20260502a"></script>
+    <script src="logobelt/logobelt-manifest.js?v=20260526b"></script>
+    <script src="assets/js/logo-belt.js?v=20260526b"></script>
     <script src="assets/js/events-config.js"></script>
     <script src="content/events/events-feed.js?v=20260501d"></script>
     <!-- PREVIEW EVENTS, remove this line when boss review is done -->
