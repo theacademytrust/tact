@@ -78,23 +78,15 @@
 
   function ensureHeaderRoot() {
     var root = document.getElementById("site-header-root");
-    if (!root) {
-      root = document.createElement("div");
-      root.id = "site-header-root";
-    }
-    if (!document.body) return root;
+    if (root) return root;
+    if (!document.body) return null;
 
-    // The HTML files hardcode #site-header-root INSIDE .wrap.
-    // We must move it to be a direct body child BEFORE .wrap so that the
-    // transform: scale() we apply to .wrap does not create a new containing
-    // block for the position:fixed header (which would break its fixed behaviour).
-    var wrap = document.querySelector("body > .wrap");
-    if (wrap) {
-      // insertBefore is safe even when root is already the node just before wrap.
-      document.body.insertBefore(root, wrap);
-    } else if (root.parentNode !== document.body) {
-      document.body.insertBefore(root, document.body.firstChild);
-    }
+    root = document.createElement("div");
+    root.id = "site-header-root";
+
+    var shell = document.querySelector(".wrap") || document.body;
+    var main = shell.querySelector("#main") || shell.querySelector("main");
+    shell.insertBefore(root, main || shell.firstChild);
     return root;
   }
 
@@ -109,13 +101,7 @@
       return;
     }
 
-    // When the viewport is narrow, --vp-scale is set and the header is visually
-    // smaller than its offsetHeight.  Compute the actual visible height so the
-    // spacer reserves exactly the right amount of room above .wrap content.
-    var scale = parseFloat(
-      document.documentElement.style.getPropertyValue("--vp-scale") || "1"
-    ) || 1;
-    var totalOffset = Math.ceil(header.offsetHeight * scale + 12);
+    var totalOffset = Math.ceil(header.offsetHeight + 12);
     root.style.minHeight = totalOffset + "px";
     document.documentElement.style.setProperty("--site-header-offset", totalOffset + "px");
   }
@@ -285,59 +271,19 @@
     }
   }
 
-  // ── Viewport scaling: shrink the 1240px desktop layout to fit narrow windows ──
-  //
-  // Approach:
-  //   • transform: scale(x) + transform-origin: top left on .wrap
-  //       → content always grows from the left edge; no centering artifact
-  //       → .wrap's fixed 1200px layout shrinks to fit the viewport
-  //   • #site-header-root is kept BEFORE .wrap (ensureHeaderRoot does this).
-  //       → the position:fixed header has no transformed ancestor, so it
-  //         remains fixed to the viewport, not to .wrap.
-  //   • --vp-scale CSS variable lets the header scale itself independently
-  //       via  transform: translateX(-50%) scale(var(--vp-scale, 1))  in CSS.
-  //   • Negative marginBottom on .wrap compensates for the layout height that
-  //       transform: scale() does NOT reduce (transform doesn't affect layout).
-  //   • window.load call recalculates after images / dynamic content have settled.
-  //
-  // Mobile browsers handle their own scaling via the viewport meta tag
-  //   <meta name="viewport" content="width=1240">
-  // and see window.innerWidth = 1240, so scale = 1 and no JS scaling is applied.
-  var DESIGN_WIDTH = 1240;
-
-  function applyViewportScale() {
+  // ── Viewport scaling — resize handler ─────────────────────────────────────
+  // The initial scale is set synchronously by an inline <head> script on every
+  // HTML page (before first paint, no flicker).  This handler keeps --vp-scale
+  // in sync as the user resizes the window.  The CSS rule  html { zoom: var(--vp-scale,1) }
+  // in public-site.css does the actual scaling.
+  window.addEventListener("resize", function () {
     var vw = window.innerWidth;
-    var scale = vw < DESIGN_WIDTH ? vw / DESIGN_WIDTH : 1;
-
-    // Clear any leftover zoom from the previous approach
-    document.body.style.zoom = "";
-
-    var wrap = document.querySelector(".wrap");
-    if (wrap) {
-      if (scale < 1) {
-        wrap.style.transformOrigin = "top left";
-        wrap.style.transform      = "scale(" + scale + ")";
-        // offsetHeight is always pre-transform (transform never affects layout),
-        // so this correctly measures the full natural height of .wrap.
-        wrap.style.marginBottom   = "-" + Math.round(wrap.offsetHeight * (1 - scale)) + "px";
-        document.documentElement.style.overflowX = "hidden";
-      } else {
-        wrap.style.transformOrigin = "";
-        wrap.style.transform       = "";
-        wrap.style.marginBottom    = "";
-        document.documentElement.style.overflowX = "";
-      }
-    }
-
-    // Publish scale for the CSS rule on .site-header
-    if (scale < 1) {
-      document.documentElement.style.setProperty("--vp-scale", String(scale));
+    if (vw < 1240) {
+      document.documentElement.style.setProperty("--vp-scale", String(vw / 1240));
     } else {
       document.documentElement.style.removeProperty("--vp-scale");
     }
-
-    syncHeaderOffset();
-  }
+  });
 
   window.TACT_CHROME = {
     ensureHeader: ensureHeader,
@@ -346,20 +292,14 @@
     renderHeader: renderSiteHeader,
     renderFooter: renderSiteFooter,
     initDropdowns: initDropdowns,
-    syncHeaderOffset: syncHeaderOffset,
-    applyViewportScale: applyViewportScale
+    syncHeaderOffset: syncHeaderOffset
   };
 
-  window.addEventListener("resize", applyViewportScale);
   window.addEventListener("resize", syncHeaderOffset);
-  // Re-run after images and late-loading content have settled so that
-  // .wrap's offsetHeight (used for marginBottom) is the final value.
-  window.addEventListener("load", applyViewportScale);
 
   function bootChrome() {
     ensureHeader();
     initDropdowns();
-    applyViewportScale();
   }
 
   if (document.readyState === "loading") {

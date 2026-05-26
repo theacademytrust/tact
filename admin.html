@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=1240">
+  <script>!function(){var w=window.innerWidth;if(w<1240){document.documentElement.style.setProperty("--vp-scale",""+w/1240)}}();</script>
   <title>tAcT Admin - Events and Gallery</title>
   <style>
     :root {
@@ -16,6 +17,8 @@
       font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     }
     * { box-sizing: border-box; }
+    /* Viewport scaling — mirrors the rule in public-site.css (admin doesn't load it) */
+    html { zoom: var(--vp-scale, 1); }
     body {
       margin: 0;
       background:

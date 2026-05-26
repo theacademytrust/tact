@@ -21,11 +21,7 @@ html {
   position: fixed;
   left: 50%;
   top: 12px;
-  /* translateX(-50%) centres the header in the viewport.
-     scale(--vp-scale) shrinks it proportionally on narrow windows.
-     transform-origin: top center keeps the header centred while scaling. */
-  transform: translateX(-50%) scale(var(--vp-scale, 1));
-  transform-origin: top center;
+  transform: translateX(-50%);
   width: 1160px;
   z-index: 60;
   margin: 0;
@@ -413,7 +409,6 @@ html {
 }
 
 /* Desktop-only layout lock */
-/* #site-header-root min-width removed — viewport scaling via JS zoom handles this */
 
 .site-header {
   top: 12px;

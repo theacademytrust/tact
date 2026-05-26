@@ -28,6 +28,11 @@
 }
 
 html {
+  /* --vp-scale is set by the inline <head> script on every page.
+     At viewport >= 1240px the variable is absent and zoom defaults to 1 (no scaling).
+     At viewport < 1240px  zoom = viewport_width / 1240, shrinking the entire page —
+     header, body, and footer — as one proportional unit, with no flicker. */
+  zoom: var(--vp-scale, 1);
   scroll-behavior: smooth;
 }
 
@@ -297,7 +302,6 @@ button:focus-visible {
 }
 
 /* Desktop-only layout lock */
-/* min-width and overflow-x removed — viewport scaling is handled by JS zoom in site-chrome.js */
 
 .wrap {
   width: 1200px;
