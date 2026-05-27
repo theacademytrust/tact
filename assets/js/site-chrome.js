@@ -2,7 +2,7 @@
   var activeScript = document.currentScript;
   var NAV_GROUPS = [
     {
-      label: "Outreach Programs",
+      label: "Outreach",
       links: [
         ["Vijnana Harate", "vijnana-harate.html"],
         ["Vijnana Aranya", "vijnana-aranya.html"],
@@ -28,7 +28,7 @@
       ]
     },
     {
-      label: "Governance",
+      label: "About Us",
       links: [
         ["Founding Trustees", "founding-trustees.html"],
         ["Current Trustees", "current-trustees.html"],
@@ -132,10 +132,6 @@
       '    <div class="site-header-left">',
       '      <a href="' + toSitePath("index.html") + '" class="brand-link">',
       '        <img src="' + toSitePath("assets/images/tact-logo.jpg") + '" alt="tAcT logo" class="site-logo" loading="lazy" decoding="async">',
-      '        <div class="site-brand-text">',
-      '          <span class="site-brand-title">The Academy Trust</span>',
-      '          <span class="site-brand-subtitle">Science outreach</span>',
-      "        </div>",
       "      </a>",
       "    </div>",
       '    <div class="site-header-center">',
