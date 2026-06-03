@@ -139,8 +139,18 @@
       section.arrival {
         text-align: center;
         padding: 32px 48px 36px;
-        background: linear-gradient(145deg, #eaf4ef 0%, #fdfdf9 52%, #fdf6e3 100%);
+        background: #7cb342;
         border-top: 3px solid rgba(184, 134, 11, 0.5);
+      }
+
+      section.arrival .arrival-org,
+      section.arrival .arrival-lines,
+      section.arrival .arrival-join {
+        color: #ffffff;
+      }
+
+      section.arrival .arrival-lines em {
+        color: #fff8dc;
       }
 
       /* Organisation provenance mark */
@@ -204,7 +214,7 @@
       }
 
       section.outreach-overview {
-        background: linear-gradient(148deg, #fdf3e0 0%, #f6faf7 50%, #e2f0e9 100%);
+        background: #f9f5e7;
       }
 
       .home-events-board {
@@ -707,28 +717,6 @@
         font-size: 16px;
       }
 
-      /* Alternating card colors for i1 experiment */
-      .home-horizontal-track .home-events-item:nth-child(1) {
-        background: #7cb342;
-      }
-
-      .home-horizontal-track .home-events-item:nth-child(2) {
-        background: #f9f5e7;
-      }
-
-      .home-horizontal-track .home-events-item:nth-child(1) h3,
-      .home-horizontal-track .home-events-item:nth-child(1) p {
-        color: #ffffff;
-      }
-
-      .home-horizontal-track .home-events-item:nth-child(2) h3 {
-        color: #0a7a3a;
-      }
-
-      .home-horizontal-track .home-events-item:nth-child(2) p {
-        color: #333333;
-      }
-
       .home-events-item--past-expanded p {
         font-size: 14px;
         -webkit-line-clamp: 4;
@@ -804,26 +792,8 @@
         margin-top: 22px;
       }
 
-      .prog-harate {
-        grid-area: harate;
-        background: #7cb342 !important;
-      }
-      .prog-harate .prog-body h3,
-      .prog-harate .prog-body p {
-        color: #ffffff !important;
-      }
-
-      .prog-aranya {
-        grid-area: aranya;
-        background: #f9f5e7 !important;
-      }
-      .prog-aranya .prog-body h3 {
-        color: #0a7a3a !important;
-      }
-      .prog-aranya .prog-body p {
-        color: #333333 !important;
-      }
-
+      .prog-harate { grid-area: harate; }
+      .prog-aranya { grid-area: aranya; }
       .prog-nataka { grid-area: nataka; }
       .prog-yuvati { grid-area: yuvati; }
       .prog-mela   { grid-area: mela;   }
