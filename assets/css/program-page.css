@@ -85,6 +85,7 @@ p {
 .hero-section {
   text-align: left;
   padding: 54px 48px 42px;
+  min-height: 340px;
   border-radius: 22px;
   margin-bottom: 32px;
   color: #fdfdfc;
@@ -94,6 +95,9 @@ p {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .hero-section p {
@@ -515,6 +519,7 @@ h2 {
 
 .hero-section {
   padding: 54px 48px 42px;
+  min-height: 420px;
   border-radius: 22px;
   margin-bottom: 32px;
 }
