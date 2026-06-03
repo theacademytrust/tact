@@ -1,0 +1,23 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "Tact is a static site for The Academy Trust with a GitHub-backed admin workflow for publishing events and gallery content.",
+  "main": "sw.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-theacademytrust:theacademytrust/tact.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "html-validate": "^11.5.0",
+    "playwright": "^1.60.0"
+  }
+}
