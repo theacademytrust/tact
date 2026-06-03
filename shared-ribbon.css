@@ -232,7 +232,7 @@ html {
 }
 
 .brand-link:hover .brand-lhs::after {
-  animation: brand-golden-gleam 1s cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s forwards;
+  animation: brand-golden-gleam 2.6s ease-in-out 0.2s forwards;
 }
 
 @keyframes brand-golden-gleam {
@@ -240,10 +240,10 @@ html {
     opacity: 0;
     transform: skewX(-15deg) translateX(-200%);
   }
-  12% {
+  20% {
     opacity: 1;
   }
-  78% {
+  80% {
     opacity: 0.9;
     transform: skewX(-15deg) translateX(280%);
   }
