@@ -217,9 +217,25 @@
         background: var(--card);
       }
 
+      /* Past = cool reflective green wash (recedes), settling to near-white
+         where the event cards sit */
+      .home-events-board[aria-labelledby="home-past-heading"] {
+        border-top-color: rgba(10, 122, 58, 0.32);
+        background: linear-gradient(180deg, #eef5f0 0%, #fbfdfc 72%);
+      }
+
+      /* Upcoming = warm anticipatory gold wash (advances) */
+      .home-events-board[aria-labelledby="home-events-heading"] {
+        border-top-color: rgba(184, 134, 11, 0.3);
+        background: linear-gradient(180deg, #fdf6e6 0%, #fffdf9 72%);
+      }
+
       .logo-belt-section {
         padding: 18px 0 10px;
         overflow: hidden;
+        /* Partners = calm cool green resting band that resolves the page */
+        background: linear-gradient(180deg, #f3f8f5 0%, #fbfcfa 70%);
+        border-top-color: rgba(10, 122, 58, 0.22);
       }
 
       .logo-belt-heading {
