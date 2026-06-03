@@ -536,3 +536,69 @@ h2 {
 footer {
   padding: 24px;
 }
+
+/* ── Hero: Ken Burns zoom ──────────────────────────────────── */
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  will-change: transform;
+  animation: heroZoom 26s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1.0) translate(0, 0); }
+  to   { transform: scale(1.12) translate(-1.5%, 0.8%); }
+}
+
+/* Per-programme zoom origins — tuned to where each photo's subject sits */
+body.program-page--vijnana-harate .hero-bg img {
+  transform-origin: 48% 45%;   /* presenter + seated students, slight left */
+}
+body.program-page--vijnana-aranya .hero-bg img {
+  transform-origin: 50% 58%;   /* outdoor circle, centred slightly low */
+}
+body.program-page--vijnana-yuvati .hero-bg img {
+  transform-origin: 64% 50%;   /* instructor + buckets on the right */
+}
+body.program-page--vijnana-nataka .hero-bg img {
+  transform-origin: 42% 38%;   /* main stage actors, centre-left */
+}
+body.program-page--ganitha-mela .hero-bg img {
+  transform-origin: 40% 52%;   /* students around the floor activity */
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    160deg,
+    rgba(4, 16, 10, 0.68) 0%,
+    rgba(6, 24, 14, 0.46) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg img {
+    animation: none;
+  }
+}

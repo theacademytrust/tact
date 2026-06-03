@@ -19,8 +19,8 @@ function initProgramPage() {
   setMetaDescription(data.heroText);
 
   var hero = document.getElementById("hero");
-  hero.style.backgroundImage =
-    "linear-gradient(180deg, rgba(8, 26, 20, 0.55), rgba(8, 26, 20, 0.55)), url('" + data.heroImage + "')";
+  var heroImg = document.getElementById("hero-image");
+  if (heroImg) heroImg.src = data.heroImage;
 
   setText("program-title", data.title);
   setText("hero-text", data.heroText);

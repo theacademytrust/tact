@@ -1,0 +1,167 @@
+# TACT Repository Map
+
+## At a Glance
+
+| Property | Value |
+|---|---|
+| Site type | Static HTML + client-side routing |
+| Backend | Google Apps Script (serverless) |
+| Hosting | GitHub Pages (auto-deploy on push to `main`) |
+| JS frameworks | None — pure vanilla JavaScript |
+| CSS frameworks | None — custom CSS with variables |
+| Build step | None required for deployment |
+| Total pages | ~20 hand-written + ~128 auto-generated event pages |
+| Data source | JSON files committed to the repo |
+
+---
+
+## Root Files
+
+| File | Purpose | Edit? |
+|---|---|---|
+| `index.html` | Homepage — hero + event board | Yes |
+| `events.html` | Upcoming/past event list | Yes |
+| `gallery.html` | Photo gallery grid | Yes |
+| `calendar.html` | Month-by-month photo calendar | Yes |
+| `admin.html` | Admin interface (PIN-protected) | Yes |
+| `donate.html` | Donation page | Yes |
+| `chair-professorship.html` | Initiative page | Yes |
+| `industry-internship.html` | Initiative page | Yes |
+| `vijnana-harate.html` | Program page | Yes |
+| `vijnana-aranya.html` | Program page | Yes |
+| `vijnana-yuvati.html` | Program page | Yes |
+| `vijnana-nataka.html` | Program page | Yes |
+| `ganitha-mela.html` | Program page | Yes |
+| `founding-trustees.html` | About page | Yes |
+| `current-trustees.html` | About page | Yes |
+| `outreach-committee.html` | About page | Yes |
+| `annual-reports.html` | About page | Yes |
+| `trust-documents.html` | About page | Yes |
+| `office-contacts.html` | About page | Yes |
+| `shared-ribbon.css` | Shared nav/footer styles — **critical** | With care |
+| `sw.js` | Service worker (PWA/offline cache) | With care |
+| `.htaccess` | Apache caching, compression, security headers | With care |
+
+---
+
+## Directory Tree
+
+```
+tact/
+├── assets/
+│   ├── css/                  ← Page-specific stylesheets
+│   │   ├── public-site.css   ← CSS variables + shared surface styles (CRITICAL)
+│   │   ├── events.css
+│   │   ├── gallery.css
+│   │   ├── calendar.css
+│   │   ├── event-detail.css
+│   │   ├── donate.css
+│   │   ├── initiative-page.css
+│   │   └── program-page.css
+│   ├── js/                   ← All JavaScript (no build step)
+│   │   ├── site-chrome.js        ← Shared header/footer renderer (CRITICAL)
+│   │   ├── page-router.js        ← Client-side routing (CRITICAL)
+│   │   ├── gallery-data.js       ← Central data loader for gallery.json
+│   │   ├── events-feed-loader.js ← Loads TACT_EVENT_FEED global
+│   │   ├── events-config.js      ← API endpoint configuration
+│   │   ├── event-page-paths.js   ← URL builder for event detail pages
+│   │   ├── index-page.js         ← Homepage initializer
+│   │   ├── events-page.js        ← Events list page initializer
+│   │   ├── gallery-page.js       ← Gallery page initializer
+│   │   ├── calendar-page.js      ← Calendar page initializer
+│   │   ├── event-detail-page.js  ← Event detail page initializer
+│   │   ├── home-events-board.js  ← Homepage events slider (complex)
+│   │   ├── program-page.js       ← Program pages initializer
+│   │   └── logo-belt.js          ← Partner logo carousel
+│   ├── docs/                 ← PDF documents (annual reports, etc.)
+│   └── images/               ← Optimized images (logos, illustrations)
+│
+├── backend/
+│   └── google-apps-script/
+│       └── Code.gs           ← THE backend (CRITICAL — deployed separately)
+│
+├── content/
+│   └── events/               ← Source of truth for all event data
+│       ├── events-feed.js    ← AUTO-GENERATED — do not edit by hand
+│       └── <slug>/           ← One folder per event (130 events)
+│           ├── event.json    ← Event metadata
+│           ├── poster.jpg    ← Event poster image
+│           ├── pre-event.txt ← Pre-event description
+│           ├── post-event.md ← Post-event write-up
+│           └── gallery/      ← Event photo gallery
+│               └── *.jpg
+│
+├── data/
+│   └── gallery.json          ← AUTO-GENERATED flat gallery index
+│
+├── events/                   ← AUTO-GENERATED event HTML shells (128 pages)
+│   └── *.html
+│
+├── images/                   ← Optimized/resized images for the site
+│   └── gallery/
+│
+├── flauntimages/             ← Original full-resolution images (source)
+│
+├── logobelt/                 ← Partner logo images
+│   └── logobelt-manifest.js  ← AUTO-GENERATED logo list
+│
+├── tools/                    ← Build & content management scripts
+│   ├── generate-event-pages.mjs       ← Regenerates events/*.html
+│   ├── generate-logo-belt-manifest.mjs← Regenerates logobelt-manifest.js
+│   └── event-system.ps1               ← Offline event management (PowerShell)
+│
+├── inject/                   ← (Experimental/in-progress directory)
+│
+├── docs/                     ← Project documentation (this folder)
+│   ├── architecture.md
+│   ├── content-flow.md
+│   └── deployment.md
+│
+├── REPO_MAP.md               ← This file
+├── README.md
+├── DEPLOYMENT.md
+├── ADMIN-SETUP.md
+├── EVENT-STRUCTURE.md
+└── EVENTS-UPDATE-GUIDE.md
+```
+
+---
+
+## Auto-Generated Files (Never Edit by Hand)
+
+| File | Generated by | Trigger |
+|---|---|---|
+| `content/events/events-feed.js` | Apps Script `rebuildFeed()` / `tools/event-system.ps1 build-feed` | Event publish/delete/update |
+| `events/*.html` | Apps Script `rebuildEventPages()` / `tools/generate-event-pages.mjs` | Event publish/delete |
+| `data/gallery.json` | Apps Script gallery operations | Image upload/delete |
+| `logobelt/logobelt-manifest.js` | `tools/generate-logo-belt-manifest.mjs` | Logo files changed |
+
+---
+
+## Asset Version Stamps
+
+Script and stylesheet URLs carry `?v=YYYYMMDDX` cache-busting suffixes (e.g. `?v=20260501f`). These are **manually updated** in the HTML files whenever the corresponding asset changes meaningfully. Forgetting to bump a version will cause visitors to see stale cached versions.
+
+---
+
+## Key Relationships
+
+```
+admin.html
+  └─► Google Apps Script (Code.gs)
+        ├─► content/events/<slug>/event.json   (write)
+        ├─► content/events/<slug>/poster.jpg   (write)
+        ├─► content/events/<slug>/gallery/     (write)
+        ├─► content/events/events-feed.js      (rebuild)
+        ├─► events/<slug>.html                 (rebuild)
+        └─► data/gallery.json                  (rebuild)
+
+Any public page
+  ├─► shared-ribbon.css          (layout)
+  ├─► assets/css/public-site.css (design tokens)
+  ├─► assets/js/site-chrome.js   (header/footer)
+  └─► assets/js/page-router.js   (routing + lazy-loads page JS)
+        └─► assets/js/<page>-page.js
+              └─► gallery-data.js / events-feed-loader.js
+                    └─► data/gallery.json / content/events/events-feed.js
+```

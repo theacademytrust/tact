@@ -1,7 +1,7 @@
 window.TACT_PROGRAMS = {
   "vijnana-harate": {
     title: "Vijnana Harate",
-    heroImage: "flauntimages/Vijnana Harate/1.jpg",
+    heroImage: "images/outreach/harate.jpg",
     badges: ["Informal interaction", "Scientists with students", "Regional languages"],
     heroText:
       "Vijnana Harate is an informal science-themed interaction between scientists/educators and the audience in a non-academic setting.",
@@ -73,7 +73,7 @@ window.TACT_PROGRAMS = {
   },
   "vijnana-aranya": {
     title: "Vijnana Aranya",
-    heroImage: "flauntimages/Vijnana Aranya/1.jpg",
+    heroImage: "images/outreach/aranya.jpg",
     badges: ["Remote outreach", "Ecology + livelihood", "Place-based science"],
     heroText:
       "Vijnana Aranya takes science to rural, tribal, and remote settings, where ecology, livelihoods, observation, and school science can meet in the same day.",
@@ -145,7 +145,7 @@ window.TACT_PROGRAMS = {
   },
   "vijnana-yuvati": {
     title: "Vijnana Yuvati",
-    heroImage: "flauntimages/Vijnana Yuvati/1.jpg",
+    heroImage: "images/outreach/yuvati.png",
     badges: ["Young women in science", "Skills + confidence", "Mentoring"],
     heroText:
       "Vijnana Yuvati is skill-oriented outreach for young women: practical exposure, candid mentoring, and visible routes into science, technology, and livelihood.",
@@ -210,7 +210,7 @@ window.TACT_PROGRAMS = {
   },
   "vijnana-nataka": {
     title: "Vijnana Nataka",
-    heroImage: "flauntimages/Vijnana Nataka/1.jpg",
+    heroImage: "images/outreach/nataka.jpg",
     badges: ["Science theatre", "Music + performance", "Public audiences"],
     heroText:
       "Vijnana Nataka carries science through theatre and music, using story, character, rhythm, and public performance to make scientific temper memorable.",
@@ -289,7 +289,7 @@ window.TACT_PROGRAMS = {
   },
   "ganitha-mela": {
     title: "Ganitha Mela",
-    heroImage: "content/events/2023-national-mathematics-day-vishwa-yelahanka-session/gallery/image-06.jpg",
+    heroImage: "images/outreach/mela.jpg",
     badges: ["Games + puzzles", "Mathematics festival", "Culture + activity"],
     heroText:
       "Ganitha Mela makes mathematics public, physical, and festive through games, puzzles, activity stalls, talks, performances, and reusable classroom material.",
