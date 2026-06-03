@@ -131,23 +131,80 @@
         font-size: 16px;
       }
 
-      /* Hero-like arrival layout (desktop-first) */
-      .arrival {
+      /* ── Arrival: homepage declaration ──────────────────── */
+      /*
+        section.arrival beats .surface in the cascade (element+class
+        vs class-only) so padding and background override cleanly.
+      */
+      section.arrival {
+        text-align: center;
+        padding: 52px 60px 58px;
+        background: linear-gradient(145deg, #eaf4ef 0%, #fdfdf9 52%, #fdf6e3 100%);
+        border-top: 4px solid rgba(184, 134, 11, 0.5);
+      }
+
+      /* Organisation provenance mark */
+      .arrival-org {
         display: block;
-        text-align: center;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--green);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin: 0 0 14px;
+        line-height: 1;
       }
 
-      .arrival-copy {
-        max-width: 1040px;
+      /* Thin gold ornamental rule */
+      .arrival-rule {
+        width: 44px;
+        height: 1.5px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(184, 134, 11, 0.52) 20%,
+          rgba(184, 134, 11, 0.52) 80%,
+          transparent
+        );
+        border: none;
+        margin: 0 auto 40px;
+      }
+
+      /* Mission statement container */
+      .arrival-mission {
+        max-width: 860px;
         margin: 0 auto;
-        text-align: center;
       }
 
-      .arrival-copy p {
-        color: #1a2620;
-        font-weight: 500;
-        font-size: 17px;
-        line-height: 1.55;
+      /* Main mission lines */
+      .arrival-lines {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1.40;
+        color: var(--green);
+        letter-spacing: -0.024em;
+        margin: 0;
+      }
+
+      /* "tangible" — italicised, in gold */
+      .arrival-lines em {
+        font-style: italic;
+        color: rgba(184, 134, 11, 0.92);
+      }
+
+      /* Ornamental ampersand — large, light, calligraphic */
+      .arrival-join {
+        font-size: 60px;
+        font-weight: 300;
+        font-style: italic;
+        color: rgba(184, 134, 11, 0.72);
+        letter-spacing: 0;
+        margin: 10px 0;
+        line-height: 1;
+      }
+
+      section.outreach-overview {
+        background: linear-gradient(148deg, #fdf3e0 0%, #f6faf7 50%, #e2f0e9 100%);
       }
 
       .home-events-board {
@@ -159,6 +216,16 @@
       .logo-belt-section {
         padding: 18px 0 10px;
         overflow: hidden;
+      }
+
+      .logo-belt-heading {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--muted);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 0 14px;
       }
 
       .logo-belt-shell {
@@ -1037,27 +1104,29 @@
       <div id="site-header-root"></div>
 
       <main id="main">
-        <!-- ARRIVAL: first screen -->
+        <!-- ARRIVAL: homepage declaration -->
         <section
           class="section surface fade-section arrival"
           aria-labelledby="arrival-heading"
         >
-          <div class="arrival-copy">
-            <header>
-              <h1 id="arrival-heading">The Academy Trust (tAcT)</h1>
-              <p>
-                The Academy Trust is a public charitable trust set up in 2014 by the Indian Academy of Sciences, which was founded in 1934 by Nobel laureate Sir C. V. Raman. It was created to make science education more tangible in schools, colleges, and in society at large.
-              </p>
-            </header>
-            <p>
-              tAcT works through three strands: science education outreach programmes such as Vijnana Harate, Vijnana Aranya, Vijnana Yuvati, Vijnana Nataka and Ganitha Mela; <a href="industry-internship.html">internships</a> that link students, academia, and industry; and an endowment <a href="chair-professorship.html">Chair Professorship</a> that brings leading scientists from across the world to India to share their knowledge and expertise.
+          <h1 class="arrival-org" id="arrival-heading">The Academy Trust (tAcT)</h1>
+          <hr class="arrival-rule" aria-hidden="true">
+          <div class="arrival-mission">
+            <p class="arrival-lines">
+              Making a <em>tangible</em> difference<br>
+              in the way Science is taught<br>
+              in the educational system
+            </p>
+            <p class="arrival-join">&amp;</p>
+            <p class="arrival-lines">
+              Raising Scientific Temper
             </p>
           </div>
         </section>
 
         <!-- OUTREACH OVERVIEW: what we do in institutions and communities -->
         <section
-          class="section surface fade-section"
+          class="section surface fade-section outreach-overview"
           aria-labelledby="outreach-overview-heading"
         >
           <header>
@@ -1156,7 +1225,8 @@
           </div>
         </section>
 
-        <section class="section surface fade-section logo-belt-section" aria-label="Partner institutions" id="partners">
+        <section class="section surface fade-section logo-belt-section" aria-labelledby="partners-heading" id="partners">
+          <h2 class="logo-belt-heading" id="partners-heading">Partners &amp; Collaborators</h2>
           <div class="logo-belt-shell">
             <div id="logo-belt-root" class="logo-belt-viewport" aria-live="polite"></div>
           </div>
