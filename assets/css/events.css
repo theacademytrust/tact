@@ -171,6 +171,7 @@ h3 {
 .event-card .image-container img {
   height: 100%;
   object-fit: fill;
+  animation: subtle-kenburns 28s ease-in-out infinite alternate;
 }
 
 .event-body {
@@ -230,6 +231,7 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: fill;
+  animation: subtle-kenburns 28s ease-in-out infinite alternate;
 }
 
 .archive-body {
@@ -320,4 +322,9 @@ main {
   border-radius: 999px;
   font-size: 13px;
   line-height: 1.45;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .event-card .image-container img,
+  .archive-item .image-container img { animation: none; }
 }

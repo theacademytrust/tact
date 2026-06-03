@@ -97,6 +97,7 @@ main {
   width: 100%;
   height: 100%;
   object-fit: fill;
+  animation: subtle-kenburns 28s ease-in-out infinite alternate;
 }
 
 .gallery-card-overlay {
@@ -331,4 +332,8 @@ footer[aria-label="Site footer"] {
 
 .gallery-filter-clear:hover {
   text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-card-image { animation: none; }
 }

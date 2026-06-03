@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <link rel="icon" href="assets/images/tact-favicon.png" type="image/png">
     <title>The Academy Trust: Science outreach and programmes</title>
     <meta name="viewport" content="width=1240">
   <script>!function(){var w=window.innerWidth;if(w<1240){document.documentElement.style.setProperty("--vp-scale",""+w/1240)}}();</script>
@@ -839,11 +840,11 @@
         object-fit: cover;
         object-position: center;
         display: block;
-        transition: transform 0.38s ease;
+        animation: subtle-kenburns 28s ease-in-out infinite alternate;
       }
 
-      .prog-card:hover .prog-thumb img {
-        transform: scale(1.06);
+      @media (prefers-reduced-motion: reduce) {
+        .prog-thumb img { animation: none; }
       }
 
       .prog-body {

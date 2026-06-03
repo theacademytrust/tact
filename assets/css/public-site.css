@@ -530,3 +530,9 @@ main {
   font-size: var(--small-copy);
   font-weight: 600;
 }
+
+/* Shared keyframe used by gallery, events, and programme cards */
+@keyframes subtle-kenburns {
+  0%   { transform: scale(1)    translate(0,      0);    }
+  100% { transform: scale(1.10) translate(-2.5%, -1%);   }
+}
