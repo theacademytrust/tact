@@ -358,7 +358,7 @@
       '<div class="event-detail-shell">' +
         '<section class="surface event-detail-hero">' +
           '<button type="button" class="event-detail-poster-card" data-item-id="poster" aria-label="Open poster for ' + escapeHtml(titleText) + '">' +
-            '<img src="' + escapeHtml(resolveSitePath(eventItem.poster || "assets/images/tact-logo.jpg")) + '" alt="' + escapeHtml(titleText) + '">' +
+            '<img src="' + escapeHtml(resolveSitePath(eventItem.poster || "assets/images/tact-logo.png")) + '" alt="' + escapeHtml(titleText) + '">' +
           "</button>" +
           '<div class="event-detail-copy">' +
             "<h1>" + escapeHtml(titleText) + "</h1>" +

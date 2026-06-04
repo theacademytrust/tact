@@ -4,7 +4,7 @@ const urlsToCache = [
   '/index.html',
   '/assets/css/performance.css',
   '/assets/js/performance.js',
-  '/assets/images/tact-logo.jpg',
+  '/assets/images/tact-logo.png',
   '/shared-ribbon.css',
   '/donate.html',
   '/industry-internship.html',
